@@ -1,0 +1,506 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Noticias | Design System UNAV</title>
+    
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.1/font/bootstrap-icons.css">
+    
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@100;300;400;500;700;900&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Roboto+Condensed:wght@700&display=swap" rel="stylesheet">
+    
+    <link rel="stylesheet" href="color.css">
+    <link rel="stylesheet" href="design-system.css">
+
+    <style>
+        /* Estilos de la guía técnica */
+        .unav-techSummary { border-left: 4px solid var(--unav-rojo-600, #b91c1c); }
+        .unav-sectionTitle { 
+            color: var(--unav-black-800, #1f2937); 
+            font-weight: 700; 
+            margin-bottom: 2rem; 
+            border-bottom: 2px solid #eee; 
+            padding-bottom: 0.5rem; 
+            margin-top: 3rem; 
+        }
+
+        /* =========================================
+           COMPONENTE: NOTICIAS (unav-newsCard)
+           ========================================= */
+        :root {
+            --unav-primary: #000000;
+            --unav-transition: all 0.5s cubic-bezier(0.165, 0.84, 0.44, 1);
+        }
+
+        .unav-newsCard {
+            border: none; 
+            background: transparent; 
+            height: 100%; 
+            display: flex; 
+            flex-direction: column;
+            opacity: 0; 
+            transform: translateY(20px); 
+            transition: opacity 0.6s ease-out, transform 0.6s ease-out;
+        }
+        
+        .unav-newsCard.is-visible { 
+            opacity: 1; 
+            transform: translateY(0); 
+        }
+
+        .unav-imgContainer { 
+            position: relative; 
+            overflow: hidden; 
+            margin-bottom: 1.5rem; 
+            aspect-ratio: 16 / 10; 
+            border-radius: 0; 
+        }
+        
+        .unav-imgContainer img { 
+            width: 100%; 
+            height: 100%; 
+            object-fit: cover; 
+            transition: var(--unav-transition); 
+        }
+        
+        .unav-newsCard:hover .unav-imgContainer img { 
+            transform: scale(1.05); 
+        }
+
+        .unav-date { 
+            font-family: 'Roboto', sans-serif;
+            font-weight: 700; 
+            font-size: 0.85rem; 
+            margin-bottom: 0.5rem; 
+            text-transform: uppercase; 
+            color: var(--unav-black-500, #6b7280);
+            letter-spacing: 0.5px;
+        }
+        
+        /* Flex-grow: 1 asegura que el título empuje el enlace hacia abajo */
+        .unav-title { 
+            font-family: 'Roboto', sans-serif;
+            font-size: 1.4rem; 
+            font-weight: 400; 
+            line-height: 1.3; 
+            margin-bottom: 1.5rem; 
+            flex-grow: 1; 
+        }
+
+        .unav-title a {
+            color: var(--unav-primary);
+            text-decoration: none;
+            transition: var(--unav-transition);
+        }
+
+        .unav-title a:hover {
+            text-decoration: underline;
+        }
+        
+        /* =========================================
+           INTEGRACIÓN: ENLACE FLECHA OFICIAL
+           ========================================= */
+        .unav-link {
+            color: #000000; 
+            text-decoration: none;
+            font-family: 'Roboto Black', 'Roboto', sans-serif;
+            font-weight: 400;
+            font-size: 18px;
+            letter-spacing: 0.5px;
+            display: inline-flex;
+            align-items: center;
+            transition: opacity 0.3s ease;
+            padding: 0.5rem 0;
+            white-space: nowrap;
+            align-self: flex-start;
+        }
+
+        .unav-link:hover { opacity: 0.7; }
+
+        .unav-arrowWrapper {
+            position: relative;
+            display: inline-block;
+            width: 35px;
+            height: 12px;
+            overflow: hidden;
+            margin-right: 10px;
+            vertical-align: middle;
+        }
+
+        .unav-arrow, .unav-arrowClone {
+            position: absolute;
+            top: 50%;
+            width: 30px; 
+            height: 1.5px;
+            background-color: currentColor; 
+        }
+
+        .unav-arrow { left: 0; transform: translateY(-50%); }
+        .unav-arrowClone { left: -70px; transform: translateY(-50%); }
+
+        .unav-arrow::after, .unav-arrowClone::after {
+            content: '';
+            position: absolute;
+            right: 0;
+            top: 50%;
+            width: 6px;
+            height: 6px;
+            border-top: 1.5px solid currentColor;
+            border-right: 1.5px solid currentColor;
+            transform: translateY(-50%) rotate(45deg);
+        }
+
+        @keyframes unav-arrowConveyor {
+            0% { transform: translateY(-50%) translateX(0); }
+            100% { transform: translateY(-50%) translateX(70px); }
+        }
+
+        .unav-link:hover .unav-arrow,
+        .unav-link:hover .unav-arrowClone {
+            animation: unav-arrowConveyor 1.2s linear infinite;
+        }
+
+        /* Utilidad para escalar tamaños de fuente en componentes más pequeños */
+        .unav-titleSm { font-size: 1.1rem; }
+        .unav-linkSm { font-size: 14px; }
+    </style>
+</head>
+<body class="bg-light" itemscope itemtype="https://schema.org/WebPage">
+
+    <nav class="navbar navbar-light bg-white border-bottom py-3 sticky-top">
+        <div class="container-xl">
+            <a href="indice.html" class="btn btn-outline-secondary btn-sm rounded-pill px-3 fw-bold">
+                <i class="bi bi-arrow-left me-1"></i> Volver al Índice
+            </a>
+            <span class="navbar-text fw-bold text-dark mb-0">Design System UNAV</span>
+        </div>
+    </nav>
+
+    <main class="container-xl py-5" itemprop="mainContentOfPage">
+        
+        <header class="text-center mb-5 border-bottom pb-4">
+            <h1 class="display-5 fw-bold mb-3" itemprop="name">Listado de Noticias</h1>
+            <p class="lead text-muted" itemprop="description">Tarjetas de contenido editorial responsivas con microinteracciones y schema.org integrados en el Grid.</p>
+            
+            <div class="unav-techSummary bg-white p-4 text-start mt-4 rounded shadow-sm border mx-auto" style="max-width: 900px;">
+                <h2 class="h5 fw-bold mb-3 text-dark"><i class="bi bi-newspaper me-2"></i>Resumen Técnico y Funcional</h2>
+                <p class="small text-muted mb-4">
+                    Este componente implementa el ecosistema de noticias estructuradas en <strong>6 variantes de grid adaptativas</strong>. Se ha optimizado para <strong>SEO/GEO</strong> mediante el marcado semántico <code>schema.org/NewsArticle</code> y utiliza convenciones de clases CSS en <code>camelCase</code> (ej. <code>.unav-newsCard</code>).
+                </p>
+                <div class="row g-3 small">
+                    <div class="col-md-6">
+                        <ul class="list-unstyled mb-0">
+                            <li class="mb-2"><strong>Microinteracciones y Enlaces:</strong> El título de la noticia es un enlace que se subraya al hacer hover. El subcomponente "Enlace Flecha" se presenta en negro corporativo (<code>color: #000</code>) y cuenta con una animación "conveyor" en <em>infinite loop</em>.</li>
+                            <li class="mb-2"><strong>Flexbox avanzado:</strong> Gracias al uso de <code>flex-grow: 1</code> en el título, las tarjetas absorben diferencias drásticas de longitud de texto manteniendo siempre la flecha alineada al fondo.</li>
+                        </ul>
+                    </div>
+                    <div class="col-md-6 border-start ps-4">
+                        <ul class="list-unstyled mb-0">
+                            <li class="mb-2"><strong>Sistema de Grid Bootstrap:</strong> Las 6 variantes demuestran la flexibilidad del componente utilizando utilidades nativas de Bootstrap permitiendo alojar desde 2 hasta 5 noticias por fila con perfecta responsividad.</li>
+                            <li class="mb-2"><strong>Rendimiento Visual:</strong> Se incluye un script con <code>IntersectionObserver</code> que genera una entrada animada en cascada (<em>stagger</em>) para suavizar la carga cognitiva al hacer scroll.</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </header>
+
+        <section class="bg-white p-4 p-md-5 rounded shadow-sm border mb-5">
+            <h3 class="unav-sectionTitle mt-0">01. Variante A: Ancho Total (12 Col) - Prueba de asimetría de texto</h3>
+            <p class="text-muted small mb-4">Observa cómo el enlace inferior se alinea perfectamente en la base de todas las tarjetas aunque los títulos tengan longitudes muy dispares.</p>
+            <div class="row g-5">
+                <div class="col-12 col-md-4">
+                    <article class="unav-newsCard" itemscope itemtype="https://schema.org/NewsArticle">
+                        <div class="unav-imgContainer"><img src="https://picsum.photos/800/500?random=1" alt="Investigación" loading="lazy" itemprop="image"></div>
+                        <p class="unav-date" itemprop="datePublished">15 Abr. 2026</p>
+                        <h3 class="unav-title" itemprop="headline">
+                            <a href="#" itemprop="url">El nuevo Campus abrirá en octubre</a> </h3>
+                        <a href="#" class="unav-link" itemprop="url">
+                            <span class="unav-arrowWrapper"><span class="unav-arrow"></span><span class="unav-arrowClone"></span></span>
+                            <span>Leer más</span>
+                        </a>
+                    </article>
+                </div>
+                <div class="col-12 col-md-4">
+                    <article class="unav-newsCard" itemscope itemtype="https://schema.org/NewsArticle">
+                        <div class="unav-imgContainer"><img src="https://picsum.photos/800/500?random=2" alt="Ciencia" loading="lazy" itemprop="image"></div>
+                        <p class="unav-date" itemprop="datePublished">14 Abr. 2026</p>
+                        <h3 class="unav-title" itemprop="headline">
+                            <a href="#" itemprop="url">La Universidad lidera un nuevo consorcio internacional y multidisciplinar para el estudio clínico avanzado de enfermedades neurodegenerativas y su impacto socioeconómico en poblaciones envejecidas a lo largo de la próxima década</a> </h3>
+                        <a href="#" class="unav-link" itemprop="url">
+                            <span class="unav-arrowWrapper"><span class="unav-arrow"></span><span class="unav-arrowClone"></span></span>
+                            <span>Leer más</span>
+                        </a>
+                    </article>
+                </div>
+                <div class="col-12 col-md-4">
+                    <article class="unav-newsCard" itemscope itemtype="https://schema.org/NewsArticle">
+                        <div class="unav-imgContainer"><img src="https://picsum.photos/800/500?random=3" alt="Becas" loading="lazy" itemprop="image"></div>
+                        <p class="unav-date" itemprop="datePublished">12 Abr. 2026</p>
+                        <h3 class="unav-title" itemprop="headline">
+                            <a href="#" itemprop="url">Becas Alumni 2026</a> </h3>
+                        <a href="#" class="unav-link" itemprop="url">
+                            <span class="unav-arrowWrapper"><span class="unav-arrow"></span><span class="unav-arrowClone"></span></span>
+                            <span>Leer más</span>
+                        </a>
+                    </article>
+                </div>
+            </div>
+        </section>
+
+        <section class="bg-white p-4 p-md-5 rounded shadow-sm border mb-5">
+            <h3 class="unav-sectionTitle mt-0">02. Variante B: Medio Ancho (Offset 6) - 2 Noticias</h3>
+            <div class="row">
+                <div class="col-lg-6 offset-lg-6">
+                    <div class="row g-4">
+                        <div class="col-12 col-sm-6">
+                            <article class="unav-newsCard" itemscope itemtype="https://schema.org/NewsArticle">
+                                <div class="unav-imgContainer"><img src="https://picsum.photos/800/500?random=4" alt="Diseño" loading="lazy" itemprop="image"></div>
+                                <p class="unav-date" itemprop="datePublished">09 Abr. 2026</p>
+                                <h3 class="unav-title unav-titleSm" itemprop="headline">
+                                    <a href="#" itemprop="url">Diseño y vanguardia en la nueva sede de Madrid</a>
+                                </h3>
+                                <a href="#" class="unav-link unav-linkSm" itemprop="url">
+                                    <span class="unav-arrowWrapper"><span class="unav-arrow"></span><span class="unav-arrowClone"></span></span>
+                                    <span>Leer artículo</span>
+                                </a>
+                            </article>
+                        </div>
+                        <div class="col-12 col-sm-6">
+                            <article class="unav-newsCard" itemscope itemtype="https://schema.org/NewsArticle">
+                                <div class="unav-imgContainer"><img src="https://picsum.photos/800/500?random=5" alt="FIR" loading="lazy" itemprop="image"></div>
+                                <p class="unav-date" itemprop="datePublished">08 Abr. 2026</p>
+                                <h3 class="unav-title unav-titleSm" itemprop="headline">
+                                    <a href="#" itemprop="url">Éxito rotundo en la última convocatoria del examen FIR</a>
+                                </h3>
+                                <a href="#" class="unav-link unav-linkSm" itemprop="url">
+                                    <span class="unav-arrowWrapper"><span class="unav-arrow"></span><span class="unav-arrowClone"></span></span>
+                                    <span>Leer artículo</span>
+                                </a>
+                            </article>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section class="bg-white p-4 p-md-5 rounded shadow-sm border mb-5">
+            <h3 class="unav-sectionTitle mt-0">03. Variante C: Ancho Total (12 Col) - 5 Noticias</h3>
+            <div class="row row-cols-1 row-cols-sm-2 row-cols-md-3 row-cols-lg-5 g-4">
+                <div class="col">
+                    <article class="unav-newsCard" itemscope itemtype="https://schema.org/NewsArticle">
+                        <div class="unav-imgContainer"><img src="https://picsum.photos/800/500?random=6" alt="Noticia 1" loading="lazy" itemprop="image"></div>
+                        <p class="unav-date" itemprop="datePublished">05 Abr. 2026</p>
+                        <h3 class="unav-title unav-titleSm" itemprop="headline">
+                            <a href="#" itemprop="url">Avances en biotecnología aplicada a cultivos</a>
+                        </h3>
+                        <a href="#" class="unav-link unav-linkSm" itemprop="url">
+                            <span class="unav-arrowWrapper"><span class="unav-arrow"></span><span class="unav-arrowClone"></span></span>
+                            <span>Leer</span>
+                        </a>
+                    </article>
+                </div>
+                <div class="col">
+                    <article class="unav-newsCard" itemscope itemtype="https://schema.org/NewsArticle">
+                        <div class="unav-imgContainer"><img src="https://picsum.photos/800/500?random=7" alt="Noticia 2" loading="lazy" itemprop="image"></div>
+                        <p class="unav-date" itemprop="datePublished">04 Abr. 2026</p>
+                        <h3 class="unav-title unav-titleSm" itemprop="headline">
+                            <a href="#" itemprop="url">Nuevos seminarios de posgrado internacional</a>
+                        </h3>
+                        <a href="#" class="unav-link unav-linkSm" itemprop="url">
+                            <span class="unav-arrowWrapper"><span class="unav-arrow"></span><span class="unav-arrowClone"></span></span>
+                            <span>Leer</span>
+                        </a>
+                    </article>
+                </div>
+                <div class="col">
+                    <article class="unav-newsCard" itemscope itemtype="https://schema.org/NewsArticle">
+                        <div class="unav-imgContainer"><img src="https://picsum.photos/800/500?random=8" alt="Noticia 3" loading="lazy" itemprop="image"></div>
+                        <p class="unav-date" itemprop="datePublished">02 Abr. 2026</p>
+                        <h3 class="unav-title unav-titleSm" itemprop="headline">
+                            <a href="#" itemprop="url">Acuerdo marco con universidades europeas</a>
+                        </h3>
+                        <a href="#" class="unav-link unav-linkSm" itemprop="url">
+                            <span class="unav-arrowWrapper"><span class="unav-arrow"></span><span class="unav-arrowClone"></span></span>
+                            <span>Leer</span>
+                        </a>
+                    </article>
+                </div>
+                <div class="col">
+                    <article class="unav-newsCard" itemscope itemtype="https://schema.org/NewsArticle">
+                        <div class="unav-imgContainer"><img src="https://picsum.photos/800/500?random=9" alt="Noticia 4" loading="lazy" itemprop="image"></div>
+                        <p class="unav-date" itemprop="datePublished">01 Abr. 2026</p>
+                        <h3 class="unav-title unav-titleSm" itemprop="headline">
+                            <a href="#" itemprop="url">Programa de voluntariado verano 2026</a>
+                        </h3>
+                        <a href="#" class="unav-link unav-linkSm" itemprop="url">
+                            <span class="unav-arrowWrapper"><span class="unav-arrow"></span><span class="unav-arrowClone"></span></span>
+                            <span>Leer</span>
+                        </a>
+                    </article>
+                </div>
+                <div class="col">
+                    <article class="unav-newsCard" itemscope itemtype="https://schema.org/NewsArticle">
+                        <div class="unav-imgContainer"><img src="https://picsum.photos/800/500?random=10" alt="Noticia 5" loading="lazy" itemprop="image"></div>
+                        <p class="unav-date" itemprop="datePublished">30 Mar. 2026</p>
+                        <h3 class="unav-title unav-titleSm" itemprop="headline">
+                            <a href="#" itemprop="url">Resultados de las ligas de debate universitario</a>
+                        </h3>
+                        <a href="#" class="unav-link unav-linkSm" itemprop="url">
+                            <span class="unav-arrowWrapper"><span class="unav-arrow"></span><span class="unav-arrowClone"></span></span>
+                            <span>Leer</span>
+                        </a>
+                    </article>
+                </div>
+            </div>
+        </section>
+
+        <section class="bg-white p-4 p-md-5 rounded shadow-sm border mb-5">
+            <h3 class="unav-sectionTitle mt-0">04. Variante D: Ancho Total (12 Col) - Textos mixtos</h3>
+            <div class="row g-4">
+                <div class="col-12 col-md-6 col-lg-3">
+                    <article class="unav-newsCard" itemscope itemtype="https://schema.org/NewsArticle">
+                        <div class="unav-imgContainer"><img src="https://picsum.photos/800/500?random=11" alt="Noticia 6" loading="lazy" itemprop="image"></div>
+                        <p class="unav-date" itemprop="datePublished">28 Mar. 2026</p>
+                        <h3 class="unav-title unav-titleSm" itemprop="headline">
+                            <a href="#" itemprop="url">Inauguración de arte</a> </h3>
+                        <a href="#" class="unav-link unav-linkSm" itemprop="url">
+                            <span class="unav-arrowWrapper"><span class="unav-arrow"></span><span class="unav-arrowClone"></span></span>
+                            <span>Ver detalles</span>
+                        </a>
+                    </article>
+                </div>
+                <div class="col-12 col-md-6 col-lg-3">
+                    <article class="unav-newsCard" itemscope itemtype="https://schema.org/NewsArticle">
+                        <div class="unav-imgContainer"><img src="https://picsum.photos/800/500?random=12" alt="Noticia 7" loading="lazy" itemprop="image"></div>
+                        <p class="unav-date" itemprop="datePublished">26 Mar. 2026</p>
+                        <h3 class="unav-title unav-titleSm" itemprop="headline">
+                            <a href="#" itemprop="url">El acuerdo estratégico permitirá incorporar a más de 300 estudiantes anuales en programas de prácticas inmersivas en más de 40 empresas tecnológicas internacionales de primer nivel</a> </h3>
+                        <a href="#" class="unav-link unav-linkSm" itemprop="url">
+                            <span class="unav-arrowWrapper"><span class="unav-arrow"></span><span class="unav-arrowClone"></span></span>
+                            <span>Ver detalles</span>
+                        </a>
+                    </article>
+                </div>
+                <div class="col-12 col-md-6 col-lg-3">
+                    <article class="unav-newsCard" itemscope itemtype="https://schema.org/NewsArticle">
+                        <div class="unav-imgContainer"><img src="https://picsum.photos/800/500?random=13" alt="Noticia 8" loading="lazy" itemprop="image"></div>
+                        <p class="unav-date" itemprop="datePublished">25 Mar. 2026</p>
+                        <h3 class="unav-title unav-titleSm" itemprop="headline">
+                            <a href="#" itemprop="url">Premio nacional de robótica</a> </h3>
+                        <a href="#" class="unav-link unav-linkSm" itemprop="url">
+                            <span class="unav-arrowWrapper"><span class="unav-arrow"></span><span class="unav-arrowClone"></span></span>
+                            <span>Ver detalles</span>
+                        </a>
+                    </article>
+                </div>
+                <div class="col-12 col-md-6 col-lg-3">
+                    <article class="unav-newsCard" itemscope itemtype="https://schema.org/NewsArticle">
+                        <div class="unav-imgContainer"><img src="https://picsum.photos/800/500?random=14" alt="Noticia 9" loading="lazy" itemprop="image"></div>
+                        <p class="unav-date" itemprop="datePublished">23 Mar. 2026</p>
+                        <h3 class="unav-title unav-titleSm" itemprop="headline">
+                            <a href="#" itemprop="url">Ciclo de conferencias sobre el impacto de la sostenibilidad climática en el urbanismo moderno de las ciudades inteligentes</a> </h3>
+                        <a href="#" class="unav-link unav-linkSm" itemprop="url">
+                            <span class="unav-arrowWrapper"><span class="unav-arrow"></span><span class="unav-arrowClone"></span></span>
+                            <span>Ver detalles</span>
+                        </a>
+                    </article>
+                </div>
+            </div>
+        </section>
+
+        <section class="bg-white p-4 p-md-5 rounded shadow-sm border mb-5">
+            <h3 class="unav-sectionTitle mt-0">05. Variante E: Ancho Medio (6 Col) - 3 Noticias</h3>
+            <div class="row">
+                <div class="col-lg-6">
+                    <div class="row g-3">
+                        <div class="col-12 col-sm-4">
+                            <article class="unav-newsCard" itemscope itemtype="https://schema.org/NewsArticle">
+                                <div class="unav-imgContainer"><img src="https://picsum.photos/800/500?random=15" alt="Noticia pequeña" loading="lazy" itemprop="image"></div>
+                                <p class="unav-date" style="font-size: 0.75rem;" itemprop="datePublished">20 Mar. 2026</p>
+                                <h3 class="unav-title" style="font-size: 1rem;" itemprop="headline">
+                                    <a href="#" itemprop="url">Actualización del plan de estudios</a>
+                                </h3>
+                            </article>
+                        </div>
+                        <div class="col-12 col-sm-4">
+                            <article class="unav-newsCard" itemscope itemtype="https://schema.org/NewsArticle">
+                                <div class="unav-imgContainer"><img src="https://picsum.photos/800/500?random=16" alt="Noticia pequeña" loading="lazy" itemprop="image"></div>
+                                <p class="unav-date" style="font-size: 0.75rem;" itemprop="datePublished">18 Mar. 2026</p>
+                                <h3 class="unav-title" style="font-size: 1rem;" itemprop="headline">
+                                    <a href="#" itemprop="url">Foro de emprendimiento social</a>
+                                </h3>
+                            </article>
+                        </div>
+                        <div class="col-12 col-sm-4">
+                            <article class="unav-newsCard" itemscope itemtype="https://schema.org/NewsArticle">
+                                <div class="unav-imgContainer"><img src="https://picsum.photos/800/500?random=17" alt="Noticia pequeña" loading="lazy" itemprop="image"></div>
+                                <p class="unav-date" style="font-size: 0.75rem;" itemprop="datePublished">15 Mar. 2026</p>
+                                <h3 class="unav-title" style="font-size: 1rem;" itemprop="headline">
+                                    <a href="#" itemprop="url">Nueva biblioteca digital abierta</a>
+                                </h3>
+                            </article>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section class="bg-white p-4 p-md-5 rounded shadow-sm border mb-5">
+            <h3 class="unav-sectionTitle mt-0">06. Variante F: Ancho Total (12 Col) - 2 Noticias</h3>
+            <div class="row g-5">
+                <div class="col-12 col-md-6">
+                    <article class="unav-newsCard" itemscope itemtype="https://schema.org/NewsArticle">
+                        <div class="unav-imgContainer" style="aspect-ratio: 16 / 9;"><img src="https://picsum.photos/1200/600?random=18" alt="Noticia grande" loading="lazy" itemprop="image"></div>
+                        <p class="unav-date" itemprop="datePublished">10 Mar. 2026</p>
+                        <h3 class="unav-title" style="font-size: 1.8rem;" itemprop="headline">
+                            <a href="#" itemprop="url">Gala anual de entrega de premios a la excelencia académica y deportiva</a>
+                        </h3>
+                        <a href="#" class="unav-link" itemprop="url">
+                            <span class="unav-arrowWrapper"><span class="unav-arrow"></span><span class="unav-arrowClone"></span></span>
+                            <span>Leer reportaje completo</span>
+                        </a>
+                    </article>
+                </div>
+                <div class="col-12 col-md-6">
+                    <article class="unav-newsCard" itemscope itemtype="https://schema.org/NewsArticle">
+                        <div class="unav-imgContainer" style="aspect-ratio: 16 / 9;"><img src="https://picsum.photos/1200/600?random=19" alt="Noticia grande" loading="lazy" itemprop="image"></div>
+                        <p class="unav-date" itemprop="datePublished">05 Mar. 2026</p>
+                        <h3 class="unav-title" style="font-size: 1.8rem;" itemprop="headline">
+                            <a href="#" itemprop="url">Entrevista exclusiva con el nuevo rector tras su nombramiento oficial</a>
+                        </h3>
+                        <a href="#" class="unav-link" itemprop="url">
+                            <span class="unav-arrowWrapper"><span class="unav-arrow"></span><span class="unav-arrowClone"></span></span>
+                            <span>Leer reportaje completo</span>
+                        </a>
+                    </article>
+                </div>
+            </div>
+        </section>
+
+    </main>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bundle.min.js"></script>
+    <script>
+        document.addEventListener("DOMContentLoaded", () => {
+            const observer = new IntersectionObserver((entries) => {
+                entries.forEach((entry, index) => {
+                    if (entry.isIntersecting) {
+                        setTimeout(() => {
+                            entry.target.classList.add('is-visible');
+                        }, index * 100); 
+                        observer.unobserve(entry.target);
+                    }
+                });
+            }, { threshold: 0.1 });
+
+            document.querySelectorAll('.unav-newsCard').forEach((card) => {
+                observer.observe(card);
+            });
+        });
+    </script>
+</body>
+</html>

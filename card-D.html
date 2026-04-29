@@ -1,0 +1,382 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Card Tipo D | Design System UNAV</title>
+    
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.1/font/bootstrap-icons.css">
+    <link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@24,400,0,0" rel="stylesheet" />
+    
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@100;300;400;500;700;900&family=Roboto+Condensed:wght@700&display=swap" rel="stylesheet">
+    
+    <link rel="stylesheet" href="color.css">
+    <link rel="stylesheet" href="design-system.css">
+
+    <style>
+        /* =========================================
+           ESTILOS BASE DE LA DOCUMENTACIÓN
+           ========================================= */
+        body { font-family: 'Roboto', sans-serif; background-color: #f8f9fa; color: #111111; }
+        .unav-techSummary { border-left: 4px solid #dc2626; }
+        .unav-sectionTitle { 
+            color: #1f2937; 
+            font-weight: 700; 
+            margin-bottom: 2rem; 
+            border-bottom: 2px solid #eee; 
+            padding-bottom: 0.5rem; 
+            margin-top: 3rem; 
+        }
+
+        /* =========================================
+           COMPONENTES: ETIQUETAS (.unav-tag)
+           ========================================= */
+        .unav-tag {
+            display: inline-flex; align-items: center; justify-content: center;
+            padding: 4px 10px; border-radius: 6px; font-weight: 500; font-size: 12px;
+            white-space: nowrap; letter-spacing: 0.3px; text-decoration: none;
+        }
+        .unav-tagRojo       { background-color: var(--unav-rojo-100); color: var(--unav-rojo-800); }
+        .unav-tagBlueDark   { background-color: var(--unav-b-dark-100); color: var(--unav-b-dark-800); }
+        .unav-tagMoss       { background-color: var(--unav-moss-100); color: var(--unav-moss-800); }
+        .unav-tagPurple     { background-color: var(--unav-purple-100); color: var(--unav-purple-800); }
+        .unav-tagOrange     { background-color: var(--unav-orange-100); color: var(--unav-orange-800); }
+        .unav-tagYellow     { background-color: var(--unav-yellow-100); color: var(--unav-yellow-800); }
+        .unav-tagGrey       { background-color: var(--unav-grey-100); color: var(--unav-grey-800); }
+        /* Variante para Overlay en la foto */
+        .unav-tagDarkContext { background-color: rgba(255,255,255,0.25); color: #ffffff; backdrop-filter: blur(8px); }
+
+        /* =========================================
+           COMPONENTES: ACCIONES (Botones y Links)
+           ========================================= */
+        
+        /* 1. Botón Primario (Geométrico y sólido) */
+        .unav-botonPrimario {
+            font-family: 'Roboto Condensed', sans-serif; 
+            font-weight: 700; font-size: 14px; text-transform: uppercase; 
+            letter-spacing: 1.2px; padding: 0.8rem 2rem;
+            display: inline-flex; align-items: center; justify-content: center;
+            gap: 0.6rem; text-decoration: none; transition: all 0.25s ease;
+            width: 100%; cursor: pointer;
+            
+            background-color: var(--unav-btnBg, #ffffff); 
+            color: var(--unav-btnText, #000000);
+            outline: 1px solid var(--unav-btnBorder, #000000);
+            border: 1px solid transparent;
+        }
+        .unav-botonPrimario:hover { 
+            background-color: var(--unav-btnHoverBg, #000000); 
+            color: var(--unav-btnHoverText, #ffffff) !important;
+            outline-color: var(--unav-btnHoverBorder, var(--unav-btnHoverBg)); 
+        }
+        .unav-botonHoverInnerBorder:hover { box-shadow: inset 0 0 0 1px #ffffff; }
+
+        /* 2. Botón Secundario (Estilo Píldora) */
+        .unav-botonSecundario {
+            font-family: 'Roboto Condensed', sans-serif; font-weight: 700; font-size: 13px;
+            text-transform: uppercase; letter-spacing: 0.8px; padding: 0.6rem 1.2rem;
+            display: inline-flex; align-items: center; justify-content: center;
+            gap: 0.5rem; border-radius: 50px; text-decoration: none;
+            transition: all 0.2s ease-in-out; background: transparent;
+            color: var(--unav-btnColorSource); border: 1.5px solid var(--unav-btnColorSource);
+        }
+        .unav-botonSecundario:hover { 
+            background-color: var(--unav-btnColorSource); 
+            color: var(--unav-btnHoverText, #ffffff) !important; 
+        }
+
+        /* 3. Enlace Flecha */
+        .unav-link {
+            text-decoration: none; font-weight: 700; font-size: 16px;
+            display: inline-flex; align-items: center; transition: opacity 0.3s ease;
+        }
+        .unav-link:hover { opacity: 0.7; }
+        .unav-arrowWrapper {
+            position: relative; display: inline-block; width: 35px; height: 12px;
+            overflow: hidden; margin-right: 10px; vertical-align: middle;
+        }
+        .unav-arrow, .unav-arrowClone {
+            position: absolute; top: 50%; width: 30px; height: 1.5px; background-color: currentColor; 
+        }
+        .unav-arrow { left: 0; transform: translateY(-50%); }
+        .unav-arrowClone { left: -70px; transform: translateY(-50%); }
+        .unav-arrow::after, .unav-arrowClone::after {
+            content: ''; position: absolute; right: 0; top: 50%; width: 6px; height: 6px;
+            border-top: 1.5px solid currentColor; border-right: 1.5px solid currentColor;
+            transform: translateY(-50%) rotate(45deg);
+        }
+        @keyframes unav-arrowConveyor {
+            0% { transform: translateY(-50%) translateX(0); }
+            100% { transform: translateY(-50%) translateX(70px); }
+        }
+        .unav-link:hover .unav-arrow, .unav-link:hover .unav-arrowClone {
+            animation: unav-arrowConveyor 1.2s linear infinite;
+        }
+
+        /* =========================================
+           TARJETA TIPO D (Estructura Principal)
+           ========================================= */
+        .unav-cardD {
+            display: flex; flex-direction: column; height: 100%; border-radius: 12px;
+            background-color: #ffffff; border: 1px solid rgba(0,0,0,0.05);
+            box-shadow: 0 4px 6px rgba(0,0,0,0.05); transition: all 0.3s ease;
+            overflow: hidden; opacity: 0; transform: translateY(20px);
+        }
+        .unav-cardD.unav-isVisible { opacity: 1; transform: translateY(0); }
+        .unav-cardD:hover { transform: translateY(-8px); box-shadow: 0 15px 30px rgba(0,0,0,0.1); }
+
+        .unav-cardImageContainer {
+            position: relative; width: 100%; height: 220px; overflow: hidden;
+            background-color: #e9ecef;
+        }
+        .unav-cardImg {
+            width: 100%; height: 100%; object-fit: cover; transition: transform 0.6s ease;
+        }
+        .unav-cardD:hover .unav-cardImg { transform: scale(1.08); }
+
+        /* Overlay para Variante 1 */
+        .unav-cardOverlay {
+            position: absolute; bottom: 0; left: 0; width: 100%; padding: 1.5rem; z-index: 2;
+            background: linear-gradient(to top, rgba(0,0,0,0.95) 0%, rgba(0,0,0,0) 100%);
+            color: #ffffff;
+        }
+        .unav-cardOverlay .unav-cardTitle { color: #ffffff !important; margin-bottom: 0; }
+
+        .unav-cardBody { padding: 1.5rem; display: flex; flex-direction: column; flex-grow: 1; }
+        .unav-cardTags { display: flex; flex-wrap: wrap; gap: 0.5rem; margin-bottom: 1rem; }
+        .unav-cardTitle { font-size: 1.35rem; font-weight: 700; color: #111; margin-bottom: 0.8rem; line-height: 1.2; }
+        .unav-cardText { font-size: 0.95rem; color: #555; line-height: 1.6; margin-bottom: 1.5rem; flex-grow: 1; }
+        .unav-cardAction { margin-top: auto; }
+
+        /* MODIFICADOR: ALINEACIÓN CENTRADA */
+        .unav-alignCenter { text-align: center; }
+        .unav-alignCenter .unav-cardTags, 
+        .unav-alignCenter .unav-cardAction { justify-content: center; display: flex; }
+
+        /* MODIFICADOR: FONDO OSCURO */
+        .unav-cardD.unav-cardDark { border: none; color: #ffffff; }
+        .unav-cardD.unav-cardDark .unav-cardTitle { color: #ffffff !important; }
+        .unav-cardD.unav-cardDark .unav-cardText { color: rgba(255,255,255,0.85); }
+        .unav-cardD.unav-cardDark .unav-link { color: #ffffff !important; }
+
+    </style>
+</head>
+<body class="bg-light" itemscope itemtype="https://schema.org/WebPage">
+
+    <nav class="navbar navbar-light bg-white border-bottom py-3 sticky-top">
+        <div class="container-lg">
+            <a href="indice.html" class="btn btn-outline-secondary btn-sm rounded-pill px-3 fw-bold">
+                <i class="bi bi-arrow-left me-1"></i> Volver al Índice
+            </a>
+            <span class="navbar-text fw-bold text-dark mb-0">Design System UNAV</span>
+        </div>
+    </nav>
+
+    <main class="container-lg py-5" itemprop="mainContentOfPage">
+        
+        <header class="text-center mb-5 border-bottom pb-4">
+            <h1 class="display-5 fw-bold mb-3" itemprop="name">Card Tipo D</h1>
+            <p class="lead text-muted" itemprop="description">Componente visual destacado con imagen superior, soporte multi-etiqueta y contenedor flexible de acciones.</p>
+            
+            <div class="unav-techSummary bg-white p-4 text-start mt-4 rounded shadow-sm border mx-auto" style="max-width: 900px;">
+                <h2 class="h5 fw-bold mb-3 text-dark"><i class="bi bi-gear-fill me-2"></i>Resumen Técnico y Funcional</h2>
+                <p class="small text-muted mb-4">
+                    La Card Tipo D es el componente de mayor impacto visual del sistema. Prescinde de iconografía en favor de una imagen de cabecera con ratio fijo y animación de zoom (1.08x). Admite dos flujos de lectura (Overlay y Standard) e integra fluidamente los componentes <code>.unav-botonPrimario</code>, <code>.unav-botonSecundario</code> y <code>.unav-link</code> ajustando variables CSS para accesibilidad.
+                </p>
+                <div class="row g-3 small">
+                    <div class="col-md-6">
+                        <ul class="list-unstyled mb-0">
+                            <li class="mb-2"><strong>Clase Principal:</strong> <code>.unav-cardD</code></li>
+                            <li class="mb-2"><strong>Tipografía:</strong> <code>Roboto</code> 1.35rem (Títulos), 0.95rem (Texto)</li>
+                            <li><strong>Modificadores:</strong> <code>.unav-alignCenter</code>, <code>.unav-cardDark</code></li>
+                        </ul>
+                    </div>
+                    <div class="col-md-6 border-start ps-4">
+                        <ul class="list-unstyled mb-0">
+                            <li class="mb-2"><strong>Estructura Flex:</strong> <code>height: 100%</code>, auto-alineación inferior.</li>
+                            <li class="mb-2"><strong>Imágenes:</strong> Contenedor <code>overflow: hidden</code> de 220px.</li>
+                            <li><strong>Marcado:</strong> Schema.org <code>Service</code> o <code>Course</code>.</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </header>
+
+        <section class="bg-white p-4 p-md-5 rounded shadow-sm border mb-5">
+            <h3 class="unav-sectionTitle mt-0">1. Visualización: Texto sobre Imagen (Overlay)</h3>
+            <p class="small text-muted mb-4">Uso del contenedor <code>.unav-cardOverlay</code> para montar etiquetas y título directamente sobre la fotografía mediante un gradiente oscuro que asegura contraste.</p>
+            
+            <div class="row g-4" itemscope itemtype="https://schema.org/ItemList">
+                
+                <div class="col-12 col-md-4" itemprop="itemListElement" itemscope itemtype="https://schema.org/ListItem">
+                    <meta itemprop="position" content="1" />
+                    <article class="unav-cardD" itemprop="item" itemscope itemtype="https://schema.org/Service">
+                        <div class="unav-cardImageContainer">
+                            <img src="https://picsum.photos/id/180/800/500" class="unav-cardImg" alt="Investigación">
+                            <div class="unav-cardOverlay">
+                                <div class="unav-cardTags">
+                                    <span class="unav-tag unav-tagDarkContext">Salud</span>
+                                    <span class="unav-tag unav-tagDarkContext">Presencial</span>
+                                </div>
+                                <h4 class="unav-cardTitle" itemprop="name">Facultad de Medicina</h4>
+                            </div>
+                        </div>
+                        <div class="unav-cardBody">
+                            <p class="unav-cardText" itemprop="description">Prácticas clínicas desde el primer día en un entorno de excelencia internacional y tecnología punta.</p>
+                            <div class="unav-cardAction">
+                                <a href="#" class="unav-botonPrimario unav-botonHoverInnerBorder" style="--unav-btnBg: var(--unav-rojo-600, #D32F2F); --unav-btnText: #fff; --unav-btnBorder: var(--unav-rojo-600, #D32F2F); --unav-btnHoverBg: var(--unav-rojo-800, #B71C1C);">
+                                    VER GRADO
+                                </a>
+                            </div>
+                        </div>
+                    </article>
+                </div>
+
+                <div class="col-12 col-md-4" itemprop="itemListElement" itemscope itemtype="https://schema.org/ListItem">
+                    <meta itemprop="position" content="2" />
+                    <article class="unav-cardD unav-alignCenter unav-cardDark" style="background-color: var(--unav-b-dark-800, #0040C1);" itemprop="item" itemscope itemtype="https://schema.org/Service">
+                        <div class="unav-cardImageContainer">
+                            <img src="https://picsum.photos/id/122/800/500" class="unav-cardImg" alt="Arquitectura">
+                            <div class="unav-cardOverlay">
+                                <div class="unav-cardTags">
+                                    <span class="unav-tag unav-tagDarkContext">Diseño</span>
+                                </div>
+                                <h4 class="unav-cardTitle" itemprop="name">Escuela de Arquitectura</h4>
+                            </div>
+                        </div>
+                        <div class="unav-cardBody">
+                            <p class="unav-cardText" itemprop="description">Crea espacios que transforman la vida de las personas uniendo técnica, arte y visión humanista.</p>
+                            <div class="unav-cardAction">
+                                <a href="#" class="unav-botonSecundario" style="--unav-btnColorSource: #ffffff; --unav-btnHoverText: var(--unav-b-dark-800, #0040C1);">
+                                    MÁS INFORMACIÓN
+                                </a>
+                            </div>
+                        </div>
+                    </article>
+                </div>
+
+                <div class="col-12 col-md-4" itemprop="itemListElement" itemscope itemtype="https://schema.org/ListItem">
+                    <meta itemprop="position" content="3" />
+                    <article class="unav-cardD" itemprop="item" itemscope itemtype="https://schema.org/Service">
+                        <div class="unav-cardImageContainer">
+                            <img src="https://picsum.photos/id/119/800/500" class="unav-cardImg" alt="Empresa">
+                            <div class="unav-cardOverlay">
+                                <div class="unav-cardTags">
+                                    <span class="unav-tag unav-tagDarkContext">Negocios</span>
+                                </div>
+                                <h4 class="unav-cardTitle" itemprop="name">School of Economics</h4>
+                            </div>
+                        </div>
+                        <div class="unav-cardBody">
+                            <p class="unav-cardText" itemprop="description">Lidera el cambio global con una visión ética y estratégica de la economía y la empresa.</p>
+                            <div class="unav-cardAction">
+                                <a href="#" class="unav-link" style="color: var(--unav-b-dark-800, #0040C1);">
+                                    <span class="unav-arrowWrapper"><span class="unav-arrow"></span><span class="unav-arrowClone"></span></span>
+                                    <span>Ver Facultad</span>
+                                </a>
+                            </div>
+                        </div>
+                    </article>
+                </div>
+
+            </div>
+        </section>
+
+        <section class="bg-white p-4 p-md-5 rounded shadow-sm border mb-5">
+            <h3 class="unav-sectionTitle mt-0">2. Visualización: Texto debajo de Imagen (Standard)</h3>
+            <p class="small text-muted mb-4">El contenido fluye naturalmente bajo la imagen (<code>.unav-cardBody</code>), permitiendo que la fotografía respire al 100% y recuperando las etiquetas de color corporativo sólido.</p>
+            
+            <div class="row g-4" itemscope itemtype="https://schema.org/ItemList">
+                
+                <div class="col-12 col-md-4" itemprop="itemListElement" itemscope itemtype="https://schema.org/ListItem">
+                    <meta itemprop="position" content="1" />
+                    <article class="unav-cardD unav-cardDark" style="background-color: var(--unav-moss-800, #335015);" itemprop="item" itemscope itemtype="https://schema.org/Service">
+                        <div class="unav-cardImageContainer">
+                            <img src="https://picsum.photos/id/200/800/500" class="unav-cardImg" alt="Campus">
+                        </div>
+                        <div class="unav-cardBody">
+                            <div class="unav-cardTags">
+                                <span class="unav-tag unav-tagMoss">Campus</span>
+                                <span class="unav-tag unav-tagYellow">Nuevo</span>
+                                <span class="unav-tag unav-tagGrey">Pamplona</span>
+                            </div>
+                            <h4 class="unav-cardTitle" itemprop="name">Vida Universitaria</h4>
+                            <p class="unav-cardText" itemprop="description">Descubre todas las actividades culturales, deportivas y sociales que ofrece nuestro campus.</p>
+                            <div class="unav-cardAction">
+                                <a href="#" class="unav-botonPrimario unav-botonHoverInnerBorder" style="--unav-btnBg: #ffffff; --unav-btnText: var(--unav-moss-800, #335015); --unav-btnBorder: #ffffff; --unav-btnHoverBg: rgba(255,255,255,0.9); --unav-btnHoverText: var(--unav-moss-800, #335015);">
+                                    SOLICITAR INFO
+                                </a>
+                            </div>
+                        </div>
+                    </article>
+                </div>
+
+                <div class="col-12 col-md-4" itemprop="itemListElement" itemscope itemtype="https://schema.org/ListItem">
+                    <meta itemprop="position" content="2" />
+                    <article class="unav-cardD unav-alignCenter" itemprop="item" itemscope itemtype="https://schema.org/Service">
+                        <div class="unav-cardImageContainer">
+                            <img src="https://picsum.photos/id/149/800/500" class="unav-cardImg" alt="Graduación">
+                        </div>
+                        <div class="unav-cardBody">
+                            <div class="unav-cardTags">
+                                <span class="unav-tag unav-tagPurple">Postgrado</span>
+                            </div>
+                            <h4 class="unav-cardTitle" itemprop="name">Másteres y Doctorados</h4>
+                            <p class="unav-cardText" itemprop="description">Especialízate con programas de postgrado diseñados para profesionales que buscan impacto real.</p>
+                            <div class="unav-cardAction">
+                                <a href="#" class="unav-botonSecundario" style="--unav-btnColorSource: var(--unav-purple-800, #4A1FB8); --unav-btnHoverText: #ffffff;">
+                                    EXPLORAR CATÁLOGO
+                                </a>
+                            </div>
+                        </div>
+                    </article>
+                </div>
+
+                <div class="col-12 col-md-4" itemprop="itemListElement" itemscope itemtype="https://schema.org/ListItem">
+                    <meta itemprop="position" content="3" />
+                    <article class="unav-cardD unav-cardDark" style="background-color: var(--unav-orange-800, #932F19);" itemprop="item" itemscope itemtype="https://schema.org/Service">
+                        <div class="unav-cardImageContainer">
+                            <img src="https://picsum.photos/id/48/800/500" class="unav-cardImg" alt="Equipo">
+                        </div>
+                        <div class="unav-cardBody">
+                            <div class="unav-cardTags">
+                                <span class="unav-tag unav-tagOrange">Talento</span>
+                            </div>
+                            <h4 class="unav-cardTitle" itemprop="name">Carreras Profesionales</h4>
+                            <p class="unav-cardText" itemprop="description">Acompañamos a nuestros alumnos en su salto al mundo laboral con convenios en las mejores empresas.</p>
+                            <div class="unav-cardAction">
+                                <a href="#" class="unav-link">
+                                    <span class="unav-arrowWrapper"><span class="unav-arrow"></span><span class="unav-arrowClone"></span></span>
+                                    <span>Ver Convenios</span>
+                                </a>
+                            </div>
+                        </div>
+                    </article>
+                </div>
+
+            </div>
+        </section>
+
+    </main>
+
+    <script>
+        document.addEventListener('DOMContentLoaded', () => {
+            const observer = new IntersectionObserver((entries) => {
+                entries.forEach((entry, index) => {
+                    if (entry.isIntersecting) {
+                        setTimeout(() => {
+                            entry.target.classList.add('unav-isVisible');
+                        }, index * 100);
+                        observer.unobserve(entry.target);
+                    }
+                });
+            }, { threshold: 0.1 });
+
+            document.querySelectorAll('.unav-cardD').forEach(card => observer.observe(card));
+        });
+    </script>
+</body>
+</html>

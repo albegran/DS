@@ -1,0 +1,509 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Acordeón | Design System UNAV</title>
+    
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.1/font/bootstrap-icons.css">
+    
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@100;300;400;500;700;900&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Roboto+Condensed:wght@700&display=swap" rel="stylesheet">
+    
+    <link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@24,400,0,0" rel="stylesheet">
+    
+    <link rel="stylesheet" href="color.css">
+    <link rel="stylesheet" href="design-system.css">
+
+    <style>
+        /* --- LAYOUT BASE DEL DESIGN SYSTEM --- */
+        :root {
+            --unav-primary-font: 'Roboto', sans-serif;
+            /* Colores de respaldo por si no carga color.css */
+            --unav-rojo-600: #BE1622;
+            --unav-azul-800: #003366;
+            --unav-teal-600: #008080;
+        }
+
+        /* Estilos de la guía técnica */
+        .unav-tech-summary { border-left: 4px solid var(--unav-rojo-600); }
+        .unav-sectionTitle { 
+            color: var(--unav-black-800); 
+            font-weight: 700; 
+            margin-bottom: 1.5rem; 
+            border-bottom: 2px solid #eee; 
+            padding-bottom: 0.5rem; 
+            margin-top: 3rem; 
+            scroll-margin-top: 5rem;
+        }
+
+        /* --- COMPONENTE: ACORDEÓN --- */
+        .unav-accordionGroup {
+            border-top: 1px solid #dee2e6;
+            width: 100%;
+        }
+
+        .unav-accordionItem {
+            border-bottom: 1px solid #dee2e6;
+            transition: background-color 0.3s ease;
+        }
+
+        /* Cabecera / Botón */
+        .unav-accordionHeader {
+            width: 100%;
+            display: flex;
+            align-items: center;
+            background: transparent !important;
+            border: none;
+            padding: 1.25rem 3.5rem 1.25rem 1.5rem;
+            cursor: pointer;
+            position: relative;
+            
+            /* Tipografía Requerida */
+            font-family: var(--unav-primary-font);
+            font-size: 18px;
+            font-weight: 300; /* Roboto Light */
+            color: #1a1a1a;
+            text-align: inherit;
+        }
+
+        /* Hover y Activo: Roboto Black */
+        .unav-accordionHeader:hover,
+        .unav-accordionHeader[aria-expanded="true"] {
+            font-weight: 900;
+        }
+
+        .unav-accordionTitleWrapper {
+            display: flex;
+            align-items: center;
+            gap: 12px;
+            flex-grow: 1;
+        }
+
+        /* Modificadores de Alineación */
+        .unav-alignLeft .unav-accordionTitleWrapper { justify-content: flex-start; }
+        .unav-alignCenter .unav-accordionTitleWrapper { justify-content: center; }
+        .unav-alignRight .unav-accordionTitleWrapper { justify-content: flex-end; }
+
+        /* Icono de Toggle (Derecha) */
+        .unav-accordionToggleIcon {
+            position: absolute;
+            right: 1.5rem;
+            top: 50%;
+            transform: translateY(-50%);
+            transition: transform 0.3s ease;
+            font-size: 24px;
+        }
+
+        .unav-accordionHeader[aria-expanded="true"] .unav-accordionToggleIcon {
+            transform: translateY(-50%) rotate(180deg);
+        }
+
+        /* Panel Desplegable */
+        .unav-accordionPanel {
+            max-height: 0;
+            overflow: hidden;
+            transition: max-height 0.4s ease-out;
+            background-color: #ffffff;
+        }
+
+        .unav-accordionInner {
+            padding: 1.5rem;
+            font-size: 16px;
+            line-height: 1.6;
+            color: #4b5563;
+        }
+
+        /* LÓGICA DE COLOR (Utilidades) */
+        .unav-isThemed .unav-accordionHeader { color: white; }
+        .unav-isThemed .unav-accordionToggleIcon { color: white; }
+        
+        .unav-bg-rojo-600 { background-color: var(--unav-rojo-600); }
+        .unav-bg-azul-800 { background-color: var(--unav-azul-800); }
+        .unav-bg-teal-600 { background-color: var(--unav-teal-600); }
+
+        html { scroll-behavior: smooth; }
+    </style>
+</head>
+<body class="bg-light" itemscope itemtype="https://schema.org/WebPage">
+
+    <nav class="navbar navbar-light bg-white border-bottom py-3 sticky-top">
+        <div class="container-lg">
+            <a href="indice.html" class="btn btn-outline-secondary btn-sm rounded-pill px-3 fw-bold">
+                <i class="bi bi-arrow-left me-1"></i> Volver al Índice
+            </a>
+            <span class="navbar-text fw-bold text-primary mb-0">Design System UNAV</span>
+        </div>
+    </nav>
+
+    <main class="container-lg py-5" itemprop="mainContentOfPage">
+        
+        <header class="text-center mb-5 border-bottom pb-4">
+            <h1 class="display-5 fw-bold mb-3" itemprop="name">Acordeones y Desplegables</h1>
+            <p class="lead text-muted" itemprop="description">Componente flexible para ocultar y mostrar contenido, con tipografía dinámica y marcado Schema.org.</p>
+            
+            <div class="unav-tech-summary bg-white p-4 text-start mt-4 rounded shadow-sm border mx-auto" style="max-width: 900px;">
+                <h2 class="h5 fw-bold mb-3 text-dark"><i class="bi bi-gear-fill me-2"></i>Resumen Técnico y Funcional</h2>
+                <p class="small text-muted mb-4">
+                    El acordeón es un patrón de diseño fundamental para gestionar grandes volúmenes de información en espacios reducidos. Este componente se apoya en JavaScript ligero (Vanilla JS) para el control de los estados <code>aria-expanded</code> y la animación fluida del alto (<code>max-height</code>), garantizando la accesibilidad mediante lectores de pantalla.
+                </p>
+                <div class="row g-3 small">
+                    <div class="col-md-6">
+                        <ul class="list-unstyled mb-0">
+                            <li class="mb-2"><strong>Tipografía:</strong> Usa Roboto Light (300) y cambia a Black (900) al abrir/hover.</li>
+                            <li class="mb-2"><strong>Alineación:</strong> <code>.unav-alignLeft</code>, <code>Center</code> o <code>Right</code> en el Header.</li>
+                            <li><strong>Tematización:</strong> Clase <code>.unav-isThemed</code> combinada con colores corporativos.</li>
+                        </ul>
+                    </div>
+                    <div class="col-md-6 border-start ps-4">
+                        <ul class="list-unstyled mb-0">
+                            <li class="mb-2"><strong>Apertura Múltiple:</strong> Añadir <code>.unav-allowMulti</code> al grupo contenedor.</li>
+                            <li class="mb-2"><strong>Responsividad:</strong> Recalcula su altura automáticamente al redimensionar.</li>
+                            <li><strong>SEO (Schema.org):</strong> Implementa <code>FAQPage</code>, <code>Question</code> y <code>Answer</code> nativamente.</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </header>
+
+        <section class="bg-white p-4 p-md-5 rounded shadow-sm border mb-5">
+            <h3 class="unav-sectionTitle mt-0">1. Alineación e Iconos (Variantes)</h3>
+            <div class="unav-accordionGroup" itemscope itemtype="https://schema.org/FAQPage">
+                
+                <div class="unav-accordionItem" itemscope itemprop="mainEntity" itemtype="https://schema.org/Question">
+                    <button class="unav-accordionHeader unav-alignLeft" aria-expanded="false">
+                        <div class="unav-accordionTitleWrapper">
+                            <span class="material-symbols-outlined">info</span>
+                            <span itemprop="name">Alineado a la izquierda con icono</span>
+                        </div>
+                        <span class="material-symbols-outlined unav-accordionToggleIcon">expand_more</span>
+                    </button>
+                    <div class="unav-accordionPanel" itemscope itemprop="acceptedAnswer" itemtype="https://schema.org/Answer">
+                        <div class="unav-accordionInner" itemprop="text">
+                            Contenido descriptivo para la primera pestaña con alineación estándar.
+                        </div>
+                    </div>
+                </div>
+
+                <div class="unav-accordionItem" itemscope itemprop="mainEntity" itemtype="https://schema.org/Question">
+                    <button class="unav-accordionHeader unav-alignCenter" aria-expanded="false">
+                        <div class="unav-accordionTitleWrapper">
+                            <span itemprop="name">Alineado al centro (sin icono)</span>
+                        </div>
+                        <span class="material-symbols-outlined unav-accordionToggleIcon">expand_more</span>
+                    </button>
+                    <div class="unav-accordionPanel" itemscope itemprop="acceptedAnswer" itemtype="https://schema.org/Answer">
+                        <div class="unav-accordionInner" itemprop="text">
+                            El texto se centra perfectamente en el contenedor del botón.
+                        </div>
+                    </div>
+                </div>
+
+                <div class="unav-accordionItem" itemscope itemprop="mainEntity" itemtype="https://schema.org/Question">
+                    <button class="unav-accordionHeader unav-alignRight" aria-expanded="false">
+                        <div class="unav-accordionTitleWrapper">
+                            <span class="material-symbols-outlined">lightbulb</span>
+                            <span itemprop="name">Alineado a la derecha con icono</span>
+                        </div>
+                        <span class="material-symbols-outlined unav-accordionToggleIcon">expand_more</span>
+                    </button>
+                    <div class="unav-accordionPanel" itemscope itemprop="acceptedAnswer" itemtype="https://schema.org/Answer">
+                        <div class="unav-accordionInner" itemprop="text">
+                            Variante útil para ciertos layouts de navegación o idiomas RTL.
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section class="bg-white p-4 p-md-5 rounded shadow-sm border mb-5">
+            <h3 class="unav-sectionTitle mt-0">2. Pestañas con Color de Fondo</h3>
+            <div class="unav-accordionGroup" itemscope itemtype="https://schema.org/FAQPage">
+                
+                <div class="unav-accordionItem unav-isThemed unav-bg-rojo-600" itemscope itemprop="mainEntity" itemtype="https://schema.org/Question">
+                    <button class="unav-accordionHeader unav-alignLeft" aria-expanded="false">
+                        <div class="unav-accordionTitleWrapper">
+                            <span class="material-symbols-outlined">school</span>
+                            <span itemprop="name">Admisión de Grado (Fondo Rojo)</span>
+                        </div>
+                        <span class="material-symbols-outlined unav-accordionToggleIcon">expand_more</span>
+                    </button>
+                    <div class="unav-accordionPanel" itemscope itemprop="acceptedAnswer" itemtype="https://schema.org/Answer">
+                        <div class="unav-accordionInner" itemprop="text">
+                            Información institucional sobre procesos de admisión.
+                        </div>
+                    </div>
+                </div>
+
+                <div class="unav-accordionItem unav-isThemed unav-bg-azul-800" itemscope itemprop="mainEntity" itemtype="https://schema.org/Question">
+                    <button class="unav-accordionHeader unav-alignCenter" aria-expanded="false">
+                        <div class="unav-accordionTitleWrapper">
+                            <span class="material-symbols-outlined">map</span>
+                            <span itemprop="name">Campus Pamplona (Fondo Azul)</span>
+                        </div>
+                        <span class="material-symbols-outlined unav-accordionToggleIcon">expand_more</span>
+                    </button>
+                    <div class="unav-accordionPanel" itemscope itemprop="acceptedAnswer" itemtype="https://schema.org/Answer">
+                        <div class="unav-accordionInner" itemprop="text">
+                            Mapa detallado del campus principal.
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section class="bg-white p-4 p-md-5 rounded shadow-sm border mb-5">
+            <h3 class="unav-sectionTitle mt-0">3. Apertura Múltiple (.unav-allowMulti)</h3>
+            <p class="text-muted small mb-3">En este grupo se pueden mantener abiertas varias pestañas a la vez sin que se cierren automáticamente las otras.</p>
+            <div class="unav-accordionGroup unav-allowMulti" itemscope itemtype="https://schema.org/FAQPage">
+                
+                <div class="unav-accordionItem" itemscope itemprop="mainEntity" itemtype="https://schema.org/Question">
+                    <button class="unav-accordionHeader unav-alignLeft" aria-expanded="false">
+                        <div class="unav-accordionTitleWrapper">
+                            <span class="material-symbols-outlined">settings</span>
+                            <span itemprop="name">Configuración Múltiple A</span>
+                        </div>
+                        <span class="material-symbols-outlined unav-accordionToggleIcon">expand_more</span>
+                    </button>
+                    <div class="unav-accordionPanel" itemscope itemprop="acceptedAnswer" itemtype="https://schema.org/Answer">
+                        <div class="unav-accordionInner" itemprop="text">Puedes abrir la siguiente sin que yo me cierre.</div>
+                    </div>
+                </div>
+
+                <div class="unav-accordionItem" itemscope itemprop="mainEntity" itemtype="https://schema.org/Question">
+                    <button class="unav-accordionHeader unav-alignLeft" aria-expanded="false">
+                        <div class="unav-accordionTitleWrapper">
+                            <span class="material-symbols-outlined">settings</span>
+                            <span itemprop="name">Configuración Múltiple B</span>
+                        </div>
+                        <span class="material-symbols-outlined unav-accordionToggleIcon">expand_more</span>
+                    </button>
+                    <div class="unav-accordionPanel" itemscope itemprop="acceptedAnswer" itemtype="https://schema.org/Answer">
+                        <div class="unav-accordionInner" itemprop="text">Ambas pueden convivir abiertas simultáneamente.</div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section class="bg-white p-4 p-md-5 rounded shadow-sm border mb-5">
+            <h3 class="unav-sectionTitle mt-0">4. Integración en Grid de Bootstrap</h3>
+            <p class="text-muted small mb-4">Ejemplos de acordeones de 3 piezas adaptados a contenedores de 6 y 4 columnas (Grid 12).</p>
+
+            <h5 class="mb-3 text-primary">Layout a 2 columnas (col-md-6)</h5>
+            <div class="row mb-5">
+                
+                <div class="col-md-6 mb-4">
+                    <div class="unav-accordionGroup" itemscope itemtype="https://schema.org/FAQPage">
+                        <div class="unav-accordionItem" itemscope itemprop="mainEntity" itemtype="https://schema.org/Question">
+                            <button class="unav-accordionHeader unav-alignLeft" aria-expanded="false">
+                                <div class="unav-accordionTitleWrapper"><span itemprop="name">Sección 1 (Izq)</span></div>
+                                <span class="material-symbols-outlined unav-accordionToggleIcon">expand_more</span>
+                            </button>
+                            <div class="unav-accordionPanel" itemscope itemprop="acceptedAnswer" itemtype="https://schema.org/Answer">
+                                <div class="unav-accordionInner" itemprop="text">Contenido adaptado al 50% del ancho.</div>
+                            </div>
+                        </div>
+                        <div class="unav-accordionItem" itemscope itemprop="mainEntity" itemtype="https://schema.org/Question">
+                            <button class="unav-accordionHeader unav-alignLeft" aria-expanded="false">
+                                <div class="unav-accordionTitleWrapper"><span itemprop="name">Sección 2 (Izq)</span></div>
+                                <span class="material-symbols-outlined unav-accordionToggleIcon">expand_more</span>
+                            </button>
+                            <div class="unav-accordionPanel" itemscope itemprop="acceptedAnswer" itemtype="https://schema.org/Answer">
+                                <div class="unav-accordionInner" itemprop="text">Texto descriptivo de la segunda pieza.</div>
+                            </div>
+                        </div>
+                        <div class="unav-accordionItem" itemscope itemprop="mainEntity" itemtype="https://schema.org/Question">
+                            <button class="unav-accordionHeader unav-alignLeft" aria-expanded="false">
+                                <div class="unav-accordionTitleWrapper"><span itemprop="name">Sección 3 (Izq)</span></div>
+                                <span class="material-symbols-outlined unav-accordionToggleIcon">expand_more</span>
+                            </button>
+                            <div class="unav-accordionPanel" itemscope itemprop="acceptedAnswer" itemtype="https://schema.org/Answer">
+                                <div class="unav-accordionInner" itemprop="text">Texto descriptivo de la tercera pieza.</div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="col-md-6 mb-4">
+                    <div class="unav-accordionGroup" itemscope itemtype="https://schema.org/FAQPage">
+                        <div class="unav-accordionItem" itemscope itemprop="mainEntity" itemtype="https://schema.org/Question">
+                            <button class="unav-accordionHeader unav-alignLeft" aria-expanded="false">
+                                <div class="unav-accordionTitleWrapper"><span itemprop="name">Sección 1 (Der)</span></div>
+                                <span class="material-symbols-outlined unav-accordionToggleIcon">expand_more</span>
+                            </button>
+                            <div class="unav-accordionPanel" itemscope itemprop="acceptedAnswer" itemtype="https://schema.org/Answer">
+                                <div class="unav-accordionInner" itemprop="text">Este acordeón funciona de forma independiente al de la izquierda.</div>
+                            </div>
+                        </div>
+                        <div class="unav-accordionItem" itemscope itemprop="mainEntity" itemtype="https://schema.org/Question">
+                            <button class="unav-accordionHeader unav-alignLeft" aria-expanded="false">
+                                <div class="unav-accordionTitleWrapper"><span itemprop="name">Sección 2 (Der)</span></div>
+                                <span class="material-symbols-outlined unav-accordionToggleIcon">expand_more</span>
+                            </button>
+                            <div class="unav-accordionPanel" itemscope itemprop="acceptedAnswer" itemtype="https://schema.org/Answer">
+                                <div class="unav-accordionInner" itemprop="text">Texto de la segunda pieza.</div>
+                            </div>
+                        </div>
+                        <div class="unav-accordionItem" itemscope itemprop="mainEntity" itemtype="https://schema.org/Question">
+                            <button class="unav-accordionHeader unav-alignLeft" aria-expanded="false">
+                                <div class="unav-accordionTitleWrapper"><span itemprop="name">Sección 3 (Der)</span></div>
+                                <span class="material-symbols-outlined unav-accordionToggleIcon">expand_more</span>
+                            </button>
+                            <div class="unav-accordionPanel" itemscope itemprop="acceptedAnswer" itemtype="https://schema.org/Answer">
+                                <div class="unav-accordionInner" itemprop="text">Texto de la tercera pieza.</div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+            </div> 
+
+            <h5 class="mb-3 text-primary">Layout a 3 columnas (col-lg-4)</h5>
+            <div class="row">
+                
+                <div class="col-lg-4 col-md-6 mb-4">
+                    <div class="unav-accordionGroup" itemscope itemtype="https://schema.org/FAQPage">
+                        <div class="unav-accordionItem" itemscope itemprop="mainEntity" itemtype="https://schema.org/Question">
+                            <button class="unav-accordionHeader unav-alignLeft" aria-expanded="false">
+                                <div class="unav-accordionTitleWrapper"><span itemprop="name">Grado</span></div>
+                                <span class="material-symbols-outlined unav-accordionToggleIcon">expand_more</span>
+                            </button>
+                            <div class="unav-accordionPanel" itemscope itemprop="acceptedAnswer" itemtype="https://schema.org/Answer">
+                                <div class="unav-accordionInner" itemprop="text">Contenido bloque 1.</div>
+                            </div>
+                        </div>
+                        <div class="unav-accordionItem" itemscope itemprop="mainEntity" itemtype="https://schema.org/Question">
+                            <button class="unav-accordionHeader unav-alignLeft" aria-expanded="false">
+                                <div class="unav-accordionTitleWrapper"><span itemprop="name">Máster</span></div>
+                                <span class="material-symbols-outlined unav-accordionToggleIcon">expand_more</span>
+                            </button>
+                            <div class="unav-accordionPanel" itemscope itemprop="acceptedAnswer" itemtype="https://schema.org/Answer">
+                                <div class="unav-accordionInner" itemprop="text">Contenido bloque 2.</div>
+                            </div>
+                        </div>
+                        <div class="unav-accordionItem" itemscope itemprop="mainEntity" itemtype="https://schema.org/Question">
+                            <button class="unav-accordionHeader unav-alignLeft" aria-expanded="false">
+                                <div class="unav-accordionTitleWrapper"><span itemprop="name">Doctorado</span></div>
+                                <span class="material-symbols-outlined unav-accordionToggleIcon">expand_more</span>
+                            </button>
+                            <div class="unav-accordionPanel" itemscope itemprop="acceptedAnswer" itemtype="https://schema.org/Answer">
+                                <div class="unav-accordionInner" itemprop="text">Contenido bloque 3.</div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="col-lg-4 col-md-6 mb-4">
+                    <div class="unav-accordionGroup unav-allowMulti" itemscope itemtype="https://schema.org/FAQPage">
+                        <div class="unav-accordionItem" itemscope itemprop="mainEntity" itemtype="https://schema.org/Question">
+                            <button class="unav-accordionHeader unav-alignLeft" aria-expanded="false">
+                                <div class="unav-accordionTitleWrapper"><span itemprop="name">Becas</span></div>
+                                <span class="material-symbols-outlined unav-accordionToggleIcon">expand_more</span>
+                            </button>
+                            <div class="unav-accordionPanel" itemscope itemprop="acceptedAnswer" itemtype="https://schema.org/Answer">
+                                <div class="unav-accordionInner" itemprop="text">Contenido bloque 1.</div>
+                            </div>
+                        </div>
+                        <div class="unav-accordionItem" itemscope itemprop="mainEntity" itemtype="https://schema.org/Question">
+                            <button class="unav-accordionHeader unav-alignLeft" aria-expanded="false">
+                                <div class="unav-accordionTitleWrapper"><span itemprop="name">Alojamiento</span></div>
+                                <span class="material-symbols-outlined unav-accordionToggleIcon">expand_more</span>
+                            </button>
+                            <div class="unav-accordionPanel" itemscope itemprop="acceptedAnswer" itemtype="https://schema.org/Answer">
+                                <div class="unav-accordionInner" itemprop="text">Contenido bloque 2.</div>
+                            </div>
+                        </div>
+                        <div class="unav-accordionItem" itemscope itemprop="mainEntity" itemtype="https://schema.org/Question">
+                            <button class="unav-accordionHeader unav-alignLeft" aria-expanded="false">
+                                <div class="unav-accordionTitleWrapper"><span itemprop="name">Deportes</span></div>
+                                <span class="material-symbols-outlined unav-accordionToggleIcon">expand_more</span>
+                            </button>
+                            <div class="unav-accordionPanel" itemscope itemprop="acceptedAnswer" itemtype="https://schema.org/Answer">
+                                <div class="unav-accordionInner" itemprop="text">Contenido bloque 3.</div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="col-lg-4 col-md-12 mb-4">
+                    <div class="unav-accordionGroup" itemscope itemtype="https://schema.org/FAQPage">
+                        <div class="unav-accordionItem" itemscope itemprop="mainEntity" itemtype="https://schema.org/Question">
+                            <button class="unav-accordionHeader unav-alignLeft" aria-expanded="false">
+                                <div class="unav-accordionTitleWrapper"><span itemprop="name">Investigación</span></div>
+                                <span class="material-symbols-outlined unav-accordionToggleIcon">expand_more</span>
+                            </button>
+                            <div class="unav-accordionPanel" itemscope itemprop="acceptedAnswer" itemtype="https://schema.org/Answer">
+                                <div class="unav-accordionInner" itemprop="text">Contenido bloque 1.</div>
+                            </div>
+                        </div>
+                        <div class="unav-accordionItem" itemscope itemprop="mainEntity" itemtype="https://schema.org/Question">
+                            <button class="unav-accordionHeader unav-alignLeft" aria-expanded="false">
+                                <div class="unav-accordionTitleWrapper"><span itemprop="name">Bibliotecas</span></div>
+                                <span class="material-symbols-outlined unav-accordionToggleIcon">expand_more</span>
+                            </button>
+                            <div class="unav-accordionPanel" itemscope itemprop="acceptedAnswer" itemtype="https://schema.org/Answer">
+                                <div class="unav-accordionInner" itemprop="text">Contenido bloque 2.</div>
+                            </div>
+                        </div>
+                        <div class="unav-accordionItem unav-isThemed unav-bg-teal-600" itemscope itemprop="mainEntity" itemtype="https://schema.org/Question">
+                            <button class="unav-accordionHeader unav-alignLeft" aria-expanded="false">
+                                <div class="unav-accordionTitleWrapper"><span itemprop="name">Clínica UNAV</span></div>
+                                <span class="material-symbols-outlined unav-accordionToggleIcon">expand_more</span>
+                            </button>
+                            <div class="unav-accordionPanel" itemscope itemprop="acceptedAnswer" itemtype="https://schema.org/Answer">
+                                <div class="unav-accordionInner" itemprop="text">Contenido destacado con color.</div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div> 
+        </section>
+
+    </main>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bundle.min.js"></script>
+    <script>
+        document.addEventListener('DOMContentLoaded', () => {
+            const accordionGroups = document.querySelectorAll('.unav-accordionGroup');
+
+            accordionGroups.forEach(group => {
+                const isMultiOpenAllowed = group.classList.contains('unav-allowMulti');
+                const itemsInGroup = group.querySelectorAll('.unav-accordionItem');
+
+                itemsInGroup.forEach(item => {
+                    const headerElement = item.querySelector('.unav-accordionHeader');
+                    const panelElement = item.querySelector('.unav-accordionPanel');
+
+                    headerElement.addEventListener('click', () => {
+                        const isCurrentlyExpanded = headerElement.getAttribute('aria-expanded') === 'true';
+                        
+                        // Si no permite apertura múltiple, cerramos los demás del mismo grupo
+                        if (!isMultiOpenAllowed && !isCurrentlyExpanded) {
+                            group.querySelectorAll('.unav-accordionHeader[aria-expanded="true"]').forEach(openHeader => {
+                                openHeader.setAttribute('aria-expanded', 'false');
+                                openHeader.nextElementSibling.style.maxHeight = '0px';
+                            });
+                        }
+
+                        // Cambiar estado actual
+                        const newStatus = !isCurrentlyExpanded;
+                        headerElement.setAttribute('aria-expanded', newStatus);
+                        panelElement.style.maxHeight = newStatus ? panelElement.scrollHeight + "px" : "0px";
+                    });
+                });
+            });
+
+            // Ajuste responsivo para recalculos de altura
+            window.addEventListener('resize', () => {
+                const allActivePanels = document.querySelectorAll('.unav-accordionHeader[aria-expanded="true"] + .unav-accordionPanel');
+                allActivePanels.forEach(panel => {
+                    panel.style.maxHeight = panel.scrollHeight + "px";
+                });
+            });
+        });
+    </script>
+</body>
+</html>

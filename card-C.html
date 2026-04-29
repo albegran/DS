@@ -1,0 +1,307 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Tarjetas Tipo C (Icono Interior + Botón Secundario) | Design System UNAV</title>
+    
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.1/font/bootstrap-icons.css">
+    <link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@48,400,0,0" rel="stylesheet" />
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@100;300;400;500;700;900&family=Roboto+Condensed:wght@700&display=swap" rel="stylesheet">
+    
+    <link rel="stylesheet" href="color.css">
+
+    <style>
+        /* =========================================
+           ESTILOS GENERALES Y MAQUETACIÓN
+           ========================================= */
+        body { font-family: 'Roboto', sans-serif; background-color: #f8f9fa; color: #333; }
+        .unav-techSummary { border-left: 4px solid var(--unav-rojo-600, #dc2626); }
+        .unav-sectionTitle { 
+            color: #1f2937; 
+            font-weight: 700; 
+            margin-bottom: 2rem; 
+            border-bottom: 2px solid #eee; 
+            padding-bottom: 0.5rem; 
+            margin-top: 1rem; 
+        }
+
+        /* =========================================
+           COMPONENTE: ETIQUETAS (Tags)
+           ========================================= */
+        .unav-tag {
+            display: inline-flex; align-items: center; justify-content: center;
+            padding: 4px 10px; border-radius: 6px;
+            font-weight: 500; font-size: 12px; line-height: 1.2;
+            white-space: nowrap; letter-spacing: 0.3px;
+        }
+        .unav-tagRojo       { background-color: var(--unav-rojo-100, #FFEbee); color: var(--unav-rojo-800, #B71C1C); }
+        .unav-tagBlueDark   { background-color: var(--unav-b-dark-100, #D1E0FF); color: var(--unav-b-dark-800, #0040C1); }
+        .unav-tagMoss       { background-color: var(--unav-moss-100, #E6F4D7); color: var(--unav-moss-800, #335015); }
+        .unav-tagPurple     { background-color: var(--unav-purple-100, #EBE9FE); color: var(--unav-purple-800, #4A1FB8); }
+        .unav-tagOrange     { background-color: var(--unav-orange-100, #FDEAD7); color: var(--unav-orange-800, #932F19); }
+
+        /* =========================================
+           COMPONENTE: BOTÓN SECUNDARIO
+           ========================================= */
+        .unav-botonSecundario {
+            --unav-btnColorSource: var(--unav-black-800, #111); 
+            --unav-btnTextHover: #ffffff;
+            
+            font-family: 'Roboto Condensed', sans-serif;
+            font-weight: 700;
+            font-size: 13px;
+            text-transform: uppercase;
+            letter-spacing: 0.8px;
+            
+            padding: 0.5rem 1.2rem;
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            gap: 0.5rem;
+            border-radius: 50px;
+            
+            text-decoration: none;
+            transition: all 0.2s ease-in-out;
+            cursor: pointer;
+            background-color: transparent;
+            color: var(--unav-btnColorSource);
+            border: 1.5px solid var(--unav-btnColorSource);
+        }
+
+        .unav-botonSecundario:hover {
+            background-color: var(--unav-btnColorSource);
+            color: var(--unav-btnTextHover);
+            box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1);
+        }
+        
+        .unav-botonIcono { font-size: 1.1rem; }
+
+        /* =========================================
+           TARJETA TIPO C (Icono Interior + Botón)
+           ========================================= */
+        .unav-cardC {
+            display: flex;
+            flex-direction: column;
+            padding: 2rem;
+            height: 100%;
+            border-radius: 12px;
+            background-color: #ffffff;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.05);
+            border: 1px solid rgba(0,0,0,0.05);
+            transition: all 0.3s ease;
+            opacity: 0;
+            transform: translateY(20px);
+        }
+
+        .unav-cardC.unav-isVisible {
+            opacity: 1;
+            transform: translateY(0);
+        }
+
+        .unav-cardC:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 12px 25px rgba(0, 0, 0, 0.1);
+        }
+
+        /* Contenedor de Icono Interior */
+        .unav-cardIconBox {
+            width: 64px;
+            height: 64px;
+            border-radius: 12px;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            margin-bottom: 1.5rem;
+            transition: transform 0.3s ease;
+        }
+        .unav-cardC:hover .unav-cardIconBox { transform: scale(1.05); }
+        .unav-cardIcon { font-size: 32px !important; }
+
+        /* Textos y Tags */
+        .unav-cardTags { display: flex; flex-wrap: wrap; gap: 0.5rem; margin-bottom: 1rem; }
+        .unav-cardTitle { font-size: 1.35rem; font-weight: 700; color: #111; margin-bottom: 0.75rem; }
+        .unav-cardText { font-size: 0.95rem; color: #555; line-height: 1.6; margin-bottom: 1.5rem; flex-grow: 1; }
+        
+        /* Alineaciones */
+        .unav-alignLeft { text-align: left; }
+        .unav-alignLeft .unav-cardIconBox { margin-right: auto; }
+        .unav-alignLeft .unav-cardAction { text-align: left; }
+        
+        .unav-alignCenter { text-align: center; }
+        .unav-alignCenter .unav-cardIconBox { margin-left: auto; margin-right: auto; }
+        .unav-alignCenter .unav-cardTags { justify-content: center; }
+        .unav-alignCenter .unav-cardAction { justify-content: center; display: flex; }
+
+        /* --- VARIANTE OSCURA (FONDO DE COLOR) --- */
+        .unav-cardC.unav-cardDark {
+            color: #ffffff;
+            border: none;
+        }
+        .unav-cardC.unav-cardDark .unav-cardTitle { color: #ffffff; }
+        .unav-cardC.unav-cardDark .unav-cardText { color: rgba(255, 255, 255, 0.85); }
+        
+        /* El icono se invierte */
+        .unav-cardC.unav-cardDark .unav-cardIconBox {
+            background-color: rgba(255, 255, 255, 0.15) !important;
+            color: #ffffff !important;
+        }
+
+    </style>
+</head>
+<body itemscope itemtype="https://schema.org/WebPage">
+
+    <nav class="navbar navbar-light bg-white border-bottom py-3 sticky-top">
+        <div class="container-lg">
+            <a href="indice.html" class="btn btn-outline-secondary btn-sm rounded-pill px-3 fw-bold">
+                <i class="bi bi-arrow-left me-1"></i> Volver al Índice
+            </a>
+            <span class="navbar-text fw-bold text-dark mb-0">Design System UNAV</span>
+        </div>
+    </nav>
+
+    <main class="container-lg py-5">
+        
+        <header class="text-center mb-5 border-bottom pb-4">
+            <h1 class="display-5 fw-bold mb-3">Tarjetas Tipo C</h1>
+            <p class="lead text-muted">Variante con icono interior y el componente <strong>Botón Secundario</strong> en la llamada a la acción.</p>
+        </header>
+
+        <section class="mb-5">
+            <h3 class="unav-sectionTitle">1. Alineación Izquierda</h3>
+            <div class="row g-4" itemscope itemtype="https://schema.org/ItemList">
+                
+                <div class="col-12 col-md-4" itemprop="itemListElement" itemscope itemtype="https://schema.org/ListItem">
+                    <meta itemprop="position" content="1" />
+                    <article class="unav-cardC unav-alignLeft" itemprop="item" itemscope itemtype="https://schema.org/Service">
+                        <div class="unav-cardIconBox" style="background-color: var(--unav-rojo-100, #FFEbee); color: var(--unav-rojo-600, #D32F2F);">
+                            <span class="material-symbols-outlined unav-cardIcon">medical_services</span>
+                        </div>
+                        <div class="unav-cardTags">
+                            <span class="unav-tag unav-tagRojo">Salud</span>
+                        </div>
+                        <h4 class="unav-cardTitle" itemprop="name">Facultad de Medicina</h4>
+                        <p class="unav-cardText" itemprop="description">Referente internacional en formación médica con una metodología centrada en el paciente y la investigación.</p>
+                        
+                        <div class="unav-cardAction">
+                            <a itemprop="url" href="#" class="unav-botonSecundario" style="--unav-btnColorSource: var(--unav-rojo-800, #B71C1C);">
+                                <span itemprop="name">VER GRADO</span>
+                            </a>
+                        </div>
+                    </article>
+                </div>
+
+                <div class="col-12 col-md-4" itemprop="itemListElement" itemscope itemtype="https://schema.org/ListItem">
+                    <meta itemprop="position" content="2" />
+                    <article class="unav-cardC unav-alignLeft unav-cardDark" style="background-color: var(--unav-b-dark-800, #0040C1);" itemprop="item" itemscope itemtype="https://schema.org/Service">
+                        <div class="unav-cardIconBox">
+                            <span class="material-symbols-outlined unav-cardIcon">biotech</span>
+                        </div>
+                        <div class="unav-cardTags">
+                            <span class="unav-tag unav-tagBlueDark">Ingeniería</span>
+                        </div>
+                        <h4 class="unav-cardTitle" itemprop="name">Biomedicina</h4>
+                        <p class="unav-cardText" itemprop="description">Aplica principios de ingeniería al campo de la salud para desarrollar soluciones tecnológicas innovadoras en laboratorios premium.</p>
+                        
+                        <div class="unav-cardAction">
+                            <a itemprop="url" href="#" class="unav-botonSecundario" style="--unav-btnColorSource: #ffffff; --unav-btnTextHover: var(--unav-b-dark-800, #0040C1);">
+                                <span itemprop="name">EXPLORAR PROGRAMA</span>
+                            </a>
+                        </div>
+                    </article>
+                </div>
+
+                <div class="col-12 col-md-4" itemprop="itemListElement" itemscope itemtype="https://schema.org/ListItem">
+                    <meta itemprop="position" content="3" />
+                    <article class="unav-cardC unav-alignLeft" itemprop="item" itemscope itemtype="https://schema.org/Service">
+                        <div class="unav-cardIconBox" style="background-color: var(--unav-moss-100, #E6F4D7); color: var(--unav-moss-600, #4F7A21);">
+                            <span class="material-symbols-outlined unav-cardIcon">agriculture</span>
+                        </div>
+                        <div class="unav-cardTags">
+                            <span class="unav-tag unav-tagMoss">Sostenibilidad</span>
+                        </div>
+                        <h4 class="unav-cardTitle" itemprop="name">Gestión Ambiental</h4>
+                        <p class="unav-cardText" itemprop="description">Lidera proyectos de impacto positivo en el entorno natural mediante la ciencia y la estrategia sostenible.</p>
+                        
+                        <div class="unav-cardAction">
+                            <a itemprop="url" href="#" class="unav-botonSecundario" style="--unav-btnColorSource: var(--unav-moss-800, #335015);">
+                                <span itemprop="name">MÁS INFORMACIÓN</span>
+                                <span class="material-symbols-outlined unav-botonIcono">arrow_forward</span>
+                            </a>
+                        </div>
+                    </article>
+                </div>
+
+            </div>
+        </section>
+
+        <section class="mb-5">
+            <h3 class="unav-sectionTitle">2. Alineación Centrada</h3>
+            <div class="row g-4 justify-content-center" itemscope itemtype="https://schema.org/ItemList">
+                
+                <div class="col-12 col-md-6" itemprop="itemListElement" itemscope itemtype="https://schema.org/ListItem">
+                    <meta itemprop="position" content="1" />
+                    <article class="unav-cardC unav-alignCenter unav-cardDark" style="background-color: var(--unav-purple-800, #4A1FB8);" itemprop="item" itemscope itemtype="https://schema.org/Service">
+                        <div class="unav-cardIconBox">
+                            <span class="material-symbols-outlined unav-cardIcon">psychology</span>
+                        </div>
+                        <div class="unav-cardTags">
+                            <span class="unav-tag unav-tagPurple">Máster</span>
+                        </div>
+                        <h4 class="unav-cardTitle" itemprop="name">Psicología Aplicada</h4>
+                        <p class="unav-cardText" itemprop="description">Un enfoque integral para entender el comportamiento humano en entornos complejos. Desarrolla competencias avanzadas en terapia.</p>
+                        
+                        <div class="unav-cardAction">
+                            <a itemprop="url" href="#" class="unav-botonSecundario" style="--unav-btnColorSource: #ffffff; --unav-btnTextHover: var(--unav-purple-800, #4A1FB8);">
+                                <span itemprop="name">VER POSTGRADO</span>
+                            </a>
+                        </div>
+                    </article>
+                </div>
+
+                <div class="col-12 col-md-6" itemprop="itemListElement" itemscope itemtype="https://schema.org/ListItem">
+                    <meta itemprop="position" content="2" />
+                    <article class="unav-cardC unav-alignCenter" itemprop="item" itemscope itemtype="https://schema.org/Service">
+                        <div class="unav-cardIconBox" style="background-color: var(--unav-orange-100, #FDEAD7); color: var(--unav-orange-600, #E04F16);">
+                            <span class="material-symbols-outlined unav-cardIcon">palette</span>
+                        </div>
+                        <div class="unav-cardTags">
+                            <span class="unav-tag unav-tagOrange">Artes</span>
+                        </div>
+                        <h4 class="unav-cardTitle" itemprop="name">Diseño Creativo</h4>
+                        <p class="unav-cardText" itemprop="description">Potencia tu talento artístico con herramientas digitales avanzadas y una visión crítica del diseño contemporáneo.</p>
+                        
+                        <div class="unav-cardAction">
+                            <a itemprop="url" href="#" class="unav-botonSecundario" style="--unav-btnColorSource: var(--unav-orange-800, #932F19);">
+                                <span itemprop="name">VER GALERÍA</span>
+                            </a>
+                        </div>
+                    </article>
+                </div>
+
+            </div>
+        </section>
+
+    </main>
+
+    <script>
+        document.addEventListener('DOMContentLoaded', () => {
+            const observer = new IntersectionObserver((entries) => {
+                entries.forEach((entry, index) => {
+                    if (entry.isIntersecting) {
+                        setTimeout(() => {
+                            entry.target.classList.add('unav-isVisible');
+                        }, index * 100);
+                        observer.unobserve(entry.target);
+                    }
+                });
+            }, { threshold: 0.1 });
+
+            document.querySelectorAll('.unav-cardC').forEach(card => observer.observe(card));
+        });
+    </script>
+</body>
+</html>

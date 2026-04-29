@@ -1,0 +1,228 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Menú Lateral de Anclas (Corregido) | Design System UNAV</title>
+    
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.1/font/bootstrap-icons.css">
+    
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@100;300;400;500;600;700;900&display=swap" rel="stylesheet">
+    
+    <style>
+        /* =======================================================
+           COMPONENTE: MENÚ DE ANCLAS (Diseño Apilado)
+           ======================================================= */
+        
+        .unav-anchor-wrapper {
+            top: 100px; 
+            z-index: 99;
+        }
+
+        .unav-anchor-menu {
+            display: flex;
+            flex-direction: column;
+            gap: 1.5rem;
+            padding: 0;
+            background-color: transparent;
+            border: none;
+        }
+
+        .unav-anchor-menu-subtitle {
+            font-size: 0.75rem;
+            color: #5f6368;
+            display: block;
+            margin-bottom: 0.25rem;
+            text-transform: uppercase;
+            letter-spacing: 0.5px;
+            font-weight: 700;
+        }
+
+        .unav-anchor-menu-title {
+            font-size: 1.25rem;
+            font-weight: 700;
+            color: #202124;
+            margin: 0;
+            line-height: 1.2;
+        }
+
+        .unav-anchor-menu-list {
+            list-style: none;
+            padding: 0;
+            margin: 0;
+            display: flex;
+            flex-direction: column;
+        }
+
+        .unav-anchor-menu-link {
+            display: block;
+            width: 100%;
+            box-sizing: border-box;
+            text-decoration: none;
+            color: #111111;
+            cursor: pointer;
+            transition: background-color 0.3s ease, color 0.3s ease;
+            margin-bottom: 2px;
+            padding: 12px 15px; /* Ligeramente más compacto */
+            font-family: "Roboto", sans-serif;
+            font-size: 15px;
+            line-height: 1.4;
+            background-color: #e3eaed;
+        }
+
+        /* Estado Activo y Hover */
+        .unav-anchor-menu-link:hover,
+        .unav-anchor-menu-item.is-active .unav-anchor-menu-link {
+            background-color: #000000;
+            color: #ffffff;
+            text-decoration: none; 
+        }
+
+        .unav-itemText {
+            display: inline;
+            font-weight: 400; 
+        }
+
+        .unav-anchor-menu-link:hover .unav-itemText,
+        .unav-anchor-menu-item.is-active .unav-anchor-menu-link .unav-itemText {
+            font-weight: 600;
+            text-decoration: underline;
+            text-underline-offset: 4px;
+            text-decoration-thickness: 2px;
+        }
+
+        /* Contenido de demo */
+        .content-section {
+            padding-top: 100px;
+            margin-top: -100px;
+            margin-bottom: 40vh;
+        }
+        
+        /* Espacio extra al final para permitir que la última sección active el observer */
+        .page-footer-buffer {
+            height: 30vh;
+        }
+
+        .content-section h2 {
+            color: #212529;
+            font-weight: 700;
+        }
+    </style>
+</head>
+<body class="bg-light">
+
+    <nav class="navbar navbar-light bg-white border-bottom py-3 sticky-top">
+        <div class="container-lg">
+            <a href="indice.html" class="btn btn-outline-secondary btn-sm rounded-pill px-3 fw-bold">
+                <i class="bi bi-arrow-left me-1"></i> Volver al Índice
+            </a>
+            <span class="navbar-text fw-bold text-primary mb-0">Design System UNAV</span>
+        </div>
+    </nav>
+
+    <main class="container-lg py-5">
+        <div class="row">
+            
+            <div class="col-lg-9 pe-lg-5">
+                <div id="seccion-1" class="content-section">
+                    <h2>1. Admisión y Ayudas</h2>
+                    <p>Contenido detallado de la sección 1...</p>
+                </div>
+
+                <div id="seccion-2" class="content-section">
+                    <h2>2. Grados y Programas</h2>
+                    <p>Contenido detallado de la sección 2...</p>
+                </div>
+
+                <div id="seccion-3" class="content-section">
+                    <h2>3. Másteres y Postgrado</h2>
+                    <p>Contenido detallado de la sección 3...</p>
+                </div>
+
+                <div id="seccion-4" class="content-section">
+                    <h2>4. Facultades y Escuelas</h2>
+                    <p>Contenido de la última sección. Ahora se marcará correctamente al llegar al final.</p>
+                </div>
+                
+                <div class="page-footer-buffer"></div>
+            </div>
+
+            <div class="col-lg-3">
+                <div class="unav-anchor-wrapper sticky-top">
+                    <nav class="unav-anchor-menu">
+                        <div class="unav-anchor-menu-header">
+                            <span class="unav-anchor-menu-subtitle">En esta página</span>
+                            <h2 class="unav-anchor-menu-title">Oferta Académica</h2>
+                        </div>
+
+                        <ul class="unav-anchor-menu-list">
+                            <li class="unav-anchor-menu-item">
+                                <a href="#seccion-1" class="unav-anchor-menu-link"><span class="unav-itemText">Admisión y Ayudas</span></a>
+                            </li>
+                            <li class="unav-anchor-menu-item">
+                                <a href="#seccion-2" class="unav-anchor-menu-link"><span class="unav-itemText">Grados y Programas</span></a>
+                            </li>
+                            <li class="unav-anchor-menu-item">
+                                <a href="#seccion-3" class="unav-anchor-menu-link"><span class="unav-itemText">Másteres y Postgrado</span></a>
+                            </li>
+                            <li class="unav-anchor-menu-item">
+                                <a href="#seccion-4" class="unav-anchor-menu-link"><span class="unav-itemText">Facultades y Escuelas</span></a>
+                            </li>
+                        </ul>
+                    </nav>
+                </div>
+            </div>
+
+        </div>
+    </main>
+
+    <script>
+        document.addEventListener('DOMContentLoaded', function() {
+            const menuItems = document.querySelectorAll('.unav-anchor-menu-item');
+            const sections = Array.from(menuItems).map(item => {
+                const id = item.querySelector('a').getAttribute('href').substring(1);
+                return { itemEl: item, sectionEl: document.getElementById(id) };
+            });
+
+            // Función para limpiar activos
+            const clearActive = () => menuItems.forEach(i => i.classList.remove('is-active'));
+
+            // 1. Observer para el scroll normal
+            const observer = new IntersectionObserver((entries) => {
+                entries.forEach(entry => {
+                    // Solo activamos si no estamos al puro final de la página (esa lógica va aparte)
+                    const isAtBottom = (window.innerHeight + window.scrollY) >= document.body.offsetHeight - 50;
+                    
+                    if (entry.isIntersecting && !isAtBottom) {
+                        clearActive();
+                        const active = sections.find(s => s.sectionEl === entry.target);
+                        if (active) active.itemEl.classList.add('is-active');
+                    }
+                });
+            }, { rootMargin: '-20% 0px -60% 0px', threshold: 0 });
+
+            sections.forEach(s => observer.observe(s.sectionEl));
+
+            // 2. Lógica para el final de la página (Bottom detection)
+            window.addEventListener('scroll', () => {
+                if ((window.innerHeight + window.scrollY) >= document.body.offsetHeight - 2) {
+                    clearActive();
+                    menuItems[menuItems.length - 1].classList.add('is-active');
+                }
+            });
+
+            // 3. Scroll suave al click
+            document.querySelectorAll('.unav-anchor-menu-link').forEach(link => {
+                link.addEventListener('click', (e) => {
+                    e.preventDefault();
+                    const target = document.querySelector(link.getAttribute('href'));
+                    window.scrollTo({ top: target.offsetTop - 80, behavior: 'smooth' });
+                });
+            });
+        });
+    </script>
+</body>
+</html>

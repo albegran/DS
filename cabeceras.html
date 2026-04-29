@@ -1,0 +1,218 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Muestrario de Cabeceras con Tamaños Definidos | Design System UNAV</title>
+    
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.1/font/bootstrap-icons.css">
+    
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@100;300;400;500;700&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Roboto+Condensed:wght@700&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;700&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Roboto+Slab:wght@400;700&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=DM+Serif+Text&display=swap" rel="stylesheet">
+
+    <link rel="stylesheet" href="color.css">
+    <link rel="stylesheet" href="design-system.css">
+
+    <style>
+        :root {
+            --unav-bgLight: #fcfdfe;
+            --unav-borderLight: #edf2f7;
+        }
+
+        /* Estructura Longitudinal */
+        .unav-sampleRow {
+            background: #ffffff;
+            border-bottom: 1px solid var(--unav-borderLight);
+            padding: 3rem 2rem;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            transition: all 0.2s ease;
+        }
+
+        .unav-sampleRow:hover {
+            background-color: #f8fafc;
+            box-shadow: inset 4px 0 0 var(--unav-rojo-700);
+        }
+
+        /* Componente Cabecera */
+        .unav-headerElement {
+            margin: 0;
+            padding: 0;
+            line-height: 1.15;
+            word-wrap: break-word;
+        }
+
+        /* Metadatos */
+        .unav-dataContainer {
+            margin-top: 1.5rem;
+            display: flex;
+            gap: 1rem;
+            flex-wrap: wrap;
+        }
+
+        .unav-infoTag {
+            font-family: 'Roboto Mono', monospace;
+            font-size: 0.7rem;
+            font-weight: 600;
+            text-transform: uppercase;
+            padding: 0.35rem 0.75rem;
+            background: #edf2f7;
+            color: #4a5568;
+            border-radius: 4px;
+        }
+
+        .unav-sectionLabel {
+            background: var(--unav-black-900);
+            color: white;
+            padding: 1rem 2rem;
+            font-family: 'Roboto Condensed', sans-serif;
+            font-weight: 700;
+            text-transform: uppercase;
+            letter-spacing: 0.1em;
+            margin-top: 4rem;
+            border-radius: 0.5rem 0.5rem 0 0;
+        }
+
+        /* Estilos de la guía técnica */
+        .unav-tech-summary { border-left: 4px solid var(--unav-rojo-600); }
+    </style>
+</head>
+<body class="bg-light" itemscope itemtype="https://schema.org/WebPage">
+
+    <nav class="navbar navbar-light bg-white border-bottom py-3 sticky-top">
+        <div class="container-lg">
+            <a href="indice.html" class="btn btn-outline-secondary btn-sm rounded-pill px-3 fw-bold">
+                <i class="bi bi-arrow-left me-1"></i> Volver al Índice
+            </a>
+            <span class="navbar-text fw-bold text-primary mb-0">Design System UNAV</span>
+        </div>
+    </nav>
+
+    <main class="container-lg py-5" itemprop="mainContentOfPage">
+        
+        <header class="text-center mb-5 border-bottom pb-4">
+            <h1 class="display-5 fw-bold mb-3" itemprop="name">Gestión de Cabeceras</h1>
+            <p class="lead text-muted" itemprop="description">Visualización de 66 variantes longitudinales. Cada etiqueta utiliza una de las 11 tipografías con un tamaño y color asignado aleatoriamente de los estándares definidos.</p>
+            
+            <div class="unav-tech-summary bg-white p-4 text-start mt-4 rounded shadow-sm border mx-auto" style="max-width: 900px;">
+                <h2 class="h5 fw-bold mb-3 text-dark"><i class="bi bi-gear-fill me-2"></i>Resumen Técnico y Funcional</h2>
+                <p class="small text-muted mb-4">
+                    Este componente sirve como laboratorio de pruebas y catálogo de estilos para las etiquetas <code>&lt;h1&gt;</code> a <code>&lt;h6&gt;</code>. Demuestra cómo la semántica HTML se desacopla completamente de la presentación visual en nuestro sistema. El script JS iterativo inyecta estilos *inline* simulando cómo las clases de utilidad (tamaños, colores y tipografías corporativas) afectan a cada nivel de jerarquía, facilitando auditorías de legibilidad y coherencia visual en un solo vistazo.
+                </p>
+                <div class="row g-3 small">
+                    <div class="col-md-6">
+                        <ul class="list-unstyled mb-0">
+                            <li class="mb-2"><strong>Generación:</strong> Motor JS iterativo (66 iteraciones).</li>
+                            <li class="mb-2"><strong>Tipografías base:</strong> 11 variantes desde <code>Roboto Thin</code> a <code>DM Serif Text</code>.</li>
+                            <li><strong>Escala modular:</strong> 11 tamaños predefinidos (de <code>0.8rem</code> a <code>4rem</code>).</li>
+                        </ul>
+                    </div>
+                    <div class="col-md-6 border-start ps-4">
+                        <ul class="list-unstyled mb-0">
+                            <li class="mb-2"><strong>Colores:</strong> Arrays vinculados a las variables de <code>color.css</code>.</li>
+                            <li class="mb-2"><strong>Layout contenedor:</strong> Elemento <code>.unav-sampleRow</code>.</li>
+                            <li><strong>SEO:</strong> Inyección dinámica de <code>itemprop="headline"</code> de Schema.org.</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </header>
+
+        <div id="unav-masterContainer" class="bg-white rounded shadow-sm border pb-4 px-3 mb-5">
+            </div>
+
+    </main>
+
+    <footer class="p-4 text-center text-muted border-top bg-white">
+        <small>&copy; 2024 Design System UNAV - Estándares Web</small>
+    </footer>
+
+    <script>
+        document.addEventListener('DOMContentLoaded', () => {
+            const main = document.getElementById('unav-masterContainer');
+
+            // 1. Tamaños definidos en tipografia.html
+            const unavSizes = ['4rem', '3.5rem', '3rem', '2.2rem', '2rem', '1.8rem', '1.6rem', '1.4rem', '1.2rem', '1rem', '0.8rem'];
+
+            // 2. Tipografías (11 Variantes)
+            const unavFonts = [
+                { name: 'Roboto Thin', family: "'Roboto', sans-serif", weight: 100 },
+                { name: 'Roboto Light', family: "'Roboto', sans-serif", weight: 300 },
+                { name: 'Roboto Regular', family: "'Roboto', sans-serif", weight: 400 },
+                { name: 'Roboto Medium', family: "'Roboto', sans-serif", weight: 500 },
+                { name: 'Roboto Bold', family: "'Roboto', sans-serif", weight: 700 },
+                { name: 'Roboto Condensed Regular', family: "'Roboto Condensed', sans-serif", weight: 400 },
+                { name: 'Roboto Condensed Bold', family: "'Roboto Condensed', sans-serif", weight: 700 },
+                { name: 'Playfair Display Regular', family: "'Playfair Display', serif", weight: 400 },
+                { name: 'Playfair Display Bold', family: "'Playfair Display', serif", weight: 700 },
+                { name: 'Roboto Slab Bold', family: "'Roboto Slab', serif", weight: 700 },
+                { name: 'DM Serif Text', family: "'DM Serif Text', serif", weight: 400 }
+            ];
+
+            // 3. Colores (Extraídos de color.html / color.css)
+            const unavColors = [
+                'var(--unav-rojo-700)', 'var(--unav-blue-800)', 'var(--unav-black-900)', 
+                'var(--unav-moss-700)', 'var(--unav-o-dark-800)', 'var(--unav-teal-700)',
+                'var(--unav-pink-600)', 'var(--unav-orange-600)', 'var(--unav-blue-500)',
+                'var(--unav-rojo-500)', 'var(--unav-black-600)'
+            ];
+
+            const levels = ['h1', 'h2', 'h3', 'h4', 'h5', 'h6'];
+
+            levels.forEach(lvl => {
+                // Etiqueta de sección para el nivel HTML
+                const sectionLabel = document.createElement('div');
+                sectionLabel.className = 'unav-sectionLabel';
+                sectionLabel.innerText = `Nivel Semántico: <${lvl.toUpperCase()}>`;
+                main.appendChild(sectionLabel);
+
+                unavFonts.forEach((font) => {
+                    // SELECCIÓN ALEATORIA DE TAMAÑO (De la lista cerrada)
+                    const randomSize = unavSizes[Math.floor(Math.random() * unavSizes.length)];
+                    const randomColor = unavColors[Math.floor(Math.random() * unavColors.length)];
+
+                    const row = document.createElement('div');
+                    row.className = 'unav-sampleRow border-start border-end';
+                    row.setAttribute('itemscope', '');
+                    row.setAttribute('itemtype', 'https://schema.org/CreativeWork');
+
+                    // El elemento H
+                    const h = document.createElement(lvl);
+                    h.className = 'unav-headerElement';
+                    h.setAttribute('itemprop', 'headline');
+                    h.innerText = `Ejemplo de titular ${lvl.toUpperCase()} con ${font.name}`;
+                    
+                    // Aplicar estilos del sistema
+                    h.style.fontFamily = font.family;
+                    h.style.fontWeight = font.weight;
+                    h.style.fontSize = randomSize;
+                    h.style.color = randomColor;
+
+                    // Info técnica (Metadata)
+                    const meta = document.createElement('div');
+                    meta.className = 'unav-dataContainer';
+                    meta.innerHTML = `
+                        <span class="unav-infoTag">Etiqueta: &lt;${lvl}&gt;</span>
+                        <span class="unav-infoTag">Fuente: ${font.name}</span>
+                        <span class="unav-infoTag">Tamaño: ${randomSize}</span>
+                        <span class="unav-infoTag" style="border-left: 8px solid ${randomColor}">Color: ${randomColor}</span>
+                    `;
+
+                    row.appendChild(h);
+                    row.appendChild(meta);
+                    main.appendChild(row);
+                });
+            });
+        });
+    </script>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bundle.min.js"></script>
+</body>
+</html>

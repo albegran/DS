@@ -1,0 +1,403 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ficha de Persona y Contacto | Design System UNAV</title>
+    
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.1/font/bootstrap-icons.css">
+    
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@100;300;400;500;700&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Roboto+Condensed:wght@700&display=swap" rel="stylesheet">
+    
+    <style>
+        :root {
+            /* Colores Base */
+            --unav-accentColor: #b91c1c; /* Rojo 700 */
+            --unav-black-800: #1a1a1a;
+            
+            /* Colores para botones extraídos de color.html */
+            --unav-green-600: #22c55e;
+            --unav-blue-600: #3b82f6;
+            --unav-grey-600: #6c757d;
+
+            --unav-transitionSpeed: 0.3s;
+        }
+
+        body {
+            font-family: 'Roboto', -apple-system, BlinkMacSystemFont, sans-serif;
+        }
+
+        /* Estilos de la guía técnica */
+        .unav-techSummary { border-left: 4px solid var(--unav-accentColor); }
+        .unav-sectionTitle { 
+            color: var(--unav-black-800); 
+            font-weight: 700; 
+            margin-bottom: 2rem; 
+            border-bottom: 2px solid #eee; 
+            padding-bottom: 0.5rem; 
+            margin-top: 3rem; 
+            scroll-margin-top: 5rem; 
+        }
+
+        /* =======================================================
+           COMPONENTE: FICHA PERSONA (unav- + camelCase)
+           ======================================================= */
+        
+        .unav-personCard {
+            display: flex;
+            flex-direction: column;
+            width: 100%;
+            background: #ffffff;
+            box-sizing: border-box;
+            padding: 24px;
+            gap: 0.75rem;
+            box-shadow: 0 4px 6px rgba(0,0,0,0.05);
+            border: 1px solid #eaeaea;
+            border-radius: 8px;
+            height: 100%;
+        }
+
+        /* IMAGEN Y EFECTOS */
+        .unav-imageWrapper {
+            width: 100%;
+            overflow: hidden;
+            border-radius: 4px;
+        }
+
+        .unav-personImage {
+            width: 100%;
+            aspect-ratio: 1 / 1; 
+            object-fit: cover;   
+            display: block;
+            transition: transform 0.4s ease, filter 0.4s ease;
+            backface-visibility: hidden;
+            transform: translateZ(0);
+            will-change: transform;
+        }
+
+        .unav-imageWrapper.unav-isGrayscale .unav-personImage { filter: grayscale(100%); }
+        .unav-imageWrapper:hover .unav-personImage { transform: scale(1.04) translateZ(0); }
+
+        /* TEXTOS */
+        .unav-personName {
+            margin: 0;
+            font-size: 1.4rem;
+            font-weight: 400;
+            color: #333;
+            font-family: 'Roboto Condensed', sans-serif;
+        }
+
+        .unav-personRole { font-size: 1rem; line-height: 1.4; color: #000; }
+        
+        .unav-personDetails { font-size: 0.95rem; line-height: 1.5; color: #555; }
+        .unav-personDetails p { margin: 0 0 0.25rem 0; display: flex; align-items: center; }
+        .unav-personDetails i { color: #888; margin-right: 8px; font-size: 1rem; }
+
+        .unav-personEmail { display: flex; align-items: center; font-size: 0.95rem; }
+        .unav-personEmail i { color: #888; margin-right: 8px; font-size: 1rem; }
+        .unav-personEmail a { 
+            color: var(--unav-accentColor); 
+            text-decoration: underline; 
+            text-underline-offset: 2px; 
+            font-weight: 500;
+        }
+        .unav-personEmail a:hover { text-decoration: none; color: #8b1515; }
+
+        /* =======================================================
+           ACCIONES Y BOTONES SECUNDARIOS
+           ======================================================= */
+        
+        /* Contenedor flexible para alinear uno o varios botones */
+        .unav-actionContainer {
+            margin-top: 1rem;
+            display: flex;
+            flex-wrap: wrap;
+            gap: 0.5rem;
+            width: 100%;
+            align-items: center;
+        }
+
+        /* Botón Secundario (Heredado de boton-secundario.html) */
+        .unav-botonSecundario {
+            --unav-btnColorSource: var(--unav-black-800); 
+            --unav-btnTextHover: #ffffff;
+            
+            font-family: 'Roboto Condensed', sans-serif;
+            font-weight: 700;
+            font-size: 0.8rem; /* Ajustado para la tarjeta */
+            text-transform: uppercase;
+            letter-spacing: 0.5px;
+            
+            padding: 0.4rem 1rem;
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            gap: 0.4rem;
+            border-radius: 50px;
+            
+            text-decoration: none;
+            transition: all 0.2s ease-in-out;
+            cursor: pointer;
+            background-color: transparent;
+            color: var(--unav-btnColorSource);
+            border: 1.5px solid var(--unav-btnColorSource);
+        }
+
+        .unav-botonSecundario:hover {
+            background-color: var(--unav-btnColorSource);
+            color: var(--unav-btnTextHover);
+            box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1);
+        }
+
+        .unav-botonSecundario i { font-size: 1rem; }
+
+        /* ENLACE FLECHA ANIMADA (Clásico) */
+        .unav-linkAnimated {
+            display: inline-flex;
+            align-items: center;
+            justify-content: flex-start;
+            font-weight: 700; 
+            font-size: 1rem;
+            color: var(--unav-black-800);
+            text-decoration: none;
+            transition: color 0.2s;
+            margin-top: 0.25rem;
+        }
+        
+        .unav-linkAnimated:hover { color: var(--unav-accentColor); }
+        .unav-linkAnimated::before, .unav-linkAnimated::after { display: none !important; content: none !important; }
+
+        .unav-arrowBox {
+            position: relative;
+            display: inline-flex;
+            width: 35px;
+            height: 12px;
+            overflow: hidden;
+            margin-right: 10px;
+            vertical-align: middle;
+            flex-shrink: 0;
+        }
+
+        .unav-arrowIcon, .unav-arrowClone {
+            position: absolute;
+            top: 50%;
+            width: 30px;
+            height: 1px;
+            background-color: currentColor; 
+        }
+
+        .unav-arrowIcon { left: 0; transform: translateY(-50%); }
+        .unav-arrowClone { left: -70px; transform: translateY(-50%); }
+        .unav-arrowIcon::after, .unav-arrowClone::after {
+            content: '';
+            position: absolute;
+            right: 0;
+            top: 50%;
+            width: 6px;
+            height: 6px;
+            border-top: 1.5px solid currentColor;
+            border-right: 1.5px solid currentColor;
+            transform: translateY(-50%) rotate(45deg);
+        }
+
+        @keyframes unav-arrowConveyor {
+            0% { transform: translateY(-50%) translateX(0); }
+            100% { transform: translateY(-50%) translateX(70px); }
+        }
+
+        .unav-linkAnimated:hover .unav-arrowIcon, 
+        .unav-linkAnimated:hover .unav-arrowClone {
+            animation: unav-arrowConveyor 1.2s linear infinite;
+        }
+
+        /* =======================================================
+           ORDENACIÓN DINÁMICA (Flexbox Order)
+           ======================================================= */
+        
+        /* Modo: Persona (Foto arriba) */
+        .unav-layoutPersona .unav-imageWrapper { order: 1; margin-bottom: 0.5rem; }
+        .unav-layoutPersona .unav-personName { order: 2; }
+        .unav-layoutPersona .unav-personRole { order: 3; }
+        .unav-layoutPersona .unav-personDetails { order: 4; margin-top: 0.5rem; }
+        .unav-layoutPersona .unav-personEmail { order: 5; }
+        .unav-layoutPersona .unav-actionContainer { order: 6; }
+
+        /* Modo: Contacto Institucional (Foto en medio) */
+        .unav-layoutContacto .unav-personName { order: 1; }
+        .unav-layoutContacto .unav-personRole { order: 2; }
+        .unav-layoutContacto .unav-personEmail { order: 3; margin-top: 0.5rem;}
+        .unav-layoutContacto .unav-imageWrapper { order: 4; margin-top: 1rem; margin-bottom: 0.5rem; }
+        .unav-layoutContacto .unav-personDetails { order: 5; }
+        .unav-layoutContacto .unav-actionContainer { order: 6; }
+    </style>
+</head>
+<body class="bg-light" itemscope itemtype="https://schema.org/WebPage">
+
+    <nav class="navbar navbar-light bg-white border-bottom py-3 sticky-top">
+        <div class="container-lg">
+            <a href="indice.html" class="btn btn-outline-secondary btn-sm rounded-pill px-3 fw-bold">
+                <i class="bi bi-arrow-left me-1"></i> Volver al Índice
+            </a>
+            <span class="navbar-text fw-bold text-danger mb-0">Design System UNAV</span>
+        </div>
+    </nav>
+
+    <main class="container-lg py-5" itemprop="mainContentOfPage">
+        
+        <header class="text-center mb-5 border-bottom pb-4">
+            <h1 class="display-5 fw-bold mb-3" itemprop="name">Tarjeta de Persona / Contacto</h1>
+            <p class="lead text-muted" itemprop="description">Componente responsivo para mostrar perfiles con integración de botones secundarios para WhatsApp y Calendar.</p>
+        </header>
+
+        <section class="bg-white p-4 p-md-5 rounded shadow-sm border mb-5">
+            <h3 class="unav-sectionTitle mt-0">1. Directorio Estándar (unav-layoutPersona)</h3>
+            <p class="text-muted small mb-4">Ejemplo clásico con el enlace animado "Ver CV".</p>
+            
+            <div class="row g-4">
+                <div class="col-12 col-md-6 col-lg-4 col-xl-3">
+                    <article class="unav-personCard unav-layoutPersona" itemscope itemtype="https://schema.org/Person">
+                        <div class="unav-imageWrapper">
+                            <img src="https://images.unsplash.com/photo-1560250097-0b93528c311a?ixlib=rb-4.0.3&auto=format&fit=crop&w=500&q=80" alt="Alberto Grande" class="unav-personImage" itemprop="image">
+                        </div>
+                        <h3 class="unav-personName" itemprop="name">Alberto Grande</h3>
+                        <div class="unav-personRole" itemprop="jobTitle"><strong>Webmaster</strong></div>
+                        
+                        <div class="unav-personDetails">
+                            <p itemprop="telephone"><i class="bi bi-telephone"></i> +34 948 42 56 00</p>
+                        </div>
+                        <div class="unav-personEmail">
+                            <a href="mailto:agrande@unav.es" itemprop="email"><i class="bi bi-envelope"></i> agrande@unav.es</a>
+                        </div>
+
+                        <div class="unav-actionContainer">
+                            <a href="#" class="unav-linkAnimated">
+                                <span class="unav-arrowBox">
+                                    <span class="unav-arrowIcon"></span>
+                                    <span class="unav-arrowClone"></span>
+                                </span>
+                                Ver CV
+                            </a>
+                        </div>
+                    </article>
+                </div>
+            </div>
+        </section>
+
+        <section class="bg-white p-4 p-md-5 rounded shadow-sm border mb-5">
+            <h3 class="unav-sectionTitle mt-0">2. Ficha Institucional (unav-layoutContacto)</h3>
+            <p class="text-muted small mb-4">La variante <code>.unav-layoutContacto</code> altera el orden mediante CSS Flexbox, foto en el centro.</p>
+            
+            <div class="row g-4">
+                <div class="col-12 col-md-6 col-lg-4">
+                    <article class="unav-personCard unav-layoutContacto" itemscope itemtype="https://schema.org/Person">
+                        <div class="unav-imageWrapper unav-isGrayscale">
+                            <img src="https://images.unsplash.com/photo-1573496359142-b8d87734a5a2?ixlib=rb-4.0.3&auto=format&fit=crop&w=500&q=80" alt="María García" class="unav-personImage" itemprop="image">
+                        </div>
+                        <h3 class="unav-personName" itemprop="name">María García</h3>
+                        <div class="unav-personRole" itemprop="jobTitle"><strong>Directora de Comunicación</strong></div>
+                        
+                        <div class="unav-personDetails">
+                            <p itemprop="telephone"><i class="bi bi-telephone"></i> +34 948 42 56 00</p>
+                        </div>
+                        <div class="unav-personEmail">
+                            <a href="mailto:mgarcia@unav.es" itemprop="email"><i class="bi bi-envelope"></i> mgarcia@unav.es</a>
+                        </div>
+
+                        <div class="unav-actionContainer">
+                            <a href="#" class="unav-linkAnimated">
+                                <span class="unav-arrowBox">
+                                    <span class="unav-arrowIcon"></span>
+                                    <span class="unav-arrowClone"></span>
+                                </span>
+                                Más información
+                            </a>
+                        </div>
+                    </article>
+                </div>
+            </div>
+        </section>
+
+        <section class="bg-white p-4 p-md-5 rounded shadow-sm border mb-5">
+            <h3 class="unav-sectionTitle mt-0">3. Tarjetas con Acciones Rápidas (WhatsApp / Calendar)</h3>
+            <p class="text-muted small mb-4">
+                Integración del componente <code>unav-botonSecundario</code> dentro de las fichas utilizando los colores base del Design System (<code>green-600</code> y <code>blue-600</code>).
+            </p>
+            
+            <div class="row g-4">
+                
+                <div class="col-12 col-md-6 col-lg-4">
+                    <article class="unav-personCard unav-layoutPersona" itemscope itemtype="https://schema.org/Person">
+                        <div class="unav-imageWrapper">
+                            <img src="https://images.unsplash.com/photo-1519085360753-af0119f7cbe7?ixlib=rb-4.0.3&auto=format&fit=crop&w=500&q=80" alt="Carlos Mendoza" class="unav-personImage" itemprop="image">
+                        </div>
+                        <h3 class="unav-personName" itemprop="name">Carlos Mendoza</h3>
+                        <div class="unav-personRole" itemprop="jobTitle"><strong>Asesor de Admisiones</strong></div>
+                        
+                        <div class="unav-personDetails">
+                            <p itemprop="telephone"><i class="bi bi-telephone"></i> +34 600 123 456</p>
+                            <p><i class="bi bi-clock"></i> L a V de 9h a 18h</p>
+                        </div>
+
+                        <div class="unav-actionContainer mt-3">
+                            <a href="https://wa.me/34600123456" target="_blank" class="unav-botonSecundario" style="--unav-btnColorSource: var(--unav-green-600);">
+                                <i class="bi bi-whatsapp"></i> WhatsApp
+                            </a>
+                        </div>
+                    </article>
+                </div>
+
+                <div class="col-12 col-md-6 col-lg-4">
+                    <article class="unav-personCard unav-layoutPersona" itemscope itemtype="https://schema.org/Person">
+                        <div class="unav-imageWrapper">
+                            <img src="https://images.unsplash.com/photo-1580489944761-15a19d654956?ixlib=rb-4.0.3&auto=format&fit=crop&w=500&q=80" alt="Ana López" class="unav-personImage" itemprop="image">
+                        </div>
+                        <h3 class="unav-personName" itemprop="name">Ana López</h3>
+                        <div class="unav-personRole" itemprop="jobTitle"><strong>Coordinadora Académica</strong></div>
+                        
+                        <div class="unav-personEmail">
+                            <a href="mailto:alopez@unav.es" itemprop="email"><i class="bi bi-envelope"></i> alopez@unav.es</a>
+                        </div>
+
+                        <div class="unav-actionContainer mt-3">
+                            <a href="#" target="_blank" class="unav-botonSecundario" style="--unav-btnColorSource: var(--unav-blue-600);">
+                                <i class="bi bi-calendar-event"></i> Agendar Cita
+                            </a>
+                        </div>
+                    </article>
+                </div>
+
+                <div class="col-12 col-md-6 col-lg-4">
+                    <article class="unav-personCard unav-layoutPersona" itemscope itemtype="https://schema.org/Person">
+                        <div class="unav-imageWrapper">
+                            <img src="https://images.unsplash.com/photo-1556157382-97eda2d62296?ixlib=rb-4.0.3&auto=format&fit=crop&w=500&q=80" alt="Javier Ruiz" class="unav-personImage" itemprop="image">
+                        </div>
+                        <h3 class="unav-personName" itemprop="name">Javier Ruiz</h3>
+                        <div class="unav-personRole" itemprop="jobTitle"><strong>Soporte Técnico IT</strong></div>
+                        
+                        <div class="unav-personDetails">
+                            <p itemprop="telephone"><i class="bi bi-telephone"></i> Ext: 80 1020</p>
+                        </div>
+
+                        <div class="unav-actionContainer mt-3">
+                            <a href="#" target="_blank" class="unav-botonSecundario" style="--unav-btnColorSource: var(--unav-blue-600);">
+                                <i class="bi bi-calendar-check"></i> Reservar
+                            </a>
+                            <a href="#" class="unav-botonSecundario" style="--unav-btnColorSource: var(--unav-grey-600);">
+                                <i class="bi bi-chat-dots"></i> Chat
+                            </a>
+                        </div>
+                    </article>
+                </div>
+
+            </div>
+        </section>
+
+    </main>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bundle.min.js"></script>
+</body>
+</html>

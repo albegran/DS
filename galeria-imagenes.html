@@ -1,0 +1,425 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Galería de imágenes | Design System UNAV</title>
+    
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.1/font/bootstrap-icons.css">
+    
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@100;300;400;500;700&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Roboto+Condensed:wght@700&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;700&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Roboto+Slab:wght@400;700&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=DM+Serif+Text&display=swap" rel="stylesheet">
+
+    <link rel="stylesheet" href="color.css">
+    <link rel="stylesheet" href="design-system.css">
+
+    <style>
+        :root {
+            --unav-galleryBg: #1a1a1a;
+            --unav-sidebarBg: #ffffff;
+            --unav-accentColor: #b91c1c; /* Rojo 700 */
+            --unav-transitionSpeed: 0.3s;
+        }
+
+        /* Estilos de la guía técnica */
+        .unav-tech-summary { border-left: 4px solid var(--unav-rojo-600); }
+        .unav-sectionTitle { 
+            color: var(--unav-black-800); 
+            font-weight: 700; 
+            margin-bottom: 2rem; 
+            border-bottom: 2px solid #eee; 
+            padding-bottom: 0.5rem; 
+            margin-top: 3rem; 
+            scroll-margin-top: 5rem; 
+        }
+
+        /* =======================================================
+           COMPONENTE: GALERÍA DE MEDIOS (Container Queries)
+           ======================================================= */
+        
+        .unav-galleryWrapper {
+            container-type: inline-size;
+            container-name: unavGallery;
+            width: 100%;
+        }
+
+        .unav-mediaGallery {
+            display: grid;
+            grid-template-columns: 1fr 300px;
+            background-color: var(--unav-galleryBg);
+            border-radius: 12px;
+            overflow: hidden;
+            box-shadow: 0 10px 15px -3px rgba(0,0,0,0.1);
+            width: 100%;
+            aspect-ratio: 16 / 9; 
+            min-height: 400px;
+        }
+
+        /* Área Visualizadora */
+        .unav-galleryStage {
+            position: relative;
+            background-color: #000;
+            overflow: hidden;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+
+        .unav-mainImageWrapper {
+            position: absolute;
+            inset: 0;
+            display: none;
+            align-items: center;
+            justify-content: center;
+            padding: 20px;
+        }
+
+        .unav-mainImageWrapper.isActive { display: flex; animation: unavFadeIn var(--unav-transitionSpeed) ease; }
+        .unav-mainImage { max-width: 100%; max-height: 100%; object-fit: contain; }
+
+        .unav-navBtn {
+            position: absolute;
+            top: 50%;
+            transform: translateY(-50%);
+            background: rgba(0,0,0,0.4);
+            color: white;
+            border: none;
+            padding: 1rem 0.5rem;
+            cursor: pointer;
+            z-index: 10;
+            transition: background 0.2s;
+        }
+        .unav-navBtn:hover { background: rgba(0,0,0,0.8); }
+        .unav-prevBtn { left: 0; border-radius: 0 4px 4px 0; }
+        .unav-nextBtn { right: 0; border-radius: 4px 0 0 4px; }
+
+        .unav-imageCaption {
+            position: absolute;
+            bottom: 0; left: 0; right: 0;
+            padding: 30px 20px 15px;
+            background: linear-gradient(transparent, rgba(0,0,0,0.8));
+            color: white;
+            font-size: 0.85rem;
+            pointer-events: none;
+        }
+
+        /* Panel de Miniaturas Lateral */
+        .unav-gallerySidebar {
+            background: var(--unav-sidebarBg);
+            display: grid;
+            grid-template-rows: 1fr auto;
+            border-left: 1px solid #eef2f6;
+            overflow: hidden;
+            min-height: 0;
+        }
+
+        /* Grid de Miniaturas Base */
+        .unav-thumbGrid {
+            overflow-y: auto;
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            grid-auto-rows: max-content;
+            gap: 4px;
+            padding: 10px;
+            align-content: start;
+        }
+
+        .unav-thumbItem {
+            position: relative;
+            width: 100%;
+            aspect-ratio: 1/1;
+            cursor: pointer;
+            opacity: 0.6;
+            transition: all 0.2s;
+            border: 2px solid transparent;
+            overflow: hidden;
+            display: block;
+        }
+
+        .unav-thumbItem img { 
+            position: absolute; 
+            top: 0; left: 0;
+            width: 100%; 
+            height: 100%; 
+            object-fit: cover; 
+            display: block;
+        }
+        
+        .unav-thumbItem:hover { opacity: 1; }
+        .unav-thumbItem.isSelected { opacity: 1; border-color: var(--unav-accentColor); }
+
+        .unav-galleryMeta {
+            padding: 12px 15px;
+            background: #fcfcfc;
+            border-top: 1px solid #eee;
+            font-size: 0.9rem;
+        }
+
+        @keyframes unavFadeIn { from { opacity: 0; } to { opacity: 1; } }
+
+        /* =======================================================
+           LÓGICA RESPONSIVE BASADA EN EL CONTENEDOR (Container Queries)
+           ======================================================= */
+        
+        @container unavGallery (max-width: 850px) {
+            .unav-mediaGallery { grid-template-columns: 1fr 200px; }
+            .unav-thumbGrid { grid-template-columns: repeat(2, 1fr); }
+        }
+
+        @container unavGallery (max-width: 550px) {
+            .unav-mediaGallery { 
+                grid-template-columns: 1fr; 
+                grid-template-rows: auto 120px; 
+                aspect-ratio: auto;
+                height: 500px;
+            }
+            .unav-galleryStage { height: 100%; }
+            .unav-gallerySidebar { grid-template-rows: 1fr; grid-template-columns: 1fr auto; }
+            
+            .unav-thumbGrid { 
+                display: flex; 
+                flex-direction: row;
+                overflow-x: auto; 
+                overflow-y: hidden; 
+                height: 100%; 
+                align-items: center; 
+                gap: 6px;
+            }
+            .unav-thumbItem { 
+                flex: 0 0 90px; 
+                width: 90px;
+                height: 90px;
+            }
+            .unav-galleryMeta { display: flex; align-items: center; border-top: none; border-left: 1px solid #eee; }
+        }
+    </style>
+</head>
+<body class="bg-light" itemscope itemtype="https://schema.org/WebPage">
+
+    <nav class="navbar navbar-light bg-white border-bottom py-3 sticky-top">
+        <div class="container-lg">
+            <a href="indice.html" class="btn btn-outline-secondary btn-sm rounded-pill px-3 fw-bold">
+                <i class="bi bi-arrow-left me-1"></i> Volver al Índice
+            </a>
+            <span class="navbar-text fw-bold text-primary mb-0">Design System UNAV</span>
+        </div>
+    </nav>
+
+    <main class="container-lg py-5" itemprop="mainContentOfPage">
+        
+        <header class="text-center mb-5 border-bottom pb-4">
+            <h1 class="display-5 fw-bold mb-3" itemprop="name">Galería de imágenes</h1>
+            <p class="lead text-muted" itemprop="description">Componente responsivo inteligente con metadatos Local SEO y GEO integrados en el código.</p>
+            
+            <div class="unav-tech-summary bg-white p-4 text-start mt-4 rounded shadow-sm border mx-auto" style="max-width: 900px;">
+                <h2 class="h5 fw-bold mb-3 text-dark"><i class="bi bi-gear-fill me-2"></i>Resumen Técnico y Funcional</h2>
+                <p class="small text-muted mb-4">
+                    Esta galería aprovecha la potencia de las <strong>Container Queries de CSS</strong> (<code>@container</code>). A diferencia de las media queries tradicionales que dependen del tamaño de la pantalla, este componente reacciona al ancho disponible en su contenedor padre. Esto significa que puedes colocar la misma galería en un grid completo o en una pequeña columna lateral, y ella misma decidirá si muestra las miniaturas a la derecha o en una barra horizontal inferior.
+                </p>
+                <div class="row g-3 small">
+                    <div class="col-md-6">
+                        <ul class="list-unstyled mb-0">
+                            <li class="mb-2"><strong>Contenedor Padre:</strong> Obligatorio envolver en <code>.unav-galleryWrapper</code>.</li>
+                            <li class="mb-2"><strong>Clase Galería:</strong> <code>.unav-mediaGallery</code>.</li>
+                            <li><strong>Navegación:</strong> Soporta flechas táctiles, clics y atajos de teclado (← y →).</li>
+                        </ul>
+                    </div>
+                    <div class="col-md-6 border-start ps-4">
+                        <ul class="list-unstyled mb-0">
+                            <li class="mb-2"><strong>Accesibilidad:</strong> Atributos <code>alt</code> generados dinámicamente.</li>
+                            <li class="mb-2"><strong>SEO / GEO:</strong> Implementa Schema.org <code>ImageGallery</code> y metadatos de coordenadas.</li>
+                            <li><strong>Rendimiento:</strong> Las imágenes incluyen atributo <code>loading="lazy"</code> nativo.</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </header>
+
+        <section class="bg-white p-4 p-md-5 rounded shadow-sm border mb-5">
+            <h3 class="unav-sectionTitle mt-0">1. Galería a 12 Columnas (Ancho Completo)</h3>
+            <p class="text-muted small mb-4">El componente detecta que tiene espacio de sobra y coloca las miniaturas en la columna lateral en formato grid de 3.</p>
+            <div class="row">
+                <div class="col-12">
+                    <div class="unav-galleryWrapper">
+                        <div class="unav-mediaGallery" itemscope itemtype="http://schema.org/ImageGallery">
+                            <div class="unav-galleryStage">
+                                <button class="unav-navBtn unav-prevBtn" onclick="changeSlide(this, -1)"><i class="bi bi-chevron-left"></i></button>
+                                <button class="unav-navBtn unav-nextBtn" onclick="changeSlide(this, 1)"><i class="bi bi-chevron-right"></i></button>
+                                <div class="unav-mainStageInyect"></div>
+                            </div>
+                            <div class="unav-gallerySidebar">
+                                <div class="unav-thumbGrid"></div>
+                                <div class="unav-galleryMeta d-flex justify-content-center">
+                                    <span class="badge bg-dark unav-counter">1 / 24</span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section class="bg-white p-4 p-md-5 rounded shadow-sm border mb-5">
+            <h3 class="unav-sectionTitle mt-0">2. Galería a 8 Columnas (Grid Parcial)</h3>
+            <p class="text-muted small mb-4">Al reducir el espacio, el sidebar de miniaturas reduce su anchura a 2 columnas para no asfixiar la imagen principal.</p>
+            <div class="row">
+                <div class="col-lg-8">
+                    <div class="unav-galleryWrapper">
+                        <div class="unav-mediaGallery" itemscope itemtype="http://schema.org/ImageGallery">
+                            <div class="unav-galleryStage">
+                                <button class="unav-navBtn unav-prevBtn" onclick="changeSlide(this, -1)"><i class="bi bi-chevron-left"></i></button>
+                                <button class="unav-navBtn unav-nextBtn" onclick="changeSlide(this, 1)"><i class="bi bi-chevron-right"></i></button>
+                                <div class="unav-mainStageInyect"></div>
+                            </div>
+                            <div class="unav-gallerySidebar">
+                                <div class="unav-thumbGrid"></div>
+                                <div class="unav-galleryMeta d-flex justify-content-center">
+                                    <span class="badge bg-dark unav-counter">1 / 24</span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section class="bg-white p-4 p-md-5 rounded shadow-sm border mb-5">
+            <h3 class="unav-sectionTitle mt-0">3. Galería a 5 Columnas (Comportamiento Móvil/Barra Inferior)</h3>
+            <p class="text-muted small mb-4">Cuando el contenedor es inferior a 550px (ya sea por diseño o porque se visualiza en un móvil), las miniaturas pasan automáticamente a la parte inferior con scroll horizontal infinito.</p>
+            <div class="row">
+                <div class="col-lg-5">
+                    <div class="unav-galleryWrapper">
+                        <div class="unav-mediaGallery" itemscope itemtype="http://schema.org/ImageGallery">
+                            <div class="unav-galleryStage">
+                                <button class="unav-navBtn unav-prevBtn" onclick="changeSlide(this, -1)"><i class="bi bi-chevron-left"></i></button>
+                                <button class="unav-navBtn unav-nextBtn" onclick="changeSlide(this, 1)"><i class="bi bi-chevron-right"></i></button>
+                                <div class="unav-mainStageInyect"></div>
+                            </div>
+                            <div class="unav-gallerySidebar">
+                                <div class="unav-thumbGrid"></div>
+                                <div class="unav-galleryMeta d-flex justify-content-center">
+                                    <span class="badge bg-dark unav-counter">1 / 24</span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+    </main>
+
+<script>
+    const totalPhotos = 24;
+    const imgIds = [
+        10, 11, 12, 13, 14, 15, 16, 17, 18, 19, 20, 21,
+        1011, 1012, 1015, 1016, 1018, 1019, 1020, 1021, 1022, 1023, 1024, 1025
+    ];
+
+    function initGalleries() {
+        const galleries = document.querySelectorAll('.unav-mediaGallery');
+        
+        galleries.forEach((gallery, gIndex) => {
+            const stage = gallery.querySelector('.unav-mainStageInyect');
+            const grid = gallery.querySelector('.unav-thumbGrid');
+            
+            imgIds.forEach((id, index) => {
+                // 1. INYECTAMOS LA IMAGEN PRINCIPAL CON TODO EL MARCADO SEO Y GEO
+                const wrap = document.createElement('figure');
+                wrap.className = `unav-mainImageWrapper ${index === 0 ? 'isActive' : ''}`;
+                
+                // --- INICIO SCHEMA.ORG IMAGE OBJECT ---
+                wrap.setAttribute('itemprop', 'associatedMedia');
+                wrap.setAttribute('itemscope', '');
+                wrap.setAttribute('itemtype', 'http://schema.org/ImageObject');
+                
+                const dims = index > 12 ? "800/1200" : "1200/800";
+                const imgUrl = `https://picsum.photos/id/${id}/${dims}`;
+                
+                wrap.innerHTML = `
+                    <img src="${imgUrl}" class="unav-mainImage" itemprop="contentUrl" alt="Fotografía del Campus UNAV ${index + 1}" loading="lazy">
+                    
+                    <figcaption class="unav-imageCaption">
+                        <span itemprop="caption">Fotografía de recurso #${index + 1}</span>
+                        
+                        <meta itemprop="author" content="Universidad de Navarra">
+                        <meta itemprop="datePublished" content="2024-05-01">
+                        
+                        <div itemprop="contentLocation" itemscope itemtype="http://schema.org/Place" style="display:none;">
+                            <meta itemprop="name" content="Campus Universidad de Navarra">
+                            
+                            <div itemprop="address" itemscope itemtype="http://schema.org/PostalAddress">
+                                <meta itemprop="addressLocality" content="Pamplona">
+                                <meta itemprop="addressRegion" content="Navarra">
+                                <meta itemprop="addressCountry" content="ES">
+                            </div>
+                            
+                            <div itemprop="geo" itemscope itemtype="http://schema.org/GeoCoordinates">
+                                <meta itemprop="latitude" content="42.80214">
+                                <meta itemprop="longitude" content="-1.65215">
+                            </div>
+                        </div>
+                    </figcaption>
+                `;
+                // --- FIN SCHEMA.ORG ---
+                
+                stage.appendChild(wrap);
+
+                // 2. INYECTAMOS LA MINIATURA
+                const thumb = document.createElement('div');
+                thumb.className = `unav-thumbItem ${index === 0 ? 'isSelected' : ''}`;
+                // Agregamos thumbnailUrl al microdato
+                thumb.innerHTML = `<img src="https://picsum.photos/id/${id}/150/150" itemprop="thumbnailUrl" alt="Miniatura ${index + 1}" loading="lazy">`;
+                thumb.onclick = () => goToSlide(gallery, index);
+                grid.appendChild(thumb);
+            });
+        });
+    }
+
+    function goToSlide(gallery, index) {
+        const slides = gallery.querySelectorAll('.unav-mainImageWrapper');
+        const thumbs = gallery.querySelectorAll('.unav-thumbItem');
+        const counter = gallery.querySelector('.unav-counter');
+        
+        gallery.querySelector('.unav-mainImageWrapper.isActive').classList.remove('isActive');
+        gallery.querySelector('.unav-thumbItem.isSelected').classList.remove('isSelected');
+        
+        slides[index].classList.add('isActive');
+        thumbs[index].classList.add('isSelected');
+        if(counter) counter.innerText = `${index + 1} / ${totalPhotos}`;
+        
+        thumbs[index].scrollIntoView({ behavior: 'smooth', block: 'nearest', inline: 'center' });
+    }
+
+    function changeSlide(btn, delta) {
+        const gallery = btn.closest('.unav-mediaGallery');
+        const thumbs = gallery.querySelectorAll('.unav-thumbItem');
+        const currentIdx = Array.from(thumbs).findIndex(t => t.classList.contains('isSelected'));
+        
+        let nextIdx = currentIdx + delta;
+        if (nextIdx >= totalPhotos) nextIdx = 0;
+        if (nextIdx < 0) nextIdx = totalPhotos - 1;
+        
+        goToSlide(gallery, nextIdx);
+    }
+
+    // Soporte Teclado 
+    document.addEventListener('keydown', (e) => {
+        const gallery = document.querySelector('.unav-mediaGallery');
+        if(!gallery) return;
+        if (e.key === "ArrowLeft") changeSlide(gallery.querySelector('.unav-prevBtn'), -1);
+        if (e.key === "ArrowRight") changeSlide(gallery.querySelector('.unav-nextBtn'), 1);
+    });
+
+    document.addEventListener('DOMContentLoaded', initGalleries);
+</script>
+
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bundle.min.js"></script>
+</body>
+</html>

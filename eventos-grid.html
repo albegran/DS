@@ -1,0 +1,328 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Catálogo de Eventos | Design System UNAV</title>
+    
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.1/font/bootstrap-icons.css">
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+    
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@100;300;400;500;700&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Roboto+Condensed:wght@700&display=swap" rel="stylesheet">
+    
+    <link rel="stylesheet" href="color.css">
+    <link rel="stylesheet" href="design-system.css">
+
+    <style>
+        /* Estilos de la guía técnica */
+        .unav-tech-summary { border-left: 4px solid var(--unav-rojo-600, #b91c1c); }
+        .unav-sectionTitle { 
+            color: var(--unav-black-800, #1f2937); 
+            font-weight: 700; 
+            margin-bottom: 2rem; 
+            border-bottom: 2px solid #eee; 
+            padding-bottom: 0.5rem; 
+            margin-top: 3rem; 
+        }
+
+        /* =========================================
+           COMPONENTE: TARJETAS DE EVENTOS
+           ========================================= */
+        
+        .unav-eventos-link {
+            text-decoration: none !important;
+            color: inherit;
+            display: block;
+            height: 100%;
+            transition: transform 0.3s ease;
+        }
+
+        .unav-eventos-card {
+            background: #fff;
+            border: 1px solid #e7e7e7;
+            display: flex;
+            flex-direction: column;
+            height: 100%;
+            transition: box-shadow 0.3s ease;
+            /* Se elimina el margin fijo porque usaremos los gutters (gap) de Bootstrap */
+            border-radius: 4px;
+            overflow: hidden;
+        }
+
+        .unav-eventos-link:hover { transform: translateY(-4px); }
+        .unav-eventos-link:hover .unav-eventos-card { box-shadow: 0 10px 20px rgba(0,0,0,0.08); }
+
+        .unav-eventos-image {
+            width: 100%;
+            height: 200px;
+            margin: 0;
+            overflow: hidden;
+            background-color: #f4f4f4;
+            position: relative;
+        }
+        
+        .unav-eventos-image img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            display: block;
+        }
+
+        .unav-eventos-body {
+            padding: 1.5rem;
+            flex-grow: 1;
+            text-align: center;
+            display: flex;
+            flex-direction: column;
+            align-items: center; /* Centrar el bloque de la fecha y badge */
+        }
+
+        /* Contenedor para Fecha y Badge de inmediatez */
+        .unav-eventos-date-wrapper {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 8px;
+            margin-bottom: 5px;
+        }
+
+        .unav-eventos-date {
+            font-family: "Roboto", sans-serif;
+            font-weight: 300; 
+            font-size: 1.15rem;
+            line-height: 1.2;
+            margin: 0;
+            color: #777;
+            text-transform: uppercase;
+        }
+
+        /* Badge UX para HOY / MAÑANA */
+        .unav-badge-urgency {
+            background-color: var(--unav-rojo-600, #dc2626);
+            color: white;
+            font-size: 0.65rem;
+            font-weight: 700;
+            padding: 3px 8px;
+            border-radius: 12px;
+            letter-spacing: 0.5px;
+            text-transform: uppercase;
+            line-height: 1;
+        }
+
+        .unav-eventos-time {
+            font-family: "Roboto", sans-serif;
+            font-weight: 700;
+            font-size: 1.25rem;
+            line-height: 1.2;
+            margin: 0;
+            color: #000;
+        }
+
+        .unav-eventos-title {
+            margin-top: 1.25rem;
+            font-size: 1.15rem;
+            line-height: 1.5rem;
+            font-weight: 400;
+            color: #000;
+            margin-bottom: 0;
+        }
+
+        .unav-eventos-location {
+            padding: 1rem;
+            background-color: #fbfbfb;
+            border-top: 1px solid #e7e7e7;
+            font-size: 0.85rem;
+            line-height: 1.3;
+            color: #666;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 6px;
+            text-align: center;
+        }
+        
+        .unav-eventos-location .material-icons { font-size: 1.1rem; color: #888; flex-shrink: 0;}
+
+        /* Clase auxiliar para la maqueta */
+        .grid-placeholder {
+            background: #f8f9fa;
+            border: 2px dashed #dee2e6;
+            height: 100%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: #adb5bd;
+            min-height: 300px;
+            border-radius: 4px;
+        }
+    </style>
+</head>
+<body class="bg-light" itemscope itemtype="https://schema.org/WebPage">
+
+    <nav class="navbar navbar-light bg-white border-bottom py-3 sticky-top">
+        <div class="container-lg">
+            <a href="indice.html" class="btn btn-outline-secondary btn-sm rounded-pill px-3 fw-bold">
+                <i class="bi bi-arrow-left me-1"></i> Volver al Índice
+            </a>
+            <span class="navbar-text fw-bold text-primary mb-0">Design System UNAV</span>
+        </div>
+    </nav>
+
+    <main class="container-lg py-5" itemprop="mainContentOfPage">
+        
+        <header class="text-center mb-5 border-bottom pb-4">
+            <h1 class="display-5 fw-bold mb-3" itemprop="name">Tarjetas de Eventos</h1>
+            <p class="lead text-muted" itemprop="description">Contenedores de agenda y actividades. Patrón UX de fechas y resolución de conflictos de anchos.</p>
+            
+            <div class="unav-tech-summary bg-white p-4 text-start mt-4 rounded shadow-sm border mx-auto" style="max-width: 900px;">
+                <h2 class="h5 fw-bold mb-3 text-dark"><i class="bi bi-calendar-event me-2"></i>Resumen Técnico y Funcional</h2>
+                <p class="small text-muted mb-4">
+                    <strong>Mejora UX Implementada:</strong> Para evitar la pérdida de contexto, la fecha real no se borra. En su lugar, se inyecta un *badge* dinámico (<code>.unav-badge-urgency</code>) cuando el evento es "HOY" o "MAÑANA", atrayendo la mirada sin destruir el dato base.
+                </p>
+                <div class="row g-3 small">
+                    <div class="col-md-6">
+                        <ul class="list-unstyled mb-0">
+                            <li class="mb-2"><strong>Layout Sólido:</strong> Construido con <code>display: flex</code>; la caja de ubicación inferior siempre se asienta en la base independientemente del largo del título o de la dirección.</li>
+                            <li class="mb-2"><strong>Gutters Bootstrap:</strong> Se utilizan las clases <code>g-*</code> del framework para los espacios horizontales/verticales, eliminando márgenes fijos del CSS y optimizando el espacio.</li>
+                        </ul>
+                    </div>
+                    <div class="col-md-6 border-start ps-4">
+                        <ul class="list-unstyled mb-0">
+                            <li class="mb-2"><strong>Desbordamiento (Overflow):</strong> Las localizaciones de más de una línea (Ej: Aula 30 del Edificio Central) centran su texto flexando hacia abajo sin romper la tarjeta.</li>
+                            <li class="mb-2"><strong>Imágenes:</strong> Altura fija de 200px con <code>object-fit: cover</code> para evitar deformaciones fotográficas.</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </header>
+
+        <section class="bg-white p-4 p-md-5 rounded shadow-sm border mb-5">
+            <h3 class="unav-sectionTitle mt-0">01. Cuatro Eventos (Grid 4 col)</h3>
+            <p class="small text-muted mb-4">Ejemplo de distribución en cuartos (<code>col-md-3</code>). Ideal para pantallas panorámicas con orden cronológico de izquierda a derecha.</p>
+            <div class="row g-3" id="grid-4-col">
+                </div>
+        </section>
+
+        <section class="bg-white p-4 p-md-5 rounded shadow-sm border mb-5">
+            <h3 class="unav-sectionTitle mt-0">02. Tres Eventos (Grid 3 col)</h3>
+            <p class="small text-muted mb-4">Ejemplo de distribución en tercios (<code>col-md-4</code>). Las tarjetas tienen más espacio para respirar.</p>
+            <div class="row g-3" id="grid-3-col">
+                </div>
+        </section>
+
+        <section class="bg-white p-4 p-md-5 rounded shadow-sm border mb-5">
+            <h3 class="unav-sectionTitle mt-0">03. Dos Eventos (Grid 2 col)</h3>
+            <p class="small text-muted mb-4">Ejemplo de distribución en mitades (<code>col-md-6</code>).</p>
+            <div class="row g-3" id="grid-2-col">
+                </div>
+        </section>
+
+        <section class="bg-white p-4 p-md-5 rounded shadow-sm border mb-5">
+            <h3 class="unav-sectionTitle mt-0">04. Dos Eventos en las primeras 6 columnas</h3>
+            <p class="small text-muted mb-4">Uso de anidamiento de columnas (row > col-6 > row > col-6) para maquetaciones asimétricas.</p>
+            <div class="row g-3">
+                <div class="col-lg-6">
+                    <div class="row g-3" id="grid-nested-2-col">
+                        </div>
+                </div>
+                <div class="col-lg-6">
+                    <div class="grid-placeholder">Módulo de Texto / Banner / 6 columnas vacías</div>
+                </div>
+            </div>
+        </section>
+
+        <section class="bg-white p-4 p-md-5 rounded shadow-sm border mb-5">
+            <h3 class="unav-sectionTitle mt-0">05. Tres Eventos en las primeras 6 columnas (Grid denso)</h3>
+            <p class="small text-muted mb-4">Anidamiento más denso (row > col-6 > row > col-4). <strong>Se ha aplicado la clase <code>g-2</code></strong> al row interno para reducir los márgenes (gutters) entre tarjetas y ganar píxeles útiles para los textos.</p>
+            <div class="row g-3">
+                <div class="col-lg-6">
+                    <div class="row g-2" id="grid-nested-3-col">
+                        </div>
+                </div>
+                <div class="col-lg-6">
+                    <div class="grid-placeholder">Módulo de Texto / Banner / 6 columnas vacías</div>
+                </div>
+            </div>
+        </section>
+
+    </main>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bundle.min.js"></script>
+    <script>
+        document.addEventListener('DOMContentLoaded', () => {
+            // Catálogo de eventos variables y reales (Cronológico para Abril/Mayo/Junio 2026)
+            const eventos = [
+                { id: '1015', date: '23 Abr. 2026', urgency: 'HOY', time: '10:00h.', title: 'Jornada de Puertas Abiertas', location: 'Aula 30 del Edificio Central' },
+                { id: '1021', date: '23 Abr. 2026', urgency: 'HOY', time: '11:15h.', title: 'Encuentro Alumni Internacional 2026', location: 'Explanada Central' },
+                { id: '1022', date: '24 Abr. 2026', urgency: 'MAÑANA', time: '08:30h.', title: 'Congreso de Comunicación y Empresa', location: 'Facultad de Comunicación' },
+                { id: '1016', date: '24 Abr. 2026', urgency: 'MAÑANA', time: '16:30h.', title: 'Seminario Internacional de Bioética', location: 'Aula Magna' },
+                { id: '1018', date: '15 May. 2026', urgency: '', time: '09:00h.', title: 'Defensa de Tesis Doctoral: Oncología', location: 'CIMA' },
+                { id: '1019', date: '25 May. 2026', urgency: '', time: '12:00h.', title: 'Mesa Redonda: Sostenibilidad Universitaria', location: 'Biblioteca de Ciencias' },
+                { id: '1020', date: '02 Jun. 2026', urgency: '', time: '18:00h.', title: 'Concierto de la Orquesta Sinfónica', location: 'Museo MUN' },
+                { id: '1023', date: '15 Jun. 2026', urgency: '', time: '19:00h.', title: 'Presentación del libro institucional', location: 'Polideportivo' }
+            ];
+
+            // Función para generar el HTML de la tarjeta con el nuevo sistema de Badge UX
+            const createCard = (eventData) => {
+                const badgeHtml = eventData.urgency ? `<span class="unav-badge-urgency">${eventData.urgency}</span>` : '';
+
+                return `
+                    <a href="#" class="unav-eventos-link" itemscope itemtype="https://schema.org/Event">
+                        <div class="unav-eventos-card">
+                            <figure class="unav-eventos-image">
+                                <img src="https://picsum.photos/id/${eventData.id}/400/250" alt="Imagen de ${eventData.title}" loading="lazy" itemprop="image">
+                            </figure>
+                            <div class="unav-eventos-body">
+                                <div class="unav-eventos-date-wrapper">
+                                    <p class="unav-eventos-date" itemprop="startDate">${eventData.date}</p>
+                                    ${badgeHtml}
+                                </div>
+                                <p class="unav-eventos-time">${eventData.time}</p>
+                                <h3 class="unav-eventos-title" itemprop="name">${eventData.title}</h3>
+                            </div>
+                            <div class="unav-eventos-location" itemprop="location" itemscope itemtype="https://schema.org/Place">
+                                <span class="material-icons" aria-hidden="true">location_on</span>
+                                <span itemprop="name">${eventData.location}</span>
+                            </div>
+                        </div>
+                    </a>
+                `;
+            };
+
+            // Inyectar en 4 columnas (Orden: 0, 1, 2, 3)
+            const grid4 = document.getElementById('grid-4-col');
+            [0, 1, 2, 3].forEach(i => {
+                grid4.innerHTML += `<div class="col-md-6 col-lg-3">${createCard(eventos[i])}</div>`;
+            });
+
+            // Inyectar en 3 columnas (Orden: 4, 5, 6)
+            const grid3 = document.getElementById('grid-3-col');
+            [4, 5, 6].forEach(i => {
+                grid3.innerHTML += `<div class="col-md-4">${createCard(eventos[i])}</div>`;
+            });
+
+            // Inyectar en 2 columnas (Orden: 6, 7)
+            const grid2 = document.getElementById('grid-2-col');
+            [6, 7].forEach(i => {
+                grid2.innerHTML += `<div class="col-md-6">${createCard(eventos[i])}</div>`;
+            });
+
+            // Inyectar anidado (2 en 6 cols) (Orden: 0, 1)
+            const gridNested2 = document.getElementById('grid-nested-2-col');
+            [0, 1].forEach(i => {
+                gridNested2.innerHTML += `<div class="col-md-6">${createCard(eventos[i])}</div>`;
+            });
+
+            // Inyectar anidado (3 en 6 cols - Denso) (Orden: 4, 5, 6)
+            const gridNested3 = document.getElementById('grid-nested-3-col');
+            [4, 5, 6].forEach(i => {
+                gridNested3.innerHTML += `<div class="col-md-4">${createCard(eventos[i])}</div>`;
+            });
+        });
+    </script>
+</body>
+</html>

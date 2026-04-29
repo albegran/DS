@@ -1,0 +1,434 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Iconografía | Design System UNAV</title>
+    
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+    
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.1/font/bootstrap-icons.css">
+    
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@24,400,0,0" />
+    
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@100;300;400;500;700;900&display=swap" rel="stylesheet">
+    
+    <link rel="stylesheet" href="color.css">
+    <link rel="stylesheet" href="design-system.css">
+
+    <style>
+        /* =========================================
+           SISTEMA DE ICONOGRAFÍA UNAV
+           ========================================= */
+
+        body {
+            font-family: "Roboto", sans-serif;
+            color: #111111;
+        }
+
+        /* Estilos de la guía técnica (Heredados del estándar) */
+        .unav-techSummary { 
+            border-left: 4px solid #dc2626; 
+        }
+        .unav-sectionTitle { 
+            color: #1f2937; 
+            font-weight: 700; 
+            margin-bottom: 2rem; 
+            border-bottom: 2px solid #eee; 
+            padding-bottom: 0.5rem; 
+            margin-top: 3rem; 
+        }
+
+        /* Contenedor de muestra de cada icono */
+        .unav-iconBox {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            padding: 1.5rem 1rem;
+            background-color: #f8f9fa;
+            border: 1px solid #e3eaed;
+            border-radius: 8px;
+            transition: all 0.2s ease-in-out;
+            height: 100%;
+            cursor: pointer;
+        }
+
+        .unav-iconBox:hover {
+            background-color: #000000;
+            color: #ffffff;
+            border-color: #000000;
+            transform: translateY(-2px);
+        }
+
+        .unav-iconWrapper {
+            font-size: 2rem; /* Tamaño base del icono para la demostración */
+            margin-bottom: 0.75rem;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+
+        /* Sobrescribir herencia para Google Material Symbols en el hover */
+        .unav-iconBox:hover .material-symbols-outlined {
+            color: #ffffff;
+        }
+
+        .unav-iconName {
+            font-size: 0.75rem;
+            font-family: monospace;
+            text-align: center;
+            word-break: break-all;
+        }
+        
+        .unav-docLink {
+            display: inline-flex;
+            align-items: center;
+            font-weight: 600;
+            color: #dc2626;
+            text-decoration: none;
+            margin-bottom: 2rem;
+            transition: color 0.2s;
+        }
+        
+        .unav-docLink:hover {
+            color: #000000;
+        }
+        
+        /* Simulación visual para iconos SVG propios */
+        .unav-customIconSvg {
+            width: 32px;
+            height: 32px;
+            fill: currentColor;
+        }
+    </style>
+</head>
+<body class="bg-light" itemscope itemtype="https://schema.org/WebPage">
+
+    <nav class="navbar navbar-light bg-white border-bottom py-3 sticky-top">
+        <div class="container-lg">
+            <a href="indice.html" class="btn btn-outline-secondary btn-sm rounded-pill px-3 fw-bold">
+                <i class="bi bi-arrow-left me-1"></i> Volver al Índice
+            </a>
+            <span class="navbar-text fw-bold text-dark mb-0">Design System UNAV</span>
+        </div>
+    </nav>
+
+    <main class="container-lg py-5" itemprop="mainContentOfPage">
+        
+        <header class="text-center mb-5 border-bottom pb-4">
+            <h1 class="display-5 fw-bold mb-3" itemprop="name">Iconografía</h1>
+            <p class="lead text-muted" itemprop="description">Librerías estándar y pautas para el uso e implementación de elementos iconográficos en el ecosistema digital.</p>
+            
+            <div class="unav-techSummary bg-white p-4 text-start mt-4 rounded shadow-sm border mx-auto" style="max-width: 900px;">
+                <h2 class="h5 fw-bold mb-3 text-dark"><i class="bi bi-gear-fill me-2"></i>Características Técnicas y Librería Propia</h2>
+                <p class="small text-muted mb-3">
+                    El sistema utiliza dos librerías externas mediante CDN (Bootstrap Icons y Google Material Symbols) para necesidades genéricas. Además, contempla la integración de una <strong>tercera librería de iconos propios</strong>.
+                </p>
+                <div class="row g-4 small">
+                    <div class="col-md-6">
+                        <h6 class="fw-bold mb-2">Creación de Iconos Propios</h6>
+                        <ul class="mb-0 text-muted ps-3">
+                            <li class="mb-1"><strong>Formato y Canvas:</strong> Diseñar en SVG puro sobre un <em>artboard</em> consistente (ej. 24x24px o 32x32px).</li>
+                            <li class="mb-1"><strong>Trazos:</strong> Expandir todos los trazos (outline strokes) para evitar distorsiones al redimensionar.</li>
+                            <li class="mb-1"><strong>Color:</strong> No aplicar colores fijos (`#hex`). Usar la propiedad CSS <code>fill="currentColor"</code> en el SVG para que herede el color de su clase contenedora (ej. hover en negro).</li>
+                        </ul>
+                    </div>
+                    <div class="col-md-6 border-start-md ps-md-4">
+                        <h6 class="fw-bold mb-2">Integración en el CMS</h6>
+                        <ul class="mb-0 text-muted ps-3">
+                            <li class="mb-1"><strong>Opción A (Recomendada): SVG Sprites.</strong> Se agrupan todos los SVGs en un único archivo oculto en el HTML base usando etiquetas <code>&lt;symbol id="icon-name"&gt;</code>. Se inyectan con: <code>&lt;svg&gt;&lt;use href="#icon-name"&gt;&lt;/use&gt;&lt;/svg&gt;</code>. Es lo mejor para rendimiento y accesibilidad.</li>
+                            <li class="mb-1"><strong>Opción B: Webfont Custom.</strong> Empaquetar los SVGs usando herramientas como <em>IcoMoon</em> o <em>Fontello</em>. Te generarán los archivos WOFF2 y un CSS con clases tipo <code>.unav-icon-mifigura</code>.</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </header>
+
+        <section class="bg-white p-4 p-md-5 rounded shadow-sm border mb-5">
+            <h3 class="unav-sectionTitle mt-0">1. Bootstrap Icons</h3>
+            <p class="small text-muted mb-2">Colección principal para elementos estructurales y de UI afines a la librería base. Se invocan mediante clases <code>bi bi-[nombre]</code>.</p>
+            <a href="https://icons.getbootstrap.com/" target="_blank" class="unav-docLink">
+                Ver documentación oficial <i class="bi bi-box-arrow-up-right ms-2 small"></i>
+            </a>
+            
+            <div class="row row-cols-2 row-cols-md-4 row-cols-lg-5 g-3">
+                <div class="col" itemscope itemtype="https://schema.org/VisualArtwork">
+                    <div class="unav-iconBox">
+                        <div class="unav-iconWrapper"><i class="bi bi-house"></i></div>
+                        <span class="unav-iconName" itemprop="name">bi-house</span>
+                    </div>
+                </div>
+                <div class="col" itemscope itemtype="https://schema.org/VisualArtwork">
+                    <div class="unav-iconBox">
+                        <div class="unav-iconWrapper"><i class="bi bi-search"></i></div>
+                        <span class="unav-iconName" itemprop="name">bi-search</span>
+                    </div>
+                </div>
+                <div class="col" itemscope itemtype="https://schema.org/VisualArtwork">
+                    <div class="unav-iconBox">
+                        <div class="unav-iconWrapper"><i class="bi bi-person"></i></div>
+                        <span class="unav-iconName" itemprop="name">bi-person</span>
+                    </div>
+                </div>
+                <div class="col" itemscope itemtype="https://schema.org/VisualArtwork">
+                    <div class="unav-iconBox">
+                        <div class="unav-iconWrapper"><i class="bi bi-gear"></i></div>
+                        <span class="unav-iconName" itemprop="name">bi-gear</span>
+                    </div>
+                </div>
+                <div class="col" itemscope itemtype="https://schema.org/VisualArtwork">
+                    <div class="unav-iconBox">
+                        <div class="unav-iconWrapper"><i class="bi bi-envelope"></i></div>
+                        <span class="unav-iconName" itemprop="name">bi-envelope</span>
+                    </div>
+                </div>
+                <div class="col" itemscope itemtype="https://schema.org/VisualArtwork">
+                    <div class="unav-iconBox">
+                        <div class="unav-iconWrapper"><i class="bi bi-bell"></i></div>
+                        <span class="unav-iconName" itemprop="name">bi-bell</span>
+                    </div>
+                </div>
+                <div class="col" itemscope itemtype="https://schema.org/VisualArtwork">
+                    <div class="unav-iconBox">
+                        <div class="unav-iconWrapper"><i class="bi bi-calendar"></i></div>
+                        <span class="unav-iconName" itemprop="name">bi-calendar</span>
+                    </div>
+                </div>
+                <div class="col" itemscope itemtype="https://schema.org/VisualArtwork">
+                    <div class="unav-iconBox">
+                        <div class="unav-iconWrapper"><i class="bi bi-camera"></i></div>
+                        <span class="unav-iconName" itemprop="name">bi-camera</span>
+                    </div>
+                </div>
+                <div class="col" itemscope itemtype="https://schema.org/VisualArtwork">
+                    <div class="unav-iconBox">
+                        <div class="unav-iconWrapper"><i class="bi bi-chat"></i></div>
+                        <span class="unav-iconName" itemprop="name">bi-chat</span>
+                    </div>
+                </div>
+                <div class="col" itemscope itemtype="https://schema.org/VisualArtwork">
+                    <div class="unav-iconBox">
+                        <div class="unav-iconWrapper"><i class="bi bi-check2-circle"></i></div>
+                        <span class="unav-iconName" itemprop="name">bi-check2-circle</span>
+                    </div>
+                </div>
+                <div class="col" itemscope itemtype="https://schema.org/VisualArtwork">
+                    <div class="unav-iconBox">
+                        <div class="unav-iconWrapper"><i class="bi bi-x-lg"></i></div>
+                        <span class="unav-iconName" itemprop="name">bi-x-lg</span>
+                    </div>
+                </div>
+                <div class="col" itemscope itemtype="https://schema.org/VisualArtwork">
+                    <div class="unav-iconBox">
+                        <div class="unav-iconWrapper"><i class="bi bi-chevron-down"></i></div>
+                        <span class="unav-iconName" itemprop="name">bi-chevron-down</span>
+                    </div>
+                </div>
+                <div class="col" itemscope itemtype="https://schema.org/VisualArtwork">
+                    <div class="unav-iconBox">
+                        <div class="unav-iconWrapper"><i class="bi bi-cloud-arrow-up"></i></div>
+                        <span class="unav-iconName" itemprop="name">bi-cloud-arrow-up</span>
+                    </div>
+                </div>
+                <div class="col" itemscope itemtype="https://schema.org/VisualArtwork">
+                    <div class="unav-iconBox">
+                        <div class="unav-iconWrapper"><i class="bi bi-download"></i></div>
+                        <span class="unav-iconName" itemprop="name">bi-download</span>
+                    </div>
+                </div>
+                <div class="col" itemscope itemtype="https://schema.org/VisualArtwork">
+                    <div class="unav-iconBox">
+                        <div class="unav-iconWrapper"><i class="bi bi-heart"></i></div>
+                        <span class="unav-iconName" itemprop="name">bi-heart</span>
+                    </div>
+                </div>
+                <div class="col" itemscope itemtype="https://schema.org/VisualArtwork">
+                    <div class="unav-iconBox">
+                        <div class="unav-iconWrapper"><i class="bi bi-info-circle"></i></div>
+                        <span class="unav-iconName" itemprop="name">bi-info-circle</span>
+                    </div>
+                </div>
+                <div class="col" itemscope itemtype="https://schema.org/VisualArtwork">
+                    <div class="unav-iconBox">
+                        <div class="unav-iconWrapper"><i class="bi bi-list"></i></div>
+                        <span class="unav-iconName" itemprop="name">bi-list</span>
+                    </div>
+                </div>
+                <div class="col" itemscope itemtype="https://schema.org/VisualArtwork">
+                    <div class="unav-iconBox">
+                        <div class="unav-iconWrapper"><i class="bi bi-star"></i></div>
+                        <span class="unav-iconName" itemprop="name">bi-star</span>
+                    </div>
+                </div>
+                <div class="col" itemscope itemtype="https://schema.org/VisualArtwork">
+                    <div class="unav-iconBox">
+                        <div class="unav-iconWrapper"><i class="bi bi-trash"></i></div>
+                        <span class="unav-iconName" itemprop="name">bi-trash</span>
+                    </div>
+                </div>
+                <div class="col" itemscope itemtype="https://schema.org/VisualArtwork">
+                    <div class="unav-iconBox">
+                        <div class="unav-iconWrapper"><i class="bi bi-pencil"></i></div>
+                        <span class="unav-iconName" itemprop="name">bi-pencil</span>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section class="bg-white p-4 p-md-5 rounded shadow-sm border mb-5">
+            <h3 class="unav-sectionTitle mt-0">2. Google Material Symbols</h3>
+            <p class="small text-muted mb-2">Colección secundaria tipo "Outlined". Ideal para infografías o paneles de usuario. Se invocan con la etiqueta <code>&lt;span class="material-symbols-outlined"&gt;nombre&lt;/span&gt;</code>.</p>
+            <a href="https://fonts.google.com/icons" target="_blank" class="unav-docLink">
+                Ver documentación oficial <i class="bi bi-box-arrow-up-right ms-2 small"></i>
+            </a>
+            
+            <div class="row row-cols-2 row-cols-md-4 row-cols-lg-5 g-3">
+                <div class="col" itemscope itemtype="https://schema.org/VisualArtwork">
+                    <div class="unav-iconBox">
+                        <div class="unav-iconWrapper"><span class="material-symbols-outlined">home</span></div>
+                        <span class="unav-iconName" itemprop="name">home</span>
+                    </div>
+                </div>
+                <div class="col" itemscope itemtype="https://schema.org/VisualArtwork">
+                    <div class="unav-iconBox">
+                        <div class="unav-iconWrapper"><span class="material-symbols-outlined">search</span></div>
+                        <span class="unav-iconName" itemprop="name">search</span>
+                    </div>
+                </div>
+                <div class="col" itemscope itemtype="https://schema.org/VisualArtwork">
+                    <div class="unav-iconBox">
+                        <div class="unav-iconWrapper"><span class="material-symbols-outlined">person</span></div>
+                        <span class="unav-iconName" itemprop="name">person</span>
+                    </div>
+                </div>
+                <div class="col" itemscope itemtype="https://schema.org/VisualArtwork">
+                    <div class="unav-iconBox">
+                        <div class="unav-iconWrapper"><span class="material-symbols-outlined">settings</span></div>
+                        <span class="unav-iconName" itemprop="name">settings</span>
+                    </div>
+                </div>
+                <div class="col" itemscope itemtype="https://schema.org/VisualArtwork">
+                    <div class="unav-iconBox">
+                        <div class="unav-iconWrapper"><span class="material-symbols-outlined">mail</span></div>
+                        <span class="unav-iconName" itemprop="name">mail</span>
+                    </div>
+                </div>
+                <div class="col" itemscope itemtype="https://schema.org/VisualArtwork">
+                    <div class="unav-iconBox">
+                        <div class="unav-iconWrapper"><span class="material-symbols-outlined">notifications</span></div>
+                        <span class="unav-iconName" itemprop="name">notifications</span>
+                    </div>
+                </div>
+                <div class="col" itemscope itemtype="https://schema.org/VisualArtwork">
+                    <div class="unav-iconBox">
+                        <div class="unav-iconWrapper"><span class="material-symbols-outlined">calendar_month</span></div>
+                        <span class="unav-iconName" itemprop="name">calendar_month</span>
+                    </div>
+                </div>
+                <div class="col" itemscope itemtype="https://schema.org/VisualArtwork">
+                    <div class="unav-iconBox">
+                        <div class="unav-iconWrapper"><span class="material-symbols-outlined">photo_camera</span></div>
+                        <span class="unav-iconName" itemprop="name">photo_camera</span>
+                    </div>
+                </div>
+                <div class="col" itemscope itemtype="https://schema.org/VisualArtwork">
+                    <div class="unav-iconBox">
+                        <div class="unav-iconWrapper"><span class="material-symbols-outlined">forum</span></div>
+                        <span class="unav-iconName" itemprop="name">forum</span>
+                    </div>
+                </div>
+                <div class="col" itemscope itemtype="https://schema.org/VisualArtwork">
+                    <div class="unav-iconBox">
+                        <div class="unav-iconWrapper"><span class="material-symbols-outlined">check_circle</span></div>
+                        <span class="unav-iconName" itemprop="name">check_circle</span>
+                    </div>
+                </div>
+                <div class="col" itemscope itemtype="https://schema.org/VisualArtwork">
+                    <div class="unav-iconBox">
+                        <div class="unav-iconWrapper"><span class="material-symbols-outlined">close</span></div>
+                        <span class="unav-iconName" itemprop="name">close</span>
+                    </div>
+                </div>
+                <div class="col" itemscope itemtype="https://schema.org/VisualArtwork">
+                    <div class="unav-iconBox">
+                        <div class="unav-iconWrapper"><span class="material-symbols-outlined">expand_more</span></div>
+                        <span class="unav-iconName" itemprop="name">expand_more</span>
+                    </div>
+                </div>
+                <div class="col" itemscope itemtype="https://schema.org/VisualArtwork">
+                    <div class="unav-iconBox">
+                        <div class="unav-iconWrapper"><span class="material-symbols-outlined">cloud_upload</span></div>
+                        <span class="unav-iconName" itemprop="name">cloud_upload</span>
+                    </div>
+                </div>
+                <div class="col" itemscope itemtype="https://schema.org/VisualArtwork">
+                    <div class="unav-iconBox">
+                        <div class="unav-iconWrapper"><span class="material-symbols-outlined">download</span></div>
+                        <span class="unav-iconName" itemprop="name">download</span>
+                    </div>
+                </div>
+                <div class="col" itemscope itemtype="https://schema.org/VisualArtwork">
+                    <div class="unav-iconBox">
+                        <div class="unav-iconWrapper"><span class="material-symbols-outlined">favorite</span></div>
+                        <span class="unav-iconName" itemprop="name">favorite</span>
+                    </div>
+                </div>
+                <div class="col" itemscope itemtype="https://schema.org/VisualArtwork">
+                    <div class="unav-iconBox">
+                        <div class="unav-iconWrapper"><span class="material-symbols-outlined">info</span></div>
+                        <span class="unav-iconName" itemprop="name">info</span>
+                    </div>
+                </div>
+                <div class="col" itemscope itemtype="https://schema.org/VisualArtwork">
+                    <div class="unav-iconBox">
+                        <div class="unav-iconWrapper"><span class="material-symbols-outlined">menu</span></div>
+                        <span class="unav-iconName" itemprop="name">menu</span>
+                    </div>
+                </div>
+                <div class="col" itemscope itemtype="https://schema.org/VisualArtwork">
+                    <div class="unav-iconBox">
+                        <div class="unav-iconWrapper"><span class="material-symbols-outlined">star</span></div>
+                        <span class="unav-iconName" itemprop="name">star</span>
+                    </div>
+                </div>
+                <div class="col" itemscope itemtype="https://schema.org/VisualArtwork">
+                    <div class="unav-iconBox">
+                        <div class="unav-iconWrapper"><span class="material-symbols-outlined">delete</span></div>
+                        <span class="unav-iconName" itemprop="name">delete</span>
+                    </div>
+                </div>
+                <div class="col" itemscope itemtype="https://schema.org/VisualArtwork">
+                    <div class="unav-iconBox">
+                        <div class="unav-iconWrapper"><span class="material-symbols-outlined">edit</span></div>
+                        <span class="unav-iconName" itemprop="name">edit</span>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section class="bg-white p-4 p-md-5 rounded shadow-sm border">
+            <h3 class="unav-sectionTitle mt-0">3. Librería Propia UNAV (Ejemplo de uso)</h3>
+            <p class="small text-muted mb-4">Ejemplo de cómo se renderizaría un icono SVG corporativo inyectado mediante Sprite (<code>&lt;use&gt;</code>) o Webfont. Toma el color del contenedor gracias a <code>currentColor</code>.</p>
+            
+            <div class="row row-cols-2 row-cols-md-4 g-3">
+                <div class="col" itemscope itemtype="https://schema.org/VisualArtwork">
+                    <div class="unav-iconBox">
+                        <div class="unav-iconWrapper">
+                            <svg class="unav-customIconSvg" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                                <path d="M12 2L2 22h20L12 2zm0 3.8l6.4 12.7H5.6L12 5.8z"/>
+                            </svg>
+                        </div>
+                        <span class="unav-iconName" itemprop="name">unav-icon-escudo</span>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+    </main>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bundle.min.js"></script>
+</body>
+</html>

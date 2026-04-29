@@ -1,0 +1,179 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Etiquetas (Tags) | Design System UNAV</title>
+    
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.1/font/bootstrap-icons.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@100;300;400;500;700;900&display=swap" rel="stylesheet">
+    
+    <link rel="stylesheet" href="color.css">
+    <style>
+        /* =========================================
+           COMPONENTE: ETIQUETAS (.unav-tag)
+           ========================================= */
+
+        /* Clase base universal */
+        .unav-tag {
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            padding: 4px 10px;
+            border-radius: 6px;
+            font-family: 'Roboto', sans-serif;
+            font-weight: 500; /* Medium para mejorar accesibilidad */
+            font-size: 12px;  /* Tamaño mínimo accesible */
+            line-height: 1.2;
+            white-space: nowrap;
+            letter-spacing: 0.3px;
+            user-select: none;
+            text-decoration: none;
+        }
+
+        /* Variantes de Color (Generadas desde color.css usando camelCase) */
+        .unav-tagRojo       { background-color: var(--unav-rojo-100); color: var(--unav-rojo-800); }
+        .unav-tagBlack      { background-color: var(--unav-black-100); color: var(--unav-black-800); }
+        .unav-tagGrey       { background-color: var(--unav-grey-100); color: var(--unav-grey-800); }
+        .unav-tagMoss       { background-color: var(--unav-moss-100); color: var(--unav-moss-800); }
+        .unav-tagGreenLight { background-color: var(--unav-green-l-100); color: var(--unav-green-l-800); }
+        .unav-tagGreen      { background-color: var(--unav-green-100); color: var(--unav-green-800); }
+        .unav-tagTeal       { background-color: var(--unav-teal-100); color: var(--unav-teal-800); }
+        .unav-tagCyan       { background-color: var(--unav-cyan-100); color: var(--unav-cyan-800); }
+        .unav-tagBlueLight  { background-color: var(--unav-blue-l-100); color: var(--unav-blue-l-800); }
+        .unav-tagBlue       { background-color: var(--unav-blue-100); color: var(--unav-blue-800); }
+        .unav-tagBlueDark   { background-color: var(--unav-b-dark-100); color: var(--unav-b-dark-800); }
+        .unav-tagIndigo     { background-color: var(--unav-indigo-100); color: var(--unav-indigo-800); }
+        .unav-tagViolet     { background-color: var(--unav-violet-100); color: var(--unav-violet-800); }
+        .unav-tagPurple     { background-color: var(--unav-purple-100); color: var(--unav-purple-800); }
+        .unav-tagFuchsia    { background-color: var(--unav-fuchsia-100); color: var(--unav-fuchsia-800); }
+        .unav-tagPink       { background-color: var(--unav-pink-100); color: var(--unav-pink-800); }
+        .unav-tagRose       { background-color: var(--unav-rose-100); color: var(--unav-rose-800); }
+        .unav-tagOrangeDark { background-color: var(--unav-o-dark-100); color: var(--unav-o-dark-800); }
+        .unav-tagOrange     { background-color: var(--unav-orange-100); color: var(--unav-orange-800); }
+        .unav-tagYellow     { background-color: var(--unav-yellow-100); color: var(--unav-yellow-800); }
+
+        /* Estilos de la guía técnica (Heredados del modelo) */
+        .unav-techSummary { border-left: 4px solid #dc2626; }
+        .unav-sectionTitle { 
+            color: #1f2937; 
+            font-weight: 700; 
+            margin-bottom: 2rem; 
+            border-bottom: 2px solid #eee; 
+            padding-bottom: 0.5rem; 
+            margin-top: 3rem; 
+        }
+    </style>
+</head>
+<body class="bg-light" itemscope itemtype="https://schema.org/WebPage">
+
+    <nav class="navbar navbar-light bg-white border-bottom py-3 sticky-top">
+        <div class="container-lg">
+            <a href="indice.html" class="btn btn-outline-secondary btn-sm rounded-pill px-3 fw-bold">
+                <i class="bi bi-arrow-left me-1"></i> Volver al Índice
+            </a>
+            <span class="navbar-text fw-bold text-dark mb-0">Design System UNAV</span>
+        </div>
+    </nav>
+
+    <main class="container-lg py-5" itemprop="mainContentOfPage">
+        
+        <header class="text-center mb-5 border-bottom pb-4">
+            <h1 class="display-5 fw-bold mb-3" itemprop="name">Etiquetas (Tags)</h1>
+            <p class="lead text-muted" itemprop="description">Componente atómico informativo. Utilizado para categorizar contenido visualmente sin generar interacción de enlace.</p>
+            
+            <div class="unav-techSummary bg-white p-4 text-start mt-4 rounded shadow-sm border mx-auto" style="max-width: 900px;">
+                <h2 class="h5 fw-bold mb-3 text-dark"><i class="bi bi-gear-fill me-2"></i>Resumen Técnico y Funcional</h2>
+                <p class="small text-muted mb-4">
+                    Las etiquetas son meramente informativas. Se ha ajustado la fuente original (8px) a <strong>12px y peso 500 (Medium)</strong> para cumplir con los estándares de accesibilidad web (WCAG), manteniendo el aspecto compacto mediante el uso proporcional de padding. La nomenclatura respeta camelCase.
+                </p>
+                <div class="row g-3 small">
+                    <div class="col-md-6">
+                        <ul class="list-unstyled mb-0">
+                            <li class="mb-2"><strong>Clase Base:</strong> <code>.unav-tag</code></li>
+                            <li class="mb-2"><strong>Modificadores de Color:</strong> Ej. <code>.unav-tagRojo</code>, <code>.unav-tagBlueDark</code></li>
+                            <li><strong>Tipografía:</strong> <code>Roboto</code> 12px (Medium 500)</li>
+                        </ul>
+                    </div>
+                    <div class="col-md-6 border-start ps-4">
+                        <ul class="list-unstyled mb-0">
+                            <li class="mb-2"><strong>Contraste:</strong> Fondo nivel <code>100</code> + Texto nivel <code>800</code></li>
+                            <li class="mb-2"><strong>Comportamiento:</strong> <code>inline-flex</code> (No clickeables, <code>user-select: none</code>)</li>
+                            <li><strong>Marcado:</strong> Schema.org <code>keywords</code> al agruparlas.</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </header>
+
+        <section class="bg-white p-4 p-md-5 rounded shadow-sm border mb-5">
+            <h3 class="unav-sectionTitle mt-0">1. Catálogo de 20 Variantes de Color</h3>
+            <p class="small text-muted mb-4">Muestra de las 20 familias cromáticas extraídas de <code>color.css</code>. Combinan el nivel 100 de fondo con el nivel 800 de texto para garantizar contraste y armonía.</p>
+            
+            <div class="d-flex flex-wrap gap-3" itemprop="keywords">
+                <span class="unav-tag unav-tagRojo">unav-tagRojo</span>
+                <span class="unav-tag unav-tagBlack">unav-tagBlack</span>
+                <span class="unav-tag unav-tagGrey">unav-tagGrey</span>
+                <span class="unav-tag unav-tagMoss">unav-tagMoss</span>
+                <span class="unav-tag unav-tagGreenLight">unav-tagGreenLight</span>
+                <span class="unav-tag unav-tagGreen">unav-tagGreen</span>
+                <span class="unav-tag unav-tagTeal">unav-tagTeal</span>
+                <span class="unav-tag unav-tagCyan">unav-tagCyan</span>
+                <span class="unav-tag unav-tagBlueLight">unav-tagBlueLight</span>
+                <span class="unav-tag unav-tagBlue">unav-tagBlue</span>
+                <span class="unav-tag unav-tagBlueDark">unav-tagBlueDark</span>
+                <span class="unav-tag unav-tagIndigo">unav-tagIndigo</span>
+                <span class="unav-tag unav-tagViolet">unav-tagViolet</span>
+                <span class="unav-tag unav-tagPurple">unav-tagPurple</span>
+                <span class="unav-tag unav-tagFuchsia">unav-tagFuchsia</span>
+                <span class="unav-tag unav-tagPink">unav-tagPink</span>
+                <span class="unav-tag unav-tagRose">unav-tagRose</span>
+                <span class="unav-tag unav-tagOrangeDark">unav-tagOrangeDark</span>
+                <span class="unav-tag unav-tagOrange">unav-tagOrange</span>
+                <span class="unav-tag unav-tagYellow">unav-tagYellow</span>
+            </div>
+        </section>
+
+        <section class="bg-white p-4 p-md-5 rounded shadow-sm border mb-5">
+            <h3 class="unav-sectionTitle mt-0">2. Ejemplo de Uso en Contexto</h3>
+            <p class="small text-muted mb-4">Ejemplo de cómo estas etiquetas acompañarían a un componente complejo (como una tarjeta) dentro de la grilla de Bootstrap.</p>
+            
+            <div class="row">
+                <div class="col-md-6">
+                    <article class="card h-100 border-0 bg-light p-4" itemscope itemtype="https://schema.org/Article">
+                        <div class="d-flex flex-wrap gap-2 mb-3" itemprop="keywords">
+                            <span class="unav-tag unav-tagBlueDark">Grado</span>
+                            <span class="unav-tag unav-tagMoss">Presencial</span>
+                            <span class="unav-tag unav-tagGrey">Pamplona</span>
+                        </div>
+                        <h4 class="h5 fw-bold mb-2" itemprop="headline">Grado en Biología</h4>
+                        <p class="small text-muted mb-0" itemprop="description">
+                            Formación completa en las ciencias de la vida, orientada a la investigación y el desarrollo científico con instalaciones de vanguardia.
+                        </p>
+                    </article>
+                </div>
+                
+                <div class="col-md-6 mt-4 mt-md-0">
+                    <article class="card h-100 border-0 bg-light p-4" itemscope itemtype="https://schema.org/Article">
+                        <div class="d-flex flex-wrap gap-2 mb-3" itemprop="keywords">
+                            <span class="unav-tag unav-tagFuchsia">Máster</span>
+                            <span class="unav-tag unav-tagOrange">Online</span>
+                            <span class="unav-tag unav-tagGrey">Madrid</span>
+                        </div>
+                        <h4 class="h5 fw-bold mb-2" itemprop="headline">Máster en Comunicación Corporativa</h4>
+                        <p class="small text-muted mb-0" itemprop="description">
+                            Programa diseñado para profesionales que buscan liderar estrategias de comunicación en un entorno digital y globalizado.
+                        </p>
+                    </article>
+                </div>
+            </div>
+        </section>
+
+    </main>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+</body>
+</html>

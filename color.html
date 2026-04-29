@@ -1,0 +1,309 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Color | Design System unav-</title>
+    
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.1/font/bootstrap-icons.css">
+    
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@100;300;400;500;700&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Roboto+Condensed:wght@700&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;700&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Roboto+Slab:wght@400;700&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=DM+Serif+Text&display=swap" rel="stylesheet">
+
+    <link rel="stylesheet" href="color.css">
+    <link rel="stylesheet" href="design-system.css">
+    
+    <style>
+        .color-swatch {
+            min-width: 90px;
+            transition: transform 0.2s;
+            cursor: pointer;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+        }
+        .color-swatch:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 10px 15px -3px rgba(0,0,0,0.1);
+        }
+        .color-swatch[class*="-100"], .color-swatch[class*="-200"] { border: 1px solid #e3eaed; }
+    </style>
+</head>
+<body class="bg-light" itemscope itemtype="https://schema.org/WebPage">
+
+    <nav class="navbar navbar-light bg-white border-bottom py-3 sticky-top">
+        <div class="container-lg">
+            <a href="indice.html" class="btn btn-outline-secondary btn-sm rounded-pill px-3 fw-bold">
+                <i class="bi bi-arrow-left me-1"></i> Volver al Índice
+            </a>
+            <span class="navbar-text fw-bold text-primary mb-0">Design System UNAV</span>
+        </div>
+    </nav>
+
+    <main class="container-lg py-5" itemprop="mainContentOfPage">
+        
+        <header class="text-center mb-5 border-bottom pb-4">
+            <h1 class="display-5 fw-bold mb-3" itemprop="name">Paleta Corporativa UNAV</h1>
+            <p class="lead text-muted" itemprop="description">Guía de consulta rápida de clases utilitarias de fondo <code>.unav-bg-</code>.</p>
+        </header>
+
+        <section class="mb-5 bg-white p-4 p-md-5 rounded shadow-sm border">
+            <h2 class="h3 fw-bold border-bottom pb-2 mb-4 text-primary">1. Colores Primarios</h2>
+
+            <div id="color-rojo" class="mb-5">
+                <h3 class="h5 mb-3 text-capitalize text-dark">Rojo Unav</h3>
+                <div class="d-flex flex-wrap gap-2 text-center small">
+                    <div class="color-swatch unav-bg-rojo-100 flex-fill p-3 rounded text-dark"><b>100</b><br><small>rojo-100</small><br><small class="opacity-75">#FFEbee</small></div>
+                    <div class="color-swatch unav-bg-rojo-200 flex-fill p-3 rounded text-dark"><b>200</b><br><small>rojo-200</small><br><small class="opacity-75">#FFCDD2</small></div>
+                    <div class="color-swatch unav-bg-rojo-300 flex-fill p-3 rounded text-dark"><b>300</b><br><small>rojo-300</small><br><small class="opacity-75">#EF9A9A</small></div>
+                    <div class="color-swatch unav-bg-rojo-400 flex-fill p-3 rounded text-dark"><b>400</b><br><small>rojo-400</small><br><small class="opacity-75">#E57373</small></div>
+                    <div class="color-swatch unav-bg-rojo-500 flex-fill p-3 rounded text-white"><b>500</b><br><small>rojo-500</small><br><small class="opacity-75">#FF0000</small></div>
+                    <div class="color-swatch unav-bg-rojo-600 flex-fill p-3 rounded text-white"><b>600</b><br><small>rojo-600</small><br><small class="opacity-75">#D32F2F</small></div>
+                    <div class="color-swatch unav-bg-rojo-700 flex-fill p-3 rounded text-white"><b>700</b><br><small>rojo-700</small><br><small class="opacity-75">#C62828</small></div>
+                    <div class="color-swatch unav-bg-rojo-800 flex-fill p-3 rounded text-white"><b>800</b><br><small>rojo-800</small><br><small class="opacity-75">#B71C1C</small></div>
+                    <div class="color-swatch unav-bg-rojo-900 flex-fill p-3 rounded text-white"><b>900</b><br><small>rojo-900</small><br><small class="opacity-75">#7F0000</small></div>
+                </div>
+            </div>
+
+            <div id="color-black" class="mb-5">
+                <h3 class="h5 mb-3 text-capitalize text-dark">Black Primary</h3>
+                <div class="d-flex flex-wrap gap-2 text-center small">
+                    <div class="color-swatch unav-bg-black-100 flex-fill p-3 rounded text-dark"><b>100</b><br><small>black-100</small><br><small class="opacity-75">#E6E6E6</small></div>
+                    <div class="color-swatch unav-bg-black-200 flex-fill p-3 rounded text-dark"><b>200</b><br><small>black-200</small><br><small class="opacity-75">#CCCCCC</small></div>
+                    <div class="color-swatch unav-bg-black-300 flex-fill p-3 rounded text-dark"><b>300</b><br><small>black-300</small><br><small class="opacity-75">#999999</small></div>
+                    <div class="color-swatch unav-bg-black-400 flex-fill p-3 rounded text-white"><b>400</b><br><small>black-400</small><br><small class="opacity-75">#666666</small></div>
+                    <div class="color-swatch unav-bg-black-500 flex-fill p-3 rounded text-white"><b>500</b><br><small>black-500</small><br><small class="opacity-75">#000000</small></div>
+                    <div class="color-swatch unav-bg-black-600 flex-fill p-3 rounded text-white"><b>600</b><br><small>black-600</small><br><small class="opacity-75">#333333</small></div>
+                    <div class="color-swatch unav-bg-black-700 flex-fill p-3 rounded text-white"><b>700</b><br><small>black-700</small><br><small class="opacity-75">#222222</small></div>
+                    <div class="color-swatch unav-bg-black-800 flex-fill p-3 rounded text-white"><b>800</b><br><small>black-800</small><br><small class="opacity-75">#111111</small></div>
+                    <div class="color-swatch unav-bg-black-900 flex-fill p-3 rounded text-white"><b>900</b><br><small>black-900</small><br><small class="opacity-75">#050505</small></div>
+                </div>
+            </div>
+
+            <div id="color-grey" class="mb-5">
+                <h3 class="h5 mb-3 text-capitalize text-dark">Grey Primary</h3>
+                <div class="d-flex flex-wrap gap-2 text-center small">
+                    <div class="color-swatch unav-bg-grey-100 flex-fill p-3 rounded text-dark"><b>100</b><br><small>grey-100</small><br><small class="opacity-75">#F5F6F6</small></div>
+                    <div class="color-swatch unav-bg-grey-200 flex-fill p-3 rounded text-dark"><b>200</b><br><small>grey-200</small><br><small class="opacity-75">#EBECEC</small></div>
+                    <div class="color-swatch unav-bg-grey-300 flex-fill p-3 rounded text-dark"><b>300</b><br><small>grey-300</small><br><small class="opacity-75">#D1D3D4</small></div>
+                    <div class="color-swatch unav-bg-grey-400 flex-fill p-3 rounded text-dark"><b>400</b><br><small>grey-400</small><br><small class="opacity-75">#A8ABAC</small></div>
+                    <div class="color-swatch unav-bg-grey-500 flex-fill p-3 rounded text-white"><b>500</b><br><small>grey-500</small><br><small class="opacity-75">#6A6D6E</small></div>
+                    <div class="color-swatch unav-bg-grey-600 flex-fill p-3 rounded text-white"><b>600</b><br><small>grey-600</small><br><small class="opacity-75">#56595A</small></div>
+                    <div class="color-swatch unav-bg-grey-700 flex-fill p-3 rounded text-white"><b>700</b><br><small>grey-700</small><br><small class="opacity-75">#424445</small></div>
+                    <div class="color-swatch unav-bg-grey-800 flex-fill p-3 rounded text-white"><b>800</b><br><small>grey-800</small><br><small class="opacity-75">#2E2F30</small></div>
+                    <div class="color-swatch unav-bg-grey-900 flex-fill p-3 rounded text-white"><b>900</b><br><small>grey-900</small><br><small class="opacity-75">#1A1B1B</small></div>
+                </div>
+            </div>
+        </section>
+
+        <section class="mb-5 bg-white p-4 p-md-5 rounded shadow-sm border">
+            <h2 class="h3 fw-bold border-bottom pb-2 mb-4 text-primary">2. Colores Secundarios</h2>
+
+            <div id="color-moss" class="mb-5">
+                <h3 class="h5 mb-3 text-capitalize text-dark">Moss</h3>
+                <div class="d-flex flex-wrap gap-2 text-center small">
+                    <div class="color-swatch unav-bg-moss-100 flex-fill p-3 rounded text-dark"><b>100</b><br><small>moss-100</small><br><small class="opacity-75">#E6F4D7</small></div>
+                    <div class="color-swatch unav-bg-moss-200 flex-fill p-3 rounded text-dark"><b>200</b><br><small>moss-200</small><br><small class="opacity-75">#CEEAB0</small></div>
+                    <div class="color-swatch unav-bg-moss-300 flex-fill p-3 rounded text-dark"><b>300</b><br><small>moss-300</small><br><small class="opacity-75">#ACDC79</small></div>
+                    <div class="color-swatch unav-bg-moss-400 flex-fill p-3 rounded text-dark"><b>400</b><br><small>moss-400</small><br><small class="opacity-75">#86CB3C</small></div>
+                    <div class="color-swatch unav-bg-moss-500 flex-fill p-3 rounded text-white"><b>500</b><br><small>moss-500</small><br><small class="opacity-75">#669F2A</small></div>
+                    <div class="color-swatch unav-bg-moss-600 flex-fill p-3 rounded text-white"><b>600</b><br><small>moss-600</small><br><small class="opacity-75">#4F7A21</small></div>
+                    <div class="color-swatch unav-bg-moss-700 flex-fill p-3 rounded text-white"><b>700</b><br><small>moss-700</small><br><small class="opacity-75">#3F621A</small></div>
+                    <div class="color-swatch unav-bg-moss-800 flex-fill p-3 rounded text-white"><b>800</b><br><small>moss-800</small><br><small class="opacity-75">#335015</small></div>
+                    <div class="color-swatch unav-bg-moss-900 flex-fill p-3 rounded text-white"><b>900</b><br><small>moss-900</small><br><small class="opacity-75">#2B4212</small></div>
+                </div>
+            </div>
+
+            <div id="color-green-light" class="mb-5">
+                <h3 class="h5 mb-3 text-capitalize text-dark">Green Light</h3>
+                <div class="d-flex flex-wrap gap-2 text-center small">
+                    <div class="color-swatch unav-bg-green-light-100 flex-fill p-3 rounded text-dark"><b>100</b><br><small>green-l-100</small><br><small class="opacity-75">#E4FBCC</small></div>
+                    <div class="color-swatch unav-bg-green-light-200 flex-fill p-3 rounded text-dark"><b>200</b><br><small>green-l-200</small><br><small class="opacity-75">#D0F8AB</small></div>
+                    <div class="color-swatch unav-bg-green-light-300 flex-fill p-3 rounded text-dark"><b>300</b><br><small>green-l-300</small><br><small class="opacity-75">#A6EF67</small></div>
+                    <div class="color-swatch unav-bg-green-light-400 flex-fill p-3 rounded text-dark"><b>400</b><br><small>green-l-400</small><br><small class="opacity-75">#85E13A</small></div>
+                    <div class="color-swatch unav-bg-green-light-500 flex-fill p-3 rounded text-white"><b>500</b><br><small>green-l-500</small><br><small class="opacity-75">#66C61C</small></div>
+                    <div class="color-swatch unav-bg-green-light-600 flex-fill p-3 rounded text-white"><b>600</b><br><small>green-l-600</small><br><small class="opacity-75">#4CA30D</small></div>
+                    <div class="color-swatch unav-bg-green-light-700 flex-fill p-3 rounded text-white"><b>700</b><br><small>green-l-700</small><br><small class="opacity-75">#3B7C0F</small></div>
+                    <div class="color-swatch unav-bg-green-light-800 flex-fill p-3 rounded text-white"><b>800</b><br><small>green-l-800</small><br><small class="opacity-75">#326212</small></div>
+                    <div class="color-swatch unav-bg-green-light-900 flex-fill p-3 rounded text-white"><b>900</b><br><small>green-l-900</small><br><small class="opacity-75">#2B5314</small></div>
+                </div>
+            </div>
+
+            <div id="color-green" class="mb-5">
+                <h3 class="h5 mb-3 text-capitalize text-dark">Green</h3>
+                <div class="d-flex flex-wrap gap-2 text-center small">
+                    <div class="color-swatch unav-bg-green-100 flex-fill p-3 rounded text-dark"><b>100</b><br><small>green-100</small><br><small class="opacity-75">#D3F8DF</small></div>
+                    <div class="color-swatch unav-bg-green-200 flex-fill p-3 rounded text-dark"><b>200</b><br><small>green-200</small><br><small class="opacity-75">#AAF0C4</small></div>
+                    <div class="color-swatch unav-bg-green-300 flex-fill p-3 rounded text-dark"><b>300</b><br><small>green-300</small><br><small class="opacity-75">#73E2A3</small></div>
+                    <div class="color-swatch unav-bg-green-400 flex-fill p-3 rounded text-dark"><b>400</b><br><small>green-400</small><br><small class="opacity-75">#3CCB7F</small></div>
+                    <div class="color-swatch unav-bg-green-500 flex-fill p-3 rounded text-white"><b>500</b><br><small>green-500</small><br><small class="opacity-75">#16B364</small></div>
+                    <div class="color-swatch unav-bg-green-600 flex-fill p-3 rounded text-white"><b>600</b><br><small>green-600</small><br><small class="opacity-75">#099250</small></div>
+                    <div class="color-swatch unav-bg-green-700 flex-fill p-3 rounded text-white"><b>700</b><br><small>green-700</small><br><small class="opacity-75">#087443</small></div>
+                    <div class="color-swatch unav-bg-green-800 flex-fill p-3 rounded text-white"><b>800</b><br><small>green-800</small><br><small class="opacity-75">#095C37</small></div>
+                    <div class="color-swatch unav-bg-green-900 flex-fill p-3 rounded text-white"><b>900</b><br><small>green-900</small><br><small class="opacity-75">#084C2E</small></div>
+                </div>
+            </div>
+
+            <div id="color-teal" class="mb-5">
+                <h3 class="h5 mb-3 text-capitalize text-dark">Teal</h3>
+                <div class="d-flex flex-wrap gap-2 text-center small">
+                    <div class="color-swatch unav-bg-teal-100 flex-fill p-3 rounded text-dark"><b>100</b><br><small>teal-100</small><br><small class="opacity-75">#CCFBEF</small></div>
+                    <div class="color-swatch unav-bg-teal-200 flex-fill p-3 rounded text-dark"><b>200</b><br><small>teal-200</small><br><small class="opacity-75">#99F6E0</small></div>
+                    <div class="color-swatch unav-bg-teal-300 flex-fill p-3 rounded text-dark"><b>300</b><br><small>teal-300</small><br><small class="opacity-75">#5FE9D0</small></div>
+                    <div class="color-swatch unav-bg-teal-400 flex-fill p-3 rounded text-dark"><b>400</b><br><small>teal-400</small><br><small class="opacity-75">#2ED3B7</small></div>
+                    <div class="color-swatch unav-bg-teal-500 flex-fill p-3 rounded text-white"><b>500</b><br><small>teal-500</small><br><small class="opacity-75">#15B79E</small></div>
+                    <div class="color-swatch unav-bg-teal-600 flex-fill p-3 rounded text-white"><b>600</b><br><small>teal-600</small><br><small class="opacity-75">#0E9384</small></div>
+                    <div class="color-swatch unav-bg-teal-700 flex-fill p-3 rounded text-white"><b>700</b><br><small>teal-700</small><br><small class="opacity-75">#107569</small></div>
+                    <div class="color-swatch unav-bg-teal-800 flex-fill p-3 rounded text-white"><b>800</b><br><small>teal-800</small><br><small class="opacity-75">#125D56</small></div>
+                    <div class="color-swatch unav-bg-teal-900 flex-fill p-3 rounded text-white"><b>900</b><br><small>teal-900</small><br><small class="opacity-75">#134E48</small></div>
+                </div>
+            </div>
+
+            <div id="color-cyan" class="mb-5">
+                <h3 class="h5 mb-3 text-capitalize text-dark">Cyan</h3>
+                <div class="d-flex flex-wrap gap-2 text-center small">
+                    <div class="color-swatch unav-bg-cyan-100 flex-fill p-3 rounded text-dark"><b>100</b><br><small>cyan-100</small><br><small class="opacity-75">#CFF9FE</small></div>
+                    <div class="color-swatch unav-bg-cyan-200 flex-fill p-3 rounded text-dark"><b>200</b><br><small>cyan-200</small><br><small class="opacity-75">#A5F0FC</small></div>
+                    <div class="color-swatch unav-bg-cyan-300 flex-fill p-3 rounded text-dark"><b>300</b><br><small>cyan-300</small><br><small class="opacity-75">#67E3F9</small></div>
+                    <div class="color-swatch unav-bg-cyan-400 flex-fill p-3 rounded text-dark"><b>400</b><br><small>cyan-400</small><br><small class="opacity-75">#22CCEE</small></div>
+                    <div class="color-swatch unav-bg-cyan-500 flex-fill p-3 rounded text-white"><b>500</b><br><small>cyan-500</small><br><small class="opacity-75">#06AED4</small></div>
+                    <div class="color-swatch unav-bg-cyan-600 flex-fill p-3 rounded text-white"><b>600</b><br><small>cyan-600</small><br><small class="opacity-75">#088AB2</small></div>
+                    <div class="color-swatch unav-bg-cyan-700 flex-fill p-3 rounded text-white"><b>700</b><br><small>cyan-700</small><br><small class="opacity-75">#0E7090</small></div>
+                    <div class="color-swatch unav-bg-cyan-800 flex-fill p-3 rounded text-white"><b>800</b><br><small>cyan-800</small><br><small class="opacity-75">#155B75</small></div>
+                    <div class="color-swatch unav-bg-cyan-900 flex-fill p-3 rounded text-white"><b>900</b><br><small>cyan-900</small><br><small class="opacity-75">#164C63</small></div>
+                </div>
+            </div>
+
+            <div id="color-blue-light" class="mb-5">
+                <h3 class="h5 mb-3 text-capitalize text-dark">Blue Light</h3>
+                <div class="d-flex flex-wrap gap-2 text-center small">
+                    <div class="color-swatch unav-bg-blue-light-100 flex-fill p-3 rounded text-dark"><b>100</b><br><small>blue-l-100</small><br><small class="opacity-75">#E0F2FE</small></div>
+                    <div class="color-swatch unav-bg-blue-light-200 flex-fill p-3 rounded text-dark"><b>200</b><br><small>blue-l-200</small><br><small class="opacity-75">#B9E6FE</small></div>
+                    <div class="color-swatch unav-bg-blue-light-300 flex-fill p-3 rounded text-dark"><b>300</b><br><small>blue-l-300</small><br><small class="opacity-75">#7CD4FD</small></div>
+                    <div class="color-swatch unav-bg-blue-light-400 flex-fill p-3 rounded text-dark"><b>400</b><br><small>blue-l-400</small><br><small class="opacity-75">#36BFFA</small></div>
+                    <div class="color-swatch unav-bg-blue-light-500 flex-fill p-3 rounded text-white"><b>500</b><br><small>blue-l-500</small><br><small class="opacity-75">#0BA5EC</small></div>
+                    <div class="color-swatch unav-bg-blue-light-600 flex-fill p-3 rounded text-white"><b>600</b><br><small>blue-l-600</small><br><small class="opacity-75">#0086C9</small></div>
+                    <div class="color-swatch unav-bg-blue-light-700 flex-fill p-3 rounded text-white"><b>700</b><br><small>blue-l-700</small><br><small class="opacity-75">#026AA2</small></div>
+                    <div class="color-swatch unav-bg-blue-light-800 flex-fill p-3 rounded text-white"><b>800</b><br><small>blue-l-800</small><br><small class="opacity-75">#065986</small></div>
+                    <div class="color-swatch unav-bg-blue-light-900 flex-fill p-3 rounded text-white"><b>900</b><br><small>blue-l-900</small><br><small class="opacity-75">#0B4A6F</small></div>
+                </div>
+            </div>
+
+            <div id="color-blue" class="mb-5">
+                <h3 class="h5 mb-3 text-capitalize text-dark">Blue</h3>
+                <div class="d-flex flex-wrap gap-2 text-center small">
+                    <div class="color-swatch unav-bg-blue-100 flex-fill p-3 rounded text-dark"><b>100</b><br><small>blue-100</small><br><small class="opacity-75">#D1E9FF</small></div>
+                    <div class="color-swatch unav-bg-blue-200 flex-fill p-3 rounded text-dark"><b>200</b><br><small>blue-200</small><br><small class="opacity-75">#B2DDFF</small></div>
+                    <div class="color-swatch unav-bg-blue-300 flex-fill p-3 rounded text-dark"><b>300</b><br><small>blue-300</small><br><small class="opacity-75">#84CAFF</small></div>
+                    <div class="color-swatch unav-bg-blue-400 flex-fill p-3 rounded text-dark"><b>400</b><br><small>blue-400</small><br><small class="opacity-75">#53B1FD</small></div>
+                    <div class="color-swatch unav-bg-blue-500 flex-fill p-3 rounded text-white"><b>500</b><br><small>blue-500</small><br><small class="opacity-75">#2E90FA</small></div>
+                    <div class="color-swatch unav-bg-blue-600 flex-fill p-3 rounded text-white"><b>600</b><br><small>blue-600</small><br><small class="opacity-75">#1570EF</small></div>
+                    <div class="color-swatch unav-bg-blue-700 flex-fill p-3 rounded text-white"><b>700</b><br><small>blue-700</small><br><small class="opacity-75">#175CD3</small></div>
+                    <div class="color-swatch unav-bg-blue-800 flex-fill p-3 rounded text-white"><b>800</b><br><small>blue-800</small><br><small class="opacity-75">#1849A9</small></div>
+                    <div class="color-swatch unav-bg-blue-900 flex-fill p-3 rounded text-white"><b>900</b><br><small>blue-900</small><br><small class="opacity-75">#194185</small></div>
+                </div>
+            </div>
+
+            <div id="color-blue-dark" class="mb-5">
+                <h3 class="h5 mb-3 text-capitalize text-dark">Blue Dark</h3>
+                <div class="d-flex flex-wrap gap-2 text-center small">
+                    <div class="color-swatch unav-bg-blue-dark-100 flex-fill p-3 rounded text-dark"><b>100</b><br><small>b-dark-100</small><br><small class="opacity-75">#D1E0FF</small></div>
+                    <div class="color-swatch unav-bg-blue-dark-200 flex-fill p-3 rounded text-dark"><b>200</b><br><small>b-dark-200</small><br><small class="opacity-75">#B2CCFF</small></div>
+                    <div class="color-swatch unav-bg-blue-dark-300 flex-fill p-3 rounded text-dark"><b>300</b><br><small>b-dark-300</small><br><small class="opacity-75">#84ADFF</small></div>
+                    <div class="color-swatch unav-bg-blue-dark-400 flex-fill p-3 rounded text-dark"><b>400</b><br><small>b-dark-400</small><br><small class="opacity-75">#528BFF</small></div>
+                    <div class="color-swatch unav-bg-blue-dark-500 flex-fill p-3 rounded text-white"><b>500</b><br><small>b-dark-500</small><br><small class="opacity-75">#2970FF</small></div>
+                    <div class="color-swatch unav-bg-blue-dark-600 flex-fill p-3 rounded text-white"><b>600</b><br><small>b-dark-600</small><br><small class="opacity-75">#155EEF</small></div>
+                    <div class="color-swatch unav-bg-blue-dark-700 flex-fill p-3 rounded text-white"><b>700</b><br><small>b-dark-700</small><br><small class="opacity-75">#004EEB</small></div>
+                    <div class="color-swatch unav-bg-blue-dark-800 flex-fill p-3 rounded text-white"><b>800</b><br><small>b-dark-800</small><br><small class="opacity-75">#0040C1</small></div>
+                    <div class="color-swatch unav-bg-blue-dark-900 flex-fill p-3 rounded text-white"><b>900</b><br><small>b-dark-900</small><br><small class="opacity-75">#00359E</small></div>
+                </div>
+            </div>
+
+            <div id="color-indigo" class="mb-5">
+                <h3 class="h5 mb-3 text-capitalize text-dark">Indigo</h3>
+                <div class="d-flex flex-wrap gap-2 text-center small">
+                    <div class="color-swatch unav-bg-indigo-100 flex-fill p-3 rounded text-dark"><b>100</b><br><small>indigo-100</small><br><small class="opacity-75">#E0EAFF</small></div>
+                    <div class="color-swatch unav-bg-indigo-200 flex-fill p-3 rounded text-dark"><b>200</b><br><small>indigo-200</small><br><small class="opacity-75">#C7D7FE</small></div>
+                    <div class="color-swatch unav-bg-indigo-300 flex-fill p-3 rounded text-dark"><b>300</b><br><small>indigo-300</small><br><small class="opacity-75">#A4BCFD</small></div>
+                    <div class="color-swatch unav-bg-indigo-400 flex-fill p-3 rounded text-dark"><b>400</b><br><small>indigo-400</small><br><small class="opacity-75">#8098F9</small></div>
+                    <div class="color-swatch unav-bg-indigo-500 flex-fill p-3 rounded text-white"><b>500</b><br><small>indigo-500</small><br><small class="opacity-75">#6172F3</small></div>
+                    <div class="color-swatch unav-bg-indigo-600 flex-fill p-3 rounded text-white"><b>600</b><br><small>indigo-600</small><br><small class="opacity-75">#444CE7</small></div>
+                    <div class="color-swatch unav-bg-indigo-700 flex-fill p-3 rounded text-white"><b>700</b><br><small>indigo-700</small><br><small class="opacity-75">#3538CD</small></div>
+                    <div class="color-swatch unav-bg-indigo-800 flex-fill p-3 rounded text-white"><b>800</b><br><small>indigo-800</small><br><small class="opacity-75">#2D31A6</small></div>
+                    <div class="color-swatch unav-bg-indigo-900 flex-fill p-3 rounded text-white"><b>900</b><br><small>indigo-900</small><br><small class="opacity-75">#2D3282</small></div>
+                </div>
+            </div>
+
+            <div id="color-violet" class="mb-5">
+                <h3 class="h5 mb-3 text-capitalize text-dark">Violet</h3>
+                <div class="d-flex flex-wrap gap-2 text-center small">
+                    <div class="color-swatch unav-bg-violet-100 flex-fill p-3 rounded text-dark"><b>100</b><br><small>violet-100</small><br><small class="opacity-75">#ECE9FE</small></div>
+                    <div class="color-swatch unav-bg-violet-200 flex-fill p-3 rounded text-dark"><b>200</b><br><small>violet-200</small><br><small class="opacity-75">#DDD6FE</small></div>
+                    <div class="color-swatch unav-bg-violet-300 flex-fill p-3 rounded text-dark"><b>300</b><br><small>violet-300</small><br><small class="opacity-75">#C3B5FD</small></div>
+                    <div class="color-swatch unav-bg-violet-400 flex-fill p-3 rounded text-dark"><b>400</b><br><small>violet-400</small><br><small class="opacity-75">#A48AFB</small></div>
+                    <div class="color-swatch unav-bg-violet-500 flex-fill p-3 rounded text-white"><b>500</b><br><small>violet-500</small><br><small class="opacity-75">#875BF7</small></div>
+                    <div class="color-swatch unav-bg-violet-600 flex-fill p-3 rounded text-white"><b>600</b><br><small>violet-600</small><br><small class="opacity-75">#7839EE</small></div>
+                    <div class="color-swatch unav-bg-violet-700 flex-fill p-3 rounded text-white"><b>700</b><br><small>violet-700</small><br><small class="opacity-75">#6927DA</small></div>
+                    <div class="color-swatch unav-bg-violet-800 flex-fill p-3 rounded text-white"><b>800</b><br><small>violet-800</small><br><small class="opacity-75">#5720B7</small></div>
+                    <div class="color-swatch unav-bg-violet-900 flex-fill p-3 rounded text-white"><b>900</b><br><small>violet-900</small><br><small class="opacity-75">#491C96</small></div>
+                </div>
+            </div>
+
+            <div id="color-purple" class="mb-5">
+                <h3 class="h5 mb-3 text-capitalize text-dark">Purple</h3>
+                <div class="d-flex flex-wrap gap-2 text-center small">
+                    <div class="color-swatch unav-bg-purple-100 flex-fill p-3 rounded text-dark"><b>100</b><br><small>purple-100</small><br><small class="opacity-75">#EBE9FE</small></div>
+                    <div class="color-swatch unav-bg-purple-200 flex-fill p-3 rounded text-dark"><b>200</b><br><small>purple-200</small><br><small class="opacity-75">#D9D6FE</small></div>
+                    <div class="color-swatch unav-bg-purple-300 flex-fill p-3 rounded text-dark"><b>300</b><br><small>purple-300</small><br><small class="opacity-75">#BDB4FE</small></div>
+                    <div class="color-swatch unav-bg-purple-400 flex-fill p-3 rounded text-dark"><b>400</b><br><small>purple-400</small><br><small class="opacity-75">#9B8AFB</small></div>
+                    <div class="color-swatch unav-bg-purple-500 flex-fill p-3 rounded text-white"><b>500</b><br><small>purple-500</small><br><small class="opacity-75">#7A5AF8</small></div>
+                    <div class="color-swatch unav-bg-purple-600 flex-fill p-3 rounded text-white"><b>600</b><br><small>purple-600</small><br><small class="opacity-75">#6938EF</small></div>
+                    <div class="color-swatch unav-bg-purple-700 flex-fill p-3 rounded text-white"><b>700</b><br><small>purple-700</small><br><small class="opacity-75">#5925DC</small></div>
+                    <div class="color-swatch unav-bg-purple-800 flex-fill p-3 rounded text-white"><b>800</b><br><small>purple-800</small><br><small class="opacity-75">#4A1FB8</small></div>
+                    <div class="color-swatch unav-bg-purple-900 flex-fill p-3 rounded text-white"><b>900</b><br><small>purple-900</small><br><small class="opacity-75">#3E1C96</small></div>
+                </div>
+            </div>
+
+            <div id="color-fuchsia" class="mb-5">
+                <h3 class="h5 mb-3 text-capitalize text-dark">Fuchsia</h3>
+                <div class="d-flex flex-wrap gap-2 text-center small">
+                    <div class="color-swatch unav-bg-fuchsia-100 flex-fill p-3 rounded text-dark"><b>100</b><br><small>fuchsia-100</small><br><small class="opacity-75">#FBE8FF</small></div>
+                    <div class="color-swatch unav-bg-fuchsia-200 flex-fill p-3 rounded text-dark"><b>200</b><br><small>fuchsia-200</small><br><small class="opacity-75">#F6D0FE</small></div>
+                    <div class="color-swatch unav-bg-fuchsia-300 flex-fill p-3 rounded text-dark"><b>300</b><br><small>fuchsia-300</small><br><small class="opacity-75">#EEAAFD</small></div>
+                    <div class="color-swatch unav-bg-fuchsia-400 flex-fill p-3 rounded text-dark"><b>400</b><br><small>fuchsia-400</small><br><small class="opacity-75">#E478FA</small></div>
+                    <div class="color-swatch unav-bg-fuchsia-500 flex-fill p-3 rounded text-white"><b>500</b><br><small>fuchsia-500</small><br><small class="opacity-75">#D444F1</small></div>
+                    <div class="color-swatch unav-bg-fuchsia-600 flex-fill p-3 rounded text-white"><b>600</b><br><small>fuchsia-600</small><br><small class="opacity-75">#BA24D5</small></div>
+                    <div class="color-swatch unav-bg-fuchsia-700 flex-fill p-3 rounded text-white"><b>700</b><br><small>fuchsia-700</small><br><small class="opacity-75">#9F1AB1</small></div>
+                    <div class="color-swatch unav-bg-fuchsia-800 flex-fill p-3 rounded text-white"><b>800</b><br><small>fuchsia-800</small><br><small class="opacity-75">#821890</small></div>
+                    <div class="color-swatch unav-bg-fuchsia-900 flex-fill p-3 rounded text-white"><b>900</b><br><small>fuchsia-900</small><br><small class="opacity-75">#6F1877</small></div>
+                </div>
+            </div>
+
+            <div id="color-pink" class="mb-5">
+                <h3 class="h5 mb-3 text-capitalize text-dark">Pink</h3>
+                <div class="d-flex flex-wrap gap-2 text-center small">
+                    <div class="color-swatch unav-bg-pink-100 flex-fill p-3 rounded text-dark"><b>100</b><br><small>pink-100</small><br><small class="opacity-75">#FCE7F6</small></div>
+                    <div class="color-swatch unav-bg-pink-200 flex-fill p-3 rounded text-dark"><b>200</b><br><small>pink-200</small><br><small class="opacity-75">#FCCEEE</small></div>
+                    <div class="color-swatch unav-bg-pink-300 flex-fill p-3 rounded text-dark"><b>300</b><br><small>pink-300</small><br><small class="opacity-75">#FAA7E0</small></div>
+                    <div class="color-swatch unav-bg-pink-400 flex-fill p-3 rounded text-dark"><b>400</b><br><small>pink-400</small><br><small class="opacity-75">#F670C7</small></div>
+                    <div class="color-swatch unav-bg-pink-500 flex-fill p-3 rounded text-white"><b>500</b><br><small>pink-500</small><br><small class="opacity-75">#EE46BC</small></div>
+                    <div class="color-swatch unav-bg-pink-600 flex-fill p-3 rounded text-white"><b>600</b><br><small>pink-600</small><br><small class="opacity-75">#DD2590</small></div>
+                    <div class="color-swatch unav-bg-pink-700 flex-fill p-3 rounded text-white"><b>700</b><br><small>pink-700</small><br><small class="opacity-75">#C11574</small></div>
+                    <div class="color-swatch unav-bg-pink-800 flex-fill p-3 rounded text-white"><b>800</b><br><small>pink-800</small><br><small class="opacity-75">#9E165F</small></div>
+                    <div class="color-swatch unav-bg-pink-900 flex-fill p-3 rounded text-white"><b>900</b><br><small>pink-900</small><br><small class="opacity-75">#851651</small></div>
+                </div>
+            </div>
+
+        </section>
+
+    </main>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+</body>
+</html>

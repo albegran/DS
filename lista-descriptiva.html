@@ -1,0 +1,313 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Lista Descriptiva | Design System UNAV</title>
+    
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.1/font/bootstrap-icons.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@100;300;400;500;700;900&display=swap" rel="stylesheet">
+    
+    <link rel="stylesheet" href="color.css">
+    <link rel="stylesheet" href="design-system.css">
+
+    <style>
+        /* =========================================
+           COMPONENTE: LISTA DESCRIPTIVA (unav-descList)
+           ========================================= */
+
+        .unav-descList {
+            margin: 0;
+            padding: 0;
+            display: flex;
+            flex-direction: column;
+        }
+
+        .unav-descItem {
+            display: flex;
+            flex-direction: column;
+            margin-bottom: 1.5rem;
+            padding-bottom: 1rem;
+            font-family: "Roboto", sans-serif;
+            width: 100%;
+            box-sizing: border-box;
+        }
+
+        .unav-descItem:last-child {
+            margin-bottom: 0; /* Evita margen residual al final */
+        }
+
+        /* Variantes de Borde */
+        .unav-hasBorder {
+            border-bottom: 2px solid var(--unav-grey-200, #EBECEC);
+        }
+
+        /* Título del Término */
+        .unav-descTerm {
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
+            font-size: 18px;
+            font-weight: 700;
+            margin-bottom: 0.5rem;
+            color: var(--unav-black-800, #111111);
+        }
+
+        .unav-descIcon {
+            font-size: 1.25rem;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+
+        /* Texto de Definición */
+        .unav-descDefinition {
+            margin: 0;
+            font-size: 16px;
+            line-height: 24px;
+            font-weight: 400;
+            color: var(--unav-grey-700, #424445);
+        }
+
+        /* Clases Utilitarias para Colores Específicos del Componente (Heredan de color.css) */
+        .unav-colorRojo600 { color: var(--unav-rojo-600, #D32F2F); }
+        .unav-borderColorRojo600 { border-bottom-color: var(--unav-rojo-600, #D32F2F) !important; }
+
+        .unav-colorTeal600 { color: var(--unav-teal-600, #0E9384); }
+        .unav-borderColorTeal600 { border-bottom-color: var(--unav-teal-600, #0E9384) !important; }
+
+        .unav-colorBlue600 { color: var(--unav-blue-600, #1570EF); }
+        .unav-borderColorBlue600 { border-bottom-color: var(--unav-blue-600, #1570EF) !important; }
+
+        .unav-colorPurple600 { color: var(--unav-purple-600, #6938EF); }
+        .unav-borderColorPurple600 { border-bottom-color: var(--unav-purple-600, #6938EF) !important; }
+
+        .unav-colorOrange600 { color: var(--unav-orange-600, #E04F16); }
+        .unav-borderColorOrange600 { border-bottom-color: var(--unav-orange-600, #E04F16) !important; }
+
+        /* Estilos de la guía técnica */
+        .unav-techSummary { border-left: 4px solid #dc2626; }
+        .unav-sectionTitle { 
+            color: #1f2937; 
+            font-weight: 700; 
+            margin-bottom: 2rem; 
+            border-bottom: 2px solid #eee; 
+            padding-bottom: 0.5rem; 
+            margin-top: 3rem; 
+        }
+    </style>
+</head>
+<body class="bg-light" itemscope itemtype="https://schema.org/WebPage">
+
+    <nav class="navbar navbar-light bg-white border-bottom py-3 sticky-top">
+        <div class="container-lg">
+            <a href="indice.html" class="btn btn-outline-secondary btn-sm rounded-pill px-3 fw-bold">
+                <i class="bi bi-arrow-left me-1"></i> Volver al Índice
+            </a>
+            <span class="navbar-text fw-bold text-dark mb-0">Design System UNAV</span>
+        </div>
+    </nav>
+
+    <main class="container-lg py-5" itemprop="mainContentOfPage">
+        
+        <header class="text-center mb-5 border-bottom pb-4">
+            <h1 class="display-5 fw-bold mb-3" itemprop="name">Lista Descriptiva</h1>
+            <p class="lead text-muted" itemprop="description">Componente para presentar términos y descripciones de forma estructurada, con iconos e integración cromática corporativa.</p>
+            
+            <div class="unav-techSummary bg-white p-4 text-start mt-4 rounded shadow-sm border mx-auto" style="max-width: 900px;">
+                <h2 class="h5 fw-bold mb-3 text-dark"><i class="bi bi-gear-fill me-2"></i>Resumen Técnico y Funcional</h2>
+                <p class="small text-muted mb-4">
+                    Este componente utiliza etiquetas semánticas HTML5 (<code>&lt;dl&gt;</code>, <code>&lt;dt&gt;</code>, <code>&lt;dd&gt;</code>) integradas con marcado de schema.org para favorecer el SEO semántico. Es altamente adaptable, apilable y permite personalización de color.
+                </p>
+                <div class="row g-3 small">
+                    <div class="col-md-6">
+                        <ul class="list-unstyled mb-0">
+                            <li class="mb-2"><strong>Estructura base:</strong> <code>.unav-descList</code>, <code>.unav-descItem</code></li>
+                            <li class="mb-2"><strong>Elementos internos:</strong> <code>.unav-descTerm</code>, <code>.unav-descDefinition</code>, <code>.unav-descIcon</code></li>
+                            <li><strong>Modificadores:</strong> <code>.unav-hasBorder</code> y clases de color.</li>
+                        </ul>
+                    </div>
+                    <div class="col-md-6 border-start ps-4">
+                        <ul class="list-unstyled mb-0">
+                            <li class="mb-2"><strong>Colores Soportados:</strong> Integra variables de <code>color.css</code> (Rojo, Azul, Teal, etc.).</li>
+                            <li class="mb-2"><strong>Grid:</strong> Completamente responsivo, apto para columnas Bootstrap.</li>
+                            <li><strong>SEO:</strong> Schema.org <code>DefinedTermSet</code> y <code>DefinedTerm</code>.</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </header>
+
+        <!-- SECCIÓN 1: Apilamiento Básico (3 elementos) -->
+        <section class="bg-white p-4 p-md-5 rounded shadow-sm border mb-5">
+            <h3 class="unav-sectionTitle mt-0">1. Apilamiento Básico (3 Bloques)</h3>
+            <p class="small text-muted mb-4">Versión limpia sin bordes ni colores extra, útil para listas continuas de texto estructurado.</p>
+            
+            <div class="mb-4" style="max-width: 600px;">
+                <!-- Contenedor Semántico SEO -->
+                <dl class="unav-descList" itemscope itemtype="https://schema.org/DefinedTermSet">
+                    
+                    <div class="unav-descItem" itemprop="hasDefinedTerm" itemscope itemtype="https://schema.org/DefinedTerm">
+                        <dt class="unav-descTerm">
+                            <i class="bi bi-book unav-descIcon"></i>
+                            <span itemprop="name">Metodología Docente</span>
+                        </dt>
+                        <dd class="unav-descDefinition" itemprop="description">
+                            Aprendizaje basado en proyectos y casos prácticos, fomentando la participación activa del estudiante en su proceso formativo.
+                        </dd>
+                    </div>
+
+                    <div class="unav-descItem" itemprop="hasDefinedTerm" itemscope itemtype="https://schema.org/DefinedTerm">
+                        <dt class="unav-descTerm">
+                            <i class="bi bi-globe unav-descIcon"></i>
+                            <span itemprop="name">Proyección Internacional</span>
+                        </dt>
+                        <dd class="unav-descDefinition" itemprop="description">
+                            Más de 300 convenios con universidades de prestigio en 50 países diferentes para facilitar la movilidad internacional.
+                        </dd>
+                    </div>
+
+                    <div class="unav-descItem" itemprop="hasDefinedTerm" itemscope itemtype="https://schema.org/DefinedTerm">
+                        <dt class="unav-descTerm">
+                            <i class="bi bi-briefcase unav-descIcon"></i>
+                            <span itemprop="name">Prácticas Profesionales</span>
+                        </dt>
+                        <dd class="unav-descDefinition" itemprop="description">
+                            Bolsa de empleo exclusiva y programas de prácticas en empresas líderes de todos los sectores productivos.
+                        </dd>
+                    </div>
+
+                </dl>
+            </div>
+        </section>
+
+        <!-- SECCIÓN 2: Uso de Color y Bordes (4 elementos) -->
+        <section class="bg-white p-4 p-md-5 rounded shadow-sm border mb-5">
+            <h3 class="unav-sectionTitle mt-0">2. Con Colores Corporativos y Bordes (4 Bloques)</h3>
+            <p class="small text-muted mb-4">Aplicación de clases de color (Rojo, Azul, Teal, Purple) y bordes inferiores (<code>.unav-hasBorder</code>).</p>
+            
+            <div class="mb-4" style="max-width: 600px;">
+                <dl class="unav-descList" itemscope itemtype="https://schema.org/DefinedTermSet">
+                    
+                    <div class="unav-descItem unav-hasBorder unav-borderColorRojo600" itemprop="hasDefinedTerm" itemscope itemtype="https://schema.org/DefinedTerm">
+                        <dt class="unav-descTerm unav-colorRojo600">
+                            <i class="bi bi-heart-pulse unav-descIcon"></i>
+                            <span itemprop="name">Ciencias de la Salud</span>
+                        </dt>
+                        <dd class="unav-descDefinition" itemprop="description">
+                            Programas de grado y posgrado orientados a la excelencia clínica, la investigación médica y la atención humanizada.
+                        </dd>
+                    </div>
+
+                    <div class="unav-descItem unav-hasBorder unav-borderColorTeal600" itemprop="hasDefinedTerm" itemscope itemtype="https://schema.org/DefinedTerm">
+                        <dt class="unav-descTerm unav-colorTeal600">
+                            <i class="bi bi-badge-8k-fill unav-descIcon"></i>
+                            <span itemprop="name">Sostenibilidad y Medio Ambiente</span>
+                        </dt>
+                        <dd class="unav-descDefinition" itemprop="description">
+                            Iniciativas y planes de estudio comprometidos con el cuidado del entorno y el desarrollo sostenible global.
+                        </dd>
+                    </div>
+
+                    <div class="unav-descItem unav-hasBorder unav-borderColorBlue600" itemprop="hasDefinedTerm" itemscope itemtype="https://schema.org/DefinedTerm">
+                        <dt class="unav-descTerm unav-colorBlue600">
+                            <i class="bi bi-cpu unav-descIcon"></i>
+                            <span itemprop="name">Ingeniería y Tecnología</span>
+                        </dt>
+                        <dd class="unav-descDefinition" itemprop="description">
+                            Laboratorios de última generación e investigación aplicada a la inteligencia artificial, robótica y ciencia de datos.
+                        </dd>
+                    </div>
+
+                    <div class="unav-descItem unav-hasBorder unav-borderColorPurple600" itemprop="hasDefinedTerm" itemscope itemtype="https://schema.org/DefinedTerm">
+                        <dt class="unav-descTerm unav-colorPurple600">
+                            <i class="bi bi-palette unav-descIcon"></i>
+                            <span itemprop="name">Arte y Humanidades</span>
+                        </dt>
+                        <dd class="unav-descDefinition" itemprop="description">
+                            Formación integral que potencia el pensamiento crítico, la creatividad y la comprensión de la cultura contemporánea.
+                        </dd>
+                    </div>
+
+                </dl>
+            </div>
+        </section>
+
+        <!-- SECCIÓN 3: Comportamiento en Grid (5 elementos) -->
+        <section class="bg-white p-4 p-md-5 rounded shadow-sm border mb-5">
+            <h3 class="unav-sectionTitle mt-0">3. Comportamiento en Grid Bootstrap (5 Bloques)</h3>
+            <p class="text-muted small mb-4">Integración responsiva en columnas usando el sistema Grid de Bootstrap (ej: <code>.col-md-6</code>).</p>
+            
+            <dl class="unav-descList row g-4" itemscope itemtype="https://schema.org/DefinedTermSet">
+                
+                <div class="col-md-6">
+                    <div class="unav-descItem unav-hasBorder" itemprop="hasDefinedTerm" itemscope itemtype="https://schema.org/DefinedTerm">
+                        <dt class="unav-descTerm">
+                            <i class="bi bi-1-circle-fill unav-descIcon unav-colorRojo600"></i>
+                            <span itemprop="name">Fase de Admisión</span>
+                        </dt>
+                        <dd class="unav-descDefinition" itemprop="description">
+                            Completa el formulario online y adjunta la documentación académica requerida para iniciar tu proceso.
+                        </dd>
+                    </div>
+                </div>
+
+                <div class="col-md-6">
+                    <div class="unav-descItem unav-hasBorder" itemprop="hasDefinedTerm" itemscope itemtype="https://schema.org/DefinedTerm">
+                        <dt class="unav-descTerm">
+                            <i class="bi bi-2-circle-fill unav-descIcon unav-colorOrange600"></i>
+                            <span itemprop="name">Pruebas de Acceso</span>
+                        </dt>
+                        <dd class="unav-descDefinition" itemprop="description">
+                            Realiza los test psicotécnicos y la entrevista personal con el orientador asignado a tu titulación.
+                        </dd>
+                    </div>
+                </div>
+
+                <div class="col-md-6">
+                    <div class="unav-descItem unav-hasBorder" itemprop="hasDefinedTerm" itemscope itemtype="https://schema.org/DefinedTerm">
+                        <dt class="unav-descTerm">
+                            <i class="bi bi-3-circle-fill unav-descIcon unav-colorTeal600"></i>
+                            <span itemprop="name">Resolución</span>
+                        </dt>
+                        <dd class="unav-descDefinition" itemprop="description">
+                            Recibe la confirmación de tu admisión a través del portal miUNAV en los plazos estipulados.
+                        </dd>
+                    </div>
+                </div>
+
+                <div class="col-md-6">
+                    <div class="unav-descItem unav-hasBorder" itemprop="hasDefinedTerm" itemscope itemtype="https://schema.org/DefinedTerm">
+                        <dt class="unav-descTerm">
+                            <i class="bi bi-4-circle-fill unav-descIcon unav-colorBlue600"></i>
+                            <span itemprop="name">Reserva de Plaza</span>
+                        </dt>
+                        <dd class="unav-descDefinition" itemprop="description">
+                            Asegura tu lugar en la titulación elegida abonando el importe correspondiente a la reserva de plaza.
+                        </dd>
+                    </div>
+                </div>
+
+                <div class="col-md-6">
+                    <div class="unav-descItem unav-hasBorder" itemprop="hasDefinedTerm" itemscope itemtype="https://schema.org/DefinedTerm">
+                        <dt class="unav-descTerm">
+                            <i class="bi bi-5-circle-fill unav-descIcon unav-colorPurple600"></i>
+                            <span itemprop="name">Matriculación Oficial</span>
+                        </dt>
+                        <dd class="unav-descDefinition" itemprop="description">
+                            Formaliza tu matrícula definitiva antes del inicio del curso académico para ser oficialmente alumno de la universidad.
+                        </dd>
+                    </div>
+                </div>
+
+            </dl>
+        </section>
+
+    </main>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+</body>
+</html>
