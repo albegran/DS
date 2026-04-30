@@ -16,13 +16,13 @@
 
     <style>
         /* =========================================
-           COMPONENTE: unav-listItem (Estructural)
+           COMPONENTE: unav-listItem (Estructural y Dinámico)
            ========================================= */
 
         .unav-listItem {
             display: block;
             width: 100%;
-            height: 100%;
+            position: relative; /* Base para el pseudo-elemento y JavaScript */
             box-sizing: border-box;
             text-decoration: none;
             color: #111111;
@@ -37,6 +37,9 @@
             line-height: 21px;
             letter-spacing: -0.05px;
             background-color: #e3eaed;
+            
+            /* Aseguramos esquinas rectas corporativas */
+            border-radius: 0; 
         }
 
         .unav-listItem:hover {
@@ -46,19 +49,42 @@
         }
 
         .unav-itemText {
-            display: inline;
+            display: inline; /* Necesario para que JS lea los saltos de línea */
             font-weight: 400; 
+        }
+
+        /* Clase temporal para medir dimensiones en Bold vía JS */
+        .unav-listItem.unav-measuringBold .unav-itemText {
+            font-weight: 600 !important;
         }
 
         .unav-listItem:hover .unav-itemText {
             font-weight: 600;
-            text-decoration: underline;
-            text-underline-offset: 4px;
-            text-decoration-thickness: 2px;
+            text-decoration: none;
+        }
+
+        /* Subrayado controlado dinámicamente por JavaScript */
+        .unav-listItem::after {
+            content: '';
+            position: absolute;
+            height: 1px;
+            background-color: #ffffff;
+            
+            /* Variables CSS inyectadas vía JS (camelCase) */
+            left: var(--unav-lineLeft, 15px);
+            width: var(--unav-lineWidth, 0px);
+            bottom: var(--unav-lineBottom, 11px);
+            
+            opacity: 0;
+            transition: opacity 0.2s ease;
+        }
+
+        .unav-listItem:hover::after {
+            opacity: 1;
         }
 
         /* Estilos de la guía técnica */
-        .unav-tech-summary { border-left: 4px solid #005596; }
+        .unav-tech-summary { border-left: 4px solid #005596; border-radius: 0; }
         .unav-sectionTitle { 
             color: #1f2937; 
             font-weight: 700; 
@@ -84,24 +110,24 @@
         
         <header class="text-center mb-5 border-bottom pb-4">
             <h1 class="display-5 fw-bold mb-3" itemprop="name">Listado de Enlaces</h1>
-            <p class="lead text-muted" itemprop="description">Bloque estructural para la organización de navegación vertical.</p>
+            <p class="lead text-muted" itemprop="description">Bloque estructural para la organización de navegación vertical con subrayado dinámico de precisión.</p>
             
-            <div class="unav-tech-summary bg-white p-4 text-start mt-4 rounded shadow-sm border mx-auto" style="max-width: 900px;">
+            <div class="unav-tech-summary bg-white p-4 text-start mt-4 shadow-sm border mx-auto" style="max-width: 900px;">
                 <h2 class="h5 fw-bold mb-3 text-dark"><i class="bi bi-layers-half me-2"></i>Resumen Técnico y Funcional</h2>
                 <p class="small text-muted mb-4">
-                    Este bloque estructural define cómo se agrupan los átomos <code>.unav-listItem</code>. La clave del diseño es el margen inferior de <code>2px</code>, que crea una separación sutil pero clara. Se integra limpiamente en el grid de Bootstrap para generar bloques de enlaces en columnas sin necesidad de contenedores adicionales ni títulos.
+                    Este bloque estructural define cómo se agrupan los átomos <code>.unav-listItem</code>. La clave del diseño es el margen inferior de <code>2px</code>, que crea una separación sutil pero clara. Se integra limpiamente en el grid de Bootstrap para generar bloques de enlaces en columnas sin necesidad de contenedores adicionales ni títulos. Incorpora el subrayado inteligente por JavaScript que abraza exclusivamente la última línea del texto.
                 </p>
                 <div class="row g-3 small">
                     <div class="col-md-6">
                         <ul class="list-unstyled mb-0">
-                            <li class="mb-2"><strong>Jerarquía:</strong> Molécula compuesta por átomos <code>.unav-listItem</code>.</li>
-                            <li class="mb-2"><strong>Layout:</strong> Se apilan verticalmente dentro de columnas.</li>
+                            <li class="mb-2"><strong>Jerarquía:</strong> Molécula compuesta por átomos <code>.unav-listItem</code> adaptativos.</li>
+                            <li class="mb-2"><strong>Layout:</strong> Se apilan verticalmente dentro de columnas con altura dinámica.</li>
                             <li><strong>SEO:</strong> Implementa <code>ItemList</code> para indexación de menús.</li>
                         </ul>
                     </div>
                     <div class="col-md-6 border-start ps-4">
                         <ul class="list-unstyled mb-0">
-                            <li class="mb-2"><strong>Naming:</strong> Uso de camelCase para clases internas.</li>
+                            <li class="mb-2"><strong>Naming:</strong> Uso de camelCase para clases internas y variables JS.</li>
                             <li class="mb-2"><strong>Accesibilidad:</strong> Hitbox completo del bloque para facilitar el clic.</li>
                         </ul>
                     </div>
@@ -109,7 +135,7 @@
             </div>
         </header>
 
-        <section class="bg-white p-4 p-md-5 rounded shadow-sm border mb-5">
+        <section class="bg-white p-4 p-md-5 shadow-sm border mb-5">
             <h3 class="unav-sectionTitle mt-0">1. Listado Vertical Básico</h3>
             <p class="small text-muted mb-4">Uso del bloque adaptándose al ancho de su columna (ejemplo en col-md-4).</p>
             
@@ -133,7 +159,7 @@
             </div>
         </section>
 
-        <section class="bg-white p-4 p-md-5 rounded shadow-sm border mb-5">
+        <section class="bg-white p-4 p-md-5 shadow-sm border mb-5">
             <h3 class="unav-sectionTitle mt-0">2. Distribución en Grid (2 y 3 columnas)</h3>
             <p class="small text-muted mb-4">Múltiples bloques de listas distribuidos directamente sobre el sistema de columnas.</p>
             
@@ -194,9 +220,9 @@
             </div>
         </section>
 
-        <section class="bg-white p-4 p-md-5 rounded shadow-sm border mb-5">
+        <section class="bg-white p-4 p-md-5 shadow-sm border mb-5">
             <h3 class="unav-sectionTitle mt-0">3. Adaptación a Contenidos Multilínea</h3>
-            <p class="small text-muted mb-4">Demostración de cómo los bloques mantienen la consistencia visual de 2px de margen incluso con textos que ocupan varias líneas.</p>
+            <p class="small text-muted mb-4">Demostración de cómo los bloques mantienen la consistencia visual de 2px de margen y trazan la línea de subrayado exactamente en el punto final del texto.</p>
             
             <div class="row">
                 <div class="col-md-6">
@@ -220,6 +246,63 @@
 
     </main>
 
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bundle.min.js"></script>
+    <!-- Bootstrap Bundle JS -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+
+    <!-- Script Principal Componente: Bloque Enlace -->
+    <script>
+        document.addEventListener('DOMContentLoaded', () => {
+            const listItems = document.querySelectorAll('.unav-listItem');
+
+            const calculateUnderline = (item) => {
+                const textNode = item.querySelector('.unav-itemText');
+                if (!textNode) return;
+
+                const isHovered = item.matches(':hover');
+                if (!isHovered) {
+                    item.classList.add('unav-measuringBold');
+                }
+
+                // Extrae los rectángulos cliente por cada línea
+                const rects = textNode.getClientRects();
+                
+                if (rects.length > 0) {
+                    const lastRect = rects[rects.length - 1];
+                    const containerRect = item.getBoundingClientRect();
+
+                    const leftPos = lastRect.left - containerRect.left;
+                    const widthPixels = lastRect.width;
+                    
+                    const bottomPos = (containerRect.bottom - lastRect.bottom) - 4;
+
+                    // Formato camelCase en variables CSS inyectadas
+                    item.style.setProperty('--unav-lineWidth', `${widthPixels}px`);
+                    item.style.setProperty('--unav-lineLeft', `${leftPos}px`);
+                    item.style.setProperty('--unav-lineBottom', `${bottomPos}px`);
+                }
+
+                if (!isHovered) {
+                    item.classList.remove('unav-measuringBold');
+                }
+            };
+
+            // Iniciar cálculos
+            listItems.forEach(item => calculateUnderline(item));
+
+            // Recalcular en hover
+            listItems.forEach(item => {
+                item.addEventListener('mouseenter', () => calculateUnderline(item));
+            });
+
+            // Recalcular en resize (responsividad)
+            let resizeTimer;
+            window.addEventListener('resize', () => {
+                clearTimeout(resizeTimer);
+                resizeTimer = setTimeout(() => {
+                    listItems.forEach(item => calculateUnderline(item));
+                }, 100);
+            });
+        });
+    </script>
 </body>
 </html>

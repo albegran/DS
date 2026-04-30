@@ -1,0 +1,376 @@
+<!DOCTYPE html>
+<html lang="es" itemscope itemtype="https://schema.org/WebPage">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Componente Hero Imagen B | Design System UNAV</title>
+    
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.1/font/bootstrap-icons.css">
+    
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@100;300;400;500;700&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Roboto+Condensed:wght@700&display=swap" rel="stylesheet">
+    
+    <style>
+        /* =========================================
+           VARIABLES GLOBALES Y RESET
+           ========================================= */
+        :root {
+            --unav-rojo-100: #fde8e8; --unav-rojo-800: #9b1c1c;
+            --unav-blue-dark-100: #e1effe; --unav-blue-dark-800: #1e429f;
+            --unav-moss-100: #e3f2fd; --unav-moss-800: #023e8a;
+            --unav-grey-100: #f3f4f6; --unav-grey-800: #1f2937;
+        }
+        body { background-color: #f4f4f4; padding-bottom: 100px; font-family: 'Roboto', sans-serif; }
+        .unav-separadorEjemplo { background: #333; color: white; padding: 10px 20px; margin-top: 50px; font-weight: bold; text-transform: uppercase; }
+
+        /* Utilidades para la cabecera técnica */
+        .unav-technicalSummary p code { color: #cb3234; background-color: #fff0f0; padding: 2px 6px; border-radius: 4px; }
+
+        /* =========================================
+           COMPONENTE: ETIQUETAS (.unav-tag)
+           ========================================= */
+        .unav-tag {
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            padding: 4px 10px;
+            border-radius: 6px;
+            font-family: 'Roboto', sans-serif;
+            font-weight: 500;
+            font-size: 12px;
+            line-height: 1.2;
+            white-space: nowrap;
+            letter-spacing: 0.3px;
+            user-select: none;
+            text-decoration: none;
+        }
+        .unav-tagRojo { background-color: var(--unav-rojo-100); color: var(--unav-rojo-800); }
+        .unav-tagBlueDark { background-color: var(--unav-blue-dark-100); color: var(--unav-blue-dark-800); }
+        .unav-tagGrey { background-color: var(--unav-grey-100); color: var(--unav-grey-800); }
+
+        /* =========================================
+           COMPONENTE: BOTÓN PRIMARIO (.unav-botonPrimario)
+           ========================================= */
+        .unav-botonPrimario {
+            --unav-btnBg: #ffffff;
+            --unav-btnText: #000000;
+            --unav-btnBorder: #000000;
+            --unav-btnHoverBg: #000000;
+            --unav-btnHoverText: #ffffff;
+            --unav-btnHoverBorder: #000000;
+
+            font-family: 'Roboto Condensed', sans-serif;
+            font-weight: 700;
+            font-size: 14px;
+            text-transform: uppercase;
+            letter-spacing: 1.2px;
+            padding: 0.8rem 2rem;
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            gap: 0.6rem;
+            text-decoration: none !important;
+            transition: all 0.25s ease;
+            cursor: pointer;
+            width: 100%; 
+            
+            background-color: var(--unav-btnBg);
+            color: var(--unav-btnText);
+            outline: 1px solid var(--unav-btnBorder);
+            border: 1px solid transparent;
+            pointer-events: auto;
+        }
+        .unav-botonPrimario:hover, .unav-botonPrimario:focus {
+            background-color: var(--unav-btnHoverBg);
+            color: var(--unav-btnHoverText);
+            outline-color: var(--unav-btnHoverBorder);
+            transform: translateY(-2px);
+            box-shadow: 0 10px 20px rgba(0,0,0,0.15);
+        }
+        .unav-botonFit { width: fit-content !important; }
+
+        /* ==========================================
+           COMPONENTE: HERO IMAGEN B (.unav-heroBTemplate)
+           ========================================== */
+        .unav-heroBTemplate { position: relative; width: 100%; overflow: hidden; background: #000; }
+        
+        /* Animación suave de fondo (Efecto Ken Burns) */
+        @keyframes unav-slowZoom {
+            0% { transform: scale(1); }
+            100% { transform: scale(1.15); }
+        }
+        
+        .unav-heroBVisuals { position: relative; width: 100%; height: 100%; overflow: hidden; }
+        
+        /* Control de Imágenes y Alturas */
+        .unav-heroBImg { 
+            display: block; 
+            width: 100%; 
+            object-fit: cover; 
+            aspect-ratio: 21/9; /* Altura Estándar */
+        }
+        .unav-animacionZoom {
+            animation: unav-slowZoom 20s ease-in-out infinite alternate;
+        }
+        
+        /* Modificadores de Altura */
+        /* Variante 3: 2/3 de la original */
+        .unav-heroBTemplate--short .unav-heroBImg { aspect-ratio: 21/6; }
+        /* Variante 4: 50% de la original */
+        .unav-heroBTemplate--half .unav-heroBImg { aspect-ratio: 21/4.5; }
+
+        /* Capa oscura y contenedor de textos */
+        .unav-heroBOverlay { 
+            position: absolute; 
+            top: 0; left: 0; right: 0; bottom: 0; 
+            background: rgba(0,0,0,0.5); 
+            display: flex; 
+            align-items: center; 
+            z-index: 5; 
+        }
+        
+        .unav-heroBContent {
+            color: #fff;
+            pointer-events: auto;
+        }
+
+        /* Tipografía del Hero B */
+        .unav-heroBTitle { 
+            font-family: "Roboto", sans-serif; 
+            font-size: 64px; 
+            font-weight: 700; 
+            line-height: 1.1; 
+            margin: 15px 0; 
+            text-shadow: 2px 2px 8px rgba(0,0,0,0.6); 
+        }
+        .unav-heroBLead { 
+            font-size: 20px; 
+            font-weight: 300; 
+            line-height: 1.5; 
+            margin-bottom: 30px; 
+            text-shadow: 1px 1px 4px rgba(0,0,0,0.6);
+            display: -webkit-box;
+            -webkit-line-clamp: 3; /* Límite de 3 líneas */
+            -webkit-box-orient: vertical;
+            overflow: hidden;
+        }
+
+        /* Variante Centrada */
+        .unav-heroBContent--center { text-align: center; margin: 0 auto; max-width: 800px; }
+        .unav-heroBContent--center .unav-tagGroup,
+        .unav-heroBContent--center .unav-btnGroup { justify-content: center; }
+
+        /* Variante Alineado a la Izquierda (40% del total = 80% de la mitad) */
+        .unav-heroBContent--left { text-align: left; width: 40%; margin-left: 0; }
+        .unav-heroBContent--left .unav-tagGroup,
+        .unav-heroBContent--left .unav-btnGroup { justify-content: flex-start; }
+
+        .unav-tagGroup, .unav-btnGroup { display: flex; flex-wrap: wrap; gap: 15px; }
+
+        /* Responsive */
+        @media (min-width: 769px) {
+            .unav-heroBTemplate .unav-imgMovil { display: none !important; }
+            .unav-heroBTemplate .unav-imgDesktop { display: block !important; }
+        }
+
+        @media (max-width: 768px) {
+            .unav-heroBImg { aspect-ratio: 4/5 !important; } 
+            .unav-heroBTemplate .unav-imgMovil + .unav-imgDesktop { display: none !important; } 
+            .unav-heroBTemplate .unav-imgMovil { display: block !important; }
+            
+            .unav-heroBTitle { font-size: 32px; }
+            .unav-heroBLead { font-size: 16px; margin-bottom: 20px;}
+            
+            .unav-heroBContent--center, .unav-heroBContent--left { 
+                width: 100%; 
+                text-align: center; 
+                padding: 0 20px; 
+            }
+            .unav-heroBContent--left .unav-tagGroup, 
+            .unav-heroBContent--left .unav-btnGroup { 
+                justify-content: center; 
+            }
+            .unav-botonPrimario { width: 100% !important; }
+        }
+    </style>
+</head>
+<body>
+
+    <!-- Navegación Superior -->
+    <nav class="navbar navbar-light bg-white border-bottom py-3 sticky-top">
+        <div class="container-fluid container-lg">
+            <a href="indice.html" class="btn btn-outline-secondary btn-sm rounded-pill px-3 fw-bold">
+                <i class="bi bi-arrow-left me-1"></i> Volver al Índice
+            </a>
+            <span class="navbar-text fw-bold text-primary mb-0">Design System UNAV</span>
+        </div>
+    </nav>
+
+    <main itemprop="mainContentOfPage">
+
+        <!-- Cabecera de Análisis Técnico y Funcional -->
+        <header class="text-center mt-5 mb-5 px-3">
+            <h1 class="display-4 fw-bold mb-3" style="color: #2c3e50;">Componente Hero Imagen B</h1>
+            <p class="lead text-muted mb-5 mx-auto" style="max-width: 800px;">
+                Visualización de 4 variantes de banners Hero con contenido inyectado (Etiquetas, Título, Entradilla truncada y Botones Primarios).
+            </p>
+
+            <div class="container-lg text-start unav-technicalSummary">
+                <div class="card shadow-sm border border-light-subtle rounded-3">
+                    <div class="card-body p-4 p-md-5">
+                        <h4 class="fw-bold mb-3 d-flex align-items-center" style="color: #2c3e50;">
+                            <i class="bi bi-gear-fill me-2 fs-4"></i> Resumen Técnico y Funcional
+                        </h4>
+                        <p class="mb-4 text-secondary" style="font-size: 0.95rem; line-height: 1.6;">
+                            Este componente evoluciona el Hero estándar permitiendo la superposición semántica de contenido textual rico. Incluye un efecto de movimiento sutil por CSS (<code>Ken Burns</code>) que mejora la interactividad sin penalizar el rendimiento. Permite ajustar su layout y altura dinámicamente mediante clases modificadoras.
+                        </p>
+                        
+                        <div class="row pt-3 border-top border-light-subtle text-secondary" style="font-size: 0.9rem;">
+                            <div class="col-md-6 mb-3 mb-md-0">
+                                <p class="mb-2"><strong class="text-dark">Truncado de Texto:</strong> La entradilla usa <code>-webkit-line-clamp: 3</code> para limitar visualmente la longitud del texto.</p>
+                                <p class="mb-2"><strong class="text-dark">Alturas Modulares:</strong> Las clases <code>--short</code> y <code>--half</code> alteran la propiedad <code>aspect-ratio</code> de 21/9 a 21/6 y 21/4.5 respectivamente.</p>
+                                <p class="mb-0"><strong class="text-dark">Animación:</strong> Efecto CSS infinito <code>unav-slowZoom</code> aplicable opcionalmente con <code>.unav-animacionZoom</code>.</p>
+                            </div>
+                            <div class="col-md-6">
+                                <p class="mb-2"><strong class="text-dark">Integración DS:</strong> Inclusión directa de componentes <code>.unav-tag</code> y <code>.unav-botonPrimario</code>.</p>
+                                <p class="mb-2"><strong class="text-dark">Microdatos (Schema.org):</strong> Utiliza <code>WPHeader</code>, asociando <code>headline</code>, <code>description</code> y <code>keywords</code>.</p>
+                                <p class="mb-0"><strong class="text-dark">Responsive (Mobile First):</strong> En pantallas menores de 768px, todas las variantes colapsan al 100% centrado con ratio 4/5 para máxima legibilidad.</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </header>
+
+        <div class="unav-separadorEjemplo">Variante 1: Elementos Centrados (Altura Estándar 21/9)</div>
+        <section class="unav-heroBTemplate" itemscope itemtype="https://schema.org/WPHeader">
+            <div class="unav-heroBVisuals">
+                <img class="unav-heroBImg unav-imgMovil unav-animacionZoom" src="https://picsum.photos/800/1000?random=10" alt="Fondo Móvil" itemprop="image">
+                <img class="unav-heroBImg unav-imgDesktop unav-animacionZoom" src="https://picsum.photos/1920/800?random=10" alt="Fondo Escritorio" itemprop="image">
+                
+                <div class="unav-heroBOverlay">
+                    <div class="container-fluid container-lg">
+                        <div class="unav-heroBContent unav-heroBContent--center">
+                            <div class="unav-tagGroup mb-3" itemprop="keywords">
+                                <span class="unav-tag unav-tagRojo">Novedad</span>
+                                <span class="unav-tag unav-tagBlueDark">Investigación</span>
+                            </div>
+                            
+                            <h1 class="unav-heroBTitle" itemprop="headline">El futuro de la ciencia médica</h1>
+                            
+                            <p class="unav-heroBLead" itemprop="description">
+                                Descubre cómo nuestros nuevos laboratorios de biotecnología están desarrollando soluciones innovadoras para los retos globales de salud del mañana. Únete a nuestra red de investigadores.
+                            </p>
+                            
+                            <div class="unav-btnGroup">
+                                <a class="unav-botonPrimario unav-botonFit" href="#" style="--unav-btnBg: #cb3234; --unav-btnText: #fff; --unav-btnBorder: #cb3234; --unav-btnHoverBg: #fff; --unav-btnHoverText: #cb3234; --unav-btnHoverBorder: #cb3234;">
+                                    <span>Más información</span>
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <div class="unav-separadorEjemplo">Variante 2: Alineación Izquierda (80% de la mitad)</div>
+        <section class="unav-heroBTemplate" itemscope itemtype="https://schema.org/WPHeader">
+            <div class="unav-heroBVisuals">
+                <img class="unav-heroBImg unav-imgMovil unav-animacionZoom" src="https://picsum.photos/800/1000?random=11" alt="Fondo Móvil" itemprop="image">
+                <img class="unav-heroBImg unav-imgDesktop unav-animacionZoom" src="https://picsum.photos/1920/800?random=11" alt="Fondo Escritorio" itemprop="image">
+                
+                <div class="unav-heroBOverlay">
+                    <div class="container-fluid container-lg">
+                        <div class="unav-heroBContent unav-heroBContent--left">
+                            <div class="unav-tagGroup mb-3" itemprop="keywords">
+                                <span class="unav-tag unav-tagRojo">Admisión 2026</span>
+                            </div>
+                            
+                            <h1 class="unav-heroBTitle" itemprop="headline">Tu viaje empieza aquí</h1>
+                            
+                            <p class="unav-heroBLead" itemprop="description">
+                                Prepara tu futuro profesional en un entorno internacional, con un claustro de excelencia y unas instalaciones diseñadas para el aprendizaje práctico.
+                            </p>
+                            
+                            <div class="unav-btnGroup">
+                                <a class="unav-botonPrimario unav-botonFit" href="#" style="--unav-btnBg: #fff; --unav-btnText: #333; --unav-btnBorder: #fff; --unav-btnHoverBg: transparent; --unav-btnHoverText: #fff; --unav-btnHoverBorder: #fff;">
+                                    <span>Inscríbete ahora</span>
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <div class="unav-separadorEjemplo">Variante 3: Menos Altura (2/3 de la original - Ratio 21/6)</div>
+        <section class="unav-heroBTemplate unav-heroBTemplate--short" itemscope itemtype="https://schema.org/WPHeader">
+            <div class="unav-heroBVisuals">
+                <img class="unav-heroBImg unav-imgMovil unav-animacionZoom" src="https://picsum.photos/800/1000?random=12" alt="Fondo Móvil" itemprop="image">
+                <img class="unav-heroBImg unav-imgDesktop unav-animacionZoom" src="https://picsum.photos/1920/800?random=12" alt="Fondo Escritorio" itemprop="image">
+                
+                <div class="unav-heroBOverlay">
+                    <div class="container-fluid container-lg">
+                        <div class="unav-heroBContent unav-heroBContent--center">
+                            <div class="unav-tagGroup mb-3" itemprop="keywords">
+                                <span class="unav-tag unav-tagBlueDark">Campus</span>
+                                <span class="unav-tag unav-tagRojo">Deportes</span>
+                            </div>
+                            
+                            <h1 class="unav-heroBTitle" itemprop="headline" style="font-size: 48px;">Instalaciones Deportivas</h1>
+                            
+                            <p class="unav-heroBLead" itemprop="description" style="margin-bottom: 20px;">
+                                Más de 50.000 metros cuadrados dedicados a la salud y el rendimiento deportivo de nuestros estudiantes.
+                            </p>
+                            
+                            <div class="unav-btnGroup">
+                                <a class="unav-botonPrimario unav-botonFit" href="#" style="--unav-btnBg: transparent; --unav-btnText: #fff; --unav-btnBorder: #fff; --unav-btnHoverBg: #fff; --unav-btnHoverText: #333; --unav-btnHoverBorder: #fff;">
+                                    <span>Ver Galería</span>
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <div class="unav-separadorEjemplo">Variante 4: Altura al 50% de la original (Ratio 21/4.5)</div>
+        <!-- Se añade la clase .unav-heroBTemplate--half -->
+        <section class="unav-heroBTemplate unav-heroBTemplate--half" itemscope itemtype="https://schema.org/WPHeader">
+            <div class="unav-heroBVisuals">
+                <img class="unav-heroBImg unav-imgMovil unav-animacionZoom" src="https://picsum.photos/800/1000?random=13" alt="Fondo Móvil" itemprop="image">
+                <img class="unav-heroBImg unav-imgDesktop unav-animacionZoom" src="https://picsum.photos/1920/800?random=13" alt="Fondo Escritorio" itemprop="image">
+                
+                <div class="unav-heroBOverlay">
+                    <div class="container-fluid container-lg">
+                        <div class="unav-heroBContent unav-heroBContent--center">
+                            <div class="unav-tagGroup mb-2" itemprop="keywords">
+                                <span class="unav-tag unav-tagGrey">Alumni</span>
+                            </div>
+                            
+                            <!-- Ajuste de fuente para encajar mejor en un banner más estrecho -->
+                            <h1 class="unav-heroBTitle" itemprop="headline" style="font-size: 36px; margin: 5px 0;">Red de Antiguos Alumnos</h1>
+                            
+                            <p class="unav-heroBLead" itemprop="description" style="margin-bottom: 15px; font-size: 16px;">
+                                Conecta con profesionales en más de 120 países.
+                            </p>
+                            
+                            <div class="unav-btnGroup">
+                                <a class="unav-botonPrimario unav-botonFit" href="#" style="--unav-btnBg: transparent; --unav-btnText: #fff; --unav-btnBorder: #fff; --unav-btnHoverBg: #fff; --unav-btnHoverText: #333; --unav-btnHoverBorder: #fff; padding: 0.5rem 1.5rem; font-size: 12px;">
+                                    <span>Acceder</span>
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+    </main>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
+</body>
+</html>

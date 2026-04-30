@@ -42,7 +42,8 @@
 
         /* Variantes de Borde */
         .unav-hasBorder {
-            border-bottom: 2px solid var(--unav-grey-200, #EBECEC);
+            /* Modificado a 1px según la petición */
+            border-bottom: 1px solid var(--unav-grey-200, #EBECEC);
         }
 
         /* Título del Término */
@@ -70,6 +71,29 @@
             line-height: 24px;
             font-weight: 400;
             color: var(--unav-grey-700, #424445);
+        }
+
+        /* =========================================
+           VARIANTE: ICONO COLGANTE (Hanging)
+           ========================================= */
+        .unav-descItemHanging {
+            /* Desplaza el contenedor (y su borde inferior) a la derecha */
+            margin-left: 2.5rem; 
+            width: calc(100% - 2.5rem);
+        }
+
+        .unav-descItemHanging .unav-descTerm {
+            display: block; /* Desactiva el flex de la clase original */
+            position: relative;
+        }
+
+        .unav-descItemHanging .unav-descIcon {
+            /* Posiciona el icono fuera del flujo, hacia la izquierda */
+            position: absolute;
+            left: -2.5rem;
+            top: 0.15rem; /* Ajuste para alinear visualmente con la altura del texto */
+            display: inline-flex;
+            justify-content: flex-start;
         }
 
         /* Clases Utilitarias para Colores Específicos del Componente (Heredan de color.css) */
@@ -125,7 +149,7 @@
                 <div class="row g-3 small">
                     <div class="col-md-6">
                         <ul class="list-unstyled mb-0">
-                            <li class="mb-2"><strong>Estructura base:</strong> <code>.unav-descList</code>, <code>.unav-descItem</code></li>
+                            <li class="mb-2"><strong>Estructura base:</strong> <code>.unav-descList</code>, <code>.unav-descItem</code>, <code>.unav-descItemHanging</code></li>
                             <li class="mb-2"><strong>Elementos internos:</strong> <code>.unav-descTerm</code>, <code>.unav-descDefinition</code>, <code>.unav-descIcon</code></li>
                             <li><strong>Modificadores:</strong> <code>.unav-hasBorder</code> y clases de color.</li>
                         </ul>
@@ -147,7 +171,6 @@
             <p class="small text-muted mb-4">Versión limpia sin bordes ni colores extra, útil para listas continuas de texto estructurado.</p>
             
             <div class="mb-4" style="max-width: 600px;">
-                <!-- Contenedor Semántico SEO -->
                 <dl class="unav-descList" itemscope itemtype="https://schema.org/DefinedTermSet">
                     
                     <div class="unav-descItem" itemprop="hasDefinedTerm" itemscope itemtype="https://schema.org/DefinedTerm">
@@ -187,7 +210,7 @@
         <!-- SECCIÓN 2: Uso de Color y Bordes (4 elementos) -->
         <section class="bg-white p-4 p-md-5 rounded shadow-sm border mb-5">
             <h3 class="unav-sectionTitle mt-0">2. Con Colores Corporativos y Bordes (4 Bloques)</h3>
-            <p class="small text-muted mb-4">Aplicación de clases de color (Rojo, Azul, Teal, Purple) y bordes inferiores (<code>.unav-hasBorder</code>).</p>
+            <p class="small text-muted mb-4">Aplicación de clases de color (Rojo, Azul, Teal, Purple) y bordes inferiores a 1px (<code>.unav-hasBorder</code>).</p>
             
             <div class="mb-4" style="max-width: 600px;">
                 <dl class="unav-descList" itemscope itemtype="https://schema.org/DefinedTermSet">
@@ -304,6 +327,38 @@
                 </div>
 
             </dl>
+        </section>
+
+        <!-- SECCIÓN 4: Variante Colgante (NUEVO) -->
+        <section class="bg-white p-4 p-md-5 rounded shadow-sm border mb-5">
+            <h3 class="unav-sectionTitle mt-0">4. Variante: Icono Colgante alineado a la izquierda</h3>
+            <p class="small text-muted mb-4">Nueva variante utilizando la clase <code>.unav-descItemHanging</code>. En esta disposición, el icono queda suspendido a la izquierda, alineando el título, la descripción y el borde inferior limpiamente en el mismo eje vertical[cite: 1].</p>
+            
+            <div class="mb-4" style="max-width: 600px;">
+                <dl class="unav-descList" itemscope itemtype="https://schema.org/DefinedTermSet">
+                    
+                    <div class="unav-descItem unav-descItemHanging unav-hasBorder unav-borderColorRojo600" itemprop="hasDefinedTerm" itemscope itemtype="https://schema.org/DefinedTerm">
+                        <dt class="unav-descTerm unav-colorRojo600">
+                            <i class="bi bi-heart-pulse unav-descIcon"></i>
+                            <span itemprop="name">Ciencias de la Salud</span>
+                        </dt>
+                        <dd class="unav-descDefinition" itemprop="description">
+                            Programas de grado y posgrado orientados a la excelencia clínica, la investigación médica y la atención humanizada.
+                        </dd>
+                    </div>
+
+                    <div class="unav-descItem unav-descItemHanging unav-hasBorder unav-borderColorTeal600" itemprop="hasDefinedTerm" itemscope itemtype="https://schema.org/DefinedTerm">
+                        <dt class="unav-descTerm unav-colorTeal600">
+                            <i class="bi bi-badge-8k-fill unav-descIcon"></i>
+                            <span itemprop="name">Sostenibilidad y Medio Ambiente</span>
+                        </dt>
+                        <dd class="unav-descDefinition" itemprop="description">
+                            Iniciativas y planes de estudio comprometidos con el cuidado del entorno y el desarrollo sostenible global.
+                        </dd>
+                    </div>
+
+                </dl>
+            </div>
         </section>
 
     </main>

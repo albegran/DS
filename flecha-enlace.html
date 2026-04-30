@@ -183,28 +183,28 @@
         }
 
         document.addEventListener('DOMContentLoaded', () => {
-            // Se añade "displayName" para formatear correctamente el texto (Ej: "Rojo 700")
+            // Valores actualizados en base al nuevo color.css
             const colorFamilies = [
-                { name: 'Rojo Unav', displayName: 'Rojo', prefix: 'rojo', hex: ['#fee2e2','#fecaca','#fca5a5','#f87171','#ef4444','#dc2626','#b91c1c','#991b1b','#7f1d1d'] },
-                { name: 'Black Primary', displayName: 'Black', prefix: 'black', hex: ['#f3f4f6','#e5e7eb','#d1d5db','#9ca3af','#6b7280','#4b5563','#374151','#1f2937','#111827'] },
-                { name: 'Grey Primary', displayName: 'Grey', prefix: 'grey', hex: ['#f8f9fa','#e9ecef','#dee2e6','#ced4da','#adb5bd','#6c757d','#495057','#343a40','#212529'] },
-                { name: 'Moss', displayName: 'Moss', prefix: 'moss', hex: ['#f7fee7','#ecfccb','#d9f99d','#bef264','#a3e635','#84cc16','#65a30d','#4d7c0f','#3f6212'] },
-                { name: 'Green Light', displayName: 'Green Light', prefix: 'green-l', hex: ['#ecfdf5','#d1fae5','#a7f3d0','#6ee7b7','#34d399','#10b981','#059669','#047857','#065f46'] },
-                { name: 'Green', displayName: 'Green', prefix: 'green', hex: ['#f0fdf4','#dcfce7','#bbf7d0','#86efac','#4ade80','#22c55e','#16a34a','#15803d','#14532d'] },
-                { name: 'Teal', displayName: 'Teal', prefix: 'teal', hex: ['#f0fdfa','#ccfbf1','#99f6e4','#5eead4','#2dd4bf','#14b8a6','#0d9488','#0f766e','#115e59'] },
-                { name: 'Cyan', displayName: 'Cyan', prefix: 'cyan', hex: ['#ecfeff','#cffafe','#a5f3fc','#67e8f9','#22d3ee','#06b6d4','#0891b2','#0e7490','#155e75'] },
-                { name: 'Blue Light', displayName: 'Blue Light', prefix: 'blue-l', hex: ['#f0f9ff','#e0f2fe','#bae6fd','#7dd3fc','#38bdf8','#0ea5e9','#0284c7','#0369a1','#075985'] },
-                { name: 'Blue', displayName: 'Blue', prefix: 'blue', hex: ['#eff6ff','#dbeafe','#bfdbfe','#93c5fd','#60a5fa','#3b82f6','#2563eb','#1d4ed8','#1e3a8a'] },
-                { name: 'Blue Dark', displayName: 'Blue Dark', prefix: 'b-dark', hex: ['#eef2ff','#e0e7ff','#c7d2fe','#a5b4fc','#818cf8','#6366f1','#4f46e5','#4338ca','#312e81'] },
-                { name: 'Indigo', displayName: 'Indigo', prefix: 'indigo', hex: ['#f5f3ff','#ede9fe','#ddd6fe','#c4b5fd','#a78bfa','#8b5cf6','#7c3aed','#6d28d9','#4c1d95'] },
-                { name: 'Violet', displayName: 'Violet', prefix: 'violet', hex: ['#faf5ff','#f3e8ff','#e9d5ff','#d8b4fe','#c084fc','#a855f7','#9333ea','#7e22ce','#581c87'] },
-                { name: 'Purple', displayName: 'Purple', prefix: 'purple', hex: ['#fdf4ff','#fae8ff','#f5d0fe','#f0abfc','#e879f9','#d946ef','#c026d3','#a21caf','#701a75'] },
-                { name: 'Fuchsia', displayName: 'Fuchsia', prefix: 'fuchsia', hex: ['#fdf2f8','#fce7f3','#fbcfe8','#f9a8d4','#f472b6','#ec4899','#db2777','#be185d','#831843'] },
-                { name: 'Pink', displayName: 'Pink', prefix: 'pink', hex: ['#fff1f2','#ffe4e6','#fecdd3','#fda4af','#fb7185','#f43f5e','#e11d48','#be123c','#881337'] },
-                { name: 'Rose', displayName: 'Rose', prefix: 'rose', hex: ['#fff1f2','#ffe4e6','#fecdd3','#fda4af','#fb7185','#f43f5e','#e11d48','#be123c','#881337'] },
-                { name: 'Orange Dark', displayName: 'Orange Dark', prefix: 'o-dark', hex: ['#fff7ed','#ffedd5','#fed7aa','#fdba74','#fb923c','#f97316','#ea580c','#c2410c','#9a3412'] },
-                { name: 'Orange', displayName: 'Orange', prefix: 'orange', hex: ['#fff7ed','#ffedd5','#fed7aa','#fdba74','#f97316','#ea580c','#d97706','#b45309','#92400e'] },
-                { name: 'Yellow', displayName: 'Yellow', prefix: 'yellow', hex: ['#fefce8','#fef9c3','#fef08a','#fde047','#facc15','#eab308','#ca8a04','#a16207','#854d0e'] }
+                { name: 'Rojo Unav', displayName: 'Rojo', prefix: 'rojo', hex: ['#FFEbee', '#FFCDD2', '#EF9A9A', '#E57373', '#FF0000', '#D32F2F', '#C62828', '#B71C1C', '#7F0000'] },
+                { name: 'Black Primary', displayName: 'Black', prefix: 'black', hex: ['#E6E6E6', '#CCCCCC', '#999999', '#666666', '#000000', '#333333', '#222222', '#111111', '#050505'] },
+                { name: 'Grey Primary', displayName: 'Grey', prefix: 'grey', hex: ['#F5F6F6', '#EBECEC', '#D1D3D4', '#A8ABAC', '#6A6D6E', '#56595A', '#424445', '#2E2F30', '#1A1B1B'] },
+                { name: 'Moss', displayName: 'Moss', prefix: 'moss', hex: ['#E6F4D7', '#CEEAB0', '#ACDC79', '#86CB3C', '#669F2A', '#4F7A21', '#3F621A', '#335015', '#2B4212'] },
+                { name: 'Green Light', displayName: 'Green Light', prefix: 'green-l', hex: ['#E4FBCC', '#D0F8AB', '#A6EF67', '#85E13A', '#66C61C', '#4CA30D', '#3B7C0F', '#326212', '#2B5314'] },
+                { name: 'Green', displayName: 'Green', prefix: 'green', hex: ['#D3F8DF', '#AAF0C4', '#73E2A3', '#3CCB7F', '#16B364', '#099250', '#087443', '#095C37', '#084C2E'] },
+                { name: 'Teal', displayName: 'Teal', prefix: 'teal', hex: ['#CCFBEF', '#99F6E0', '#5FE9D0', '#2ED3B7', '#15B79E', '#0E9384', '#107569', '#125D56', '#134E48'] },
+                { name: 'Cyan', displayName: 'Cyan', prefix: 'cyan', hex: ['#CFF9FE', '#A5F0FC', '#67E3F9', '#22CCEE', '#06AED4', '#088AB2', '#0E7090', '#155B75', '#164C63'] },
+                { name: 'Blue Light', displayName: 'Blue Light', prefix: 'blue-l', hex: ['#E0F2FE', '#B9E6FE', '#7CD4FD', '#36BFFA', '#0BA5EC', '#0086C9', '#026AA2', '#065986', '#0B4A6F'] },
+                { name: 'Blue', displayName: 'Blue', prefix: 'blue', hex: ['#D1E9FF', '#B2DDFF', '#84CAFF', '#53B1FD', '#2E90FA', '#1570EF', '#175CD3', '#1849A9', '#194185'] },
+                { name: 'Blue Dark', displayName: 'Blue Dark', prefix: 'b-dark', hex: ['#D1E0FF', '#B2CCFF', '#84ADFF', '#528BFF', '#2970FF', '#155EEF', '#004EEB', '#0040C1', '#00359E'] },
+                { name: 'Indigo', displayName: 'Indigo', prefix: 'indigo', hex: ['#E0EAFF', '#C7D7FE', '#A4BCFD', '#8098F9', '#6172F3', '#444CE7', '#3538CD', '#2D31A6', '#2D3282'] },
+                { name: 'Violet', displayName: 'Violet', prefix: 'violet', hex: ['#ECE9FE', '#DDD6FE', '#C3B5FD', '#A48AFB', '#875BF7', '#7839EE', '#6927DA', '#5720B7', '#491C96'] },
+                { name: 'Purple', displayName: 'Purple', prefix: 'purple', hex: ['#EBE9FE', '#D9D6FE', '#BDB4FE', '#9B8AFB', '#7A5AF8', '#6938EF', '#5925DC', '#4A1FB8', '#3E1C96'] },
+                { name: 'Fuchsia', displayName: 'Fuchsia', prefix: 'fuchsia', hex: ['#FBE8FF', '#F6D0FE', '#EEAAFD', '#E478FA', '#D444F1', '#BA24D5', '#9F1AB1', '#821890', '#6F1877'] },
+                { name: 'Pink', displayName: 'Pink', prefix: 'pink', hex: ['#FCE7F6', '#FCCEEE', '#FAA7E0', '#F670C7', '#EE46BC', '#DD2590', '#C11574', '#9E165F', '#851651'] },
+                { name: 'Rose', displayName: 'Rose', prefix: 'rose', hex: ['#FFE4E8', '#FECDD6', '#FEA3B4', '#FD6F8E', '#F63D68', '#E31B54', '#C01048', '#A11043', '#89123E'] },
+                { name: 'Orange Dark', displayName: 'Orange Dark', prefix: 'o-dark', hex: ['#FFE6D5', '#FFD6AE', '#FF9C66', '#FF692E', '#FF4405', '#E62E05', '#BC1B06', '#97180C', '#771A0D'] },
+                { name: 'Orange', displayName: 'Orange', prefix: 'orange', hex: ['#FDEAD7', '#F9DBAF', '#F7B27A', '#F38744', '#EF6820', '#E04F16', '#B93815', '#932F19', '#772917'] },
+                { name: 'Yellow', displayName: 'Yellow', prefix: 'yellow', hex: ['#FEF7C3', '#FEEE95', '#FDE272', '#FAC515', '#EAAA08', '#CA8504', '#A15C07', '#854A0E', '#713B12'] }
             ];
 
             const shades = ['100', '200', '300', '400', '500', '600', '700', '800', '900'];
@@ -235,7 +235,6 @@
                         ? `<span class="unav-accessibility-badge unav-pass-badge">AA ${ratio.toFixed(1)}</span>` 
                         : `<span class="unav-accessibility-badge unav-fail-badge">BAJO ${ratio.toFixed(1)}</span>`;
 
-                    // Aquí se utiliza "family.displayName" en lugar de "family.prefix"
                     col.innerHTML = `
                         ${badge}
                         <div class="p-3 border rounded ${bgClass} text-center h-100 d-flex justify-content-center align-items-center shadow-sm" itemscope itemtype="https://schema.org/WebPageElement">
