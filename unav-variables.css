@@ -1,0 +1,326 @@
+/* ==========================================
+   SISTEMA DE VARIABLES TRANSVERSALES UNAV
+   ========================================== */
+
+:root {
+    /* --- MOTION / TRANSICIONES --- */
+    --unav-transitionBase: all 0.25s ease;
+    
+    /* --- MICRO-TIPOGRAFÍA --- */
+    --unav-trackingMedium: 0.8px;
+    --unav-trackingWide: 1.2px;
+
+    /* --- TOKENS ESTRUCTURALES: BOTONES PRIMARIOS --- */
+    --unav-botonPaddingY: 0.8rem;
+    --unav-botonPaddingX: 2rem;
+    --unav-botonGap: 0.6rem;
+    --unav-botonFontSize: 0.875rem; /* ~14px */
+
+    /* --- TOKENS ESTRUCTURALES: BOTONES SECUNDARIOS --- */
+    --unav-botonSecundarioPaddingY: 0.5rem;
+    --unav-botonSecundarioPaddingX: 1.2rem;
+    --unav-botonSecundarioFontSize: 0.8125rem; /* ~13px */
+    --unav-botonSecundarioRadius: 50px;
+    --unav-botonSecundarioBorderWidth: 1.5px;
+
+    /* --- TOKENS ESTRUCTURALES: ICONOGRAFÍA --- */
+    --unav-iconSizeSm: 1rem;       /* ~16px: Textos pequeños / Botón Secundario */
+    --unav-iconSizeMd: 1.25rem;    /* ~20px: Botón Primario / Navegación */
+    --unav-iconSizeLg: 1.5rem;     /* ~24px: UI genérica */
+    --unav-iconSizeXl: 2rem;       /* ~32px: Destacados / Feature Box */
+    --unav-iconStrokeWeight: 1.5px; /* Sincronizado con bordes de interfaz */
+    
+    /* --- INTERACCIONES SUTILES --- */
+    --unav-hoverOpacity: 0.7;
+
+    /* --- TOKENS ESTRUCTURALES: COMPONENTE ETIQUETA --- */
+    --unav-tagPaddingY: 0.25rem;   /* 4px */
+    --unav-tagPaddingX: 0.625rem;  /* 10px */
+    --unav-tagBorderRadius: 0.375rem; /* 6px */
+    --unav-tagLetterSpacing: 0.3px;
+
+    /* --- TOKENS ESTRUCTURALES: LABORATORIO MUESTRAS --- */
+    --unav-sampleRowPaddingY: 3rem;
+    --unav-sampleRowPaddingX: 2rem;
+    --unav-sectionLabelPaddingY: 1rem;
+    --unav-sectionLabelPaddingX: 2rem;
+
+    /* --- TOKENS ESTRUCTURALES: SEPARADORES --- */
+    --unav-separadorMarginY: 2rem;
+    --unav-separadorPaddingX: 1rem;
+    --unav-separadorThicknessBase: 1px;
+    --unav-separadorColorBase: var(--unav-grey-300);
+
+    /* --- TOKENS ESTRUCTURALES: BLOQUES DE ENLACE --- */
+    --unav-bloqueEnlacePadding: 1rem;
+    --unav-bloqueEnlaceLineHeight: 1.35;
+    
+    /* Mapeo a la paleta corporativa */
+    --unav-bloqueEnlaceBg: var(--unav-grey-200); /* Sustituye al #e3eaed */
+    --unav-bloqueEnlaceText: var(--unav-black-800); /* Sustituye al #111111 */
+    --unav-bloqueEnlaceHoverBg: var(--unav-black-900); /* Sustituye al #000000 */
+    --unav-bloqueEnlaceHoverText: #ffffff;
+
+    /* --- TOKENS ESTRUCTURALES: BLOQUES DE ENLACE --- */
+    --unav-bloqueEnlacePadding: 1rem;
+    --unav-bloqueEnlaceLineHeight: 1.35;
+    
+    /* Mapeo de color: Token semántico con el valor histórico preservado */
+    --unav-bloqueEnlaceBg: #e3eaed; 
+    --unav-bloqueEnlaceText: var(--unav-black-800);
+    --unav-bloqueEnlaceHoverBg: var(--unav-black-900);
+    --unav-bloqueEnlaceHoverText: #ffffff;
+
+    /* --- TOKENS ESTRUCTURALES: LISTA DESCRIPTIVA --- */
+    --unav-descItemMarginBottom: 1.5rem;
+    --unav-descItemPaddingBottom: 1rem;
+    --unav-descTermGap: 0.5rem;
+    --unav-descTermMarginBottom: 0.5rem;
+    --unav-descDefinitionLineHeight: 1.5;
+    
+    /* Layout Colgante (Hanging) */
+    --unav-descHangingOffset: 2.5rem;
+    
+    /* Color base si no se especifica variante de color */
+    --unav-descBorderColorDefault: var(--unav-grey-200);
+
+    /* --- TOKENS ESTRUCTURALES: TARJETAS (CARDS) --- */
+    --unav-cardBgBase: #ffffff;
+    --unav-cardBorderRadius: 0.75rem; /* 12px */
+    --unav-cardPaddingBase: 2rem;
+    --unav-cardPaddingFloating: 3.5rem 2rem 2.5rem 2rem;
+    --unav-cardShadowBase: 0 4px 6px rgba(0, 0, 0, 0.05);
+    --unav-cardShadowHover: 0 15px 30px rgba(0, 0, 0, 0.12);
+    --unav-cardTransitionAnim: opacity 0.8s ease-out, transform 0.8s ease-out, box-shadow 0.3s ease;
+    
+    /* Dimensiones de Elementos Internos */
+    --unav-cardIconFloatingSize: 5rem; /* 80px */
+    --unav-cardIconInnerSize: 4rem; /* 64px */
+    --unav-cardImageHeight: 13.75rem; /* 220px */
+
+    /* --- MOTION TOKENS --- */
+    --unav-motionDurationBase: 0.25s;
+    --unav-motionCurveDefault: ease;
+    --unav-transitionBase: all var(--unav-motionDurationBase) var(--unav-motionCurveDefault);
+
+    /* --- ELEVATION TOKENS (Hover) --- */
+    --unav-elevationHoverOffset: -6px;
+    --unav-cardShadowBase: 0 4px 6px rgba(0, 0, 0, 0.05);
+    --unav-cardShadowHover: 0 15px 30px rgba(0, 0, 0, 0.12);
+    
+    /* --- COMPONENT TOKENS: CARDS --- */
+    --unav-cardTransitionAnim: transform var(--unav-motionDurationBase) var(--unav-motionCurveDefault), 
+                               box-shadow var(--unav-motionDurationBase) var(--unav-motionCurveDefault),
+                               opacity 0.8s ease-out;
+
+/* ==========================================
+   TOKENS ESTRUCTURALES: ACORDEONES
+   ========================================== */ 
+    --unav-accordionHeaderPaddingY: 1.25rem;
+    --unav-accordionHeaderPaddingX: 1.5rem;
+    --unav-accordionHeaderPaddingRight: 3.5rem; /* Espacio para el icono */
+    --unav-accordionBorderColor: var(--unav-grey-200);
+    
+    /* Consumo de Motion Tokens para la transición estructural */
+    --unav-accordionPanelTransition: max-height var(--unav-durationNormal) var(--unav-easingDecel);
+    
+    --unav-accordionIconSize: var(--unav-iconSizeLg);
+    --unav-accordionTitleGap: 0.75rem;
+
+
+    /* ==========================================
+   TOKENS ESTRUCTURALES: BANNERS
+   ========================================== */
+    /* Alturas mínimas */
+    --unav-bannerMinHeightFull: 25rem; /* 400px */
+    --unav-bannerMinHeightWide: 17.5rem; /* 280px */
+    --unav-bannerMinHeightMini: 17.5rem; /* 280px */
+
+    /* Espaciados (Paddings) */
+    --unav-bannerPaddingFull: 4rem 0; /* Padding vertical, el horizontal lo da el grid interno */
+    --unav-bannerPaddingWide: 2.5rem 2rem;
+    --unav-bannerPaddingMini: 2.5rem 2rem;
+
+    /* Overlays (Contraste para legibilidad) */
+    --unav-bannerOverlayGradient: linear-gradient(to right, rgba(0,0,0,0.8) 0%, rgba(0,0,0,0.2) 100%);
+    --unav-bannerOverlaySolid: rgba(0,0,0,0.5);
+
+    /* Tipografía específica de Banners */
+    --unav-bannerTitleLineHeight: 1.2;
+    --unav-bannerTextLineHeight: 1.4;
+    --unav-bannerTextMaxWidth: 90%;
+
+    /* ==========================================
+   TOKENS ESTRUCTURALES: CIFRAS DINÁMICAS
+   ========================================== */
+    --unav-counterMinHeightBase: 21.875rem; /* 350px */
+    --unav-counterMinHeightSmall: 28.125rem; /* 450px */
+    --unav-counterOverlayColor: rgba(0, 0, 0, 0.75);
+    --unav-counterTransitionSpeed: 1.2s;
+    --unav-counterTranslateY: 1.25rem; /* 20px */
+
+
+/* ==========================================
+   TOKENS ESTRUCTURALES: FICHAS DE PERSONA
+   ========================================== */
+    --unav-personCardPadding: 1.5rem;
+    --unav-personCardGap: 1rem;
+    --unav-personCardRadius: 0.5rem;
+    --unav-personCardShadow: var(--unav-cardShadowBase);
+    
+    --unav-personImageRatio: 4 / 5;
+    --unav-personNameSize: var(--unav-fontSize150);
+    --unav-personRoleWeight: var(--unav-fontWeightBold);
+
+
+/* ==========================================
+   TOKENS ESTRUCTURALES: GALERÍAS Y MEDIOS
+   ========================================== */
+    /* Dimensiones Estructurales */
+    --unav-gallerySidebarWidth: 18.75rem; /* 300px */
+    --unav-galleryMinHeight: 25rem; /* 400px */
+    --unav-galleryThumbGap: 0.25rem; /* 4px */
+    --unav-galleryThumbSizeMobile: 5.625rem; /* 90px */
+    
+    /* Dimensiones de Controles (Flechas) */
+    --unav-galleryControlSize: 2.25rem; /* 36px */
+    --unav-galleryControlIconSize: 1.25rem; /* 20px */
+    
+    /* Mapeo Semántico de Colores */
+    --unav-galleryBg: var(--unav-black-800);
+    --unav-galleryStageBg: var(--unav-black-900);
+    --unav-gallerySidebarBg: #ffffff;
+    --unav-galleryBorderColor: var(--unav-grey-200);
+    --unav-galleryMetaBg: var(--unav-grey-100);
+    
+    /* Colores de Interacción (Controles) */
+    --unav-galleryControlBg: rgba(255, 255, 255, 0.95);
+    --unav-galleryControlColor: var(--unav-black-800);
+    --unav-galleryControlHoverBg: var(--unav-rojo-600);
+    --unav-galleryControlHoverColor: #ffffff;
+
+
+    /* ==========================================
+   TOKENS ESTRUCTURALES: GALERÍA DE VÍDEOS
+   ========================================== */
+    --unav-videoSidebarWidth: 20rem; /* 320px */
+    --unav-videoThumbWidth: 6.875rem; /* 110px */
+    --unav-videoSidebarWidthTablet: 15rem; /* 240px */
+    --unav-videoThumbWidthTablet: 5rem; /* 80px */
+    --unav-videoItemWidthMobile: 10rem; /* 160px */
+    
+    /* Mapeo Semántico de Colores */
+    --unav-videoGalleryBg: #ffffff;
+    --unav-videoGalleryStageBg: var(--unav-black-900);
+    --unav-videoGalleryBorderColor: var(--unav-grey-200);
+    --unav-videoGalleryHoverBg: var(--unav-grey-100);
+    --unav-videoGalleryActiveBg: var(--unav-rojo-100);
+    --unav-videoGalleryActiveBorder: var(--unav-rojo-600);
+
+/* ==========================================
+   TOKENS ESTRUCTURALES: BLOQUE DE ENLACES
+   ========================================== */   
+    --unav-bloqueEnlacePadding: 0.9375rem; /* 15px */
+    --unav-bloqueEnlaceLineHeight: 1.35;
+    --unav-bloqueEnlaceGap: 2px; /* Ritmo vertical intacto */
+    --unav-bloqueEnlaceUnderlineThickness: 1px;
+    
+    /* EXCEPCIÓN CROMÁTICA HISTÓRICA: Se preserva el color fundacional */
+    --unav-bloqueEnlaceBg: #e3eaed; 
+    --unav-bloqueEnlaceText: var(--unav-black-800);
+    --unav-bloqueEnlaceHoverBg: #000000;
+    --unav-bloqueEnlaceHoverText: #ffffff;
+
+
+/* ==========================================
+   TOKENS ESTRUCTURALES: MENÚ DE ANCLAS
+   ========================================== */
+    --unav-menuAnclasTopOffset: 7rem; /* Compensación para Navbar Sticky */
+    --unav-menuAnclasHeaderMargin: 1.5rem;
+    --unav-menuAnclasSubtitleColor: var(--unav-grey-600);
+    --unav-menuAnclasTitleColor: var(--unav-black-800);
+    
+    /* Transición de estado activo (ScrollSpy) */
+    --unav-menuAnclasTransition: var(--unav-transitionBase);
+
+
+/* ==========================================
+   TOKENS ESTRUCTURALES: NOTICIAS
+   ========================================== */   
+    --unav-newsImageRatio: 16 / 10;
+    --unav-newsDateColor: var(--unav-grey-600); /* Sustituye al #6b7280 */
+    --unav-newsTitleColor: var(--unav-black-800);
+    --unav-newsTitleLineHeight: 1.3;
+
+/* ==========================================
+   TOKENS ESTRUCTURALES: EVENTOS
+   ========================================== */
+    --unav-eventCardPadding: 1.5rem;
+    --unav-eventCardRadius: 0.25rem; /* 4px */
+    --unav-eventImageHeight: 12.5rem; /* 200px */
+    
+    /* Mapeo Semántico de Colores */
+    --unav-eventCardBorder: var(--unav-grey-200); /* #e7e7e7 */
+    --unav-eventDateColor: var(--unav-grey-500); /* #777 */
+    --unav-eventTimeColor: var(--unav-black-800); /* #000 */
+    --unav-eventTitleColor: var(--unav-black-800); /* #000 */
+    --unav-eventLocationBg: var(--unav-grey-100); /* #fbfbfb */
+    --unav-eventLocationText: var(--unav-grey-600); /* #666 */
+
+/* ==========================================
+   TOKENS ESTRUCTURALES: PANELES LATERALES
+   ========================================== */
+    --unav-panelWidth: 25rem; /* 400px */
+    --unav-panelZIndexOverlay: 1055;
+    --unav-panelZIndex: 1060;
+    --unav-panelOverlayBg: rgba(0, 0, 0, 0.6);
+    --unav-panelShadow: -10px 0 30px rgba(0,0,0,0.1);
+    
+    /* Botón Sticky */
+    --unav-panelStickyBtnPadding: 1.5rem 0.75rem; /* 24px 12px */
+    --unav-panelStickyBtnGap: 1rem;
+    --unav-panelStickyBtnMobileHeight: 3.75rem; /* 60px */
+
+/* ==========================================
+   TOKENS ESTRUCTURALES: COMPONENTES HERO
+   ========================================== */
+    --unav-heroAspectDesktop: 21 / 9;
+    --unav-heroAspectMobile: 4 / 5;
+    
+    --unav-heroOverlayLight: rgba(0, 0, 0, 0.4);
+    
+    --unav-heroQuadrantPadding: 2.5rem; /* 40px */
+    --unav-heroBtnGap: 1.25rem; /* 20px */
+    
+    --unav-heroZIndexVisuals: 1;
+    --unav-heroZIndexOverlay: 5;
+    --unav-heroZIndexControls: 10;
+
+/* ==========================================
+   TOKENS TRANSVERSALES: MOTION (MOVIMIENTO)
+   ========================================== */   
+    /* Duraciones (Timing) */
+    --unav-durationFast: 150ms;
+    --unav-durationNormal: 250ms;
+    --unav-durationSlow: 600ms;
+    --unav-durationSlower: 1200ms;
+    --unav-durationEpic: 20s; /* Para efectos Ken Burns continuos */
+
+    /* Curvas de Aceleración (Easing) */
+    --unav-easingStandard: ease;
+    --unav-easingDecel: ease-out; /* Entradas en pantalla */
+    --unav-easingAccel: ease-in; /* Salidas de pantalla */
+    --unav-easingElastic: cubic-bezier(0.165, 0.84, 0.44, 1); /* Rebote sutil */
+
+    /* Transiciones Compuestas */
+    --unav-transitionBase: all var(--unav-durationNormal) var(--unav-easingStandard);
+    --unav-transitionTransform: transform var(--unav-durationSlow) var(--unav-easingElastic);
+
+    /* Opacidades Interactivas */
+    --unav-opacityHoverSubtle: 0.85; /* Para Banners / Tarjetas */
+    --unav-opacityHoverIntense: 0.7; /* Para enlaces de texto */
+
+    /* Transformaciones espaciales */
+    --unav-translateHoverElevation: -4px; /* Elevación en Z */
+    --unav-translateEntranceY: 1.25rem; /* 20px de caída inicial */
+}

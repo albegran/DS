@@ -8,321 +8,130 @@
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.1/font/bootstrap-icons.css">
     
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;700&display=swap" rel="stylesheet">
-    <link href="https://fonts.googleapis.com/css2?family=Roboto+Condensed:wght@700&display=swap" rel="stylesheet">
-
-    <style>
-        :root {
-            --unav-accent: #b91c1c;
-            --unav-bg-dark: #000000;
-            --unav-bg-light: #ffffff;
-            --unav-border: #e0e0e0;
-            --unav-text: #1a1a1a;
-            --unav-text-muted: #666666;
-        }
-
-        body { font-family: 'Roboto', sans-serif; background-color: #f8f9fa; color: var(--unav-text); }
-        
-        /* RESET ESQUINAS RECTAS ABSOLUTO (Estilo Sharp) */
-        * { border-radius: 0 !important; }
-
-        /* Estilos de la guía técnica (Documentación) */
-        .unav-tech-summary { border-left: 4px solid var(--unav-accent); }
-        .unav-sectionTitle { 
-            color: var(--unav-text); 
-            font-weight: 700; 
-            margin-bottom: 2rem; 
-            border-bottom: 2px solid #eee; 
-            padding-bottom: 0.5rem; 
-            margin-top: 3rem; 
-            scroll-margin-top: 5rem; 
-        }
-
-        /* =======================================================
-           COMPONENTE: unavVideoGallery
-           ======================================================= */
-        
-        .unav-galleryWrapper {
-            container-type: inline-size;
-            container-name: unavVideoGallery;
-            width: 100%;
-            background: var(--unav-bg-light);
-            border: 1px solid var(--unav-border);
-            position: relative;
-        }
-
-        /* Altura controlada por el vídeo (16:9) */
-        .unav-mediaContainer {
-            position: relative;
-            padding-right: 320px; 
-            background: var(--unav-bg-dark);
-        }
-
-        .unav-videoStage {
-            width: 100%;
-            position: relative;
-            aspect-ratio: 16 / 9;
-            background-color: #000;
-        }
-
-        .unav-videoFluid { 
-            position: absolute;
-            top: 0;
-            left: 0;
-            width: 100%; 
-            height: 100%; 
-            object-fit: contain; 
-            border: none; 
-            display: block; 
-        }
-
-        /* PLAYLIST SIDEBAR */
-        .unav-playlistSidebar {
-            position: absolute;
-            top: 0;
-            right: 0;
-            bottom: 0;
-            width: 320px;
-            background: var(--unav-bg-light);
-            display: flex;
-            flex-direction: column;
-            overflow-y: auto;
-            border-left: 1px solid var(--unav-border);
-            scrollbar-width: none; 
-        }
-        .unav-playlistSidebar::-webkit-scrollbar { display: none; }
-
-        .unav-videoItem {
-            display: flex;
-            padding: 15px;
-            background: transparent;
-            border: none;
-            border-bottom: 1px solid #f0f0f0;
-            cursor: pointer;
-            text-align: left;
-            gap: 12px;
-            transition: background 0.2s;
-            width: 100%;
-        }
-
-        .unav-videoItem:hover { background-color: #fcfcfc; }
-        .unav-videoItem.isActive {
-            background-color: #fff8f8;
-            box-shadow: inset 4px 0 0 0 var(--unav-accent);
-        }
-
-        .unav-thumb {
-            position: relative;
-            width: 110px;
-            flex-shrink: 0;
-            aspect-ratio: 16/9;
-            background: #222;
-        }
-
-        .unav-thumb img { width: 100%; height: 100%; object-fit: cover; opacity: 0.8; transition: 0.3s; }
-        .unav-videoItem:hover .unav-thumb img, .unav-videoItem.isActive .unav-thumb img { opacity: 1; }
-        
-        .unav-itemInfo { overflow: hidden; display: flex; flex-direction: column; justify-content: center; }
-        
-        /* AQUÍ ESTÁ EL CÓDIGO DE TRUNCAMIENTO (LINE CLAMPING) */
-        .unav-itemTitle {
-            font-size: 0.85rem;
-            font-weight: 700;
-            line-height: 1.2;
-            display: -webkit-box;
-            -webkit-line-clamp: 2; /* Trunca a 2 líneas */
-            -webkit-box-orient: vertical;
-            overflow: hidden;
-            margin-bottom: 4px;
-        }
-
-        /* BOTONES DE NAVEGACIÓN COMUNES */
-        .unav-navBtn {
-            background: rgba(255,255,255,0.95);
-            border: 1px solid var(--unav-border);
-            width: 36px;
-            height: 36px;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            cursor: pointer;
-            color: var(--unav-text);
-            box-shadow: 0 2px 5px rgba(0,0,0,0.1);
-            transition: background 0.2s, color 0.2s;
-        }
-        .unav-navBtn:hover { background: var(--unav-accent); color: white; border-color: var(--unav-accent); }
-
-        .unav-scrollControlsVertical {
-            position: absolute;
-            bottom: 15px;
-            right: 15px;
-            z-index: 10;
-            display: flex;
-            flex-direction: column;
-            gap: 5px;
-        }
-
-        .unav-scrollControlsHorizontal {
-            display: none;
-            position: absolute;
-            bottom: 10px;
-            right: 10px;
-            z-index: 10;
-            gap: 5px;
-        }
-
-        /* =======================================================
-           RESPONSIVIDAD POR CONTENEDOR (Container Queries)
-           ======================================================= */
-
-        @container unavVideoGallery (max-width: 850px) {
-            .unav-mediaContainer { padding-right: 240px; }
-            .unav-playlistSidebar { width: 240px; }
-            .unav-thumb { width: 80px; }
-            .unav-videoItem { padding: 10px; }
-        }
-
-        @container unavVideoGallery (max-width: 600px) {
-            .unav-mediaContainer { 
-                padding-right: 0; 
-                display: flex; 
-                flex-direction: column; 
-            }
-            .unav-playlistSidebar {
-                position: relative;
-                width: 100%;
-                border-left: none;
-                border-top: 1px solid var(--unav-border);
-                flex-direction: row;
-                overflow-x: auto;
-                overflow-y: hidden;
-                scroll-snap-type: x mandatory;
-            }
-            .unav-videoItem {
-                flex-direction: column;
-                width: 160px;
-                flex-shrink: 0;
-                border-bottom: none;
-                border-right: 1px solid #f0f0f0;
-                scroll-snap-align: start;
-            }
-            .unav-thumb { width: 100%; }
-            .unav-itemInfo { display: none; }
-            .unav-videoItem.isActive { box-shadow: inset 0 -4px 0 0 var(--unav-accent); }
-
-            .unav-scrollControlsVertical { display: none; }
-            .unav-scrollControlsHorizontal { display: flex; }
-        }
+    <link rel="stylesheet" href="unav-color.css">
+    <link rel="stylesheet" href="unav-tipografia.css">
+    <link rel="stylesheet" href="unav-variables.css">
+    <link rel="stylesheet" href="unav-botones.css">
+    <link rel="stylesheet" href="unav-etiquetas.css"> <link rel="stylesheet" href="unav-movimiento.css"> <link rel="stylesheet" href="unav-galeria-videos.css"> <style>
+        /* Estilos exclusivos para la visualización de esta guía */
+        html { scroll-behavior: smooth; background-color: var(--unav-grey-100); }
+        body { background-color: transparent; }
+        .unav-techSummary { border-left: 4px solid var(--unav-rojo-500); }
+        .unav-sectionTitle { scroll-margin-top: 6rem; }
     </style>
 </head>
-<body itemscope itemtype="https://schema.org/WebPage">
+<body class="bg-light" itemscope itemtype="https://schema.org/WebPage">
 
     <nav class="navbar navbar-light bg-white border-bottom py-3 sticky-top">
-        <div class="container-lg">
-            <a href="indice.html" class="btn btn-outline-secondary btn-sm px-3 fw-bold">
-                <i class="bi bi-arrow-left me-1"></i> Volver al Índice
-            </a>
-            <span class="navbar-text fw-bold text-primary mb-0">Design System UNAV</span>
+        <div class="container-lg d-flex justify-content-between align-items-center">
+            <div itemscope itemtype="https://schema.org/WebPageElement">
+                <a itemprop="url" href="indice.html" class="unav-boton unav-botonSecundario" style="--unav-botonColorSource: var(--unav-grey-600);">
+                    <i class="bi bi-arrow-left unav-botonIcono" aria-hidden="true"></i>
+                    <span itemprop="name">Volver al Índice</span>
+                </a>
+            </div>
+            <span class="unav-font-primary unav-weight-regular unav-text-150 m-0" style="color: var(--unav-rojo-500);">
+                Design System UNAV
+            </span>
         </div>
     </nav>
 
     <main class="container-lg py-5" itemprop="mainContentOfPage">
         
         <header class="text-center mb-5 border-bottom pb-4">
-            <h1 class="display-5 fw-bold mb-3" itemprop="name">Galería de Vídeos</h1>
-            <p class="lead text-muted" itemprop="description">Lista de reproducción multimedia responsiva con protección CSS contra títulos excesivamente largos.</p>
+            <h1 class="unav-font-primary unav-weight-bold unav-text-300 text-dark mb-3" itemprop="name">Galería de Vídeos</h1>
+            <p class="unav-font-primary unav-weight-regular unav-text-125 text-muted m-0" itemprop="description">Lista de reproducción multimedia responsiva con protección CSS contra títulos excesivamente largos e integración nativa de Motion Tokens.</p>
             
-            <div class="unav-tech-summary bg-white p-4 text-start mt-4 shadow-sm border mx-auto" style="max-width: 900px;">
-                <h2 class="h5 fw-bold mb-3 text-dark"><i class="bi bi-gear-fill me-2"></i>Resumen Técnico y Funcional</h2>
-                <p class="small text-muted mb-4">
-                    Este componente utiliza <strong>Container Queries</strong> (<code>@container</code>) para adaptar su diseño y <strong>Line Clamping</strong> para evitar que textos muy largos (como el del primer vídeo de prueba) rompan la interfaz.
-                </p>
-                <div class="row g-3 small">
+            <div class="unav-techSummary bg-white p-4 text-start mt-5 rounded shadow-sm border mx-auto" style="max-width: 900px;">
+                <h2 class="unav-font-primary unav-weight-bold unav-text-150 text-dark mb-3"><i class="bi bi-gear-fill me-2" style="color: var(--unav-grey-400);"></i>Análisis Funcional y Técnico</h2>
+                <div class="row g-4 unav-font-primary unav-weight-regular unav-text-100">
                     <div class="col-md-6">
-                        <ul class="list-unstyled mb-0">
-                            <li class="mb-2"><strong>Contenedor Padre:</strong> Obligatorio envolver en <code>.unav-galleryWrapper</code>.</li>
-                            <li class="mb-2"><strong>Responsividad:</strong> Pasa de sidebar lateral a playlist horizontal inferior automáticamente.</li>
-                            <li><strong>Navegación:</strong> Scroll dinámico con botones para vistas verticales y horizontales.</li>
+                        <h3 class="unav-font-primary unav-weight-bold unav-text-125 text-dark mb-3">Lógica Container Queries & OOCSS</h3>
+                        <ul class="mb-0 text-muted ps-3">
+                            <li class="mb-2"><strong>Responsividad Modular:</strong> Emplea <code>@container</code>. La galería reacciona y colapsa la playlist dependiendo de las columnas disponibles en la vista, no de la resolución de pantalla.</li>
+                            <li><strong>Movimiento Delegado:</strong> La miniatura de la playlist recibe la clase utilitaria <code>.unav-efectoZoomImagen</code> para generar el escalado GPU sin duplicar código.</li>
                         </ul>
                     </div>
-                    <div class="col-md-6 border-start ps-4">
-                        <ul class="list-unstyled mb-0">
-                            <li class="mb-2"><strong>Reproducción:</strong> <code>autoplay</code> desactivado por defecto (espera acción del usuario).</li>
-                            <li class="mb-2"><strong>Accesibilidad:</strong> Roles ARIA dinámicos (<code>tablist</code>, <code>tabpanel</code>).</li>
-                            <li><strong>SEO / GEO:</strong> Implementa Schema.org <code>ItemList</code> y <code>VideoObject</code> inyectado dinámicamente.</li>
+                    <div class="col-md-6 border-start-md ps-md-4">
+                        <h3 class="unav-font-primary unav-weight-bold unav-text-125 text-dark mb-3">Accesibilidad y Minimalismo</h3>
+                        <ul class="mb-0 text-muted ps-3">
+                            <li class="mb-2"><strong>Layout Limpio:</strong> Se han purgado las cabeceras de texto de la playlist, concediendo el 100% del espacio vertical a las miniaturas de navegación.</li>
+                            <li><strong>Marcado SEO / GEO:</strong> Generación estructurada de <code>VideoObject</code> e <code>ItemList</code> mediante Javascript para facilitar el rastreo algorítmico.</li>
                         </ul>
                     </div>
                 </div>
             </div>
         </header>
 
-        <section class="bg-white p-4 p-md-5 shadow-sm border mb-5">
-            <h3 class="unav-sectionTitle mt-0">1. Galería a 12 Columnas (Ancho Completo)</h3>
-            <p class="text-muted small mb-4">Observa cómo el título extra largo del primer vídeo se ajusta perfectamente a dos líneas.</p>
+        <section class="bg-white p-4 p-md-5 rounded shadow-sm border mb-5">
+            <h2 class="unav-sectionTitle unav-font-primary unav-weight-bold unav-text-200 border-bottom pb-2 mb-4 text-dark mt-0">1. Galería a 12 Columnas (Ancho Completo)</h2>
+            <p class="unav-font-primary unav-weight-regular unav-text-100 text-muted mb-4">Observa cómo el título extra largo del primer vídeo se ajusta perfectamente a dos líneas.</p>
             <div class="row">
                 <div class="col-12">
-                    <div class="unav-galleryWrapper">
-                        <div class="unav-mediaContainer">
+                    <div class="unav-videoGalleryWrapper">
+                        <div class="unav-videoMediaContainer">
                             <div class="unav-videoStage" id="stage-v1"></div>
-                            <div class="unav-playlistSidebar" id="playlist-v1" role="tablist" itemscope itemtype="https://schema.org/ItemList"></div>
+                            <div class="unav-videoPlaylistSidebar" id="playlist-v1" role="tablist" itemscope itemtype="https://schema.org/ItemList">
+                                </div>
                         </div>
                         
-                        <div class="unav-scrollControlsVertical">
-                            <button class="unav-navBtn" onclick="scrollPlaylistVertical(this, -1)" aria-label="Desplazar Arriba"><i class="bi bi-chevron-up"></i></button>
-                            <button class="unav-navBtn" onclick="scrollPlaylistVertical(this, 1)" aria-label="Desplazar Abajo"><i class="bi bi-chevron-down"></i></button>
+                        <div class="unav-videoScrollVertical">
+                            <button class="unav-videoNavBtn" onclick="scrollPlaylistVertical(this, -1)" aria-label="Desplazar Arriba"><i class="bi bi-chevron-up"></i></button>
+                            <button class="unav-videoNavBtn" onclick="scrollPlaylistVertical(this, 1)" aria-label="Desplazar Abajo"><i class="bi bi-chevron-down"></i></button>
                         </div>
-                        <div class="unav-scrollControlsHorizontal">
-                            <button class="unav-navBtn" onclick="scrollPlaylistHorizontal(this, -1)" aria-label="Anterior"><i class="bi bi-chevron-left"></i></button>
-                            <button class="unav-navBtn" onclick="scrollPlaylistHorizontal(this, 1)" aria-label="Siguiente"><i class="bi bi-chevron-right"></i></button>
+                        <div class="unav-videoScrollHorizontal">
+                            <button class="unav-videoNavBtn" onclick="scrollPlaylistHorizontal(this, -1)" aria-label="Anterior"><i class="bi bi-chevron-left"></i></button>
+                            <button class="unav-videoNavBtn" onclick="scrollPlaylistHorizontal(this, 1)" aria-label="Siguiente"><i class="bi bi-chevron-right"></i></button>
                         </div>
                     </div>
                 </div>
             </div>
         </section>
 
-        <section class="bg-white p-4 p-md-5 shadow-sm border mb-5">
-            <h3 class="unav-sectionTitle mt-0">2. Galería a 8 Columnas (Grid Parcial)</h3>
-            <div class="row">
+        <section class="bg-white p-4 p-md-5 rounded shadow-sm border mb-5">
+            <h2 class="unav-sectionTitle unav-font-primary unav-weight-bold unav-text-200 border-bottom pb-2 mb-4 text-dark mt-0">2. Galería a 8 Columnas (Grid Parcial)</h2>
+            <p class="unav-font-primary unav-weight-regular unav-text-100 text-muted mb-4">La Sidebar se estrecha (240px) y las miniaturas se adaptan gracias al <code>@container</code>.</p>
+            <div class="row justify-content-center">
                 <div class="col-lg-8">
-                    <div class="unav-galleryWrapper">
-                        <div class="unav-mediaContainer">
+                    <div class="unav-videoGalleryWrapper">
+                        <div class="unav-videoMediaContainer">
                             <div class="unav-videoStage" id="stage-v2"></div>
-                            <div class="unav-playlistSidebar" id="playlist-v2" role="tablist"></div>
+                            <div class="unav-videoPlaylistSidebar" id="playlist-v2" role="tablist">
+                                </div>
                         </div>
 
-                        <div class="unav-scrollControlsVertical">
-                            <button class="unav-navBtn" onclick="scrollPlaylistVertical(this, -1)" aria-label="Desplazar Arriba"><i class="bi bi-chevron-up"></i></button>
-                            <button class="unav-navBtn" onclick="scrollPlaylistVertical(this, 1)" aria-label="Desplazar Abajo"><i class="bi bi-chevron-down"></i></button>
+                        <div class="unav-videoScrollVertical">
+                            <button class="unav-videoNavBtn" onclick="scrollPlaylistVertical(this, -1)" aria-label="Desplazar Arriba"><i class="bi bi-chevron-up"></i></button>
+                            <button class="unav-videoNavBtn" onclick="scrollPlaylistVertical(this, 1)" aria-label="Desplazar Abajo"><i class="bi bi-chevron-down"></i></button>
                         </div>
-                        <div class="unav-scrollControlsHorizontal">
-                            <button class="unav-navBtn" onclick="scrollPlaylistHorizontal(this, -1)"><i class="bi bi-chevron-left"></i></button>
-                            <button class="unav-navBtn" onclick="scrollPlaylistHorizontal(this, 1)"><i class="bi bi-chevron-right"></i></button>
+                        <div class="unav-videoScrollHorizontal">
+                            <button class="unav-videoNavBtn" onclick="scrollPlaylistHorizontal(this, -1)"><i class="bi bi-chevron-left"></i></button>
+                            <button class="unav-videoNavBtn" onclick="scrollPlaylistHorizontal(this, 1)"><i class="bi bi-chevron-right"></i></button>
                         </div>
                     </div>
                 </div>
             </div>
         </section>
 
-        <section class="bg-white p-4 p-md-5 shadow-sm border mb-5">
-            <h3 class="unav-sectionTitle mt-0">3. Galería a 4 Columnas (Modo Compacto)</h3>
-            <p class="text-muted small mb-4">En esta vista los textos se ocultan completamente imitando la navegación móvil.</p>
+        <section class="bg-white p-4 p-md-5 rounded shadow-sm border mb-5">
+            <h2 class="unav-sectionTitle unav-font-primary unav-weight-bold unav-text-200 border-bottom pb-2 mb-4 text-dark mt-0">3. Galería a 4 Columnas (Modo Compacto)</h2>
+            <p class="unav-font-primary unav-weight-regular unav-text-100 text-muted mb-4">En esta vista los textos se ocultan completamente imitando la navegación móvil mediante el scroll snap horizontal.</p>
             <div class="row">
                 <div class="col-lg-4">
-                    <div class="unav-galleryWrapper">
-                        <div class="unav-mediaContainer">
+                    <div class="unav-videoGalleryWrapper">
+                        <div class="unav-videoMediaContainer">
                             <div class="unav-videoStage" id="stage-v3"></div>
-                            <div class="unav-playlistSidebar" id="playlist-v3" role="tablist"></div>
+                            <div class="unav-videoPlaylistSidebar" id="playlist-v3" role="tablist">
+                                </div>
                         </div>
 
-                        <div class="unav-scrollControlsVertical">
-                            <button class="unav-navBtn" onclick="scrollPlaylistVertical(this, -1)"><i class="bi bi-chevron-up"></i></button>
-                            <button class="unav-navBtn" onclick="scrollPlaylistVertical(this, 1)"><i class="bi bi-chevron-down"></i></button>
+                        <div class="unav-videoScrollVertical">
+                            <button class="unav-videoNavBtn" onclick="scrollPlaylistVertical(this, -1)"><i class="bi bi-chevron-up"></i></button>
+                            <button class="unav-videoNavBtn" onclick="scrollPlaylistVertical(this, 1)"><i class="bi bi-chevron-down"></i></button>
                         </div>
-                        <div class="unav-scrollControlsHorizontal">
-                            <button class="unav-navBtn" onclick="scrollPlaylistHorizontal(this, -1)" aria-label="Anterior"><i class="bi bi-chevron-left"></i></button>
-                            <button class="unav-navBtn" onclick="scrollPlaylistHorizontal(this, 1)" aria-label="Siguiente"><i class="bi bi-chevron-right"></i></button>
+                        <div class="unav-videoScrollHorizontal">
+                            <button class="unav-videoNavBtn" onclick="scrollPlaylistHorizontal(this, -1)" aria-label="Anterior"><i class="bi bi-chevron-left"></i></button>
+                            <button class="unav-videoNavBtn" onclick="scrollPlaylistHorizontal(this, 1)" aria-label="Siguiente"><i class="bi bi-chevron-right"></i></button>
                         </div>
                     </div>
                 </div>
@@ -332,15 +141,12 @@
     </main>
 
 <script>
-    const videos = [
+    // Datos de inicialización
+    const unavVideos = [
         { 
-            id: "v1", 
-            type: "youtube", 
-            code: "3fAeP3LOZiw", 
-            // TÍTULO ARTIFICIALMENTE LARGO PARA COMPROBAR EL TRUNCAMIENTO
+            id: "v1", type: "youtube", code: "3fAeP3LOZiw", 
             title: "Campus Universidad de Navarra: Un recorrido completo por nuestras instalaciones, facultades, zonas verdes y áreas de investigación destacadas para el nuevo curso académico", 
-            meta: "Institucional • 02:30", 
-            thumb: "https://img.youtube.com/vi/3fAeP3LOZiw/mqdefault.jpg" 
+            meta: "Institucional • 02:30", thumb: "https://img.youtube.com/vi/3fAeP3LOZiw/mqdefault.jpg" 
         },
         { id: "v2", type: "youtube", code: "tqmeghe4MYQ", title: "Investigación en Laboratorios", meta: "Ciencias • 04:15", thumb: "https://img.youtube.com/vi/tqmeghe4MYQ/mqdefault.jpg" },
         { id: "v3", type: "mp4", code: "https://www.w3schools.com/html/mov_bbb.mp4", title: "Video Nativo de Prueba", meta: "Demo MP4 • 01:00", thumb: "https://picsum.photos/300/170?random=1" },
@@ -350,15 +156,20 @@
         { id: "v7", type: "youtube", code: "tqmeghe4MYQ", title: "Instalaciones Deportivas", meta: "Deportes • 02:10", thumb: "https://img.youtube.com/vi/tqmeghe4MYQ/mqdefault.jpg" }
     ];
 
-    function initGalleries() {
-        const playlists = document.querySelectorAll('.unav-playlistSidebar');
+    function initVideoGalleries() {
+        const playlists = document.querySelectorAll('.unav-videoPlaylistSidebar');
         
         playlists.forEach((pl) => {
             const stage = pl.previousElementSibling;
             
-            videos.forEach((vid, vIdx) => {
+            // Cargar el primer vídeo por defecto
+            if(stage.querySelector('.unav-activeVideoIframe') && unavVideos.length > 0) {
+                stage.querySelector('.unav-activeVideoIframe').src = `https://www.youtube.com/embed/${unavVideos[0].code}?rel=0`;
+            }
+
+            unavVideos.forEach((vid, vIdx) => {
                 const btn = document.createElement('button');
-                btn.className = `unav-videoItem ${vIdx === 0 ? 'isActive' : ''}`;
+                btn.className = `unav-videoItem ${vIdx === 0 ? 'unav-isActive' : ''}`;
                 btn.setAttribute('role', 'tab');
                 
                 btn.setAttribute('itemprop', 'itemListElement');
@@ -367,72 +178,72 @@
 
                 btn.innerHTML = `
                     <meta itemprop="position" content="${vIdx + 1}" />
-                    <div class="unav-thumb">
+                    <div class="unav-videoThumb unav-efectoZoomImagen">
                         <img src="${vid.thumb}" alt="Miniatura de vídeo">
-                        <i class="bi bi-play-fill position-absolute top-50 start-50 translate-middle text-white fs-3 opacity-75"></i>
+                        <i class="bi bi-play-fill unav-videoPlayIcon"></i>
+                        <span class="unav-tag unav-videoDuration" style="background-color: rgba(0,0,0,0.85); color: #fff; border: none; font-size: 0.75rem; padding: 0.15rem 0.4rem;">${vid.duration}</span>
                     </div>
-                    <div class="unav-itemInfo">
-                        <div class="unav-itemTitle" itemprop="name" title="${vid.title}">${vid.title}</div>
-                        <div class="unav-itemMeta small text-muted">${vid.meta}</div>
+                    <div class="unav-videoItemInfo">
+                        <div class="unav-videoItemTitle" itemprop="name" title="${vid.title}">${vid.title}</div>
+                        <div class="unav-videoItemMeta">${vid.meta}</div>
+                    </div>
+                    
+                    <div itemprop="video" itemscope itemtype="http://schema.org/VideoObject" style="display:none;">
+                        <meta itemprop="name" content="${vid.title}" />
+                        <meta itemprop="thumbnailUrl" content="${vid.thumb}" />
+                        <meta itemprop="uploadDate" content="2026-01-01" />
+                        <div itemprop="contentLocation" itemscope itemtype="http://schema.org/Place">
+                            <div itemprop="geo" itemscope itemtype="http://schema.org/GeoCoordinates">
+                                <meta itemprop="latitude" content="42.8021" />
+                                <meta itemprop="longitude" content="-1.6521" />
+                            </div>
+                        </div>
                     </div>
                 `;
                 
                 btn.onclick = () => {
-                    pl.querySelectorAll('.unav-videoItem').forEach(b => b.classList.remove('isActive'));
-                    btn.classList.add('isActive');
-                    loadVideo(stage, vid, true);
+                    pl.querySelectorAll('.unav-videoItem').forEach(b => b.classList.remove('unav-isActive'));
+                    btn.classList.add('unav-isActive');
+                    loadVideoData(stage, vid, true);
                     btn.scrollIntoView({ behavior: 'smooth', block: 'nearest', inline: 'center' });
                 };
                 
                 pl.appendChild(btn);
                 
-                if(vIdx === 0) loadVideo(stage, vid, false);
+                if(vIdx === 0) loadVideoData(stage, vid, false);
             });
         });
     }
 
-    function loadVideo(container, vid, isManualClick = false) {
+    function loadVideoData(container, vid, isManualClick = false) {
         let mediaHtml = '';
         const playParam = isManualClick ? '1' : '0';
         const nativoPlayParam = isManualClick ? 'autoplay' : '';
 
         if(vid.type === 'youtube') {
-            mediaHtml = `<iframe src="https://www.youtube.com/embed/${vid.code}?rel=0&autoplay=${playParam}" class="unav-videoFluid" allow="autoplay; fullscreen" allowfullscreen></iframe>`;
+            mediaHtml = `<iframe src="https://www.youtube.com/embed/${vid.code}?rel=0&autoplay=${playParam}" class="unav-videoFluid unav-activeVideoIframe" allow="autoplay; fullscreen" allowfullscreen></iframe>`;
         } else {
-            mediaHtml = `<video src="${vid.code}" controls ${nativoPlayParam} class="unav-videoFluid"></video>`;
+            mediaHtml = `<video src="${vid.code}" controls ${nativoPlayParam} class="unav-videoFluid unav-activeVideoIframe"></video>`;
         }
 
-        container.innerHTML = `
-            ${mediaHtml}
-            <div itemscope itemtype="http://schema.org/VideoObject" style="display:none;">
-                <meta itemprop="name" content="${vid.title}" />
-                <meta itemprop="thumbnailUrl" content="${vid.thumb}" />
-                <meta itemprop="uploadDate" content="2024-01-01" />
-                <div itemprop="contentLocation" itemscope itemtype="http://schema.org/Place">
-                    <div itemprop="geo" itemscope itemtype="http://schema.org/GeoCoordinates">
-                        <meta itemprop="latitude" content="42.8021" />
-                        <meta itemprop="longitude" content="-1.6521" />
-                    </div>
-                </div>
-            </div>
-        `;
+        container.innerHTML = mediaHtml;
     }
 
     window.scrollPlaylistVertical = function(btn, direction) {
-        const wrapper = btn.closest('.unav-galleryWrapper');
-        const playlist = wrapper.querySelector('.unav-playlistSidebar');
+        const wrapper = btn.closest('.unav-videoGalleryWrapper');
+        const playlist = wrapper.querySelector('.unav-videoPlaylistSidebar');
         playlist.scrollBy({ top: 120 * direction, behavior: 'smooth' });
     }
 
     window.scrollPlaylistHorizontal = function(btn, direction) {
-        const wrapper = btn.closest('.unav-galleryWrapper');
-        const playlist = wrapper.querySelector('.unav-playlistSidebar');
+        const wrapper = btn.closest('.unav-videoGalleryWrapper');
+        const playlist = wrapper.querySelector('.unav-videoPlaylistSidebar');
         playlist.scrollBy({ left: 160 * direction, behavior: 'smooth' });
     }
 
-    document.addEventListener('DOMContentLoaded', initGalleries);
+    document.addEventListener('DOMContentLoaded', initVideoGalleries);
 </script>
 
-<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bundle.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
 </body>
 </html>

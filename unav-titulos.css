@@ -1,0 +1,61 @@
+/* ==========================================
+   COMPONENTE: TÍTULOS VISUALES (Desacoplados)
+   ========================================== */
+
+/* Clase Base Estructural (OOCSS) */
+/* Se aplica a <p>, <div>, <span>, etc., para darles comportamiento de bloque de título */
+.unav-titulo {
+    display: block;
+    margin: 0;
+    padding: 0;
+    line-height: 1.15;
+    word-wrap: break-word;
+    /* La tipografía, peso y color se inyectan vía clases utilitarias o tokens */
+}
+
+/* ==========================================
+   LABORATORIO VISUAL (Layout de Documentación)
+   ========================================== */
+
+.unav-techSummary { 
+    border-left: 4px solid var(--unav-rojo-600); 
+}
+
+/* Estructura Longitudinal de la Muestra */
+.unav-sampleRow {
+    background-color: #ffffff;
+    border-bottom: 1px solid var(--unav-grey-200);
+    padding: var(--unav-sampleRowPaddingY, 3rem) var(--unav-sampleRowPaddingX, 2rem);
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    transition: var(--unav-transitionBase);
+}
+
+.unav-sampleRow:hover {
+    background-color: var(--unav-grey-100);
+    box-shadow: inset 4px 0 0 var(--unav-teal-600); /* Usamos Teal para diferenciarlo de Cabeceras */
+}
+
+/* Contenedor Flex para Etiquetas de Metadatos */
+.unav-dataContainer {
+    margin-top: 1.5rem;
+    display: flex;
+    gap: 0.75rem;
+    flex-wrap: wrap;
+    align-items: center;
+}
+
+/* Separador Semántico de Etiquetas HTML */
+.unav-sectionLabel {
+    background-color: var(--unav-black-900);
+    color: #ffffff;
+    padding: var(--unav-sectionLabelPaddingY, 1rem) var(--unav-sectionLabelPaddingX, 2rem);
+    font-family: var(--unav-fontFamilyPrimaryCondensed);
+    font-weight: var(--unav-fontWeightBold);
+    font-size: var(--unav-fontSize125);
+    text-transform: uppercase;
+    letter-spacing: var(--unav-trackingWide);
+    margin-top: 4rem;
+    border-radius: 0.5rem 0.5rem 0 0;
+}

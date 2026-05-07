@@ -1,0 +1,65 @@
+/* ==========================================
+   COMPONENTE: ICONOGRAFÍA UNAV
+   ========================================== */
+
+/* 1. ESCALA DE TAMAÑOS (Utilitarias) */
+.unav-icono-sm { font-size: var(--unav-iconSizeSm); }
+.unav-icono-md { font-size: var(--unav-iconSizeMd); }
+.unav-icono-lg { font-size: var(--unav-iconSizeLg); }
+.unav-icono-xl { font-size: var(--unav-iconSizeXl); }
+
+/* 2. COMPONENTE: CAJA DE ICONO DESTACADO (Feature Box) */
+.unav-iconoDestacado {
+    display: inline-flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    padding: 1.5rem 1rem;
+    background-color: var(--unav-grey-100);
+    border: 1px solid var(--unav-grey-200);
+    border-radius: 0.5rem;
+    transition: var(--unav-transitionBase);
+    color: var(--unav-black-800);
+    height: 100%;
+    text-decoration: none;
+}
+
+.unav-iconoDestacado:hover {
+    background-color: var(--unav-black-500);
+    color: #ffffff;
+    border-color: var(--unav-black-500);
+    transform: translateY(-5px);
+    box-shadow: 0 10px 15px -3px rgba(0,0,0,0.1);
+}
+
+/* Fuerza el color en Material Symbols durante el hover */
+.unav-iconoDestacado:hover .material-symbols-outlined {
+    color: #ffffff;
+}
+
+/* 3. ELEMENTOS INTERNOS Y DOCUMENTACIÓN */
+.unav-iconoNombre {
+    text-align: center;
+    word-break: break-all;
+    font-family: monospace;
+    margin-top: 0.75rem;
+}
+
+.unav-docLink {
+    display: inline-flex;
+    align-items: center;
+    color: var(--unav-rojo-500);
+    text-decoration: none;
+    transition: var(--unav-transitionBase);
+}
+
+.unav-docLink:hover {
+    color: var(--unav-black-500);
+}
+
+/* Para SVGs inyectados directamente */
+.unav-customIconSvg {
+    width: 1em; /* Hereda el tamaño de la fuente del contenedor (.unav-icono-xl, etc.) */
+    height: 1em;
+    fill: currentColor;
+}

@@ -1,0 +1,122 @@
+/* ==========================================
+   COMPONENTE: FICHA PERSONA UNAV (OOCSS)
+   ========================================== */
+
+   .unav-personCard {
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+    background-color: #ffffff;
+    box-sizing: border-box;
+    padding: var(--unav-personCardPadding);
+    gap: var(--unav-personCardGap);
+    box-shadow: var(--unav-personCardShadow);
+    border: 1px solid var(--unav-grey-200); 
+    border-radius: var(--unav-personCardRadius);
+    height: 100%;
+    /* El movimiento (transiciones) se delega a unav-movimiento.css */
+}
+
+/* Variante: Sin marco ni sombra */
+.unav-personCard.unav-cardNoBorder {
+    border: none;
+    box-shadow: none;
+    background-color: transparent;
+    padding: var(--unav-personCardPadding) 0; 
+}
+
+/* IMAGEN Y CONTENEDORES */
+.unav-imageWrapper {
+    width: 100%;
+    overflow: hidden; /* Necesario para que el zoom de movimiento no desborde */
+    border-radius: 0; 
+}
+
+.unav-photoRound .unav-imageWrapper {
+    border-radius: 50%;
+    border: 2px solid var(--unav-rojo-600); 
+}
+
+.unav-personImage {
+    width: 100%;
+    aspect-ratio: var(--unav-personImageRatio); 
+    object-fit: cover;   
+    display: block;
+}
+
+/* Modificador decorativo */
+.unav-imageWrapper.unav-isGrayscale .unav-personImage { 
+    filter: grayscale(100%); 
+}
+
+/* TEXTOS TIPOGRÁFICOS */
+.unav-personName {
+    margin: 0;
+    font-family: var(--unav-fontFamilyPrimary);
+    font-weight: var(--unav-fontWeightLight); 
+    font-size: var(--unav-personNameSize);
+    color: var(--unav-black-800);
+}
+
+.unav-personRole { 
+    font-family: var(--unav-fontFamilyPrimary);
+    font-weight: var(--unav-personRoleWeight); 
+    font-size: var(--unav-fontSize100);
+    line-height: 1.4; 
+    color: var(--unav-black-800); 
+}
+
+.unav-personDetails, .unav-personEmail { 
+    font-family: var(--unav-fontFamilyPrimary);
+    font-weight: var(--unav-fontWeightLight); 
+    font-size: var(--unav-fontSize100);
+    line-height: 1.2; 
+    color: var(--unav-grey-600); 
+}
+
+.unav-personDetails p { margin: 0 0 0.25rem 0; display: flex; align-items: center; }
+.unav-personEmail { display: flex; align-items: center; }
+
+.unav-personDetails i, .unav-personEmail i { 
+    color: var(--unav-grey-400); 
+    margin-right: 8px; 
+    font-size: var(--unav-iconSizeSm); 
+}
+
+.unav-personDetails a, .unav-personEmail a { 
+    color: inherit; 
+    text-decoration: none; 
+}
+.unav-personDetails a:hover, .unav-personEmail a:hover { 
+    text-decoration: underline; 
+    text-underline-offset: 2px; 
+}
+
+.unav-personEmail a { color: var(--unav-black-800); }
+
+/* Área de CTAs */
+.unav-actionContainer {
+    margin-top: 1rem;
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.5rem;
+    width: 100%;
+    align-items: center;
+}
+
+/* =======================================================
+   ORDENACIÓN DINÁMICA (Flexbox Order)
+   ======================================================= */
+.unav-layoutPersona .unav-imageWrapper { order: 1; margin-bottom: 0.5rem; }
+.unav-layoutPersona .unav-personName { order: 2; }
+.unav-layoutPersona .unav-personRole { order: 3; }
+.unav-layoutPersona .unav-personDetails { order: 4; margin-top: 0.5rem; }
+.unav-layoutPersona .unav-personEmail { order: 5; }
+.unav-layoutPersona .unav-actionContainer { order: 6; }
+
+.unav-layoutContacto .unav-personName { order: 1; }
+.unav-layoutContacto .unav-personRole { order: 2; }
+.unav-layoutContacto .unav-personEmail { order: 3; margin-top: 0.5rem;}
+.unav-layoutContacto .unav-imageWrapper { order: 4; margin-top: 1rem; margin-bottom: 0.5rem; }
+.unav-layoutContacto .unav-personDetails { order: 5; }
+.unav-layoutContacto .unav-actionContainer { order: 6; }

@@ -3,307 +3,510 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Color | Design System unav-</title>
+    <title>Color | Design System UNAV</title>
     
+    <!-- Bootstrap 5 CSS y Fuentes -->
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.1/font/bootstrap-icons.css">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@24,400,0,0" />
     
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@100;300;400;500;700&display=swap" rel="stylesheet">
-    <link href="https://fonts.googleapis.com/css2?family=Roboto+Condensed:wght@700&display=swap" rel="stylesheet">
-    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;700&display=swap" rel="stylesheet">
-    <link href="https://fonts.googleapis.com/css2?family=Roboto+Slab:wght@400;700&display=swap" rel="stylesheet">
-    <link href="https://fonts.googleapis.com/css2?family=DM+Serif+Text&display=swap" rel="stylesheet">
+    <!-- Archivos del Design System -->
+    <link rel="stylesheet" href="unav-color.css">
+    <link rel="stylesheet" href="unav-tipografia.css">
+    <link rel="stylesheet" href="unav-variables.css">
+    <link rel="stylesheet" href="unav-botones.css">
 
-    <link rel="stylesheet" href="color.css">
-    <link rel="stylesheet" href="design-system.css">
-    
     <style>
-        .color-swatch {
+        /* Estilos específicos para la visualización de colores */
+        .unav-color-swatch {
             min-width: 90px;
-            transition: transform 0.2s;
+            transition: transform 0.2s ease, box-shadow 0.2s ease;
             cursor: pointer;
             display: flex;
             flex-direction: column;
             justify-content: center;
+            border-radius: 0.5rem;
         }
-        .color-swatch:hover {
+        .unav-color-swatch:hover {
             transform: translateY(-5px);
             box-shadow: 0 10px 15px -3px rgba(0,0,0,0.1);
         }
-        .color-swatch[class*="-100"], .color-swatch[class*="-200"] { border: 1px solid #e3eaed; }
+        /* Bordes sutiles para los tonos más claros */
+        .unav-color-swatch[class*="-100"], .unav-color-swatch[class*="-200"] { 
+            border: 1px solid var(--unav-grey-200); 
+        }
+        .unav-color-hex {
+            opacity: 0.75;
+            margin-top: 0.25rem;
+            text-transform: uppercase;
+        }
     </style>
 </head>
-<body class="bg-light" itemscope itemtype="https://schema.org/WebPage">
+<body class="bg-light">
 
+    <!-- Navbar superior consumiendo tokens del DS -->
     <nav class="navbar navbar-light bg-white border-bottom py-3 sticky-top">
-        <div class="container-lg">
-            <a href="indice.html" class="btn btn-outline-secondary btn-sm rounded-pill px-3 fw-bold">
-                <i class="bi bi-arrow-left me-1"></i> Volver al Índice
-            </a>
-            <span class="navbar-text fw-bold text-primary mb-0">Design System UNAV</span>
+        <div class="container-lg d-flex justify-content-between align-items-center">
+            <!-- Botón Volver -->
+            <div itemscope itemtype="https://schema.org/WebPageElement">
+                <a itemprop="url" href="indice.html" class="unav-boton unav-botonSecundario" style="--unav-botonColorSource: var(--unav-grey-600);">
+                    <i class="bi bi-arrow-left unav-botonIcono" aria-hidden="true"></i>
+                    <span itemprop="name">Volver al Índice</span>
+                </a>
+            </div>
+            <!-- Título Navbar -->
+            <span class="unav-font-primary unav-weight-regular unav-text-250 m-0" style="color: var(--unav-rojo-500); line-height: 1;">
+                Design System UNAV
+            </span>
         </div>
     </nav>
 
-    <main class="container-lg py-5" itemprop="mainContentOfPage">
+    <!-- MAIN CONTENT -->
+    <main class="container-lg py-5">
         
-        <header class="text-center mb-5 border-bottom pb-4">
-            <h1 class="display-5 fw-bold mb-3" itemprop="name">Paleta Corporativa UNAV</h1>
-            <p class="lead text-muted" itemprop="description">Guía de consulta rápida de clases utilitarias de fondo <code>.unav-bg-</code>.</p>
+        <!-- Cabecera de página consumiendo tokens del DS -->
+        <header class="pb-4 mb-5 border-bottom">
+            <h1 class="unav-font-primary unav-weight-medium unav-text-250 text-dark mb-2">Guía de Color</h1>
+            <p class="unav-font-primary unav-weight-regular unav-text-100 text-muted m-0">Paleta corporativa y consumo de clases utilitarias de fondo <code>.unav-bg-</code>.</p>
         </header>
 
-        <section class="mb-5 bg-white p-4 p-md-5 rounded shadow-sm border">
-            <h2 class="h3 fw-bold border-bottom pb-2 mb-4 text-primary">1. Colores Primarios</h2>
+        <div class="unav-color-guide" itemscope itemtype="https://schema.org/TechArticle">
+            <meta itemprop="name" content="Sistema de Color UNAV">
 
-            <div id="color-rojo" class="mb-5">
-                <h3 class="h5 mb-3 text-capitalize text-dark">Rojo Unav</h3>
-                <div class="d-flex flex-wrap gap-2 text-center small">
-                    <div class="color-swatch unav-bg-rojo-100 flex-fill p-3 rounded text-dark"><b>100</b><br><small>rojo-100</small><br><small class="opacity-75">#FFEbee</small></div>
-                    <div class="color-swatch unav-bg-rojo-200 flex-fill p-3 rounded text-dark"><b>200</b><br><small>rojo-200</small><br><small class="opacity-75">#FFCDD2</small></div>
-                    <div class="color-swatch unav-bg-rojo-300 flex-fill p-3 rounded text-dark"><b>300</b><br><small>rojo-300</small><br><small class="opacity-75">#EF9A9A</small></div>
-                    <div class="color-swatch unav-bg-rojo-400 flex-fill p-3 rounded text-dark"><b>400</b><br><small>rojo-400</small><br><small class="opacity-75">#E57373</small></div>
-                    <div class="color-swatch unav-bg-rojo-500 flex-fill p-3 rounded text-white"><b>500</b><br><small>rojo-500</small><br><small class="opacity-75">#FF0000</small></div>
-                    <div class="color-swatch unav-bg-rojo-600 flex-fill p-3 rounded text-white"><b>600</b><br><small>rojo-600</small><br><small class="opacity-75">#D32F2F</small></div>
-                    <div class="color-swatch unav-bg-rojo-700 flex-fill p-3 rounded text-white"><b>700</b><br><small>rojo-700</small><br><small class="opacity-75">#C62828</small></div>
-                    <div class="color-swatch unav-bg-rojo-800 flex-fill p-3 rounded text-white"><b>800</b><br><small>rojo-800</small><br><small class="opacity-75">#B71C1C</small></div>
-                    <div class="color-swatch unav-bg-rojo-900 flex-fill p-3 rounded text-white"><b>900</b><br><small>rojo-900</small><br><small class="opacity-75">#7F0000</small></div>
+            <!-- ==========================================
+                 1. COLORES PRIMARIOS
+                 ========================================== -->
+            <h2 class="unav-font-primary unav-weight-bold unav-text-200 border-bottom pb-2 mb-4 text-dark mt-5">1. Colores Primarios</h2>
+
+            <!-- ROJO UNAV -->
+            <section id="color-rojo" class="unav-color-block card shadow-sm mb-5 border-0">
+                <div class="card-header bg-white py-3 border-bottom-0 d-flex justify-content-between align-items-center">
+                    <h3 class="h5 mb-0 unav-font-primary unav-weight-bold text-capitalize">Rojo Unav</h3>
+                    <span class="badge rounded-pill bg-light text-dark border fw-bold unav-font-primary unav-text-075">PRIMARIO</span>
                 </div>
-            </div>
-
-            <div id="color-black" class="mb-5">
-                <h3 class="h5 mb-3 text-capitalize text-dark">Black Primary</h3>
-                <div class="d-flex flex-wrap gap-2 text-center small">
-                    <div class="color-swatch unav-bg-black-100 flex-fill p-3 rounded text-dark"><b>100</b><br><small>black-100</small><br><small class="opacity-75">#E6E6E6</small></div>
-                    <div class="color-swatch unav-bg-black-200 flex-fill p-3 rounded text-dark"><b>200</b><br><small>black-200</small><br><small class="opacity-75">#CCCCCC</small></div>
-                    <div class="color-swatch unav-bg-black-300 flex-fill p-3 rounded text-dark"><b>300</b><br><small>black-300</small><br><small class="opacity-75">#999999</small></div>
-                    <div class="color-swatch unav-bg-black-400 flex-fill p-3 rounded text-white"><b>400</b><br><small>black-400</small><br><small class="opacity-75">#666666</small></div>
-                    <div class="color-swatch unav-bg-black-500 flex-fill p-3 rounded text-white"><b>500</b><br><small>black-500</small><br><small class="opacity-75">#000000</small></div>
-                    <div class="color-swatch unav-bg-black-600 flex-fill p-3 rounded text-white"><b>600</b><br><small>black-600</small><br><small class="opacity-75">#333333</small></div>
-                    <div class="color-swatch unav-bg-black-700 flex-fill p-3 rounded text-white"><b>700</b><br><small>black-700</small><br><small class="opacity-75">#222222</small></div>
-                    <div class="color-swatch unav-bg-black-800 flex-fill p-3 rounded text-white"><b>800</b><br><small>black-800</small><br><small class="opacity-75">#111111</small></div>
-                    <div class="color-swatch unav-bg-black-900 flex-fill p-3 rounded text-white"><b>900</b><br><small>black-900</small><br><small class="opacity-75">#050505</small></div>
+                <div class="card-body p-4 bg-light rounded-bottom">
+                    <div class="d-flex flex-wrap gap-2 text-center">
+                        <div class="unav-color-swatch unav-bg-rojo-100 flex-fill p-3 text-dark"><span class="unav-font-primary unav-weight-bold unav-text-100">100</span><span class="unav-font-primary unav-weight-regular unav-text-075">rojo-100</span><span class="unav-font-primary unav-weight-regular unav-text-075 unav-color-hex">#FFEbee</span></div>
+                        <div class="unav-color-swatch unav-bg-rojo-200 flex-fill p-3 text-dark"><span class="unav-font-primary unav-weight-bold unav-text-100">200</span><span class="unav-font-primary unav-weight-regular unav-text-075">rojo-200</span><span class="unav-font-primary unav-weight-regular unav-text-075 unav-color-hex">#FFCDD2</span></div>
+                        <div class="unav-color-swatch unav-bg-rojo-300 flex-fill p-3 text-dark"><span class="unav-font-primary unav-weight-bold unav-text-100">300</span><span class="unav-font-primary unav-weight-regular unav-text-075">rojo-300</span><span class="unav-font-primary unav-weight-regular unav-text-075 unav-color-hex">#EF9A9A</span></div>
+                        <div class="unav-color-swatch unav-bg-rojo-400 flex-fill p-3 text-dark"><span class="unav-font-primary unav-weight-bold unav-text-100">400</span><span class="unav-font-primary unav-weight-regular unav-text-075">rojo-400</span><span class="unav-font-primary unav-weight-regular unav-text-075 unav-color-hex">#E57373</span></div>
+                        <div class="unav-color-swatch unav-bg-rojo-500 flex-fill p-3 text-white"><span class="unav-font-primary unav-weight-bold unav-text-100">500</span><span class="unav-font-primary unav-weight-regular unav-text-075">rojo-500</span><span class="unav-font-primary unav-weight-regular unav-text-075 unav-color-hex">#FF0000</span></div>
+                        <div class="unav-color-swatch unav-bg-rojo-600 flex-fill p-3 text-white"><span class="unav-font-primary unav-weight-bold unav-text-100">600</span><span class="unav-font-primary unav-weight-regular unav-text-075">rojo-600</span><span class="unav-font-primary unav-weight-regular unav-text-075 unav-color-hex">#D32F2F</span></div>
+                        <div class="unav-color-swatch unav-bg-rojo-700 flex-fill p-3 text-white"><span class="unav-font-primary unav-weight-bold unav-text-100">700</span><span class="unav-font-primary unav-weight-regular unav-text-075">rojo-700</span><span class="unav-font-primary unav-weight-regular unav-text-075 unav-color-hex">#C62828</span></div>
+                        <div class="unav-color-swatch unav-bg-rojo-800 flex-fill p-3 text-white"><span class="unav-font-primary unav-weight-bold unav-text-100">800</span><span class="unav-font-primary unav-weight-regular unav-text-075">rojo-800</span><span class="unav-font-primary unav-weight-regular unav-text-075 unav-color-hex">#B71C1C</span></div>
+                        <div class="unav-color-swatch unav-bg-rojo-900 flex-fill p-3 text-white"><span class="unav-font-primary unav-weight-bold unav-text-100">900</span><span class="unav-font-primary unav-weight-regular unav-text-075">rojo-900</span><span class="unav-font-primary unav-weight-regular unav-text-075 unav-color-hex">#7F0000</span></div>
+                    </div>
                 </div>
-            </div>
+            </section>
 
-            <div id="color-grey" class="mb-5">
-                <h3 class="h5 mb-3 text-capitalize text-dark">Grey Primary</h3>
-                <div class="d-flex flex-wrap gap-2 text-center small">
-                    <div class="color-swatch unav-bg-grey-100 flex-fill p-3 rounded text-dark"><b>100</b><br><small>grey-100</small><br><small class="opacity-75">#F5F6F6</small></div>
-                    <div class="color-swatch unav-bg-grey-200 flex-fill p-3 rounded text-dark"><b>200</b><br><small>grey-200</small><br><small class="opacity-75">#EBECEC</small></div>
-                    <div class="color-swatch unav-bg-grey-300 flex-fill p-3 rounded text-dark"><b>300</b><br><small>grey-300</small><br><small class="opacity-75">#D1D3D4</small></div>
-                    <div class="color-swatch unav-bg-grey-400 flex-fill p-3 rounded text-dark"><b>400</b><br><small>grey-400</small><br><small class="opacity-75">#A8ABAC</small></div>
-                    <div class="color-swatch unav-bg-grey-500 flex-fill p-3 rounded text-white"><b>500</b><br><small>grey-500</small><br><small class="opacity-75">#6A6D6E</small></div>
-                    <div class="color-swatch unav-bg-grey-600 flex-fill p-3 rounded text-white"><b>600</b><br><small>grey-600</small><br><small class="opacity-75">#56595A</small></div>
-                    <div class="color-swatch unav-bg-grey-700 flex-fill p-3 rounded text-white"><b>700</b><br><small>grey-700</small><br><small class="opacity-75">#424445</small></div>
-                    <div class="color-swatch unav-bg-grey-800 flex-fill p-3 rounded text-white"><b>800</b><br><small>grey-800</small><br><small class="opacity-75">#2E2F30</small></div>
-                    <div class="color-swatch unav-bg-grey-900 flex-fill p-3 rounded text-white"><b>900</b><br><small>grey-900</small><br><small class="opacity-75">#1A1B1B</small></div>
+            <!-- BLACK PRIMARY -->
+            <section id="color-black" class="unav-color-block card shadow-sm mb-5 border-0">
+                <div class="card-header bg-white py-3 border-bottom-0 d-flex justify-content-between align-items-center">
+                    <h3 class="h5 mb-0 unav-font-primary unav-weight-bold text-capitalize">Black Primary</h3>
+                    <span class="badge rounded-pill bg-light text-dark border fw-bold unav-font-primary unav-text-075">PRIMARIO</span>
                 </div>
-            </div>
-        </section>
-
-        <section class="mb-5 bg-white p-4 p-md-5 rounded shadow-sm border">
-            <h2 class="h3 fw-bold border-bottom pb-2 mb-4 text-primary">2. Colores Secundarios</h2>
-
-            <div id="color-moss" class="mb-5">
-                <h3 class="h5 mb-3 text-capitalize text-dark">Moss</h3>
-                <div class="d-flex flex-wrap gap-2 text-center small">
-                    <div class="color-swatch unav-bg-moss-100 flex-fill p-3 rounded text-dark"><b>100</b><br><small>moss-100</small><br><small class="opacity-75">#E6F4D7</small></div>
-                    <div class="color-swatch unav-bg-moss-200 flex-fill p-3 rounded text-dark"><b>200</b><br><small>moss-200</small><br><small class="opacity-75">#CEEAB0</small></div>
-                    <div class="color-swatch unav-bg-moss-300 flex-fill p-3 rounded text-dark"><b>300</b><br><small>moss-300</small><br><small class="opacity-75">#ACDC79</small></div>
-                    <div class="color-swatch unav-bg-moss-400 flex-fill p-3 rounded text-dark"><b>400</b><br><small>moss-400</small><br><small class="opacity-75">#86CB3C</small></div>
-                    <div class="color-swatch unav-bg-moss-500 flex-fill p-3 rounded text-white"><b>500</b><br><small>moss-500</small><br><small class="opacity-75">#669F2A</small></div>
-                    <div class="color-swatch unav-bg-moss-600 flex-fill p-3 rounded text-white"><b>600</b><br><small>moss-600</small><br><small class="opacity-75">#4F7A21</small></div>
-                    <div class="color-swatch unav-bg-moss-700 flex-fill p-3 rounded text-white"><b>700</b><br><small>moss-700</small><br><small class="opacity-75">#3F621A</small></div>
-                    <div class="color-swatch unav-bg-moss-800 flex-fill p-3 rounded text-white"><b>800</b><br><small>moss-800</small><br><small class="opacity-75">#335015</small></div>
-                    <div class="color-swatch unav-bg-moss-900 flex-fill p-3 rounded text-white"><b>900</b><br><small>moss-900</small><br><small class="opacity-75">#2B4212</small></div>
+                <div class="card-body p-4 bg-light rounded-bottom">
+                    <div class="d-flex flex-wrap gap-2 text-center">
+                        <div class="unav-color-swatch unav-bg-black-100 flex-fill p-3 text-dark"><span class="unav-font-primary unav-weight-bold unav-text-100">100</span><span class="unav-font-primary unav-weight-regular unav-text-075">black-100</span><span class="unav-font-primary unav-weight-regular unav-text-075 unav-color-hex">#E6E6E6</span></div>
+                        <div class="unav-color-swatch unav-bg-black-200 flex-fill p-3 text-dark"><span class="unav-font-primary unav-weight-bold unav-text-100">200</span><span class="unav-font-primary unav-weight-regular unav-text-075">black-200</span><span class="unav-font-primary unav-weight-regular unav-text-075 unav-color-hex">#CCCCCC</span></div>
+                        <div class="unav-color-swatch unav-bg-black-300 flex-fill p-3 text-dark"><span class="unav-font-primary unav-weight-bold unav-text-100">300</span><span class="unav-font-primary unav-weight-regular unav-text-075">black-300</span><span class="unav-font-primary unav-weight-regular unav-text-075 unav-color-hex">#999999</span></div>
+                        <div class="unav-color-swatch unav-bg-black-400 flex-fill p-3 text-white"><span class="unav-font-primary unav-weight-bold unav-text-100">400</span><span class="unav-font-primary unav-weight-regular unav-text-075">black-400</span><span class="unav-font-primary unav-weight-regular unav-text-075 unav-color-hex">#666666</span></div>
+                        <div class="unav-color-swatch unav-bg-black-500 flex-fill p-3 text-white"><span class="unav-font-primary unav-weight-bold unav-text-100">500</span><span class="unav-font-primary unav-weight-regular unav-text-075">black-500</span><span class="unav-font-primary unav-weight-regular unav-text-075 unav-color-hex">#000000</span></div>
+                        <div class="unav-color-swatch unav-bg-black-600 flex-fill p-3 text-white"><span class="unav-font-primary unav-weight-bold unav-text-100">600</span><span class="unav-font-primary unav-weight-regular unav-text-075">black-600</span><span class="unav-font-primary unav-weight-regular unav-text-075 unav-color-hex">#333333</span></div>
+                        <div class="unav-color-swatch unav-bg-black-700 flex-fill p-3 text-white"><span class="unav-font-primary unav-weight-bold unav-text-100">700</span><span class="unav-font-primary unav-weight-regular unav-text-075">black-700</span><span class="unav-font-primary unav-weight-regular unav-text-075 unav-color-hex">#222222</span></div>
+                        <div class="unav-color-swatch unav-bg-black-800 flex-fill p-3 text-white"><span class="unav-font-primary unav-weight-bold unav-text-100">800</span><span class="unav-font-primary unav-weight-regular unav-text-075">black-800</span><span class="unav-font-primary unav-weight-regular unav-text-075 unav-color-hex">#111111</span></div>
+                        <div class="unav-color-swatch unav-bg-black-900 flex-fill p-3 text-white"><span class="unav-font-primary unav-weight-bold unav-text-100">900</span><span class="unav-font-primary unav-weight-regular unav-text-075">black-900</span><span class="unav-font-primary unav-weight-regular unav-text-075 unav-color-hex">#050505</span></div>
+                    </div>
                 </div>
-            </div>
+            </section>
 
-            <div id="color-green-light" class="mb-5">
-                <h3 class="h5 mb-3 text-capitalize text-dark">Green Light</h3>
-                <div class="d-flex flex-wrap gap-2 text-center small">
-                    <div class="color-swatch unav-bg-green-light-100 flex-fill p-3 rounded text-dark"><b>100</b><br><small>green-l-100</small><br><small class="opacity-75">#E4FBCC</small></div>
-                    <div class="color-swatch unav-bg-green-light-200 flex-fill p-3 rounded text-dark"><b>200</b><br><small>green-l-200</small><br><small class="opacity-75">#D0F8AB</small></div>
-                    <div class="color-swatch unav-bg-green-light-300 flex-fill p-3 rounded text-dark"><b>300</b><br><small>green-l-300</small><br><small class="opacity-75">#A6EF67</small></div>
-                    <div class="color-swatch unav-bg-green-light-400 flex-fill p-3 rounded text-dark"><b>400</b><br><small>green-l-400</small><br><small class="opacity-75">#85E13A</small></div>
-                    <div class="color-swatch unav-bg-green-light-500 flex-fill p-3 rounded text-white"><b>500</b><br><small>green-l-500</small><br><small class="opacity-75">#66C61C</small></div>
-                    <div class="color-swatch unav-bg-green-light-600 flex-fill p-3 rounded text-white"><b>600</b><br><small>green-l-600</small><br><small class="opacity-75">#4CA30D</small></div>
-                    <div class="color-swatch unav-bg-green-light-700 flex-fill p-3 rounded text-white"><b>700</b><br><small>green-l-700</small><br><small class="opacity-75">#3B7C0F</small></div>
-                    <div class="color-swatch unav-bg-green-light-800 flex-fill p-3 rounded text-white"><b>800</b><br><small>green-l-800</small><br><small class="opacity-75">#326212</small></div>
-                    <div class="color-swatch unav-bg-green-light-900 flex-fill p-3 rounded text-white"><b>900</b><br><small>green-l-900</small><br><small class="opacity-75">#2B5314</small></div>
+            <!-- GREY PRIMARY -->
+            <section id="color-grey" class="unav-color-block card shadow-sm mb-5 border-0">
+                <div class="card-header bg-white py-3 border-bottom-0 d-flex justify-content-between align-items-center">
+                    <h3 class="h5 mb-0 unav-font-primary unav-weight-bold text-capitalize">Grey Primary</h3>
+                    <span class="badge rounded-pill bg-light text-dark border fw-bold unav-font-primary unav-text-075">PRIMARIO</span>
                 </div>
-            </div>
-
-            <div id="color-green" class="mb-5">
-                <h3 class="h5 mb-3 text-capitalize text-dark">Green</h3>
-                <div class="d-flex flex-wrap gap-2 text-center small">
-                    <div class="color-swatch unav-bg-green-100 flex-fill p-3 rounded text-dark"><b>100</b><br><small>green-100</small><br><small class="opacity-75">#D3F8DF</small></div>
-                    <div class="color-swatch unav-bg-green-200 flex-fill p-3 rounded text-dark"><b>200</b><br><small>green-200</small><br><small class="opacity-75">#AAF0C4</small></div>
-                    <div class="color-swatch unav-bg-green-300 flex-fill p-3 rounded text-dark"><b>300</b><br><small>green-300</small><br><small class="opacity-75">#73E2A3</small></div>
-                    <div class="color-swatch unav-bg-green-400 flex-fill p-3 rounded text-dark"><b>400</b><br><small>green-400</small><br><small class="opacity-75">#3CCB7F</small></div>
-                    <div class="color-swatch unav-bg-green-500 flex-fill p-3 rounded text-white"><b>500</b><br><small>green-500</small><br><small class="opacity-75">#16B364</small></div>
-                    <div class="color-swatch unav-bg-green-600 flex-fill p-3 rounded text-white"><b>600</b><br><small>green-600</small><br><small class="opacity-75">#099250</small></div>
-                    <div class="color-swatch unav-bg-green-700 flex-fill p-3 rounded text-white"><b>700</b><br><small>green-700</small><br><small class="opacity-75">#087443</small></div>
-                    <div class="color-swatch unav-bg-green-800 flex-fill p-3 rounded text-white"><b>800</b><br><small>green-800</small><br><small class="opacity-75">#095C37</small></div>
-                    <div class="color-swatch unav-bg-green-900 flex-fill p-3 rounded text-white"><b>900</b><br><small>green-900</small><br><small class="opacity-75">#084C2E</small></div>
+                <div class="card-body p-4 bg-light rounded-bottom">
+                    <div class="d-flex flex-wrap gap-2 text-center">
+                        <div class="unav-color-swatch unav-bg-grey-100 flex-fill p-3 text-dark"><span class="unav-font-primary unav-weight-bold unav-text-100">100</span><span class="unav-font-primary unav-weight-regular unav-text-075">grey-100</span><span class="unav-font-primary unav-weight-regular unav-text-075 unav-color-hex">#F5F6F6</span></div>
+                        <div class="unav-color-swatch unav-bg-grey-200 flex-fill p-3 text-dark"><span class="unav-font-primary unav-weight-bold unav-text-100">200</span><span class="unav-font-primary unav-weight-regular unav-text-075">grey-200</span><span class="unav-font-primary unav-weight-regular unav-text-075 unav-color-hex">#EBECEC</span></div>
+                        <div class="unav-color-swatch unav-bg-grey-300 flex-fill p-3 text-dark"><span class="unav-font-primary unav-weight-bold unav-text-100">300</span><span class="unav-font-primary unav-weight-regular unav-text-075">grey-300</span><span class="unav-font-primary unav-weight-regular unav-text-075 unav-color-hex">#D1D3D4</span></div>
+                        <div class="unav-color-swatch unav-bg-grey-400 flex-fill p-3 text-dark"><span class="unav-font-primary unav-weight-bold unav-text-100">400</span><span class="unav-font-primary unav-weight-regular unav-text-075">grey-400</span><span class="unav-font-primary unav-weight-regular unav-text-075 unav-color-hex">#A8ABAC</span></div>
+                        <div class="unav-color-swatch unav-bg-grey-500 flex-fill p-3 text-white"><span class="unav-font-primary unav-weight-bold unav-text-100">500</span><span class="unav-font-primary unav-weight-regular unav-text-075">grey-500</span><span class="unav-font-primary unav-weight-regular unav-text-075 unav-color-hex">#6A6D6E</span></div>
+                        <div class="unav-color-swatch unav-bg-grey-600 flex-fill p-3 text-white"><span class="unav-font-primary unav-weight-bold unav-text-100">600</span><span class="unav-font-primary unav-weight-regular unav-text-075">grey-600</span><span class="unav-font-primary unav-weight-regular unav-text-075 unav-color-hex">#56595A</span></div>
+                        <div class="unav-color-swatch unav-bg-grey-700 flex-fill p-3 text-white"><span class="unav-font-primary unav-weight-bold unav-text-100">700</span><span class="unav-font-primary unav-weight-regular unav-text-075">grey-700</span><span class="unav-font-primary unav-weight-regular unav-text-075 unav-color-hex">#424445</span></div>
+                        <div class="unav-color-swatch unav-bg-grey-800 flex-fill p-3 text-white"><span class="unav-font-primary unav-weight-bold unav-text-100">800</span><span class="unav-font-primary unav-weight-regular unav-text-075">grey-800</span><span class="unav-font-primary unav-weight-regular unav-text-075 unav-color-hex">#2E2F30</span></div>
+                        <div class="unav-color-swatch unav-bg-grey-900 flex-fill p-3 text-white"><span class="unav-font-primary unav-weight-bold unav-text-100">900</span><span class="unav-font-primary unav-weight-regular unav-text-075">grey-900</span><span class="unav-font-primary unav-weight-regular unav-text-075 unav-color-hex">#1A1B1B</span></div>
+                    </div>
                 </div>
-            </div>
+            </section>
 
-            <div id="color-teal" class="mb-5">
-                <h3 class="h5 mb-3 text-capitalize text-dark">Teal</h3>
-                <div class="d-flex flex-wrap gap-2 text-center small">
-                    <div class="color-swatch unav-bg-teal-100 flex-fill p-3 rounded text-dark"><b>100</b><br><small>teal-100</small><br><small class="opacity-75">#CCFBEF</small></div>
-                    <div class="color-swatch unav-bg-teal-200 flex-fill p-3 rounded text-dark"><b>200</b><br><small>teal-200</small><br><small class="opacity-75">#99F6E0</small></div>
-                    <div class="color-swatch unav-bg-teal-300 flex-fill p-3 rounded text-dark"><b>300</b><br><small>teal-300</small><br><small class="opacity-75">#5FE9D0</small></div>
-                    <div class="color-swatch unav-bg-teal-400 flex-fill p-3 rounded text-dark"><b>400</b><br><small>teal-400</small><br><small class="opacity-75">#2ED3B7</small></div>
-                    <div class="color-swatch unav-bg-teal-500 flex-fill p-3 rounded text-white"><b>500</b><br><small>teal-500</small><br><small class="opacity-75">#15B79E</small></div>
-                    <div class="color-swatch unav-bg-teal-600 flex-fill p-3 rounded text-white"><b>600</b><br><small>teal-600</small><br><small class="opacity-75">#0E9384</small></div>
-                    <div class="color-swatch unav-bg-teal-700 flex-fill p-3 rounded text-white"><b>700</b><br><small>teal-700</small><br><small class="opacity-75">#107569</small></div>
-                    <div class="color-swatch unav-bg-teal-800 flex-fill p-3 rounded text-white"><b>800</b><br><small>teal-800</small><br><small class="opacity-75">#125D56</small></div>
-                    <div class="color-swatch unav-bg-teal-900 flex-fill p-3 rounded text-white"><b>900</b><br><small>teal-900</small><br><small class="opacity-75">#134E48</small></div>
+            <!-- ==========================================
+                 2. COLORES SECUNDARIOS
+                 ========================================== -->
+            <h2 class="unav-font-primary unav-weight-bold unav-text-200 border-bottom pb-2 mb-4 text-dark mt-5">2. Colores Secundarios</h2>
+
+            <!-- MOSS -->
+            <section id="color-moss" class="unav-color-block card shadow-sm mb-5 border-0">
+                <div class="card-header bg-white py-3 border-bottom-0 d-flex justify-content-between align-items-center">
+                    <h3 class="h5 mb-0 unav-font-primary unav-weight-bold text-capitalize">Moss</h3>
+                    <span class="badge rounded-pill bg-light text-dark border fw-bold unav-font-primary unav-text-075">SECUNDARIO</span>
                 </div>
-            </div>
-
-            <div id="color-cyan" class="mb-5">
-                <h3 class="h5 mb-3 text-capitalize text-dark">Cyan</h3>
-                <div class="d-flex flex-wrap gap-2 text-center small">
-                    <div class="color-swatch unav-bg-cyan-100 flex-fill p-3 rounded text-dark"><b>100</b><br><small>cyan-100</small><br><small class="opacity-75">#CFF9FE</small></div>
-                    <div class="color-swatch unav-bg-cyan-200 flex-fill p-3 rounded text-dark"><b>200</b><br><small>cyan-200</small><br><small class="opacity-75">#A5F0FC</small></div>
-                    <div class="color-swatch unav-bg-cyan-300 flex-fill p-3 rounded text-dark"><b>300</b><br><small>cyan-300</small><br><small class="opacity-75">#67E3F9</small></div>
-                    <div class="color-swatch unav-bg-cyan-400 flex-fill p-3 rounded text-dark"><b>400</b><br><small>cyan-400</small><br><small class="opacity-75">#22CCEE</small></div>
-                    <div class="color-swatch unav-bg-cyan-500 flex-fill p-3 rounded text-white"><b>500</b><br><small>cyan-500</small><br><small class="opacity-75">#06AED4</small></div>
-                    <div class="color-swatch unav-bg-cyan-600 flex-fill p-3 rounded text-white"><b>600</b><br><small>cyan-600</small><br><small class="opacity-75">#088AB2</small></div>
-                    <div class="color-swatch unav-bg-cyan-700 flex-fill p-3 rounded text-white"><b>700</b><br><small>cyan-700</small><br><small class="opacity-75">#0E7090</small></div>
-                    <div class="color-swatch unav-bg-cyan-800 flex-fill p-3 rounded text-white"><b>800</b><br><small>cyan-800</small><br><small class="opacity-75">#155B75</small></div>
-                    <div class="color-swatch unav-bg-cyan-900 flex-fill p-3 rounded text-white"><b>900</b><br><small>cyan-900</small><br><small class="opacity-75">#164C63</small></div>
+                <div class="card-body p-4 bg-light rounded-bottom">
+                    <div class="d-flex flex-wrap gap-2 text-center">
+                        <div class="unav-color-swatch unav-bg-moss-100 flex-fill p-3 text-dark"><span class="unav-font-primary unav-weight-bold unav-text-100">100</span><span class="unav-font-primary unav-weight-regular unav-text-075">moss-100</span><span class="unav-font-primary unav-weight-regular unav-text-075 unav-color-hex">#E6F4D7</span></div>
+                        <div class="unav-color-swatch unav-bg-moss-200 flex-fill p-3 text-dark"><span class="unav-font-primary unav-weight-bold unav-text-100">200</span><span class="unav-font-primary unav-weight-regular unav-text-075">moss-200</span><span class="unav-font-primary unav-weight-regular unav-text-075 unav-color-hex">#CEEAB0</span></div>
+                        <div class="unav-color-swatch unav-bg-moss-300 flex-fill p-3 text-dark"><span class="unav-font-primary unav-weight-bold unav-text-100">300</span><span class="unav-font-primary unav-weight-regular unav-text-075">moss-300</span><span class="unav-font-primary unav-weight-regular unav-text-075 unav-color-hex">#ACDC79</span></div>
+                        <div class="unav-color-swatch unav-bg-moss-400 flex-fill p-3 text-dark"><span class="unav-font-primary unav-weight-bold unav-text-100">400</span><span class="unav-font-primary unav-weight-regular unav-text-075">moss-400</span><span class="unav-font-primary unav-weight-regular unav-text-075 unav-color-hex">#86CB3C</span></div>
+                        <div class="unav-color-swatch unav-bg-moss-500 flex-fill p-3 text-white"><span class="unav-font-primary unav-weight-bold unav-text-100">500</span><span class="unav-font-primary unav-weight-regular unav-text-075">moss-500</span><span class="unav-font-primary unav-weight-regular unav-text-075 unav-color-hex">#669F2A</span></div>
+                        <div class="unav-color-swatch unav-bg-moss-600 flex-fill p-3 text-white"><span class="unav-font-primary unav-weight-bold unav-text-100">600</span><span class="unav-font-primary unav-weight-regular unav-text-075">moss-600</span><span class="unav-font-primary unav-weight-regular unav-text-075 unav-color-hex">#4F7A21</span></div>
+                        <div class="unav-color-swatch unav-bg-moss-700 flex-fill p-3 text-white"><span class="unav-font-primary unav-weight-bold unav-text-100">700</span><span class="unav-font-primary unav-weight-regular unav-text-075">moss-700</span><span class="unav-font-primary unav-weight-regular unav-text-075 unav-color-hex">#3F621A</span></div>
+                        <div class="unav-color-swatch unav-bg-moss-800 flex-fill p-3 text-white"><span class="unav-font-primary unav-weight-bold unav-text-100">800</span><span class="unav-font-primary unav-weight-regular unav-text-075">moss-800</span><span class="unav-font-primary unav-weight-regular unav-text-075 unav-color-hex">#335015</span></div>
+                        <div class="unav-color-swatch unav-bg-moss-900 flex-fill p-3 text-white"><span class="unav-font-primary unav-weight-bold unav-text-100">900</span><span class="unav-font-primary unav-weight-regular unav-text-075">moss-900</span><span class="unav-font-primary unav-weight-regular unav-text-075 unav-color-hex">#2B4212</span></div>
+                    </div>
                 </div>
-            </div>
+            </section>
 
-            <div id="color-blue-light" class="mb-5">
-                <h3 class="h5 mb-3 text-capitalize text-dark">Blue Light</h3>
-                <div class="d-flex flex-wrap gap-2 text-center small">
-                    <div class="color-swatch unav-bg-blue-light-100 flex-fill p-3 rounded text-dark"><b>100</b><br><small>blue-l-100</small><br><small class="opacity-75">#E0F2FE</small></div>
-                    <div class="color-swatch unav-bg-blue-light-200 flex-fill p-3 rounded text-dark"><b>200</b><br><small>blue-l-200</small><br><small class="opacity-75">#B9E6FE</small></div>
-                    <div class="color-swatch unav-bg-blue-light-300 flex-fill p-3 rounded text-dark"><b>300</b><br><small>blue-l-300</small><br><small class="opacity-75">#7CD4FD</small></div>
-                    <div class="color-swatch unav-bg-blue-light-400 flex-fill p-3 rounded text-dark"><b>400</b><br><small>blue-l-400</small><br><small class="opacity-75">#36BFFA</small></div>
-                    <div class="color-swatch unav-bg-blue-light-500 flex-fill p-3 rounded text-white"><b>500</b><br><small>blue-l-500</small><br><small class="opacity-75">#0BA5EC</small></div>
-                    <div class="color-swatch unav-bg-blue-light-600 flex-fill p-3 rounded text-white"><b>600</b><br><small>blue-l-600</small><br><small class="opacity-75">#0086C9</small></div>
-                    <div class="color-swatch unav-bg-blue-light-700 flex-fill p-3 rounded text-white"><b>700</b><br><small>blue-l-700</small><br><small class="opacity-75">#026AA2</small></div>
-                    <div class="color-swatch unav-bg-blue-light-800 flex-fill p-3 rounded text-white"><b>800</b><br><small>blue-l-800</small><br><small class="opacity-75">#065986</small></div>
-                    <div class="color-swatch unav-bg-blue-light-900 flex-fill p-3 rounded text-white"><b>900</b><br><small>blue-l-900</small><br><small class="opacity-75">#0B4A6F</small></div>
+            <!-- GREEN LIGHT -->
+            <section id="color-green-light" class="unav-color-block card shadow-sm mb-5 border-0">
+                <div class="card-header bg-white py-3 border-bottom-0 d-flex justify-content-between align-items-center">
+                    <h3 class="h5 mb-0 unav-font-primary unav-weight-bold text-capitalize">Green Light</h3>
+                    <span class="badge rounded-pill bg-light text-dark border fw-bold unav-font-primary unav-text-075">SECUNDARIO</span>
                 </div>
-            </div>
-
-            <div id="color-blue" class="mb-5">
-                <h3 class="h5 mb-3 text-capitalize text-dark">Blue</h3>
-                <div class="d-flex flex-wrap gap-2 text-center small">
-                    <div class="color-swatch unav-bg-blue-100 flex-fill p-3 rounded text-dark"><b>100</b><br><small>blue-100</small><br><small class="opacity-75">#D1E9FF</small></div>
-                    <div class="color-swatch unav-bg-blue-200 flex-fill p-3 rounded text-dark"><b>200</b><br><small>blue-200</small><br><small class="opacity-75">#B2DDFF</small></div>
-                    <div class="color-swatch unav-bg-blue-300 flex-fill p-3 rounded text-dark"><b>300</b><br><small>blue-300</small><br><small class="opacity-75">#84CAFF</small></div>
-                    <div class="color-swatch unav-bg-blue-400 flex-fill p-3 rounded text-dark"><b>400</b><br><small>blue-400</small><br><small class="opacity-75">#53B1FD</small></div>
-                    <div class="color-swatch unav-bg-blue-500 flex-fill p-3 rounded text-white"><b>500</b><br><small>blue-500</small><br><small class="opacity-75">#2E90FA</small></div>
-                    <div class="color-swatch unav-bg-blue-600 flex-fill p-3 rounded text-white"><b>600</b><br><small>blue-600</small><br><small class="opacity-75">#1570EF</small></div>
-                    <div class="color-swatch unav-bg-blue-700 flex-fill p-3 rounded text-white"><b>700</b><br><small>blue-700</small><br><small class="opacity-75">#175CD3</small></div>
-                    <div class="color-swatch unav-bg-blue-800 flex-fill p-3 rounded text-white"><b>800</b><br><small>blue-800</small><br><small class="opacity-75">#1849A9</small></div>
-                    <div class="color-swatch unav-bg-blue-900 flex-fill p-3 rounded text-white"><b>900</b><br><small>blue-900</small><br><small class="opacity-75">#194185</small></div>
+                <div class="card-body p-4 bg-light rounded-bottom">
+                    <div class="d-flex flex-wrap gap-2 text-center">
+                        <div class="unav-color-swatch unav-bg-green-light-100 flex-fill p-3 text-dark"><span class="unav-font-primary unav-weight-bold unav-text-100">100</span><span class="unav-font-primary unav-weight-regular unav-text-075">green-l-100</span><span class="unav-font-primary unav-weight-regular unav-text-075 unav-color-hex">#E4FBCC</span></div>
+                        <div class="unav-color-swatch unav-bg-green-light-200 flex-fill p-3 text-dark"><span class="unav-font-primary unav-weight-bold unav-text-100">200</span><span class="unav-font-primary unav-weight-regular unav-text-075">green-l-200</span><span class="unav-font-primary unav-weight-regular unav-text-075 unav-color-hex">#D0F8AB</span></div>
+                        <div class="unav-color-swatch unav-bg-green-light-300 flex-fill p-3 text-dark"><span class="unav-font-primary unav-weight-bold unav-text-100">300</span><span class="unav-font-primary unav-weight-regular unav-text-075">green-l-300</span><span class="unav-font-primary unav-weight-regular unav-text-075 unav-color-hex">#A6EF67</span></div>
+                        <div class="unav-color-swatch unav-bg-green-light-400 flex-fill p-3 text-dark"><span class="unav-font-primary unav-weight-bold unav-text-100">400</span><span class="unav-font-primary unav-weight-regular unav-text-075">green-l-400</span><span class="unav-font-primary unav-weight-regular unav-text-075 unav-color-hex">#85E13A</span></div>
+                        <div class="unav-color-swatch unav-bg-green-light-500 flex-fill p-3 text-white"><span class="unav-font-primary unav-weight-bold unav-text-100">500</span><span class="unav-font-primary unav-weight-regular unav-text-075">green-l-500</span><span class="unav-font-primary unav-weight-regular unav-text-075 unav-color-hex">#66C61C</span></div>
+                        <div class="unav-color-swatch unav-bg-green-light-600 flex-fill p-3 text-white"><span class="unav-font-primary unav-weight-bold unav-text-100">600</span><span class="unav-font-primary unav-weight-regular unav-text-075">green-l-600</span><span class="unav-font-primary unav-weight-regular unav-text-075 unav-color-hex">#4CA30D</span></div>
+                        <div class="unav-color-swatch unav-bg-green-light-700 flex-fill p-3 text-white"><span class="unav-font-primary unav-weight-bold unav-text-100">700</span><span class="unav-font-primary unav-weight-regular unav-text-075">green-l-700</span><span class="unav-font-primary unav-weight-regular unav-text-075 unav-color-hex">#3B7C0F</span></div>
+                        <div class="unav-color-swatch unav-bg-green-light-800 flex-fill p-3 text-white"><span class="unav-font-primary unav-weight-bold unav-text-100">800</span><span class="unav-font-primary unav-weight-regular unav-text-075">green-l-800</span><span class="unav-font-primary unav-weight-regular unav-text-075 unav-color-hex">#326212</span></div>
+                        <div class="unav-color-swatch unav-bg-green-light-900 flex-fill p-3 text-white"><span class="unav-font-primary unav-weight-bold unav-text-100">900</span><span class="unav-font-primary unav-weight-regular unav-text-075">green-l-900</span><span class="unav-font-primary unav-weight-regular unav-text-075 unav-color-hex">#2B5314</span></div>
+                    </div>
                 </div>
-            </div>
+            </section>
 
-            <div id="color-blue-dark" class="mb-5">
-                <h3 class="h5 mb-3 text-capitalize text-dark">Blue Dark</h3>
-                <div class="d-flex flex-wrap gap-2 text-center small">
-                    <div class="color-swatch unav-bg-blue-dark-100 flex-fill p-3 rounded text-dark"><b>100</b><br><small>b-dark-100</small><br><small class="opacity-75">#D1E0FF</small></div>
-                    <div class="color-swatch unav-bg-blue-dark-200 flex-fill p-3 rounded text-dark"><b>200</b><br><small>b-dark-200</small><br><small class="opacity-75">#B2CCFF</small></div>
-                    <div class="color-swatch unav-bg-blue-dark-300 flex-fill p-3 rounded text-dark"><b>300</b><br><small>b-dark-300</small><br><small class="opacity-75">#84ADFF</small></div>
-                    <div class="color-swatch unav-bg-blue-dark-400 flex-fill p-3 rounded text-dark"><b>400</b><br><small>b-dark-400</small><br><small class="opacity-75">#528BFF</small></div>
-                    <div class="color-swatch unav-bg-blue-dark-500 flex-fill p-3 rounded text-white"><b>500</b><br><small>b-dark-500</small><br><small class="opacity-75">#2970FF</small></div>
-                    <div class="color-swatch unav-bg-blue-dark-600 flex-fill p-3 rounded text-white"><b>600</b><br><small>b-dark-600</small><br><small class="opacity-75">#155EEF</small></div>
-                    <div class="color-swatch unav-bg-blue-dark-700 flex-fill p-3 rounded text-white"><b>700</b><br><small>b-dark-700</small><br><small class="opacity-75">#004EEB</small></div>
-                    <div class="color-swatch unav-bg-blue-dark-800 flex-fill p-3 rounded text-white"><b>800</b><br><small>b-dark-800</small><br><small class="opacity-75">#0040C1</small></div>
-                    <div class="color-swatch unav-bg-blue-dark-900 flex-fill p-3 rounded text-white"><b>900</b><br><small>b-dark-900</small><br><small class="opacity-75">#00359E</small></div>
+            <!-- GREEN -->
+            <section id="color-green" class="unav-color-block card shadow-sm mb-5 border-0">
+                <div class="card-header bg-white py-3 border-bottom-0 d-flex justify-content-between align-items-center">
+                    <h3 class="h5 mb-0 unav-font-primary unav-weight-bold text-capitalize">Green</h3>
+                    <span class="badge rounded-pill bg-light text-dark border fw-bold unav-font-primary unav-text-075">SECUNDARIO</span>
                 </div>
-            </div>
-
-            <div id="color-indigo" class="mb-5">
-                <h3 class="h5 mb-3 text-capitalize text-dark">Indigo</h3>
-                <div class="d-flex flex-wrap gap-2 text-center small">
-                    <div class="color-swatch unav-bg-indigo-100 flex-fill p-3 rounded text-dark"><b>100</b><br><small>indigo-100</small><br><small class="opacity-75">#E0EAFF</small></div>
-                    <div class="color-swatch unav-bg-indigo-200 flex-fill p-3 rounded text-dark"><b>200</b><br><small>indigo-200</small><br><small class="opacity-75">#C7D7FE</small></div>
-                    <div class="color-swatch unav-bg-indigo-300 flex-fill p-3 rounded text-dark"><b>300</b><br><small>indigo-300</small><br><small class="opacity-75">#A4BCFD</small></div>
-                    <div class="color-swatch unav-bg-indigo-400 flex-fill p-3 rounded text-dark"><b>400</b><br><small>indigo-400</small><br><small class="opacity-75">#8098F9</small></div>
-                    <div class="color-swatch unav-bg-indigo-500 flex-fill p-3 rounded text-white"><b>500</b><br><small>indigo-500</small><br><small class="opacity-75">#6172F3</small></div>
-                    <div class="color-swatch unav-bg-indigo-600 flex-fill p-3 rounded text-white"><b>600</b><br><small>indigo-600</small><br><small class="opacity-75">#444CE7</small></div>
-                    <div class="color-swatch unav-bg-indigo-700 flex-fill p-3 rounded text-white"><b>700</b><br><small>indigo-700</small><br><small class="opacity-75">#3538CD</small></div>
-                    <div class="color-swatch unav-bg-indigo-800 flex-fill p-3 rounded text-white"><b>800</b><br><small>indigo-800</small><br><small class="opacity-75">#2D31A6</small></div>
-                    <div class="color-swatch unav-bg-indigo-900 flex-fill p-3 rounded text-white"><b>900</b><br><small>indigo-900</small><br><small class="opacity-75">#2D3282</small></div>
+                <div class="card-body p-4 bg-light rounded-bottom">
+                    <div class="d-flex flex-wrap gap-2 text-center">
+                        <div class="unav-color-swatch unav-bg-green-100 flex-fill p-3 text-dark"><span class="unav-font-primary unav-weight-bold unav-text-100">100</span><span class="unav-font-primary unav-weight-regular unav-text-075">green-100</span><span class="unav-font-primary unav-weight-regular unav-text-075 unav-color-hex">#D3F8DF</span></div>
+                        <div class="unav-color-swatch unav-bg-green-200 flex-fill p-3 text-dark"><span class="unav-font-primary unav-weight-bold unav-text-100">200</span><span class="unav-font-primary unav-weight-regular unav-text-075">green-200</span><span class="unav-font-primary unav-weight-regular unav-text-075 unav-color-hex">#AAF0C4</span></div>
+                        <div class="unav-color-swatch unav-bg-green-300 flex-fill p-3 text-dark"><span class="unav-font-primary unav-weight-bold unav-text-100">300</span><span class="unav-font-primary unav-weight-regular unav-text-075">green-300</span><span class="unav-font-primary unav-weight-regular unav-text-075 unav-color-hex">#73E2A3</span></div>
+                        <div class="unav-color-swatch unav-bg-green-400 flex-fill p-3 text-dark"><span class="unav-font-primary unav-weight-bold unav-text-100">400</span><span class="unav-font-primary unav-weight-regular unav-text-075">green-400</span><span class="unav-font-primary unav-weight-regular unav-text-075 unav-color-hex">#3CCB7F</span></div>
+                        <div class="unav-color-swatch unav-bg-green-500 flex-fill p-3 text-white"><span class="unav-font-primary unav-weight-bold unav-text-100">500</span><span class="unav-font-primary unav-weight-regular unav-text-075">green-500</span><span class="unav-font-primary unav-weight-regular unav-text-075 unav-color-hex">#16B364</span></div>
+                        <div class="unav-color-swatch unav-bg-green-600 flex-fill p-3 text-white"><span class="unav-font-primary unav-weight-bold unav-text-100">600</span><span class="unav-font-primary unav-weight-regular unav-text-075">green-600</span><span class="unav-font-primary unav-weight-regular unav-text-075 unav-color-hex">#099250</span></div>
+                        <div class="unav-color-swatch unav-bg-green-700 flex-fill p-3 text-white"><span class="unav-font-primary unav-weight-bold unav-text-100">700</span><span class="unav-font-primary unav-weight-regular unav-text-075">green-700</span><span class="unav-font-primary unav-weight-regular unav-text-075 unav-color-hex">#087443</span></div>
+                        <div class="unav-color-swatch unav-bg-green-800 flex-fill p-3 text-white"><span class="unav-font-primary unav-weight-bold unav-text-100">800</span><span class="unav-font-primary unav-weight-regular unav-text-075">green-800</span><span class="unav-font-primary unav-weight-regular unav-text-075 unav-color-hex">#095C37</span></div>
+                        <div class="unav-color-swatch unav-bg-green-900 flex-fill p-3 text-white"><span class="unav-font-primary unav-weight-bold unav-text-100">900</span><span class="unav-font-primary unav-weight-regular unav-text-075">green-900</span><span class="unav-font-primary unav-weight-regular unav-text-075 unav-color-hex">#084C2E</span></div>
+                    </div>
                 </div>
-            </div>
+            </section>
 
-            <div id="color-violet" class="mb-5">
-                <h3 class="h5 mb-3 text-capitalize text-dark">Violet</h3>
-                <div class="d-flex flex-wrap gap-2 text-center small">
-                    <div class="color-swatch unav-bg-violet-100 flex-fill p-3 rounded text-dark"><b>100</b><br><small>violet-100</small><br><small class="opacity-75">#ECE9FE</small></div>
-                    <div class="color-swatch unav-bg-violet-200 flex-fill p-3 rounded text-dark"><b>200</b><br><small>violet-200</small><br><small class="opacity-75">#DDD6FE</small></div>
-                    <div class="color-swatch unav-bg-violet-300 flex-fill p-3 rounded text-dark"><b>300</b><br><small>violet-300</small><br><small class="opacity-75">#C3B5FD</small></div>
-                    <div class="color-swatch unav-bg-violet-400 flex-fill p-3 rounded text-dark"><b>400</b><br><small>violet-400</small><br><small class="opacity-75">#A48AFB</small></div>
-                    <div class="color-swatch unav-bg-violet-500 flex-fill p-3 rounded text-white"><b>500</b><br><small>violet-500</small><br><small class="opacity-75">#875BF7</small></div>
-                    <div class="color-swatch unav-bg-violet-600 flex-fill p-3 rounded text-white"><b>600</b><br><small>violet-600</small><br><small class="opacity-75">#7839EE</small></div>
-                    <div class="color-swatch unav-bg-violet-700 flex-fill p-3 rounded text-white"><b>700</b><br><small>violet-700</small><br><small class="opacity-75">#6927DA</small></div>
-                    <div class="color-swatch unav-bg-violet-800 flex-fill p-3 rounded text-white"><b>800</b><br><small>violet-800</small><br><small class="opacity-75">#5720B7</small></div>
-                    <div class="color-swatch unav-bg-violet-900 flex-fill p-3 rounded text-white"><b>900</b><br><small>violet-900</small><br><small class="opacity-75">#491C96</small></div>
+            <!-- TEAL -->
+            <section id="color-teal" class="unav-color-block card shadow-sm mb-5 border-0">
+                <div class="card-header bg-white py-3 border-bottom-0 d-flex justify-content-between align-items-center">
+                    <h3 class="h5 mb-0 unav-font-primary unav-weight-bold text-capitalize">Teal</h3>
+                    <span class="badge rounded-pill bg-light text-dark border fw-bold unav-font-primary unav-text-075">SECUNDARIO</span>
                 </div>
-            </div>
-
-            <div id="color-purple" class="mb-5">
-                <h3 class="h5 mb-3 text-capitalize text-dark">Purple</h3>
-                <div class="d-flex flex-wrap gap-2 text-center small">
-                    <div class="color-swatch unav-bg-purple-100 flex-fill p-3 rounded text-dark"><b>100</b><br><small>purple-100</small><br><small class="opacity-75">#EBE9FE</small></div>
-                    <div class="color-swatch unav-bg-purple-200 flex-fill p-3 rounded text-dark"><b>200</b><br><small>purple-200</small><br><small class="opacity-75">#D9D6FE</small></div>
-                    <div class="color-swatch unav-bg-purple-300 flex-fill p-3 rounded text-dark"><b>300</b><br><small>purple-300</small><br><small class="opacity-75">#BDB4FE</small></div>
-                    <div class="color-swatch unav-bg-purple-400 flex-fill p-3 rounded text-dark"><b>400</b><br><small>purple-400</small><br><small class="opacity-75">#9B8AFB</small></div>
-                    <div class="color-swatch unav-bg-purple-500 flex-fill p-3 rounded text-white"><b>500</b><br><small>purple-500</small><br><small class="opacity-75">#7A5AF8</small></div>
-                    <div class="color-swatch unav-bg-purple-600 flex-fill p-3 rounded text-white"><b>600</b><br><small>purple-600</small><br><small class="opacity-75">#6938EF</small></div>
-                    <div class="color-swatch unav-bg-purple-700 flex-fill p-3 rounded text-white"><b>700</b><br><small>purple-700</small><br><small class="opacity-75">#5925DC</small></div>
-                    <div class="color-swatch unav-bg-purple-800 flex-fill p-3 rounded text-white"><b>800</b><br><small>purple-800</small><br><small class="opacity-75">#4A1FB8</small></div>
-                    <div class="color-swatch unav-bg-purple-900 flex-fill p-3 rounded text-white"><b>900</b><br><small>purple-900</small><br><small class="opacity-75">#3E1C96</small></div>
+                <div class="card-body p-4 bg-light rounded-bottom">
+                    <div class="d-flex flex-wrap gap-2 text-center">
+                        <div class="unav-color-swatch unav-bg-teal-100 flex-fill p-3 text-dark"><span class="unav-font-primary unav-weight-bold unav-text-100">100</span><span class="unav-font-primary unav-weight-regular unav-text-075">teal-100</span><span class="unav-font-primary unav-weight-regular unav-text-075 unav-color-hex">#CCFBEF</span></div>
+                        <div class="unav-color-swatch unav-bg-teal-200 flex-fill p-3 text-dark"><span class="unav-font-primary unav-weight-bold unav-text-100">200</span><span class="unav-font-primary unav-weight-regular unav-text-075">teal-200</span><span class="unav-font-primary unav-weight-regular unav-text-075 unav-color-hex">#99F6E0</span></div>
+                        <div class="unav-color-swatch unav-bg-teal-300 flex-fill p-3 text-dark"><span class="unav-font-primary unav-weight-bold unav-text-100">300</span><span class="unav-font-primary unav-weight-regular unav-text-075">teal-300</span><span class="unav-font-primary unav-weight-regular unav-text-075 unav-color-hex">#5FE9D0</span></div>
+                        <div class="unav-color-swatch unav-bg-teal-400 flex-fill p-3 text-dark"><span class="unav-font-primary unav-weight-bold unav-text-100">400</span><span class="unav-font-primary unav-weight-regular unav-text-075">teal-400</span><span class="unav-font-primary unav-weight-regular unav-text-075 unav-color-hex">#2ED3B7</span></div>
+                        <div class="unav-color-swatch unav-bg-teal-500 flex-fill p-3 text-white"><span class="unav-font-primary unav-weight-bold unav-text-100">500</span><span class="unav-font-primary unav-weight-regular unav-text-075">teal-500</span><span class="unav-font-primary unav-weight-regular unav-text-075 unav-color-hex">#15B79E</span></div>
+                        <div class="unav-color-swatch unav-bg-teal-600 flex-fill p-3 text-white"><span class="unav-font-primary unav-weight-bold unav-text-100">600</span><span class="unav-font-primary unav-weight-regular unav-text-075">teal-600</span><span class="unav-font-primary unav-weight-regular unav-text-075 unav-color-hex">#0E9384</span></div>
+                        <div class="unav-color-swatch unav-bg-teal-700 flex-fill p-3 text-white"><span class="unav-font-primary unav-weight-bold unav-text-100">700</span><span class="unav-font-primary unav-weight-regular unav-text-075">teal-700</span><span class="unav-font-primary unav-weight-regular unav-text-075 unav-color-hex">#107569</span></div>
+                        <div class="unav-color-swatch unav-bg-teal-800 flex-fill p-3 text-white"><span class="unav-font-primary unav-weight-bold unav-text-100">800</span><span class="unav-font-primary unav-weight-regular unav-text-075">teal-800</span><span class="unav-font-primary unav-weight-regular unav-text-075 unav-color-hex">#125D56</span></div>
+                        <div class="unav-color-swatch unav-bg-teal-900 flex-fill p-3 text-white"><span class="unav-font-primary unav-weight-bold unav-text-100">900</span><span class="unav-font-primary unav-weight-regular unav-text-075">teal-900</span><span class="unav-font-primary unav-weight-regular unav-text-075 unav-color-hex">#134E48</span></div>
+                    </div>
                 </div>
-            </div>
+            </section>
 
-            <div id="color-fuchsia" class="mb-5">
-                <h3 class="h5 mb-3 text-capitalize text-dark">Fuchsia</h3>
-                <div class="d-flex flex-wrap gap-2 text-center small">
-                    <div class="color-swatch unav-bg-fuchsia-100 flex-fill p-3 rounded text-dark"><b>100</b><br><small>fuchsia-100</small><br><small class="opacity-75">#FBE8FF</small></div>
-                    <div class="color-swatch unav-bg-fuchsia-200 flex-fill p-3 rounded text-dark"><b>200</b><br><small>fuchsia-200</small><br><small class="opacity-75">#F6D0FE</small></div>
-                    <div class="color-swatch unav-bg-fuchsia-300 flex-fill p-3 rounded text-dark"><b>300</b><br><small>fuchsia-300</small><br><small class="opacity-75">#EEAAFD</small></div>
-                    <div class="color-swatch unav-bg-fuchsia-400 flex-fill p-3 rounded text-dark"><b>400</b><br><small>fuchsia-400</small><br><small class="opacity-75">#E478FA</small></div>
-                    <div class="color-swatch unav-bg-fuchsia-500 flex-fill p-3 rounded text-white"><b>500</b><br><small>fuchsia-500</small><br><small class="opacity-75">#D444F1</small></div>
-                    <div class="color-swatch unav-bg-fuchsia-600 flex-fill p-3 rounded text-white"><b>600</b><br><small>fuchsia-600</small><br><small class="opacity-75">#BA24D5</small></div>
-                    <div class="color-swatch unav-bg-fuchsia-700 flex-fill p-3 rounded text-white"><b>700</b><br><small>fuchsia-700</small><br><small class="opacity-75">#9F1AB1</small></div>
-                    <div class="color-swatch unav-bg-fuchsia-800 flex-fill p-3 rounded text-white"><b>800</b><br><small>fuchsia-800</small><br><small class="opacity-75">#821890</small></div>
-                    <div class="color-swatch unav-bg-fuchsia-900 flex-fill p-3 rounded text-white"><b>900</b><br><small>fuchsia-900</small><br><small class="opacity-75">#6F1877</small></div>
+            <!-- CYAN -->
+            <section id="color-cyan" class="unav-color-block card shadow-sm mb-5 border-0">
+                <div class="card-header bg-white py-3 border-bottom-0 d-flex justify-content-between align-items-center">
+                    <h3 class="h5 mb-0 unav-font-primary unav-weight-bold text-capitalize">Cyan</h3>
+                    <span class="badge rounded-pill bg-light text-dark border fw-bold unav-font-primary unav-text-075">SECUNDARIO</span>
                 </div>
-            </div>
-
-            <div id="color-pink" class="mb-5">
-                <h3 class="h5 mb-3 text-capitalize text-dark">Pink</h3>
-                <div class="d-flex flex-wrap gap-2 text-center small">
-                    <div class="color-swatch unav-bg-pink-100 flex-fill p-3 rounded text-dark"><b>100</b><br><small>pink-100</small><br><small class="opacity-75">#FCE7F6</small></div>
-                    <div class="color-swatch unav-bg-pink-200 flex-fill p-3 rounded text-dark"><b>200</b><br><small>pink-200</small><br><small class="opacity-75">#FCCEEE</small></div>
-                    <div class="color-swatch unav-bg-pink-300 flex-fill p-3 rounded text-dark"><b>300</b><br><small>pink-300</small><br><small class="opacity-75">#FAA7E0</small></div>
-                    <div class="color-swatch unav-bg-pink-400 flex-fill p-3 rounded text-dark"><b>400</b><br><small>pink-400</small><br><small class="opacity-75">#F670C7</small></div>
-                    <div class="color-swatch unav-bg-pink-500 flex-fill p-3 rounded text-white"><b>500</b><br><small>pink-500</small><br><small class="opacity-75">#EE46BC</small></div>
-                    <div class="color-swatch unav-bg-pink-600 flex-fill p-3 rounded text-white"><b>600</b><br><small>pink-600</small><br><small class="opacity-75">#DD2590</small></div>
-                    <div class="color-swatch unav-bg-pink-700 flex-fill p-3 rounded text-white"><b>700</b><br><small>pink-700</small><br><small class="opacity-75">#C11574</small></div>
-                    <div class="color-swatch unav-bg-pink-800 flex-fill p-3 rounded text-white"><b>800</b><br><small>pink-800</small><br><small class="opacity-75">#9E165F</small></div>
-                    <div class="color-swatch unav-bg-pink-900 flex-fill p-3 rounded text-white"><b>900</b><br><small>pink-900</small><br><small class="opacity-75">#851651</small></div>
+                <div class="card-body p-4 bg-light rounded-bottom">
+                    <div class="d-flex flex-wrap gap-2 text-center">
+                        <div class="unav-color-swatch unav-bg-cyan-100 flex-fill p-3 text-dark"><span class="unav-font-primary unav-weight-bold unav-text-100">100</span><span class="unav-font-primary unav-weight-regular unav-text-075">cyan-100</span><span class="unav-font-primary unav-weight-regular unav-text-075 unav-color-hex">#CFF9FE</span></div>
+                        <div class="unav-color-swatch unav-bg-cyan-200 flex-fill p-3 text-dark"><span class="unav-font-primary unav-weight-bold unav-text-100">200</span><span class="unav-font-primary unav-weight-regular unav-text-075">cyan-200</span><span class="unav-font-primary unav-weight-regular unav-text-075 unav-color-hex">#A5F0FC</span></div>
+                        <div class="unav-color-swatch unav-bg-cyan-300 flex-fill p-3 text-dark"><span class="unav-font-primary unav-weight-bold unav-text-100">300</span><span class="unav-font-primary unav-weight-regular unav-text-075">cyan-300</span><span class="unav-font-primary unav-weight-regular unav-text-075 unav-color-hex">#67E3F9</span></div>
+                        <div class="unav-color-swatch unav-bg-cyan-400 flex-fill p-3 text-dark"><span class="unav-font-primary unav-weight-bold unav-text-100">400</span><span class="unav-font-primary unav-weight-regular unav-text-075">cyan-400</span><span class="unav-font-primary unav-weight-regular unav-text-075 unav-color-hex">#22CCEE</span></div>
+                        <div class="unav-color-swatch unav-bg-cyan-500 flex-fill p-3 text-white"><span class="unav-font-primary unav-weight-bold unav-text-100">500</span><span class="unav-font-primary unav-weight-regular unav-text-075">cyan-500</span><span class="unav-font-primary unav-weight-regular unav-text-075 unav-color-hex">#06AED4</span></div>
+                        <div class="unav-color-swatch unav-bg-cyan-600 flex-fill p-3 text-white"><span class="unav-font-primary unav-weight-bold unav-text-100">600</span><span class="unav-font-primary unav-weight-regular unav-text-075">cyan-600</span><span class="unav-font-primary unav-weight-regular unav-text-075 unav-color-hex">#088AB2</span></div>
+                        <div class="unav-color-swatch unav-bg-cyan-700 flex-fill p-3 text-white"><span class="unav-font-primary unav-weight-bold unav-text-100">700</span><span class="unav-font-primary unav-weight-regular unav-text-075">cyan-700</span><span class="unav-font-primary unav-weight-regular unav-text-075 unav-color-hex">#0E7090</span></div>
+                        <div class="unav-color-swatch unav-bg-cyan-800 flex-fill p-3 text-white"><span class="unav-font-primary unav-weight-bold unav-text-100">800</span><span class="unav-font-primary unav-weight-regular unav-text-075">cyan-800</span><span class="unav-font-primary unav-weight-regular unav-text-075 unav-color-hex">#155B75</span></div>
+                        <div class="unav-color-swatch unav-bg-cyan-900 flex-fill p-3 text-white"><span class="unav-font-primary unav-weight-bold unav-text-100">900</span><span class="unav-font-primary unav-weight-regular unav-text-075">cyan-900</span><span class="unav-font-primary unav-weight-regular unav-text-075 unav-color-hex">#164C63</span></div>
+                    </div>
                 </div>
-            </div>
+            </section>
 
-        </section>
+            <!-- BLUE LIGHT -->
+            <section id="color-blue-light" class="unav-color-block card shadow-sm mb-5 border-0">
+                <div class="card-header bg-white py-3 border-bottom-0 d-flex justify-content-between align-items-center">
+                    <h3 class="h5 mb-0 unav-font-primary unav-weight-bold text-capitalize">Blue Light</h3>
+                    <span class="badge rounded-pill bg-light text-dark border fw-bold unav-font-primary unav-text-075">SECUNDARIO</span>
+                </div>
+                <div class="card-body p-4 bg-light rounded-bottom">
+                    <div class="d-flex flex-wrap gap-2 text-center">
+                        <div class="unav-color-swatch unav-bg-blue-light-100 flex-fill p-3 text-dark"><span class="unav-font-primary unav-weight-bold unav-text-100">100</span><span class="unav-font-primary unav-weight-regular unav-text-075">blue-l-100</span><span class="unav-font-primary unav-weight-regular unav-text-075 unav-color-hex">#E0F2FE</span></div>
+                        <div class="unav-color-swatch unav-bg-blue-light-200 flex-fill p-3 text-dark"><span class="unav-font-primary unav-weight-bold unav-text-100">200</span><span class="unav-font-primary unav-weight-regular unav-text-075">blue-l-200</span><span class="unav-font-primary unav-weight-regular unav-text-075 unav-color-hex">#B9E6FE</span></div>
+                        <div class="unav-color-swatch unav-bg-blue-light-300 flex-fill p-3 text-dark"><span class="unav-font-primary unav-weight-bold unav-text-100">300</span><span class="unav-font-primary unav-weight-regular unav-text-075">blue-l-300</span><span class="unav-font-primary unav-weight-regular unav-text-075 unav-color-hex">#7CD4FD</span></div>
+                        <div class="unav-color-swatch unav-bg-blue-light-400 flex-fill p-3 text-dark"><span class="unav-font-primary unav-weight-bold unav-text-100">400</span><span class="unav-font-primary unav-weight-regular unav-text-075">blue-l-400</span><span class="unav-font-primary unav-weight-regular unav-text-075 unav-color-hex">#36BFFA</span></div>
+                        <div class="unav-color-swatch unav-bg-blue-light-500 flex-fill p-3 text-white"><span class="unav-font-primary unav-weight-bold unav-text-100">500</span><span class="unav-font-primary unav-weight-regular unav-text-075">blue-l-500</span><span class="unav-font-primary unav-weight-regular unav-text-075 unav-color-hex">#0BA5EC</span></div>
+                        <div class="unav-color-swatch unav-bg-blue-light-600 flex-fill p-3 text-white"><span class="unav-font-primary unav-weight-bold unav-text-100">600</span><span class="unav-font-primary unav-weight-regular unav-text-075">blue-l-600</span><span class="unav-font-primary unav-weight-regular unav-text-075 unav-color-hex">#0086C9</span></div>
+                        <div class="unav-color-swatch unav-bg-blue-light-700 flex-fill p-3 text-white"><span class="unav-font-primary unav-weight-bold unav-text-100">700</span><span class="unav-font-primary unav-weight-regular unav-text-075">blue-l-700</span><span class="unav-font-primary unav-weight-regular unav-text-075 unav-color-hex">#026AA2</span></div>
+                        <div class="unav-color-swatch unav-bg-blue-light-800 flex-fill p-3 text-white"><span class="unav-font-primary unav-weight-bold unav-text-100">800</span><span class="unav-font-primary unav-weight-regular unav-text-075">blue-l-800</span><span class="unav-font-primary unav-weight-regular unav-text-075 unav-color-hex">#065986</span></div>
+                        <div class="unav-color-swatch unav-bg-blue-light-900 flex-fill p-3 text-white"><span class="unav-font-primary unav-weight-bold unav-text-100">900</span><span class="unav-font-primary unav-weight-regular unav-text-075">blue-l-900</span><span class="unav-font-primary unav-weight-regular unav-text-075 unav-color-hex">#0B4A6F</span></div>
+                    </div>
+                </div>
+            </section>
 
+            <!-- BLUE -->
+            <section id="color-blue" class="unav-color-block card shadow-sm mb-5 border-0">
+                <div class="card-header bg-white py-3 border-bottom-0 d-flex justify-content-between align-items-center">
+                    <h3 class="h5 mb-0 unav-font-primary unav-weight-bold text-capitalize">Blue</h3>
+                    <span class="badge rounded-pill bg-light text-dark border fw-bold unav-font-primary unav-text-075">SECUNDARIO</span>
+                </div>
+                <div class="card-body p-4 bg-light rounded-bottom">
+                    <div class="d-flex flex-wrap gap-2 text-center">
+                        <div class="unav-color-swatch unav-bg-blue-100 flex-fill p-3 text-dark"><span class="unav-font-primary unav-weight-bold unav-text-100">100</span><span class="unav-font-primary unav-weight-regular unav-text-075">blue-100</span><span class="unav-font-primary unav-weight-regular unav-text-075 unav-color-hex">#D1E9FF</span></div>
+                        <div class="unav-color-swatch unav-bg-blue-200 flex-fill p-3 text-dark"><span class="unav-font-primary unav-weight-bold unav-text-100">200</span><span class="unav-font-primary unav-weight-regular unav-text-075">blue-200</span><span class="unav-font-primary unav-weight-regular unav-text-075 unav-color-hex">#B2DDFF</span></div>
+                        <div class="unav-color-swatch unav-bg-blue-300 flex-fill p-3 text-dark"><span class="unav-font-primary unav-weight-bold unav-text-100">300</span><span class="unav-font-primary unav-weight-regular unav-text-075">blue-300</span><span class="unav-font-primary unav-weight-regular unav-text-075 unav-color-hex">#84CAFF</span></div>
+                        <div class="unav-color-swatch unav-bg-blue-400 flex-fill p-3 text-dark"><span class="unav-font-primary unav-weight-bold unav-text-100">400</span><span class="unav-font-primary unav-weight-regular unav-text-075">blue-400</span><span class="unav-font-primary unav-weight-regular unav-text-075 unav-color-hex">#53B1FD</span></div>
+                        <div class="unav-color-swatch unav-bg-blue-500 flex-fill p-3 text-white"><span class="unav-font-primary unav-weight-bold unav-text-100">500</span><span class="unav-font-primary unav-weight-regular unav-text-075">blue-500</span><span class="unav-font-primary unav-weight-regular unav-text-075 unav-color-hex">#2E90FA</span></div>
+                        <div class="unav-color-swatch unav-bg-blue-600 flex-fill p-3 text-white"><span class="unav-font-primary unav-weight-bold unav-text-100">600</span><span class="unav-font-primary unav-weight-regular unav-text-075">blue-600</span><span class="unav-font-primary unav-weight-regular unav-text-075 unav-color-hex">#1570EF</span></div>
+                        <div class="unav-color-swatch unav-bg-blue-700 flex-fill p-3 text-white"><span class="unav-font-primary unav-weight-bold unav-text-100">700</span><span class="unav-font-primary unav-weight-regular unav-text-075">blue-700</span><span class="unav-font-primary unav-weight-regular unav-text-075 unav-color-hex">#175CD3</span></div>
+                        <div class="unav-color-swatch unav-bg-blue-800 flex-fill p-3 text-white"><span class="unav-font-primary unav-weight-bold unav-text-100">800</span><span class="unav-font-primary unav-weight-regular unav-text-075">blue-800</span><span class="unav-font-primary unav-weight-regular unav-text-075 unav-color-hex">#1849A9</span></div>
+                        <div class="unav-color-swatch unav-bg-blue-900 flex-fill p-3 text-white"><span class="unav-font-primary unav-weight-bold unav-text-100">900</span><span class="unav-font-primary unav-weight-regular unav-text-075">blue-900</span><span class="unav-font-primary unav-weight-regular unav-text-075 unav-color-hex">#194185</span></div>
+                    </div>
+                </div>
+            </section>
+
+            <!-- BLUE DARK -->
+            <section id="color-blue-dark" class="unav-color-block card shadow-sm mb-5 border-0">
+                <div class="card-header bg-white py-3 border-bottom-0 d-flex justify-content-between align-items-center">
+                    <h3 class="h5 mb-0 unav-font-primary unav-weight-bold text-capitalize">Blue Dark</h3>
+                    <span class="badge rounded-pill bg-light text-dark border fw-bold unav-font-primary unav-text-075">SECUNDARIO</span>
+                </div>
+                <div class="card-body p-4 bg-light rounded-bottom">
+                    <div class="d-flex flex-wrap gap-2 text-center">
+                        <div class="unav-color-swatch unav-bg-blue-dark-100 flex-fill p-3 text-dark"><span class="unav-font-primary unav-weight-bold unav-text-100">100</span><span class="unav-font-primary unav-weight-regular unav-text-075">b-dark-100</span><span class="unav-font-primary unav-weight-regular unav-text-075 unav-color-hex">#D1E0FF</span></div>
+                        <div class="unav-color-swatch unav-bg-blue-dark-200 flex-fill p-3 text-dark"><span class="unav-font-primary unav-weight-bold unav-text-100">200</span><span class="unav-font-primary unav-weight-regular unav-text-075">b-dark-200</span><span class="unav-font-primary unav-weight-regular unav-text-075 unav-color-hex">#B2CCFF</span></div>
+                        <div class="unav-color-swatch unav-bg-blue-dark-300 flex-fill p-3 text-dark"><span class="unav-font-primary unav-weight-bold unav-text-100">300</span><span class="unav-font-primary unav-weight-regular unav-text-075">b-dark-300</span><span class="unav-font-primary unav-weight-regular unav-text-075 unav-color-hex">#84ADFF</span></div>
+                        <div class="unav-color-swatch unav-bg-blue-dark-400 flex-fill p-3 text-dark"><span class="unav-font-primary unav-weight-bold unav-text-100">400</span><span class="unav-font-primary unav-weight-regular unav-text-075">b-dark-400</span><span class="unav-font-primary unav-weight-regular unav-text-075 unav-color-hex">#528BFF</span></div>
+                        <div class="unav-color-swatch unav-bg-blue-dark-500 flex-fill p-3 text-white"><span class="unav-font-primary unav-weight-bold unav-text-100">500</span><span class="unav-font-primary unav-weight-regular unav-text-075">b-dark-500</span><span class="unav-font-primary unav-weight-regular unav-text-075 unav-color-hex">#2970FF</span></div>
+                        <div class="unav-color-swatch unav-bg-blue-dark-600 flex-fill p-3 text-white"><span class="unav-font-primary unav-weight-bold unav-text-100">600</span><span class="unav-font-primary unav-weight-regular unav-text-075">b-dark-600</span><span class="unav-font-primary unav-weight-regular unav-text-075 unav-color-hex">#155EEF</span></div>
+                        <div class="unav-color-swatch unav-bg-blue-dark-700 flex-fill p-3 text-white"><span class="unav-font-primary unav-weight-bold unav-text-100">700</span><span class="unav-font-primary unav-weight-regular unav-text-075">b-dark-700</span><span class="unav-font-primary unav-weight-regular unav-text-075 unav-color-hex">#004EEB</span></div>
+                        <div class="unav-color-swatch unav-bg-blue-dark-800 flex-fill p-3 text-white"><span class="unav-font-primary unav-weight-bold unav-text-100">800</span><span class="unav-font-primary unav-weight-regular unav-text-075">b-dark-800</span><span class="unav-font-primary unav-weight-regular unav-text-075 unav-color-hex">#0040C1</span></div>
+                        <div class="unav-color-swatch unav-bg-blue-dark-900 flex-fill p-3 text-white"><span class="unav-font-primary unav-weight-bold unav-text-100">900</span><span class="unav-font-primary unav-weight-regular unav-text-075">b-dark-900</span><span class="unav-font-primary unav-weight-regular unav-text-075 unav-color-hex">#00359E</span></div>
+                    </div>
+                </div>
+            </section>
+
+            <!-- INDIGO -->
+            <section id="color-indigo" class="unav-color-block card shadow-sm mb-5 border-0">
+                <div class="card-header bg-white py-3 border-bottom-0 d-flex justify-content-between align-items-center">
+                    <h3 class="h5 mb-0 unav-font-primary unav-weight-bold text-capitalize">Indigo</h3>
+                    <span class="badge rounded-pill bg-light text-dark border fw-bold unav-font-primary unav-text-075">SECUNDARIO</span>
+                </div>
+                <div class="card-body p-4 bg-light rounded-bottom">
+                    <div class="d-flex flex-wrap gap-2 text-center">
+                        <div class="unav-color-swatch unav-bg-indigo-100 flex-fill p-3 text-dark"><span class="unav-font-primary unav-weight-bold unav-text-100">100</span><span class="unav-font-primary unav-weight-regular unav-text-075">indigo-100</span><span class="unav-font-primary unav-weight-regular unav-text-075 unav-color-hex">#E0EAFF</span></div>
+                        <div class="unav-color-swatch unav-bg-indigo-200 flex-fill p-3 text-dark"><span class="unav-font-primary unav-weight-bold unav-text-100">200</span><span class="unav-font-primary unav-weight-regular unav-text-075">indigo-200</span><span class="unav-font-primary unav-weight-regular unav-text-075 unav-color-hex">#C7D7FE</span></div>
+                        <div class="unav-color-swatch unav-bg-indigo-300 flex-fill p-3 text-dark"><span class="unav-font-primary unav-weight-bold unav-text-100">300</span><span class="unav-font-primary unav-weight-regular unav-text-075">indigo-300</span><span class="unav-font-primary unav-weight-regular unav-text-075 unav-color-hex">#A4BCFD</span></div>
+                        <div class="unav-color-swatch unav-bg-indigo-400 flex-fill p-3 text-dark"><span class="unav-font-primary unav-weight-bold unav-text-100">400</span><span class="unav-font-primary unav-weight-regular unav-text-075">indigo-400</span><span class="unav-font-primary unav-weight-regular unav-text-075 unav-color-hex">#8098F9</span></div>
+                        <div class="unav-color-swatch unav-bg-indigo-500 flex-fill p-3 text-white"><span class="unav-font-primary unav-weight-bold unav-text-100">500</span><span class="unav-font-primary unav-weight-regular unav-text-075">indigo-500</span><span class="unav-font-primary unav-weight-regular unav-text-075 unav-color-hex">#6172F3</span></div>
+                        <div class="unav-color-swatch unav-bg-indigo-600 flex-fill p-3 text-white"><span class="unav-font-primary unav-weight-bold unav-text-100">600</span><span class="unav-font-primary unav-weight-regular unav-text-075">indigo-600</span><span class="unav-font-primary unav-weight-regular unav-text-075 unav-color-hex">#444CE7</span></div>
+                        <div class="unav-color-swatch unav-bg-indigo-700 flex-fill p-3 text-white"><span class="unav-font-primary unav-weight-bold unav-text-100">700</span><span class="unav-font-primary unav-weight-regular unav-text-075">indigo-700</span><span class="unav-font-primary unav-weight-regular unav-text-075 unav-color-hex">#3538CD</span></div>
+                        <div class="unav-color-swatch unav-bg-indigo-800 flex-fill p-3 text-white"><span class="unav-font-primary unav-weight-bold unav-text-100">800</span><span class="unav-font-primary unav-weight-regular unav-text-075">indigo-800</span><span class="unav-font-primary unav-weight-regular unav-text-075 unav-color-hex">#2D31A6</span></div>
+                        <div class="unav-color-swatch unav-bg-indigo-900 flex-fill p-3 text-white"><span class="unav-font-primary unav-weight-bold unav-text-100">900</span><span class="unav-font-primary unav-weight-regular unav-text-075">indigo-900</span><span class="unav-font-primary unav-weight-regular unav-text-075 unav-color-hex">#2D3282</span></div>
+                    </div>
+                </div>
+            </section>
+
+            <!-- VIOLET -->
+            <section id="color-violet" class="unav-color-block card shadow-sm mb-5 border-0">
+                <div class="card-header bg-white py-3 border-bottom-0 d-flex justify-content-between align-items-center">
+                    <h3 class="h5 mb-0 unav-font-primary unav-weight-bold text-capitalize">Violet</h3>
+                    <span class="badge rounded-pill bg-light text-dark border fw-bold unav-font-primary unav-text-075">SECUNDARIO</span>
+                </div>
+                <div class="card-body p-4 bg-light rounded-bottom">
+                    <div class="d-flex flex-wrap gap-2 text-center">
+                        <div class="unav-color-swatch unav-bg-violet-100 flex-fill p-3 text-dark"><span class="unav-font-primary unav-weight-bold unav-text-100">100</span><span class="unav-font-primary unav-weight-regular unav-text-075">violet-100</span><span class="unav-font-primary unav-weight-regular unav-text-075 unav-color-hex">#ECE9FE</span></div>
+                        <div class="unav-color-swatch unav-bg-violet-200 flex-fill p-3 text-dark"><span class="unav-font-primary unav-weight-bold unav-text-100">200</span><span class="unav-font-primary unav-weight-regular unav-text-075">violet-200</span><span class="unav-font-primary unav-weight-regular unav-text-075 unav-color-hex">#DDD6FE</span></div>
+                        <div class="unav-color-swatch unav-bg-violet-300 flex-fill p-3 text-dark"><span class="unav-font-primary unav-weight-bold unav-text-100">300</span><span class="unav-font-primary unav-weight-regular unav-text-075">violet-300</span><span class="unav-font-primary unav-weight-regular unav-text-075 unav-color-hex">#C3B5FD</span></div>
+                        <div class="unav-color-swatch unav-bg-violet-400 flex-fill p-3 text-dark"><span class="unav-font-primary unav-weight-bold unav-text-100">400</span><span class="unav-font-primary unav-weight-regular unav-text-075">violet-400</span><span class="unav-font-primary unav-weight-regular unav-text-075 unav-color-hex">#A48AFB</span></div>
+                        <div class="unav-color-swatch unav-bg-violet-500 flex-fill p-3 text-white"><span class="unav-font-primary unav-weight-bold unav-text-100">500</span><span class="unav-font-primary unav-weight-regular unav-text-075">violet-500</span><span class="unav-font-primary unav-weight-regular unav-text-075 unav-color-hex">#875BF7</span></div>
+                        <div class="unav-color-swatch unav-bg-violet-600 flex-fill p-3 text-white"><span class="unav-font-primary unav-weight-bold unav-text-100">600</span><span class="unav-font-primary unav-weight-regular unav-text-075">violet-600</span><span class="unav-font-primary unav-weight-regular unav-text-075 unav-color-hex">#7839EE</span></div>
+                        <div class="unav-color-swatch unav-bg-violet-700 flex-fill p-3 text-white"><span class="unav-font-primary unav-weight-bold unav-text-100">700</span><span class="unav-font-primary unav-weight-regular unav-text-075">violet-700</span><span class="unav-font-primary unav-weight-regular unav-text-075 unav-color-hex">#6927DA</span></div>
+                        <div class="unav-color-swatch unav-bg-violet-800 flex-fill p-3 text-white"><span class="unav-font-primary unav-weight-bold unav-text-100">800</span><span class="unav-font-primary unav-weight-regular unav-text-075">violet-800</span><span class="unav-font-primary unav-weight-regular unav-text-075 unav-color-hex">#5720B7</span></div>
+                        <div class="unav-color-swatch unav-bg-violet-900 flex-fill p-3 text-white"><span class="unav-font-primary unav-weight-bold unav-text-100">900</span><span class="unav-font-primary unav-weight-regular unav-text-075">violet-900</span><span class="unav-font-primary unav-weight-regular unav-text-075 unav-color-hex">#491C96</span></div>
+                    </div>
+                </div>
+            </section>
+
+            <!-- PURPLE -->
+            <section id="color-purple" class="unav-color-block card shadow-sm mb-5 border-0">
+                <div class="card-header bg-white py-3 border-bottom-0 d-flex justify-content-between align-items-center">
+                    <h3 class="h5 mb-0 unav-font-primary unav-weight-bold text-capitalize">Purple</h3>
+                    <span class="badge rounded-pill bg-light text-dark border fw-bold unav-font-primary unav-text-075">SECUNDARIO</span>
+                </div>
+                <div class="card-body p-4 bg-light rounded-bottom">
+                    <div class="d-flex flex-wrap gap-2 text-center">
+                        <div class="unav-color-swatch unav-bg-purple-100 flex-fill p-3 text-dark"><span class="unav-font-primary unav-weight-bold unav-text-100">100</span><span class="unav-font-primary unav-weight-regular unav-text-075">purple-100</span><span class="unav-font-primary unav-weight-regular unav-text-075 unav-color-hex">#EBE9FE</span></div>
+                        <div class="unav-color-swatch unav-bg-purple-200 flex-fill p-3 text-dark"><span class="unav-font-primary unav-weight-bold unav-text-100">200</span><span class="unav-font-primary unav-weight-regular unav-text-075">purple-200</span><span class="unav-font-primary unav-weight-regular unav-text-075 unav-color-hex">#D9D6FE</span></div>
+                        <div class="unav-color-swatch unav-bg-purple-300 flex-fill p-3 text-dark"><span class="unav-font-primary unav-weight-bold unav-text-100">300</span><span class="unav-font-primary unav-weight-regular unav-text-075">purple-300</span><span class="unav-font-primary unav-weight-regular unav-text-075 unav-color-hex">#BDB4FE</span></div>
+                        <div class="unav-color-swatch unav-bg-purple-400 flex-fill p-3 text-dark"><span class="unav-font-primary unav-weight-bold unav-text-100">400</span><span class="unav-font-primary unav-weight-regular unav-text-075">purple-400</span><span class="unav-font-primary unav-weight-regular unav-text-075 unav-color-hex">#9B8AFB</span></div>
+                        <div class="unav-color-swatch unav-bg-purple-500 flex-fill p-3 text-white"><span class="unav-font-primary unav-weight-bold unav-text-100">500</span><span class="unav-font-primary unav-weight-regular unav-text-075">purple-500</span><span class="unav-font-primary unav-weight-regular unav-text-075 unav-color-hex">#7A5AF8</span></div>
+                        <div class="unav-color-swatch unav-bg-purple-600 flex-fill p-3 text-white"><span class="unav-font-primary unav-weight-bold unav-text-100">600</span><span class="unav-font-primary unav-weight-regular unav-text-075">purple-600</span><span class="unav-font-primary unav-weight-regular unav-text-075 unav-color-hex">#6938EF</span></div>
+                        <div class="unav-color-swatch unav-bg-purple-700 flex-fill p-3 text-white"><span class="unav-font-primary unav-weight-bold unav-text-100">700</span><span class="unav-font-primary unav-weight-regular unav-text-075">purple-700</span><span class="unav-font-primary unav-weight-regular unav-text-075 unav-color-hex">#5925DC</span></div>
+                        <div class="unav-color-swatch unav-bg-purple-800 flex-fill p-3 text-white"><span class="unav-font-primary unav-weight-bold unav-text-100">800</span><span class="unav-font-primary unav-weight-regular unav-text-075">purple-800</span><span class="unav-font-primary unav-weight-regular unav-text-075 unav-color-hex">#4A1FB8</span></div>
+                        <div class="unav-color-swatch unav-bg-purple-900 flex-fill p-3 text-white"><span class="unav-font-primary unav-weight-bold unav-text-100">900</span><span class="unav-font-primary unav-weight-regular unav-text-075">purple-900</span><span class="unav-font-primary unav-weight-regular unav-text-075 unav-color-hex">#3E1C96</span></div>
+                    </div>
+                </div>
+            </section>
+
+            <!-- FUCHSIA -->
+            <section id="color-fuchsia" class="unav-color-block card shadow-sm mb-5 border-0">
+                <div class="card-header bg-white py-3 border-bottom-0 d-flex justify-content-between align-items-center">
+                    <h3 class="h5 mb-0 unav-font-primary unav-weight-bold text-capitalize">Fuchsia</h3>
+                    <span class="badge rounded-pill bg-light text-dark border fw-bold unav-font-primary unav-text-075">SECUNDARIO</span>
+                </div>
+                <div class="card-body p-4 bg-light rounded-bottom">
+                    <div class="d-flex flex-wrap gap-2 text-center">
+                        <div class="unav-color-swatch unav-bg-fuchsia-100 flex-fill p-3 text-dark"><span class="unav-font-primary unav-weight-bold unav-text-100">100</span><span class="unav-font-primary unav-weight-regular unav-text-075">fuchsia-100</span><span class="unav-font-primary unav-weight-regular unav-text-075 unav-color-hex">#FBE8FF</span></div>
+                        <div class="unav-color-swatch unav-bg-fuchsia-200 flex-fill p-3 text-dark"><span class="unav-font-primary unav-weight-bold unav-text-100">200</span><span class="unav-font-primary unav-weight-regular unav-text-075">fuchsia-200</span><span class="unav-font-primary unav-weight-regular unav-text-075 unav-color-hex">#F6D0FE</span></div>
+                        <div class="unav-color-swatch unav-bg-fuchsia-300 flex-fill p-3 text-dark"><span class="unav-font-primary unav-weight-bold unav-text-100">300</span><span class="unav-font-primary unav-weight-regular unav-text-075">fuchsia-300</span><span class="unav-font-primary unav-weight-regular unav-text-075 unav-color-hex">#EEAAFD</span></div>
+                        <div class="unav-color-swatch unav-bg-fuchsia-400 flex-fill p-3 text-dark"><span class="unav-font-primary unav-weight-bold unav-text-100">400</span><span class="unav-font-primary unav-weight-regular unav-text-075">fuchsia-400</span><span class="unav-font-primary unav-weight-regular unav-text-075 unav-color-hex">#E478FA</span></div>
+                        <div class="unav-color-swatch unav-bg-fuchsia-500 flex-fill p-3 text-white"><span class="unav-font-primary unav-weight-bold unav-text-100">500</span><span class="unav-font-primary unav-weight-regular unav-text-075">fuchsia-500</span><span class="unav-font-primary unav-weight-regular unav-text-075 unav-color-hex">#D444F1</span></div>
+                        <div class="unav-color-swatch unav-bg-fuchsia-600 flex-fill p-3 text-white"><span class="unav-font-primary unav-weight-bold unav-text-100">600</span><span class="unav-font-primary unav-weight-regular unav-text-075">fuchsia-600</span><span class="unav-font-primary unav-weight-regular unav-text-075 unav-color-hex">#BA24D5</span></div>
+                        <div class="unav-color-swatch unav-bg-fuchsia-700 flex-fill p-3 text-white"><span class="unav-font-primary unav-weight-bold unav-text-100">700</span><span class="unav-font-primary unav-weight-regular unav-text-075">fuchsia-700</span><span class="unav-font-primary unav-weight-regular unav-text-075 unav-color-hex">#9F1AB1</span></div>
+                        <div class="unav-color-swatch unav-bg-fuchsia-800 flex-fill p-3 text-white"><span class="unav-font-primary unav-weight-bold unav-text-100">800</span><span class="unav-font-primary unav-weight-regular unav-text-075">fuchsia-800</span><span class="unav-font-primary unav-weight-regular unav-text-075 unav-color-hex">#821890</span></div>
+                        <div class="unav-color-swatch unav-bg-fuchsia-900 flex-fill p-3 text-white"><span class="unav-font-primary unav-weight-bold unav-text-100">900</span><span class="unav-font-primary unav-weight-regular unav-text-075">fuchsia-900</span><span class="unav-font-primary unav-weight-regular unav-text-075 unav-color-hex">#6F1877</span></div>
+                    </div>
+                </div>
+            </section>
+
+            <!-- PINK -->
+            <section id="color-pink" class="unav-color-block card shadow-sm mb-5 border-0">
+                <div class="card-header bg-white py-3 border-bottom-0 d-flex justify-content-between align-items-center">
+                    <h3 class="h5 mb-0 unav-font-primary unav-weight-bold text-capitalize">Pink</h3>
+                    <span class="badge rounded-pill bg-light text-dark border fw-bold unav-font-primary unav-text-075">SECUNDARIO</span>
+                </div>
+                <div class="card-body p-4 bg-light rounded-bottom">
+                    <div class="d-flex flex-wrap gap-2 text-center">
+                        <div class="unav-color-swatch unav-bg-pink-100 flex-fill p-3 text-dark"><span class="unav-font-primary unav-weight-bold unav-text-100">100</span><span class="unav-font-primary unav-weight-regular unav-text-075">pink-100</span><span class="unav-font-primary unav-weight-regular unav-text-075 unav-color-hex">#FCE7F6</span></div>
+                        <div class="unav-color-swatch unav-bg-pink-200 flex-fill p-3 text-dark"><span class="unav-font-primary unav-weight-bold unav-text-100">200</span><span class="unav-font-primary unav-weight-regular unav-text-075">pink-200</span><span class="unav-font-primary unav-weight-regular unav-text-075 unav-color-hex">#FCCEEE</span></div>
+                        <div class="unav-color-swatch unav-bg-pink-300 flex-fill p-3 text-dark"><span class="unav-font-primary unav-weight-bold unav-text-100">300</span><span class="unav-font-primary unav-weight-regular unav-text-075">pink-300</span><span class="unav-font-primary unav-weight-regular unav-text-075 unav-color-hex">#FAA7E0</span></div>
+                        <div class="unav-color-swatch unav-bg-pink-400 flex-fill p-3 text-dark"><span class="unav-font-primary unav-weight-bold unav-text-100">400</span><span class="unav-font-primary unav-weight-regular unav-text-075">pink-400</span><span class="unav-font-primary unav-weight-regular unav-text-075 unav-color-hex">#F670C7</span></div>
+                        <div class="unav-color-swatch unav-bg-pink-500 flex-fill p-3 text-white"><span class="unav-font-primary unav-weight-bold unav-text-100">500</span><span class="unav-font-primary unav-weight-regular unav-text-075">pink-500</span><span class="unav-font-primary unav-weight-regular unav-text-075 unav-color-hex">#EE46BC</span></div>
+                        <div class="unav-color-swatch unav-bg-pink-600 flex-fill p-3 text-white"><span class="unav-font-primary unav-weight-bold unav-text-100">600</span><span class="unav-font-primary unav-weight-regular unav-text-075">pink-600</span><span class="unav-font-primary unav-weight-regular unav-text-075 unav-color-hex">#DD2590</span></div>
+                        <div class="unav-color-swatch unav-bg-pink-700 flex-fill p-3 text-white"><span class="unav-font-primary unav-weight-bold unav-text-100">700</span><span class="unav-font-primary unav-weight-regular unav-text-075">pink-700</span><span class="unav-font-primary unav-weight-regular unav-text-075 unav-color-hex">#C11574</span></div>
+                        <div class="unav-color-swatch unav-bg-pink-800 flex-fill p-3 text-white"><span class="unav-font-primary unav-weight-bold unav-text-100">800</span><span class="unav-font-primary unav-weight-regular unav-text-075">pink-800</span><span class="unav-font-primary unav-weight-regular unav-text-075 unav-color-hex">#9E165F</span></div>
+                        <div class="unav-color-swatch unav-bg-pink-900 flex-fill p-3 text-white"><span class="unav-font-primary unav-weight-bold unav-text-100">900</span><span class="unav-font-primary unav-weight-regular unav-text-075">pink-900</span><span class="unav-font-primary unav-weight-regular unav-text-075 unav-color-hex">#851651</span></div>
+                    </div>
+                </div>
+            </section>
+
+            <!-- ROSE -->
+            <section id="color-rose" class="unav-color-block card shadow-sm mb-5 border-0">
+                <div class="card-header bg-white py-3 border-bottom-0 d-flex justify-content-between align-items-center">
+                    <h3 class="h5 mb-0 unav-font-primary unav-weight-bold text-capitalize">Rose</h3>
+                    <span class="badge rounded-pill bg-light text-dark border fw-bold unav-font-primary unav-text-075">SECUNDARIO</span>
+                </div>
+                <div class="card-body p-4 bg-light rounded-bottom">
+                    <div class="d-flex flex-wrap gap-2 text-center">
+                        <div class="unav-color-swatch unav-bg-rose-100 flex-fill p-3 text-dark"><span class="unav-font-primary unav-weight-bold unav-text-100">100</span><span class="unav-font-primary unav-weight-regular unav-text-075">rose-100</span><span class="unav-font-primary unav-weight-regular unav-text-075 unav-color-hex">#FFE4E8</span></div>
+                        <div class="unav-color-swatch unav-bg-rose-200 flex-fill p-3 text-dark"><span class="unav-font-primary unav-weight-bold unav-text-100">200</span><span class="unav-font-primary unav-weight-regular unav-text-075">rose-200</span><span class="unav-font-primary unav-weight-regular unav-text-075 unav-color-hex">#FECDD6</span></div>
+                        <div class="unav-color-swatch unav-bg-rose-300 flex-fill p-3 text-dark"><span class="unav-font-primary unav-weight-bold unav-text-100">300</span><span class="unav-font-primary unav-weight-regular unav-text-075">rose-300</span><span class="unav-font-primary unav-weight-regular unav-text-075 unav-color-hex">#FEA3B4</span></div>
+                        <div class="unav-color-swatch unav-bg-rose-400 flex-fill p-3 text-dark"><span class="unav-font-primary unav-weight-bold unav-text-100">400</span><span class="unav-font-primary unav-weight-regular unav-text-075">rose-400</span><span class="unav-font-primary unav-weight-regular unav-text-075 unav-color-hex">#FD6F8E</span></div>
+                        <div class="unav-color-swatch unav-bg-rose-500 flex-fill p-3 text-white"><span class="unav-font-primary unav-weight-bold unav-text-100">500</span><span class="unav-font-primary unav-weight-regular unav-text-075">rose-500</span><span class="unav-font-primary unav-weight-regular unav-text-075 unav-color-hex">#F63D68</span></div>
+                        <div class="unav-color-swatch unav-bg-rose-600 flex-fill p-3 text-white"><span class="unav-font-primary unav-weight-bold unav-text-100">600</span><span class="unav-font-primary unav-weight-regular unav-text-075">rose-600</span><span class="unav-font-primary unav-weight-regular unav-text-075 unav-color-hex">#E31B54</span></div>
+                        <div class="unav-color-swatch unav-bg-rose-700 flex-fill p-3 text-white"><span class="unav-font-primary unav-weight-bold unav-text-100">700</span><span class="unav-font-primary unav-weight-regular unav-text-075">rose-700</span><span class="unav-font-primary unav-weight-regular unav-text-075 unav-color-hex">#C01048</span></div>
+                        <div class="unav-color-swatch unav-bg-rose-800 flex-fill p-3 text-white"><span class="unav-font-primary unav-weight-bold unav-text-100">800</span><span class="unav-font-primary unav-weight-regular unav-text-075">rose-800</span><span class="unav-font-primary unav-weight-regular unav-text-075 unav-color-hex">#A11043</span></div>
+                        <div class="unav-color-swatch unav-bg-rose-900 flex-fill p-3 text-white"><span class="unav-font-primary unav-weight-bold unav-text-100">900</span><span class="unav-font-primary unav-weight-regular unav-text-075">rose-900</span><span class="unav-font-primary unav-weight-regular unav-text-075 unav-color-hex">#89123E</span></div>
+                    </div>
+                </div>
+            </section>
+
+            <!-- ORANGE DARK -->
+            <section id="color-orange-dark" class="unav-color-block card shadow-sm mb-5 border-0">
+                <div class="card-header bg-white py-3 border-bottom-0 d-flex justify-content-between align-items-center">
+                    <h3 class="h5 mb-0 unav-font-primary unav-weight-bold text-capitalize">Orange Dark</h3>
+                    <span class="badge rounded-pill bg-light text-dark border fw-bold unav-font-primary unav-text-075">SECUNDARIO</span>
+                </div>
+                <div class="card-body p-4 bg-light rounded-bottom">
+                    <div class="d-flex flex-wrap gap-2 text-center">
+                        <div class="unav-color-swatch unav-bg-orange-dark-100 flex-fill p-3 text-dark"><span class="unav-font-primary unav-weight-bold unav-text-100">100</span><span class="unav-font-primary unav-weight-regular unav-text-075">o-dark-100</span><span class="unav-font-primary unav-weight-regular unav-text-075 unav-color-hex">#FFE6D5</span></div>
+                        <div class="unav-color-swatch unav-bg-orange-dark-200 flex-fill p-3 text-dark"><span class="unav-font-primary unav-weight-bold unav-text-100">200</span><span class="unav-font-primary unav-weight-regular unav-text-075">o-dark-200</span><span class="unav-font-primary unav-weight-regular unav-text-075 unav-color-hex">#FFD6AE</span></div>
+                        <div class="unav-color-swatch unav-bg-orange-dark-300 flex-fill p-3 text-dark"><span class="unav-font-primary unav-weight-bold unav-text-100">300</span><span class="unav-font-primary unav-weight-regular unav-text-075">o-dark-300</span><span class="unav-font-primary unav-weight-regular unav-text-075 unav-color-hex">#FF9C66</span></div>
+                        <div class="unav-color-swatch unav-bg-orange-dark-400 flex-fill p-3 text-dark"><span class="unav-font-primary unav-weight-bold unav-text-100">400</span><span class="unav-font-primary unav-weight-regular unav-text-075">o-dark-400</span><span class="unav-font-primary unav-weight-regular unav-text-075 unav-color-hex">#FF692E</span></div>
+                        <div class="unav-color-swatch unav-bg-orange-dark-500 flex-fill p-3 text-white"><span class="unav-font-primary unav-weight-bold unav-text-100">500</span><span class="unav-font-primary unav-weight-regular unav-text-075">o-dark-500</span><span class="unav-font-primary unav-weight-regular unav-text-075 unav-color-hex">#FF4405</span></div>
+                        <div class="unav-color-swatch unav-bg-orange-dark-600 flex-fill p-3 text-white"><span class="unav-font-primary unav-weight-bold unav-text-100">600</span><span class="unav-font-primary unav-weight-regular unav-text-075">o-dark-600</span><span class="unav-font-primary unav-weight-regular unav-text-075 unav-color-hex">#E62E05</span></div>
+                        <div class="unav-color-swatch unav-bg-orange-dark-700 flex-fill p-3 text-white"><span class="unav-font-primary unav-weight-bold unav-text-100">700</span><span class="unav-font-primary unav-weight-regular unav-text-075">o-dark-700</span><span class="unav-font-primary unav-weight-regular unav-text-075 unav-color-hex">#BC1B06</span></div>
+                        <div class="unav-color-swatch unav-bg-orange-dark-800 flex-fill p-3 text-white"><span class="unav-font-primary unav-weight-bold unav-text-100">800</span><span class="unav-font-primary unav-weight-regular unav-text-075">o-dark-800</span><span class="unav-font-primary unav-weight-regular unav-text-075 unav-color-hex">#97180C</span></div>
+                        <div class="unav-color-swatch unav-bg-orange-dark-900 flex-fill p-3 text-white"><span class="unav-font-primary unav-weight-bold unav-text-100">900</span><span class="unav-font-primary unav-weight-regular unav-text-075">o-dark-900</span><span class="unav-font-primary unav-weight-regular unav-text-075 unav-color-hex">#771A0D</span></div>
+                    </div>
+                </div>
+            </section>
+
+            <!-- ORANGE -->
+            <section id="color-orange" class="unav-color-block card shadow-sm mb-5 border-0">
+                <div class="card-header bg-white py-3 border-bottom-0 d-flex justify-content-between align-items-center">
+                    <h3 class="h5 mb-0 unav-font-primary unav-weight-bold text-capitalize">Orange</h3>
+                    <span class="badge rounded-pill bg-light text-dark border fw-bold unav-font-primary unav-text-075">SECUNDARIO</span>
+                </div>
+                <div class="card-body p-4 bg-light rounded-bottom">
+                    <div class="d-flex flex-wrap gap-2 text-center">
+                        <div class="unav-color-swatch unav-bg-orange-100 flex-fill p-3 text-dark"><span class="unav-font-primary unav-weight-bold unav-text-100">100</span><span class="unav-font-primary unav-weight-regular unav-text-075">orange-100</span><span class="unav-font-primary unav-weight-regular unav-text-075 unav-color-hex">#FDEAD7</span></div>
+                        <div class="unav-color-swatch unav-bg-orange-200 flex-fill p-3 text-dark"><span class="unav-font-primary unav-weight-bold unav-text-100">200</span><span class="unav-font-primary unav-weight-regular unav-text-075">orange-200</span><span class="unav-font-primary unav-weight-regular unav-text-075 unav-color-hex">#F9DBAF</span></div>
+                        <div class="unav-color-swatch unav-bg-orange-300 flex-fill p-3 text-dark"><span class="unav-font-primary unav-weight-bold unav-text-100">300</span><span class="unav-font-primary unav-weight-regular unav-text-075">orange-300</span><span class="unav-font-primary unav-weight-regular unav-text-075 unav-color-hex">#F7B27A</span></div>
+                        <div class="unav-color-swatch unav-bg-orange-400 flex-fill p-3 text-dark"><span class="unav-font-primary unav-weight-bold unav-text-100">400</span><span class="unav-font-primary unav-weight-regular unav-text-075">orange-400</span><span class="unav-font-primary unav-weight-regular unav-text-075 unav-color-hex">#F38744</span></div>
+                        <div class="unav-color-swatch unav-bg-orange-500 flex-fill p-3 text-white"><span class="unav-font-primary unav-weight-bold unav-text-100">500</span><span class="unav-font-primary unav-weight-regular unav-text-075">orange-500</span><span class="unav-font-primary unav-weight-regular unav-text-075 unav-color-hex">#EF6820</span></div>
+                        <div class="unav-color-swatch unav-bg-orange-600 flex-fill p-3 text-white"><span class="unav-font-primary unav-weight-bold unav-text-100">600</span><span class="unav-font-primary unav-weight-regular unav-text-075">orange-600</span><span class="unav-font-primary unav-weight-regular unav-text-075 unav-color-hex">#E04F16</span></div>
+                        <div class="unav-color-swatch unav-bg-orange-700 flex-fill p-3 text-white"><span class="unav-font-primary unav-weight-bold unav-text-100">700</span><span class="unav-font-primary unav-weight-regular unav-text-075">orange-700</span><span class="unav-font-primary unav-weight-regular unav-text-075 unav-color-hex">#B93815</span></div>
+                        <div class="unav-color-swatch unav-bg-orange-800 flex-fill p-3 text-white"><span class="unav-font-primary unav-weight-bold unav-text-100">800</span><span class="unav-font-primary unav-weight-regular unav-text-075">orange-800</span><span class="unav-font-primary unav-weight-regular unav-text-075 unav-color-hex">#932F19</span></div>
+                        <div class="unav-color-swatch unav-bg-orange-900 flex-fill p-3 text-white"><span class="unav-font-primary unav-weight-bold unav-text-100">900</span><span class="unav-font-primary unav-weight-regular unav-text-075">orange-900</span><span class="unav-font-primary unav-weight-regular unav-text-075 unav-color-hex">#772917</span></div>
+                    </div>
+                </div>
+            </section>
+
+            <!-- YELLOW -->
+            <section id="color-yellow" class="unav-color-block card shadow-sm mb-5 border-0">
+                <div class="card-header bg-white py-3 border-bottom-0 d-flex justify-content-between align-items-center">
+                    <h3 class="h5 mb-0 unav-font-primary unav-weight-bold text-capitalize">Yellow</h3>
+                    <span class="badge rounded-pill bg-light text-dark border fw-bold unav-font-primary unav-text-075">SECUNDARIO</span>
+                </div>
+                <div class="card-body p-4 bg-light rounded-bottom">
+                    <div class="d-flex flex-wrap gap-2 text-center">
+                        <div class="unav-color-swatch unav-bg-yellow-100 flex-fill p-3 text-dark"><span class="unav-font-primary unav-weight-bold unav-text-100">100</span><span class="unav-font-primary unav-weight-regular unav-text-075">yellow-100</span><span class="unav-font-primary unav-weight-regular unav-text-075 unav-color-hex">#FEF7C3</span></div>
+                        <div class="unav-color-swatch unav-bg-yellow-200 flex-fill p-3 text-dark"><span class="unav-font-primary unav-weight-bold unav-text-100">200</span><span class="unav-font-primary unav-weight-regular unav-text-075">yellow-200</span><span class="unav-font-primary unav-weight-regular unav-text-075 unav-color-hex">#FEEE95</span></div>
+                        <div class="unav-color-swatch unav-bg-yellow-300 flex-fill p-3 text-dark"><span class="unav-font-primary unav-weight-bold unav-text-100">300</span><span class="unav-font-primary unav-weight-regular unav-text-075">yellow-300</span><span class="unav-font-primary unav-weight-regular unav-text-075 unav-color-hex">#FDE272</span></div>
+                        <div class="unav-color-swatch unav-bg-yellow-400 flex-fill p-3 text-dark"><span class="unav-font-primary unav-weight-bold unav-text-100">400</span><span class="unav-font-primary unav-weight-regular unav-text-075">yellow-400</span><span class="unav-font-primary unav-weight-regular unav-text-075 unav-color-hex">#FAC515</span></div>
+                        <div class="unav-color-swatch unav-bg-yellow-500 flex-fill p-3 text-dark"><span class="unav-font-primary unav-weight-bold unav-text-100">500</span><span class="unav-font-primary unav-weight-regular unav-text-075">yellow-500</span><span class="unav-font-primary unav-weight-regular unav-text-075 unav-color-hex">#EAAA08</span></div>
+                        <div class="unav-color-swatch unav-bg-yellow-600 flex-fill p-3 text-white"><span class="unav-font-primary unav-weight-bold unav-text-100">600</span><span class="unav-font-primary unav-weight-regular unav-text-075">yellow-600</span><span class="unav-font-primary unav-weight-regular unav-text-075 unav-color-hex">#CA8504</span></div>
+                        <div class="unav-color-swatch unav-bg-yellow-700 flex-fill p-3 text-white"><span class="unav-font-primary unav-weight-bold unav-text-100">700</span><span class="unav-font-primary unav-weight-regular unav-text-075">yellow-700</span><span class="unav-font-primary unav-weight-regular unav-text-075 unav-color-hex">#A15C07</span></div>
+                        <div class="unav-color-swatch unav-bg-yellow-800 flex-fill p-3 text-white"><span class="unav-font-primary unav-weight-bold unav-text-100">800</span><span class="unav-font-primary unav-weight-regular unav-text-075">yellow-800</span><span class="unav-font-primary unav-weight-regular unav-text-075 unav-color-hex">#854A0E</span></div>
+                        <div class="unav-color-swatch unav-bg-yellow-900 flex-fill p-3 text-white"><span class="unav-font-primary unav-weight-bold unav-text-100">900</span><span class="unav-font-primary unav-weight-regular unav-text-075">yellow-900</span><span class="unav-font-primary unav-weight-regular unav-text-075 unav-color-hex">#713B12</span></div>
+                    </div>
+                </div>
+            </section>
+
+        </div>
     </main>
 
+    <!-- Bootstrap JS -->
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
 </body>
 </html>

@@ -5,309 +5,354 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Tipografía | Design System UNAV</title>
     
+ <!-- Bootstrap 5 CSS y Fuentes -->
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
-    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.5/font/bootstrap-icons.css">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.1/font/bootstrap-icons.css">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@24,400,0,0" />
     
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@100;300;400;500;700&display=swap" rel="stylesheet">
-    <link href="https://fonts.googleapis.com/css2?family=Roboto+Condensed:wght@700&display=swap" rel="stylesheet">
-    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;700&display=swap" rel="stylesheet">
-    <link href="https://fonts.googleapis.com/css2?family=Roboto+Slab:wght@400;700&display=swap" rel="stylesheet">
-    <link href="https://fonts.googleapis.com/css2?family=DM+Serif+Text&display=swap" rel="stylesheet">
+    
+    <!-- Archivos del Design System -->
+    <link rel="stylesheet" href="unav-color.css">
+    <link rel="stylesheet" href="unav-tipografia.css">
+    <link rel="stylesheet" href="unav-variables.css">
+    <link rel="stylesheet" href="unav-botones.css">
 
-    <link rel="stylesheet" href="design-system.css">
+    <style>
+        /* Estilos específicos para la visualización en esta guía */
+        .unav-label-rem { font-weight: 700; font-size: 1.1rem; color: var(--unav-black-800); display: block; }
+        .unav-table th { font-size: 0.75rem; text-transform: uppercase; letter-spacing: 1px; color: var(--unav-grey-500); padding: 1rem 1.5rem; }
+        
+        /* Clase base de previsualización vinculada a color.css */
+        .unav-preview-text {
+            margin: 0;
+            line-height: 1.1;
+            white-space: nowrap;
+            color: var(--unav-black-500);
+        }
+    </style>
 </head>
 <body class="bg-light">
 
+    <!-- Navbar superior consumiendo tokens del DS -->
     <nav class="navbar navbar-light bg-white border-bottom py-3 sticky-top">
-        <div class="container-lg">
-            <a href="indice.html" class="btn btn-outline-secondary btn-sm rounded-pill px-3 fw-bold">
-                <i class="bi bi-arrow-left me-1"></i> Volver al Índice
-            </a>
-            <span class="navbar-text fw-bold text-primary mb-0">Design System UNAV</span>
+        <div class="container-lg d-flex justify-content-between align-items-center">
+            <!-- Botón Volver -->
+            <div itemscope itemtype="https://schema.org/WebPageElement">
+                <a itemprop="url" href="indice.html" class="unav-boton unav-botonSecundario" style="--unav-botonColorSource: var(--unav-grey-600);">
+                    <i class="bi bi-arrow-left unav-botonIcono" aria-hidden="true"></i>
+                    <span itemprop="name">Volver al Índice</span>
+                </a>
+            </div>
+            <!-- Título Navbar -->
+            <span class="unav-font-primary unav-weight-regular unav-text-250 m-0" style="color: var(--unav-rojo-500); line-height: 1;">
+                Design System UNAV
+            </span>
         </div>
     </nav>
 
+    <!-- MAIN CONTENT -->
     <main class="container-lg py-5">
         
+        <!-- Cabecera de página consumiendo tokens del DS -->
         <header class="pb-4 mb-5 border-bottom">
-            <h1 class="display-5 fw-bold mb-2">Guía Tipográfica</h1>
-            <p class="text-muted lead">Escala modular basada en 1rem (16px) y pesos específicos para Liferay 7.4.</p>
+            <!-- Título Componente: Roboto 500 2.5rem -->
+            <h1 class="unav-font-primary unav-weight-medium unav-text-250 text-dark mb-2">Guía Tipográfica</h1>
+            <!-- Subtítulo Componente: Roboto 400 1rem -->
+            <p class="unav-font-primary unav-weight-regular unav-text-100 text-muted m-0">Consumo de clases utilitarias (Tokens) para fragmentos de Liferay 7.4.</p>
         </header>
 
-        <div class="unav-typography-guide">
+        <div class="unav-typography-guide" itemscope itemtype="https://schema.org/TechArticle">
+            <meta itemprop="name" content="Sistema Tipográfico UNAV">
             
+            <!-- ==========================================
+                 ROBOTO
+                 ========================================== -->
+
+            <!-- ROBOTO THIN 100 -->
             <section id="roboto-thin-100" class="unav-font-block card shadow-sm mb-5 border-0">
                 <div class="card-header bg-white py-3 border-bottom-0 d-flex justify-content-between align-items-center">
-                    <h3 class="h5 mb-0 fw-bold">Roboto - Thin</h3>
+                    <h3 class="h5 mb-0 unav-font-primary unav-weight-bold">Roboto - Thin</h3>
                     <span class="badge rounded-pill bg-light text-dark border fw-bold">WEIGHT: 100</span>
                 </div>
                 <div class="table-responsive">
                     <table class="table align-middle mb-0 unav-table">
-                        <thead class="table-light"><tr><th class="ps-4" width="160" style="font-size: 0.75rem; text-transform: uppercase; letter-spacing: 1px; color: #888; padding: 1rem 1.5rem;">Métrica</th><th>Previsualización</th></tr></thead>
+                        <thead class="table-light"><tr><th class="ps-4" width="160">Métrica</th><th>Previsualización (Usando clases CSS)</th></tr></thead>
                         <tbody>
-                            <tr><td class="ps-4 border-end"><span style="font-weight: 700; font-size: 1.1rem; color: #1a1a1a; display: block;">4rem</span><span class="text-muted small">64px</span></td><td><p style="margin: 0; line-height: 1.1; white-space: nowrap; color: #222; font-family: 'Roboto', sans-serif; font-weight: 100; font-size: 4rem;">Tipografía Corporativa</p></td></tr>
-                            <tr><td class="ps-4 border-end"><span style="font-weight: 700; font-size: 1.1rem; color: #1a1a1a; display: block;">3.5rem</span><span class="text-muted small">56px</span></td><td><p style="margin: 0; line-height: 1.1; white-space: nowrap; color: #222; font-family: 'Roboto', sans-serif; font-weight: 100; font-size: 3.5rem;">Tipografía Corporativa</p></td></tr>
-                            <tr><td class="ps-4 border-end"><span style="font-weight: 700; font-size: 1.1rem; color: #1a1a1a; display: block;">3rem</span><span class="text-muted small">48px</span></td><td><p style="margin: 0; line-height: 1.1; white-space: nowrap; color: #222; font-family: 'Roboto', sans-serif; font-weight: 100; font-size: 3rem;">Tipografía Corporativa</p></td></tr>
-                            <tr><td class="ps-4 border-end"><span style="font-weight: 700; font-size: 1.1rem; color: #1a1a1a; display: block;">2.2rem</span><span class="text-muted small">35.2px</span></td><td><p style="margin: 0; line-height: 1.1; white-space: nowrap; color: #222; font-family: 'Roboto', sans-serif; font-weight: 100; font-size: 2.2rem;">Tipografía Corporativa</p></td></tr>
-                            <tr><td class="ps-4 border-end"><span style="font-weight: 700; font-size: 1.1rem; color: #1a1a1a; display: block;">2rem</span><span class="text-muted small">32px</span></td><td><p style="margin: 0; line-height: 1.1; white-space: nowrap; color: #222; font-family: 'Roboto', sans-serif; font-weight: 100; font-size: 2rem;">Tipografía Corporativa</p></td></tr>
-                            <tr><td class="ps-4 border-end"><span style="font-weight: 700; font-size: 1.1rem; color: #1a1a1a; display: block;">1.8rem</span><span class="text-muted small">28.8px</span></td><td><p style="margin: 0; line-height: 1.1; white-space: nowrap; color: #222; font-family: 'Roboto', sans-serif; font-weight: 100; font-size: 1.8rem;">Tipografía Corporativa</p></td></tr>
-                            <tr><td class="ps-4 border-end"><span style="font-weight: 700; font-size: 1.1rem; color: #1a1a1a; display: block;">1.6rem</span><span class="text-muted small">25.6px</span></td><td><p style="margin: 0; line-height: 1.1; white-space: nowrap; color: #222; font-family: 'Roboto', sans-serif; font-weight: 100; font-size: 1.6rem;">Tipografía Corporativa</p></td></tr>
-                            <tr><td class="ps-4 border-end"><span style="font-weight: 700; font-size: 1.1rem; color: #1a1a1a; display: block;">1.4rem</span><span class="text-muted small">22.4px</span></td><td><p style="margin: 0; line-height: 1.1; white-space: nowrap; color: #222; font-family: 'Roboto', sans-serif; font-weight: 100; font-size: 1.4rem;">Tipografía Corporativa</p></td></tr>
-                            <tr><td class="ps-4 border-end"><span style="font-weight: 700; font-size: 1.1rem; color: #1a1a1a; display: block;">1.2rem</span><span class="text-muted small">19.2px</span></td><td><p style="margin: 0; line-height: 1.1; white-space: nowrap; color: #222; font-family: 'Roboto', sans-serif; font-weight: 100; font-size: 1.2rem;">Tipografía Corporativa</p></td></tr>
-                            <tr><td class="ps-4 border-end"><span style="font-weight: 700; font-size: 1.1rem; color: #1a1a1a; display: block;">1rem</span><span class="text-muted small">16px</span></td><td><p style="margin: 0; line-height: 1.1; white-space: nowrap; color: #222; font-family: 'Roboto', sans-serif; font-weight: 100; font-size: 1rem;">Tipografía Corporativa (Base)</p></td></tr>
-                            <tr><td class="ps-4 border-end"><span style="font-weight: 700; font-size: 1.1rem; color: #1a1a1a; display: block;">0.8rem</span><span class="text-muted small">12.8px</span></td><td><p style="margin: 0; line-height: 1.1; white-space: nowrap; color: #222; font-family: 'Roboto', sans-serif; font-weight: 100; font-size: 0.8rem;">Tipografía Corporativa (Small)</p></td></tr>
+                            <tr><td class="ps-4 border-end"><span class="unav-label-rem">5rem</span><span class="text-muted small">80px</span></td><td><p class="unav-preview-text unav-font-primary unav-weight-thin unav-text-500">Tipografía Corporativa</p></td></tr>
+                            <tr><td class="ps-4 border-end"><span class="unav-label-rem">4rem</span><span class="text-muted small">64px</span></td><td><p class="unav-preview-text unav-font-primary unav-weight-thin unav-text-400">Tipografía Corporativa</p></td></tr>
+                            <tr><td class="ps-4 border-end"><span class="unav-label-rem">3rem</span><span class="text-muted small">48px</span></td><td><p class="unav-preview-text unav-font-primary unav-weight-thin unav-text-300">Tipografía Corporativa</p></td></tr>
+                            <tr><td class="ps-4 border-end"><span class="unav-label-rem">2.5rem</span><span class="text-muted small">40px</span></td><td><p class="unav-preview-text unav-font-primary unav-weight-thin unav-text-250">Tipografía Corporativa</p></td></tr>
+                            <tr><td class="ps-4 border-end"><span class="unav-label-rem">2rem</span><span class="text-muted small">32px</span></td><td><p class="unav-preview-text unav-font-primary unav-weight-thin unav-text-200">Tipografía Corporativa</p></td></tr>
+                            <tr><td class="ps-4 border-end"><span class="unav-label-rem">1.75rem</span><span class="text-muted small">28px</span></td><td><p class="unav-preview-text unav-font-primary unav-weight-thin unav-text-175">Tipografía Corporativa</p></td></tr>
+                            <tr><td class="ps-4 border-end"><span class="unav-label-rem">1.5rem</span><span class="text-muted small">24px</span></td><td><p class="unav-preview-text unav-font-primary unav-weight-thin unav-text-150">Tipografía Corporativa</p></td></tr>
+                            <tr><td class="ps-4 border-end"><span class="unav-label-rem">1.25rem</span><span class="text-muted small">20px</span></td><td><p class="unav-preview-text unav-font-primary unav-weight-thin unav-text-125">Tipografía Corporativa</p></td></tr>
+                            <tr><td class="ps-4 border-end"><span class="unav-label-rem">1rem</span><span class="text-muted small">16px</span></td><td><p class="unav-preview-text unav-font-primary unav-weight-thin unav-text-100">Tipografía Corporativa (Base)</p></td></tr>
+                            <tr><td class="ps-4 border-end"><span class="unav-label-rem">0.75rem</span><span class="text-muted small">12px</span></td><td><p class="unav-preview-text unav-font-primary unav-weight-thin unav-text-075">Tipografía Corporativa</p></td></tr>
+                            <tr><td class="ps-4 border-end"><span class="unav-label-rem">0.5rem</span><span class="text-muted small">8px</span></td><td><p class="unav-preview-text unav-font-primary unav-weight-thin unav-text-050">Tipografía Corporativa</p></td></tr>
                         </tbody>
                     </table>
                 </div>
             </section>
 
+            <!-- ROBOTO LIGHT 300 -->
             <section id="roboto-light-300" class="unav-font-block card shadow-sm mb-5 border-0">
                 <div class="card-header bg-white py-3 border-bottom-0 d-flex justify-content-between align-items-center">
-                    <h3 class="h5 mb-0 fw-bold">Roboto - Light</h3>
+                    <h3 class="h5 mb-0 unav-font-primary unav-weight-bold">Roboto - Light</h3>
                     <span class="badge rounded-pill bg-light text-dark border fw-bold">WEIGHT: 300</span>
                 </div>
                 <div class="table-responsive">
                     <table class="table align-middle mb-0 unav-table">
-                        <thead class="table-light"><tr><th class="ps-4" width="160" style="font-size: 0.75rem; text-transform: uppercase; letter-spacing: 1px; color: #888; padding: 1rem 1.5rem;">Métrica</th><th>Previsualización</th></tr></thead>
+                        <thead class="table-light"><tr><th class="ps-4" width="160">Métrica</th><th>Previsualización (Usando clases CSS)</th></tr></thead>
                         <tbody>
-                            <tr><td class="ps-4 border-end"><span style="font-weight: 700; font-size: 1.1rem; color: #1a1a1a; display: block;">4rem</span><span class="text-muted small">64px</span></td><td><p style="margin: 0; line-height: 1.1; white-space: nowrap; color: #222; font-family: 'Roboto', sans-serif; font-weight: 300; font-size: 4rem;">Tipografía Corporativa</p></td></tr>
-                            <tr><td class="ps-4 border-end"><span style="font-weight: 700; font-size: 1.1rem; color: #1a1a1a; display: block;">3.5rem</span><span class="text-muted small">56px</span></td><td><p style="margin: 0; line-height: 1.1; white-space: nowrap; color: #222; font-family: 'Roboto', sans-serif; font-weight: 300; font-size: 3.5rem;">Tipografía Corporativa</p></td></tr>
-                            <tr><td class="ps-4 border-end"><span style="font-weight: 700; font-size: 1.1rem; color: #1a1a1a; display: block;">3rem</span><span class="text-muted small">48px</span></td><td><p style="margin: 0; line-height: 1.1; white-space: nowrap; color: #222; font-family: 'Roboto', sans-serif; font-weight: 300; font-size: 3rem;">Tipografía Corporativa</p></td></tr>
-                            <tr><td class="ps-4 border-end"><span style="font-weight: 700; font-size: 1.1rem; color: #1a1a1a; display: block;">2.2rem</span><span class="text-muted small">35.2px</span></td><td><p style="margin: 0; line-height: 1.1; white-space: nowrap; color: #222; font-family: 'Roboto', sans-serif; font-weight: 300; font-size: 2.2rem;">Tipografía Corporativa</p></td></tr>
-                            <tr><td class="ps-4 border-end"><span style="font-weight: 700; font-size: 1.1rem; color: #1a1a1a; display: block;">2rem</span><span class="text-muted small">32px</span></td><td><p style="margin: 0; line-height: 1.1; white-space: nowrap; color: #222; font-family: 'Roboto', sans-serif; font-weight: 300; font-size: 2rem;">Tipografía Corporativa</p></td></tr>
-                            <tr><td class="ps-4 border-end"><span style="font-weight: 700; font-size: 1.1rem; color: #1a1a1a; display: block;">1.8rem</span><span class="text-muted small">28.8px</span></td><td><p style="margin: 0; line-height: 1.1; white-space: nowrap; color: #222; font-family: 'Roboto', sans-serif; font-weight: 300; font-size: 1.8rem;">Tipografía Corporativa</p></td></tr>
-                            <tr><td class="ps-4 border-end"><span style="font-weight: 700; font-size: 1.1rem; color: #1a1a1a; display: block;">1.6rem</span><span class="text-muted small">25.6px</span></td><td><p style="margin: 0; line-height: 1.1; white-space: nowrap; color: #222; font-family: 'Roboto', sans-serif; font-weight: 300; font-size: 1.6rem;">Tipografía Corporativa</p></td></tr>
-                            <tr><td class="ps-4 border-end"><span style="font-weight: 700; font-size: 1.1rem; color: #1a1a1a; display: block;">1.4rem</span><span class="text-muted small">22.4px</span></td><td><p style="margin: 0; line-height: 1.1; white-space: nowrap; color: #222; font-family: 'Roboto', sans-serif; font-weight: 300; font-size: 1.4rem;">Tipografía Corporativa</p></td></tr>
-                            <tr><td class="ps-4 border-end"><span style="font-weight: 700; font-size: 1.1rem; color: #1a1a1a; display: block;">1.2rem</span><span class="text-muted small">19.2px</span></td><td><p style="margin: 0; line-height: 1.1; white-space: nowrap; color: #222; font-family: 'Roboto', sans-serif; font-weight: 300; font-size: 1.2rem;">Tipografía Corporativa</p></td></tr>
-                            <tr><td class="ps-4 border-end"><span style="font-weight: 700; font-size: 1.1rem; color: #1a1a1a; display: block;">1rem</span><span class="text-muted small">16px</span></td><td><p style="margin: 0; line-height: 1.1; white-space: nowrap; color: #222; font-family: 'Roboto', sans-serif; font-weight: 300; font-size: 1rem;">Tipografía Corporativa (Base)</p></td></tr>
-                            <tr><td class="ps-4 border-end"><span style="font-weight: 700; font-size: 1.1rem; color: #1a1a1a; display: block;">0.8rem</span><span class="text-muted small">12.8px</span></td><td><p style="margin: 0; line-height: 1.1; white-space: nowrap; color: #222; font-family: 'Roboto', sans-serif; font-weight: 300; font-size: 0.8rem;">Tipografía Corporativa (Small)</p></td></tr>
+                            <tr><td class="ps-4 border-end"><span class="unav-label-rem">5rem</span><span class="text-muted small">80px</span></td><td><p class="unav-preview-text unav-font-primary unav-weight-light unav-text-500">Tipografía Corporativa</p></td></tr>
+                            <tr><td class="ps-4 border-end"><span class="unav-label-rem">4rem</span><span class="text-muted small">64px</span></td><td><p class="unav-preview-text unav-font-primary unav-weight-light unav-text-400">Tipografía Corporativa</p></td></tr>
+                            <tr><td class="ps-4 border-end"><span class="unav-label-rem">3rem</span><span class="text-muted small">48px</span></td><td><p class="unav-preview-text unav-font-primary unav-weight-light unav-text-300">Tipografía Corporativa</p></td></tr>
+                            <tr><td class="ps-4 border-end"><span class="unav-label-rem">2.5rem</span><span class="text-muted small">40px</span></td><td><p class="unav-preview-text unav-font-primary unav-weight-light unav-text-250">Tipografía Corporativa</p></td></tr>
+                            <tr><td class="ps-4 border-end"><span class="unav-label-rem">2rem</span><span class="text-muted small">32px</span></td><td><p class="unav-preview-text unav-font-primary unav-weight-light unav-text-200">Tipografía Corporativa</p></td></tr>
+                            <tr><td class="ps-4 border-end"><span class="unav-label-rem">1.75rem</span><span class="text-muted small">28px</span></td><td><p class="unav-preview-text unav-font-primary unav-weight-light unav-text-175">Tipografía Corporativa</p></td></tr>
+                            <tr><td class="ps-4 border-end"><span class="unav-label-rem">1.5rem</span><span class="text-muted small">24px</span></td><td><p class="unav-preview-text unav-font-primary unav-weight-light unav-text-150">Tipografía Corporativa</p></td></tr>
+                            <tr><td class="ps-4 border-end"><span class="unav-label-rem">1.25rem</span><span class="text-muted small">20px</span></td><td><p class="unav-preview-text unav-font-primary unav-weight-light unav-text-125">Tipografía Corporativa</p></td></tr>
+                            <tr><td class="ps-4 border-end"><span class="unav-label-rem">1rem</span><span class="text-muted small">16px</span></td><td><p class="unav-preview-text unav-font-primary unav-weight-light unav-text-100">Tipografía Corporativa (Base)</p></td></tr>
+                            <tr><td class="ps-4 border-end"><span class="unav-label-rem">0.75rem</span><span class="text-muted small">12px</span></td><td><p class="unav-preview-text unav-font-primary unav-weight-light unav-text-075">Tipografía Corporativa</p></td></tr>
+                            <tr><td class="ps-4 border-end"><span class="unav-label-rem">0.5rem</span><span class="text-muted small">8px</span></td><td><p class="unav-preview-text unav-font-primary unav-weight-light unav-text-050">Tipografía Corporativa</p></td></tr>
                         </tbody>
                     </table>
                 </div>
             </section>
 
+            <!-- ROBOTO REGULAR 400 -->
             <section id="roboto-regular-400" class="unav-font-block card shadow-sm mb-5 border-0">
                 <div class="card-header bg-white py-3 border-bottom-0 d-flex justify-content-between align-items-center">
-                    <h3 class="h5 mb-0 fw-bold">Roboto - Regular (Principal)</h3>
+                    <h3 class="h5 mb-0 unav-font-primary unav-weight-bold">Roboto - Regular (Principal)</h3>
                     <span class="badge rounded-pill bg-light text-dark border fw-bold">WEIGHT: 400</span>
                 </div>
                 <div class="table-responsive">
                     <table class="table align-middle mb-0 unav-table">
-                        <thead class="table-light"><tr><th class="ps-4" width="160" style="font-size: 0.75rem; text-transform: uppercase; letter-spacing: 1px; color: #888; padding: 1rem 1.5rem;">Métrica</th><th>Previsualización</th></tr></thead>
+                        <thead class="table-light"><tr><th class="ps-4" width="160">Métrica</th><th>Previsualización (Usando clases CSS)</th></tr></thead>
                         <tbody>
-                            <tr><td class="ps-4 border-end"><span style="font-weight: 700; font-size: 1.1rem; color: #1a1a1a; display: block;">4rem</span><span class="text-muted small">64px</span></td><td><p style="margin: 0; line-height: 1.1; white-space: nowrap; color: #222; font-family: 'Roboto', sans-serif; font-weight: 400; font-size: 4rem;">Tipografía Corporativa</p></td></tr>
-                            <tr><td class="ps-4 border-end"><span style="font-weight: 700; font-size: 1.1rem; color: #1a1a1a; display: block;">3.5rem</span><span class="text-muted small">56px</span></td><td><p style="margin: 0; line-height: 1.1; white-space: nowrap; color: #222; font-family: 'Roboto', sans-serif; font-weight: 400; font-size: 3.5rem;">Tipografía Corporativa</p></td></tr>
-                            <tr><td class="ps-4 border-end"><span style="font-weight: 700; font-size: 1.1rem; color: #1a1a1a; display: block;">3rem</span><span class="text-muted small">48px</span></td><td><p style="margin: 0; line-height: 1.1; white-space: nowrap; color: #222; font-family: 'Roboto', sans-serif; font-weight: 400; font-size: 3rem;">Tipografía Corporativa</p></td></tr>
-                            <tr><td class="ps-4 border-end"><span style="font-weight: 700; font-size: 1.1rem; color: #1a1a1a; display: block;">2.2rem</span><span class="text-muted small">35.2px</span></td><td><p style="margin: 0; line-height: 1.1; white-space: nowrap; color: #222; font-family: 'Roboto', sans-serif; font-weight: 400; font-size: 2.2rem;">Tipografía Corporativa</p></td></tr>
-                            <tr><td class="ps-4 border-end"><span style="font-weight: 700; font-size: 1.1rem; color: #1a1a1a; display: block;">2rem</span><span class="text-muted small">32px</span></td><td><p style="margin: 0; line-height: 1.1; white-space: nowrap; color: #222; font-family: 'Roboto', sans-serif; font-weight: 400; font-size: 2rem;">Tipografía Corporativa</p></td></tr>
-                            <tr><td class="ps-4 border-end"><span style="font-weight: 700; font-size: 1.1rem; color: #1a1a1a; display: block;">1.8rem</span><span class="text-muted small">28.8px</span></td><td><p style="margin: 0; line-height: 1.1; white-space: nowrap; color: #222; font-family: 'Roboto', sans-serif; font-weight: 400; font-size: 1.8rem;">Tipografía Corporativa</p></td></tr>
-                            <tr><td class="ps-4 border-end"><span style="font-weight: 700; font-size: 1.1rem; color: #1a1a1a; display: block;">1.6rem</span><span class="text-muted small">25.6px</span></td><td><p style="margin: 0; line-height: 1.1; white-space: nowrap; color: #222; font-family: 'Roboto', sans-serif; font-weight: 400; font-size: 1.6rem;">Tipografía Corporativa</p></td></tr>
-                            <tr><td class="ps-4 border-end"><span style="font-weight: 700; font-size: 1.1rem; color: #1a1a1a; display: block;">1.4rem</span><span class="text-muted small">22.4px</span></td><td><p style="margin: 0; line-height: 1.1; white-space: nowrap; color: #222; font-family: 'Roboto', sans-serif; font-weight: 400; font-size: 1.4rem;">Tipografía Corporativa</p></td></tr>
-                            <tr><td class="ps-4 border-end"><span style="font-weight: 700; font-size: 1.1rem; color: #1a1a1a; display: block;">1.2rem</span><span class="text-muted small">19.2px</span></td><td><p style="margin: 0; line-height: 1.1; white-space: nowrap; color: #222; font-family: 'Roboto', sans-serif; font-weight: 400; font-size: 1.2rem;">Tipografía Corporativa</p></td></tr>
-                            <tr><td class="ps-4 border-end"><span style="font-weight: 700; font-size: 1.1rem; color: #1a1a1a; display: block;">1rem</span><span class="text-muted small">16px</span></td><td><p style="margin: 0; line-height: 1.1; white-space: nowrap; color: #222; font-family: 'Roboto', sans-serif; font-weight: 400; font-size: 1rem;">Tipografía Corporativa (Base)</p></td></tr>
-                            <tr><td class="ps-4 border-end"><span style="font-weight: 700; font-size: 1.1rem; color: #1a1a1a; display: block;">0.8rem</span><span class="text-muted small">12.8px</span></td><td><p style="margin: 0; line-height: 1.1; white-space: nowrap; color: #222; font-family: 'Roboto', sans-serif; font-weight: 400; font-size: 0.8rem;">Tipografía Corporativa (Small)</p></td></tr>
+                            <tr><td class="ps-4 border-end"><span class="unav-label-rem">5rem</span><span class="text-muted small">80px</span></td><td><p class="unav-preview-text unav-font-primary unav-weight-regular unav-text-500">Tipografía Corporativa</p></td></tr>
+                            <tr><td class="ps-4 border-end"><span class="unav-label-rem">4rem</span><span class="text-muted small">64px</span></td><td><p class="unav-preview-text unav-font-primary unav-weight-regular unav-text-400">Tipografía Corporativa</p></td></tr>
+                            <tr><td class="ps-4 border-end"><span class="unav-label-rem">3rem</span><span class="text-muted small">48px</span></td><td><p class="unav-preview-text unav-font-primary unav-weight-regular unav-text-300">Tipografía Corporativa</p></td></tr>
+                            <tr><td class="ps-4 border-end"><span class="unav-label-rem">2.5rem</span><span class="text-muted small">40px</span></td><td><p class="unav-preview-text unav-font-primary unav-weight-regular unav-text-250">Tipografía Corporativa</p></td></tr>
+                            <tr><td class="ps-4 border-end"><span class="unav-label-rem">2rem</span><span class="text-muted small">32px</span></td><td><p class="unav-preview-text unav-font-primary unav-weight-regular unav-text-200">Tipografía Corporativa</p></td></tr>
+                            <tr><td class="ps-4 border-end"><span class="unav-label-rem">1.75rem</span><span class="text-muted small">28px</span></td><td><p class="unav-preview-text unav-font-primary unav-weight-regular unav-text-175">Tipografía Corporativa</p></td></tr>
+                            <tr><td class="ps-4 border-end"><span class="unav-label-rem">1.5rem</span><span class="text-muted small">24px</span></td><td><p class="unav-preview-text unav-font-primary unav-weight-regular unav-text-150">Tipografía Corporativa</p></td></tr>
+                            <tr><td class="ps-4 border-end"><span class="unav-label-rem">1.25rem</span><span class="text-muted small">20px</span></td><td><p class="unav-preview-text unav-font-primary unav-weight-regular unav-text-125">Tipografía Corporativa</p></td></tr>
+                            <tr><td class="ps-4 border-end"><span class="unav-label-rem">1rem</span><span class="text-muted small">16px</span></td><td><p class="unav-preview-text unav-font-primary unav-weight-regular unav-text-100">Tipografía Corporativa (Base)</p></td></tr>
+                            <tr><td class="ps-4 border-end"><span class="unav-label-rem">0.75rem</span><span class="text-muted small">12px</span></td><td><p class="unav-preview-text unav-font-primary unav-weight-regular unav-text-075">Tipografía Corporativa</p></td></tr>
+                            <tr><td class="ps-4 border-end"><span class="unav-label-rem">0.5rem</span><span class="text-muted small">8px</span></td><td><p class="unav-preview-text unav-font-primary unav-weight-regular unav-text-050">Tipografía Corporativa</p></td></tr>
                         </tbody>
                     </table>
                 </div>
             </section>
 
+            <!-- ROBOTO MEDIUM 500 -->
             <section id="roboto-medium-500" class="unav-font-block card shadow-sm mb-5 border-0">
                 <div class="card-header bg-white py-3 border-bottom-0 d-flex justify-content-between align-items-center">
-                    <h3 class="h5 mb-0 fw-bold">Roboto - Medium</h3>
+                    <h3 class="h5 mb-0 unav-font-primary unav-weight-bold">Roboto - Medium</h3>
                     <span class="badge rounded-pill bg-light text-dark border fw-bold">WEIGHT: 500</span>
                 </div>
                 <div class="table-responsive">
                     <table class="table align-middle mb-0 unav-table">
-                        <thead class="table-light"><tr><th class="ps-4" width="160" style="font-size: 0.75rem; text-transform: uppercase; letter-spacing: 1px; color: #888; padding: 1rem 1.5rem;">Métrica</th><th>Previsualización</th></tr></thead>
+                        <thead class="table-light"><tr><th class="ps-4" width="160">Métrica</th><th>Previsualización (Usando clases CSS)</th></tr></thead>
                         <tbody>
-                            <tr><td class="ps-4 border-end"><span style="font-weight: 700; font-size: 1.1rem; color: #1a1a1a; display: block;">4rem</span><span class="text-muted small">64px</span></td><td><p style="margin: 0; line-height: 1.1; white-space: nowrap; color: #222; font-family: 'Roboto', sans-serif; font-weight: 500; font-size: 4rem;">Tipografía Corporativa</p></td></tr>
-                            <tr><td class="ps-4 border-end"><span style="font-weight: 700; font-size: 1.1rem; color: #1a1a1a; display: block;">3.5rem</span><span class="text-muted small">56px</span></td><td><p style="margin: 0; line-height: 1.1; white-space: nowrap; color: #222; font-family: 'Roboto', sans-serif; font-weight: 500; font-size: 3.5rem;">Tipografía Corporativa</p></td></tr>
-                            <tr><td class="ps-4 border-end"><span style="font-weight: 700; font-size: 1.1rem; color: #1a1a1a; display: block;">3rem</span><span class="text-muted small">48px</span></td><td><p style="margin: 0; line-height: 1.1; white-space: nowrap; color: #222; font-family: 'Roboto', sans-serif; font-weight: 500; font-size: 3rem;">Tipografía Corporativa</p></td></tr>
-                            <tr><td class="ps-4 border-end"><span style="font-weight: 700; font-size: 1.1rem; color: #1a1a1a; display: block;">2.2rem</span><span class="text-muted small">35.2px</span></td><td><p style="margin: 0; line-height: 1.1; white-space: nowrap; color: #222; font-family: 'Roboto', sans-serif; font-weight: 500; font-size: 2.2rem;">Tipografía Corporativa</p></td></tr>
-                            <tr><td class="ps-4 border-end"><span style="font-weight: 700; font-size: 1.1rem; color: #1a1a1a; display: block;">2rem</span><span class="text-muted small">32px</span></td><td><p style="margin: 0; line-height: 1.1; white-space: nowrap; color: #222; font-family: 'Roboto', sans-serif; font-weight: 500; font-size: 2rem;">Tipografía Corporativa</p></td></tr>
-                            <tr><td class="ps-4 border-end"><span style="font-weight: 700; font-size: 1.1rem; color: #1a1a1a; display: block;">1.8rem</span><span class="text-muted small">28.8px</span></td><td><p style="margin: 0; line-height: 1.1; white-space: nowrap; color: #222; font-family: 'Roboto', sans-serif; font-weight: 500; font-size: 1.8rem;">Tipografía Corporativa</p></td></tr>
-                            <tr><td class="ps-4 border-end"><span style="font-weight: 700; font-size: 1.1rem; color: #1a1a1a; display: block;">1.6rem</span><span class="text-muted small">25.6px</span></td><td><p style="margin: 0; line-height: 1.1; white-space: nowrap; color: #222; font-family: 'Roboto', sans-serif; font-weight: 500; font-size: 1.6rem;">Tipografía Corporativa</p></td></tr>
-                            <tr><td class="ps-4 border-end"><span style="font-weight: 700; font-size: 1.1rem; color: #1a1a1a; display: block;">1.4rem</span><span class="text-muted small">22.4px</span></td><td><p style="margin: 0; line-height: 1.1; white-space: nowrap; color: #222; font-family: 'Roboto', sans-serif; font-weight: 500; font-size: 1.4rem;">Tipografía Corporativa</p></td></tr>
-                            <tr><td class="ps-4 border-end"><span style="font-weight: 700; font-size: 1.1rem; color: #1a1a1a; display: block;">1.2rem</span><span class="text-muted small">19.2px</span></td><td><p style="margin: 0; line-height: 1.1; white-space: nowrap; color: #222; font-family: 'Roboto', sans-serif; font-weight: 500; font-size: 1.2rem;">Tipografía Corporativa</p></td></tr>
-                            <tr><td class="ps-4 border-end"><span style="font-weight: 700; font-size: 1.1rem; color: #1a1a1a; display: block;">1rem</span><span class="text-muted small">16px</span></td><td><p style="margin: 0; line-height: 1.1; white-space: nowrap; color: #222; font-family: 'Roboto', sans-serif; font-weight: 500; font-size: 1rem;">Tipografía Corporativa (Base)</p></td></tr>
-                            <tr><td class="ps-4 border-end"><span style="font-weight: 700; font-size: 1.1rem; color: #1a1a1a; display: block;">0.8rem</span><span class="text-muted small">12.8px</span></td><td><p style="margin: 0; line-height: 1.1; white-space: nowrap; color: #222; font-family: 'Roboto', sans-serif; font-weight: 500; font-size: 0.8rem;">Tipografía Corporativa (Small)</p></td></tr>
+                            <tr><td class="ps-4 border-end"><span class="unav-label-rem">5rem</span><span class="text-muted small">80px</span></td><td><p class="unav-preview-text unav-font-primary unav-weight-medium unav-text-500">Tipografía Corporativa</p></td></tr>
+                            <tr><td class="ps-4 border-end"><span class="unav-label-rem">4rem</span><span class="text-muted small">64px</span></td><td><p class="unav-preview-text unav-font-primary unav-weight-medium unav-text-400">Tipografía Corporativa</p></td></tr>
+                            <tr><td class="ps-4 border-end"><span class="unav-label-rem">3rem</span><span class="text-muted small">48px</span></td><td><p class="unav-preview-text unav-font-primary unav-weight-medium unav-text-300">Tipografía Corporativa</p></td></tr>
+                            <tr><td class="ps-4 border-end"><span class="unav-label-rem">2.5rem</span><span class="text-muted small">40px</span></td><td><p class="unav-preview-text unav-font-primary unav-weight-medium unav-text-250">Tipografía Corporativa</p></td></tr>
+                            <tr><td class="ps-4 border-end"><span class="unav-label-rem">2rem</span><span class="text-muted small">32px</span></td><td><p class="unav-preview-text unav-font-primary unav-weight-medium unav-text-200">Tipografía Corporativa</p></td></tr>
+                            <tr><td class="ps-4 border-end"><span class="unav-label-rem">1.75rem</span><span class="text-muted small">28px</span></td><td><p class="unav-preview-text unav-font-primary unav-weight-medium unav-text-175">Tipografía Corporativa</p></td></tr>
+                            <tr><td class="ps-4 border-end"><span class="unav-label-rem">1.5rem</span><span class="text-muted small">24px</span></td><td><p class="unav-preview-text unav-font-primary unav-weight-medium unav-text-150">Tipografía Corporativa</p></td></tr>
+                            <tr><td class="ps-4 border-end"><span class="unav-label-rem">1.25rem</span><span class="text-muted small">20px</span></td><td><p class="unav-preview-text unav-font-primary unav-weight-medium unav-text-125">Tipografía Corporativa</p></td></tr>
+                            <tr><td class="ps-4 border-end"><span class="unav-label-rem">1rem</span><span class="text-muted small">16px</span></td><td><p class="unav-preview-text unav-font-primary unav-weight-medium unav-text-100">Tipografía Corporativa (Base)</p></td></tr>
+                            <tr><td class="ps-4 border-end"><span class="unav-label-rem">0.75rem</span><span class="text-muted small">12px</span></td><td><p class="unav-preview-text unav-font-primary unav-weight-medium unav-text-075">Tipografía Corporativa</p></td></tr>
+                            <tr><td class="ps-4 border-end"><span class="unav-label-rem">0.5rem</span><span class="text-muted small">8px</span></td><td><p class="unav-preview-text unav-font-primary unav-weight-medium unav-text-050">Tipografía Corporativa</p></td></tr>
                         </tbody>
                     </table>
                 </div>
             </section>
 
+            <!-- ROBOTO BOLD 700 -->
             <section id="roboto-bold-700" class="unav-font-block card shadow-sm mb-5 border-0">
                 <div class="card-header bg-white py-3 border-bottom-0 d-flex justify-content-between align-items-center">
-                    <h3 class="h5 mb-0 fw-bold">Roboto - Bold</h3>
+                    <h3 class="h5 mb-0 unav-font-primary unav-weight-bold">Roboto - Bold</h3>
                     <span class="badge rounded-pill bg-light text-dark border fw-bold">WEIGHT: 700</span>
                 </div>
                 <div class="table-responsive">
                     <table class="table align-middle mb-0 unav-table">
-                        <thead class="table-light"><tr><th class="ps-4" width="160" style="font-size: 0.75rem; text-transform: uppercase; letter-spacing: 1px; color: #888; padding: 1rem 1.5rem;">Métrica</th><th>Previsualización</th></tr></thead>
+                        <thead class="table-light"><tr><th class="ps-4" width="160">Métrica</th><th>Previsualización (Usando clases CSS)</th></tr></thead>
                         <tbody>
-                            <tr><td class="ps-4 border-end"><span style="font-weight: 700; font-size: 1.1rem; color: #1a1a1a; display: block;">4rem</span><span class="text-muted small">64px</span></td><td><p style="margin: 0; line-height: 1.1; white-space: nowrap; color: #222; font-family: 'Roboto', sans-serif; font-weight: 700; font-size: 4rem;">Tipografía Corporativa</p></td></tr>
-                            <tr><td class="ps-4 border-end"><span style="font-weight: 700; font-size: 1.1rem; color: #1a1a1a; display: block;">3.5rem</span><span class="text-muted small">56px</span></td><td><p style="margin: 0; line-height: 1.1; white-space: nowrap; color: #222; font-family: 'Roboto', sans-serif; font-weight: 700; font-size: 3.5rem;">Tipografía Corporativa</p></td></tr>
-                            <tr><td class="ps-4 border-end"><span style="font-weight: 700; font-size: 1.1rem; color: #1a1a1a; display: block;">3rem</span><span class="text-muted small">48px</span></td><td><p style="margin: 0; line-height: 1.1; white-space: nowrap; color: #222; font-family: 'Roboto', sans-serif; font-weight: 700; font-size: 3rem;">Tipografía Corporativa</p></td></tr>
-                            <tr><td class="ps-4 border-end"><span style="font-weight: 700; font-size: 1.1rem; color: #1a1a1a; display: block;">2.2rem</span><span class="text-muted small">35.2px</span></td><td><p style="margin: 0; line-height: 1.1; white-space: nowrap; color: #222; font-family: 'Roboto', sans-serif; font-weight: 700; font-size: 2.2rem;">Tipografía Corporativa</p></td></tr>
-                            <tr><td class="ps-4 border-end"><span style="font-weight: 700; font-size: 1.1rem; color: #1a1a1a; display: block;">2rem</span><span class="text-muted small">32px</span></td><td><p style="margin: 0; line-height: 1.1; white-space: nowrap; color: #222; font-family: 'Roboto', sans-serif; font-weight: 700; font-size: 2rem;">Tipografía Corporativa</p></td></tr>
-                            <tr><td class="ps-4 border-end"><span style="font-weight: 700; font-size: 1.1rem; color: #1a1a1a; display: block;">1.8rem</span><span class="text-muted small">28.8px</span></td><td><p style="margin: 0; line-height: 1.1; white-space: nowrap; color: #222; font-family: 'Roboto', sans-serif; font-weight: 700; font-size: 1.8rem;">Tipografía Corporativa</p></td></tr>
-                            <tr><td class="ps-4 border-end"><span style="font-weight: 700; font-size: 1.1rem; color: #1a1a1a; display: block;">1.6rem</span><span class="text-muted small">25.6px</span></td><td><p style="margin: 0; line-height: 1.1; white-space: nowrap; color: #222; font-family: 'Roboto', sans-serif; font-weight: 700; font-size: 1.6rem;">Tipografía Corporativa</p></td></tr>
-                            <tr><td class="ps-4 border-end"><span style="font-weight: 700; font-size: 1.1rem; color: #1a1a1a; display: block;">1.4rem</span><span class="text-muted small">22.4px</span></td><td><p style="margin: 0; line-height: 1.1; white-space: nowrap; color: #222; font-family: 'Roboto', sans-serif; font-weight: 700; font-size: 1.4rem;">Tipografía Corporativa</p></td></tr>
-                            <tr><td class="ps-4 border-end"><span style="font-weight: 700; font-size: 1.1rem; color: #1a1a1a; display: block;">1.2rem</span><span class="text-muted small">19.2px</span></td><td><p style="margin: 0; line-height: 1.1; white-space: nowrap; color: #222; font-family: 'Roboto', sans-serif; font-weight: 700; font-size: 1.2rem;">Tipografía Corporativa</p></td></tr>
-                            <tr><td class="ps-4 border-end"><span style="font-weight: 700; font-size: 1.1rem; color: #1a1a1a; display: block;">1rem</span><span class="text-muted small">16px</span></td><td><p style="margin: 0; line-height: 1.1; white-space: nowrap; color: #222; font-family: 'Roboto', sans-serif; font-weight: 700; font-size: 1rem;">Tipografía Corporativa (Base)</p></td></tr>
-                            <tr><td class="ps-4 border-end"><span style="font-weight: 700; font-size: 1.1rem; color: #1a1a1a; display: block;">0.8rem</span><span class="text-muted small">12.8px</span></td><td><p style="margin: 0; line-height: 1.1; white-space: nowrap; color: #222; font-family: 'Roboto', sans-serif; font-weight: 700; font-size: 0.8rem;">Tipografía Corporativa (Small)</p></td></tr>
+                            <tr><td class="ps-4 border-end"><span class="unav-label-rem">5rem</span><span class="text-muted small">80px</span></td><td><p class="unav-preview-text unav-font-primary unav-weight-bold unav-text-500">Tipografía Corporativa</p></td></tr>
+                            <tr><td class="ps-4 border-end"><span class="unav-label-rem">4rem</span><span class="text-muted small">64px</span></td><td><p class="unav-preview-text unav-font-primary unav-weight-bold unav-text-400">Tipografía Corporativa</p></td></tr>
+                            <tr><td class="ps-4 border-end"><span class="unav-label-rem">3rem</span><span class="text-muted small">48px</span></td><td><p class="unav-preview-text unav-font-primary unav-weight-bold unav-text-300">Tipografía Corporativa</p></td></tr>
+                            <tr><td class="ps-4 border-end"><span class="unav-label-rem">2.5rem</span><span class="text-muted small">40px</span></td><td><p class="unav-preview-text unav-font-primary unav-weight-bold unav-text-250">Tipografía Corporativa</p></td></tr>
+                            <tr><td class="ps-4 border-end"><span class="unav-label-rem">2rem</span><span class="text-muted small">32px</span></td><td><p class="unav-preview-text unav-font-primary unav-weight-bold unav-text-200">Tipografía Corporativa</p></td></tr>
+                            <tr><td class="ps-4 border-end"><span class="unav-label-rem">1.75rem</span><span class="text-muted small">28px</span></td><td><p class="unav-preview-text unav-font-primary unav-weight-bold unav-text-175">Tipografía Corporativa</p></td></tr>
+                            <tr><td class="ps-4 border-end"><span class="unav-label-rem">1.5rem</span><span class="text-muted small">24px</span></td><td><p class="unav-preview-text unav-font-primary unav-weight-bold unav-text-150">Tipografía Corporativa</p></td></tr>
+                            <tr><td class="ps-4 border-end"><span class="unav-label-rem">1.25rem</span><span class="text-muted small">20px</span></td><td><p class="unav-preview-text unav-font-primary unav-weight-bold unav-text-125">Tipografía Corporativa</p></td></tr>
+                            <tr><td class="ps-4 border-end"><span class="unav-label-rem">1rem</span><span class="text-muted small">16px</span></td><td><p class="unav-preview-text unav-font-primary unav-weight-bold unav-text-100">Tipografía Corporativa (Base)</p></td></tr>
+                            <tr><td class="ps-4 border-end"><span class="unav-label-rem">0.75rem</span><span class="text-muted small">12px</span></td><td><p class="unav-preview-text unav-font-primary unav-weight-bold unav-text-075">Tipografía Corporativa</p></td></tr>
+                            <tr><td class="ps-4 border-end"><span class="unav-label-rem">0.5rem</span><span class="text-muted small">8px</span></td><td><p class="unav-preview-text unav-font-primary unav-weight-bold unav-text-050">Tipografía Corporativa</p></td></tr>
                         </tbody>
                     </table>
                 </div>
             </section>
 
+            <!-- ROBOTO CONDENSED BOLD 700 -->
             <section id="roboto-condensed-bold-700" class="unav-font-block card shadow-sm mb-5 border-0">
                 <div class="card-header bg-white py-3 border-bottom-0 d-flex justify-content-between align-items-center">
-                    <h3 class="h5 mb-0 fw-bold" style="font-family: 'Roboto Condensed', sans-serif; font-weight: 700;">Roboto Condensed - Bold</h3>
+                    <h3 class="h5 mb-0 unav-font-primary-condensed unav-weight-bold">Roboto Condensed - Bold</h3>
                     <span class="badge rounded-pill bg-light text-dark border fw-bold">WEIGHT: 700</span>
                 </div>
                 <div class="table-responsive">
                     <table class="table align-middle mb-0 unav-table">
-                        <thead class="table-light"><tr><th class="ps-4" width="160" style="font-size: 0.75rem; text-transform: uppercase; letter-spacing: 1px; color: #888; padding: 1rem 1.5rem;">Métrica</th><th>Previsualización</th></tr></thead>
+                        <thead class="table-light"><tr><th class="ps-4" width="160">Métrica</th><th>Previsualización (Usando clases CSS)</th></tr></thead>
                         <tbody>
-                            <tr><td class="ps-4 border-end"><span style="font-weight: 700; font-size: 1.1rem; color: #1a1a1a; display: block;">4rem</span><span class="text-muted small">64px</span></td><td><p style="margin: 0; line-height: 1.1; white-space: nowrap; color: #222; font-family: 'Roboto Condensed', sans-serif; font-weight: 700; font-size: 4rem;">Tipografía Corporativa</p></td></tr>
-                            <tr><td class="ps-4 border-end"><span style="font-weight: 700; font-size: 1.1rem; color: #1a1a1a; display: block;">3.5rem</span><span class="text-muted small">56px</span></td><td><p style="margin: 0; line-height: 1.1; white-space: nowrap; color: #222; font-family: 'Roboto Condensed', sans-serif; font-weight: 700; font-size: 3.5rem;">Tipografía Corporativa</p></td></tr>
-                            <tr><td class="ps-4 border-end"><span style="font-weight: 700; font-size: 1.1rem; color: #1a1a1a; display: block;">3rem</span><span class="text-muted small">48px</span></td><td><p style="margin: 0; line-height: 1.1; white-space: nowrap; color: #222; font-family: 'Roboto Condensed', sans-serif; font-weight: 700; font-size: 3rem;">Tipografía Corporativa</p></td></tr>
-                            <tr><td class="ps-4 border-end"><span style="font-weight: 700; font-size: 1.1rem; color: #1a1a1a; display: block;">2.2rem</span><span class="text-muted small">35.2px</span></td><td><p style="margin: 0; line-height: 1.1; white-space: nowrap; color: #222; font-family: 'Roboto Condensed', sans-serif; font-weight: 700; font-size: 2.2rem;">Tipografía Corporativa</p></td></tr>
-                            <tr><td class="ps-4 border-end"><span style="font-weight: 700; font-size: 1.1rem; color: #1a1a1a; display: block;">2rem</span><span class="text-muted small">32px</span></td><td><p style="margin: 0; line-height: 1.1; white-space: nowrap; color: #222; font-family: 'Roboto Condensed', sans-serif; font-weight: 700; font-size: 2rem;">Tipografía Corporativa</p></td></tr>
-                            <tr><td class="ps-4 border-end"><span style="font-weight: 700; font-size: 1.1rem; color: #1a1a1a; display: block;">1.8rem</span><span class="text-muted small">28.8px</span></td><td><p style="margin: 0; line-height: 1.1; white-space: nowrap; color: #222; font-family: 'Roboto Condensed', sans-serif; font-weight: 700; font-size: 1.8rem;">Tipografía Corporativa</p></td></tr>
-                            <tr><td class="ps-4 border-end"><span style="font-weight: 700; font-size: 1.1rem; color: #1a1a1a; display: block;">1.6rem</span><span class="text-muted small">25.6px</span></td><td><p style="margin: 0; line-height: 1.1; white-space: nowrap; color: #222; font-family: 'Roboto Condensed', sans-serif; font-weight: 700; font-size: 1.6rem;">Tipografía Corporativa</p></td></tr>
-                            <tr><td class="ps-4 border-end"><span style="font-weight: 700; font-size: 1.1rem; color: #1a1a1a; display: block;">1.4rem</span><span class="text-muted small">22.4px</span></td><td><p style="margin: 0; line-height: 1.1; white-space: nowrap; color: #222; font-family: 'Roboto Condensed', sans-serif; font-weight: 700; font-size: 1.4rem;">Tipografía Corporativa</p></td></tr>
-                            <tr><td class="ps-4 border-end"><span style="font-weight: 700; font-size: 1.1rem; color: #1a1a1a; display: block;">1.2rem</span><span class="text-muted small">19.2px</span></td><td><p style="margin: 0; line-height: 1.1; white-space: nowrap; color: #222; font-family: 'Roboto Condensed', sans-serif; font-weight: 700; font-size: 1.2rem;">Tipografía Corporativa</p></td></tr>
-                            <tr><td class="ps-4 border-end"><span style="font-weight: 700; font-size: 1.1rem; color: #1a1a1a; display: block;">1rem</span><span class="text-muted small">16px</span></td><td><p style="margin: 0; line-height: 1.1; white-space: nowrap; color: #222; font-family: 'Roboto Condensed', sans-serif; font-weight: 700; font-size: 1rem;">Tipografía Corporativa (Base)</p></td></tr>
-                            <tr><td class="ps-4 border-end"><span style="font-weight: 700; font-size: 1.1rem; color: #1a1a1a; display: block;">0.8rem</span><span class="text-muted small">12.8px</span></td><td><p style="margin: 0; line-height: 1.1; white-space: nowrap; color: #222; font-family: 'Roboto Condensed', sans-serif; font-weight: 700; font-size: 0.8rem;">Tipografía Corporativa (Small)</p></td></tr>
+                            <tr><td class="ps-4 border-end"><span class="unav-label-rem">5rem</span><span class="text-muted small">80px</span></td><td><p class="unav-preview-text unav-font-primary-condensed unav-weight-bold unav-text-500">Tipografía Corporativa</p></td></tr>
+                            <tr><td class="ps-4 border-end"><span class="unav-label-rem">4rem</span><span class="text-muted small">64px</span></td><td><p class="unav-preview-text unav-font-primary-condensed unav-weight-bold unav-text-400">Tipografía Corporativa</p></td></tr>
+                            <tr><td class="ps-4 border-end"><span class="unav-label-rem">3rem</span><span class="text-muted small">48px</span></td><td><p class="unav-preview-text unav-font-primary-condensed unav-weight-bold unav-text-300">Tipografía Corporativa</p></td></tr>
+                            <tr><td class="ps-4 border-end"><span class="unav-label-rem">2.5rem</span><span class="text-muted small">40px</span></td><td><p class="unav-preview-text unav-font-primary-condensed unav-weight-bold unav-text-250">Tipografía Corporativa</p></td></tr>
+                            <tr><td class="ps-4 border-end"><span class="unav-label-rem">2rem</span><span class="text-muted small">32px</span></td><td><p class="unav-preview-text unav-font-primary-condensed unav-weight-bold unav-text-200">Tipografía Corporativa</p></td></tr>
+                            <tr><td class="ps-4 border-end"><span class="unav-label-rem">1.75rem</span><span class="text-muted small">28px</span></td><td><p class="unav-preview-text unav-font-primary-condensed unav-weight-bold unav-text-175">Tipografía Corporativa</p></td></tr>
+                            <tr><td class="ps-4 border-end"><span class="unav-label-rem">1.5rem</span><span class="text-muted small">24px</span></td><td><p class="unav-preview-text unav-font-primary-condensed unav-weight-bold unav-text-150">Tipografía Corporativa</p></td></tr>
+                            <tr><td class="ps-4 border-end"><span class="unav-label-rem">1.25rem</span><span class="text-muted small">20px</span></td><td><p class="unav-preview-text unav-font-primary-condensed unav-weight-bold unav-text-125">Tipografía Corporativa</p></td></tr>
+                            <tr><td class="ps-4 border-end"><span class="unav-label-rem">1rem</span><span class="text-muted small">16px</span></td><td><p class="unav-preview-text unav-font-primary-condensed unav-weight-bold unav-text-100">Tipografía Corporativa (Base)</p></td></tr>
+                            <tr><td class="ps-4 border-end"><span class="unav-label-rem">0.75rem</span><span class="text-muted small">12px</span></td><td><p class="unav-preview-text unav-font-primary-condensed unav-weight-bold unav-text-075">Tipografía Corporativa</p></td></tr>
+                            <tr><td class="ps-4 border-end"><span class="unav-label-rem">0.5rem</span><span class="text-muted small">8px</span></td><td><p class="unav-preview-text unav-font-primary-condensed unav-weight-bold unav-text-050">Tipografía Corporativa</p></td></tr>
                         </tbody>
                     </table>
                 </div>
             </section>
 
+            <!-- ==========================================
+                 SECUNDARIAS (SERIF)
+                 ========================================== -->
+
+            <!-- PLAYFAIR DISPLAY 400 -->
             <section id="playfair-regular-400" class="unav-font-block card shadow-sm mb-5 border-0">
                 <div class="card-header bg-white py-3 border-bottom-0 d-flex justify-content-between align-items-center">
-                    <h3 class="h5 mb-0 fw-bold" style="font-family: 'Playfair Display', serif;">Playfair Display - Regular</h3>
+                    <h3 class="h5 mb-0 unav-font-secondary-playfair unav-weight-regular">Playfair Display - Regular</h3>
                     <span class="badge rounded-pill bg-light text-dark border fw-bold">WEIGHT: 400</span>
                 </div>
                 <div class="table-responsive">
                     <table class="table align-middle mb-0 unav-table">
-                        <thead class="table-light"><tr><th class="ps-4" width="160" style="font-size: 0.75rem; text-transform: uppercase; letter-spacing: 1px; color: #888; padding: 1rem 1.5rem;">Métrica</th><th>Previsualización</th></tr></thead>
+                        <thead class="table-light"><tr><th class="ps-4" width="160">Métrica</th><th>Previsualización (Usando clases CSS)</th></tr></thead>
                         <tbody>
-                            <tr><td class="ps-4 border-end"><span style="font-weight: 700; font-size: 1.1rem; color: #1a1a1a; display: block;">4rem</span><span class="text-muted small">64px</span></td><td><p style="margin: 0; line-height: 1.1; white-space: nowrap; color: #222; font-family: 'Playfair Display', serif; font-weight: 400; font-size: 4rem;">Tipografía Editorial</p></td></tr>
-                            <tr><td class="ps-4 border-end"><span style="font-weight: 700; font-size: 1.1rem; color: #1a1a1a; display: block;">3.5rem</span><span class="text-muted small">56px</span></td><td><p style="margin: 0; line-height: 1.1; white-space: nowrap; color: #222; font-family: 'Playfair Display', serif; font-weight: 400; font-size: 3.5rem;">Tipografía Editorial</p></td></tr>
-                            <tr><td class="ps-4 border-end"><span style="font-weight: 700; font-size: 1.1rem; color: #1a1a1a; display: block;">3rem</span><span class="text-muted small">48px</span></td><td><p style="margin: 0; line-height: 1.1; white-space: nowrap; color: #222; font-family: 'Playfair Display', serif; font-weight: 400; font-size: 3rem;">Tipografía Editorial</p></td></tr>
-                            <tr><td class="ps-4 border-end"><span style="font-weight: 700; font-size: 1.1rem; color: #1a1a1a; display: block;">2.2rem</span><span class="text-muted small">35.2px</span></td><td><p style="margin: 0; line-height: 1.1; white-space: nowrap; color: #222; font-family: 'Playfair Display', serif; font-weight: 400; font-size: 2.2rem;">Tipografía Editorial</p></td></tr>
-                            <tr><td class="ps-4 border-end"><span style="font-weight: 700; font-size: 1.1rem; color: #1a1a1a; display: block;">2rem</span><span class="text-muted small">32px</span></td><td><p style="margin: 0; line-height: 1.1; white-space: nowrap; color: #222; font-family: 'Playfair Display', serif; font-weight: 400; font-size: 2rem;">Tipografía Editorial</p></td></tr>
-                            <tr><td class="ps-4 border-end"><span style="font-weight: 700; font-size: 1.1rem; color: #1a1a1a; display: block;">1.8rem</span><span class="text-muted small">28.8px</span></td><td><p style="margin: 0; line-height: 1.1; white-space: nowrap; color: #222; font-family: 'Playfair Display', serif; font-weight: 400; font-size: 1.8rem;">Tipografía Editorial</p></td></tr>
-                            <tr><td class="ps-4 border-end"><span style="font-weight: 700; font-size: 1.1rem; color: #1a1a1a; display: block;">1.6rem</span><span class="text-muted small">25.6px</span></td><td><p style="margin: 0; line-height: 1.1; white-space: nowrap; color: #222; font-family: 'Playfair Display', serif; font-weight: 400; font-size: 1.6rem;">Tipografía Editorial</p></td></tr>
-                            <tr><td class="ps-4 border-end"><span style="font-weight: 700; font-size: 1.1rem; color: #1a1a1a; display: block;">1.4rem</span><span class="text-muted small">22.4px</span></td><td><p style="margin: 0; line-height: 1.1; white-space: nowrap; color: #222; font-family: 'Playfair Display', serif; font-weight: 400; font-size: 1.4rem;">Tipografía Editorial</p></td></tr>
-                            <tr><td class="ps-4 border-end"><span style="font-weight: 700; font-size: 1.1rem; color: #1a1a1a; display: block;">1.2rem</span><span class="text-muted small">19.2px</span></td><td><p style="margin: 0; line-height: 1.1; white-space: nowrap; color: #222; font-family: 'Playfair Display', serif; font-weight: 400; font-size: 1.2rem;">Tipografía Editorial</p></td></tr>
-                            <tr><td class="ps-4 border-end"><span style="font-weight: 700; font-size: 1.1rem; color: #1a1a1a; display: block;">1rem</span><span class="text-muted small">16px</span></td><td><p style="margin: 0; line-height: 1.1; white-space: nowrap; color: #222; font-family: 'Playfair Display', serif; font-weight: 400; font-size: 1rem;">Tipografía Editorial (Base)</p></td></tr>
-                            <tr><td class="ps-4 border-end"><span style="font-weight: 700; font-size: 1.1rem; color: #1a1a1a; display: block;">0.8rem</span><span class="text-muted small">12.8px</span></td><td><p style="margin: 0; line-height: 1.1; white-space: nowrap; color: #222; font-family: 'Playfair Display', serif; font-weight: 400; font-size: 0.8rem;">Tipografía Editorial (Small)</p></td></tr>
+                            <tr><td class="ps-4 border-end"><span class="unav-label-rem">5rem</span><span class="text-muted small">80px</span></td><td><p class="unav-preview-text unav-font-secondary-playfair unav-weight-regular unav-text-500">Tipografía Editorial</p></td></tr>
+                            <tr><td class="ps-4 border-end"><span class="unav-label-rem">4rem</span><span class="text-muted small">64px</span></td><td><p class="unav-preview-text unav-font-secondary-playfair unav-weight-regular unav-text-400">Tipografía Editorial</p></td></tr>
+                            <tr><td class="ps-4 border-end"><span class="unav-label-rem">3rem</span><span class="text-muted small">48px</span></td><td><p class="unav-preview-text unav-font-secondary-playfair unav-weight-regular unav-text-300">Tipografía Editorial</p></td></tr>
+                            <tr><td class="ps-4 border-end"><span class="unav-label-rem">2.5rem</span><span class="text-muted small">40px</span></td><td><p class="unav-preview-text unav-font-secondary-playfair unav-weight-regular unav-text-250">Tipografía Editorial</p></td></tr>
+                            <tr><td class="ps-4 border-end"><span class="unav-label-rem">2rem</span><span class="text-muted small">32px</span></td><td><p class="unav-preview-text unav-font-secondary-playfair unav-weight-regular unav-text-200">Tipografía Editorial</p></td></tr>
+                            <tr><td class="ps-4 border-end"><span class="unav-label-rem">1.75rem</span><span class="text-muted small">28px</span></td><td><p class="unav-preview-text unav-font-secondary-playfair unav-weight-regular unav-text-175">Tipografía Editorial</p></td></tr>
+                            <tr><td class="ps-4 border-end"><span class="unav-label-rem">1.5rem</span><span class="text-muted small">24px</span></td><td><p class="unav-preview-text unav-font-secondary-playfair unav-weight-regular unav-text-150">Tipografía Editorial</p></td></tr>
+                            <tr><td class="ps-4 border-end"><span class="unav-label-rem">1.25rem</span><span class="text-muted small">20px</span></td><td><p class="unav-preview-text unav-font-secondary-playfair unav-weight-regular unav-text-125">Tipografía Editorial</p></td></tr>
+                            <tr><td class="ps-4 border-end"><span class="unav-label-rem">1rem</span><span class="text-muted small">16px</span></td><td><p class="unav-preview-text unav-font-secondary-playfair unav-weight-regular unav-text-100">Tipografía Editorial (Base)</p></td></tr>
+                            <tr><td class="ps-4 border-end"><span class="unav-label-rem">0.75rem</span><span class="text-muted small">12px</span></td><td><p class="unav-preview-text unav-font-secondary-playfair unav-weight-regular unav-text-075">Tipografía Editorial</p></td></tr>
+                            <tr><td class="ps-4 border-end"><span class="unav-label-rem">0.5rem</span><span class="text-muted small">8px</span></td><td><p class="unav-preview-text unav-font-secondary-playfair unav-weight-regular unav-text-050">Tipografía Editorial</p></td></tr>
                         </tbody>
                     </table>
                 </div>
             </section>
 
+            <!-- PLAYFAIR DISPLAY BOLD 700 -->
             <section id="playfair-bold-700" class="unav-font-block card shadow-sm mb-5 border-0">
                 <div class="card-header bg-white py-3 border-bottom-0 d-flex justify-content-between align-items-center">
-                    <h3 class="h5 mb-0 fw-bold" style="font-family: 'Playfair Display', serif; font-weight: 700;">Playfair Display - Bold</h3>
+                    <h3 class="h5 mb-0 unav-font-secondary-playfair unav-weight-bold">Playfair Display - Bold</h3>
                     <span class="badge rounded-pill bg-light text-dark border fw-bold">WEIGHT: 700</span>
                 </div>
                 <div class="table-responsive">
                     <table class="table align-middle mb-0 unav-table">
-                        <thead class="table-light"><tr><th class="ps-4" width="160" style="font-size: 0.75rem; text-transform: uppercase; letter-spacing: 1px; color: #888; padding: 1rem 1.5rem;">Métrica</th><th>Previsualización</th></tr></thead>
+                        <thead class="table-light"><tr><th class="ps-4" width="160">Métrica</th><th>Previsualización (Usando clases CSS)</th></tr></thead>
                         <tbody>
-                            <tr><td class="ps-4 border-end"><span style="font-weight: 700; font-size: 1.1rem; color: #1a1a1a; display: block;">4rem</span><span class="text-muted small">64px</span></td><td><p style="margin: 0; line-height: 1.1; white-space: nowrap; color: #222; font-family: 'Playfair Display', serif; font-weight: 700; font-size: 4rem;">Tipografía Editorial</p></td></tr>
-                            <tr><td class="ps-4 border-end"><span style="font-weight: 700; font-size: 1.1rem; color: #1a1a1a; display: block;">3.5rem</span><span class="text-muted small">56px</span></td><td><p style="margin: 0; line-height: 1.1; white-space: nowrap; color: #222; font-family: 'Playfair Display', serif; font-weight: 700; font-size: 3.5rem;">Tipografía Editorial</p></td></tr>
-                            <tr><td class="ps-4 border-end"><span style="font-weight: 700; font-size: 1.1rem; color: #1a1a1a; display: block;">3rem</span><span class="text-muted small">48px</span></td><td><p style="margin: 0; line-height: 1.1; white-space: nowrap; color: #222; font-family: 'Playfair Display', serif; font-weight: 700; font-size: 3rem;">Tipografía Editorial</p></td></tr>
-                            <tr><td class="ps-4 border-end"><span style="font-weight: 700; font-size: 1.1rem; color: #1a1a1a; display: block;">2.2rem</span><span class="text-muted small">35.2px</span></td><td><p style="margin: 0; line-height: 1.1; white-space: nowrap; color: #222; font-family: 'Playfair Display', serif; font-weight: 700; font-size: 2.2rem;">Tipografía Editorial</p></td></tr>
-                            <tr><td class="ps-4 border-end"><span style="font-weight: 700; font-size: 1.1rem; color: #1a1a1a; display: block;">2rem</span><span class="text-muted small">32px</span></td><td><p style="margin: 0; line-height: 1.1; white-space: nowrap; color: #222; font-family: 'Playfair Display', serif; font-weight: 700; font-size: 2rem;">Tipografía Editorial</p></td></tr>
-                            <tr><td class="ps-4 border-end"><span style="font-weight: 700; font-size: 1.1rem; color: #1a1a1a; display: block;">1.8rem</span><span class="text-muted small">28.8px</span></td><td><p style="margin: 0; line-height: 1.1; white-space: nowrap; color: #222; font-family: 'Playfair Display', serif; font-weight: 700; font-size: 1.8rem;">Tipografía Editorial</p></td></tr>
-                            <tr><td class="ps-4 border-end"><span style="font-weight: 700; font-size: 1.1rem; color: #1a1a1a; display: block;">1.6rem</span><span class="text-muted small">25.6px</span></td><td><p style="margin: 0; line-height: 1.1; white-space: nowrap; color: #222; font-family: 'Playfair Display', serif; font-weight: 700; font-size: 1.6rem;">Tipografía Editorial</p></td></tr>
-                            <tr><td class="ps-4 border-end"><span style="font-weight: 700; font-size: 1.1rem; color: #1a1a1a; display: block;">1.4rem</span><span class="text-muted small">22.4px</span></td><td><p style="margin: 0; line-height: 1.1; white-space: nowrap; color: #222; font-family: 'Playfair Display', serif; font-weight: 700; font-size: 1.4rem;">Tipografía Editorial</p></td></tr>
-                            <tr><td class="ps-4 border-end"><span style="font-weight: 700; font-size: 1.1rem; color: #1a1a1a; display: block;">1.2rem</span><span class="text-muted small">19.2px</span></td><td><p style="margin: 0; line-height: 1.1; white-space: nowrap; color: #222; font-family: 'Playfair Display', serif; font-weight: 700; font-size: 1.2rem;">Tipografía Editorial</p></td></tr>
-                            <tr><td class="ps-4 border-end"><span style="font-weight: 700; font-size: 1.1rem; color: #1a1a1a; display: block;">1rem</span><span class="text-muted small">16px</span></td><td><p style="margin: 0; line-height: 1.1; white-space: nowrap; color: #222; font-family: 'Playfair Display', serif; font-weight: 700; font-size: 1rem;">Tipografía Editorial (Base)</p></td></tr>
-                            <tr><td class="ps-4 border-end"><span style="font-weight: 700; font-size: 1.1rem; color: #1a1a1a; display: block;">0.8rem</span><span class="text-muted small">12.8px</span></td><td><p style="margin: 0; line-height: 1.1; white-space: nowrap; color: #222; font-family: 'Playfair Display', serif; font-weight: 700; font-size: 0.8rem;">Tipografía Editorial (Small)</p></td></tr>
+                            <tr><td class="ps-4 border-end"><span class="unav-label-rem">5rem</span><span class="text-muted small">80px</span></td><td><p class="unav-preview-text unav-font-secondary-playfair unav-weight-bold unav-text-500">Tipografía Editorial</p></td></tr>
+                            <tr><td class="ps-4 border-end"><span class="unav-label-rem">4rem</span><span class="text-muted small">64px</span></td><td><p class="unav-preview-text unav-font-secondary-playfair unav-weight-bold unav-text-400">Tipografía Editorial</p></td></tr>
+                            <tr><td class="ps-4 border-end"><span class="unav-label-rem">3rem</span><span class="text-muted small">48px</span></td><td><p class="unav-preview-text unav-font-secondary-playfair unav-weight-bold unav-text-300">Tipografía Editorial</p></td></tr>
+                            <tr><td class="ps-4 border-end"><span class="unav-label-rem">2.5rem</span><span class="text-muted small">40px</span></td><td><p class="unav-preview-text unav-font-secondary-playfair unav-weight-bold unav-text-250">Tipografía Editorial</p></td></tr>
+                            <tr><td class="ps-4 border-end"><span class="unav-label-rem">2rem</span><span class="text-muted small">32px</span></td><td><p class="unav-preview-text unav-font-secondary-playfair unav-weight-bold unav-text-200">Tipografía Editorial</p></td></tr>
+                            <tr><td class="ps-4 border-end"><span class="unav-label-rem">1.75rem</span><span class="text-muted small">28px</span></td><td><p class="unav-preview-text unav-font-secondary-playfair unav-weight-bold unav-text-175">Tipografía Editorial</p></td></tr>
+                            <tr><td class="ps-4 border-end"><span class="unav-label-rem">1.5rem</span><span class="text-muted small">24px</span></td><td><p class="unav-preview-text unav-font-secondary-playfair unav-weight-bold unav-text-150">Tipografía Editorial</p></td></tr>
+                            <tr><td class="ps-4 border-end"><span class="unav-label-rem">1.25rem</span><span class="text-muted small">20px</span></td><td><p class="unav-preview-text unav-font-secondary-playfair unav-weight-bold unav-text-125">Tipografía Editorial</p></td></tr>
+                            <tr><td class="ps-4 border-end"><span class="unav-label-rem">1rem</span><span class="text-muted small">16px</span></td><td><p class="unav-preview-text unav-font-secondary-playfair unav-weight-bold unav-text-100">Tipografía Editorial (Base)</p></td></tr>
+                            <tr><td class="ps-4 border-end"><span class="unav-label-rem">0.75rem</span><span class="text-muted small">12px</span></td><td><p class="unav-preview-text unav-font-secondary-playfair unav-weight-bold unav-text-075">Tipografía Editorial</p></td></tr>
+                            <tr><td class="ps-4 border-end"><span class="unav-label-rem">0.5rem</span><span class="text-muted small">8px</span></td><td><p class="unav-preview-text unav-font-secondary-playfair unav-weight-bold unav-text-050">Tipografía Editorial</p></td></tr>
                         </tbody>
                     </table>
                 </div>
             </section>
 
+            <!-- ROBOTO SLAB 400 -->
             <section id="roboto-slab-regular-400" class="unav-font-block card shadow-sm mb-5 border-0">
                 <div class="card-header bg-white py-3 border-bottom-0 d-flex justify-content-between align-items-center">
-                    <h3 class="h5 mb-0 fw-bold" style="font-family: 'Roboto Slab', serif;">Roboto Slab - Regular</h3>
+                    <h3 class="h5 mb-0 unav-font-secondary-slab unav-weight-regular">Roboto Slab - Regular</h3>
                     <span class="badge rounded-pill bg-light text-dark border fw-bold">WEIGHT: 400</span>
                 </div>
                 <div class="table-responsive">
                     <table class="table align-middle mb-0 unav-table">
-                        <thead class="table-light"><tr><th class="ps-4" width="160" style="font-size: 0.75rem; text-transform: uppercase; letter-spacing: 1px; color: #888; padding: 1rem 1.5rem;">Métrica</th><th>Previsualización</th></tr></thead>
+                        <thead class="table-light"><tr><th class="ps-4" width="160">Métrica</th><th>Previsualización (Usando clases CSS)</th></tr></thead>
                         <tbody>
-                            <tr><td class="ps-4 border-end"><span style="font-weight: 700; font-size: 1.1rem; color: #1a1a1a; display: block;">4rem</span><span class="text-muted small">64px</span></td><td><p style="margin: 0; line-height: 1.1; white-space: nowrap; color: #222; font-family: 'Roboto Slab', serif; font-weight: 400; font-size: 4rem;">Tipografía Slab Serif</p></td></tr>
-                            <tr><td class="ps-4 border-end"><span style="font-weight: 700; font-size: 1.1rem; color: #1a1a1a; display: block;">3.5rem</span><span class="text-muted small">56px</span></td><td><p style="margin: 0; line-height: 1.1; white-space: nowrap; color: #222; font-family: 'Roboto Slab', serif; font-weight: 400; font-size: 3.5rem;">Tipografía Slab Serif</p></td></tr>
-                            <tr><td class="ps-4 border-end"><span style="font-weight: 700; font-size: 1.1rem; color: #1a1a1a; display: block;">3rem</span><span class="text-muted small">48px</span></td><td><p style="margin: 0; line-height: 1.1; white-space: nowrap; color: #222; font-family: 'Roboto Slab', serif; font-weight: 400; font-size: 3rem;">Tipografía Slab Serif</p></td></tr>
-                            <tr><td class="ps-4 border-end"><span style="font-weight: 700; font-size: 1.1rem; color: #1a1a1a; display: block;">2.2rem</span><span class="text-muted small">35.2px</span></td><td><p style="margin: 0; line-height: 1.1; white-space: nowrap; color: #222; font-family: 'Roboto Slab', serif; font-weight: 400; font-size: 2.2rem;">Tipografía Slab Serif</p></td></tr>
-                            <tr><td class="ps-4 border-end"><span style="font-weight: 700; font-size: 1.1rem; color: #1a1a1a; display: block;">2rem</span><span class="text-muted small">32px</span></td><td><p style="margin: 0; line-height: 1.1; white-space: nowrap; color: #222; font-family: 'Roboto Slab', serif; font-weight: 400; font-size: 2rem;">Tipografía Slab Serif</p></td></tr>
-                            <tr><td class="ps-4 border-end"><span style="font-weight: 700; font-size: 1.1rem; color: #1a1a1a; display: block;">1.8rem</span><span class="text-muted small">28.8px</span></td><td><p style="margin: 0; line-height: 1.1; white-space: nowrap; color: #222; font-family: 'Roboto Slab', serif; font-weight: 400; font-size: 1.8rem;">Tipografía Slab Serif</p></td></tr>
-                            <tr><td class="ps-4 border-end"><span style="font-weight: 700; font-size: 1.1rem; color: #1a1a1a; display: block;">1.6rem</span><span class="text-muted small">25.6px</span></td><td><p style="margin: 0; line-height: 1.1; white-space: nowrap; color: #222; font-family: 'Roboto Slab', serif; font-weight: 400; font-size: 1.6rem;">Tipografía Slab Serif</p></td></tr>
-                            <tr><td class="ps-4 border-end"><span style="font-weight: 700; font-size: 1.1rem; color: #1a1a1a; display: block;">1.4rem</span><span class="text-muted small">22.4px</span></td><td><p style="margin: 0; line-height: 1.1; white-space: nowrap; color: #222; font-family: 'Roboto Slab', serif; font-weight: 400; font-size: 1.4rem;">Tipografía Slab Serif</p></td></tr>
-                            <tr><td class="ps-4 border-end"><span style="font-weight: 700; font-size: 1.1rem; color: #1a1a1a; display: block;">1.2rem</span><span class="text-muted small">19.2px</span></td><td><p style="margin: 0; line-height: 1.1; white-space: nowrap; color: #222; font-family: 'Roboto Slab', serif; font-weight: 400; font-size: 1.2rem;">Tipografía Slab Serif</p></td></tr>
-                            <tr><td class="ps-4 border-end"><span style="font-weight: 700; font-size: 1.1rem; color: #1a1a1a; display: block;">1rem</span><span class="text-muted small">16px</span></td><td><p style="margin: 0; line-height: 1.1; white-space: nowrap; color: #222; font-family: 'Roboto Slab', serif; font-weight: 400; font-size: 1rem;">Tipografía Slab Serif (Base)</p></td></tr>
-                            <tr><td class="ps-4 border-end"><span style="font-weight: 700; font-size: 1.1rem; color: #1a1a1a; display: block;">0.8rem</span><span class="text-muted small">12.8px</span></td><td><p style="margin: 0; line-height: 1.1; white-space: nowrap; color: #222; font-family: 'Roboto Slab', serif; font-weight: 400; font-size: 0.8rem;">Tipografía Slab Serif (Small)</p></td></tr>
+                            <tr><td class="ps-4 border-end"><span class="unav-label-rem">5rem</span><span class="text-muted small">80px</span></td><td><p class="unav-preview-text unav-font-secondary-slab unav-weight-regular unav-text-500">Tipografía Slab Serif</p></td></tr>
+                            <tr><td class="ps-4 border-end"><span class="unav-label-rem">4rem</span><span class="text-muted small">64px</span></td><td><p class="unav-preview-text unav-font-secondary-slab unav-weight-regular unav-text-400">Tipografía Slab Serif</p></td></tr>
+                            <tr><td class="ps-4 border-end"><span class="unav-label-rem">3rem</span><span class="text-muted small">48px</span></td><td><p class="unav-preview-text unav-font-secondary-slab unav-weight-regular unav-text-300">Tipografía Slab Serif</p></td></tr>
+                            <tr><td class="ps-4 border-end"><span class="unav-label-rem">2.5rem</span><span class="text-muted small">40px</span></td><td><p class="unav-preview-text unav-font-secondary-slab unav-weight-regular unav-text-250">Tipografía Slab Serif</p></td></tr>
+                            <tr><td class="ps-4 border-end"><span class="unav-label-rem">2rem</span><span class="text-muted small">32px</span></td><td><p class="unav-preview-text unav-font-secondary-slab unav-weight-regular unav-text-200">Tipografía Slab Serif</p></td></tr>
+                            <tr><td class="ps-4 border-end"><span class="unav-label-rem">1.75rem</span><span class="text-muted small">28px</span></td><td><p class="unav-preview-text unav-font-secondary-slab unav-weight-regular unav-text-175">Tipografía Slab Serif</p></td></tr>
+                            <tr><td class="ps-4 border-end"><span class="unav-label-rem">1.5rem</span><span class="text-muted small">24px</span></td><td><p class="unav-preview-text unav-font-secondary-slab unav-weight-regular unav-text-150">Tipografía Slab Serif</p></td></tr>
+                            <tr><td class="ps-4 border-end"><span class="unav-label-rem">1.25rem</span><span class="text-muted small">20px</span></td><td><p class="unav-preview-text unav-font-secondary-slab unav-weight-regular unav-text-125">Tipografía Slab Serif</p></td></tr>
+                            <tr><td class="ps-4 border-end"><span class="unav-label-rem">1rem</span><span class="text-muted small">16px</span></td><td><p class="unav-preview-text unav-font-secondary-slab unav-weight-regular unav-text-100">Tipografía Slab Serif (Base)</p></td></tr>
+                            <tr><td class="ps-4 border-end"><span class="unav-label-rem">0.75rem</span><span class="text-muted small">12px</span></td><td><p class="unav-preview-text unav-font-secondary-slab unav-weight-regular unav-text-075">Tipografía Slab Serif</p></td></tr>
+                            <tr><td class="ps-4 border-end"><span class="unav-label-rem">0.5rem</span><span class="text-muted small">8px</span></td><td><p class="unav-preview-text unav-font-secondary-slab unav-weight-regular unav-text-050">Tipografía Slab Serif</p></td></tr>
                         </tbody>
                     </table>
                 </div>
             </section>
 
+            <!-- ROBOTO SLAB BOLD 700 -->
             <section id="roboto-slab-bold-700" class="unav-font-block card shadow-sm mb-5 border-0">
                 <div class="card-header bg-white py-3 border-bottom-0 d-flex justify-content-between align-items-center">
-                    <h3 class="h5 mb-0 fw-bold" style="font-family: 'Roboto Slab', serif; font-weight: 700;">Roboto Slab - Bold</h3>
+                    <h3 class="h5 mb-0 unav-font-secondary-slab unav-weight-bold">Roboto Slab - Bold</h3>
                     <span class="badge rounded-pill bg-light text-dark border fw-bold">WEIGHT: 700</span>
                 </div>
                 <div class="table-responsive">
                     <table class="table align-middle mb-0 unav-table">
-                        <thead class="table-light"><tr><th class="ps-4" width="160" style="font-size: 0.75rem; text-transform: uppercase; letter-spacing: 1px; color: #888; padding: 1rem 1.5rem;">Métrica</th><th>Previsualización</th></tr></thead>
+                        <thead class="table-light"><tr><th class="ps-4" width="160">Métrica</th><th>Previsualización (Usando clases CSS)</th></tr></thead>
                         <tbody>
-                            <tr><td class="ps-4 border-end"><span style="font-weight: 700; font-size: 1.1rem; color: #1a1a1a; display: block;">4rem</span><span class="text-muted small">64px</span></td><td><p style="margin: 0; line-height: 1.1; white-space: nowrap; color: #222; font-family: 'Roboto Slab', serif; font-weight: 700; font-size: 4rem;">Tipografía Slab Serif</p></td></tr>
-                            <tr><td class="ps-4 border-end"><span style="font-weight: 700; font-size: 1.1rem; color: #1a1a1a; display: block;">3.5rem</span><span class="text-muted small">56px</span></td><td><p style="margin: 0; line-height: 1.1; white-space: nowrap; color: #222; font-family: 'Roboto Slab', serif; font-weight: 700; font-size: 3.5rem;">Tipografía Slab Serif</p></td></tr>
-                            <tr><td class="ps-4 border-end"><span style="font-weight: 700; font-size: 1.1rem; color: #1a1a1a; display: block;">3rem</span><span class="text-muted small">48px</span></td><td><p style="margin: 0; line-height: 1.1; white-space: nowrap; color: #222; font-family: 'Roboto Slab', serif; font-weight: 700; font-size: 3rem;">Tipografía Slab Serif</p></td></tr>
-                            <tr><td class="ps-4 border-end"><span style="font-weight: 700; font-size: 1.1rem; color: #1a1a1a; display: block;">2.2rem</span><span class="text-muted small">35.2px</span></td><td><p style="margin: 0; line-height: 1.1; white-space: nowrap; color: #222; font-family: 'Roboto Slab', serif; font-weight: 700; font-size: 2.2rem;">Tipografía Slab Serif</p></td></tr>
-                            <tr><td class="ps-4 border-end"><span style="font-weight: 700; font-size: 1.1rem; color: #1a1a1a; display: block;">2rem</span><span class="text-muted small">32px</span></td><td><p style="margin: 0; line-height: 1.1; white-space: nowrap; color: #222; font-family: 'Roboto Slab', serif; font-weight: 700; font-size: 2rem;">Tipografía Slab Serif</p></td></tr>
-                            <tr><td class="ps-4 border-end"><span style="font-weight: 700; font-size: 1.1rem; color: #1a1a1a; display: block;">1.8rem</span><span class="text-muted small">28.8px</span></td><td><p style="margin: 0; line-height: 1.1; white-space: nowrap; color: #222; font-family: 'Roboto Slab', serif; font-weight: 700; font-size: 1.8rem;">Tipografía Slab Serif</p></td></tr>
-                            <tr><td class="ps-4 border-end"><span style="font-weight: 700; font-size: 1.1rem; color: #1a1a1a; display: block;">1.6rem</span><span class="text-muted small">25.6px</span></td><td><p style="margin: 0; line-height: 1.1; white-space: nowrap; color: #222; font-family: 'Roboto Slab', serif; font-weight: 700; font-size: 1.6rem;">Tipografía Slab Serif</p></td></tr>
-                            <tr><td class="ps-4 border-end"><span style="font-weight: 700; font-size: 1.1rem; color: #1a1a1a; display: block;">1.4rem</span><span class="text-muted small">22.4px</span></td><td><p style="margin: 0; line-height: 1.1; white-space: nowrap; color: #222; font-family: 'Roboto Slab', serif; font-weight: 700; font-size: 1.4rem;">Tipografía Slab Serif</p></td></tr>
-                            <tr><td class="ps-4 border-end"><span style="font-weight: 700; font-size: 1.1rem; color: #1a1a1a; display: block;">1.2rem</span><span class="text-muted small">19.2px</span></td><td><p style="margin: 0; line-height: 1.1; white-space: nowrap; color: #222; font-family: 'Roboto Slab', serif; font-weight: 700; font-size: 1.2rem;">Tipografía Slab Serif</p></td></tr>
-                            <tr><td class="ps-4 border-end"><span style="font-weight: 700; font-size: 1.1rem; color: #1a1a1a; display: block;">1rem</span><span class="text-muted small">16px</span></td><td><p style="margin: 0; line-height: 1.1; white-space: nowrap; color: #222; font-family: 'Roboto Slab', serif; font-weight: 700; font-size: 1rem;">Tipografía Slab Serif (Base)</p></td></tr>
-                            <tr><td class="ps-4 border-end"><span style="font-weight: 700; font-size: 1.1rem; color: #1a1a1a; display: block;">0.8rem</span><span class="text-muted small">12.8px</span></td><td><p style="margin: 0; line-height: 1.1; white-space: nowrap; color: #222; font-family: 'Roboto Slab', serif; font-weight: 700; font-size: 0.8rem;">Tipografía Slab Serif (Small)</p></td></tr>
+                            <tr><td class="ps-4 border-end"><span class="unav-label-rem">5rem</span><span class="text-muted small">80px</span></td><td><p class="unav-preview-text unav-font-secondary-slab unav-weight-bold unav-text-500">Tipografía Slab Serif</p></td></tr>
+                            <tr><td class="ps-4 border-end"><span class="unav-label-rem">4rem</span><span class="text-muted small">64px</span></td><td><p class="unav-preview-text unav-font-secondary-slab unav-weight-bold unav-text-400">Tipografía Slab Serif</p></td></tr>
+                            <tr><td class="ps-4 border-end"><span class="unav-label-rem">3rem</span><span class="text-muted small">48px</span></td><td><p class="unav-preview-text unav-font-secondary-slab unav-weight-bold unav-text-300">Tipografía Slab Serif</p></td></tr>
+                            <tr><td class="ps-4 border-end"><span class="unav-label-rem">2.5rem</span><span class="text-muted small">40px</span></td><td><p class="unav-preview-text unav-font-secondary-slab unav-weight-bold unav-text-250">Tipografía Slab Serif</p></td></tr>
+                            <tr><td class="ps-4 border-end"><span class="unav-label-rem">2rem</span><span class="text-muted small">32px</span></td><td><p class="unav-preview-text unav-font-secondary-slab unav-weight-bold unav-text-200">Tipografía Slab Serif</p></td></tr>
+                            <tr><td class="ps-4 border-end"><span class="unav-label-rem">1.75rem</span><span class="text-muted small">28px</span></td><td><p class="unav-preview-text unav-font-secondary-slab unav-weight-bold unav-text-175">Tipografía Slab Serif</p></td></tr>
+                            <tr><td class="ps-4 border-end"><span class="unav-label-rem">1.5rem</span><span class="text-muted small">24px</span></td><td><p class="unav-preview-text unav-font-secondary-slab unav-weight-bold unav-text-150">Tipografía Slab Serif</p></td></tr>
+                            <tr><td class="ps-4 border-end"><span class="unav-label-rem">1.25rem</span><span class="text-muted small">20px</span></td><td><p class="unav-preview-text unav-font-secondary-slab unav-weight-bold unav-text-125">Tipografía Slab Serif</p></td></tr>
+                            <tr><td class="ps-4 border-end"><span class="unav-label-rem">1rem</span><span class="text-muted small">16px</span></td><td><p class="unav-preview-text unav-font-secondary-slab unav-weight-bold unav-text-100">Tipografía Slab Serif (Base)</p></td></tr>
+                            <tr><td class="ps-4 border-end"><span class="unav-label-rem">0.75rem</span><span class="text-muted small">12px</span></td><td><p class="unav-preview-text unav-font-secondary-slab unav-weight-bold unav-text-075">Tipografía Slab Serif</p></td></tr>
+                            <tr><td class="ps-4 border-end"><span class="unav-label-rem">0.5rem</span><span class="text-muted small">8px</span></td><td><p class="unav-preview-text unav-font-secondary-slab unav-weight-bold unav-text-050">Tipografía Slab Serif</p></td></tr>
                         </tbody>
                     </table>
                 </div>
             </section>
 
+            <!-- DM SERIF TEXT 400 -->
             <section id="dm-serif-regular-400" class="unav-font-block card shadow-sm mb-5 border-0">
                 <div class="card-header bg-white py-3 border-bottom-0 d-flex justify-content-between align-items-center">
-                    <h3 class="h5 mb-0 fw-bold" style="font-family: 'DM Serif Text', serif;">DM Serif Text - Regular</h3>
+                    <h3 class="h5 mb-0 unav-font-secondary-dm unav-weight-regular">DM Serif Text - Regular</h3>
                     <span class="badge rounded-pill bg-light text-dark border fw-bold">WEIGHT: 400</span>
                 </div>
                 <div class="table-responsive">
                     <table class="table align-middle mb-0 unav-table">
-                        <thead class="table-light"><tr><th class="ps-4" width="160" style="font-size: 0.75rem; text-transform: uppercase; letter-spacing: 1px; color: #888; padding: 1rem 1.5rem;">Métrica</th><th>Previsualización</th></tr></thead>
+                        <thead class="table-light"><tr><th class="ps-4" width="160">Métrica</th><th>Previsualización (Usando clases CSS)</th></tr></thead>
                         <tbody>
-                            <tr><td class="ps-4 border-end"><span style="font-weight: 700; font-size: 1.1rem; color: #1a1a1a; display: block;">4rem</span><span class="text-muted small">64px</span></td><td><p style="margin: 0; line-height: 1.1; white-space: nowrap; color: #222; font-family: 'DM Serif Text', serif; font-weight: 400; font-size: 4rem;">Tipografía DM Serif</p></td></tr>
-                            <tr><td class="ps-4 border-end"><span style="font-weight: 700; font-size: 1.1rem; color: #1a1a1a; display: block;">3.5rem</span><span class="text-muted small">56px</span></td><td><p style="margin: 0; line-height: 1.1; white-space: nowrap; color: #222; font-family: 'DM Serif Text', serif; font-weight: 400; font-size: 3.5rem;">Tipografía DM Serif</p></td></tr>
-                            <tr><td class="ps-4 border-end"><span style="font-weight: 700; font-size: 1.1rem; color: #1a1a1a; display: block;">3rem</span><span class="text-muted small">48px</span></td><td><p style="margin: 0; line-height: 1.1; white-space: nowrap; color: #222; font-family: 'DM Serif Text', serif; font-weight: 400; font-size: 3rem;">Tipografía DM Serif</p></td></tr>
-                            <tr><td class="ps-4 border-end"><span style="font-weight: 700; font-size: 1.1rem; color: #1a1a1a; display: block;">2.2rem</span><span class="text-muted small">35.2px</span></td><td><p style="margin: 0; line-height: 1.1; white-space: nowrap; color: #222; font-family: 'DM Serif Text', serif; font-weight: 400; font-size: 2.2rem;">Tipografía DM Serif</p></td></tr>
-                            <tr><td class="ps-4 border-end"><span style="font-weight: 700; font-size: 1.1rem; color: #1a1a1a; display: block;">2rem</span><span class="text-muted small">32px</span></td><td><p style="margin: 0; line-height: 1.1; white-space: nowrap; color: #222; font-family: 'DM Serif Text', serif; font-weight: 400; font-size: 2rem;">Tipografía DM Serif</p></td></tr>
-                            <tr><td class="ps-4 border-end"><span style="font-weight: 700; font-size: 1.1rem; color: #1a1a1a; display: block;">1.8rem</span><span class="text-muted small">28.8px</span></td><td><p style="margin: 0; line-height: 1.1; white-space: nowrap; color: #222; font-family: 'DM Serif Text', serif; font-weight: 400; font-size: 1.8rem;">Tipografía DM Serif</p></td></tr>
-                            <tr><td class="ps-4 border-end"><span style="font-weight: 700; font-size: 1.1rem; color: #1a1a1a; display: block;">1.6rem</span><span class="text-muted small">25.6px</span></td><td><p style="margin: 0; line-height: 1.1; white-space: nowrap; color: #222; font-family: 'DM Serif Text', serif; font-weight: 400; font-size: 1.6rem;">Tipografía DM Serif</p></td></tr>
-                            <tr><td class="ps-4 border-end"><span style="font-weight: 700; font-size: 1.1rem; color: #1a1a1a; display: block;">1.4rem</span><span class="text-muted small">22.4px</span></td><td><p style="margin: 0; line-height: 1.1; white-space: nowrap; color: #222; font-family: 'DM Serif Text', serif; font-weight: 400; font-size: 1.4rem;">Tipografía DM Serif</p></td></tr>
-                            <tr><td class="ps-4 border-end"><span style="font-weight: 700; font-size: 1.1rem; color: #1a1a1a; display: block;">1.2rem</span><span class="text-muted small">19.2px</span></td><td><p style="margin: 0; line-height: 1.1; white-space: nowrap; color: #222; font-family: 'DM Serif Text', serif; font-weight: 400; font-size: 1.2rem;">Tipografía DM Serif</p></td></tr>
-                            <tr><td class="ps-4 border-end"><span style="font-weight: 700; font-size: 1.1rem; color: #1a1a1a; display: block;">1rem</span><span class="text-muted small">16px</span></td><td><p style="margin: 0; line-height: 1.1; white-space: nowrap; color: #222; font-family: 'DM Serif Text', serif; font-weight: 400; font-size: 1rem;">Tipografía DM Serif (Base)</p></td></tr>
-                            <tr><td class="ps-4 border-end"><span style="font-weight: 700; font-size: 1.1rem; color: #1a1a1a; display: block;">0.8rem</span><span class="text-muted small">12.8px</span></td><td><p style="margin: 0; line-height: 1.1; white-space: nowrap; color: #222; font-family: 'DM Serif Text', serif; font-weight: 400; font-size: 0.8rem;">Tipografía DM Serif (Small)</p></td></tr>
+                            <tr><td class="ps-4 border-end"><span class="unav-label-rem">5rem</span><span class="text-muted small">80px</span></td><td><p class="unav-preview-text unav-font-secondary-dm unav-weight-regular unav-text-500">Tipografía DM Serif</p></td></tr>
+                            <tr><td class="ps-4 border-end"><span class="unav-label-rem">4rem</span><span class="text-muted small">64px</span></td><td><p class="unav-preview-text unav-font-secondary-dm unav-weight-regular unav-text-400">Tipografía DM Serif</p></td></tr>
+                            <tr><td class="ps-4 border-end"><span class="unav-label-rem">3rem</span><span class="text-muted small">48px</span></td><td><p class="unav-preview-text unav-font-secondary-dm unav-weight-regular unav-text-300">Tipografía DM Serif</p></td></tr>
+                            <tr><td class="ps-4 border-end"><span class="unav-label-rem">2.5rem</span><span class="text-muted small">40px</span></td><td><p class="unav-preview-text unav-font-secondary-dm unav-weight-regular unav-text-250">Tipografía DM Serif</p></td></tr>
+                            <tr><td class="ps-4 border-end"><span class="unav-label-rem">2rem</span><span class="text-muted small">32px</span></td><td><p class="unav-preview-text unav-font-secondary-dm unav-weight-regular unav-text-200">Tipografía DM Serif</p></td></tr>
+                            <tr><td class="ps-4 border-end"><span class="unav-label-rem">1.75rem</span><span class="text-muted small">28px</span></td><td><p class="unav-preview-text unav-font-secondary-dm unav-weight-regular unav-text-175">Tipografía DM Serif</p></td></tr>
+                            <tr><td class="ps-4 border-end"><span class="unav-label-rem">1.5rem</span><span class="text-muted small">24px</span></td><td><p class="unav-preview-text unav-font-secondary-dm unav-weight-regular unav-text-150">Tipografía DM Serif</p></td></tr>
+                            <tr><td class="ps-4 border-end"><span class="unav-label-rem">1.25rem</span><span class="text-muted small">20px</span></td><td><p class="unav-preview-text unav-font-secondary-dm unav-weight-regular unav-text-125">Tipografía DM Serif</p></td></tr>
+                            <tr><td class="ps-4 border-end"><span class="unav-label-rem">1rem</span><span class="text-muted small">16px</span></td><td><p class="unav-preview-text unav-font-secondary-dm unav-weight-regular unav-text-100">Tipografía DM Serif (Base)</p></td></tr>
+                            <tr><td class="ps-4 border-end"><span class="unav-label-rem">0.75rem</span><span class="text-muted small">12px</span></td><td><p class="unav-preview-text unav-font-secondary-dm unav-weight-regular unav-text-075">Tipografía DM Serif</p></td></tr>
+                            <tr><td class="ps-4 border-end"><span class="unav-label-rem">0.5rem</span><span class="text-muted small">8px</span></td><td><p class="unav-preview-text unav-font-secondary-dm unav-weight-regular unav-text-050">Tipografía DM Serif</p></td></tr>
                         </tbody>
                     </table>
                 </div>
@@ -316,6 +361,7 @@
         </div>
     </main>
 
+    <!-- Bootstrap JS -->
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bundle.min.js"></script>
 </body>
 </html>

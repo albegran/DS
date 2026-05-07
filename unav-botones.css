@@ -1,0 +1,218 @@
+/* ==========================================
+   COMPONENTE: BOTONES UNAV
+   ========================================== */
+
+/* 1. CLASE BASE (Estructura y Comportamiento) */
+.unav-boton {
+    font-family: var(--unav-fontFamilyPrimaryCondensed);
+    font-weight: var(--unav-fontWeightBold);
+    font-size: var(--unav-botonFontSize);
+    text-transform: uppercase;
+    letter-spacing: var(--unav-trackingWide);
+    
+    padding: var(--unav-botonPaddingY) var(--unav-botonPaddingX);
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    gap: var(--unav-botonGap);
+    
+    text-decoration: none;
+    transition: var(--unav-transitionBase);
+    cursor: pointer;
+    border: 1px solid transparent; 
+}
+
+.unav-boton .unav-botonIcono {
+    font-size: var(--unav-iconSizeMd);
+    color: var(--unav-botonIcon, inherit); 
+    transition: var(--unav-transitionBase);
+}
+
+.unav-boton:hover .unav-botonIcono {
+    color: inherit;
+}
+
+/* =========================================
+   2. PIEL: BOTÓN PRIMARIO
+   ========================================= */
+.unav-botonPrimario {
+    width: 100%; 
+    
+    --unav-botonBg: #ffffff;
+    --unav-botonText: var(--unav-black-500);
+    --unav-botonBorder: var(--unav-black-500);
+    --unav-botonIcon: inherit;
+    
+    --unav-botonHoverBg: var(--unav-black-500);
+    --unav-botonHoverText: #ffffff;
+    --unav-botonHoverBorder: var(--unav-black-500);
+
+    background-color: var(--unav-botonBg);
+    color: var(--unav-botonText);
+    outline: 1px solid var(--unav-botonBorder);
+}
+
+.unav-botonPrimario:hover {
+    background-color: var(--unav-botonHoverBg);
+    color: var(--unav-botonHoverText);
+    outline-color: var(--unav-botonHoverBorder);
+}
+
+/* =========================================
+   3. PIEL: BOTÓN SECUNDARIO (Outlined)
+   ========================================= */
+.unav-botonSecundario {
+    font-size: var(--unav-botonSecundarioFontSize);
+    letter-spacing: var(--unav-trackingMedium);
+    padding: var(--unav-botonSecundarioPaddingY) var(--unav-botonSecundarioPaddingX);
+    border-radius: var(--unav-botonSecundarioRadius);
+    width: fit-content; 
+    
+    --unav-botonColorSource: var(--unav-black-800); 
+    --unav-botonTextHover: #ffffff;
+    
+    background-color: transparent;
+    color: var(--unav-botonColorSource);
+    border: var(--unav-botonSecundarioBorderWidth) solid var(--unav-botonColorSource);
+    outline: none; 
+}
+
+.unav-botonSecundario .unav-botonIcono,
+.unav-botonSecundarioInverso .unav-botonIcono {
+    font-size: var(--unav-iconSizeSm);
+}
+
+.unav-botonSecundario:hover {
+    background-color: var(--unav-botonColorSource);
+    color: var(--unav-botonTextHover);
+    box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1);
+}
+
+/* MODIFICADOR: BOTÓN SECUNDARIO BLANCO (Para fondos oscuros/banners) */
+.unav-botonSecundarioBlanco {
+    --unav-botonColorSource: #ffffff;
+    --unav-botonTextHover: var(--unav-black-800);
+}
+
+/* =========================================
+   4. PIEL: BOTÓN SECUNDARIO INVERSO (Solid)
+   ========================================= */
+.unav-botonSecundarioInverso {
+    font-size: var(--unav-botonSecundarioFontSize);
+    letter-spacing: var(--unav-trackingMedium);
+    padding: var(--unav-botonSecundarioPaddingY) var(--unav-botonSecundarioPaddingX);
+    border-radius: var(--unav-botonSecundarioRadius);
+    width: fit-content; 
+    
+    --unav-botonColorSource: var(--unav-black-800); 
+    --unav-botonTextHover: #ffffff;
+    
+    background-color: var(--unav-botonColorSource);
+    color: var(--unav-botonTextHover);
+    border: var(--unav-botonSecundarioBorderWidth) solid var(--unav-botonColorSource);
+    outline: none; 
+}
+
+.unav-botonSecundarioInverso .unav-botonIcono {
+    font-size: 1.1rem;
+}
+
+.unav-botonSecundarioInverso:hover {
+    background-color: transparent;
+    color: var(--unav-botonColorSource);
+    box-shadow: none;
+}
+
+
+/* ==========================================
+   COMPONENTE: ENLACE FLECHA (Botón Terciario)
+   ========================================== */
+.unav-enlaceFlecha {
+    --unav-enlaceColor: var(--unav-black-800);
+    
+    color: var(--unav-enlaceColor); 
+    text-decoration: none;
+    
+    font-family: var(--unav-fontFamilyPrimary);
+    font-weight: var(--unav-fontWeightBold);
+    font-size: 1.125rem; 
+    letter-spacing: 0.5px;
+    
+    /* Candado de legibilidad: fuerza Sentence Case anulando herencias de .unav-banner o similares */
+    text-transform: none !important;
+    
+    display: inline-flex;
+    align-items: center;
+    padding: 0.5rem 0;
+    white-space: nowrap;
+    transition: opacity var(--unav-transitionBase);
+}
+
+.unav-enlaceFlecha:hover { 
+    opacity: var(--unav-hoverOpacity); 
+}
+
+.unav-enlaceFlecha .unav-arrowWrapper {
+    position: relative;
+    display: inline-block;
+    width: 2.1875rem; 
+    height: 0.75rem; 
+    overflow: hidden;
+    margin-right: 0.625rem;
+    vertical-align: middle;
+}
+
+.unav-enlaceFlecha .unav-arrow, 
+.unav-enlaceFlecha .unav-arrowClone {
+    position: absolute;
+    top: 50%;
+    width: 1.875rem; 
+    height: var(--unav-botonSecundarioBorderWidth); 
+    background-color: currentColor; 
+}
+
+.unav-enlaceFlecha .unav-arrow { left: 0; transform: translateY(-50%); }
+.unav-enlaceFlecha .unav-arrowClone { left: -4.375rem; transform: translateY(-50%); }
+
+.unav-enlaceFlecha .unav-arrow::after, 
+.unav-enlaceFlecha .unav-arrowClone::after {
+    content: '';
+    position: absolute;
+    right: 0;
+    top: 50%;
+    width: 0.375rem;
+    height: 0.375rem;
+    border-top: var(--unav-botonSecundarioBorderWidth) solid currentColor;
+    border-right: var(--unav-botonSecundarioBorderWidth) solid currentColor;
+    transform: translateY(-50%) rotate(45deg);
+}
+
+@keyframes unav-arrowConveyor {
+    0% { transform: translateY(-50%) translateX(0); }
+    100% { transform: translateY(-50%) translateX(4.375rem); }
+}
+
+.unav-enlaceFlecha:hover .unav-arrow,
+.unav-enlaceFlecha:hover .unav-arrowClone {
+    animation: unav-arrowConveyor 1.2s linear infinite;
+}
+
+/* =========================================
+   5. VARIANTES Y ESTADOS UTILITARIOS GLOBALES
+   ========================================= */
+.unav-botonFit { width: fit-content !important; }
+.unav-botonHoverInnerBorder:hover { box-shadow: inset 0 0 0 1px #ffffff; }
+
+.unav-botonDisabled {
+    opacity: 0.4;
+    cursor: not-allowed;
+    pointer-events: none;
+    box-shadow: none !important;
+}
+
+.unav-botonPrimario.unav-botonDisabled {
+    --unav-botonBg: var(--unav-black-200) !important;
+    --unav-botonText: var(--unav-black-400) !important;
+    --unav-botonBorder: var(--unav-black-300) !important;
+    opacity: 1; 
+}

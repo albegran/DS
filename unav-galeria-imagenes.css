@@ -1,0 +1,221 @@
+/* ==========================================
+   COMPONENTE: GALERÍA DE IMÁGENES UNAV (OOCSS)
+   ========================================== */
+
+/* Envoltorio Base para Container Queries */
+.unav-galleryWrapper {
+    container-type: inline-size;
+    container-name: unavGallery;
+    width: 100%;
+}
+
+/* Contenedor Grid Principal */
+.unav-mediaGallery {
+    display: grid;
+    grid-template-columns: 1fr var(--unav-gallerySidebarWidth, 250px);
+    background-color: var(--unav-galleryBg, #000);
+    border-radius: 0 !important; /* Esquinas rectas estrictas */
+    overflow: hidden;
+    box-shadow: var(--unav-cardShadowBase);
+    width: 100%;
+    aspect-ratio: 16 / 9; 
+    min-height: var(--unav-galleryMinHeight, 400px);
+}
+
+/* ==========================================
+   1. ÁREA VISUALIZADORA (Stage)
+   ========================================== */
+.unav-galleryStage {
+    position: relative;
+    background-color: var(--unav-galleryStageBg, #1a1a1a);
+    overflow: hidden;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.unav-mainImageWrapper {
+    position: absolute;
+    inset: 0;
+    display: flex; /* Siempre flex para centrar contenido */
+    align-items: center;
+    justify-content: center;
+    padding: 1.25rem;
+    pointer-events: none; /* Inactivo por defecto */
+}
+
+.unav-mainImageWrapper.unav-isActive { 
+    pointer-events: auto; /* Interactivo solo si está activa */
+}
+
+.unav-mainImage { 
+    max-width: 100%; 
+    max-height: 100%; 
+    object-fit: contain; 
+}
+
+/* ==========================================
+   NUEVO: Pie de Foto (Roboto, 1rem, 400)
+   ========================================== */
+.unav-imageCaption {
+    position: absolute;
+    bottom: 0; left: 0; right: 0;
+    padding: 2.5rem 1.5rem 1.25rem; /* Aumentamos un poco el padding por el nuevo tamaño de fuente */
+    background: linear-gradient(transparent, rgba(0,0,0,0.85));
+    color: #ffffff;
+    font-family: var(--unav-fontFamilyPrimary); /* Roboto */
+    font-size: var(--unav-fontSize100); /* 1rem */
+    font-weight: var(--unav-fontWeightRegular); /* 400 */
+    pointer-events: none;
+}
+
+/* ==========================================
+   2. CONTROLES DE FLECHA UNIFICADOS
+   ========================================== */
+.unav-galleryControlBtn {
+    background-color: var(--unav-galleryControlBg, rgba(0,0,0,0.6));
+    border: 1px solid var(--unav-galleryBorderColor, rgba(255,255,255,0.2));
+    color: var(--unav-galleryControlColor, #fff);
+    width: var(--unav-galleryControlSize, 40px);
+    height: var(--unav-galleryControlSize, 40px);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+    box-shadow: var(--unav-cardShadowBase);
+    transition: background-color var(--unav-transitionBase), color var(--unav-transitionBase), border-color var(--unav-transitionBase);
+    border-radius: 0 !important;
+    z-index: 10;
+}
+
+.unav-galleryControlBtn i {
+    font-size: var(--unav-galleryControlIconSize, 1.2rem);
+}
+
+.unav-galleryControlBtn:hover {
+    background-color: var(--unav-galleryControlHoverBg, var(--unav-rojo-600));
+    color: var(--unav-galleryControlHoverColor, #fff);
+    border-color: var(--unav-galleryControlHoverBg, var(--unav-rojo-600));
+}
+
+.unav-galleryStageBtn {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    border: none;
+}
+.unav-galleryStageBtn.unav-prevBtn { left: 0; }
+.unav-galleryStageBtn.unav-nextBtn { right: 0; }
+
+.unav-galleryScrollVertical {
+    position: absolute;
+    bottom: 4rem; /* Subimos un poco para dar aire al contador */
+    right: 0.5rem;
+    display: flex;
+    flex-direction: column;
+    gap: var(--unav-galleryThumbGap, 4px);
+}
+
+.unav-galleryScrollHorizontal {
+    display: none;
+    position: absolute;
+    top: 50%;
+    right: 6.5rem;
+    transform: translateY(-50%);
+    gap: var(--unav-galleryThumbGap, 4px);
+}
+
+/* ==========================================
+   3. SIDEBAR DE MINIATURAS
+   ========================================== */
+.unav-gallerySidebar {
+    background-color: var(--unav-gallerySidebarBg, #000);
+    display: grid;
+    grid-template-rows: 1fr auto;
+    border-left: 1px solid var(--unav-galleryBorderColor, #333);
+    overflow: hidden;
+    min-height: 0;
+    position: relative;
+}
+
+.unav-thumbGrid {
+    overflow-y: auto;
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    grid-auto-rows: max-content;
+    gap: var(--unav-galleryThumbGap, 4px);
+    padding: 0.5rem;
+    align-content: start;
+    scrollbar-width: none;
+}
+.unav-thumbGrid::-webkit-scrollbar { display: none; }
+
+.unav-thumbItem {
+    position: relative;
+    width: 100%;
+    aspect-ratio: 1/1;
+    cursor: pointer;
+    opacity: 0.6;
+    transition: opacity var(--unav-transitionBase);
+    border: 2px solid transparent;
+    overflow: hidden;
+    display: block;
+}
+
+.unav-thumbItem img { 
+    position: absolute; top: 0; left: 0;
+    width: 100%; height: 100%; 
+    object-fit: cover; 
+}
+
+.unav-thumbItem:hover { opacity: 1; }
+.unav-thumbItem.unav-isSelected { 
+    opacity: 1; 
+    border-color: var(--unav-rojo-600);
+}
+
+.unav-galleryMeta {
+    padding: 1rem;
+    background-color: var(--unav-galleryMetaBg, #111);
+    border-top: 1px solid var(--unav-galleryBorderColor, #333);
+}
+
+/* =======================================================
+   4. LÓGICA RESPONSIVE (Container Queries)
+   ======================================================= */
+@container unavGallery (max-width: 850px) {
+    .unav-mediaGallery { grid-template-columns: 1fr 200px; }
+    .unav-thumbGrid { grid-template-columns: repeat(2, 1fr); }
+}
+
+@container unavGallery (max-width: 550px) {
+    .unav-mediaGallery { 
+        grid-template-columns: 1fr; 
+        grid-template-rows: auto 120px; 
+        aspect-ratio: auto;
+        height: 500px;
+    }
+    .unav-galleryStage { height: 100%; }
+    .unav-gallerySidebar { grid-template-rows: 1fr; grid-template-columns: 1fr auto; }
+    
+    .unav-thumbGrid { 
+        display: flex; flex-direction: row;
+        overflow-x: auto; overflow-y: hidden; 
+        height: 100%; align-items: center; 
+        gap: var(--unav-galleryThumbGap, 4px);
+        scroll-snap-type: x mandatory;
+    }
+    .unav-thumbItem { 
+        flex: 0 0 var(--unav-galleryThumbSizeMobile, 80px); 
+        width: var(--unav-galleryThumbSizeMobile, 80px);
+        height: var(--unav-galleryThumbSizeMobile, 80px);
+        scroll-snap-align: center;
+    }
+    .unav-galleryMeta { 
+        display: flex; align-items: center; border-top: none; 
+        border-left: 1px solid var(--unav-galleryBorderColor, #333); 
+    }
+    
+    .unav-galleryScrollVertical { display: none; }
+    .unav-galleryScrollHorizontal { display: flex; flex-direction: row; }
+}

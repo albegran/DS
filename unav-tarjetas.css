@@ -1,0 +1,123 @@
+/* ==========================================
+   COMPONENTE: TARJETAS UNIFICADAS (.unav-card)
+   ========================================== */
+
+/* 1. CLASE BASE MAESTRA */
+.unav-card {
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    height: 100%;
+    border-radius: var(--unav-cardBorderRadius, 12px);
+    background-color: var(--unav-cardBgBase, #ffffff);
+    border: 1px solid var(--unav-grey-200);
+    box-shadow: var(--unav-cardShadowBase);
+    /* Las transiciones, box-shadow en hover y opacidades 
+       se delegan a unav-movimiento.css (.unav-efectoElevacion y .unav-efectoEntradaOculto) */
+}
+
+/* 2. MODIFICADORES DE ESTRUCTURA */
+
+/* Tipo A: Con Icono Flotante Superior */
+.unav-cardFloating {
+    margin-top: calc(var(--unav-cardIconFloatingSize, 80px) / 2);
+    padding: var(--unav-cardPaddingFloating, 3.5rem 2rem 2.5rem 2rem);
+    height: calc(100% - calc(var(--unav-cardIconFloatingSize, 80px) / 2));
+}
+
+/* Tipo B/C: Estándar */
+.unav-cardSolid {
+    padding: var(--unav-cardPaddingBase, 2rem);
+}
+
+/* Tipo D: Con Imagen Superior (Media) */
+.unav-cardMedia {
+    padding: 0;
+    overflow: hidden; /* Importante para el zoom de la imagen */
+}
+
+/* 3. MODIFICADOR: MODO OSCURO */
+.unav-cardDark {
+    border: none;
+    color: #ffffff;
+}
+
+.unav-cardDark .unav-cardTitle { color: #ffffff !important; }
+.unav-cardDark .unav-cardText { color: rgba(255, 255, 255, 0.85); }
+.unav-cardDark .unav-link,
+.unav-cardDark .unav-botonSecundario,
+.unav-cardDark .unav-enlaceFlecha { color: #ffffff !important; border-color: #ffffff; }
+.unav-cardDark .unav-cardIconInner { background-color: rgba(255, 255, 255, 0.15) !important; color: #ffffff !important; }
+
+/* 4. ELEMENTOS INTERNOS */
+
+.unav-cardBody {
+    display: flex;
+    flex-direction: column;
+    flex-grow: 1;
+    padding: var(--unav-cardPaddingBase, 2rem);
+}
+
+/* Iconos */
+.unav-cardIconFloating {
+    position: absolute;
+    top: calc(var(--unav-cardIconFloatingSize, 80px) / -2);
+    width: var(--unav-cardIconFloatingSize, 80px);
+    height: var(--unav-cardIconFloatingSize, 80px);
+    border-radius: 50%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border: 6px solid var(--unav-cardBgBase, #ffffff); 
+    color: #ffffff;
+}
+.unav-cardIconFloating .material-symbols-outlined { font-size: var(--unav-iconSizeXl, 2rem) !important; }
+
+.unav-cardIconInner {
+    width: var(--unav-cardIconInnerSize, 64px);
+    height: var(--unav-cardIconInnerSize, 64px);
+    border-radius: var(--unav-cardBorderRadius, 12px);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-bottom: 1.5rem;
+}
+.unav-cardIconInner .material-symbols-outlined { font-size: var(--unav-iconSizeXl, 2rem) !important; }
+
+/* Imagen y Overlay */
+.unav-cardImageContainer {
+    position: relative; 
+    width: 100%; 
+    height: var(--unav-cardImageHeight, 220px); 
+    overflow: hidden;
+    background-color: var(--unav-grey-200);
+}
+.unav-cardImg {
+    width: 100%; height: 100%; object-fit: cover;
+}
+
+.unav-cardOverlay {
+    position: absolute; bottom: 0; left: 0; width: 100%; padding: 1.5rem; z-index: 2;
+    background: linear-gradient(to top, rgba(0,0,0,0.95) 0%, rgba(0,0,0,0) 100%);
+    color: #ffffff;
+}
+.unav-cardOverlay .unav-cardTitle { color: #ffffff !important; margin-bottom: 0; }
+
+/* Textos Generales */
+.unav-cardTags { display: flex; flex-wrap: wrap; gap: 0.5rem; margin-bottom: 1rem; }
+.unav-cardTitle { font-size: var(--unav-fontSize125); font-weight: var(--unav-fontWeightBold); color: var(--unav-black-800); margin-bottom: 0.75rem; line-height: 1.3; }
+.unav-cardText { font-size: var(--unav-fontSize100); color: var(--unav-grey-700); line-height: 1.6; margin-bottom: 1.5rem; flex-grow: 1; }
+.unav-cardAction { margin-top: auto; }
+
+/* 5. MODIFICADORES DE ALINEACIÓN */
+.unav-cardAlignLeft { text-align: left; }
+.unav-cardAlignLeft .unav-cardIconFloating { left: 2rem; }
+.unav-cardAlignLeft .unav-cardIconInner { margin-right: auto; }
+.unav-cardAlignLeft .unav-cardTags { justify-content: flex-start; }
+.unav-cardAlignLeft .unav-cardAction { text-align: left; justify-content: flex-start; }
+
+.unav-cardAlignCenter { text-align: center; }
+.unav-cardAlignCenter .unav-cardIconFloating { left: 50%; transform: translateX(-50%); }
+.unav-cardAlignCenter .unav-cardIconInner { margin-left: auto; margin-right: auto; }
+.unav-cardAlignCenter .unav-cardTags { justify-content: center; }
+.unav-cardAlignCenter .unav-cardAction { text-align: center; justify-content: center; display: flex; }

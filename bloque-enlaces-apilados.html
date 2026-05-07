@@ -5,239 +5,180 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Listado de Enlaces | Design System UNAV</title>
     
+    <!-- Dependencias Estructurales -->
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.1/font/bootstrap-icons.css">
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@100;300;400;500;700;900&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@24,400,0,0" />
     
-    <link rel="stylesheet" href="color.css">
-    <link rel="stylesheet" href="design-system.css">
+    <!-- Ecosistema Design System UNAV -->
+    <link rel="stylesheet" href="unav-color.css">
+    <link rel="stylesheet" href="unav-tipografia.css">
+    <link rel="stylesheet" href="unav-variables.css">
+    <link rel="stylesheet" href="unav-botones.css">
+    <link rel="stylesheet" href="unav-listado-enlaces.css"> <!-- Componente Aislado -->
 
     <style>
-        /* =========================================
-           COMPONENTE: unav-listItem (Estructural y Dinámico)
-           ========================================= */
-
-        .unav-listItem {
-            display: block;
-            width: 100%;
-            position: relative; /* Base para el pseudo-elemento y JavaScript */
-            box-sizing: border-box;
-            text-decoration: none;
-            color: #111111;
-            cursor: pointer;
-            transition: background-color 0.3s ease, color 0.3s ease;
-            
-            /* Estilos corporativos base */
-            margin-bottom: 2px; /* Espaciado entre elementos de la lista */
-            padding: 15px;
-            font-family: "Roboto", sans-serif;
-            font-size: 16px;
-            line-height: 21px;
-            letter-spacing: -0.05px;
-            background-color: #e3eaed;
-            
-            /* Aseguramos esquinas rectas corporativas */
-            border-radius: 0; 
-        }
-
-        .unav-listItem:hover {
-            background-color: #000000;
-            color: #ffffff;
-            text-decoration: none; 
-        }
-
-        .unav-itemText {
-            display: inline; /* Necesario para que JS lea los saltos de línea */
-            font-weight: 400; 
-        }
-
-        /* Clase temporal para medir dimensiones en Bold vía JS */
-        .unav-listItem.unav-measuringBold .unav-itemText {
-            font-weight: 600 !important;
-        }
-
-        .unav-listItem:hover .unav-itemText {
-            font-weight: 600;
-            text-decoration: none;
-        }
-
-        /* Subrayado controlado dinámicamente por JavaScript */
-        .unav-listItem::after {
-            content: '';
-            position: absolute;
-            height: 1px;
-            background-color: #ffffff;
-            
-            /* Variables CSS inyectadas vía JS (camelCase) */
-            left: var(--unav-lineLeft, 15px);
-            width: var(--unav-lineWidth, 0px);
-            bottom: var(--unav-lineBottom, 11px);
-            
-            opacity: 0;
-            transition: opacity 0.2s ease;
-        }
-
-        .unav-listItem:hover::after {
-            opacity: 1;
-        }
-
-        /* Estilos de la guía técnica */
-        .unav-tech-summary { border-left: 4px solid #005596; border-radius: 0; }
-        .unav-sectionTitle { 
-            color: #1f2937; 
-            font-weight: 700; 
-            margin-bottom: 2rem; 
-            border-bottom: 2px solid #eee; 
-            padding-bottom: 0.5rem; 
-            margin-top: 3rem; 
-        }
+        /* Estilos exclusivos para la visualización de esta guía */
+        html { scroll-behavior: smooth; background-color: var(--unav-grey-100); }
+        body { background-color: transparent; }
+        .unav-techSummary { border-left: 4px solid var(--unav-rojo-500); }
+        .unav-sectionTitle { scroll-margin-top: 6rem; }
     </style>
 </head>
 <body class="bg-light" itemscope itemtype="https://schema.org/WebPage">
 
+    <!-- Navbar Superior -->
     <nav class="navbar navbar-light bg-white border-bottom py-3 sticky-top">
-        <div class="container-lg">
-            <a href="indice.html" class="btn btn-outline-secondary btn-sm rounded-pill px-3 fw-bold">
-                <i class="bi bi-arrow-left me-1"></i> Volver al Índice
-            </a>
-            <span class="navbar-text fw-bold text-dark mb-0">Design System UNAV</span>
+        <div class="container-lg d-flex justify-content-between align-items-center">
+            <div itemscope itemtype="https://schema.org/WebPageElement">
+                <a itemprop="url" href="indice.html" class="unav-boton unav-botonSecundario" style="--unav-botonColorSource: var(--unav-grey-600);">
+                    <i class="bi bi-arrow-left unav-botonIcono" aria-hidden="true"></i>
+                    <span itemprop="name">Volver al Índice</span>
+                </a>
+            </div>
+            <span class="unav-font-primary unav-weight-regular unav-text-150 m-0" style="color: var(--unav-rojo-500);">
+                Design System UNAV
+            </span>
         </div>
     </nav>
 
     <main class="container-lg py-5" itemprop="mainContentOfPage">
         
+        <!-- Header Documentación -->
         <header class="text-center mb-5 border-bottom pb-4">
-            <h1 class="display-5 fw-bold mb-3" itemprop="name">Listado de Enlaces</h1>
-            <p class="lead text-muted" itemprop="description">Bloque estructural para la organización de navegación vertical con subrayado dinámico de precisión.</p>
-            
-            <div class="unav-tech-summary bg-white p-4 text-start mt-4 shadow-sm border mx-auto" style="max-width: 900px;">
-                <h2 class="h5 fw-bold mb-3 text-dark"><i class="bi bi-layers-half me-2"></i>Resumen Técnico y Funcional</h2>
-                <p class="small text-muted mb-4">
-                    Este bloque estructural define cómo se agrupan los átomos <code>.unav-listItem</code>. La clave del diseño es el margen inferior de <code>2px</code>, que crea una separación sutil pero clara. Se integra limpiamente en el grid de Bootstrap para generar bloques de enlaces en columnas sin necesidad de contenedores adicionales ni títulos. Incorpora el subrayado inteligente por JavaScript que abraza exclusivamente la última línea del texto.
-                </p>
-                <div class="row g-3 small">
+            <h1 class="unav-font-primary unav-weight-bold unav-text-300 text-dark mb-3" itemprop="name">Listado de Enlaces Apilados</h1>
+            <p class="unav-font-primary unav-weight-regular unav-text-125 text-muted m-0" itemprop="description">
+                Evolución del bloque de enlace clásico para formar listas accionables con espaciado estructural de 2px y su fondo histórico[cite: 18].
+            </p>
+
+            <!-- Análisis Funcional y Técnico -->
+            <div class="unav-techSummary bg-white p-4 text-start mt-5 rounded shadow-sm border mx-auto" style="max-width: 900px;">
+                <h2 class="unav-font-primary unav-weight-bold unav-text-150 text-dark mb-3">
+                    <i class="bi bi-gear-fill me-2" style="color: var(--unav-grey-400);"></i>Análisis Funcional y Técnico
+                </h2>
+                <div class="row g-4 unav-font-primary unav-weight-regular unav-text-100">
                     <div class="col-md-6">
-                        <ul class="list-unstyled mb-0">
-                            <li class="mb-2"><strong>Jerarquía:</strong> Molécula compuesta por átomos <code>.unav-listItem</code> adaptativos.</li>
-                            <li class="mb-2"><strong>Layout:</strong> Se apilan verticalmente dentro de columnas con altura dinámica.</li>
-                            <li><strong>SEO:</strong> Implementa <code>ItemList</code> para indexación de menús.</li>
+                        <h3 class="unav-font-primary unav-weight-bold unav-text-125 text-dark mb-3">Colorización y Agrupación</h3>
+                        <ul class="mb-0 text-muted ps-3">
+                            <li class="mb-2"><strong class="text-dark">Tokenización Histórica:</strong> Se ha preservado el fondo exacto <code>#e3eaed</code> como el token explícito <code>--unav-bloqueEnlaceBg</code> dentro del sistema de variables, protegiendo la identidad original[cite: 18, 19].</li>
+                            <li><strong class="text-dark">Agrupación Flexbox:</strong> El contenedor <code>.unav-listadoEnlaces</code> utiliza <code>gap: 2px</code> para crear la separación estructural limpia y consistente entre los bloques apilados[cite: 18].</li>
                         </ul>
                     </div>
-                    <div class="col-md-6 border-start ps-4">
-                        <ul class="list-unstyled mb-0">
-                            <li class="mb-2"><strong>Naming:</strong> Uso de camelCase para clases internas y variables JS.</li>
-                            <li class="mb-2"><strong>Accesibilidad:</strong> Hitbox completo del bloque para facilitar el clic.</li>
+                    <div class="col-md-6 border-start-md ps-md-4">
+                        <h3 class="unav-font-primary unav-weight-bold unav-text-125 text-dark mb-3">Especificaciones Técnicas</h3>
+                        <ul class="mb-0 text-muted ps-3">
+                            <li class="mb-2"><strong class="text-dark">Cálculo DOM (JS):</strong> Emplea <code>getClientRects()</code> para trazar el subrayado dinámico midiendo las dimensiones reales de la última línea de texto renderizada[cite: 19].</li>
+                            <li><strong class="text-dark">SEO Semántico:</strong> Los listados se envuelven en jerarquías <code>ItemList</code> para notificar a los crawlers sobre la relación contextual de los elementos[cite: 18].</li>
                         </ul>
                     </div>
                 </div>
             </div>
         </header>
 
-        <section class="bg-white p-4 p-md-5 shadow-sm border mb-5">
-            <h3 class="unav-sectionTitle mt-0">1. Listado Vertical Básico</h3>
-            <p class="small text-muted mb-4">Uso del bloque adaptándose al ancho de su columna (ejemplo en col-md-4).</p>
+        <!-- SECCIÓN 1: LISTADO BÁSICO -->
+        <section class="bg-white p-4 p-md-5 rounded shadow-sm border mb-5">
+            <h2 class="unav-font-primary unav-weight-bold unav-text-200 border-bottom pb-2 mb-4 text-dark mt-0">1. Listado Vertical Básico</h2>
+            <p class="text-muted mb-4">Uso del contenedor <code>.unav-listadoEnlaces</code> para el apilamiento y del color histórico <code>#e3eaed</code> por defecto.</p>
             
             <div class="row">
                 <div class="col-md-4">
-                    <div itemscope itemtype="https://schema.org/ItemList">
-                        <a itemprop="url" href="#" class="unav-listItem" itemscope itemtype="https://schema.org/ListItem">
+                    <div class="unav-listadoEnlaces" itemscope itemtype="https://schema.org/ItemList">
+                        <a itemprop="url" href="#" class="unav-bloqueEnlace" itemscope itemtype="https://schema.org/ListItem">
                             <meta itemprop="position" content="1">
-                            <span itemprop="name" class="unav-itemText">Admisión y Ayudas</span>
+                            <span itemprop="name" class="unav-bloqueEnlaceText">Admisión y Ayudas</span>
                         </a>
-                        <a itemprop="url" href="#" class="unav-listItem" itemscope itemtype="https://schema.org/ListItem">
+                        <a itemprop="url" href="#" class="unav-bloqueEnlace" itemscope itemtype="https://schema.org/ListItem">
                             <meta itemprop="position" content="2">
-                            <span itemprop="name" class="unav-itemText">Grados y Programas</span>
+                            <span itemprop="name" class="unav-bloqueEnlaceText">Grados y Programas</span>
                         </a>
-                        <a itemprop="url" href="#" class="unav-listItem" itemscope itemtype="https://schema.org/ListItem">
+                        <a itemprop="url" href="#" class="unav-bloqueEnlace" itemscope itemtype="https://schema.org/ListItem">
                             <meta itemprop="position" content="3">
-                            <span itemprop="name" class="unav-itemText">Másteres y Postgrado</span>
+                            <span itemprop="name" class="unav-bloqueEnlaceText">Másteres y Postgrado</span>
                         </a>
                     </div>
                 </div>
             </div>
         </section>
 
-        <section class="bg-white p-4 p-md-5 shadow-sm border mb-5">
-            <h3 class="unav-sectionTitle mt-0">2. Distribución en Grid (2 y 3 columnas)</h3>
-            <p class="small text-muted mb-4">Múltiples bloques de listas distribuidos directamente sobre el sistema de columnas.</p>
+        <!-- SECCIÓN 2: DISTRIBUCIÓN EN GRID -->
+        <section class="bg-white p-4 p-md-5 rounded shadow-sm border mb-5">
+            <h2 class="unav-font-primary unav-weight-bold unav-text-200 border-bottom pb-2 mb-4 text-dark mt-0">2. Distribución en Grid (Bootstrap)</h2>
+            <p class="text-muted mb-4">Múltiples bloques distribuidos sobre columnas.</p>
             
             <div class="row g-4 mb-5">
                 <div class="col-md-6">
-                    <div itemscope itemtype="https://schema.org/ItemList">
-                        <a itemprop="url" href="#" class="unav-listItem" itemscope itemtype="https://schema.org/ListItem">
+                    <div class="unav-listadoEnlaces" itemscope itemtype="https://schema.org/ItemList">
+                        <a itemprop="url" href="#" class="unav-bloqueEnlace" itemscope itemtype="https://schema.org/ListItem">
                             <meta itemprop="position" content="1">
-                            <span itemprop="name" class="unav-itemText">Facultad de Medicina</span>
+                            <span itemprop="name" class="unav-bloqueEnlaceText">Facultad de Medicina</span>
                         </a>
-                        <a itemprop="url" href="#" class="unav-listItem" itemscope itemtype="https://schema.org/ListItem">
+                        <a itemprop="url" href="#" class="unav-bloqueEnlace" itemscope itemtype="https://schema.org/ListItem">
                             <meta itemprop="position" content="2">
-                            <span itemprop="name" class="unav-itemText">Facultad de Enfermería</span>
+                            <span itemprop="name" class="unav-bloqueEnlaceText">Facultad de Enfermería</span>
                         </a>
                     </div>
                 </div>
                 <div class="col-md-6">
-                    <div itemscope itemtype="https://schema.org/ItemList">
-                        <a itemprop="url" href="#" class="unav-listItem" itemscope itemtype="https://schema.org/ListItem">
+                    <div class="unav-listadoEnlaces" itemscope itemtype="https://schema.org/ItemList">
+                        <a itemprop="url" href="#" class="unav-bloqueEnlace" itemscope itemtype="https://schema.org/ListItem">
                             <meta itemprop="position" content="1">
-                            <span itemprop="name" class="unav-itemText">Facultad de Filosofía y Letras</span>
+                            <span itemprop="name" class="unav-bloqueEnlaceText">Facultad de Filosofía y Letras</span>
                         </a>
-                        <a itemprop="url" href="#" class="unav-listItem" itemscope itemtype="https://schema.org/ListItem">
+                        <a itemprop="url" href="#" class="unav-bloqueEnlace" itemscope itemtype="https://schema.org/ListItem">
                             <meta itemprop="position" content="2">
-                            <span itemprop="name" class="unav-itemText">Facultad de Educación y Psicología</span>
+                            <span itemprop="name" class="unav-bloqueEnlaceText">Facultad de Educación y Psicología</span>
                         </a>
                     </div>
                 </div>
             </div>
 
-            <hr class="my-5 opacity-25">
-
             <div class="row g-3">
                 <div class="col-md-4">
-                    <div itemscope itemtype="https://schema.org/ItemList">
-                        <a itemprop="url" href="#" class="unav-listItem" itemscope itemtype="https://schema.org/ListItem">
+                    <div class="unav-listadoEnlaces" itemscope itemtype="https://schema.org/ItemList">
+                        <a itemprop="url" href="#" class="unav-bloqueEnlace" itemscope itemtype="https://schema.org/ListItem">
                             <meta itemprop="position" content="1">
-                            <span itemprop="name" class="unav-itemText">Escuela de Arquitectura</span>
+                            <span itemprop="name" class="unav-bloqueEnlaceText">Escuela de Arquitectura</span>
                         </a>
                     </div>
                 </div>
                 <div class="col-md-4">
-                    <div itemscope itemtype="https://schema.org/ItemList">
-                        <a itemprop="url" href="#" class="unav-listItem" itemscope itemtype="https://schema.org/ListItem">
+                    <div class="unav-listadoEnlaces" itemscope itemtype="https://schema.org/ItemList">
+                        <a itemprop="url" href="#" class="unav-bloqueEnlace" itemscope itemtype="https://schema.org/ListItem">
                             <meta itemprop="position" content="1">
-                            <span itemprop="name" class="unav-itemText">Tecnun - San Sebastián</span>
+                            <span itemprop="name" class="unav-bloqueEnlaceText">Tecnun - San Sebastián</span>
                         </a>
                     </div>
                 </div>
                 <div class="col-md-4">
-                    <div itemscope itemtype="https://schema.org/ItemList">
-                        <a itemprop="url" href="#" class="unav-listItem" itemscope itemtype="https://schema.org/ListItem">
+                    <div class="unav-listadoEnlaces" itemscope itemtype="https://schema.org/ItemList">
+                        <a itemprop="url" href="#" class="unav-bloqueEnlace" itemscope itemtype="https://schema.org/ListItem">
                             <meta itemprop="position" content="1">
-                            <span itemprop="name" class="unav-itemText">Museo Universidad de Navarra</span>
+                            <span itemprop="name" class="unav-bloqueEnlaceText">Museo Universidad de Navarra</span>
                         </a>
                     </div>
                 </div>
             </div>
         </section>
 
-        <section class="bg-white p-4 p-md-5 shadow-sm border mb-5">
-            <h3 class="unav-sectionTitle mt-0">3. Adaptación a Contenidos Multilínea</h3>
-            <p class="small text-muted mb-4">Demostración de cómo los bloques mantienen la consistencia visual de 2px de margen y trazan la línea de subrayado exactamente en el punto final del texto.</p>
+        <!-- SECCIÓN 3: MULTILÍNEA -->
+        <section class="bg-white p-4 p-md-5 rounded shadow-sm border mb-5">
+            <h2 class="unav-font-primary unav-weight-bold unav-text-200 border-bottom pb-2 mb-4 text-dark mt-0">3. Adaptación a Contenidos Multilínea</h2>
+            <p class="text-muted mb-4">Demostración del motor JS subrayando exclusivamente la última línea del texto[cite: 18].</p>
             
             <div class="row">
                 <div class="col-md-6">
-                    <div itemscope itemtype="https://schema.org/ItemList">
-                        <a itemprop="url" href="#" class="unav-listItem" itemscope itemtype="https://schema.org/ListItem">
+                    <div class="unav-listadoEnlaces" itemscope itemtype="https://schema.org/ItemList">
+                        <a itemprop="url" href="#" class="unav-bloqueEnlace" itemscope itemtype="https://schema.org/ListItem">
                             <meta itemprop="position" content="1">
-                            <span itemprop="name" class="unav-itemText">Grado en Farmacia</span>
+                            <span itemprop="name" class="unav-bloqueEnlaceText">Grado en Farmacia</span>
                         </a>
-                        <a itemprop="url" href="#" class="unav-listItem" itemscope itemtype="https://schema.org/ListItem">
+                        <a itemprop="url" href="#" class="unav-bloqueEnlace" itemscope itemtype="https://schema.org/ListItem">
                             <meta itemprop="position" content="2">
-                            <span itemprop="name" class="unav-itemText">Doble Grado en Farmacia y Nutrición Humana y Dietética. Una opción integral para tu futuro profesional y personal en el sector sanitario.</span>
+                            <span itemprop="name" class="unav-bloqueEnlaceText">Doble Grado en Farmacia y Nutrición Humana y Dietética. Una opción integral para tu futuro profesional y personal en el sector sanitario.</span>
                         </a>
-                        <a itemprop="url" href="#" class="unav-listItem" itemscope itemtype="https://schema.org/ListItem">
+                        <a itemprop="url" href="#" class="unav-bloqueEnlace" itemscope itemtype="https://schema.org/ListItem">
                             <meta itemprop="position" content="3">
-                            <span itemprop="name" class="unav-itemText">Grado en Nutrición</span>
+                            <span itemprop="name" class="unav-bloqueEnlaceText">Grado en Nutrición</span>
                         </a>
                     </div>
                 </div>
@@ -246,24 +187,26 @@
 
     </main>
 
-    <!-- Bootstrap Bundle JS -->
+    <!-- Bootstrap JS -->
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
 
-    <!-- Script Principal Componente: Bloque Enlace -->
+    <!-- Motor JS: Analizador Geométrico de Subrayado -->
     <script>
         document.addEventListener('DOMContentLoaded', () => {
-            const listItems = document.querySelectorAll('.unav-listItem');
+            const blockItems = document.querySelectorAll('.unav-bloqueEnlace');
 
             const calculateUnderline = (item) => {
-                const textNode = item.querySelector('.unav-itemText');
+                const textNode = item.querySelector('.unav-bloqueEnlaceText');
                 if (!textNode) return;
 
                 const isHovered = item.matches(':hover');
+                
+                // Forzamos temporalmente la clase para medir cajas en renderizado Bold[cite: 19]
                 if (!isHovered) {
                     item.classList.add('unav-measuringBold');
                 }
 
-                // Extrae los rectángulos cliente por cada línea
+                // Extrae los rectángulos de renderizado de texto (captura saltos de línea)
                 const rects = textNode.getClientRects();
                 
                 if (rects.length > 0) {
@@ -272,10 +215,9 @@
 
                     const leftPos = lastRect.left - containerRect.left;
                     const widthPixels = lastRect.width;
-                    
-                    const bottomPos = (containerRect.bottom - lastRect.bottom) - 4;
+                    const bottomPos = (containerRect.bottom - lastRect.bottom) - 4; // Ajuste visual
 
-                    // Formato camelCase en variables CSS inyectadas
+                    // Inyección en las variables CSS
                     item.style.setProperty('--unav-lineWidth', `${widthPixels}px`);
                     item.style.setProperty('--unav-lineLeft', `${leftPos}px`);
                     item.style.setProperty('--unav-lineBottom', `${bottomPos}px`);
@@ -286,20 +228,18 @@
                 }
             };
 
-            // Iniciar cálculos
-            listItems.forEach(item => calculateUnderline(item));
+            blockItems.forEach(item => calculateUnderline(item));
 
-            // Recalcular en hover
-            listItems.forEach(item => {
+            blockItems.forEach(item => {
                 item.addEventListener('mouseenter', () => calculateUnderline(item));
             });
 
-            // Recalcular en resize (responsividad)
+            // Resiliencia de redimensionamiento (Debounce)
             let resizeTimer;
             window.addEventListener('resize', () => {
                 clearTimeout(resizeTimer);
                 resizeTimer = setTimeout(() => {
-                    listItems.forEach(item => calculateUnderline(item));
+                    blockItems.forEach(item => calculateUnderline(item));
                 }, 100);
             });
         });
