@@ -1,8 +1,11 @@
 /* ==========================================
    SISTEMA DE MOVIMIENTO UNAV (OOCSS)
+   Motor central de físicas, transiciones y utilidades de animación
    ========================================== */
 
-/* --- 1. OPACIDADES AL HOVER --- */
+/* ==========================================
+   1. OPACIDADES SUTILES AL HOVER
+   ========================================== */
 .unav-efectoOpacidadSutil {
     transition: opacity var(--unav-transitionBase);
 }
@@ -17,21 +20,26 @@
     opacity: var(--unav-opacityHoverIntense);
 }
 
-/* --- 2. EFECTO PARALLAX --- */
+/* ==========================================
+   2. PROFUNDIDAD ESPACIAL (PARALLAX)
+   ========================================== */
 .unav-efectoParallax {
     background-attachment: fixed;
     background-position: center;
     background-repeat: no-repeat;
     background-size: cover;
 }
-/* Fallback de rendimiento para móviles */
+
+/* Fallback de rendimiento para dispositivos móviles (Evita jank y consumo de batería) */
 @media (max-width: 768px) {
     .unav-efectoParallax {
         background-attachment: scroll;
     }
 }
 
-/* --- 3. EFECTO KEN BURNS (Zoom infinito) --- */
+/* ==========================================
+   3. ANIMACIÓN CONTINUA (KEN BURNS)
+   ========================================== */
 @keyframes unav-slowZoomIn {
     0% { transform: scale(1); }
     100% { transform: scale(1.15); }
@@ -39,10 +47,12 @@
 
 .unav-efectoZoomInfinito {
     animation: unav-slowZoomIn var(--unav-durationEpic) ease-in-out infinite alternate;
-    will-change: transform; /* Optimización GPU */
+    will-change: transform; /* Optimización estricta por GPU */
 }
 
-/* --- 4. ELEVACIÓN Z (Hover lift) --- */
+/* ==========================================
+   4. ELEVACIÓN 3D E INTERACCIÓN (Z-INDEX LIFT)
+   ========================================== */
 .unav-efectoElevacion {
     transition: transform var(--unav-durationNormal) var(--unav-easingStandard), 
                 box-shadow var(--unav-durationNormal) var(--unav-easingStandard);
@@ -50,10 +60,12 @@
 
 .unav-efectoElevacion:hover {
     transform: translateY(var(--unav-translateHoverElevation));
-    box-shadow: var(--unav-cardShadowHover, 0 15px 30px rgba(0,0,0,0.12));
+    box-shadow: var(--unav-cardShadowHover);
 }
 
-/* --- 5. ENTRADA EN CASCADA (Staggered Fade-Up) --- */
+/* ==========================================
+   5. APARICIÓN EN SCROLL (STAGGERED FADE-UP)
+   ========================================== */
 .unav-efectoEntradaOculto {
     opacity: 0;
     transform: translateY(var(--unav-translateEntranceY));
@@ -62,66 +74,72 @@
     will-change: opacity, transform;
 }
 
+/* Clase inyectada vía JS (IntersectionObserver) */
 .unav-efectoEntradaVisible {
     opacity: 1;
     transform: translateY(0);
 }
 
-/* --- 6. ZOOM DE IMAGEN (Hover) --- */
+/* ==========================================
+   6. MICROINTERACCIONES DE IMAGEN (ZOOM)
+   ========================================== */
 .unav-efectoZoomImagen {
     overflow: hidden;
 }
+
 .unav-efectoZoomImagen img {
     /* Soportamos tanto transform como filter para no pisar el grayscale de otras vistas */
-    transition: transform var(--unav-durationSlow, 600ms) var(--unav-easingDecel, ease-out),
-                filter var(--unav-durationSlow, 600ms) var(--unav-easingDecel, ease-out);
+    transition: transform var(--unav-durationSlow) var(--unav-easingDecel),
+                filter var(--unav-durationSlow) var(--unav-easingDecel);
     will-change: transform;
 }
+
 /* Soporte de herencia: Si el padre tiene hover, la imagen reacciona */
 *:hover > .unav-efectoZoomImagen img,
 .unav-efectoZoomImagen:hover img {
-    transform: scale(1.05) translateZ(0);
+    transform: scale(1.05) translateZ(0); /* translateZ fuerza la aceleración GPU en Safari */
 }
 
-/* --- 7. APARICIÓN FADE IN --- */
+/* ==========================================
+   7. TRANSICIONES DE ESTADO Y GALERÍAS
+   ========================================== */
+
+/* --- 7.1. Aparición Básica (Fade In) --- */
 @keyframes unav-fadeInKeyframes {
     from { opacity: 0; }
     to { opacity: 1; }
 }
+
 .unav-efectoFadeIn {
-    animation: unav-fadeInKeyframes var(--unav-durationNormal, 250ms) var(--unav-easingStandard, ease) forwards;
+    animation: unav-fadeInKeyframes var(--unav-durationNormal) var(--unav-easingStandard) forwards;
 }
 
-
-
-/* ==========================================
-   AÑADIDO A: unav-movimiento.css (Cross-Fade Galería)
-   ========================================== */
-
-/* 1. Clase Base: Oculta, escalada al 96% y por debajo */
+/* --- 7.2. Transición Cross-Fade (Pixelflakes Style) --- */
+/* Estado Base: Oculta, escalada al 96% y apilada por debajo */
 .unav-efectoCrossFade {
     opacity: 0;
     transform: scale(0.96);
     visibility: hidden;
     z-index: 1;
-    transition: opacity var(--unav-durationNormal, 250ms) var(--unav-easingStandard, ease),
-                transform var(--unav-durationNormal, 250ms) var(--unav-easingStandard, ease),
-                visibility var(--unav-durationNormal, 250ms) var(--unav-easingStandard, ease);
+    
+    transition: opacity var(--unav-durationNormal) var(--unav-easingStandard),
+                transform var(--unav-durationNormal) var(--unav-easingStandard),
+                visibility var(--unav-durationNormal) var(--unav-easingStandard);
     will-change: transform, opacity;
 }
 
-/* 2. Estado Activo: Visible, escala 100% y por encima */
+/* Estado Activo: Visible, escala 100% y apilada por encima */
 .unav-efectoCrossFade.unav-isActive {
     opacity: 1;
     transform: scale(1);
     visibility: visible;
-    z-index: 2; /* Se apila sobre la imagen que se está desvaneciendo */
+    z-index: 2; 
 }
 
-/* 3. Estado Saliente: Se desvanece pero MANTIENE su escala original (100%) */
+/* Estado Saliente: Se desvanece pero MANTIENE su escala original (100%) */
 .unav-efectoCrossFade.unav-isOutgoing {
     opacity: 0;
-    transform: scale(1); /* Evita que se encoja al salir */
-    visibility: visible; /* Necesario para que el fade-out sea visible */
-    z-index: 1; /* Se pone por debajo de la nueva que está entrando */
+    transform: scale(1); 
+    visibility: visible; 
+    z-index: 1; 
 }

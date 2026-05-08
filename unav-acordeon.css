@@ -2,13 +2,13 @@
    COMPONENTE: ACORDEÓN UNAV (OOCSS)
    ========================================== */
 
-   .unav-accordionGroup {
-    border-top: 1px solid var(--unav-accordionBorderColor, #e7e7e7);
+.unav-accordionGroup {
+    border-top: 1px solid var(--unav-accordionBorderColor, var(--unav-grey-200));
     width: 100%;
 }
 
 .unav-accordionItem {
-    border-bottom: 1px solid var(--unav-accordionBorderColor, #e7e7e7);
+    border-bottom: 1px solid var(--unav-accordionBorderColor, var(--unav-grey-200));
     transition: background-color var(--unav-transitionBase);
 }
 
@@ -36,7 +36,7 @@
 .unav-accordionHeader:hover,
 .unav-accordionHeader[aria-expanded="true"] {
     font-weight: var(--unav-fontWeightBold);
-    color: var(--unav-rojo-500);
+    color: var(--unav-black-500);
 }
 
 .unav-accordionTitleWrapper {
@@ -71,7 +71,7 @@
     overflow: hidden;
     /* Expansión estructural basada en Motion Tokens */
     transition: var(--unav-accordionPanelTransition, max-height 0.4s ease-out);
-    background-color: #ffffff;
+    background-color: var(--unav-cardBgBase, #ffffff);
 }
 
 .unav-accordionInner {
@@ -89,6 +89,7 @@
 
 .unav-accordionItem.unav-isThemed .unav-accordionHeader:hover,
 .unav-accordionItem.unav-isThemed .unav-accordionHeader[aria-expanded="true"] {
+    /* Filtro dinámico de opacidad */
     background-color: rgba(0, 0, 0, 0.1);
     color: #ffffff;
 }

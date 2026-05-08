@@ -13,7 +13,7 @@
 .unav-mediaGallery {
     display: grid;
     grid-template-columns: 1fr var(--unav-gallerySidebarWidth, 250px);
-    background-color: var(--unav-galleryBg, #000);
+    background-color: var(--unav-galleryBg, var(--unav-black-900));
     border-radius: 0 !important; /* Esquinas rectas estrictas */
     overflow: hidden;
     box-shadow: var(--unav-cardShadowBase);
@@ -27,7 +27,7 @@
    ========================================== */
 .unav-galleryStage {
     position: relative;
-    background-color: var(--unav-galleryStageBg, #1a1a1a);
+    background-color: var(--unav-galleryStageBg, var(--unav-black-800));
     overflow: hidden;
     display: flex;
     align-items: center;
@@ -54,18 +54,16 @@
     object-fit: contain; 
 }
 
-/* ==========================================
-   NUEVO: Pie de Foto (Roboto, 1rem, 400)
-   ========================================== */
+/* Pie de Foto */
 .unav-imageCaption {
     position: absolute;
     bottom: 0; left: 0; right: 0;
-    padding: 2.5rem 1.5rem 1.25rem; /* Aumentamos un poco el padding por el nuevo tamaño de fuente */
+    padding: 2.5rem 1.5rem 1.25rem; 
     background: linear-gradient(transparent, rgba(0,0,0,0.85));
     color: #ffffff;
-    font-family: var(--unav-fontFamilyPrimary); /* Roboto */
-    font-size: var(--unav-fontSize100); /* 1rem */
-    font-weight: var(--unav-fontWeightRegular); /* 400 */
+    font-family: var(--unav-fontFamilyPrimary); 
+    font-size: var(--unav-fontSize100); 
+    font-weight: var(--unav-fontWeightRegular); 
     pointer-events: none;
 }
 
@@ -75,7 +73,7 @@
 .unav-galleryControlBtn {
     background-color: var(--unav-galleryControlBg, rgba(0,0,0,0.6));
     border: 1px solid var(--unav-galleryBorderColor, rgba(255,255,255,0.2));
-    color: var(--unav-galleryControlColor, #fff);
+    color: var(--unav-galleryControlColor, #ffffff);
     width: var(--unav-galleryControlSize, 40px);
     height: var(--unav-galleryControlSize, 40px);
     display: flex;
@@ -94,7 +92,7 @@
 
 .unav-galleryControlBtn:hover {
     background-color: var(--unav-galleryControlHoverBg, var(--unav-rojo-600));
-    color: var(--unav-galleryControlHoverColor, #fff);
+    color: var(--unav-galleryControlHoverColor, #ffffff);
     border-color: var(--unav-galleryControlHoverBg, var(--unav-rojo-600));
 }
 
@@ -109,7 +107,7 @@
 
 .unav-galleryScrollVertical {
     position: absolute;
-    bottom: 4rem; /* Subimos un poco para dar aire al contador */
+    bottom: 4rem; 
     right: 0.5rem;
     display: flex;
     flex-direction: column;
@@ -129,10 +127,10 @@
    3. SIDEBAR DE MINIATURAS
    ========================================== */
 .unav-gallerySidebar {
-    background-color: var(--unav-gallerySidebarBg, #000);
+    background-color: var(--unav-gallerySidebarBg, var(--unav-black-900));
     display: grid;
     grid-template-rows: 1fr auto;
-    border-left: 1px solid var(--unav-galleryBorderColor, #333);
+    border-left: 1px solid var(--unav-galleryBorderColor, var(--unav-grey-800));
     overflow: hidden;
     min-height: 0;
     position: relative;
@@ -176,8 +174,8 @@
 
 .unav-galleryMeta {
     padding: 1rem;
-    background-color: var(--unav-galleryMetaBg, #111);
-    border-top: 1px solid var(--unav-galleryBorderColor, #333);
+    background-color: var(--unav-galleryMetaBg, var(--unav-black-800));
+    border-top: 1px solid var(--unav-galleryBorderColor, var(--unav-grey-800));
 }
 
 /* =======================================================
@@ -213,7 +211,7 @@
     }
     .unav-galleryMeta { 
         display: flex; align-items: center; border-top: none; 
-        border-left: 1px solid var(--unav-galleryBorderColor, #333); 
+        border-left: 1px solid var(--unav-galleryBorderColor, var(--unav-grey-800)); 
     }
     
     .unav-galleryScrollVertical { display: none; }

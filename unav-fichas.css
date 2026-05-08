@@ -2,7 +2,7 @@
    COMPONENTE: FICHA PERSONA UNAV (OOCSS)
    ========================================== */
 
-   .unav-personCard {
+.unav-personCard {
     display: flex;
     flex-direction: column;
     width: 100%;

@@ -22,8 +22,7 @@
     transition: var(--unav-transitionBase);
 }
 
-/* 
-   Pieles: Variantes de Color Corporativo
+/* Pieles: Variantes de Color Corporativo
    Fondo: Nivel 100 / Texto: Nivel 800
 */
 .unav-tagRojo       { background-color: var(--unav-rojo-100); color: var(--unav-rojo-800); }
@@ -47,10 +46,9 @@
 .unav-tagOrange     { background-color: var(--unav-orange-100); color: var(--unav-orange-800); }
 .unav-tagYellow     { background-color: var(--unav-yellow-100); color: var(--unav-yellow-800); }
 
-/* Ajustes de vista de la documentación */
-.unav-techSummary { border-left: 4px solid var(--unav-rojo-600); }
-.unav-sectionTitle { 
-    color: var(--unav-black-800); 
-    border-bottom: 2px solid var(--unav-grey-200); 
-    padding-bottom: 0.5rem; 
+/* Variante Neutra: Fondo Blanco y Letra Negra */
+.unav-tagWhite      { 
+    background-color: #ffffff; 
+    color: var(--unav-black-900); 
+    box-shadow: inset 0 0 0 1px var(--unav-grey-300); /* Borde sutil para que no se pierda sobre fondos blancos */
 }

@@ -155,7 +155,7 @@
 .unav-enlaceFlecha .unav-arrowWrapper {
     position: relative;
     display: inline-block;
-    width: 2.1875rem; 
+    width: 2.5875rem; 
     height: 0.75rem; 
     overflow: hidden;
     margin-right: 0.625rem;
@@ -166,7 +166,7 @@
 .unav-enlaceFlecha .unav-arrowClone {
     position: absolute;
     top: 50%;
-    width: 1.875rem; 
+    width: 2.5rem; /* 1.875rem */
     height: var(--unav-botonSecundarioBorderWidth); 
     background-color: currentColor; 
 }

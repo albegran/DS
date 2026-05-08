@@ -8,7 +8,7 @@
     container-name: unavVideoGallery;
     width: 100%;
     background-color: var(--unav-videoGalleryBg, #ffffff);
-    border: 1px solid var(--unav-videoGalleryBorderColor, #e7e7e7);
+    border: 1px solid var(--unav-videoGalleryBorderColor, var(--unav-grey-200));
     position: relative;
     border-radius: 0 !important; /* Esquinas rectas obligatorias por sistema */
 }
@@ -17,7 +17,7 @@
 .unav-videoMediaContainer {
     position: relative;
     padding-right: var(--unav-videoSidebarWidth, 320px); 
-    background-color: var(--unav-videoGalleryStageBg, #000000);
+    background-color: var(--unav-videoGalleryStageBg, var(--unav-black-900));
 }
 
 /* Área Visualizadora (Stage 16:9) */
@@ -46,7 +46,7 @@
     display: flex;
     flex-direction: column;
     overflow-y: auto;
-    border-left: 1px solid var(--unav-videoGalleryBorderColor, #e7e7e7);
+    border-left: 1px solid var(--unav-videoGalleryBorderColor, var(--unav-grey-200));
     scrollbar-width: none; 
 }
 .unav-videoPlaylistSidebar::-webkit-scrollbar { display: none; }
@@ -57,7 +57,7 @@
     padding: 0.9375rem; /* 15px */
     background-color: transparent;
     border: none;
-    border-bottom: 1px solid var(--unav-videoGalleryBorderColor, #e7e7e7);
+    border-bottom: 1px solid var(--unav-videoGalleryBorderColor, var(--unav-grey-200));
     cursor: pointer;
     text-align: left;
     gap: 0.75rem; /* 12px */
@@ -66,11 +66,11 @@
 }
 
 .unav-videoItem:hover { 
-    background-color: var(--unav-videoGalleryHoverBg, #f8f9fa); 
+    background-color: var(--unav-videoGalleryHoverBg, var(--unav-grey-100)); 
 }
 .unav-videoItem.unav-isActive {
-    background-color: var(--unav-videoGalleryActiveBg, #fff5f5);
-    box-shadow: inset 4px 0 0 0 var(--unav-videoGalleryActiveBorder, #d32f2f);
+    background-color: var(--unav-videoGalleryActiveBg, var(--unav-rojo-100));
+    box-shadow: inset 4px 0 0 0 var(--unav-videoGalleryActiveBorder, var(--unav-rojo-600));
 }
 
 /* Miniatura del Vídeo */
@@ -79,7 +79,7 @@
     width: var(--unav-videoThumbWidth, 120px);
     flex-shrink: 0;
     aspect-ratio: 16/9;
-    background-color: var(--unav-black-800, #333);
+    background-color: var(--unav-black-800);
     border-radius: 4px;
 }
 .unav-videoThumb img { 
@@ -108,11 +108,11 @@
 }
 .unav-videoItem:hover .unav-videoPlayIcon {
     transform: translate(-50%, -50%) scale(1.2); 
-    color: var(--unav-rojo-500, #ef4444);
+    color: var(--unav-rojo-500);
     opacity: 1;
 }
 .unav-videoItem.unav-isActive .unav-videoPlayIcon {
-    color: var(--unav-rojo-600, #d32f2f);
+    color: var(--unav-rojo-600);
     opacity: 1;
 }
 
@@ -147,7 +147,7 @@
 /* Controles de Navegación */
 .unav-videoNavBtn {
     background-color: rgba(255,255,255,0.95);
-    border: 1px solid var(--unav-videoGalleryBorderColor, #e7e7e7);
+    border: 1px solid var(--unav-videoGalleryBorderColor, var(--unav-grey-200));
     width: 2.25rem; /* 36px */
     height: 2.25rem;
     display: flex;
@@ -204,7 +204,7 @@
         position: relative;
         width: 100%;
         border-left: none;
-        border-top: 1px solid var(--unav-videoGalleryBorderColor, #e7e7e7);
+        border-top: 1px solid var(--unav-videoGalleryBorderColor, var(--unav-grey-200));
         flex-direction: row;
         overflow-x: auto;
         overflow-y: hidden;
@@ -216,12 +216,12 @@
         width: var(--unav-videoItemWidthMobile, 200px);
         flex-shrink: 0;
         border-bottom: none;
-        border-right: 1px solid var(--unav-videoGalleryBorderColor, #e7e7e7);
+        border-right: 1px solid var(--unav-videoGalleryBorderColor, var(--unav-grey-200));
         scroll-snap-align: start;
     }
     .unav-videoThumb { width: 100%; }
     .unav-videoItemInfo { display: none; }
-    .unav-videoItem.unav-isActive { box-shadow: inset 0 -4px 0 0 var(--unav-videoGalleryActiveBorder, #d32f2f); }
+    .unav-videoItem.unav-isActive { box-shadow: inset 0 -4px 0 0 var(--unav-videoGalleryActiveBorder, var(--unav-rojo-600)); }
 
     .unav-videoScrollVertical { display: none; }
     .unav-videoScrollHorizontal { display: flex; }
