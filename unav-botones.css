@@ -216,3 +216,32 @@
     --unav-botonBorder: var(--unav-black-300) !important;
     opacity: 1; 
 }
+
+/* =========================================
+   6. MODIFICADOR: BOTÓN SOLO ICONO (Icon Only)
+   ========================================= */
+.unav-botonIconOnly {
+    /* Reset de dimensiones para asegurar proporcionalidad 1:1 */
+    width: 2.75rem; 
+    height: 2.75rem;
+    padding: 0 !important; /* Eliminamos padding para centrado absoluto */
+    border-radius: 50% !important; /* Formato circular para controles */
+    
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    flex-shrink: 0;
+}
+
+.unav-botonIconOnly .unav-botonIcono {
+    margin: 0 !important; /* Eliminamos gaps de la clase base */
+    font-size: 1.25rem; /* Ajuste visual para que el icono tenga peso */
+}
+
+/* Ajuste específico para cuando se usa dentro de grupos de botones */
+.unav-botonGroup .unav-botonIconOnly {
+    margin: 0 0.25rem;
+}
+
+
+

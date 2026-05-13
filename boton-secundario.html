@@ -25,10 +25,10 @@
             <div itemscope itemtype="https://schema.org/WebPageElement">
                 <a itemprop="url" href="indice.html" class="unav-boton unav-botonSecundario" style="--unav-botonColorSource: var(--unav-grey-600);">
                     <i class="bi bi-arrow-left unav-botonIcono" aria-hidden="true"></i>
-                    <span itemprop="name">Volver al Índice</span>
+                    <span class="d-none d-md-inline" itemprop="name">Volver al Índice</span>
                 </a>
             </div>
-            <span class="unav-font-primary unav-weight-regular unav-text-250 m-0" style="color: var(--unav-rojo-500); line-height: 1;">
+            <span class="unav-font-primary-condensed unav-weight-regular unav-text-150 m-0" style="color: var(--unav-black-500); line-height: 1;">
                 Design System UNAV
             </span>
         </div>
@@ -37,30 +37,24 @@
     <main class="container-lg py-5" itemprop="mainContentOfPage">
         
         <header class="text-center mb-5 border-bottom pb-4">
-            <h1 class="unav-font-primary unav-weight-medium unav-text-250 text-dark mb-3" itemprop="name">Botón Secundario</h1>
-            <p class="unav-font-primary unav-weight-regular unav-text-125 text-muted m-0" itemprop="description">Versión optimizada: ajuste al contenido, bordes redondeados (estilo píldora) y padding reducido.</p>
+            <h1 class="unav-font-primary unav-weight-medium unav-text-200 text-dark mb-3" itemprop="name">Botón Secundario</h1>
+            <p class="unav-font-primary unav-weight-regular unav-text-100 text-muted m-0" itemprop="description">Componente versátil para acciones complementarias y controles de interfaz.</p>
 
             <div class="unav-techSummary bg-white p-4 text-start mt-5 rounded shadow-sm border mx-auto" style="max-width: 900px;">
                 <h2 class="unav-font-primary unav-weight-bold unav-text-150 text-dark mb-3"><i class="bi bi-gear-fill me-2" style="color: var(--unav-grey-400);"></i>Análisis Funcional y Técnico</h2>
-                
-                <p class="unav-font-primary unav-weight-regular unav-text-100 text-muted mb-4">
-                    El botón secundario se emplea para acciones complementarias al botón primario o en contextos donde el espacio es más reducido, proporcionando un peso visual inferior pero manteniendo una clara "affordance" de interactividad.
-                </p>
                 <div class="row g-4 unav-font-primary unav-weight-regular unav-text-100">
                     <div class="col-md-6">
                         <h3 class="unav-font-primary unav-weight-bold unav-text-125 text-dark mb-3">Análisis Funcional</h3>
                         <ul class="mb-0 text-muted ps-3">
-                            <li class="mb-2"><strong class="text-dark">Propósito:</strong> Acciones alternativas, de cancelación o pasos secundarios (ej. "Ver más", "Atrás", "Descargar").</li>
-                            <li class="mb-2"><strong class="text-dark">Layout:</strong> A diferencia del primario (que suele ocupar el 100% de la columna), este botón tiene un diseño <code class="text-dark">fit-content</code> que se ajusta a la longitud de su texto.</li>
-                            <li class="mb-1"><strong class="text-dark">Variantes:</strong> Posee dos naturalezas: Estándar (transparente) e Inversa (fondo sólido), adaptándose al contraste de la interfaz subyacente.</li>
+                            <li class="mb-2"><strong>Propósito:</strong> Acciones alternativas o pasos secundarios.</li>
+                            <li class="mb-2"><strong>Nueva Variante:</strong> Botones de "solo icono" para controles de navegación (galerías, paginadores).</li>
                         </ul>
                     </div>
                     <div class="col-md-6 border-start-md ps-md-4">
                         <h3 class="unav-font-primary unav-weight-bold unav-text-125 text-dark mb-3">Especificaciones Técnicas</h3>
                         <ul class="mb-0 text-muted ps-3">
-                            <li class="mb-2"><strong class="text-dark">OOCSS (Clase Base):</strong> Inyecta el layout al usar <code class="text-danger">.unav-boton</code>, mientras que las pieles <code class="text-danger">.unav-botonSecundario</code> y <code class="text-danger">.unav-botonSecundarioInverso</code> mapean los tokens de interacción y bordes.</li>
-                            <li class="mb-2"><strong class="text-dark">Colorización Inteligente:</strong> Un único token local (<code class="text-danger">--unav-botonColorSource</code>) inyecta dinámicamente todos los colores (texto, borde, fondo de hover) garantizando la consistencia.</li>
-                            <li class="mb-1"><strong class="text-dark">Micro-tipografía:</strong> El token de border-width ahora se abstrae globalmente (<code class="text-dark">var(--unav-botonSecundarioBorderWidth)</code>) para sincronizar grosor entre variantes.</li>
+                            <li class="mb-2"><strong>OOCSS:</strong> Clase utilitaria <code>.unav-botonIconOnly</code> para forzar proporciones 1:1.</li>
+                            <li class="mb-1"><strong>Colorización:</strong> Consumo del token dinámico <code>--unav-botonColorSource</code>.</li>
                         </ul>
                     </div>
                 </div>
@@ -70,102 +64,95 @@
         <section class="bg-white p-4 p-md-5 rounded shadow-sm border mb-5" id="colores">
             <h2 class="unav-font-primary unav-weight-bold unav-text-200 border-bottom pb-2 mb-4 text-dark mt-0">1. Variantes Estándar (Fondo Transparente)</h2>
             <div class="d-flex flex-wrap gap-3 mb-4">
-                
                 <div itemscope itemtype="https://schema.org/WebPageElement">
                     <a itemprop="url" href="#" class="unav-boton unav-botonSecundario" style="--unav-botonColorSource: var(--unav-rojo-600);">
                         <span itemprop="name">VER MÁS</span>
                     </a>
                 </div>
-
                 <div itemscope itemtype="https://schema.org/WebPageElement">
                     <a itemprop="url" href="#" class="unav-boton unav-botonSecundario" style="--unav-botonColorSource: var(--unav-teal-600);">
                         <span class="material-symbols-outlined unav-botonIcono" aria-hidden="true">download</span>
                         <span itemprop="name">DESCARGAR</span>
                     </a>
                 </div>
-
                 <div itemscope itemtype="https://schema.org/WebPageElement">
                     <a itemprop="url" href="#" class="unav-boton unav-botonSecundario" style="--unav-botonColorSource: var(--unav-moss-600);">
                         <span itemprop="name">SIGUIENTE</span>
                         <span class="material-symbols-outlined unav-botonIcono" aria-hidden="true">arrow_forward</span>
                     </a>
                 </div>
-
-                <div itemscope itemtype="https://schema.org/WebPageElement">
-                    <a itemprop="url" href="#" class="unav-boton unav-botonSecundario" style="--unav-botonColorSource: var(--unav-black-500);">
-                        <span itemprop="name">CANCELAR</span>
-                    </a>
-                </div>
-
                 <div itemscope itemtype="https://schema.org/WebPageElement">
                     <a itemprop="url" href="#" class="unav-boton unav-botonSecundario unav-botonDisabled">
                         <span itemprop="name">DESACTIVADO</span>
                     </a>
                 </div>
-
             </div>
         </section>
         
         <section class="bg-white p-4 p-md-5 rounded shadow-sm border mb-5" id="variante-inversa">
             <h2 class="unav-font-primary unav-weight-bold unav-text-200 border-bottom pb-2 mb-4 text-dark mt-0">2. Variantes Inversas (Fondo Sólido)</h2>
-            <p class="unav-font-primary unav-weight-regular unav-text-100 text-muted mb-4">Utilizando la clase <code>.unav-botonSecundarioInverso</code>, el botón arranca con el fondo relleno y, al hacer hover, pasa a fondo transparente manteniendo su borde. Ejemplos con iconografía Bootstrap (<code>bi-</code>).</p>
-
             <div class="d-flex flex-wrap gap-3 mb-4">
-                
                 <div itemscope itemtype="https://schema.org/WebPageElement">
                     <a itemprop="url" href="#" class="unav-boton unav-botonSecundarioInverso" style="--unav-botonColorSource: var(--unav-rojo-600);">
                         <i class="bi bi-bookmark-fill unav-botonIcono" aria-hidden="true"></i>
                         <span itemprop="name">GUARDAR CURSO</span>
                     </a>
                 </div>
-
                 <div itemscope itemtype="https://schema.org/WebPageElement">
                     <a itemprop="url" href="#" class="unav-boton unav-botonSecundarioInverso" style="--unav-botonColorSource: var(--unav-indigo-600);">
                         <i class="bi bi-share unav-botonIcono" aria-hidden="true"></i>
                         <span itemprop="name">COMPARTIR</span>
                     </a>
                 </div>
-
-                <div itemscope itemtype="https://schema.org/WebPageElement">
-                    <a itemprop="url" href="#" class="unav-boton unav-botonSecundarioInverso" style="--unav-botonColorSource: var(--unav-orange-600);">
-                        <span itemprop="name">CONTACTAR</span>
-                        <i class="bi bi-envelope-paper unav-botonIcono" aria-hidden="true"></i>
-                    </a>
-                </div>
-
                 <div itemscope itemtype="https://schema.org/WebPageElement">
                     <a itemprop="url" href="#" class="unav-boton unav-botonSecundarioInverso" style="--unav-botonColorSource: var(--unav-black-800);">
                         <span itemprop="name">OPCIONES</span>
                         <i class="bi bi-gear unav-botonIcono" aria-hidden="true"></i>
                     </a>
                 </div>
-
             </div>
         </section>
 
         <section class="bg-white p-4 p-md-5 rounded shadow-sm border mb-5" id="grid-test">
             <h2 class="unav-font-primary unav-weight-bold unav-text-200 border-bottom pb-2 mb-3 text-dark mt-0">3. Comportamiento en Grid de Bootstrap</h2>
-            <p class="unav-font-primary unav-weight-regular unav-text-100 text-muted mb-4">A diferencia del botón primario, estos botones por defecto utilizan comportamiento <code>fit-content</code> por lo que no llenan la columna automáticamente, adaptándose estrictamente al ancho de su texto e icono.</p>
-            
             <div class="row">
                 <div class="col-12 col-md-6 mb-3">
                     <div class="unav-bg-grey-100 p-4 border rounded text-center h-100">
-                        <p class="unav-font-primary unav-weight-regular unav-text-075 mb-3 text-muted">Columna 1: Centrado</p>
-                        <div itemscope itemtype="https://schema.org/WebPageElement">
-                            <a itemprop="url" href="#" class="unav-boton unav-botonSecundario" style="--unav-botonColorSource: var(--unav-blue-600);">
-                                <span itemprop="name">BOTÓN AJUSTADO AL TEXTO</span>
-                            </a>
-                        </div>
+                        <p class="unav-font-primary unav-weight-regular unav-text-075 mb-3 text-muted">Centrado (Fit-content)</p>
+                        <a href="#" class="unav-boton unav-botonSecundario" style="--unav-botonColorSource: var(--unav-blue-600);">BOTÓN AJUSTADO</a>
                     </div>
                 </div>
                 <div class="col-12 col-md-6 mb-3">
                     <div class="unav-bg-grey-100 p-4 border rounded d-flex flex-column align-items-start h-100">
-                        <p class="unav-font-primary unav-weight-regular unav-text-075 mb-3 text-muted">Columna 2: Alineado a la izquierda (Inverso)</p>
-                        <div itemscope itemtype="https://schema.org/WebPageElement">
-                            <a itemprop="url" href="#" class="unav-boton unav-botonSecundarioInverso" style="--unav-botonColorSource: var(--unav-fuchsia-600);">
-                                <span itemprop="name">OTRA ACCIÓN</span>
-                            </a>
-                        </div>
+                        <p class="unav-font-primary unav-weight-regular unav-text-075 mb-3 text-muted">Alineado Izquierda (Inverso)</p>
+                        <a href="#" class="unav-boton unav-botonSecundarioInverso" style="--unav-botonColorSource: var(--unav-fuchsia-600);">OTRA ACCIÓN</a>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section class="bg-white p-4 p-md-5 rounded shadow-sm border mb-5" id="variante-icono">
+            <h2 class="unav-font-primary unav-weight-bold unav-text-200 border-bottom pb-2 mb-4 text-dark mt-0">4. Variantes de Control (Solo Icono)</h2>
+            <p class="unav-font-primary unav-weight-regular unav-text-100 text-muted mb-4">Utilizando el modificador <code>.unav-botonIconOnly</code>. Ideales para controles circulares de navegación.</p>
+
+            <div class="row g-4">
+                <div class="col-md-6">
+                    <h4 class="unav-font-primary unav-weight-bold unav-text-100 mb-3 text-uppercase" style="letter-spacing: 1px;">Control de Galería</h4>
+                    <div class="unav-bg-grey-100 p-4 rounded d-flex justify-content-center gap-3 align-items-center">
+                        <button class="unav-boton unav-botonSecundario unav-botonIconOnly" style="--unav-botonColorSource: var(--unav-black-800);" aria-label="Anterior">
+                            <i class="bi bi-chevron-left unav-botonIcono"></i>
+                        </button>
+                        <button class="unav-boton unav-botonSecundario unav-botonIconOnly" style="--unav-botonColorSource: var(--unav-black-800);" aria-label="Siguiente">
+                            <i class="bi bi-chevron-right unav-botonIcono"></i>
+                        </button>
+                    </div>
+                </div>
+                <div class="col-md-6">
+                    <h4 class="unav-font-primary unav-weight-bold unav-text-100 mb-3 text-uppercase" style="letter-spacing: 1px;">Acciones Rápidas</h4>
+                    <div class="unav-bg-grey-100 p-4 rounded d-flex justify-content-center gap-2">
+                        <button class="unav-boton unav-botonSecundario unav-botonIconOnly" style="--unav-botonColorSource: var(--unav-teal-600);"><i class="bi bi-plus-lg unav-botonIcono"></i></button>
+                        <button class="unav-boton unav-botonSecundario unav-botonIconOnly" style="--unav-botonColorSource: var(--unav-rojo-600);"><i class="bi bi-trash unav-botonIcono"></i></button>
+                        <button class="unav-boton unav-botonSecundarioInverso unav-botonIconOnly" style="--unav-botonColorSource: var(--unav-blue-600);"><i class="bi bi-share unav-botonIcono"></i></button>
                     </div>
                 </div>
             </div>
