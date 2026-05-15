@@ -1,0 +1,54 @@
+/* ==========================================
+   COMPONENTE: ETIQUETAS (.unav-tag)
+   ========================================== */
+
+/* Clase Base Estructural (OOCSS) */
+.unav-tag {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    padding: var(--unav-tagPaddingY) var(--unav-tagPaddingX);
+    border-radius: var(--unav-tagBorderRadius);
+    
+    font-family: var(--unav-fontFamilyPrimary);
+    font-weight: var(--unav-fontWeightMedium);
+    font-size: var(--unav-fontSize075); /* 12px exactos */
+    line-height: 1.2;
+    white-space: nowrap;
+    letter-spacing: var(--unav-tagLetterSpacing);
+    
+    user-select: none;
+    text-decoration: none;
+    transition: var(--unav-transitionBase);
+}
+
+/* Pieles: Variantes de Color Corporativo
+   Fondo: Nivel 100 / Texto: Nivel 800
+*/
+.unav-tagRojo       { background-color: var(--unav-rojo-100); color: var(--unav-rojo-800); }
+.unav-tagBlack      { background-color: var(--unav-black-100); color: var(--unav-black-800); }
+.unav-tagGrey       { background-color: var(--unav-grey-100); color: var(--unav-grey-800); }
+.unav-tagMoss       { background-color: var(--unav-moss-100); color: var(--unav-moss-800); }
+.unav-tagGreenLight { background-color: var(--unav-green-l-100); color: var(--unav-green-l-800); }
+.unav-tagGreen      { background-color: var(--unav-green-100); color: var(--unav-green-800); }
+.unav-tagTeal       { background-color: var(--unav-teal-100); color: var(--unav-teal-800); }
+.unav-tagCyan       { background-color: var(--unav-cyan-100); color: var(--unav-cyan-800); }
+.unav-tagBlueLight  { background-color: var(--unav-blue-l-100); color: var(--unav-blue-l-800); }
+.unav-tagBlue       { background-color: var(--unav-blue-100); color: var(--unav-blue-800); }
+.unav-tagBlueDark   { background-color: var(--unav-b-dark-100); color: var(--unav-b-dark-800); }
+.unav-tagIndigo     { background-color: var(--unav-indigo-100); color: var(--unav-indigo-800); }
+.unav-tagViolet     { background-color: var(--unav-violet-100); color: var(--unav-violet-800); }
+.unav-tagPurple     { background-color: var(--unav-purple-100); color: var(--unav-purple-800); }
+.unav-tagFuchsia    { background-color: var(--unav-fuchsia-100); color: var(--unav-fuchsia-800); }
+.unav-tagPink       { background-color: var(--unav-pink-100); color: var(--unav-pink-800); }
+.unav-tagRose       { background-color: var(--unav-rose-100); color: var(--unav-rose-800); }
+.unav-tagOrangeDark { background-color: var(--unav-o-dark-100); color: var(--unav-o-dark-800); }
+.unav-tagOrange     { background-color: var(--unav-orange-100); color: var(--unav-orange-800); }
+.unav-tagYellow     { background-color: var(--unav-yellow-100); color: var(--unav-yellow-800); }
+
+/* Variante Neutra: Fondo Blanco y Letra Negra */
+.unav-tagWhite      { 
+    background-color: #ffffff; 
+    color: var(--unav-black-900); 
+    box-shadow: inset 0 0 0 1px var(--unav-grey-300); /* Borde sutil para que no se pierda sobre fondos blancos */
+}

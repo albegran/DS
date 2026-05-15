@@ -1,0 +1,179 @@
+<style type="text/css">
+table.convocatorias-cambridge {
+	border: 1px solid #ccc;
+	border-collapse: collapse;
+	margin: 0;
+	padding: 0;
+	width: 100%;
+	table-layout: fixed;
+}
+
+table.convocatorias-cambridge caption {
+	caption-side: top;
+	border-bottom: 3px solid #e60003;
+	font-family: "Roboto bold";
+	font-size: 20px;
+	line-height: 18px;
+	font-weight: 600;
+	
+	left: 0;
+	
+	margin: 10px 0;
+	padding: 5px;
+	
+	color: black;
+}
+
+table.convocatorias-cambridge tr {
+	border: 1px solid #ddd;
+	padding: 2px;
+}
+
+table.convocatorias-cambridge>tbody>tr:nth-of-type(odd) {
+	background-color: #f8f8f8;
+}
+
+table.convocatorias-cambridge th,
+table.convocatorias-cambridge td {
+	padding: 10px;
+	text-align: center;
+}
+
+table.convocatorias-cambridge th {
+	font-family: "Roboto regular";
+	font-size: 12px;
+	line-height: 12px;
+	font-weight: 600;
+	text-transform: uppercase;
+	white-space: nowrap;
+}
+
+@media only screen and (max-width: 767px) {
+	table.convocatorias-cambridge {
+	    border: 0;
+	}
+	
+	table.convocatorias-cambridge caption {
+		font-family: "Roboto bold";
+		font-size: 18px;
+		line-height: 18px;
+		font-weight: 300;
+	}
+	  
+	table.convocatorias-cambridge thead {
+	    border: none;
+	    clip: rect(0 0 0 0);
+	    height: 1px;
+	    margin: -1px;
+	    overflow: hidden;
+	    padding: 0;
+	    position: absolute;
+	    width: 1px;
+	}
+	  
+	table.convocatorias-cambridge tr {
+	    border-bottom: 3px solid #ddd;
+	    display: block;
+	    margin-bottom: 20px;
+	}
+	  
+	table.convocatorias-cambridge td {
+	    border-bottom: 1px solid #ddd;
+	    display: block;
+	    text-align: right;
+	    
+	    font-family: "Roboto regular";
+		font-size: 15px;
+		line-height: 16px;
+		font-weight: 300;
+	}
+  
+	table.convocatorias-cambridge td a {
+        font-family: "Roboto regular";
+		font-size: 15px;
+		line-height: 16px;
+		font-weight: 300;
+		color: #ff0000;
+		text-decoration: underline;
+	}
+	
+	table.convocatorias-cambridge td a:hover {
+		text-decoration: none;
+	}
+  
+	table.convocatorias-cambridge td::before {
+	    /*
+	    * aria-label has no advantage, it won't be read inside a table
+	    content: attr(aria-label);
+	    */
+	    content: attr(data-label);
+	    float: left;
+	    font-family: "Roboto bold";
+		font-size: 15px;
+		line-height: 16px;
+		font-weight: 600;
+	    text-transform: uppercase;
+	}
+  
+	table.convocatorias-cambridge td:last-child {
+		border-bottom: 0;
+	}
+}
+</style>
+
+
+
+<table class="convocatorias-cambridge">
+	<caption>YOUNG LEARNERS</caption>
+	<thead>
+		<tr>
+			<th scope="col">Convocatoria</th>
+			<th scope="col">Tipo</th>
+			<th scope="col">Fecha examen</th>
+			<th scope="col">Lugar</th>
+			<th scope="col">Ciudad</th>
+			<th scope="col">Fin matrícula</th>
+			<th scope="col">Tasas</th>
+			<th scope="col">Resultados</th>
+			<th scope="col">Matrícula</th>
+		</tr>
+	</thead>
+	<tbody>
+		<tr>
+			<td data-label="Convocatoria" scope="row"><span style="color:#e60003;"><strong>STARTERS</strong></span></td>
+			<td data-label="Tipo">Paper Based&nbsp;<br />
+			<img alt="" src="https://www.unav.edu/documents/6152327/109815747/hoja-de-papel.png/1d9af033-46f9-1407-da7d-df5d76b831b9?t=1727418608895" style="margin: 0px;" width="20" /></td>
+			<td data-label="Fecha examen">06/06/2026</td>
+			<td data-label="Lugar">Universidad de Navarra (Edificio Amigos)</td>
+			<td data-label="Ciudad">Pamplona</td>
+			<td data-label="Fin matrícula">12/04/2026</td>
+			<td data-label="Tasas">61 €</td>
+			<td data-label="Resultados">06/07/2026</td>
+			<td data-label="Matrícula">Cerrada matrícula</td>
+		</tr>
+		<tr>
+			<td data-label="Convocatoria" scope="row"><span style="color:#e60003;"><strong>MOVERS</strong></span></td>
+			<td data-label="Tipo">Paper Based&nbsp;<br />
+			<img alt="" src="https://www.unav.edu/documents/6152327/109815747/hoja-de-papel.png/1d9af033-46f9-1407-da7d-df5d76b831b9?t=1727418608895" style="margin: 0px;" width="20" /></td>
+			<td data-label="Fecha examen">06/06/2026</td>
+			<td data-label="Lugar">Universidad de Navarra (Edificio Amigos)</td>
+			<td data-label="Ciudad">Pamplona</td>
+			<td data-label="Fin matrícula">12/04/2026</td>
+			<td data-label="Tasas">63 €</td>
+			<td data-label="Resultados">06/07/2026</td>
+			<td data-label="Matrícula">Cerrada matrícula</td>
+		</tr>
+		<tr>
+			<td data-label="Convocatoria" scope="row"><span style="color:#e60003;"><strong>FLYERS</strong></span></td>
+			<td data-label="Tipo">Paper Based&nbsp;<br />
+			<img alt="" src="https://www.unav.edu/documents/6152327/109815747/hoja-de-papel.png/1d9af033-46f9-1407-da7d-df5d76b831b9?t=1727418608895" style="margin: 0px;" width="20" /></td>
+			<td data-label="Fecha examen">06/06/2026</td>
+			<td data-label="Lugar">Universidad de Navarra (Edificio Amigos)</td>
+			<td data-label="Ciudad">Pamplona</td>
+			<td data-label="Fin matrícula">12/04/2026</td>
+			<td data-label="Tasas">66&nbsp;€</td>
+			<td data-label="Resultados">06/07/2026</td>
+			<td data-label="Matrícula">Cerrada matrícula</td>
+		</tr>
+	</tbody>
+</table>

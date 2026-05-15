@@ -1,0 +1,242 @@
+/* ==========================================
+   COMPONENTE: GALERÍA DE VÍDEOS UNAV (OOCSS)
+   ========================================== */
+
+/* Envoltorio para Container Queries */
+.unav-videoGalleryWrapper {
+    container-type: inline-size;
+    container-name: unavVideoGallery;
+    width: 100%;
+    background-color: var(--unav-videoGalleryBg, #ffffff);
+    border: 1px solid var(--unav-videoGalleryBorderColor, var(--unav-grey-200));
+    position: relative;
+    border-radius: 0 !important; /* Esquinas rectas obligatorias por sistema */
+}
+
+/* Contenedor Flex Principal */
+.unav-videoMediaContainer {
+    position: relative;
+    padding-right: var(--unav-videoSidebarWidth, 320px); 
+    background-color: var(--unav-videoGalleryStageBg, var(--unav-black-900));
+}
+
+/* Área Visualizadora (Stage 16:9) */
+.unav-videoStage {
+    width: 100%;
+    position: relative;
+    aspect-ratio: 16 / 9;
+    background-color: var(--unav-black-900);
+}
+
+.unav-videoFluid { 
+    position: absolute;
+    top: 0; left: 0;
+    width: 100%; height: 100%; 
+    object-fit: contain; 
+    border: none; 
+    display: block; 
+}
+
+/* Sidebar de la Playlist (Estructura Flex Vertical por defecto) */
+.unav-videoPlaylistSidebar {
+    position: absolute;
+    top: 0; right: 0; bottom: 0;
+    width: var(--unav-videoSidebarWidth, 320px);
+    background-color: var(--unav-videoGalleryBg, #ffffff);
+    display: flex;
+    flex-direction: column; /* Organiza: Botón Arriba -> Miniaturas -> Botón Abajo */
+    border-left: 1px solid var(--unav-videoGalleryBorderColor, var(--unav-grey-200));
+    overflow: hidden;
+}
+
+/* Contenedores de los Botones (Fijos en los extremos) */
+.unav-videoControlNav {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: var(--unav-grey-100);
+    flex-shrink: 0; /* Impide que los botones se encojan */
+    z-index: 10;
+}
+.unav-videoControlNav.unav-navTop { border-bottom: 1px solid var(--unav-grey-200); padding: 0.5rem; }
+.unav-videoControlNav.unav-navBottom { border-top: 1px solid var(--unav-grey-200); padding: 0.5rem; }
+
+/* Lista de miniaturas (Scrollable) */
+.unav-videoPlaylistItems {
+    flex-grow: 1; /* Ocupa todo el espacio entre los botones */
+    min-height: 0; /* Truco CSS vital para que el overflow funcione en Flexbox */
+    overflow-y: auto;
+    scrollbar-width: none; /* Oculta scrollbar en Firefox */
+    display: flex;
+    flex-direction: column;
+}
+.unav-videoPlaylistItems::-webkit-scrollbar { display: none; /* Oculta scrollbar en Chrome/Safari */ }
+
+/* Ítem de Vídeo en Playlist */
+.unav-videoItem {
+    display: flex;
+    padding: 0.9375rem; /* 15px */
+    background-color: transparent;
+    border: none;
+    outline: none; /* Reseteo del outline nativo */
+    border-bottom: 1px solid var(--unav-videoGalleryBorderColor, var(--unav-grey-200));
+    cursor: pointer;
+    text-align: left;
+    gap: 0.75rem; /* 12px */
+    transition: background-color var(--unav-transitionBase);
+    width: 100%;
+    position: relative;
+}
+
+/* ACCESIBILIDAD: Anillo de foco (Teclado) */
+.unav-videoItem:focus-visible {
+    outline: 2px solid var(--unav-rojo-500);
+    outline-offset: -2px; /* Hacia adentro para evitar colapsar la lista */
+    z-index: 2;
+}
+
+.unav-videoItem:hover { 
+    background-color: var(--unav-videoGalleryHoverBg, var(--unav-grey-100)); 
+}
+.unav-videoItem.unav-isActive {
+    background-color: var(--unav-videoGalleryActiveBg, var(--unav-rojo-100));
+    box-shadow: inset 4px 0 0 0 var(--unav-videoGalleryActiveBorder, var(--unav-rojo-600));
+}
+
+/* Miniatura del Vídeo */
+.unav-videoThumb {
+    position: relative; 
+    width: var(--unav-videoThumbWidth, 120px);
+    flex-shrink: 0;
+    aspect-ratio: 16/9;
+    background-color: var(--unav-black-800);
+    border-radius: 4px;
+}
+.unav-videoThumb img { 
+    width: 100%; height: 100%; 
+    object-fit: cover; 
+    opacity: 0.8; 
+    transition: opacity var(--unav-transitionBase); 
+}
+.unav-videoItem:hover .unav-videoThumb img, 
+.unav-videoItem.unav-isActive .unav-videoThumb img { 
+    opacity: 1; 
+}
+
+/* Icono Play (Motion Tokens) */
+.unav-videoPlayIcon {
+    position: absolute;
+    top: 50%; left: 50%;
+    transform: translate(-50%, -50%);
+    font-size: 2rem;
+    color: #ffffff;
+    opacity: 0.8;
+    z-index: 5;
+    transition: transform var(--unav-durationNormal, 250ms) var(--unav-easingStandard, ease), 
+                color var(--unav-durationNormal, 250ms) var(--unav-easingStandard, ease),
+                opacity var(--unav-durationNormal, 250ms) var(--unav-easingStandard, ease);
+}
+.unav-videoItem:hover .unav-videoPlayIcon {
+    transform: translate(-50%, -50%) scale(1.2); 
+    color: var(--unav-rojo-500);
+    opacity: 1;
+}
+.unav-videoItem.unav-isActive .unav-videoPlayIcon {
+    color: var(--unav-rojo-600);
+    opacity: 1;
+}
+
+/* Textos de la Playlist */
+.unav-videoItemInfo { 
+    overflow: hidden; 
+    display: flex; 
+    flex-direction: column; 
+    justify-content: center; 
+}
+
+/* Line Clamping (Protección contra textos largos) */
+.unav-videoItemTitle {
+    font-family: var(--unav-fontFamilyPrimary);
+    font-size: var(--unav-fontSize075, 0.875rem);
+    font-weight: var(--unav-fontWeightBold);
+    color: var(--unav-black-800);
+    line-height: 1.2;
+    display: -webkit-box;
+    -webkit-line-clamp: 2; /* Trunca a 2 líneas */
+    -webkit-box-orient: vertical;
+    overflow: hidden;
+    margin-bottom: 0.25rem; /* 4px */
+}
+
+.unav-videoItemMeta {
+    font-family: var(--unav-fontFamilyPrimary);
+    font-size: 0.75rem;
+    color: var(--unav-grey-600);
+}
+
+/* Modificadores de Visibilidad Sincronizada */
+.unav-btnVertical { display: inline-flex !important; }
+.unav-btnHorizontal { display: none !important; }
+
+/* =======================================================
+   RESPONSIVIDAD POR CONTENEDOR (Container Queries)
+   ======================================================= */
+
+@container unavVideoGallery (max-width: 850px) {
+    .unav-videoMediaContainer { padding-right: var(--unav-videoSidebarWidthTablet, 280px); }
+    .unav-videoPlaylistSidebar { width: var(--unav-videoSidebarWidthTablet, 280px); }
+    .unav-videoThumb { width: var(--unav-videoThumbWidthTablet, 100px); }
+    .unav-videoItem { padding: 0.625rem; /* 10px */ }
+}
+
+@container unavVideoGallery (max-width: 600px) {
+    .unav-videoMediaContainer { 
+        padding-right: 0; 
+        display: flex; 
+        flex-direction: column; 
+    }
+    
+    .unav-videoPlaylistSidebar {
+        position: relative;
+        width: 100%;
+        border-left: none;
+        border-top: 1px solid var(--unav-videoGalleryBorderColor, var(--unav-grey-200));
+        flex-direction: row; /* Cambio mágico a Horizontal */
+    }
+    
+    .unav-videoControlNav.unav-navTop { 
+        border-bottom: none; 
+        border-right: 1px solid var(--unav-grey-200); 
+        padding: 0.5rem; 
+    }
+    .unav-videoControlNav.unav-navBottom { 
+        border-top: none; 
+        border-left: 1px solid var(--unav-grey-200); 
+        padding: 0.5rem; 
+    }
+
+    .unav-videoPlaylistItems {
+        flex-direction: row;
+        overflow-x: auto;
+        overflow-y: hidden;
+        min-width: 0; /* Truco vital para scroll horizontal en Flexbox */
+        scroll-snap-type: x mandatory;
+    }
+    
+    .unav-videoItem {
+        width: var(--unav-videoItemWidthMobile, 200px);
+        flex-shrink: 0;
+        border-bottom: none;
+        border-right: 1px solid var(--unav-videoGalleryBorderColor, var(--unav-grey-200));
+        scroll-snap-align: start;
+        flex-direction: column;
+    }
+    
+    .unav-videoThumb { width: 100%; }
+    .unav-videoItemInfo { display: none; }
+    .unav-videoItem.unav-isActive { box-shadow: inset 0 -4px 0 0 var(--unav-videoGalleryActiveBorder, var(--unav-rojo-600)); }
+
+    /* Inversión Mágica de Controles */
+    .unav-btnVertical { display: none !important; }
+    .unav-btnHorizontal { display: inline-flex !important; }
+}

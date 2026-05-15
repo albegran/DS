@@ -1,0 +1,78 @@
+/* ==========================================
+   COMPONENTE: BLOQUE DE ENLACES UNAV (OOCSS)
+   ========================================== */
+
+/* Contenedor Flex para el apilamiento automático con gap de 2px */
+.unav-listadoEnlaces {
+    display: flex;
+    flex-direction: column;
+    gap: var(--unav-bloqueEnlaceGap);
+    width: 100%;
+}
+
+/* Átomo: Bloque Individual */
+.unav-bloqueEnlace {
+    display: block; 
+    width: 100%;
+    position: relative; 
+    box-sizing: border-box;
+    text-decoration: none;
+    cursor: pointer;
+    transition: var(--unav-transitionBase);
+    outline: none; /* Reseteo del outline nativo */
+    
+    /* Consumo de Tokens Corporativos */
+    color: var(--unav-bloqueEnlaceText);
+    background-color: var(--unav-bloqueEnlaceBg);
+    padding: var(--unav-bloqueEnlacePadding);
+    font-family: var(--unav-fontFamilyPrimary);
+    font-size: var(--unav-fontSize100);
+    line-height: var(--unav-bloqueEnlaceLineHeight);
+    border-radius: 0 !important; /* Esquinas rectas estrictas */
+}
+
+/* ACCESIBILIDAD: Anillo de foco (Teclado) */
+.unav-bloqueEnlace:focus-visible {
+    outline: 2px solid var(--unav-rojo-500);
+    outline-offset: -2px; /* Offset negativo (hacia adentro) para evitar solapar el bloque contiguo */
+    z-index: 2; /* Elevación de contexto para asegurar visibilidad */
+}
+
+.unav-bloqueEnlace:hover {
+    background-color: var(--unav-bloqueEnlaceHoverBg);
+    color: var(--unav-bloqueEnlaceHoverText);
+    text-decoration: none; 
+}
+
+.unav-bloqueEnlaceText {
+    display: inline; 
+    font-weight: var(--unav-fontWeightRegular); 
+    transition: font-weight 0.1s ease;
+}
+
+/* Estado de medición (JS) y Hover (Transición a Bold) */
+.unav-bloqueEnlace.unav-measuringBold .unav-bloqueEnlaceText,
+.unav-bloqueEnlace:hover .unav-bloqueEnlaceText {
+    font-weight: var(--unav-fontWeightBold);
+    text-decoration: none;
+}
+
+/* Línea de subrayado trazada vía JavaScript */
+.unav-bloqueEnlace::after {
+    content: '';
+    position: absolute;
+    height: 1px;
+    background-color: currentColor; /* Hereda el color del hover (blanco) automáticamente */
+    
+    /* Coordenadas inyectadas por el motor JS */
+    left: var(--unav-lineLeft, var(--unav-bloqueEnlacePadding));
+    width: var(--unav-lineWidth, 0px);
+    bottom: var(--unav-lineBottom, 0.75rem);
+    
+    opacity: 0;
+    transition: opacity var(--unav-transitionBase);
+}
+
+.unav-bloqueEnlace:hover::after {
+    opacity: 1;
+}

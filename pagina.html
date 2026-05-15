@@ -1,0 +1,1243 @@
+<!DOCTYPE html>
+<html lang="es" itemscope itemtype="https://schema.org/WebPage">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Home | Design System UNAV</title>
+    
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.1/font/bootstrap-icons.css">    
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@24,400,0,0" />
+
+    <link rel="stylesheet" href="unav-styles.css">
+</head>
+<body class="">
+
+    <div class="unav-stickyWrapper" itemscope itemtype="https://schema.org/ContactPage">        
+        <div class="unav-panelOverlay" id="unavOverlay"></div>
+        <aside class="unav-sidePanel" id="unavSidePanel" itemprop="mainEntity" itemscope itemtype="https://schema.org/ContactPoint">            
+            <button class="unav-stickyButton" 
+                    id="unavBtnToggle"
+                    aria-label="Abrir formulario de información">
+                <span class="unav-iconArrow">
+                    <svg viewBox="0 0 24 24" width="24" height="24"><path d="M15.41 16.59L10.83 12l4.58-4.59L14 6l-6 6 6 6 1.41-1.41z"/></svg>
+                </span>
+                <span class="unav-buttonText" itemprop="contactType">Solicitar Información</span>
+            </button>
+            <div class="unav-panelBody">
+                <iframe src="https://cloud.marketing.unav.edu/formularioGradoTest" 
+                        class="unav-iframeContainer"
+                        title="Formulario de Solicitud de Información"
+                        itemprop="url"></iframe>
+            </div>            
+        </aside>
+    </div>
+
+    <main itemprop="mainContentOfPage">
+
+        <section class="unav-hero unav-hero--darkOverlay mb-5" itemscope itemtype="https://schema.org/WPHeader">
+            <div class="unav-heroVisuals" itemprop="video" itemscope itemtype="https://schema.org/VideoObject">
+                <meta itemprop="name" content="Campus Universitario UNAV">
+                <meta itemprop="description" content="Vista aérea y vida en el campus de la Universidad de Navarra.">
+                
+                <div class="unav-heroVideoYoutubeWrapper">
+                    <iframe src="https://www.youtube.com/embed/BFH1dAqjsKs?autoplay=1&mute=1&controls=1&loop=1&playlist=BFH1dAqjsKs&showinfo=0&rel=0&modestbranding=1" frameborder="0" allow="autoplay; fullscreen; picture-in-picture" allowfullscreen></iframe>
+                </div>
+                
+                <div class="unav-heroOverlay">
+                    <div class="unav-heroContent unav-heroContent--center">
+                        <p class="unav-heroPretitle" itemprop="headline">Campus Pamplona</p>
+                        <h1 class="unav-heroTitle">Un entorno para crecer</h1>
+                        <div class="unav-heroBtnGroup">
+                            <a class="unav-boton unav-botonPrimario unav-botonFit" href="#" style="--unav-botonBg: var(--unav-rojo-600); --unav-botonText: #fff; --unav-botonBorder: var(--unav-rojo-600); --unav-botonHoverBg: transparent; --unav-botonHoverText: var(--unav-rojo-600); --unav-botonHoverBorder: var(--unav-rojo-600);">
+                                <span>Visita Virtual</span>
+                            </a>
+                            <a class="unav-boton unav-botonPrimario unav-botonFit" href="#" style="--unav-botonBg: transparent; --unav-botonText: #fff; --unav-botonBorder: #fff; --unav-botonHoverBg: #fff; --unav-botonHoverText: var(--unav-black-800); --unav-botonHoverBorder: #fff;">
+                                <span>Reserva tu plaza</span>
+                            </a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+
+
+
+
+
+
+        <div class="container-lg">
+            <section class="bg-white p-4 p-md-5 mb-5">
+                <h2 class="unav-font-primary unav-weight-bold unav-text-200 border-bottom pb-2 mb-4 text-dark mt-0">04. Variante D: Ancho Total (12 Col) - Textos mixtos</h2>
+                <div class="row g-4">
+                    <div class="col-12 col-md-6 col-lg-3">
+                        <article class="unav-newsCard unav-efectoEntradaOculto" itemscope itemtype="https://schema.org/NewsArticle">
+                            <div class="unav-newsImageWrapper unav-efectoZoomImagen"><img src="https://picsum.photos/800/500?random=11" alt="Noticia 6" class="unav-newsImage" loading="lazy" itemprop="image"></div>
+                            <p class="unav-newsDate" itemprop="datePublished">28 Mar. 2026</p>
+                            <h3 class="unav-newsTitle unav-newsTitle--sm" itemprop="headline"><a href="#" itemprop="url">Inauguración de arte</a></h3>
+                            <a href="#" class="unav-enlaceFlecha" itemprop="url"><span class="unav-arrowWrapper"><span class="unav-arrow"></span><span class="unav-arrowClone"></span></span><span itemprop="name">Ver detalles</span></a>
+                        </article>
+                    </div>
+                    <div class="col-12 col-md-6 col-lg-3">
+                        <article class="unav-newsCard unav-efectoEntradaOculto" itemscope itemtype="https://schema.org/NewsArticle">
+                            <div class="unav-newsImageWrapper unav-efectoZoomImagen"><img src="https://picsum.photos/800/500?random=12" alt="Noticia 7" class="unav-newsImage" loading="lazy" itemprop="image"></div>
+                            <p class="unav-newsDate" itemprop="datePublished">26 Mar. 2026</p>
+                            <h3 class="unav-newsTitle unav-newsTitle--sm" itemprop="headline"><a href="#" itemprop="url">El acuerdo estratégico permitirá incorporar a más de 300 estudiantes anuales en programas de prácticas inmersivas en más de 40 empresas tecnológicas</a></h3>
+                            <a href="#" class="unav-enlaceFlecha" itemprop="url"><span class="unav-arrowWrapper"><span class="unav-arrow"></span><span class="unav-arrowClone"></span></span><span itemprop="name">Ver detalles</span></a>
+                        </article>
+                    </div>
+                    <div class="col-12 col-md-6 col-lg-3">
+                        <article class="unav-newsCard unav-efectoEntradaOculto" itemscope itemtype="https://schema.org/NewsArticle">
+                            <div class="unav-newsImageWrapper unav-efectoZoomImagen"><img src="https://picsum.photos/800/500?random=13" alt="Noticia 8" class="unav-newsImage" loading="lazy" itemprop="image"></div>
+                            <p class="unav-newsDate" itemprop="datePublished">25 Mar. 2026</p>
+                            <h3 class="unav-newsTitle unav-newsTitle--sm" itemprop="headline"><a href="#" itemprop="url">Premio nacional de robótica</a></h3>
+                            <a href="#" class="unav-enlaceFlecha" itemprop="url"><span class="unav-arrowWrapper"><span class="unav-arrow"></span><span class="unav-arrowClone"></span></span><span itemprop="name">Ver detalles</span></a>
+                        </article>
+                    </div>
+                    <div class="col-12 col-md-6 col-lg-3">
+                        <article class="unav-newsCard unav-efectoEntradaOculto" itemscope itemtype="https://schema.org/NewsArticle">
+                            <div class="unav-newsImageWrapper unav-efectoZoomImagen"><img src="https://picsum.photos/800/500?random=14" alt="Noticia 9" class="unav-newsImage" loading="lazy" itemprop="image"></div>
+                            <p class="unav-newsDate" itemprop="datePublished">23 Mar. 2026</p>
+                            <h3 class="unav-newsTitle unav-newsTitle--sm" itemprop="headline"><a href="#" itemprop="url">Ciclo de conferencias sobre el impacto de la sostenibilidad climática en el urbanismo moderno</a></h3>
+                            <a href="#" class="unav-enlaceFlecha" itemprop="url"><span class="unav-arrowWrapper"><span class="unav-arrow"></span><span class="unav-arrowClone"></span></span><span itemprop="name">Ver detalles</span></a>
+                        </article>
+                    </div>
+                </div>
+            </section>
+        </div>
+
+
+        <div class="container-lg">
+            <div class="row g-4 mb-5" itemscope itemtype="https://schema.org/ItemList">
+                <div class="col-12 col-md-4" itemprop="itemListElement" itemscope itemtype="https://schema.org/ListItem">
+                    <article class="unav-card unav-cardFloating unav-cardAlignLeft unav-efectoElevacion unav-efectoEntradaOculto" style="background-color: var(--unav-rose-100);" itemprop="item" itemscope itemtype="https://schema.org/Course">
+                        <div class="unav-cardIconFloating" style="background-color: var(--unav-rojo-600); border-color: var(--unav-rojo-100);">
+                            <span class="material-symbols-outlined">monitor_heart</span>
+                        </div>
+                        <div class="unav-cardBody p-0">
+                            <div class="unav-cardTags">
+                                <span class="unav-tag unav-tagRojo">Salud</span>
+                                <span class="unav-tag unav-tagBlueDark">Grado</span>
+                            </div>
+                            <h4 class="unav-cardTitle" itemprop="name">Enfermería Avanzada</h4>
+                            <p class="unav-cardText" itemprop="description">Desarrolla habilidades clínicas de vanguardia en nuestro centro de simulación médica internacional.</p>
+                            <div class="unav-cardAction">
+                                <a href="#" class="unav-enlaceFlecha" style="--unav-enlaceColor: var(--unav-rojo-800);">
+                                    <span class="unav-arrowWrapper"><span class="unav-arrow"></span><span class="unav-arrowClone"></span></span><span>Ver Programa</span>
+                                </a>
+                            </div>
+                        </div>
+                    </article>
+                </div>
+
+                <div class="col-12 col-md-4" itemprop="itemListElement" itemscope itemtype="https://schema.org/ListItem">
+                    <article class="unav-card unav-cardFloating unav-cardAlignLeft unav-efectoElevacion unav-efectoEntradaOculto" style="background-color: var(--unav-b-dark-100);" itemprop="item" itemscope itemtype="https://schema.org/Course">
+                        <div class="unav-cardIconFloating" style="background-color: var(--unav-b-dark-600); border-color: var(--unav-b-dark-100);">
+                            <span class="material-symbols-outlined">language</span>
+                        </div>
+                        <div class="unav-cardBody p-0">
+                            <div class="unav-cardTags">
+                                <span class="unav-tag unav-tagBlueDark">Internacional</span>
+                            </div>
+                            <h4 class="unav-cardTitle" itemprop="name">Relaciones Globales</h4>
+                            <p class="unav-cardText" itemprop="description">Programas de intercambio y convenios en los 5 continentes para impulsar tu carrera sin fronteras.</p>
+                            <div class="unav-cardAction">
+                                <a href="#" class="unav-enlaceFlecha" style="--unav-enlaceColor: var(--unav-b-dark-800);">
+                                    <span class="unav-arrowWrapper"><span class="unav-arrow"></span><span class="unav-arrowClone"></span></span><span>Descubrir Destinos</span>
+                                </a>
+                            </div>
+                        </div>
+                    </article>
+                </div>
+
+                <div class="col-12 col-md-4" itemprop="itemListElement" itemscope itemtype="https://schema.org/ListItem">
+                    <article class="unav-card unav-cardFloating unav-cardAlignLeft unav-efectoElevacion unav-efectoEntradaOculto" style="background-color: var(--unav-moss-100);" itemprop="item" itemscope itemtype="https://schema.org/Course">
+                        <div class="unav-cardIconFloating" style="background-color: var(--unav-moss-600); border-color: var(--unav-moss-100);">
+                            <span class="material-symbols-outlined">eco</span>
+                        </div>
+                        <div class="unav-cardBody p-0">
+                            <div class="unav-cardTags">
+                                <span class="unav-tag unav-tagMoss">Sostenibilidad</span>
+                            </div>
+                            <h4 class="unav-cardTitle" itemprop="name">Campus Verde</h4>
+                            <p class="unav-cardText" itemprop="description">Participa en proyectos de integración ecológica e investigación medioambiental aplicada.</p>
+                            <div class="unav-cardAction">
+                                <a href="#" class="unav-enlaceFlecha" style="--unav-enlaceColor: var(--unav-moss-800);">
+                                    <span class="unav-arrowWrapper"><span class="unav-arrow"></span><span class="unav-arrowClone"></span></span><span>Iniciativas</span>
+                                </a>
+                            </div>
+                        </div>
+                    </article>
+                </div>
+            </div>
+        </div>
+
+
+
+
+
+
+        <section class="mb-5">
+            <div class="unav-banner unav-bannerFull unav-efectoParallax unav-themeDark unav-alignCenter" style="background-image: url('https://images.unsplash.com/photo-1541339907198-e08756dedf3f?auto=format&fit=crop&q=80&w=1920');" itemscope itemtype="https://schema.org/WPAdBlock">
+                <div class="unav-bannerOverlay"></div>
+                <div class="container-lg unav-bannerContent d-flex flex-column align-items-center">
+                    <h3 class="unav-bannerTitle" itemprop="headline">ADMISIÓN CURSO 2026/27</h3>
+                    <p class="unav-bannerText mx-auto" style="max-width: 800px;" itemprop="description">El periodo de solicitud de admisión se encuentra abierto. Consulta la oferta académica y descubre por qué miles de alumnos nos eligen cada año para forjar su futuro.</p>
+                    <div class="d-flex flex-wrap justify-content-center gap-3 mt-4" itemscope itemtype="https://schema.org/WebPageElement">
+                        <a href="#" class="unav-boton unav-botonSecundario" style="--unav-botonColorSource: #ffffff; --unav-botonTextHover: var(--unav-black-800);" itemprop="url">
+                            <span itemprop="name">OFERTA ACADÉMICA</span>
+                        </a>
+                        <a href="#" class="unav-boton unav-botonSecundario" style="--unav-botonColorSource: #ffffff; --unav-botonTextHover: var(--unav-black-800);" itemprop="url">
+                            <span itemprop="name">INICIAR SOLICITUD</span>
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+
+
+
+        <div class="row">
+            <div class="col-12 text-center">
+                <h2 class="unav-headerElement" itemprop="headline" style="font-family: var(--unav-fontFamilyPrimaryCondensed); font-weight: var(--unav-fontWeightBold); font-size: var(--unav-fontSize100); color: var(--unav-black-500);">NOTICIAS</h2>
+                <div class="unav-separador unav-separadorAlignCenter" style="--unav-separadorColor: var(--unav-black-600); --unav-separadorThickness: 1px; --unav-separadorStyle: solid;" itemscope itemtype="https://schema.org/WebPageElement">
+                    <meta itemprop="name" content="Separador con Icono Escudo Centrado">
+                    <div class="unav-separadorLine"></div>
+                    <div class="unav-separadorLine"></div>
+                </div>
+            </div>
+        </div>
+
+
+        <div class="container-lg">
+            <section class="bg-white p-4 p-md-5 mb-5"> 
+
+                <div class="row g-5">                    
+
+                    <div class="col-12 col-md-4">
+                        <article class="unav-newsCard unav-efectoEntradaOculto" itemscope itemtype="https://schema.org/NewsArticle">
+                            <div class="unav-newsImageWrapper unav-efectoZoomImagen">
+                                <img src="https://picsum.photos/800/500?random=1" alt="Investigación" class="unav-newsImage" loading="lazy" itemprop="image">
+                            </div>
+                            <p class="unav-newsDate" itemprop="datePublished">15 Abr. 2026</p>
+                            <h3 class="unav-newsTitle" itemprop="headline">
+                                <a href="#" itemprop="url">El nuevo Campus abrirá en octubre</a>
+                            </h3>
+                            <a href="#" class="unav-enlaceFlecha" itemprop="url">
+                                <span class="unav-arrowWrapper"><span class="unav-arrow"></span><span class="unav-arrowClone"></span></span>
+                                <span itemprop="name">Leer más</span>
+                            </a>
+                        </article>
+                    </div>
+                    <div class="col-12 col-md-4">
+                        <article class="unav-newsCard unav-efectoEntradaOculto" itemscope itemtype="https://schema.org/NewsArticle">
+                            <div class="unav-newsImageWrapper unav-efectoZoomImagen">
+                                <img src="https://picsum.photos/800/500?random=2" alt="Ciencia" class="unav-newsImage" loading="lazy" itemprop="image">
+                            </div>
+                            <p class="unav-newsDate" itemprop="datePublished">14 Abr. 2026</p>
+                            <h3 class="unav-newsTitle" itemprop="headline">
+                                <a href="#" itemprop="url">La Universidad lidera un nuevo consorcio internacional y multidisciplinar para el estudio clínico avanzado de enfermedades neurodegenerativas y su impacto socioeconómico</a>
+                            </h3>
+                            <a href="#" class="unav-enlaceFlecha" itemprop="url">
+                                <span class="unav-arrowWrapper"><span class="unav-arrow"></span><span class="unav-arrowClone"></span></span>
+                                <span itemprop="name">Leer artículo</span>
+                            </a>
+                        </article>
+                    </div>
+                    <div class="col-12 col-md-4">
+                        <article class="unav-newsCard unav-efectoEntradaOculto" itemscope itemtype="https://schema.org/NewsArticle">
+                            <div class="unav-newsImageWrapper unav-efectoZoomImagen">
+                                <img src="https://picsum.photos/800/500?random=3" alt="Becas" class="unav-newsImage" loading="lazy" itemprop="image">
+                            </div>
+                            <p class="unav-newsDate" itemprop="datePublished">12 Abr. 2026</p>
+                            <h3 class="unav-newsTitle" itemprop="headline">
+                                <a href="#" itemprop="url">Becas Alumni 2026</a>
+                            </h3>
+                            <a href="#" class="unav-enlaceFlecha" itemprop="url">
+                                <span class="unav-arrowWrapper"><span class="unav-arrow"></span><span class="unav-arrowClone"></span></span>
+                                <span itemprop="name">Leer más</span>
+                            </a>
+                        </article>
+                    </div>
+                </div>
+            </section>
+        </div>
+
+        <div class="row">
+            <div class="col-12 text-center">
+                <div class="pb-5 d-flex justify-content-center" itemscope itemtype="https://schema.org/WebPageElement">
+                    <a itemprop="url" href="#" class="unav-boton unav-botonPrimario unav-botonFit unav-botonHoverInnerBorder" 
+                       style="--unav-botonBg: var(--unav-rojo-600); --unav-botonText: #fff; --unav-botonBorder: var(--unav-rojo-600); --unav-botonHoverBg: var(--unav-rojo-800);">
+                        <span itemprop="name">TODAS LAS NOTICIAS</span>
+                        <span class="material-symbols-outlined unav-botonIcono" aria-hidden="true">news</span>
+                    </a>
+                </div>
+            </div>
+        </div>
+
+
+        <section class="mb-5">
+            <div class="unav-countersSection" itemscope itemtype="https://schema.org/Organization">
+                <meta itemprop="name" content="UNAV">
+                
+                <img src="https://images.unsplash.com/photo-1497215728101-856f4ea42174?auto=format&fit=crop&q=80&w=1600" class="unav-counterBgImg" alt="Campus UNAV">
+                <div class="unav-counterOverlay"></div>
+                
+                <div class="unav-countersContent container py-5">
+                    <div class="row g-4 justify-content-center">
+                        <article class="col-6 col-md-3 unav-counterItem unav-efectoEntradaOculto">
+                            <div itemscope itemtype="https://schema.org/QuantitativeValue">
+                                <span class="unav-counterTop" itemprop="name">Red Global</span>
+                                <strong class="unav-counterValue" itemprop="value">450+</strong>
+                                <span class="unav-counterBottom" itemprop="unitText">Partners</span>
+                            </div>
+                        </article>
+                        <article class="col-6 col-md-3 unav-counterItem unav-efectoEntradaOculto">
+                            <div itemscope itemtype="https://schema.org/QuantitativeValue">
+                                <span class="unav-counterTop" itemprop="name">Innovación</span>
+                                <strong class="unav-counterValue" itemprop="value">82%</strong>
+                                <span class="unav-counterBottom" itemprop="unitText">Proyectos I+D</span>
+                            </div>
+                        </article>
+                        <article class="col-6 col-md-3 unav-counterItem unav-efectoEntradaOculto">
+                            <div itemscope itemtype="https://schema.org/QuantitativeValue">
+                                <span class="unav-counterTop" itemprop="name">Alcance</span>
+                                <strong class="unav-counterValue" itemprop="value">15</strong>
+                                <span class="unav-counterBottom" itemprop="unitText">Sedes internacionales</span>
+                            </div>
+                        </article>
+                        <article class="col-6 col-md-3 unav-counterItem unav-efectoEntradaOculto">
+                            <div itemscope itemtype="https://schema.org/QuantitativeValue">
+                                <span class="unav-counterTop" itemprop="name">Trayectoria</span>
+                                <strong class="unav-counterValue" itemprop="value">50</strong>
+                                <span class="unav-counterBottom" itemprop="unitText">Años de éxito</span>
+                            </div>
+                        </article>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+
+
+
+        
+        <div class="col-12 text-center">
+            <h2 class="unav-headerElement" itemprop="headline" style="font-family: var(--unav-fontFamilyPrimaryCondensed); font-weight: var(--unav-fontWeightBold); font-size: var(--unav-fontSize100); color: var(--unav-black-500);">EVENTOS</h2>
+            <div class="unav-separador unav-separadorAlignCenter" style="--unav-separadorColor: var(--unav-black-600); --unav-separadorThickness: 1px; --unav-separadorStyle: solid;" itemscope itemtype="https://schema.org/WebPageElement">
+                <meta itemprop="name" content="Separador con Icono Escudo Centrado">
+                <div class="unav-separadorLine"></div>
+                <div class="unav-separadorLine"></div>
+            </div>
+        </div>
+
+
+
+
+        
+
+        <div class="container-lg">            
+
+            <div class="row g-3" id="unavGrid-4-col">                
+                <div class="col-12 col-md-6 col-lg-3">
+                    <a href="#" class="unav-eventLink unav-efectoEntradaOculto unav-efectoEntradaVisible" itemscope="" itemtype="https://schema.org/Event">
+                        <div class="unav-eventCard unav-efectoElevacion">
+                            <figure class="unav-eventImageWrapper unav-efectoZoomImagen">
+                                <img src="https://picsum.photos/id/1015/400/250" alt="Imagen de Jornada de Puertas Abiertas" loading="lazy" itemprop="image">
+                            </figure>
+                            <div class="unav-eventBody">
+                                <div class="unav-eventDateGroup">
+                                    <p class="unav-eventDate" itemprop="startDate">23 Abr. 2026</p>
+                                    <span class="unav-eventBadge">HOY</span>
+                                </div>
+                                <p class="unav-eventTime">10:00h.</p>
+                                <h3 class="unav-eventTitle" itemprop="name">Jornada de Puertas Abiertas</h3>
+                            </div>
+                            <div class="unav-eventLocation" itemprop="location" itemscope="" itemtype="https://schema.org/Place">
+                                <i class="bi bi-geo-alt-fill" aria-hidden="true"></i>
+                                <span itemprop="name">Aula 30 del Edificio Central</span>
+                            </div>
+                        </div>
+                    </a>
+                </div>
+                
+                <div class="col-12 col-md-6 col-lg-3">
+                    <a href="#" class="unav-eventLink unav-efectoEntradaOculto unav-efectoEntradaVisible" itemscope="" itemtype="https://schema.org/Event">
+                        <div class="unav-eventCard unav-efectoElevacion">
+                            <figure class="unav-eventImageWrapper unav-efectoZoomImagen">
+                                <img src="https://picsum.photos/id/1021/400/250" alt="Imagen de Encuentro Alumni Internacional 2026" loading="lazy" itemprop="image">
+                            </figure>
+                            <div class="unav-eventBody">
+                                <div class="unav-eventDateGroup">
+                                    <p class="unav-eventDate" itemprop="startDate">23 Abr. 2026</p>
+                                    <span class="unav-eventBadge">MAÑANA</span>
+                                </div>
+                                <p class="unav-eventTime">11:15h.</p>
+                                <h3 class="unav-eventTitle" itemprop="name">Encuentro Alumni Internacional 2026</h3>
+                            </div>
+                            <div class="unav-eventLocation" itemprop="location" itemscope="" itemtype="https://schema.org/Place">
+                                <i class="bi bi-geo-alt-fill" aria-hidden="true"></i>
+                                <span itemprop="name">Explanada Central</span>
+                            </div>
+                        </div>
+                    </a>
+                </div>
+                
+                <div class="col-12 col-md-6 col-lg-3">
+                    <a href="#" class="unav-eventLink unav-efectoEntradaOculto unav-efectoEntradaVisible" itemscope="" itemtype="https://schema.org/Event">
+                        <div class="unav-eventCard unav-efectoElevacion">
+                            <figure class="unav-eventImageWrapper unav-efectoZoomImagen">
+                                <img src="https://picsum.photos/id/1022/400/250" alt="Imagen de Congreso de Comunicación y Empresa" loading="lazy" itemprop="image">
+                            </figure>
+                            <div class="unav-eventBody">
+                                <div class="unav-eventDateGroup">
+                                    <p class="unav-eventDate" itemprop="startDate">24 Abr. 2026</p>                                    
+                                </div>
+                                <p class="unav-eventTime">08:30h.</p>
+                                <h3 class="unav-eventTitle" itemprop="name">Congreso de Comunicación y Empresa</h3>
+                            </div>
+                            <div class="unav-eventLocation" itemprop="location" itemscope="" itemtype="https://schema.org/Place">
+                                <i class="bi bi-geo-alt-fill" aria-hidden="true"></i>
+                                <span itemprop="name">Facultad de Comunicación</span>
+                            </div>
+                        </div>
+                    </a>
+                </div>
+                <div class="col-12 col-md-6 col-lg-3">
+                    <a href="#" class="unav-eventLink unav-efectoEntradaOculto unav-efectoEntradaVisible" itemscope="" itemtype="https://schema.org/Event">
+                        <div class="unav-eventCard unav-efectoElevacion">
+                            <figure class="unav-eventImageWrapper unav-efectoZoomImagen">
+                                <img src="https://picsum.photos/id/1016/400/250" alt="Imagen de Seminario Internacional de Bioética" loading="lazy" itemprop="image">
+                            </figure>
+                            <div class="unav-eventBody">
+                                <div class="unav-eventDateGroup">
+                                    <p class="unav-eventDate" itemprop="startDate">24 Abr. 2026</p>
+                                    
+                                </div>
+                                <p class="unav-eventTime">16:30h.</p>
+                                <h3 class="unav-eventTitle" itemprop="name">Seminario Internacional de Bioética</h3>
+                            </div>
+                            <div class="unav-eventLocation" itemprop="location" itemscope="" itemtype="https://schema.org/Place">
+                                <i class="bi bi-geo-alt-fill" aria-hidden="true"></i>
+                                <span itemprop="name">Aula Magna</span>
+                            </div>
+                        </div>
+                    </a>
+                </div>
+            </div>
+        </div>
+
+
+
+
+
+
+        <div class="container-lg">
+            <div class="unav-separador unav-separadorAlignLeft" style="--unav-separadorColor: var(--unav-moss-700); --unav-separadorThickness: 2px; --unav-separadorStyle: solid;" itemscope itemtype="https://schema.org/WebPageElement">
+                <meta itemprop="name" content="Separador Icono y Texto Alineado a la Izquierda">
+                <div class="unav-separadorContent ps-0">
+                    <span class="material-symbols-outlined unav-separadorIcon me-2" aria-hidden="true">eco</span>
+                    <span class="unav-separadorText">Sostenibilidad UNAV</span>
+                </div>
+                <div class="unav-separadorLine"></div>
+            </div>
+        </div>
+
+
+
+
+
+
+        <div class="container-lg">
+            <section class="p-4 p-md-5 mb-5">    
+                <div class="row g-2">
+                    <div class="col-lg-4">
+                        <p class="unav-preview-text unav-font-primary unav-weight-thin unav-text-200">Desde 1954 #enfunav</p>
+                        <p>1954-2024. 70 años: Otro modo de ser, otro modo de hacer</p>
+                        <div>
+                            Recorrer la historia ayuda a constatar cómo un proyecto que comenzó hace más de medio siglo constituye hoy una gran Facultad, que aporta no solo excelentes profesionales, sino también personas al servicio del cuidado de las personas.
+                        </div>
+                    </div>
+                    <div class="col-lg-8 align-items-center p-2">
+                        <div class="unav-accordionGroup">
+                
+                            <!-- Rojo Unav -->
+                            <div class="unav-accordionItem unav-isThemed unav-bg-rojo-600">
+                                <button class="unav-accordionHeader" aria-expanded="false">
+                                    <div class="unav-accordionTitleWrapper">
+                                        <span class="material-symbols-outlined" aria-hidden="true">school</span>
+                                        <span>Admisión (Rojo Unav)</span>
+                                    </div>
+                                    <span class="material-symbols-outlined unav-accordionToggleIcon" aria-hidden="true">expand_more</span>
+                                </button>
+                                <div class="unav-accordionPanel"><div class="unav-accordionInner">
+                                    <p class="unav-preview-text unav-font-primary unav-weight-thin unav-text-200">
+                                    Información institucional clave asociada al color principal de la Universidad de Navarra.
+                                    </p>
+                                    <dl class="unav-descList row g-4" itemscope itemtype="https://schema.org/DefinedTermSet">
+                
+                                        <div class="col-md-6">
+                                            <div class="unav-descItem unav-hasBorder" itemprop="hasDefinedTerm" itemscope itemtype="https://schema.org/DefinedTerm">
+                                                <dt class="unav-descTerm">
+                                                    <i class="bi bi-1-circle-fill unav-descIcon" style="color: var(--unav-rojo-600);" aria-hidden="true"></i>
+                                                    <span itemprop="name">Fase de Admisión</span>
+                                                </dt>
+                                                <dd class="unav-descDefinition" itemprop="description">
+                                                    Completa el formulario online y adjunta la documentación académica requerida para iniciar tu proceso.
+                                                </dd>
+                                            </div>
+                                        </div>
+                        
+                                        <div class="col-md-6">
+                                            <div class="unav-descItem unav-hasBorder" itemprop="hasDefinedTerm" itemscope itemtype="https://schema.org/DefinedTerm">
+                                                <dt class="unav-descTerm">
+                                                    <i class="bi bi-2-circle-fill unav-descIcon" style="color: var(--unav-orange-600);" aria-hidden="true"></i>
+                                                    <span itemprop="name">Pruebas de Acceso</span>
+                                                </dt>
+                                                <dd class="unav-descDefinition" itemprop="description">
+                                                    Realiza los test psicotécnicos y la entrevista personal con el orientador asignado a tu titulación.
+                                                </dd>
+                                            </div>
+                                        </div>
+                        
+                                        <div class="col-md-6">
+                                            <div class="unav-descItem unav-hasBorder" itemprop="hasDefinedTerm" itemscope itemtype="https://schema.org/DefinedTerm">
+                                                <dt class="unav-descTerm">
+                                                    <i class="bi bi-3-circle-fill unav-descIcon" style="color: var(--unav-teal-600);" aria-hidden="true"></i>
+                                                    <span itemprop="name">Resolución</span>
+                                                </dt>
+                                                <dd class="unav-descDefinition" itemprop="description">
+                                                    Recibe la confirmación de tu admisión a través del portal miUNAV en los plazos estipulados.
+                                                </dd>
+                                            </div>
+                                        </div>
+                        
+                                        <div class="col-md-6">
+                                            <div class="unav-descItem unav-hasBorder" itemprop="hasDefinedTerm" itemscope itemtype="https://schema.org/DefinedTerm">
+                                                <dt class="unav-descTerm">
+                                                    <i class="bi bi-4-circle-fill unav-descIcon" style="color: var(--unav-blue-600);" aria-hidden="true"></i>
+                                                    <span itemprop="name">Reserva de Plaza</span>
+                                                </dt>
+                                                <dd class="unav-descDefinition" itemprop="description">
+                                                    Asegura tu lugar en la titulación elegida abonando el importe correspondiente a la reserva de plaza.
+                                                </dd>
+                                            </div>
+                                        </div>
+                        
+                                        <div class="col-md-6">
+                                            <div class="unav-descItem unav-hasBorder" itemprop="hasDefinedTerm" itemscope itemtype="https://schema.org/DefinedTerm">
+                                                <dt class="unav-descTerm">
+                                                    <i class="bi bi-5-circle-fill unav-descIcon" style="color: var(--unav-purple-600);" aria-hidden="true"></i>
+                                                    <span itemprop="name">Matriculación Oficial</span>
+                                                </dt>
+                                                <dd class="unav-descDefinition" itemprop="description">
+                                                    Formaliza tu matrícula definitiva antes del inicio del curso académico para ser oficialmente alumno de la universidad.
+                                                </dd>
+                                            </div>
+                                        </div>
+                        
+                                    </dl>
+                                
+
+
+
+
+                                
+                                </div></div>
+                            </div>
+                            
+                            <!-- Moss -->
+                            <div class="unav-accordionItem unav-isThemed unav-bg-moss-600">
+                                <button class="unav-accordionHeader" aria-expanded="false">
+                                    <div class="unav-accordionTitleWrapper">
+                                        <span class="material-symbols-outlined" aria-hidden="true">eco</span>
+                                        <span>Sostenibilidad (Color Moss)</span>
+                                    </div>
+                                    <span class="material-symbols-outlined unav-accordionToggleIcon" aria-hidden="true">expand_more</span>
+                                </button>
+                                <div class="unav-accordionPanel"><div class="unav-accordionInner">Iniciativas verdes, plan estratégico medioambiental y cuidado del ecosistema del campus.</div></div>
+                            </div>
+                            
+                            <!-- Blue Dark -->
+                            <div class="unav-accordionItem unav-isThemed unav-bg-blue-dark-800">
+                                <button class="unav-accordionHeader unav-alignCenter" aria-expanded="false">
+                                    <div class="unav-accordionTitleWrapper">
+                                        <span class="material-symbols-outlined" aria-hidden="true">biotech</span>
+                                        <span>Investigación (Blue Dark)</span>
+                                    </div>
+                                    <span class="material-symbols-outlined unav-accordionToggleIcon" aria-hidden="true">expand_more</span>
+                                </button>
+                                <div class="unav-accordionPanel">
+                                    <div class="unav-accordionInner">Directorio de centros de investigación avanzada, laboratorios e innovación biomédica.</div>
+                                </div>
+                            </div>
+                        </div>
+
+                    </div>
+                </div>
+            </section>
+        </div>
+
+            
+
+
+
+
+
+        <div class="container-lg">
+            <section class="bg-white p-4 p-md-5 mb-5">
+                <div class="row g-4 mb-5">
+                    <div class="col-md-6">
+                        <div class="unav-banner unav-bannerMini unav-themeDark" style="background-image: url('https://images.unsplash.com/photo-1501785888041-af3ef285b470?auto=format&fit=crop&q=80&w=800');" itemscope itemtype="https://schema.org/WPAdBlock">
+                            <div class="unav-bannerOverlay"></div>
+                            <div class="unav-bannerContent">
+                                <h3 class="unav-bannerTitle" itemprop="headline">ADMISIÓN 2026</h3>
+                                <p class="unav-bannerText" itemprop="description">Inicia tu proceso de admisión hoy mismo 100% online.</p>
+                                <a itemprop="url" href="#" class="unav-enlaceFlecha" style="text-transform: none; --unav-enlaceColor: var(--unav-yellow-400);">
+                                    <span class="unav-arrowWrapper"><span class="unav-arrow"></span><span class="unav-arrowClone"></span></span>
+                                    <span itemprop="name">Empezar ahora</span>
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-md-6">
+                        <div class="unav-banner unav-bannerMini unav-themeDark unav-alignCenter" style="background-image: url('https://images.unsplash.com/photo-1541339907198-e08756dedf3f?auto=format&fit=crop&q=80&w=800');" itemscope itemtype="https://schema.org/WPAdBlock">
+                            <div class="unav-bannerOverlay"></div>
+                            <div class="unav-bannerContent">
+                                <h3 class="unav-bannerTitle" itemprop="headline">CAMPUS VIDA</h3>
+                                <p class="unav-bannerText" itemprop="description">Descubre las instalaciones deportivas y la vida universitaria.</p>
+                                <a itemprop="url" href="#" class="unav-enlaceFlecha" style="text-transform: none; --unav-enlaceColor: #ffffff;">
+                                    <span class="unav-arrowWrapper"><span class="unav-arrow"></span><span class="unav-arrowClone"></span></span>
+                                    <span itemprop="name">Ver campus</span>
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </section>
+        </div>
+
+
+        
+
+        <section class="unav-hero unav-hero--half unav-hero--darkOverlay mb-5" itemscope itemtype="https://schema.org/WPHeader">
+            <div class="unav-heroVisuals">
+                <img class="unav-heroImgMobile unav-efectoZoomInfinito" src="https://picsum.photos/800/1000?random=13" alt="Fondo Móvil" itemprop="image">
+                <img class="unav-heroImgDesktop unav-efectoZoomInfinito" src="https://picsum.photos/1920/800?random=13" alt="Fondo Escritorio" itemprop="image">
+                
+                <div class="unav-heroOverlay">
+                    <div class="unav-heroContent unav-heroContent--center">
+                        <div class="unav-heroTagGroup" itemprop="keywords">
+                            <span class="unav-tag unav-tag--grey">Alumni</span>
+                        </div>
+                        
+                        <h1 class="unav-heroTitle unav-heroTitle--sm" itemprop="headline">Red de Antiguos Alumnos</h1>
+                        
+                        <div class="unav-heroBtnGroup">
+                            <a class="unav-boton unav-botonPrimario unav-botonFit" href="#" style="--unav-botonBg: transparent; --unav-botonText: #fff; --unav-botonBorder: #fff; --unav-botonHoverBg: #fff; --unav-botonHoverText: var(--unav-black-800); --unav-botonHoverBorder: #fff;">
+                                <span>Acceder</span>
+                            </a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+
+
+        <div class="container-lg">
+            <section class="p-2 p-md-5 mb-5">    
+                <div class="row g-0">
+                    <div class="col-lg-6">
+                        <div class="unav-galleryWrapper mb-5">
+                            <div class="unav-mediaGallery" itemscope itemtype="http://schema.org/ImageGallery">
+                                <div class="unav-galleryStage">
+                                    <button class="unav-galleryControlBtn unav-galleryStageBtn unav-prevBtn" onclick="changeSlide(this, -1)"><i class="bi bi-chevron-left"></i></button>
+                                    <button class="unav-galleryControlBtn unav-galleryStageBtn unav-nextBtn" onclick="changeSlide(this, 1)"><i class="bi bi-chevron-right"></i></button>
+                                    <div class="unav-mainStageInyect"></div>
+                                </div>
+                                <div class="unav-gallerySidebar">
+                                    <div class="unav-thumbGrid"></div>
+                                    <div class="unav-galleryScrollVertical">
+                                        <button class="unav-galleryControlBtn" onclick="scrollThumbGridVertical(this, -1)"><i class="bi bi-chevron-up"></i></button>
+                                        <button class="unav-galleryControlBtn" onclick="scrollThumbGridVertical(this, 1)"><i class="bi bi-chevron-down"></i></button>
+                                    </div>
+                                    <div class="unav-galleryScrollHorizontal">
+                                        <button class="unav-galleryControlBtn" onclick="scrollThumbGridHorizontal(this, -1)"><i class="bi bi-chevron-left"></i></button>
+                                        <button class="unav-galleryControlBtn" onclick="scrollThumbGridHorizontal(this, 1)"><i class="bi bi-chevron-right"></i></button>
+                                    </div>
+                                    <div class="unav-galleryMeta d-flex justify-content-center">
+                                        <span class="unav-tag unav-counter" style="background-color: var(--unav-black-800); color: #ffffff; border: none;">1 / 24</span>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                                
+                        <dl class="unav-descList" itemscope itemtype="https://schema.org/DefinedTermSet">
+                    
+                            <div class="unav-descItem unav-descItemHanging unav-hasBorder" style="--unav-descColorPrimary: var(--unav-rojo-600); --unav-descBorderColor: var(--unav-rojo-600);" itemprop="hasDefinedTerm" itemscope itemtype="https://schema.org/DefinedTerm">
+                                <dt class="unav-descTerm">
+                                    <i class="bi bi-heart-pulse unav-descIcon" aria-hidden="true"></i>
+                                    <span itemprop="name">Ciencias de la Salud</span>
+                                </dt>
+                                <dd class="unav-descDefinition" itemprop="description">
+                                    Programas de grado y posgrado orientados a la excelencia clínica, la investigación médica y la atención humanizada.
+                                </dd>
+                            </div>
+        
+                            <div class="unav-descItem unav-descItemHanging unav-hasBorder" style="--unav-descColorPrimary: var(--unav-teal-600); --unav-descBorderColor: var(--unav-teal-600);" itemprop="hasDefinedTerm" itemscope itemtype="https://schema.org/DefinedTerm">
+                                <dt class="unav-descTerm">
+                                    <i class="bi bi-badge-8k-fill unav-descIcon" aria-hidden="true"></i>
+                                    <span itemprop="name">Sostenibilidad y Medio Ambiente</span>
+                                </dt>
+                                <dd class="unav-descDefinition" itemprop="description">
+                                    Iniciativas y planes de estudio comprometidos con el cuidado del entorno y el desarrollo sostenible global.
+                                </dd>
+                            </div>
+        
+                        </dl>
+
+                    </div>
+
+
+                    <div class="col-lg-6 align-items-center p-2">
+                        <div class="unav-listadoEnlaces" itemscope itemtype="https://schema.org/SiteNavigationElement">
+                            <a itemprop="url" href="#" class="unav-bloqueEnlace">
+                                <span itemprop="name" class="unav-bloqueEnlaceText">Doble Grado en Farmacia y Nutrición Humana y Dietética</span>
+                            </a>
+                            <a itemprop="url" href="#" class="unav-bloqueEnlace">
+                                <span itemprop="name" class="unav-bloqueEnlaceText">Grado en Enfermería</span>
+                            </a>
+                            <a itemprop="url" href="#" class="unav-bloqueEnlace">
+                                <span itemprop="name" class="unav-bloqueEnlaceText">Máster de Práctica Avanzada y Gestión en Enfermería</span>
+                            </a>
+                        </div>
+
+                        <div class="unav-separador unav-separadorAlignCenter" style="--unav-separadorColor: var(--unav-grey-600); --unav-separadorThickness: 1px; --unav-separadorStyle: solid; --unav-separadorWidth: 80%;" itemscope itemtype="https://schema.org/WebPageElement">
+                            <meta itemprop="name" content="Separador con Texto Centrado">
+                            <div class="unav-separadorLine"></div>
+                            <div class="unav-separadorContent">
+                                <span class="unav-separadorText">Continúa Leyendo</span>
+                            </div>
+                            <div class="unav-separadorLine"></div>
+                        </div>
+
+                        <article class="unav-personCard unav-cardNoBorder unav-layoutPersona text-center" itemscope itemtype="https://schema.org/Person">
+                            <h3 class="unav-personName" itemprop="name">Dpto. Admisiones</h3>
+                            <div class="unav-personRole" itemprop="jobTitle">Información General</div>
+                            
+                            <div class="unav-personDetails">
+                                <p style="display: inline;" class="text-center" itemprop="telephone"><i class="bi bi-telephone"></i> <a href="tel:+34948425614">+34 948 42 56 14</a></p>
+                                <p style="display: inline;" class="text-center"><i class="bi bi-clock"></i> L a V de 8h a 14h</p>
+                            </div>
+                            <div class="unav-personEmail" style="display: inline;">
+                                <a style="display: inline;" class="text-center" href="mailto:info@unav.es" itemprop="email"><i class="bi bi-envelope"></i> info@unav.es</a>
+                            </div>
+                        </article>
+                    </div>
+                </div>
+            </section>
+        </div>
+
+
+
+        <section class="mb-2">
+            <div class="unav-banner unav-bannerFull unav-efectoParallax unav-themeDark" style="background-image: url('https://images.unsplash.com/photo-1498243691581-b145c3f54a5a?auto=format&fit=crop&q=80&w=1920');" itemscope itemtype="https://schema.org/WPAdBlock">
+                <div class="unav-bannerOverlay"></div>
+                <div class="container-lg unav-bannerContent">
+                    <div class="row align-items-center">
+                        <div class="col-md-8">
+                            <h3 class="unav-bannerTitle" itemprop="headline">INVESTIGACIÓN Y DESARROLLO</h3>
+                            <p class="unav-bannerText" itemprop="description">Descubre nuestros últimos avances científicos y súmate a los grupos de investigación de vanguardia de la universidad.</p>
+                        </div>
+                        <div class="col-md-4 d-flex flex-column align-items-md-end mt-4 mt-md-0" itemscope itemtype="https://schema.org/WebPageElement">
+                            <a href="#" class="unav-boton unav-botonSecundario" style="--unav-botonColorSource: #ffffff; --unav-botonTextHover: var(--unav-black-800);" itemprop="url">
+                                <span itemprop="name">VER PROYECTOS</span>
+                            </a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <div class="container-lg">
+            <section class="bg-white p-4 p-md-5 mb-5">
+                <div class="row">
+                    <div class="col-12">
+                        <div class="unav-videoGalleryWrapper">
+                            <div class="unav-videoMediaContainer">
+                                <div class="unav-videoStage" id="stage-v1"></div>
+                                <div class="unav-videoPlaylistSidebar" id="playlist-v1" role="tablist" itemscope itemtype="https://schema.org/ItemList">
+                                    </div>
+                            </div>
+                            
+                            <div class="unav-videoScrollVertical">
+                                <button class="unav-videoNavBtn" onclick="scrollPlaylistVertical(this, -1)" aria-label="Desplazar Arriba"><i class="bi bi-chevron-up"></i></button>
+                                <button class="unav-videoNavBtn" onclick="scrollPlaylistVertical(this, 1)" aria-label="Desplazar Abajo"><i class="bi bi-chevron-down"></i></button>
+                            </div>
+                            <div class="unav-videoScrollHorizontal">
+                                <button class="unav-videoNavBtn" onclick="scrollPlaylistHorizontal(this, -1)" aria-label="Anterior"><i class="bi bi-chevron-left"></i></button>
+                                <button class="unav-videoNavBtn" onclick="scrollPlaylistHorizontal(this, 1)" aria-label="Siguiente"><i class="bi bi-chevron-right"></i></button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </section>
+        </div>
+
+        
+
+    </main>
+
+
+
+
+
+    
+
+
+
+
+
+
+    <script>
+        document.addEventListener('DOMContentLoaded', () => {
+            const observerOptions = {
+                root: null,
+                rootMargin: '0px 0px -50px 0px',
+                threshold: 0.1
+            };
+
+            const unavObserver = new IntersectionObserver((entries) => {
+                entries.forEach((entry) => {
+                    if (entry.isIntersecting) {
+                        const gridParent = entry.target.closest('.row');
+                        if (gridParent) {
+                            const cardsInGrid = Array.from(gridParent.querySelectorAll('.unav-efectoEntradaOculto'));
+                            const index = cardsInGrid.indexOf(entry.target);
+
+                            setTimeout(() => {
+                                entry.target.classList.add('unav-efectoEntradaVisible');
+                            }, index * 100); 
+                        } else {
+                            entry.target.classList.add('unav-efectoEntradaVisible');
+                        }
+                        unavObserver.unobserve(entry.target);
+                    }
+                });
+            }, observerOptions);
+
+            document.querySelectorAll('.unav-efectoEntradaOculto').forEach(card => unavObserver.observe(card));
+        });
+    </script> 
+ 
+    <script>
+        document.addEventListener('DOMContentLoaded', () => {
+            
+            // Función de animación numérica en camelCase
+            const unavAnimateNumber = (elementNode) => {
+                const textContent = elementNode.innerText.trim();
+                const targetNumber = parseInt(textContent.replace(/\D/g, ''), 10);
+                const suffixString = textContent.replace(/[0-9]/g, ''); 
+                
+                if (isNaN(targetNumber)) return;
+
+                let unavStartTime = null;
+                // Obtenemos duración desde variables CSS (fallback a 2000ms si falla)
+                const rootStyles = getComputedStyle(document.documentElement);
+                let unavDuration = parseInt(rootStyles.getPropertyValue('--unav-durationSlower').trim()) || 2000; 
+
+                const unavStepAnimation = (timestamp) => {
+                    if (!unavStartTime) unavStartTime = timestamp;
+                    const progressRatio = Math.min((timestamp - unavStartTime) / unavDuration, 1);
+                    const easeOutQuartic = 1 - Math.pow(1 - progressRatio, 4); 
+                    
+                    elementNode.innerText = Math.floor(easeOutQuartic * targetNumber) + suffixString;
+
+                    if (progressRatio < 1) {
+                        window.requestAnimationFrame(unavStepAnimation);
+                    } else {
+                        elementNode.innerText = textContent;
+                    }
+                };
+                window.requestAnimationFrame(unavStepAnimation);
+            };
+
+            // Observer para disparo de animación y cambio de clase Motion Token
+            const unavIntersectionObserver = new IntersectionObserver((entriesList, observerInstance) => {
+                entriesList.forEach((entryItem, indexOffset) => {
+                    if (entryItem.isIntersecting) {
+                        setTimeout(() => {
+                            // Inyectamos la clase utilitaria del sistema de movimiento
+                            entryItem.target.classList.add('unav-efectoEntradaVisible');
+                            const valueNode = entryItem.target.querySelector('.unav-counterValue');
+                            if(valueNode) unavAnimateNumber(valueNode);
+                        }, indexOffset * 150); // Stagger (retardo en cadena)
+                        observerInstance.unobserve(entryItem.target);
+                    }
+                });
+            }, { threshold: 0.25 });
+
+            // Inicializar el observador en todos los items ocultos
+            document.querySelectorAll('.unav-efectoEntradaOculto').forEach(counterEl => unavIntersectionObserver.observe(counterEl));
+        });
+    </script>
+
+    <script>
+        (function() {
+            const btnToggle = document.querySelector('#unavBtnToggle');
+            const panel = document.querySelector('#unavSidePanel');
+            const overlay = document.querySelector('#unavOverlay');
+            const body = document.body;
+
+            function handleToggle() {
+                const isOpen = panel.classList.toggle('unav-isOpen');
+                overlay.classList.toggle('unav-isActive');
+                
+                // Bloqueo estricto del scroll principal
+                body.style.overflow = isOpen ? 'hidden' : '';
+            }
+
+            function handleClose() {
+                panel.classList.remove('unav-isOpen');
+                overlay.classList.remove('unav-isActive');
+                body.style.overflow = '';
+            }
+
+            if (btnToggle && panel) {
+                btnToggle.addEventListener('click', handleToggle);
+                if (overlay) overlay.addEventListener('click', handleClose);
+                
+                // Accesibilidad: Cierre con tecla Escape
+                document.addEventListener('keydown', (e) => {
+                    if (e.key === 'Escape' && panel.classList.contains('unav-isOpen')) {
+                        handleClose();
+                    }
+                });
+            }
+        })();
+    </script>
+
+   <!-- Lógica del Acordeón con Vanilla JS Modular y Nomenclatura UNAV -->
+   <script>
+    document.addEventListener('DOMContentLoaded', () => {
+        const unavAccordionGroups = document.querySelectorAll('.unav-accordionGroup');
+
+        unavAccordionGroups.forEach(unavGroup => {
+            const unavIsMultiOpen = unavGroup.classList.contains('unav-allowMulti');
+
+            unavGroup.addEventListener('click', (event) => {
+                const unavHeader = event.target.closest('.unav-accordionHeader');
+                if (!unavHeader) return;
+
+                const unavPanel = unavHeader.nextElementSibling;
+                const unavIsExpanded = unavHeader.getAttribute('aria-expanded') === 'true';
+
+                // Si NO es multi-apertura y estamos abriendo uno nuevo, cerramos los demás del mismo grupo
+                if (!unavIsMultiOpen && !unavIsExpanded) {
+                    unavGroup.querySelectorAll('.unav-accordionHeader[aria-expanded="true"]').forEach(unavOpenHeader => {
+                        unavOpenHeader.setAttribute('aria-expanded', 'false');
+                        unavOpenHeader.nextElementSibling.style.maxHeight = '0px';
+                    });
+                }
+
+                // Alternar el estado del header clickeado
+                unavHeader.setAttribute('aria-expanded', !unavIsExpanded);
+                
+                // Aplicar max-height según scrollHeight (la física del movimiento la gestiona el CSS con los Motion Tokens)
+                unavPanel.style.maxHeight = !unavIsExpanded ? `${unavPanel.scrollHeight}px` : '0px';
+            });
+        });
+    });
+</script>
+
+<script>
+    document.addEventListener('DOMContentLoaded', () => {
+        const blockItems = document.querySelectorAll('.unav-bloqueEnlace');
+
+        const calculateUnderline = (item) => {
+            const textNode = item.querySelector('.unav-bloqueEnlaceText');
+            if (!textNode) return;
+
+            const isHovered = item.matches(':hover');
+            
+            // Forzamos temporalmente la clase para medir las cajas con la fuente en negrita (peso 700)
+            if (!isHovered) {
+                item.classList.add('unav-measuringBold');
+            }
+
+            // Extracción de rectángulos renderizados
+            const rects = textNode.getClientRects();
+            
+            if (rects.length > 0) {
+                const lastRect = rects[rects.length - 1];
+                const containerRect = item.getBoundingClientRect();
+
+                const leftPos = lastRect.left - containerRect.left;
+                const widthPixels = lastRect.width;
+                const bottomPos = (containerRect.bottom - lastRect.bottom) - 4; // Tolerancia visual
+
+                // Inyección en las variables CSS OOCSS
+                item.style.setProperty('--unav-lineWidth', `${widthPixels}px`);
+                item.style.setProperty('--unav-lineLeft', `${leftPos}px`);
+                item.style.setProperty('--unav-lineBottom', `${bottomPos}px`);
+            }
+
+            if (!isHovered) {
+                item.classList.remove('unav-measuringBold');
+            }
+        };
+
+        // Cálculo Inicial
+        blockItems.forEach(item => calculateUnderline(item));
+
+        // Escuchadores de Eventos
+        blockItems.forEach(item => {
+            item.addEventListener('mouseenter', () => calculateUnderline(item));
+        });
+
+        // Resiliencia de grid (Debounced Resize)
+        let resizeTimer;
+        window.addEventListener('resize', () => {
+            clearTimeout(resizeTimer);
+            resizeTimer = setTimeout(() => {
+                blockItems.forEach(item => calculateUnderline(item));
+            }, 100);
+        });
+    });
+</script>
+
+
+<script>
+    const unavTotalPhotos = 24;
+    const unavImgIds = [
+        10, 11, 12, 13, 14, 15, 16, 17, 18, 19, 20, 21,
+        1011, 1012, 1015, 1016, 1018, 1019, 1020, 1021, 1022, 1023, 1024, 1025
+    ];
+
+    function initGalleries() {
+        const galleries = document.querySelectorAll('.unav-mediaGallery');
+        
+        galleries.forEach((gallery) => {
+            const stage = gallery.querySelector('.unav-mainStageInyect');
+            const grid = gallery.querySelector('.unav-thumbGrid');
+            
+            unavImgIds.forEach((id, index) => {
+                const wrap = document.createElement('figure');
+                
+                // INYECCIÓN OOCSS: Se inicializa con la CLASE MAESTRA
+                wrap.className = `unav-mainImageWrapper unav-efectoCrossFade ${index === 0 ? 'unav-isActive' : ''}`;
+                
+                wrap.setAttribute('itemprop', 'associatedMedia');
+                wrap.setAttribute('itemscope', '');
+                wrap.setAttribute('itemtype', 'http://schema.org/ImageObject');
+                
+                const dims = index > 12 ? "800/1200" : "1200/800";
+                const imgUrl = `https://picsum.photos/id/${id}/${dims}`;
+                
+                wrap.innerHTML = `
+                    <img src="${imgUrl}" class="unav-mainImage" itemprop="contentUrl" alt="Fotografía del Campus UNAV ${index + 1}" loading="lazy">
+                    <figcaption class="unav-imageCaption">
+                        <span itemprop="caption">Fotografía de recurso #${index + 1}. Evento institucional de apertura de curso en las nuevas instalaciones.</span>
+                        <meta itemprop="author" content="Universidad de Navarra">
+                        <meta itemprop="datePublished" content="2026-05-01">
+                        <div itemprop="contentLocation" itemscope itemtype="http://schema.org/Place" style="display:none;">
+                            <meta itemprop="name" content="Campus Universidad de Navarra">
+                            <div itemprop="geo" itemscope itemtype="http://schema.org/GeoCoordinates">
+                                <meta itemprop="latitude" content="42.80214">
+                                <meta itemprop="longitude" content="-1.65215">
+                            </div>
+                        </div>
+                    </figcaption>
+                `;
+                stage.appendChild(wrap);
+
+                const thumb = document.createElement('div');
+                thumb.className = `unav-thumbItem ${index === 0 ? 'unav-isSelected' : ''}`;
+                thumb.innerHTML = `<img src="https://picsum.photos/id/${id}/150/150" itemprop="thumbnailUrl" alt="Miniatura ${index + 1}" loading="lazy">`;
+                thumb.onclick = () => goToSlide(gallery, index);
+                grid.appendChild(thumb);
+            });
+        });
+    }
+
+    // LÓGICA DE MOTION OOCSS: Cross-Fade Sincronizado
+    function goToSlide(gallery, index) {
+        const slides = gallery.querySelectorAll('.unav-mainImageWrapper');
+        const thumbs = gallery.querySelectorAll('.unav-thumbItem');
+        const counter = gallery.querySelector('.unav-counter');
+        
+        const targetSlide = slides[index];
+        const currentActive = gallery.querySelector('.unav-mainImageWrapper.unav-isActive');
+
+        // Si clickan en la foto que ya está activa, no hacemos nada
+        if(currentActive === targetSlide) return;
+
+        // 1. ANIMACIÓN DE SALIDA (Fade Out de la actual)
+        if(currentActive) {
+            currentActive.classList.remove('unav-isActive');
+            currentActive.classList.add('unav-isOutgoing');
+            
+            // Limpiamos la clase saliente tras la transición para resetear su estado
+            setTimeout(() => {
+                // Solo la limpiamos si el usuario no ha vuelto a hacer click en ella rápidamente
+                if(!currentActive.classList.contains('unav-isActive')) {
+                    currentActive.classList.remove('unav-isOutgoing');
+                }
+            }, 250); 
+        }
+        
+        const currentThumb = gallery.querySelector('.unav-thumbItem.unav-isSelected');
+        if(currentThumb) currentThumb.classList.remove('unav-isSelected');
+        
+        // 2. ANIMACIÓN DE ENTRADA (Scale Up + Fade In)
+        targetSlide.classList.add('unav-isActive');
+        thumbs[index].classList.add('unav-isSelected');
+        
+        if(counter) counter.innerText = `${index + 1} / ${unavTotalPhotos}`;
+        
+        thumbs[index].scrollIntoView({ behavior: 'smooth', block: 'nearest', inline: 'center' });
+    }
+
+    function changeSlide(btn, delta) {
+        const gallery = btn.closest('.unav-mediaGallery');
+        const thumbs = gallery.querySelectorAll('.unav-thumbItem');
+        const currentIdx = Array.from(thumbs).findIndex(t => t.classList.contains('unav-isSelected'));
+        
+        let nextIdx = currentIdx + delta;
+        if (nextIdx >= unavTotalPhotos) nextIdx = 0;
+        if (nextIdx < 0) nextIdx = unavTotalPhotos - 1;
+        
+        goToSlide(gallery, nextIdx);
+    }
+
+    window.scrollThumbGridVertical = function(btn, direction) {
+        const grid = btn.closest('.unav-gallerySidebar').querySelector('.unav-thumbGrid');
+        grid.scrollBy({ top: 150 * direction, behavior: 'smooth' });
+    }
+
+    window.scrollThumbGridHorizontal = function(btn, direction) {
+        const grid = btn.closest('.unav-gallerySidebar').querySelector('.unav-thumbGrid');
+        grid.scrollBy({ left: 150 * direction, behavior: 'smooth' });
+    }
+
+    document.addEventListener('keydown', (e) => {
+        const gallery = document.querySelector('.unav-mediaGallery');
+        if(!gallery) return;
+        if (e.key === "ArrowLeft") changeSlide(gallery.querySelector('.unav-prevBtn'), -1);
+        if (e.key === "ArrowRight") changeSlide(gallery.querySelector('.unav-nextBtn'), 1);
+    });
+
+    document.addEventListener('DOMContentLoaded', initGalleries);
+</script>
+
+<script>
+    // Datos de inicialización
+    const unavVideos = [
+        { 
+            id: "v1", type: "youtube", code: "3fAeP3LOZiw", 
+            title: "Campus Universidad de Navarra: Un recorrido completo por nuestras instalaciones, facultades, zonas verdes y áreas de investigación destacadas para el nuevo curso académico", 
+            meta: "Institucional • 02:30", thumb: "https://img.youtube.com/vi/3fAeP3LOZiw/mqdefault.jpg" 
+        },
+        { id: "v2", type: "youtube", code: "tqmeghe4MYQ", title: "Investigación en Laboratorios", meta: "Ciencias • 04:15", thumb: "https://img.youtube.com/vi/tqmeghe4MYQ/mqdefault.jpg" },
+        { id: "v3", type: "mp4", code: "https://www.w3schools.com/html/mov_bbb.mp4", title: "Video Nativo de Prueba", meta: "Demo MP4 • 01:00", thumb: "https://picsum.photos/300/170?random=1" },
+        { id: "v4", type: "youtube", code: "3fAeP3LOZiw", title: "Vida en el Campus", meta: "Estudiantes • 03:00", thumb: "https://img.youtube.com/vi/3fAeP3LOZiw/mqdefault.jpg" },
+        { id: "v5", type: "youtube", code: "tqmeghe4MYQ", title: "Clausura Académica", meta: "Eventos • 05:00", thumb: "https://img.youtube.com/vi/tqmeghe4MYQ/mqdefault.jpg" },
+        { id: "v6", type: "youtube", code: "3fAeP3LOZiw", title: "Museo Universidad de Navarra", meta: "Cultura • 01:45", thumb: "https://img.youtube.com/vi/3fAeP3LOZiw/mqdefault.jpg" },
+        { id: "v7", type: "youtube", code: "tqmeghe4MYQ", title: "Instalaciones Deportivas", meta: "Deportes • 02:10", thumb: "https://img.youtube.com/vi/tqmeghe4MYQ/mqdefault.jpg" }
+    ];
+
+    function initVideoGalleries() {
+        const playlists = document.querySelectorAll('.unav-videoPlaylistSidebar');
+        
+        playlists.forEach((pl) => {
+            const stage = pl.previousElementSibling;
+            
+            // Cargar el primer vídeo por defecto
+            if(stage.querySelector('.unav-activeVideoIframe') && unavVideos.length > 0) {
+                stage.querySelector('.unav-activeVideoIframe').src = `https://www.youtube.com/embed/${unavVideos[0].code}?rel=0`;
+            }
+
+            unavVideos.forEach((vid, vIdx) => {
+                const btn = document.createElement('button');
+                btn.className = `unav-videoItem ${vIdx === 0 ? 'unav-isActive' : ''}`;
+                btn.setAttribute('role', 'tab');
+                
+                btn.setAttribute('itemprop', 'itemListElement');
+                btn.setAttribute('itemscope', '');
+                btn.setAttribute('itemtype', 'https://schema.org/ListItem');
+
+                btn.innerHTML = `
+                    <meta itemprop="position" content="${vIdx + 1}" />
+                    <div class="unav-videoThumb unav-efectoZoomImagen">
+                        <img src="${vid.thumb}" alt="Miniatura de vídeo">
+                        <i class="bi bi-play-fill unav-videoPlayIcon"></i>
+                        <span class="unav-tag unav-videoDuration" style="background-color: rgba(0,0,0,0.85); color: #fff; border: none; font-size: 0.75rem; padding: 0.15rem 0.4rem;">${vid.duration}</span>
+                    </div>
+                    <div class="unav-videoItemInfo">
+                        <div class="unav-videoItemTitle" itemprop="name" title="${vid.title}">${vid.title}</div>
+                        <div class="unav-videoItemMeta">${vid.meta}</div>
+                    </div>
+                    
+                    <div itemprop="video" itemscope itemtype="http://schema.org/VideoObject" style="display:none;">
+                        <meta itemprop="name" content="${vid.title}" />
+                        <meta itemprop="thumbnailUrl" content="${vid.thumb}" />
+                        <meta itemprop="uploadDate" content="2026-01-01" />
+                        <div itemprop="contentLocation" itemscope itemtype="http://schema.org/Place">
+                            <div itemprop="geo" itemscope itemtype="http://schema.org/GeoCoordinates">
+                                <meta itemprop="latitude" content="42.8021" />
+                                <meta itemprop="longitude" content="-1.6521" />
+                            </div>
+                        </div>
+                    </div>
+                `;
+                
+                btn.onclick = () => {
+                    pl.querySelectorAll('.unav-videoItem').forEach(b => b.classList.remove('unav-isActive'));
+                    btn.classList.add('unav-isActive');
+                    loadVideoData(stage, vid, true);
+                    btn.scrollIntoView({ behavior: 'smooth', block: 'nearest', inline: 'center' });
+                };
+                
+                pl.appendChild(btn);
+                
+                if(vIdx === 0) loadVideoData(stage, vid, false);
+            });
+        });
+    }
+
+    function loadVideoData(container, vid, isManualClick = false) {
+        let mediaHtml = '';
+        const playParam = isManualClick ? '1' : '0';
+        const nativoPlayParam = isManualClick ? 'autoplay' : '';
+
+        if(vid.type === 'youtube') {
+            mediaHtml = `<iframe src="https://www.youtube.com/embed/${vid.code}?rel=0&autoplay=${playParam}" class="unav-videoFluid unav-activeVideoIframe" allow="autoplay; fullscreen" allowfullscreen></iframe>`;
+        } else {
+            mediaHtml = `<video src="${vid.code}" controls ${nativoPlayParam} class="unav-videoFluid unav-activeVideoIframe"></video>`;
+        }
+
+        container.innerHTML = mediaHtml;
+    }
+
+    window.scrollPlaylistVertical = function(btn, direction) {
+        const wrapper = btn.closest('.unav-videoGalleryWrapper');
+        const playlist = wrapper.querySelector('.unav-videoPlaylistSidebar');
+        playlist.scrollBy({ top: 120 * direction, behavior: 'smooth' });
+    }
+
+    window.scrollPlaylistHorizontal = function(btn, direction) {
+        const wrapper = btn.closest('.unav-videoGalleryWrapper');
+        const playlist = wrapper.querySelector('.unav-videoPlaylistSidebar');
+        playlist.scrollBy({ left: 160 * direction, behavior: 'smooth' });
+    }
+
+    document.addEventListener('DOMContentLoaded', initVideoGalleries);
+</script>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+
+</body>
+</html>

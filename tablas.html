@@ -1,0 +1,272 @@
+<!DOCTYPE html>
+<html lang="es" itemscope itemtype="https://schema.org/WebPage">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Tablas de Datos | Design System UNAV</title>
+    
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.1/font/bootstrap-icons.css">    
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@24,400,0,0" />
+ 
+    <link rel="stylesheet" href="unav-styles.css">
+    <link rel="stylesheet" href="unav-tipografia.css">
+    <link rel="stylesheet" href="unav-tablas.css"> 
+    
+    <style>
+        html { scroll-behavior: smooth; background-color: var(--unav-grey-100); }
+        body { background-color: transparent; padding-bottom: 5rem; }
+        .unav-techSummary { border-left: 4px solid var(--unav-rojo-500); }
+    </style>
+</head>
+<body class="bg-light">
+
+    <nav class="navbar navbar-light bg-white border-bottom py-3 sticky-top">
+        <div class="container-lg d-flex justify-content-between align-items-center">
+            <div itemscope itemtype="https://schema.org/WebPageElement">
+                <a itemprop="url" href="indice.html" class="unav-boton unav-botonSecundario" style="--unav-botonColorSource: var(--unav-grey-600);">
+                    <i class="bi bi-arrow-left unav-botonIcono" aria-hidden="true"></i>
+                    <span class="d-none d-md-inline" itemprop="name">Volver al Índice</span>
+                </a>
+            </div>
+            <span class="unav-font-primary-condensed unav-weight-regular unav-text-150 m-0" style="color: var(--unav-black-500); line-height: 1;">
+                Design System UNAV
+            </span>
+        </div>
+    </nav>
+
+    <main class="container-lg py-5" itemprop="mainContentOfPage">
+        
+        <header class="text-center mb-5 border-bottom pb-4">
+            <h1 class="unav-font-primary unav-weight-bold unav-text-300 text-dark mb-3 unav-lh-tight" itemprop="name">Tablas de Datos</h1>
+            <p class="unav-font-primary unav-weight-regular unav-text-125 text-muted m-0 unav-lh-normal" itemprop="description">
+                Estructuras semánticas para datos tabulares con comportamiento responsivo OOCSS.
+            </p>
+
+            <div class="unav-techSummary bg-white p-4 text-start mt-5 rounded shadow-sm border mx-auto" style="max-width: 900px;">
+                <h2 class="unav-font-primary unav-weight-bold unav-text-150 text-dark mb-3 unav-lh-snug"><i class="bi bi-table me-2" style="color: var(--unav-grey-400);"></i>Análisis Funcional y Técnico</h2>
+                <div class="row g-4 unav-font-primary unav-weight-regular unav-text-100 unav-lh-normal">
+                    <div class="col-md-6">
+                        <h3 class="unav-font-primary unav-weight-bold unav-text-125 text-dark mb-3 unav-lh-snug">Estructura OOCSS</h3>
+                        <ul class="mb-0 text-muted ps-3">
+                            <li class="mb-2"><strong>Marcado Nativo:</strong> Utiliza exclusivamente <code>&lt;table&gt;</code>, <code>&lt;thead&gt;</code>, <code>&lt;th&gt;</code> y <code>&lt;td&gt;</code> para garantizar la máxima accesibilidad para lectores de pantalla.</li>
+                            <li><strong>Filas de Agrupación:</strong> Uso de <code>&lt;tr class="unav-tableGroupHeader"&gt;</code> con un atributo <code>colspan</code> para segmentar datos (ej. semestres) de forma elegante y reducir el ruido visual.</li>
+                        </ul>
+                    </div>
+                    <div class="col-md-6 border-start-md ps-md-4">
+                        <h3 class="unav-font-primary unav-weight-bold unav-text-125 text-dark mb-3 unav-lh-snug">Control Responsivo</h3>
+                        <ul class="mb-0 text-muted ps-3">
+                            <li class="mb-2"><strong>Modo Stack (Apilado):</strong> Añadiendo <code>.unav-tableResponsiveStack</code>, las filas se convierten en "Tarjetas" en móvil. El atributo <code>data-label="X"</code> inyecta el nombre de la cabecera en cada celda.</li>
+                            <li><strong>Interactividad Inline:</strong> Integración natural de la clase <code>.unav-enlaceInline</code> para enlaces dentro de las celdas (ej. Guías Docentes).</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </header>
+
+        <section class="bg-white p-4 p-md-5 rounded shadow-sm border mb-5">
+            <h2 class="unav-font-primary unav-weight-bold unav-text-200 border-bottom pb-2 mb-4 text-dark mt-0 unav-lh-snug">1. Tabla Responsiva Estándar (Modo Tarjetas)</h2>
+            <div class="unav-tableWrapper">
+                <table class="unav-table unav-tableStriped unav-tableHover unav-tableResponsiveStack">
+                    <caption class="unav-tableCaption">YOUNG LEARNERS CAMBRIDGE</caption>
+                    <thead>
+                        <tr>
+                            <th scope="col" style="width: 15%;">Convocatoria</th>
+                            <th scope="col" style="width: 15%;">Tipo</th>
+                            <th scope="col">Fecha examen</th>
+                            <th scope="col">Lugar</th>
+                            <th scope="col">Ciudad</th>
+                            <th scope="col">Resultados</th>
+                            <th scope="col">Matrícula</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td data-label="Convocatoria"><span style="color: var(--unav-rojo-600); font-weight: bold;">STARTERS</span></td>
+                            <td data-label="Tipo">Paper Based <i class="bi bi-file-earmark-text ms-1 text-muted"></i></td>
+                            <td data-label="Fecha examen">06/06/2026</td>
+                            <td data-label="Lugar">Universidad de Navarra (Edificio Amigos)</td>
+                            <td data-label="Ciudad">Pamplona</td>
+                            <td data-label="Resultados">06/07/2026</td>
+                            <td data-label="Matrícula">Cerrada</td>
+                        </tr>
+                        <tr>
+                            <td data-label="Convocatoria"><span style="color: var(--unav-rojo-600); font-weight: bold;">MOVERS</span></td>
+                            <td data-label="Tipo">Paper Based <i class="bi bi-file-earmark-text ms-1 text-muted"></i></td>
+                            <td data-label="Fecha examen">06/06/2026</td>
+                            <td data-label="Lugar">Universidad de Navarra (Edificio Amigos)</td>
+                            <td data-label="Ciudad">Pamplona</td>
+                            <td data-label="Resultados">06/07/2026</td>
+                            <td data-label="Matrícula">Cerrada</td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+        </section>
+
+        <section class="bg-white p-4 p-md-5 rounded shadow-sm border mb-5">
+            <h2 class="unav-font-primary unav-weight-bold unav-text-200 border-bottom pb-2 mb-4 text-dark mt-0 unav-lh-snug">2. Personalización de Anchos y Colores del DS</h2>
+            <div class="unav-tableWrapper">
+                <table class="unav-table unav-tableStriped unav-tableBorders unav-tableResponsiveStack" style="--unav-tableStripeBg: var(--unav-moss-100); --unav-tableCaptionBorder: var(--unav-moss-600);">
+                    <caption class="unav-tableCaption">PLAN DE SOSTENIBILIDAD 2026</caption>
+                    <thead>
+                        <tr>
+                            <th scope="col" style="width: 40%;">Iniciativa / Proyecto</th>
+                            <th scope="col">Facultad Involucrada</th>
+                            <th scope="col" style="width: 15%; text-align: center;">Estado</th>
+                            <th scope="col" style="width: 15%; text-align: center;">Inversión</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td data-label="Iniciativa">Renovación de paneles solares y eficiencia térmica</td>
+                            <td data-label="Facultad">Arquitectura</td>
+                            <td data-label="Estado" style="text-align: center;"><span class="unav-tag unav-tagMoss">Completado</span></td>
+                            <td data-label="Inversión" style="text-align: center;">120.000€</td>
+                        </tr>
+                        <tr>
+                            <td data-label="Iniciativa">Gestión integral de residuos de laboratorio</td>
+                            <td data-label="Facultad">Ciencias / CIMA</td>
+                            <td data-label="Estado" style="text-align: center;"><span class="unav-tag unav-tagYellow">En progreso</span></td>
+                            <td data-label="Inversión" style="text-align: center;">45.000€</td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+        </section>
+
+        <section class="bg-white p-4 p-md-5 rounded shadow-sm border mb-5">
+            <h2 class="unav-font-primary unav-weight-bold unav-text-200 border-bottom pb-2 mb-4 text-dark mt-0 unav-lh-snug">3. Tabla de Alta Densidad (Scroll Horizontal en Móvil)</h2>
+            <div class="unav-tableWrapper">
+                <table class="unav-table unav-tableStriped--even unav-tableHover" style="min-width: 800px;">
+                    <caption class="unav-tableCaption">TARIFAS DE CRÉDITOS ACADÉMICOS 2026/2027</caption>
+                    <thead>
+                        <tr>
+                            <th scope="col">Titulaciones Universitarias</th>
+                            <th scope="col" style="text-align: right;">1ª Matrícula</th>
+                            <th scope="col" style="text-align: right;">2ª Matrícula</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td>Medicina / Odontología (Alta experimentalidad)</td>
+                            <td style="text-align: right;">195,50 €</td>
+                            <td style="text-align: right;">215,00 €</td>
+                        </tr>
+                        <tr>
+                            <td>Arquitectura / Ingenierías (Nivel A)</td>
+                            <td style="text-align: right;">160,00 €</td>
+                            <td style="text-align: right;">180,00 €</td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+        </section>
+
+        <section class="bg-white p-4 p-md-5 rounded shadow-sm border mb-5">
+            <h2 class="unav-font-primary unav-weight-bold unav-text-200 border-bottom pb-2 mb-4 text-dark mt-0 unav-lh-snug">4. Plan de Estudios con Agrupadores Semánticos</h2>
+            <p class="text-muted mb-4 unav-lh-normal">Ejemplo real basado en el <strong>Grado en Estudios de Arquitectura</strong>. Utiliza la clase <code>.unav-tableGroupHeader</code> en el <code>&lt;tr&gt;</code> para agrupar visualmente las asignaturas por semestre, reduciendo drásticamente la repetición de información. Además, los títulos consumen el componente <code>.unav-enlaceInline</code> para enlazar de forma accesible al portal virtual de guías docentes.</p>
+            
+            <div class="unav-tableWrapper">
+                <table class="unav-table unav-tableStriped unav-tableHover unav-tableResponsiveStack" 
+                       style="--unav-tableCaptionBorder: var(--unav-cyan-600); 
+                              --unav-tableHeaderBg: var(--unav-cyan-100); 
+                              --unav-tableHeaderColor: var(--unav-cyan-900);
+                              --unav-tableStripeBg: var(--unav-grey-50);">
+                    <caption class="unav-tableCaption">PRIMER CURSO (60 ECTS)</caption>
+                    <thead>
+                        <tr>
+                            <th scope="col" style="width: 60%;">Asignaturas</th>
+                            <th scope="col" style="width: 25%;">Tipo</th>
+                            <th scope="col" style="width: 15%; text-align: center;">ECTS</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        
+                        <tr class="unav-tableGroupHeader">
+                            <th colspan="3" scope="colgroup">Primer Semestre / First Semester</th>
+                        </tr>
+                        
+                        <tr>
+                            <td data-label="Asignaturas"><a href="#" class="unav-enlaceInline">Análisis Gráfico</a></td>
+                            <td data-label="Tipo">Básica</td>
+                            <td data-label="ECTS" style="text-align: center; font-weight: bold;">6</td>
+                        </tr>
+                        <tr>
+                            <td data-label="Asignaturas"><a href="#" class="unav-enlaceInline">Física</a></td>
+                            <td data-label="Tipo">Básica</td>
+                            <td data-label="ECTS" style="text-align: center; font-weight: bold;">6</td>
+                        </tr>
+                        <tr>
+                            <td data-label="Asignaturas"><a href="#" class="unav-enlaceInline">Geometría</a></td>
+                            <td data-label="Tipo">Básica</td>
+                            <td data-label="ECTS" style="text-align: center; font-weight: bold;">6</td>
+                        </tr>
+                        <tr>
+                            <td data-label="Asignaturas"><a href="#" class="unav-enlaceInline">Introducción a la Arquitectura</a></td>
+                            <td data-label="Tipo">Obligatoria</td>
+                            <td data-label="ECTS" style="text-align: center; font-weight: bold;">3</td>
+                        </tr>
+                        <tr>
+                            <td data-label="Asignaturas"><a href="#" class="unav-enlaceInline">Taller de Arquitectura 1</a></td>
+                            <td data-label="Tipo">Obligatoria</td>
+                            <td data-label="ECTS" style="text-align: center; font-weight: bold;">9</td>
+                        </tr>
+
+                        <tr class="unav-tableGroupHeader">
+                            <th colspan="3" scope="colgroup">Segundo Semestre / Second Semester</th>
+                        </tr>
+                        
+                        <tr>
+                            <td data-label="Asignaturas"><a href="#" class="unav-enlaceInline">Dibujo y Geometría</a></td>
+                            <td data-label="Tipo">Básica</td>
+                            <td data-label="ECTS" style="text-align: center; font-weight: bold;">6</td>
+                        </tr>
+                        <tr>
+                            <td data-label="Asignaturas"><a href="#" class="unav-enlaceInline">Historia de la Arquitectura 1</a></td>
+                            <td data-label="Tipo">Básica</td>
+                            <td data-label="ECTS" style="text-align: center; font-weight: bold;">3</td>
+                        </tr>
+                        <tr>
+                            <td data-label="Asignaturas"><a href="#" class="unav-enlaceInline">Historia y Teoría de la Arquitectura Clásica</a></td>
+                            <td data-label="Tipo">Obligatoria</td>
+                            <td data-label="ECTS" style="text-align: center; font-weight: bold;">3</td>
+                        </tr>
+                        <tr>
+                            <td data-label="Asignaturas"><a href="#" class="unav-enlaceInline">Matemáticas</a></td>
+                            <td data-label="Tipo">Básica</td>
+                            <td data-label="ECTS" style="text-align: center; font-weight: bold;">6</td>
+                        </tr>
+                        <tr>
+                            <td data-label="Asignaturas"><a href="#" class="unav-enlaceInline">Taller de Arquitectura 2</a></td>
+                            <td data-label="Tipo">Obligatoria</td>
+                            <td data-label="ECTS" style="text-align: center; font-weight: bold;">9</td>
+                        </tr>
+                        <tr>
+                            <td data-label="Asignaturas"><a href="#" class="unav-enlaceInline">Antropología de la Arquitectura</a></td>
+                            <td data-label="Tipo">Obligatoria</td>
+                            <td data-label="ECTS" style="text-align: center; font-weight: bold;">3</td>
+                        </tr>
+                        
+                    </tbody>
+                </table>
+            </div>
+        </section>
+
+    </main>
+
+    <footer class="bg-white border-top py-4 mt-5">
+        <div class="container-lg d-flex flex-column flex-md-row justify-content-between align-items-center gap-3">
+            <div class="d-flex align-items-center gap-2">
+                <span class="material-symbols-outlined text-danger" aria-hidden="true">token</span>
+                <span class="unav-font-primary unav-weight-bold unav-text-100 text-dark">Design System UNAV</span>
+            </div>
+            <p class="unav-font-primary unav-weight-regular unav-text-075 text-muted m-0 unav-lh-normal">
+                Arquitectura OOCSS &middot; Versión 2.0 &middot; &copy; 2026
+            </p>
+        </div>
+    </footer>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+</body>
+</html>

@@ -1,0 +1,91 @@
+/* ==========================================
+   COMPONENTE: LISTA DESCRIPTIVA (.unav-descList)
+   ========================================== */
+
+.unav-descList {
+    margin: 0;
+    padding: 0;
+    display: flex;
+    flex-direction: column;
+}
+
+.unav-descItem {
+    display: flex;
+    flex-direction: column;
+    margin-bottom: var(--unav-descItemMarginBottom);
+    padding-bottom: var(--unav-descItemPaddingBottom);
+    font-family: var(--unav-fontFamilyPrimary);
+    width: 100%;
+    box-sizing: border-box;
+    transition: var(--unav-transitionBase);
+}
+
+.unav-descItem:last-child {
+    margin-bottom: 0; 
+}
+
+/* Modificador de Borde Inferior */
+.unav-hasBorder {
+    border-bottom: 1px solid var(--unav-descBorderColor, var(--unav-descBorderColorDefault));
+}
+
+/* Título del Término (Term) */
+.unav-descTerm {
+    display: flex;
+    align-items: center;
+    gap: var(--unav-descTermGap);
+    font-size: 1.125rem; /* ~18px, ajustable a tokens si es necesario */
+    font-weight: var(--unav-fontWeightBold);
+    margin-bottom: var(--unav-descTermMarginBottom);
+    color: var(--unav-descColorPrimary, var(--unav-black-800));
+    transition: var(--unav-transitionBase);
+}
+
+/* Icono (Si existe) */
+.unav-descIcon {
+    font-size: var(--unav-iconSizeMd);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: var(--unav-descColorPrimary, inherit);
+}
+
+/* Texto de Definición (Definition) */
+.unav-descDefinition {
+    margin: 0;
+    font-size: var(--unav-fontSize100);
+    line-height: var(--unav-descDefinitionLineHeight);
+    font-weight: var(--unav-fontWeightRegular);
+    color: var(--unav-grey-700);
+}
+
+/* =========================================
+   VARIANTE: ICONO COLGANTE (.unav-descItemHanging)
+   ========================================= */
+.unav-descItemHanging {
+    /* Desplaza el contenedor y su borde a la derecha */
+    margin-left: var(--unav-descHangingOffset); 
+    width: calc(100% - var(--unav-descHangingOffset));
+}
+
+.unav-descItemHanging .unav-descTerm {
+    display: block; 
+    position: relative;
+}
+
+.unav-descItemHanging .unav-descIcon {
+    /* Posiciona el icono fuera del flujo, hacia la izquierda */
+    position: absolute;
+    left: calc(var(--unav-descHangingOffset) * -1);
+    top: 0.15rem; /* Ajuste óptico con la altura de la x tipográfica */
+    display: inline-flex;
+    justify-content: flex-start;
+}
+
+/* Layout de la Documentación */
+.unav-techSummary { border-left: 4px solid var(--unav-rojo-600); }
+.unav-sectionTitle { 
+    color: var(--unav-black-800); 
+    border-bottom: 2px solid var(--unav-grey-200); 
+    padding-bottom: 0.5rem; 
+}

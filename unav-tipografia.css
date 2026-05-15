@@ -1,0 +1,121 @@
+/* ==========================================
+   SISTEMA TIPOGRÁFICO CORPORATIVO UNAV
+   ========================================== */
+
+   @import url('https://fonts.googleapis.com/css2?family=DM+Serif+Text:ital@0;1&family=Playfair+Display:ital,wght@0,400;0,700;1,400;1,700&family=Roboto+Condensed:wght@400;700&family=Roboto+Slab:wght@400;700&family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;1,400&display=swap');
+
+   :root {
+       /* --- FAMILIAS TIPOGRÁFICAS --- */
+       --unav-fontFamilyPrimary: 'Roboto', sans-serif;
+       --unav-fontFamilyPrimaryCondensed: 'Roboto Condensed', sans-serif;
+       --unav-fontFamilySecondaryPlayfair: 'Playfair Display', serif;
+       --unav-fontFamilySecondarySlab: 'Roboto Slab', serif;
+       --unav-fontFamilySecondaryDm: 'DM Serif Text', serif;
+   
+       /* --- PESOS (WEIGHTS) --- */
+       --unav-fontWeightThin: 100;
+       --unav-fontWeightLight: 300;
+       --unav-fontWeightRegular: 400;
+       --unav-fontWeightMedium: 500;
+       --unav-fontWeightBold: 700;
+   
+       /* --- TAMAÑOS (ESCALA MODULAR) --- */
+       /* Base: 16px (1rem) */
+       --unav-fontSize500: 5rem;      /* 80px - Hero Titles / Displays */
+       --unav-fontSize400: 4rem;      /* 64px - H1 Grandes */
+       --unav-fontSize300: 3rem;      /* 48px - H1 / H2 Destacados */
+       --unav-fontSize250: 2.5rem;    /* 40px - H2 */
+       --unav-fontSize200: 2rem;      /* 32px - H3 */
+       --unav-fontSize175: 1.75rem;   /* 28px - H4 */
+       --unav-fontSize150: 1.5rem;    /* 24px - H5 / Subtítulos grandes */
+       --unav-fontSize125: 1.25rem;   /* 20px - H6 / Destacados / Leads */
+       --unav-fontSize100: 1rem;      /* 16px - Body Base */
+       --unav-fontSize075: 0.75rem;   /* 12px - Small / Meta / Tags */
+   
+       /* --- INTERLINEADO (LINE HEIGHT) --- */
+       --unav-lineHeightNone: 1;      /* Para componentes, iconos, botones */
+       --unav-lineHeightTight: 1.1;   /* Para titulares enormes (300, 400, 500) */
+       --unav-lineHeightSnug: 1.25;   /* Para titulares medios (150, 175, 200, 250) */
+       --unav-lineHeightNormal: 1.5;  /* Base lectura (100, 125) */
+       --unav-lineHeightRelaxed: 1.75;/* Para párrafos muy largos (mejora legibilidad) */
+   
+       /* --- TRACKING (ESPACIADO DE LETRAS) --- */
+       --unav-trackingTighter: -0.04em;  /* Para titulares gigantes (400, 500) */
+       --unav-trackingTight: -0.02em;    /* Para titulares grandes (200, 250, 300) */
+       --unav-trackingNormal: 0em;       /* Body copy (100, 125) */
+       --unav-trackingWide: 0.05em;      /* Para subtítulos en mayúsculas / Tags */
+       --unav-trackingWidest: 0.1em;     /* Elementos muy pequeños que necesitan respirar */
+   }
+   
+   /* ==========================================
+      CLASES UTILITARIAS (Para usar directo en HTML)
+      ========================================== */
+   
+   /* Familias */
+   .unav-font-primary { font-family: var(--unav-fontFamilyPrimary); }
+   .unav-font-primary-condensed { font-family: var(--unav-fontFamilyPrimaryCondensed); }
+   .unav-font-secondary-playfair { font-family: var(--unav-fontFamilySecondaryPlayfair); }
+   .unav-font-secondary-slab { font-family: var(--unav-fontFamilySecondarySlab); }
+   .unav-font-secondary-dm { font-family: var(--unav-fontFamilySecondaryDm); }
+   
+   /* Pesos */
+   .unav-weight-thin { font-weight: var(--unav-fontWeightThin); }
+   .unav-weight-light { font-weight: var(--unav-fontWeightLight); }
+   .unav-weight-regular { font-weight: var(--unav-fontWeightRegular); }
+   .unav-weight-medium { font-weight: var(--unav-fontWeightMedium); }
+   .unav-weight-bold { font-weight: var(--unav-fontWeightBold); }
+   
+   /* Tamaños */
+   .unav-text-500 { font-size: var(--unav-fontSize500); }
+   .unav-text-400 { font-size: var(--unav-fontSize400); }
+   .unav-text-300 { font-size: var(--unav-fontSize300); }
+   .unav-text-250 { font-size: var(--unav-fontSize250); }
+   .unav-text-200 { font-size: var(--unav-fontSize200); }
+   .unav-text-175 { font-size: var(--unav-fontSize175); }
+   .unav-text-150 { font-size: var(--unav-fontSize150); }
+   .unav-text-125 { font-size: var(--unav-fontSize125); }
+   .unav-text-100 { font-size: var(--unav-fontSize100); }
+   .unav-text-075 { font-size: var(--unav-fontSize075); }
+   
+   /* Interlineado (Line Height) */
+   .unav-lh-none { line-height: var(--unav-lineHeightNone); }
+   .unav-lh-tight { line-height: var(--unav-lineHeightTight); }
+   .unav-lh-snug { line-height: var(--unav-lineHeightSnug); }
+   .unav-lh-normal { line-height: var(--unav-lineHeightNormal); }
+   .unav-lh-relaxed { line-height: var(--unav-lineHeightRelaxed); }
+
+
+   /* ==========================================
+   COMPONENTE: ENLACES INLINE (Cuerpo de texto)
+   ========================================== */
+.unav-enlaceInline {
+   /* 1. Identidad: Color institucional y peso destacado */
+   color: var(--unav-rojo-500); 
+   font-weight: var(--unav-fontWeightMedium); 
+   
+   /* 2. Subrayado Moderno y Legible */
+   text-decoration: underline;
+   text-decoration-color: var(--unav-rojo-300); /* Línea más suave por defecto para no saturar la lectura */
+   text-decoration-thickness: 1px;
+   text-underline-offset: 4px; /* Evita tachar las letras como la 'p', 'y', 'g' */
+   
+   /* 3. Transiciones */
+   transition: color var(--unav-transitionBase), 
+               text-decoration-color var(--unav-transitionBase), 
+               text-decoration-thickness var(--unav-transitionBase);
+   outline: none;
+}
+
+/* Estado Hover: Oscurece y engrosa la línea para dar feedback interactivo */
+.unav-enlaceInline:hover {
+   color: var(--unav-rojo-600); /* Bajamos un tono para indicar acción */
+   text-decoration-color: var(--unav-rojo-600); /* La línea se vuelve del color del texto */
+   text-decoration-thickness: 2px; /* Mayor grosor visual */
+}
+
+/* Estado Focus: Accesibilidad para navegación por teclado (Tabulador) */
+.unav-enlaceInline:focus-visible {
+   outline: 2px solid var(--unav-rojo-500);
+   outline-offset: 4px;
+   border-radius: 2px;  
+}
