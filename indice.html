@@ -23,7 +23,7 @@
         /* Navegación rápida fija */
         .unav-quickNav {
             position: sticky;
-            top: 60px;
+            top: 0;
             z-index: 100;
             background: rgba(255,255,255,0.9);
             backdrop-filter: blur(10px);
@@ -87,14 +87,14 @@
         .unav-indexItemTitle {
             font-family: var(--unav-fontFamilyPrimary);
             font-weight: var(--unav-fontWeightBold);
-            font-size: 1rem;
+            font-size: 0.95rem;
             color: var(--unav-black-800);
             margin: 0;
             line-height: 1.2;
         }
 
         .unav-indexItemSub {
-            font-size: 0.75rem;
+            font-size: 0.7rem;
             color: var(--unav-grey-500);
             margin: 0;
             display: block;
@@ -111,13 +111,13 @@
         }
 
         section {
-            scroll-margin-top: 140px; /* Evita que la nav tape el título al saltar */
+            scroll-margin-top: 80px;
         }
     </style>
 </head>
 <body itemscope itemtype="https://schema.org/WebPage">
 
-    <nav class="navbar navbar-light bg-white border-bottom py-3 sticky-top">
+    <nav class="navbar navbar-light bg-white border-bottom py-3">
         <div class="container-lg d-flex justify-content-center align-items-center">
             <span class="unav-font-primary unav-weight-regular unav-text-150 m-0" style="color: var(--unav-rojo-500); line-height: 1;">
                 Design System UNAV
@@ -168,6 +168,18 @@
                     <a href="movimiento.html" class="unav-indexItem">
                         <div class="unav-indexItemIcon" style="background-color: var(--unav-yellow-100); color: var(--unav-yellow-600);"><i class="bi bi-lightning-charge"></i></div>
                         <div class="unav-indexItemContent"><p class="unav-indexItemTitle">Movimiento</p><span class="unav-indexItemSub">Físicas y elevación</span></div>
+                        <i class="bi bi-chevron-right unav-indexItemArrow"></i>
+                    </a>
+                </div>
+                <div class="col">
+                    <a href="espaciado-forma.html" class="unav-indexItem">
+                        <div class="unav-indexItemIcon" style="background-color: var(--unav-blue-l-100); color: var(--unav-blue-600);">
+                            <i class="bi bi-aspect-ratio"></i>
+                        </div>
+                        <div class="unav-indexItemContent">
+                            <p class="unav-indexItemTitle">Espaciado y Forma</p>
+                            <span class="unav-indexItemSub">Gaps, paddings y radios</span>
+                        </div>
                         <i class="bi bi-chevron-right unav-indexItemArrow"></i>
                     </a>
                 </div>
@@ -222,14 +234,7 @@
                 <div class="col">
                     <a href="etiqueta.html" class="unav-indexItem">
                         <div class="unav-indexItemIcon" style="background-color: var(--unav-blue-l-100); color: var(--unav-blue-600);"><i class="bi bi-tag-fill"></i></div>
-                        <div class="unav-indexItemContent"><p class="unav-indexItemTitle">Etiqueta / Tag</p><span class="unav-indexItemSub">Metadatos 21 colores</span></div>
-                        <i class="bi bi-chevron-right unav-indexItemArrow"></i>
-                    </a>
-                </div>
-                <div class="col">
-                    <a href="lista-descriptiva.html" class="unav-indexItem">
-                        <div class="unav-indexItemIcon" style="background-color: var(--unav-blue-l-100); color: var(--unav-blue-600);"><i class="bi bi-card-list"></i></div>
-                        <div class="unav-indexItemContent"><p class="unav-indexItemTitle">Lista Descriptiva</p><span class="unav-indexItemSub">Pares Clave-Valor</span></div>
+                        <div class="unav-indexItemContent"><p class="unav-indexItemTitle">Etiqueta / Tag</p><span class="unav-indexItemSub">Metadatos color</span></div>
                         <i class="bi bi-chevron-right unav-indexItemArrow"></i>
                     </a>
                 </div>
@@ -241,9 +246,14 @@
                     </a>
                 </div>
                 <div class="col">
-                    <a href="paginacion.html" class="unav-indexItem">
-                        <div class="unav-indexItemIcon" style="background-color: var(--unav-indigo-100); color: var(--unav-indigo-600);"><i class="bi bi-three-dots"></i></div>
-                        <div class="unav-indexItemContent"><p class="unav-indexItemTitle">Paginación</p><span class="unav-indexItemSub">Nav. colecciones</span></div>
+                    <a href="migas-pan.html" class="unav-indexItem">
+                        <div class="unav-indexItemIcon" style="background-color: var(--unav-grey-100); color: var(--unav-grey-600);">
+                            <i class="bi bi-chevron-right"></i>
+                        </div>
+                        <div class="unav-indexItemContent">
+                            <p class="unav-indexItemTitle">Migas de Pan</p>
+                            <span class="unav-indexItemSub">Breadcrumbs jerárquicos</span>
+                        </div>
                         <i class="bi bi-chevron-right unav-indexItemArrow"></i>
                     </a>
                 </div>
@@ -256,28 +266,35 @@
                 <div class="col">
                     <a href="acordeon.html" class="unav-indexItem">
                         <div class="unav-indexItemIcon" style="background-color: var(--unav-moss-100); color: var(--unav-moss-600);"><i class="bi bi-list-nested"></i></div>
-                        <div class="unav-indexItemContent"><p class="unav-indexItemTitle">Acordeón</p><span class="unav-indexItemSub">Preguntas FAQ</span></div>
+                        <div class="unav-indexItemContent"><p class="unav-indexItemTitle">Acordeón</p><span class="unav-indexItemSub">Contenido plegable</span></div>
                         <i class="bi bi-chevron-right unav-indexItemArrow"></i>
                     </a>
                 </div>
                 <div class="col">
                     <a href="banners.html" class="unav-indexItem">
                         <div class="unav-indexItemIcon" style="background-color: var(--unav-grey-200); color: var(--unav-black-800);"><i class="bi bi-aspect-ratio"></i></div>
-                        <div class="unav-indexItemContent"><p class="unav-indexItemTitle">Banners</p><span class="unav-indexItemSub">Cajas de impacto</span></div>
+                        <div class="unav-indexItemContent"><p class="unav-indexItemTitle">Banners</p><span class="unav-indexItemSub">Impacto visual</span></div>
                         <i class="bi bi-chevron-right unav-indexItemArrow"></i>
                     </a>
                 </div>
                 <div class="col">
                     <a href="cifras-dinamicas.html" class="unav-indexItem">
                         <div class="unav-indexItemIcon" style="background-color: var(--unav-orange-100); color: var(--unav-orange-600);"><i class="bi bi-123"></i></div>
-                        <div class="unav-indexItemContent"><p class="unav-indexItemTitle">Cifras Dinámicas</p><span class="unav-indexItemSub">Contadores animados</span></div>
+                        <div class="unav-indexItemContent"><p class="unav-indexItemTitle">Cifras Dinámicas</p><span class="unav-indexItemSub">Contadores JS</span></div>
                         <i class="bi bi-chevron-right unav-indexItemArrow"></i>
                     </a>
                 </div>
                 <div class="col">
                     <a href="ficha-persona-contacto.html" class="unav-indexItem">
                         <div class="unav-indexItemIcon" style="background-color: var(--unav-green-100); color: var(--unav-green-600);"><i class="bi bi-person-vcard"></i></div>
-                        <div class="unav-indexItemContent"><p class="unav-indexItemTitle">Ficha Persona</p><span class="unav-indexItemSub">Directorio personal</span></div>
+                        <div class="unav-indexItemContent"><p class="unav-indexItemTitle">Ficha Persona</p><span class="unav-indexItemSub">Directorio</span></div>
+                        <i class="bi bi-chevron-right unav-indexItemArrow"></i>
+                    </a>
+                </div>
+                <div class="col">
+                    <a href="lista-descriptiva.html" class="unav-indexItem">
+                        <div class="unav-indexItemIcon" style="background-color: var(--unav-blue-l-100); color: var(--unav-blue-600);"><i class="bi bi-card-list"></i></div>
+                        <div class="unav-indexItemContent"><p class="unav-indexItemTitle">Lista Descriptiva</p><span class="unav-indexItemSub">Pares Clave-Valor</span></div>
                         <i class="bi bi-chevron-right unav-indexItemArrow"></i>
                     </a>
                 </div>
@@ -291,49 +308,84 @@
                 <div class="col">
                     <a href="galeria-videos.html" class="unav-indexItem">
                         <div class="unav-indexItemIcon" style="background-color: var(--unav-rojo-100); color: var(--unav-rojo-600);"><i class="bi bi-play-circle-fill"></i></div>
-                        <div class="unav-indexItemContent"><p class="unav-indexItemTitle">Galería Vídeos</p><span class="unav-indexItemSub">Playlist responsiva</span></div>
+                        <div class="unav-indexItemContent"><p class="unav-indexItemTitle">Galería Vídeos</p><span class="unav-indexItemSub">Playlist</span></div>
                         <i class="bi bi-chevron-right unav-indexItemArrow"></i>
                     </a>
                 </div>
                 <div class="col">
                     <a href="grid-eventos.html" class="unav-indexItem">
                         <div class="unav-indexItemIcon" style="background-color: var(--unav-orange-100); color: var(--unav-orange-600);"><i class="bi bi-calendar-event"></i></div>
-                        <div class="unav-indexItemContent"><p class="unav-indexItemTitle">Grid Eventos</p><span class="unav-indexItemSub">Agenda asimétrica</span></div>
+                        <div class="unav-indexItemContent"><p class="unav-indexItemTitle">Grid Eventos</p><span class="unav-indexItemSub">Agenda</span></div>
+                        <i class="bi bi-chevron-right unav-indexItemArrow"></i>
+                    </a>
+                </div>
+                <div class="col">
+                    <a href="listado-noticias.html" class="unav-indexItem">
+                        <div class="unav-indexItemIcon" style="background-color: var(--unav-green-l-100); color: var(--unav-green-l-600);"><i class="bi bi-list-ul"></i></div>
+                        <div class="unav-indexItemContent"><p class="unav-indexItemTitle">Listado Noticias</p><span class="unav-indexItemSub">Feed horizontal</span></div>
                         <i class="bi bi-chevron-right unav-indexItemArrow"></i>
                     </a>
                 </div>
                 <div class="col">
                     <a href="grid-noticias.html" class="unav-indexItem">
                         <div class="unav-indexItemIcon" style="background-color: var(--unav-blue-l-100); color: var(--unav-blue-600);"><i class="bi bi-newspaper"></i></div>
-                        <div class="unav-indexItemContent"><p class="unav-indexItemTitle">Grid Noticias</p><span class="unav-indexItemSub">Feed actualidad</span></div>
+                        <div class="unav-indexItemContent"><p class="unav-indexItemTitle">Grid Noticias</p><span class="unav-indexItemSub">Feed visual</span></div>
+                        <i class="bi bi-chevron-right unav-indexItemArrow"></i>
+                    </a>
+                </div>
+                <div class="col">
+                    <a href="hero-estandar.html" class="unav-indexItem">
+                        <div class="unav-indexItemIcon" style="background-color: var(--unav-blue-l-100); color: var(--unav-blue-600);"><i class="bi bi-window-dock"></i></div>
+                        <div class="unav-indexItemContent"><p class="unav-indexItemTitle">Hero Estándar</p><span class="unav-indexItemSub">Ken Burns effect</span></div>
+                        <i class="bi bi-chevron-right unav-indexItemArrow"></i>
+                    </a>
+                </div>
+                <div class="col">
+                    <a href="hero-tags.html" class="unav-indexItem">
+                        <div class="unav-indexItemIcon" style="background-color: var(--unav-blue-l-100); color: var(--unav-blue-600);"><i class="bi bi-card-image"></i></div>
+                        <div class="unav-indexItemContent"><p class="unav-indexItemTitle">Hero Etiquetas</p><span class="unav-indexItemSub">Contextual</span></div>
                         <i class="bi bi-chevron-right unav-indexItemArrow"></i>
                     </a>
                 </div>
                 <div class="col">
                     <a href="hero-video.html" class="unav-indexItem">
                         <div class="unav-indexItemIcon" style="background-color: var(--unav-rojo-100); color: var(--unav-rojo-600);"><i class="bi bi-play-btn"></i></div>
-                        <div class="unav-indexItemContent"><p class="unav-indexItemTitle">Hero Vídeo</p><span class="unav-indexItemSub">Cabecera Autoplay</span></div>
+                        <div class="unav-indexItemContent"><p class="unav-indexItemTitle">Hero Vídeo</p><span class="unav-indexItemSub">Impacto total</span></div>
+                        <i class="bi bi-chevron-right unav-indexItemArrow"></i>
+                    </a>
+                </div>
+                <div class="col">
+                    <a href="menu-lateral-anclas.html" class="unav-indexItem">
+                        <div class="unav-indexItemIcon" style="background-color: var(--unav-cyan-100); color: var(--unav-cyan-600);"><i class="bi bi-layout-sidebar"></i></div>
+                        <div class="unav-indexItemContent"><p class="unav-indexItemTitle">Menú Lateral</p><span class="unav-indexItemSub">Navegación anclas</span></div>
                         <i class="bi bi-chevron-right unav-indexItemArrow"></i>
                     </a>
                 </div>
                 <div class="col">
                     <a href="tarjetas.html" class="unav-indexItem">
                         <div class="unav-indexItemIcon" style="background-color: var(--unav-purple-100); color: var(--unav-purple-600);"><i class="bi bi-grid-1x2"></i></div>
-                        <div class="unav-indexItemContent"><p class="unav-indexItemTitle">Tarjetas Modulares</p><span class="unav-indexItemSub">Cajas de contenido</span></div>
+                        <div class="unav-indexItemContent"><p class="unav-indexItemTitle">Tarjetas Modulares</p><span class="unav-indexItemSub">Cajas contenido</span></div>
                         <i class="bi bi-chevron-right unav-indexItemArrow"></i>
                     </a>
                 </div>
                 <div class="col">
                     <a href="tablas.html" class="unav-indexItem">
                         <div class="unav-indexItemIcon" style="background-color: var(--unav-o-dark-100); color: var(--unav-o-dark-600);"><i class="bi bi-table"></i></div>
-                        <div class="unav-indexItemContent"><p class="unav-indexItemTitle">Tablas de Datos</p><span class="unav-indexItemSub">Estructura semántica</span></div>
+                        <div class="unav-indexItemContent"><p class="unav-indexItemTitle">Tablas de Datos</p><span class="unav-indexItemSub">Responsive Stack</span></div>
+                        <i class="bi bi-chevron-right unav-indexItemArrow"></i>
+                    </a>
+                </div>
+                <div class="col">
+                    <a href="paginacion.html" class="unav-indexItem">
+                        <div class="unav-indexItemIcon" style="background-color: var(--unav-indigo-100); color: var(--unav-indigo-600);"><i class="bi bi-three-dots"></i></div>
+                        <div class="unav-indexItemContent"><p class="unav-indexItemTitle">Paginación</p><span class="unav-indexItemSub">Nav. colecciones</span></div>
                         <i class="bi bi-chevron-right unav-indexItemArrow"></i>
                     </a>
                 </div>
                 <div class="col">
                     <a href="solicitud-informacion.html" class="unav-indexItem">
                         <div class="unav-indexItemIcon" style="background-color: var(--unav-blue-l-100); color: var(--unav-blue-600);"><i class="bi bi-envelope-paper-fill"></i></div>
-                        <div class="unav-indexItemContent"><p class="unav-indexItemTitle">Solicitud de info</p><span class="unav-indexItemSub">Captación leads</span></div>
+                        <div class="unav-indexItemContent"><p class="unav-indexItemTitle">Solicitud de info</p><span class="unav-indexItemSub">Leads</span></div>
                         <i class="bi bi-chevron-right unav-indexItemArrow"></i>
                     </a>
                 </div>
@@ -342,7 +394,7 @@
 
     </main>
 
-    <footer class="bg-white border-top py-4 mt-5">
+    <footer class="bg-white border-top py-4">
         <div class="container-lg d-flex flex-column flex-md-row justify-content-between align-items-center gap-3">
             <div class="d-flex align-items-center gap-2">
                 <span class="material-symbols-outlined text-danger" aria-hidden="true">token</span>

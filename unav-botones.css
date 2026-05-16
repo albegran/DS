@@ -36,13 +36,11 @@
 /* =========================================
    ACCESIBILIDAD GLOBAL (Focus Visible)
    ========================================= */
-/* Anillo de foco estandarizado para teclado.
-   Modernos navegadores curvarán el outline automáticamente 
-   siguiendo el border-radius del componente. */
+/* Anillo de foco estandarizado para teclado consumiendo Token de Espacio */
 .unav-boton:focus-visible,
 .unav-enlaceFlecha:focus-visible {
     outline: 2px solid var(--unav-rojo-500) !important;
-    outline-offset: 4px !important;
+    outline-offset: var(--unav-spacing-xs) !important;
 }
 
 /* =========================================
@@ -152,13 +150,14 @@
     
     display: inline-flex;
     align-items: center;
-    padding: 0.5rem 0;
+    /* Consumo de Token de Espacio */
+    padding: var(--unav-spacing-sm) var(--unav-spacing-0);
     white-space: nowrap;
-    outline: none; /* Reseteamos outline nativo */
+    outline: none;
     
-    /* Configuración del subrayado accesible transparente por defecto */
     text-decoration: underline transparent;
-    text-underline-offset: 4px;
+    /* Consumo de Token de Espacio para el offset del subrayado */
+    text-underline-offset: var(--unav-spacing-xs);
     text-decoration-thickness: 1px;
     
     transition: opacity var(--unav-transitionBase),
@@ -166,10 +165,9 @@
                 text-decoration-thickness var(--unav-transitionBase);
 }
 
-/* HOVER: Opacidad, Subrayado heredado del color base y grosor */
 .unav-enlaceFlecha:hover { 
     opacity: var(--unav-hoverOpacity); 
-    text-decoration-color: currentColor; /* Hereda orgánicamente la variable de color */
+    text-decoration-color: currentColor; 
     text-decoration-thickness: 2px;
 }
 
@@ -179,6 +177,7 @@
     width: 2.5875rem; 
     height: 0.75rem; 
     overflow: hidden;
+    /* Mantenemos REM aquí porque afecta directamente a la física de la animación SVG/Línea */
     margin-right: 0.625rem;
     vertical-align: middle;
 }
@@ -187,7 +186,7 @@
 .unav-enlaceFlecha .unav-arrowClone {
     position: absolute;
     top: 50%;
-    width: 2.5rem; /* 1.875rem */
+    width: 2.5rem;
     height: var(--unav-botonSecundarioBorderWidth); 
     background-color: currentColor; 
 }
@@ -244,8 +243,9 @@
 .unav-botonIconOnly {
     width: 2.75rem; 
     height: 2.75rem;
-    padding: 0 !important; 
-    border-radius: 50% !important; 
+    /* Consumo de Tokens de Espacio y Forma */
+    padding: var(--unav-spacing-0) !important; 
+    border-radius: var(--unav-radius-full) !important; 
     display: inline-flex;
     align-items: center;
     justify-content: center;
@@ -253,12 +253,14 @@
 }
 
 .unav-botonIconOnly .unav-botonIcono {
-    margin: 0 !important; 
+    /* Consumo de Token de Espacio */
+    margin: var(--unav-spacing-0) !important; 
     font-size: 1.25rem; 
 }
 
 .unav-botonGroup .unav-botonIconOnly {
-    margin: 0 0.25rem;
+    /* Consumo de Token de Espacio para separar iconos hermanos */
+    margin: var(--unav-spacing-0) var(--unav-spacing-xs);
 }
 
 .unav-botonIconOnlySm {

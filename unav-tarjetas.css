@@ -8,7 +8,8 @@
     display: flex;
     flex-direction: column;
     height: 100%;
-    border-radius: var(--unav-cardBorderRadius, 12px);
+    /* REFACTOR: Consumo de Tokens de Forma (16px por defecto) */
+    border-radius: var(--unav-cardBorderRadius, var(--unav-radius-xl));
     background-color: var(--unav-cardBgBase, #ffffff);
     border: 1px solid var(--unav-grey-200);
     box-shadow: var(--unav-cardShadowBase);
@@ -21,18 +22,20 @@
 /* Tipo A: Con Icono Flotante Superior */
 .unav-cardFloating {
     margin-top: calc(var(--unav-cardIconFloatingSize, 80px) / 2);
-    padding: var(--unav-cardPaddingFloating, 3.5rem 2rem 2.5rem 2rem);
+    /* REFACTOR: Consumo de Tokens de Espaciado (48px top, 32px laterales/bottom aprox) */
+    padding: var(--unav-cardPaddingFloating, var(--unav-spacing-2xl) var(--unav-spacing-xl) var(--unav-spacing-xl) var(--unav-spacing-xl));
     height: calc(100% - calc(var(--unav-cardIconFloatingSize, 80px) / 2));
 }
 
 /* Tipo B/C: Estándar */
 .unav-cardSolid {
-    padding: var(--unav-cardPaddingBase, 2rem);
+    /* REFACTOR: Consumo de Tokens de Espaciado (32px) */
+    padding: var(--unav-cardPaddingBase, var(--unav-spacing-xl));
 }
 
 /* Tipo D: Con Imagen Superior (Media) */
 .unav-cardMedia {
-    padding: 0;
+    padding: var(--unav-spacing-0);
     overflow: hidden; /* Importante para el zoom de la imagen */
 }
 
@@ -55,7 +58,8 @@
     display: flex;
     flex-direction: column;
     flex-grow: 1;
-    padding: var(--unav-cardPaddingBase, 2rem);
+    /* REFACTOR: Consumo de Tokens de Espaciado (32px) */
+    padding: var(--unav-cardPaddingBase, var(--unav-spacing-xl));
 }
 
 /* Iconos */
@@ -64,7 +68,7 @@
     top: calc(var(--unav-cardIconFloatingSize, 80px) / -2);
     width: var(--unav-cardIconFloatingSize, 80px);
     height: var(--unav-cardIconFloatingSize, 80px);
-    border-radius: 50%;
+    border-radius: var(--unav-radius-full);
     display: flex;
     justify-content: center;
     align-items: center;
@@ -76,11 +80,13 @@
 .unav-cardIconInner {
     width: var(--unav-cardIconInnerSize, 64px);
     height: var(--unav-cardIconInnerSize, 64px);
-    border-radius: var(--unav-cardBorderRadius, 12px);
+    /* REFACTOR: Consumo de Tokens de Forma (Igual al borde de la tarjeta) */
+    border-radius: var(--unav-cardBorderRadius, var(--unav-radius-xl));
     display: flex;
     justify-content: center;
     align-items: center;
-    margin-bottom: 1.5rem;
+    /* REFACTOR: Consumo de Tokens de Espaciado (24px) */
+    margin-bottom: var(--unav-spacing-lg);
 }
 .unav-cardIconInner .material-symbols-outlined { font-size: var(--unav-iconSizeXl, 2rem) !important; }
 
@@ -97,21 +103,44 @@
 }
 
 .unav-cardOverlay {
-    position: absolute; bottom: 0; left: 0; width: 100%; padding: 1.5rem; z-index: 2;
+    position: absolute; bottom: 0; left: 0; width: 100%; 
+    /* REFACTOR: Consumo de Tokens de Espaciado (24px) */
+    padding: var(--unav-spacing-lg); 
+    z-index: 2;
     background: linear-gradient(to top, rgba(0,0,0,0.95) 0%, rgba(0,0,0,0) 100%);
     color: #ffffff;
 }
-.unav-cardOverlay .unav-cardTitle { color: #ffffff !important; margin-bottom: 0; }
+.unav-cardOverlay .unav-cardTitle { color: #ffffff !important; margin-bottom: var(--unav-spacing-0); }
 
 /* Textos Generales */
-.unav-cardTags { display: flex; flex-wrap: wrap; gap: 0.5rem; margin-bottom: 1rem; }
-.unav-cardTitle { font-size: var(--unav-fontSize125); font-weight: var(--unav-fontWeightBold); color: var(--unav-black-800); margin-bottom: 0.75rem; line-height: 1.3; }
-.unav-cardText { font-size: var(--unav-fontSize100); color: var(--unav-grey-700); line-height: 1.6; margin-bottom: 1.5rem; flex-grow: 1; }
+.unav-cardTags { 
+    display: flex; flex-wrap: wrap; 
+    /* REFACTOR: Consumo de Tokens de Espaciado */
+    gap: var(--unav-spacing-sm); 
+    margin-bottom: var(--unav-spacing-md); 
+}
+.unav-cardTitle { 
+    font-size: var(--unav-fontSize125); 
+    font-weight: var(--unav-fontWeightBold); 
+    color: var(--unav-black-800); 
+    /* REFACTOR: Consumo de Tokens de Espaciado */
+    margin-bottom: var(--unav-spacing-sm); 
+    line-height: 1.3; 
+}
+.unav-cardText { 
+    font-size: var(--unav-fontSize100); 
+    color: var(--unav-grey-700); 
+    line-height: 1.6; 
+    /* REFACTOR: Consumo de Tokens de Espaciado */
+    margin-bottom: var(--unav-spacing-lg); 
+    flex-grow: 1; 
+}
 .unav-cardAction { margin-top: auto; }
 
 /* 5. MODIFICADORES DE ALINEACIÓN */
 .unav-cardAlignLeft { text-align: left; }
-.unav-cardAlignLeft .unav-cardIconFloating { left: 2rem; }
+/* REFACTOR: Consumo de Tokens de Espaciado (32px en lugar de 2rem) */
+.unav-cardAlignLeft .unav-cardIconFloating { left: var(--unav-spacing-xl); }
 .unav-cardAlignLeft .unav-cardIconInner { margin-right: auto; }
 .unav-cardAlignLeft .unav-cardTags { justify-content: flex-start; }
 .unav-cardAlignLeft .unav-cardAction { text-align: left; justify-content: flex-start; }

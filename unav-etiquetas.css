@@ -7,8 +7,11 @@
     display: inline-flex;
     align-items: center;
     justify-content: center;
-    padding: var(--unav-tagPaddingY) var(--unav-tagPaddingX);
-    border-radius: var(--unav-tagBorderRadius);
+    
+    /* REFACTOR: Consumo directo de Tokens de Espaciado (4px 8px aprox) */
+    padding: var(--unav-spacing-xs) var(--unav-spacing-sm); 
+    /* REFACTOR: Consumo de Token de Forma (Píldora) */
+    border-radius: var(--unav-radius-full); 
     
     font-family: var(--unav-fontFamilyPrimary);
     font-weight: var(--unav-fontWeightMedium);

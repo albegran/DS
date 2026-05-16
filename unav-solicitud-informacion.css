@@ -55,7 +55,8 @@
     color: #ffffff;
     border: none;
     outline: none; /* Reseteo del outline nativo para usar uno a medida */
-    border-radius: 0 !important; /* Esquinas rectas estrictas */
+    /* REFACTOR: Consumo de Tokens de Forma (Esquinas rectas estrictas) */
+    border-radius: var(--unav-radius-none) !important; 
     padding: var(--unav-panelStickyBtnPadding);
     display: flex;
     flex-direction: column;
@@ -77,10 +78,10 @@
 .unav-stickyButton::before {
     content: '';
     position: absolute;
-    /* Se posiciona 5px por fuera del botón */
-    top: -5px;
-    bottom: -5px;
-    left: -5px;
+    /* REFACTOR: Consumo de Tokens de Espaciado para el offset óptico del foco (4px) */
+    top: calc(var(--unav-spacing-xs) * -1);
+    bottom: calc(var(--unav-spacing-xs) * -1);
+    left: calc(var(--unav-spacing-xs) * -1);
     right: 0; /* A ras del panel */
     border: 2px solid transparent;
     border-right: none; /* Omitimos la línea derecha para que no se superponga al panel */
@@ -155,7 +156,8 @@
     
     /* Adaptación del foco a medida para la geometría de móvil */
     .unav-stickyButton::before {
-        top: -5px;
+        /* REFACTOR: Consumo de Tokens de Espaciado (4px) en versión móvil */
+        top: calc(var(--unav-spacing-xs) * -1);
         left: 0;
         right: 0;
         bottom: 0; /* A ras del panel inferior */

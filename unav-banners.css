@@ -11,7 +11,8 @@
     background-size: cover;
     background-position: center;
     background-repeat: no-repeat;
-    border-radius: 0 !important; /* Esquinas rectas obligatorias */
+    /* REFACTOR: Consumo de Tokens de Forma (Esquinas rectas estrictas) */
+    border-radius: var(--unav-radius-none) !important; 
     overflow: hidden;
     transition: var(--unav-transitionBase);
     color: var(--unav-black-800);
@@ -46,7 +47,8 @@
     font-family: var(--unav-fontFamilyPrimary);
     font-weight: var(--unav-fontWeightBold);
     text-transform: uppercase;
-    margin-bottom: 0.75rem;
+    /* REFACTOR: Consumo de Tokens de Espaciado (16px aprox) */
+    margin-bottom: var(--unav-bannerTitleMargin, var(--unav-spacing-md));
     line-height: var(--unav-bannerTitleLineHeight);
 }
 
@@ -71,7 +73,8 @@
 .unav-bannerFull {
     width: 100%; /* Ocupa el 100vw al estar fuera del container en HTML */
     min-height: var(--unav-bannerMinHeightFull);
-    padding: var(--unav-bannerPaddingFull);
+    /* REFACTOR: Fallback a Token de Espaciado Gigante (64px) */
+    padding: var(--unav-bannerPaddingFull, var(--unav-spacing-3xl));
 }
 .unav-bannerFull .unav-bannerTitle { font-size: var(--unav-fontSize250); }
 .unav-bannerFull .unav-bannerText { font-size: var(--unav-fontSize125); }
@@ -80,7 +83,8 @@
 .unav-bannerWide {
     width: 100%;
     min-height: var(--unav-bannerMinHeightWide);
-    padding: var(--unav-bannerPaddingWide);
+    /* REFACTOR: Fallback a Token de Espaciado Grande (48px) */
+    padding: var(--unav-bannerPaddingWide, var(--unav-spacing-2xl));
 }
 .unav-bannerWide .unav-bannerTitle { font-size: var(--unav-fontSize200); }
 .unav-bannerWide .unav-bannerText { font-size: var(--unav-fontSize125); }
@@ -90,7 +94,8 @@
     width: 100%;
     height: 100%; /* Estira el banner en grids de Flexbox */
     min-height: var(--unav-bannerMinHeightMini);
-    padding: var(--unav-bannerPaddingMini);
+    /* REFACTOR: Fallback a Token de Espaciado Medio (32px) */
+    padding: var(--unav-bannerPaddingMini, var(--unav-spacing-xl));
 }
 .unav-bannerMini:hover { opacity: 0.95; }
 .unav-bannerMini .unav-bannerContent {
@@ -100,7 +105,8 @@
 .unav-bannerMini .unav-bannerTitle { font-size: var(--unav-fontSize150); }
 .unav-bannerMini .unav-bannerText { 
     font-size: var(--unav-fontSize100); 
-    margin-bottom: 1.5rem;
+    /* REFACTOR: Consumo de Tokens de Espaciado (24px) */
+    margin-bottom: var(--unav-spacing-lg);
 }
 
 /* Integración del Botón Terciario (Enlace Flecha) y Primarios */

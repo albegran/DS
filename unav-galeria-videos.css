@@ -10,7 +10,8 @@
     background-color: var(--unav-videoGalleryBg, #ffffff);
     border: 1px solid var(--unav-videoGalleryBorderColor, var(--unav-grey-200));
     position: relative;
-    border-radius: 0 !important; /* Esquinas rectas obligatorias por sistema */
+    /* REFACTOR: Consumo de Tokens de Forma (Esquinas rectas estrictas) */
+    border-radius: var(--unav-radius-none) !important; 
 }
 
 /* Contenedor Flex Principal */
@@ -58,8 +59,9 @@
     flex-shrink: 0; /* Impide que los botones se encojan */
     z-index: 10;
 }
-.unav-videoControlNav.unav-navTop { border-bottom: 1px solid var(--unav-grey-200); padding: 0.5rem; }
-.unav-videoControlNav.unav-navBottom { border-top: 1px solid var(--unav-grey-200); padding: 0.5rem; }
+/* REFACTOR: Consumo de Tokens de Espaciado (8px) */
+.unav-videoControlNav.unav-navTop { border-bottom: 1px solid var(--unav-grey-200); padding: var(--unav-spacing-sm); }
+.unav-videoControlNav.unav-navBottom { border-top: 1px solid var(--unav-grey-200); padding: var(--unav-spacing-sm); }
 
 /* Lista de miniaturas (Scrollable) */
 .unav-videoPlaylistItems {
@@ -75,14 +77,16 @@
 /* Ítem de Vídeo en Playlist */
 .unav-videoItem {
     display: flex;
-    padding: 0.9375rem; /* 15px */
+    /* REFACTOR: Consumo de Tokens de Espaciado (16px) */
+    padding: var(--unav-spacing-md); 
     background-color: transparent;
     border: none;
     outline: none; /* Reseteo del outline nativo */
     border-bottom: 1px solid var(--unav-videoGalleryBorderColor, var(--unav-grey-200));
     cursor: pointer;
     text-align: left;
-    gap: 0.75rem; /* 12px */
+    /* REFACTOR: Consumo de Tokens de Espaciado (16px) */
+    gap: var(--unav-spacing-md); 
     transition: background-color var(--unav-transitionBase);
     width: 100%;
     position: relative;
@@ -110,7 +114,8 @@
     flex-shrink: 0;
     aspect-ratio: 16/9;
     background-color: var(--unav-black-800);
-    border-radius: 4px;
+    /* REFACTOR: Consumo de Tokens de Forma (4px) */
+    border-radius: var(--unav-radius-md);
 }
 .unav-videoThumb img { 
     width: 100%; height: 100%; 
@@ -165,7 +170,8 @@
     -webkit-line-clamp: 2; /* Trunca a 2 líneas */
     -webkit-box-orient: vertical;
     overflow: hidden;
-    margin-bottom: 0.25rem; /* 4px */
+    /* REFACTOR: Consumo de Tokens de Espaciado (4px) */
+    margin-bottom: var(--unav-spacing-xs); 
 }
 
 .unav-videoItemMeta {
@@ -186,7 +192,8 @@
     .unav-videoMediaContainer { padding-right: var(--unav-videoSidebarWidthTablet, 280px); }
     .unav-videoPlaylistSidebar { width: var(--unav-videoSidebarWidthTablet, 280px); }
     .unav-videoThumb { width: var(--unav-videoThumbWidthTablet, 100px); }
-    .unav-videoItem { padding: 0.625rem; /* 10px */ }
+    /* REFACTOR: Consumo de Tokens de Espaciado (8px o 16px según densidad) */
+    .unav-videoItem { padding: var(--unav-spacing-sm); }
 }
 
 @container unavVideoGallery (max-width: 600px) {
@@ -204,15 +211,16 @@
         flex-direction: row; /* Cambio mágico a Horizontal */
     }
     
+    /* REFACTOR: Consumo de Tokens de Espaciado (8px) en móvil */
     .unav-videoControlNav.unav-navTop { 
         border-bottom: none; 
         border-right: 1px solid var(--unav-grey-200); 
-        padding: 0.5rem; 
+        padding: var(--unav-spacing-sm); 
     }
     .unav-videoControlNav.unav-navBottom { 
         border-top: none; 
         border-left: 1px solid var(--unav-grey-200); 
-        padding: 0.5rem; 
+        padding: var(--unav-spacing-sm); 
     }
 
     .unav-videoPlaylistItems {

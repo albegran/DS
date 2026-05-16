@@ -1,0 +1,44 @@
+/* ==========================================
+           COMPONENTE: LISTA DE NOTICIAS (REFINADO)
+           ========================================== */
+        
+        .unav-newsListItem {
+            /* Separador inferior oscuro basado en tokens UNAV */
+            border-bottom: 1px solid var(--unav-black-800);
+            /* REFACTOR: Consumo de Tokens de Espaciado (32px) */
+            padding-bottom: var(--unav-spacing-xl);
+            margin-bottom: var(--unav-spacing-xl);
+            display: flex;
+            flex-direction: column;
+        }
+
+        .unav-newsListItem:last-child {
+            border-bottom: none;
+            padding-bottom: 0;
+            margin-bottom: 0;
+        }
+
+        /* Ajuste de imagen para formato lista */
+        @media (min-width: 768px) {
+            .unav-newsListItem .unav-newsImageWrapper {
+                margin-bottom: 0; 
+                height: 100%;
+            }
+        }
+
+        /* Formato de fecha específico solicitado: 15 Abr. 2026 */
+        .unav-newsListItem .unav-newsDate {
+            color: var(--unav-grey-600);
+            font-family: var(--unav-fontFamilyPrimary);
+            font-weight: var(--unav-fontWeightBold);
+            font-size: var(--unav-fontSize075);
+            text-transform: none; /* Se respeta el formato mixto Solicitado */
+            letter-spacing: 0.5px;
+            /* REFACTOR: Consumo de Tokens de Espaciado (8px) */
+            margin-bottom: var(--unav-spacing-sm);
+        }
+
+        .unav-newsListItem .unav-newsTitle {
+            margin-bottom: 0;
+            font-size: var(--unav-fontSize125); /* Tamaño optimizado para lectura en lista */
+        }

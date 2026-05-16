@@ -1,5 +1,6 @@
 /* Archivo índice */
 @import url("unav-variables.css");
+@import url("unav-foundation.css");
 
 @import url("unav-color.css");
 @import url("unav-tipografia.css");
@@ -14,6 +15,7 @@
 @import url("unav-etiquetas.css");
 @import url("unav-lista-descriptiva.css");
 @import url("unav-separadores.css");
+@import url("unav-breadcrumbs.css");
 
 @import url("unav-acordeon.css");
 @import url("unav-banners.css");
@@ -22,6 +24,7 @@
 @import url("unav-galeria-imagenes.css");
 @import url("unav-galeria-videos.css");
 @import url("unav-grid-eventos.css");
+@import url("unav-listado-noticias.css");
 @import url("unav-grid-noticias.css");
 @import url("unav-hero.css");
 @import url("unav-menu-anclas.css");

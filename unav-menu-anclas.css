@@ -10,7 +10,8 @@
 
 /* Cabecera del Menú */
 .unav-menuAnclasHeader {
-    margin-bottom: var(--unav-menuAnclasHeaderMargin);
+    /* REFACTOR: Consumo de Tokens de Espaciado con fallback (24px) */
+    margin-bottom: var(--unav-menuAnclasHeaderMargin, var(--unav-spacing-lg));
 }
 
 .unav-menuAnclasSubtitle {
@@ -18,7 +19,8 @@
     font-size: var(--unav-fontSize075);
     color: var(--unav-menuAnclasSubtitleColor);
     display: block;
-    margin-bottom: 0.25rem;
+    /* REFACTOR: Consumo de Tokens de Espaciado (4px) */
+    margin-bottom: var(--unav-spacing-xs);
     text-transform: uppercase;
     letter-spacing: 0.5px;
     font-weight: var(--unav-fontWeightBold);

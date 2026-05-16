@@ -2,7 +2,7 @@
    COMPONENTE: ACORDEÓN UNAV (OOCSS)
    ========================================== */
 
-   .unav-accordionGroup {
+.unav-accordionGroup {
     border-top: 1px solid var(--unav-accordionBorderColor, var(--unav-grey-200));
     width: 100%;
 }
@@ -20,7 +20,13 @@
     background: transparent;
     border: none;
     outline: none; /* Reseteamos el outline nativo del navegador */
-    padding: var(--unav-accordionHeaderPaddingY, 1.25rem) var(--unav-accordionHeaderPaddingRight, 3.5rem) var(--unav-accordionHeaderPaddingY, 1.25rem) var(--unav-accordionHeaderPaddingX, 1.5rem);
+    
+    /* REFACTOR: Consumo de Tokens de Espaciado (16px vertical, 48px derecha para el icono, 24px izquierda) */
+    padding: var(--unav-accordionHeaderPaddingY, var(--unav-spacing-md)) 
+             var(--unav-accordionHeaderPaddingRight, var(--unav-spacing-2xl)) 
+             var(--unav-accordionHeaderPaddingY, var(--unav-spacing-md)) 
+             var(--unav-accordionHeaderPaddingX, var(--unav-spacing-lg));
+             
     cursor: pointer;
     position: relative;
     text-align: inherit;
@@ -50,7 +56,8 @@
 .unav-accordionTitleWrapper {
     display: flex;
     align-items: center;
-    gap: var(--unav-accordionTitleGap, 0.75rem);
+    /* REFACTOR: Consumo de Tokens de Espaciado (8px) */
+    gap: var(--unav-accordionTitleGap, var(--unav-spacing-sm));
     flex-grow: 1;
 }
 
@@ -61,7 +68,8 @@
 /* Icono Toggle */
 .unav-accordionToggleIcon {
     position: absolute;
-    right: 1.5rem;
+    /* REFACTOR: Consumo de Tokens de Espaciado (24px de margen derecho) */
+    right: var(--unav-spacing-lg);
     top: 50%;
     transform: translateY(-50%);
     /* Rotación sincronizada con el Motion System */
@@ -83,7 +91,8 @@
 }
 
 .unav-accordionInner {
-    padding: 1.5rem;
+    /* REFACTOR: Consumo de Tokens de Espaciado (24px alrededor del contenido) */
+    padding: var(--unav-spacing-lg);
     font-family: var(--unav-fontFamilyPrimary);
     font-size: var(--unav-fontSize100);
     line-height: 1.6;
@@ -114,11 +123,13 @@
     justify-content: flex-start;
     font-weight: var(--unav-fontWeightRegular) !important;
     color: var(--unav-black-800);
-    padding-left: 0;
+    /* REFACTOR: Consumo de Tokens de Espaciado (0px) */
+    padding-left: var(--unav-spacing-0);
 }
 
 .unav-accordionFAQ .unav-accordionToggleIcon {
-    right: 0;
+    /* REFACTOR: Consumo de Tokens de Espaciado (0px) */
+    right: var(--unav-spacing-0);
 }
 
 /* Forzamos el color rojo explícitamente en el botón y en todos sus elementos interiores (iconos y texto) */
@@ -130,5 +141,6 @@
 }
 
 .unav-accordionFAQ .unav-accordionInner {
-    padding-left: 2.25rem;
+    /* REFACTOR: Consumo de Tokens de Espaciado (32px para la sangría de la respuesta FAQ) */
+    padding-left: var(--unav-spacing-xl);
 }

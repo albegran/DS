@@ -12,8 +12,9 @@
 .unav-descItem {
     display: flex;
     flex-direction: column;
-    margin-bottom: var(--unav-descItemMarginBottom);
-    padding-bottom: var(--unav-descItemPaddingBottom);
+    /* REFACTOR: Consumo de Tokens de Espaciado (16px default) */
+    margin-bottom: var(--unav-descItemMarginBottom, var(--unav-spacing-md));
+    padding-bottom: var(--unav-descItemPaddingBottom, var(--unav-spacing-md));
     font-family: var(--unav-fontFamilyPrimary);
     width: 100%;
     box-sizing: border-box;
@@ -33,10 +34,12 @@
 .unav-descTerm {
     display: flex;
     align-items: center;
-    gap: var(--unav-descTermGap);
-    font-size: 1.125rem; /* ~18px, ajustable a tokens si es necesario */
+    /* REFACTOR: Consumo de Tokens de Espaciado (8px default) */
+    gap: var(--unav-descTermGap, var(--unav-spacing-sm));
+    font-size: var(--unav-fontSize125, 1.125rem); /* Uso de escala tipográfica */
     font-weight: var(--unav-fontWeightBold);
-    margin-bottom: var(--unav-descTermMarginBottom);
+    /* REFACTOR: Consumo de Tokens de Espaciado (4px default) */
+    margin-bottom: var(--unav-descTermMarginBottom, var(--unav-spacing-xs));
     color: var(--unav-descColorPrimary, var(--unav-black-800));
     transition: var(--unav-transitionBase);
 }
@@ -64,8 +67,9 @@
    ========================================= */
 .unav-descItemHanging {
     /* Desplaza el contenedor y su borde a la derecha */
-    margin-left: var(--unav-descHangingOffset); 
-    width: calc(100% - var(--unav-descHangingOffset));
+    /* REFACTOR: Consumo de Tokens de Espaciado (32px default) */
+    margin-left: var(--unav-descHangingOffset, var(--unav-spacing-xl)); 
+    width: calc(100% - var(--unav-descHangingOffset, var(--unav-spacing-xl)));
 }
 
 .unav-descItemHanging .unav-descTerm {
@@ -76,8 +80,9 @@
 .unav-descItemHanging .unav-descIcon {
     /* Posiciona el icono fuera del flujo, hacia la izquierda */
     position: absolute;
-    left: calc(var(--unav-descHangingOffset) * -1);
-    top: 0.15rem; /* Ajuste óptico con la altura de la x tipográfica */
+    left: calc(var(--unav-descHangingOffset, var(--unav-spacing-xl)) * -1);
+    /* REFACTOR: Ajuste óptico mediante token xs (4px) */
+    top: var(--unav-spacing-xs); 
     display: inline-flex;
     justify-content: flex-start;
 }
@@ -87,5 +92,6 @@
 .unav-sectionTitle { 
     color: var(--unav-black-800); 
     border-bottom: 2px solid var(--unav-grey-200); 
-    padding-bottom: 0.5rem; 
+    /* REFACTOR: Consumo de Tokens de Espaciado (8px) */
+    padding-bottom: var(--unav-spacing-sm); 
 }

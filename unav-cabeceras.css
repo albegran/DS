@@ -11,7 +11,8 @@
 .unav-sampleRow {
     background-color: #ffffff;
     border-bottom: 1px solid var(--unav-grey-200);
-    padding: var(--unav-sampleRowPaddingY) var(--unav-sampleRowPaddingX);
+    /* REFACTOR: Consumo de Tokens de Espaciado por defecto (16px vertical, 24px horizontal) */
+    padding: var(--unav-sampleRowPaddingY, var(--unav-spacing-md)) var(--unav-sampleRowPaddingX, var(--unav-spacing-lg));
     display: flex;
     flex-direction: column;
     justify-content: center;
@@ -33,9 +34,11 @@
 
 /* Contenedor Flex para la inyección de las Etiquetas (.unav-tag) */
 .unav-dataContainer {
-    margin-top: 1.5rem;
+    /* REFACTOR: Consumo de Tokens de Espaciado (24px) */
+    margin-top: var(--unav-spacing-lg);
     display: flex;
-    gap: 0.75rem;
+    /* REFACTOR: Consumo de Tokens de Espaciado (8px) para la separación de etiquetas */
+    gap: var(--unav-spacing-sm);
     flex-wrap: wrap;
     align-items: center;
 }
@@ -44,12 +47,15 @@
 .unav-sectionLabel {
     background-color: var(--unav-black-900);
     color: #ffffff;
-    padding: var(--unav-sectionLabelPaddingY) var(--unav-sectionLabelPaddingX);
+    /* REFACTOR: Consumo de Tokens de Espaciado (8px vertical, 16px horizontal) */
+    padding: var(--unav-sectionLabelPaddingY, var(--unav-spacing-sm)) var(--unav-sectionLabelPaddingX, var(--unav-spacing-md));
     font-family: var(--unav-fontFamilyPrimaryCondensed);
     font-weight: var(--unav-fontWeightBold);
     font-size: var(--unav-fontSize125);
     text-transform: uppercase;
     letter-spacing: var(--unav-trackingWide);
-    margin-top: 4rem;
-    border-radius: 0.5rem 0.5rem 0 0;
+    /* REFACTOR: Consumo de Tokens de Espaciado gigantes (64px) */
+    margin-top: var(--unav-spacing-3xl);
+    /* REFACTOR: Consumo de Tokens de Forma (Curvo arriba, Recto abajo) */
+    border-radius: var(--unav-radius-lg) var(--unav-radius-lg) var(--unav-radius-none) var(--unav-radius-none);
 }

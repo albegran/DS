@@ -14,8 +14,10 @@
 /* ACCESIBILIDAD: Anillo de foco */
 .unav-eventLink:focus-visible {
     outline: 2px solid var(--unav-rojo-500);
-    outline-offset: 4px;
-    border-radius: var(--unav-eventCardRadius, 4px);
+    /* REFACTOR: Consumo de Tokens de Espaciado (4px) */
+    outline-offset: var(--unav-spacing-xs);
+    /* REFACTOR: Consumo de Tokens de Forma (4px default) */
+    border-radius: var(--unav-eventCardRadius, var(--unav-radius-md));
 }
 
 /* Tarjeta Estructural */
@@ -25,7 +27,8 @@
     display: flex;
     flex-direction: column;
     height: 100%;
-    border-radius: var(--unav-eventCardRadius);
+    /* REFACTOR: Fallback de Token de Forma (4px) */
+    border-radius: var(--unav-eventCardRadius, var(--unav-radius-md));
     overflow: hidden;
 }
 
@@ -48,7 +51,8 @@
 
 /* Cuerpo de la Tarjeta */
 .unav-eventBody {
-    padding: var(--unav-eventCardPadding);
+    /* REFACTOR: Consumo de Tokens de Espaciado (16px default) */
+    padding: var(--unav-eventCardPadding, var(--unav-spacing-md));
     flex-grow: 1; 
     text-align: center;
     display: flex;
@@ -61,8 +65,10 @@
     display: flex;
     align-items: center;
     justify-content: center;
-    gap: 0.5rem; 
-    margin-bottom: 0.25rem;
+    /* REFACTOR: Consumo de Tokens de Espaciado (8px) */
+    gap: var(--unav-spacing-sm); 
+    /* REFACTOR: Consumo de Tokens de Espaciado (4px) */
+    margin-bottom: var(--unav-spacing-xs);
 }
 
 /* FECHA: Bold y Condensed (1.25rem) */
@@ -86,17 +92,19 @@
 
 /* TÍTULO: Light y Grande (1.50rem) */
 .unav-eventTitle {
-    margin-top: 1.25rem;
+    /* REFACTOR: Consumo de Tokens de Espaciado (24px) */
+    margin-top: var(--unav-spacing-lg);
     font-family: var(--unav-fontFamilyPrimary);
     font-size: var(--unav-fontSize150); 
     font-weight: var(--unav-fontWeightLight);
     color: var(--unav-black-900);
-    margin-bottom: 0;
+    margin-bottom: var(--unav-spacing-0);
     /* Transición suave para color y subrayado */
     transition: color var(--unav-durationNormal) var(--unav-easingStandard),
                 text-decoration var(--unav-durationNormal) var(--unav-easingStandard);
     text-decoration: underline transparent; /* Estado inicial invisible */
-    text-underline-offset: 6px; /* Separación elegante para legibilidad */
+    /* REFACTOR: Consumo de Tokens de Espaciado (8px) */
+    text-underline-offset: var(--unav-spacing-sm); 
     text-decoration-thickness: 1px;
 }
 
@@ -108,7 +116,8 @@
 
 /* Localización Base */
 .unav-eventLocation {
-    padding: 1rem;
+    /* REFACTOR: Consumo de Tokens de Espaciado (16px) */
+    padding: var(--unav-spacing-md);
     background-color: var(--unav-grey-100);
     border-top: 1px solid var(--unav-eventCardBorder);
     font-family: var(--unav-fontFamilyPrimary);
@@ -117,7 +126,8 @@
     display: flex;
     align-items: center;
     justify-content: center;
-    gap: 0.375rem; 
+    /* REFACTOR: Consumo de Tokens de Espaciado (4px) */
+    gap: var(--unav-spacing-xs); 
 }
 
 .unav-eventLocation i { 

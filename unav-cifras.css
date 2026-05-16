@@ -11,7 +11,8 @@
     color: #ffffff; /* El color de texto siempre es blanco al ir sobre un overlay oscuro */
     min-height: var(--unav-counterMinHeightBase);
     width: 100%;
-    border-radius: 0 !important; /* Esquinas vivas obligatorias por sistema */
+    /* REFACTOR: Consumo de Tokens de Forma (Esquinas vivas obligatorias) */
+    border-radius: var(--unav-radius-none) !important; 
 }
 
 /* Modificador de Altura */
@@ -61,7 +62,8 @@
     letter-spacing: var(--unav-trackingWide);
     text-transform: uppercase;
     font-weight: var(--unav-fontWeightBold);
-    margin-bottom: 0.5rem;
+    /* REFACTOR: Consumo de Tokens de Espaciado (8px) */
+    margin-bottom: var(--unav-spacing-sm);
     display: block;
 }
 
@@ -71,7 +73,8 @@
     line-height: 1;
     font-weight: var(--unav-fontWeightBold);
     display: block;
-    margin-bottom: 0.5rem;
+    /* REFACTOR: Consumo de Tokens de Espaciado (8px) */
+    margin-bottom: var(--unav-spacing-sm);
 }
 
 .unav-counterBottom {

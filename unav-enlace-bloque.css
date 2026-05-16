@@ -2,11 +2,12 @@
    COMPONENTE: BLOQUE DE ENLACES UNAV (OOCSS)
    ========================================== */
 
-/* Contenedor Flex para el apilamiento automático con gap de 2px */
+/* Contenedor Flex para el apilamiento automático */
 .unav-listadoEnlaces {
     display: flex;
     flex-direction: column;
-    gap: var(--unav-bloqueEnlaceGap);
+    /* Consumo de Token de Espacio: 2px no está en la escala, pero usamos 'xs' (4px) o un gap base */
+    gap: var(--unav-spacing-xs, 4px);
     width: 100%;
 }
 
@@ -24,17 +25,23 @@
     /* Consumo de Tokens Corporativos */
     color: var(--unav-bloqueEnlaceText);
     background-color: var(--unav-bloqueEnlaceBg);
-    padding: var(--unav-bloqueEnlacePadding);
+    
+    /* El padding dependerá de las variables de instancia, pero su fallback consume tokens */
+    padding: var(--unav-bloqueEnlacePadding, var(--unav-spacing-md));
+    
     font-family: var(--unav-fontFamilyPrimary);
     font-size: var(--unav-fontSize100);
     line-height: var(--unav-bloqueEnlaceLineHeight);
-    border-radius: 0 !important; /* Esquinas rectas estrictas */
+    
+    /* Consumo de Token de Forma: Esquinas rectas estrictas */
+    border-radius: var(--unav-radius-none) !important; 
 }
 
 /* ACCESIBILIDAD: Anillo de foco (Teclado) */
 .unav-bloqueEnlace:focus-visible {
     outline: 2px solid var(--unav-rojo-500);
-    outline-offset: -2px; /* Offset negativo (hacia adentro) para evitar solapar el bloque contiguo */
+    /* El offset negativo se mantiene duro porque depende matemáticamente del borde del contenedor */
+    outline-offset: -2px; 
     z-index: 2; /* Elevación de contexto para asegurar visibilidad */
 }
 
@@ -62,12 +69,12 @@
     content: '';
     position: absolute;
     height: 1px;
-    background-color: currentColor; /* Hereda el color del hover (blanco) automáticamente */
+    background-color: currentColor; /* Hereda el color del hover automáticamente */
     
     /* Coordenadas inyectadas por el motor JS */
-    left: var(--unav-lineLeft, var(--unav-bloqueEnlacePadding));
+    left: var(--unav-lineLeft, var(--unav-spacing-md));
     width: var(--unav-lineWidth, 0px);
-    bottom: var(--unav-lineBottom, 0.75rem);
+    bottom: var(--unav-lineBottom, var(--unav-spacing-sm)); /* Fallback asimilado al token sm */
     
     opacity: 0;
     transition: opacity var(--unav-transitionBase);

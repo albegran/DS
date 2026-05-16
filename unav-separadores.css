@@ -12,8 +12,10 @@
     display: flex;
     align-items: center;
     width: var(--unav-separadorWidth);
-    margin-top: var(--unav-separadorMarginY);
-    margin-bottom: var(--unav-separadorMarginY);
+    
+    /* REFACTOR: Consumo de Tokens de Espaciado (32px por defecto si no se sobrescribe) */
+    margin-top: var(--unav-separadorMarginY, var(--unav-spacing-xl));
+    margin-bottom: var(--unav-separadorMarginY, var(--unav-spacing-xl));
     clear: both;
 }
 
@@ -34,7 +36,8 @@
 }
 
 .unav-separadorContent {
-    padding: 0 var(--unav-separadorPaddingX);
+    /* REFACTOR: Consumo de Tokens de Espaciado (16px lateral por defecto) */
+    padding: 0 var(--unav-separadorPaddingX, var(--unav-spacing-md));
     color: var(--unav-separadorColor);
     display: flex;
     align-items: center;
@@ -58,9 +61,11 @@
 }
 
 /* --- Layout de Documentación --- */
+/* (Se asume el borde en px porque forma parte de la geometría estructural de la caja) */
 .unav-techSummary { border-left: 4px solid var(--unav-rojo-600); }
 .unav-sectionTitle { 
     color: var(--unav-black-800); 
     border-bottom: 2px solid var(--unav-grey-200); 
-    padding-bottom: 0.5rem; 
+    /* REFACTOR: Consumo de Tokens de Espaciado (8px) */
+    padding-bottom: var(--unav-spacing-sm); 
 }

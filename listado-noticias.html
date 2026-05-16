@@ -18,49 +18,6 @@
         html { scroll-behavior: smooth; background-color: var(--unav-grey-100); }
         body { background-color: transparent; padding-bottom: 5rem; }
         .unav-techSummary { border-left: 4px solid var(--unav-rojo-500); }
-
-        /* ==========================================
-           COMPONENTE: LISTA DE NOTICIAS (REFINADO)
-           ========================================== */
-        
-        .unav-newsListItem {
-            /* Separador inferior oscuro basado en tokens UNAV [cite: unav-color.css] */
-            border-bottom: 1px solid var(--unav-black-800);
-            padding-bottom: 2rem;
-            margin-bottom: 2rem;
-            display: flex;
-            flex-direction: column;
-        }
-
-        .unav-newsListItem:last-child {
-            border-bottom: none;
-            padding-bottom: 0;
-            margin-bottom: 0;
-        }
-
-        /* Ajuste de imagen para formato lista */
-        @media (min-width: 768px) {
-            .unav-newsListItem .unav-newsImageWrapper {
-                margin-bottom: 0; 
-                height: 100%;
-            }
-        }
-
-        /* Formato de fecha específico solicitado: 15 Abr. 2026 [cite: unav-tipografia.css] */
-        .unav-newsListItem .unav-newsDate {
-            color: var(--unav-grey-600);
-            font-family: var(--unav-fontFamilyPrimary);
-            font-weight: var(--unav-fontWeightBold);
-            font-size: var(--unav-fontSize075);
-            text-transform: none; /* Se respeta el formato mixto Solicitado */
-            letter-spacing: 0.5px;
-            margin-bottom: 0.5rem;
-        }
-
-        .unav-newsListItem .unav-newsTitle {
-            margin-bottom: 0;
-            font-size: var(--unav-fontSize125); /* Tamaño optimizado para lectura en lista */
-        }
     </style>
 </head>
 <body class="bg-light">
@@ -82,7 +39,7 @@
     <main class="container-lg py-5" itemprop="mainContentOfPage">
         
         <header class="text-center mb-5 border-bottom pb-4">
-            <h1 class="unav-font-primary unav-weight-bold unav-text-200 text-dark mb-3" itemprop="name">Listado de Noticias (8 Col)</h1>
+            <h1 class="unav-font-primary unav-weight-medium unav-text-200 text-dark mb-3" itemprop="name">Listado de Noticias (8 Col)</h1>
             <p class="unav-font-primary unav-weight-regular unav-text-100 text-muted m-0" itemprop="description">Refinamiento del componente de lista con formato de fecha editorial y contención en grid central.</p>
             
             <div class="unav-techSummary bg-white p-4 text-start mt-5 rounded shadow-sm border mx-auto" style="max-width: 900px;">

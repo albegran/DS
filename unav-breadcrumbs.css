@@ -1,0 +1,104 @@
+/* ==========================================
+   COMPONENTE: MIGAS DE PAN (BREADCRUMBS)
+   ========================================== */
+
+/* 1. Contenedor principal con Scroll Móvil */
+.unav-breadcrumbs {
+    display: flex;
+    flex-wrap: nowrap; /* Fuerza una sola línea siempre */
+    align-items: center;
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    font-family: var(--unav-fontFamilyPrimary);
+    font-size: var(--unav-fontSize0875, 0.875rem);
+    gap: var(--unav-spacing-xs, 0.25rem);
+    
+    /* MAGIA MÓVIL: Scroll horizontal suave */
+    max-width: 100%;
+    overflow-x: auto;
+    -webkit-overflow-scrolling: touch; /* Scroll fluido en iOS */
+    scrollbar-width: none; /* Oculta scrollbar en Firefox */
+}
+
+/* Oculta la barra de scroll nativa en Chrome/Safari/Edge */
+.unav-breadcrumbs::-webkit-scrollbar {
+    display: none;
+}
+
+/* 2. Texto introductorio ("Estás en:") */
+.unav-breadcrumbHere {
+    font-weight: var(--unav-fontWeightBold);
+    color: var(--unav-black-900);
+    margin: 0;
+    padding-right: var(--unav-spacing-xs, 0.25rem);
+    flex-shrink: 0; /* Evita que el flexbox lo aplaste */
+    white-space: nowrap; /* Evita saltos de línea */
+}
+
+/* 3. Envoltorio de cada nivel */
+.unav-breadcrumbItem {
+    display: flex;
+    align-items: center;
+    flex-shrink: 0; /* Vital para que funcione el scroll horizontal */
+}
+
+/* 4. Separador Automático (Bootstrap Icon a prueba de fallos) */
+.unav-breadcrumbItem + .unav-breadcrumbItem::before {
+    content: "\f285"; /* Código unicode del chevron-right */
+    font-family: "bootstrap-icons" !important;
+    font-style: normal !important;
+    font-weight: normal !important;
+    font-variant: normal !important;
+    text-transform: none !important;
+    line-height: 1;
+    vertical-align: -0.125em;
+    -webkit-font-smoothing: antialiased;
+    
+    font-size: 0.7rem;
+    padding-right: var(--unav-spacing-sm, 0.5rem);
+    padding-left: var(--unav-spacing-xs, 0.25rem);
+    color: var(--unav-grey-400);
+}
+
+/* 5. Enlaces (Protección contra overrides de Bootstrap) */
+.unav-breadcrumbItem a,
+.unav-breadcrumbLink {
+    color: var(--unav-black-800) !important; /* Fuerza nuestro color */
+    text-decoration: none !important; /* Elimina subrayados nativos */
+    transition: color var(--unav-transitionBase);
+    border-radius: var(--unav-radius-sm, 2px);
+    display: inline-flex;
+    align-items: center;
+}
+
+.unav-breadcrumbItem a:hover,
+.unav-breadcrumbLink:hover {
+    color: var(--unav-rojo-600) !important;
+    text-decoration: underline !important;
+    text-underline-offset: 3px;
+}
+
+/* 6. Foco de accesibilidad (WCAG) */
+.unav-breadcrumbItem a:focus-visible,
+.unav-breadcrumbLink:focus-visible {
+    outline: 2px solid var(--unav-rojo-500);
+    outline-offset: 4px;
+}
+
+/* 7. Truncamiento de textos largos (Truncate) */
+.unav-breadcrumbItem span {
+    max-width: 200px; /* Ancho máximo antes de poner "..." */
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    display: block;
+}
+
+/* 8. Ítem final (Página Actual) */
+.unav-breadcrumbItem.unav-isActive span,
+.unav-breadcrumbItem .active {
+    color: var(--unav-black-800);
+    font-weight: var(--unav-fontWeightMedium);
+    pointer-events: none; /* Evita que sea clickeable por error */
+}

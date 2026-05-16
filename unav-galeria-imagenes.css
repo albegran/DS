@@ -14,7 +14,8 @@
     display: grid;
     grid-template-columns: 1fr var(--unav-gallerySidebarWidth, 250px);
     background-color: var(--unav-galleryBg, var(--unav-black-900));
-    border-radius: 0 !important; /* Esquinas rectas estrictas */
+    /* REFACTOR: Consumo de Tokens de Forma (Esquinas rectas estrictas) */
+    border-radius: var(--unav-radius-none) !important; 
     overflow: hidden;
     box-shadow: var(--unav-cardShadowBase);
     width: 100%;
@@ -40,7 +41,8 @@
     display: flex; /* Siempre flex para centrar contenido */
     align-items: center;
     justify-content: center;
-    padding: 1.25rem;
+    /* REFACTOR: Consumo de Tokens de Espaciado (24px default) */
+    padding: var(--unav-galleryStagePadding, var(--unav-spacing-lg));
     pointer-events: none; /* Inactivo por defecto */
 }
 
@@ -58,7 +60,8 @@
 .unav-imageCaption {
     position: absolute;
     bottom: 0; left: 0; right: 0;
-    padding: 2.5rem 1.5rem 1.25rem; 
+    /* REFACTOR: Consumo de Tokens de Espaciado (Top: 32px, Laterales: 24px, Bottom: 16px) */
+    padding: var(--unav-spacing-xl) var(--unav-spacing-lg) var(--unav-spacing-md); 
     background: linear-gradient(transparent, rgba(0,0,0,0.85));
     color: #ffffff;
     font-family: var(--unav-fontFamilyPrimary); 
@@ -86,8 +89,10 @@
     display: grid;
     grid-template-columns: repeat(3, 1fr);
     grid-auto-rows: max-content;
-    gap: var(--unav-galleryThumbGap, 4px);
-    padding: 0.5rem;
+    /* REFACTOR: Consumo de Tokens de Espaciado (4px default) */
+    gap: var(--unav-galleryThumbGap, var(--unav-spacing-xs));
+    /* REFACTOR: Consumo de Tokens de Espaciado (8px) */
+    padding: var(--unav-spacing-sm);
     align-content: start;
     scrollbar-width: none; /* Oculta scrollbar en Firefox */
 }
@@ -136,7 +141,8 @@
 .unav-galleryControlsBar {
     background-color: rgba(0, 0, 0, 0.2); 
     border-top: 1px solid rgba(255, 255, 255, 0.05);
-    padding: 0.75rem;
+    /* REFACTOR: Consumo de Tokens de Espaciado (16px) */
+    padding: var(--unav-spacing-md);
     flex-shrink: 0;
 }
 
@@ -171,7 +177,8 @@
         display: flex; flex-direction: row;
         overflow-x: auto; overflow-y: hidden; 
         height: 100%; align-items: center; 
-        gap: var(--unav-galleryThumbGap, 4px);
+        /* REFACTOR: Consumo de Tokens de Espaciado (4px default) */
+        gap: var(--unav-galleryThumbGap, var(--unav-spacing-xs));
         scroll-snap-type: x mandatory;
         min-width: 0; /* Crucial para permitir scroll horizontal interno en flexbox */
     }
