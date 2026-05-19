@@ -9,7 +9,7 @@
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.1/font/bootstrap-icons.css">    
     <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@24,400,0,0" />
 
-    <link rel="stylesheet" href="unav-styles.css">
+    <link rel="stylesheet" href="unav-styles.css">   
 </head>
 <body class="">
 
@@ -35,7 +35,7 @@
 
     <main itemprop="mainContentOfPage">
 
-        <section class="unav-hero unav-hero--darkOverlay mb-5" itemscope itemtype="https://schema.org/WPHeader">
+        <section class="unav-hero unav-hero--darkOverlay mb-0" itemscope itemtype="https://schema.org/WPHeader">
             <div class="unav-heroVisuals" itemprop="video" itemscope itemtype="https://schema.org/VideoObject">
                 <meta itemprop="name" content="Campus Universitario UNAV">
                 <meta itemprop="description" content="Vista aérea y vida en el campus de la Universidad de Navarra.">
@@ -63,13 +63,60 @@
 
 
 
+        <div class="container-lg">
+            <div class="py-3 overflow-x-auto">
+                <!-- Inicio del Componente de Migas (Limpio sobre fondo blanco y sin bordes) -->
+                <nav aria-label="Ruta de navegación" id="unav_breadcrumb_wrapper">
+                    <ol class="unav-breadcrumbs" itemscope itemtype="https://schema.org/BreadcrumbList">
+                        
+                        <!-- Texto Inicial "Estás en:" -->
+                        <li><p class="unav-breadcrumbHere">Estás en:&nbsp;</p></li>
+                        
+                        <!-- Nivel 1 -->
+                        <li class="unav-breadcrumbItem" itemprop="itemListElement" itemscope itemtype="https://schema.org/ListItem">
+                            <a class="unav-breadcrumbLink" href="#" title="Facultad de Ciencias">
+                                <span itemprop="name">Facultad de Ciencias</span>
+                                <meta itemprop="position" content="1">
+                                <meta itemprop="item" content="https://www.unav.edu/web/facultad-de-ciencias">
+                            </a>
+                        </li>
+                        
+                        <!-- Nivel 2 -->
+                        <li class="unav-breadcrumbItem" itemprop="itemListElement" itemscope itemtype="https://schema.org/ListItem">
+                            <a class="unav-breadcrumbLink" href="#" title="Conoce la Facultad">
+                                <span itemprop="name">Conoce la Facultad</span>
+                                <meta itemprop="position" content="2">
+                                <meta itemprop="item" content="https://www.unav.edu/web/facultad-de-ciencias/conoce-la-facultad">
+                            </a>
+                        </li>
+                        
+                        <!-- Nivel 3 -->
+                        <li class="unav-breadcrumbItem" itemprop="itemListElement" itemscope itemtype="https://schema.org/ListItem">
+                            <a class="unav-breadcrumbLink" href="#" title="¿Quiénes somos?">
+                                <span itemprop="name">¿Quiénes somos?</span>
+                                <meta itemprop="position" content="3">
+                                <meta itemprop="item" content="https://www.unav.edu/web/facultad-de-ciencias/conoce-la-facultad/quienes-somos">
+                            </a>
+                        </li>
+                        
+                        <!-- Nivel 4 (Página Actual - Texto completo sin truncar) -->
+                        <li class="unav-breadcrumbItem unav-isActive" itemprop="itemListElement" itemscope itemtype="https://schema.org/ListItem">
+                            <span itemprop="name" aria-current="page">Vicedecanato de Estudiantes</span>
+                            <meta itemprop="position" content="4">
+                            <meta itemprop="item" content="https://www.unav.edu/web/facultad-de-ciencias/conoce-la-facultad/quienes-somos/vicedecanato-de-estudiantes">
+                        </li>
+                        
+                    </ol>
+                </nav>
+            </div>
+        </div>
+
 
 
 
 
         <div class="container-lg">
-            <section class="bg-white p-4 p-md-5 mb-5">
-                <h2 class="unav-font-primary unav-weight-bold unav-text-200 border-bottom pb-2 mb-4 text-dark mt-0">04. Variante D: Ancho Total (12 Col) - Textos mixtos</h2>
+            <section class="bg-white p-4 p-md-5 mb-5">                
                 <div class="row g-4">
                     <div class="col-12 col-md-6 col-lg-3">
                         <article class="unav-newsCard unav-efectoEntradaOculto" itemscope itemtype="https://schema.org/NewsArticle">
@@ -455,10 +502,13 @@
                 <div class="row g-2">
                     <div class="col-lg-4">
                         <p class="unav-preview-text unav-font-primary unav-weight-thin unav-text-200">Desde 1954 #enfunav</p>
-                        <p>1954-2024. 70 años: Otro modo de ser, otro modo de hacer</p>
-                        <div>
+                        <p class="unav-font-primary unav-weight-light unav-text-1125 unav-lh-normal m-0" style="color: var(--unav-black-600); padding-bottom: var(--unav-spacing-sm);">
+                            La Universidad de Navarra promueve la investigación interdisciplinar en diferentes campos de la ciencia y las humanidades. Para conocer más detalles sobre nuestros últimos proyectos, puedes <a href="#" class="unav-enlaceInline">consultar el informe anual de investigación</a> publicado recientemente por el rectorado. Este documento detalla los avances logrados durante el último curso académico y las perspectivas de futuro de nuestras facultades.
+                        </p>
+
+                        <p class="unav-font-primary unav-weight-light unav-text-1125 unav-lh-normal m-0" style="color: var(--unav-black-600);">
                             Recorrer la historia ayuda a constatar cómo un proyecto que comenzó hace más de medio siglo constituye hoy una gran Facultad, que aporta no solo excelentes profesionales, sino también personas al servicio del cuidado de las personas.
-                        </div>
+                        </p>
                     </div>
                     <div class="col-lg-8 align-items-center p-2">
                         <div class="unav-accordionGroup">
@@ -473,7 +523,7 @@
                                     <span class="material-symbols-outlined unav-accordionToggleIcon" aria-hidden="true">expand_more</span>
                                 </button>
                                 <div class="unav-accordionPanel"><div class="unav-accordionInner">
-                                    <p class="unav-preview-text unav-font-primary unav-weight-thin unav-text-200">
+                                    <p class="unav-preview-text unav-font-primary unav-weight-thin unav-text-200 unav-lh-snug">
                                     Información institucional clave asociada al color principal de la Universidad de Navarra.
                                     </p>
                                     <dl class="unav-descList row g-4" itemscope itemtype="https://schema.org/DefinedTermSet">
@@ -651,30 +701,37 @@
             <section class="p-2 p-md-5 mb-5">    
                 <div class="row g-0">
                     <div class="col-lg-6">
-                        <div class="unav-galleryWrapper mb-5">
+                        <div class="unav-galleryWrapper">
                             <div class="unav-mediaGallery" itemscope itemtype="http://schema.org/ImageGallery">
-                                <div class="unav-galleryStage">
-                                    <button class="unav-galleryControlBtn unav-galleryStageBtn unav-prevBtn" onclick="changeSlide(this, -1)"><i class="bi bi-chevron-left"></i></button>
-                                    <button class="unav-galleryControlBtn unav-galleryStageBtn unav-nextBtn" onclick="changeSlide(this, 1)"><i class="bi bi-chevron-right"></i></button>
+                                
+                                <div class="unav-galleryStage position-relative">
+                                    <button class="unav-boton unav-botonSecundario unav-botonIconOnly position-absolute top-50 translate-middle-y start-0 ms-3 unav-prevBtn" style="--unav-botonColorSource: #ffffff; --unav-botonTextHover: var(--unav-rojo-600); z-index: 10;" onclick="changeSlide(this, -1)" aria-label="Anterior"><i class="bi bi-chevron-left unav-botonIcono"></i></button>
+                                    <button class="unav-boton unav-botonSecundario unav-botonIconOnly position-absolute top-50 translate-middle-y end-0 me-3 unav-nextBtn" style="--unav-botonColorSource: #ffffff; --unav-botonTextHover: var(--unav-rojo-600); z-index: 10;" onclick="changeSlide(this, 1)" aria-label="Siguiente"><i class="bi bi-chevron-right unav-botonIcono"></i></button>
                                     <div class="unav-mainStageInyect"></div>
                                 </div>
+    
                                 <div class="unav-gallerySidebar">
                                     <div class="unav-thumbGrid"></div>
-                                    <div class="unav-galleryScrollVertical">
-                                        <button class="unav-galleryControlBtn" onclick="scrollThumbGridVertical(this, -1)"><i class="bi bi-chevron-up"></i></button>
-                                        <button class="unav-galleryControlBtn" onclick="scrollThumbGridVertical(this, 1)"><i class="bi bi-chevron-down"></i></button>
-                                    </div>
-                                    <div class="unav-galleryScrollHorizontal">
-                                        <button class="unav-galleryControlBtn" onclick="scrollThumbGridHorizontal(this, -1)"><i class="bi bi-chevron-left"></i></button>
-                                        <button class="unav-galleryControlBtn" onclick="scrollThumbGridHorizontal(this, 1)"><i class="bi bi-chevron-right"></i></button>
-                                    </div>
-                                    <div class="unav-galleryMeta d-flex justify-content-center">
-                                        <span class="unav-tag unav-counter" style="background-color: var(--unav-black-800); color: #ffffff; border: none;">1 / 24</span>
+                                    
+                                    <div class="unav-galleryControlsBar d-flex justify-content-center align-items-center gap-2">
+                                        <button class="unav-boton unav-botonSecundario unav-botonIconOnly unav-botonIconOnlySm unav-btnVertical" style="--unav-botonColorSource: #ffffff; --unav-botonTextHover: var(--unav-black-900);" onclick="scrollThumbGridVertical(this, -1)" aria-label="Subir miniaturas"><i class="bi bi-chevron-up unav-botonIcono"></i></button>
+                                        <button class="unav-boton unav-botonSecundario unav-botonIconOnly unav-botonIconOnlySm unav-btnHorizontal" style="--unav-botonColorSource: #ffffff; --unav-botonTextHover: var(--unav-black-900);" onclick="scrollThumbGridHorizontal(this, -1)" aria-label="Izquierda miniaturas"><i class="bi bi-chevron-left unav-botonIcono"></i></button>
+    
+                                        <span class="unav-tag unav-counter unav-lh-relaxed mb-0" style="background-color: var(--unav-black-800); color: #ffffff; border: 1px solid var(--unav-black-600); min-width: 60px; text-align: center;">1 / 24</span>
+    
+                                        <button class="unav-boton unav-botonSecundario unav-botonIconOnly unav-botonIconOnlySm unav-btnVertical" style="--unav-botonColorSource: #ffffff; --unav-botonTextHover: var(--unav-black-900);" onclick="scrollThumbGridVertical(this, 1)" aria-label="Bajar miniaturas"><i class="bi bi-chevron-down unav-botonIcono"></i></button>
+                                        <button class="unav-boton unav-botonSecundario unav-botonIconOnly unav-botonIconOnlySm unav-btnHorizontal" style="--unav-botonColorSource: #ffffff; --unav-botonTextHover: var(--unav-black-900);" onclick="scrollThumbGridHorizontal(this, 1)" aria-label="Derecha miniaturas"><i class="bi bi-chevron-right unav-botonIcono"></i></button>
                                     </div>
                                 </div>
+    
                             </div>
                         </div>
                                 
+                        <div class="unav-separador unav-separadorAlignCenter" style="--unav-separadorColor: var(--unav-black-900); --unav-separadorThickness: 1px; --unav-separadorStyle: solid; --unav-separadorWidth: 60%;" itemscope itemtype="https://schema.org/WebPageElement">
+                            <meta itemprop="name" content="Separador Línea Simple 60% Negro">
+                            <div class="unav-separadorLine"></div>
+                        </div>
+                        
                         <dl class="unav-descList" itemscope itemtype="https://schema.org/DefinedTermSet">
                     
                             <div class="unav-descItem unav-descItemHanging unav-hasBorder" style="--unav-descColorPrimary: var(--unav-rojo-600); --unav-descBorderColor: var(--unav-rojo-600);" itemprop="hasDefinedTerm" itemscope itemtype="https://schema.org/DefinedTerm">
@@ -702,7 +759,7 @@
                     </div>
 
 
-                    <div class="col-lg-6 align-items-center p-2">
+                    <div class="col-lg-3 align-items-center p-2">
                         <div class="unav-listadoEnlaces" itemscope itemtype="https://schema.org/SiteNavigationElement">
                             <a itemprop="url" href="#" class="unav-bloqueEnlace">
                                 <span itemprop="name" class="unav-bloqueEnlaceText">Doble Grado en Farmacia y Nutrición Humana y Dietética</span>
@@ -714,26 +771,37 @@
                                 <span itemprop="name" class="unav-bloqueEnlaceText">Máster de Práctica Avanzada y Gestión en Enfermería</span>
                             </a>
                         </div>
-
-                        <div class="unav-separador unav-separadorAlignCenter" style="--unav-separadorColor: var(--unav-grey-600); --unav-separadorThickness: 1px; --unav-separadorStyle: solid; --unav-separadorWidth: 80%;" itemscope itemtype="https://schema.org/WebPageElement">
+                    </div>
+                    <div class="col-lg-3 align-items-center p-2">
+                        <div class="unav-separador unav-separadorAlignCenter" style="--unav-separadorColor: var(--unav-grey-600); --unav-separadorThickness: 1px; --unav-separadorStyle: solid; --unav-separadorWidth: 100%;" itemscope itemtype="https://schema.org/WebPageElement">
                             <meta itemprop="name" content="Separador con Texto Centrado">
                             <div class="unav-separadorLine"></div>
                             <div class="unav-separadorContent">
-                                <span class="unav-separadorText">Continúa Leyendo</span>
+                                <span class="unav-separadorText">Contacto</span>
                             </div>
                             <div class="unav-separadorLine"></div>
                         </div>
 
-                        <article class="unav-personCard unav-cardNoBorder unav-layoutPersona text-center" itemscope itemtype="https://schema.org/Person">
-                            <h3 class="unav-personName" itemprop="name">Dpto. Admisiones</h3>
-                            <div class="unav-personRole" itemprop="jobTitle">Información General</div>
-                            
-                            <div class="unav-personDetails">
-                                <p style="display: inline;" class="text-center" itemprop="telephone"><i class="bi bi-telephone"></i> <a href="tel:+34948425614">+34 948 42 56 14</a></p>
-                                <p style="display: inline;" class="text-center"><i class="bi bi-clock"></i> L a V de 8h a 14h</p>
+                        <article class="unav-personCard unav-layoutDirectivo unav-cardNoBorder" itemscope itemtype="https://schema.org/Person">
+                            <h3 class="unav-personName" itemprop="name">Alberto Herrero Ríos</h3>
+                            <div class="unav-personRole" itemprop="jobTitle">Director Financiero</div>
+                            <div class="unav-personEmail">
+                                <a href="mailto:ahrios@unav.es" itemprop="email">ahrios@unav.es</a>
                             </div>
-                            <div class="unav-personEmail" style="display: inline;">
-                                <a style="display: inline;" class="text-center" href="mailto:info@unav.es" itemprop="email"><i class="bi bi-envelope"></i> info@unav.es</a>
+                            <div class="unav-personAddress" itemprop="address">
+                                Rectorado. Edificio Central<br>
+                                Universidad de Navarra<br>
+                                31009 Pamplona, España
+                            </div>
+                            <div class="unav-personPhones" itemprop="telephone">
+                                <span>+34 948 425 606</span>
+                                <span>+34 948 425 600</span>
+                            </div>
+                            <div class="unav-linkContainer">
+                                <a href="mailto:ahrios@unav.es" class="unav-enlaceFlecha" style="--unav-enlaceColor: var(--unav-black-900);">
+                                    <span class="unav-arrowWrapper"><span class="unav-arrow"></span><span class="unav-arrowClone"></span></span>
+                                    <span>Contactar</span>
+                                </a>
                             </div>
                         </article>
                     </div>
@@ -769,17 +837,21 @@
                         <div class="unav-videoGalleryWrapper">
                             <div class="unav-videoMediaContainer">
                                 <div class="unav-videoStage" id="stage-v1"></div>
-                                <div class="unav-videoPlaylistSidebar" id="playlist-v1" role="tablist" itemscope itemtype="https://schema.org/ItemList">
+                                
+                                <div class="unav-videoPlaylistSidebar">
+                                    <div class="unav-videoControlNav unav-navTop">
+                                        <button class="unav-boton unav-botonSecundario unav-botonIconOnly unav-botonIconOnlySm unav-btnVertical" style="--unav-botonColorSource: var(--unav-black-800);" onclick="scrollPlaylistVertical(this, -1)" aria-label="Subir vídeos"><i class="bi bi-chevron-up unav-botonIcono"></i></button>
+                                        <button class="unav-boton unav-botonSecundario unav-botonIconOnly unav-botonIconOnlySm unav-btnHorizontal" style="--unav-botonColorSource: var(--unav-black-800);" onclick="scrollPlaylistHorizontal(this, -1)" aria-label="Anteriores vídeos"><i class="bi bi-chevron-left unav-botonIcono"></i></button>
                                     </div>
-                            </div>
-                            
-                            <div class="unav-videoScrollVertical">
-                                <button class="unav-videoNavBtn" onclick="scrollPlaylistVertical(this, -1)" aria-label="Desplazar Arriba"><i class="bi bi-chevron-up"></i></button>
-                                <button class="unav-videoNavBtn" onclick="scrollPlaylistVertical(this, 1)" aria-label="Desplazar Abajo"><i class="bi bi-chevron-down"></i></button>
-                            </div>
-                            <div class="unav-videoScrollHorizontal">
-                                <button class="unav-videoNavBtn" onclick="scrollPlaylistHorizontal(this, -1)" aria-label="Anterior"><i class="bi bi-chevron-left"></i></button>
-                                <button class="unav-videoNavBtn" onclick="scrollPlaylistHorizontal(this, 1)" aria-label="Siguiente"><i class="bi bi-chevron-right"></i></button>
+    
+                                    <div class="unav-videoPlaylistItems" id="playlist-v1" role="tablist" itemscope itemtype="https://schema.org/ItemList">
+                                        </div>
+    
+                                    <div class="unav-videoControlNav unav-navBottom">
+                                        <button class="unav-boton unav-botonSecundario unav-botonIconOnly unav-botonIconOnlySm unav-btnVertical" style="--unav-botonColorSource: var(--unav-black-800);" onclick="scrollPlaylistVertical(this, 1)" aria-label="Bajar vídeos"><i class="bi bi-chevron-down unav-botonIcono"></i></button>
+                                        <button class="unav-boton unav-botonSecundario unav-botonIconOnly unav-botonIconOnlySm unav-btnHorizontal" style="--unav-botonColorSource: var(--unav-black-800);" onclick="scrollPlaylistHorizontal(this, 1)" aria-label="Siguientes vídeos"><i class="bi bi-chevron-right unav-botonIcono"></i></button>
+                                    </div>
+                                </div>
                             </div>
                         </div>
                     </div>
@@ -787,7 +859,156 @@
             </section>
         </div>
 
-        
+
+
+
+
+
+
+        <section class="unav-hero unav-hero--darkOverlay mb-5" itemscope itemtype="https://schema.org/WPHeader">
+            <div class="unav-heroVisuals">
+                <img class="unav-heroImgMobile unav-efectoZoomInfinito" src="https://picsum.photos/800/1000?random=11" alt="Fondo Móvil" itemprop="image">
+                <img class="unav-heroImgDesktop unav-efectoZoomInfinito" src="https://picsum.photos/1920/800?random=11" alt="Fondo Escritorio" itemprop="image">
+                
+                <div class="unav-heroOverlay">
+                    <div class="container-lg position-relative w-100 h-100 d-flex align-items-center">
+                        <div class="unav-heroContent unav-heroContent--left">
+                            <div class="unav-heroTagGroup" itemprop="keywords">
+                                <span class="unav-tag unav-tag--rojo">Admisión 2026</span>
+                            </div>
+                            
+                            <h1 class="unav-heroTitle unav-heroTitle--md" itemprop="headline">Tu viaje empieza aquí</h1>
+                            
+                            <p class="unav-heroLead" itemprop="description">
+                                Prepara tu futuro profesional en un entorno internacional, con un claustro de excelencia y unas instalaciones diseñadas para el aprendizaje práctico.
+                            </p>
+                            
+                            <div class="unav-heroBtnGroup">
+                                <a class="unav-boton unav-botonPrimario unav-botonFit" href="#" style="--unav-botonBg: #fff; --unav-botonText: var(--unav-black-800); --unav-botonBorder: #fff; --unav-botonHoverBg: transparent; --unav-botonHoverText: #fff; --unav-botonHoverBorder: #fff;">
+                                    <span>Inscríbete ahora</span>
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+
+
+        <div class="container-lg">
+            <section class="p-2 p-md-5 mb-5">    
+                <div class="row g-0">
+                    <div class="col-lg-6">
+
+                        <div class="unav-tableWrapper">
+                            <table class="unav-table unav-tableStriped unav-tableHover unav-tableResponsiveStack" 
+                                   style="--unav-tableCaptionBorder: var(--unav-rojo-500); 
+                                          --unav-tableHeaderBg: var(--unav-grey-300); 
+                                          --unav-tableHeaderColor: var(--unav-black-600);
+                                          --unav-tableStripeBg: var(--unav-grey-50);">
+                                <caption class="unav-tableCaption">PRIMER CURSO (60 ECTS)</caption>
+                                <thead>
+                                    <tr>
+                                        <th scope="col" style="width: 60%;">Asignaturas</th>
+                                        <th scope="col" style="width: 25%;">Tipo</th>
+                                        <th scope="col" style="width: 15%; text-align: center;">ECTS</th>
+                                    </tr>
+                                </thead>
+                                <tbody>
+                                    
+                                    <tr class="unav-tableGroupHeader">
+                                        <th colspan="3" scope="colgroup">Primer Semestre / First Semester</th>
+                                    </tr>
+                                    
+                                    <tr>
+                                        <td data-label="Asignaturas"><a href="#" class="unav-enlaceInline">Análisis Gráfico</a></td>
+                                        <td data-label="Tipo">Básica</td>
+                                        <td data-label="ECTS" style="text-align: center; font-weight: bold;">6</td>
+                                    </tr>
+                                    <tr>
+                                        <td data-label="Asignaturas"><a href="#" class="unav-enlaceInline">Física</a></td>
+                                        <td data-label="Tipo">Básica</td>
+                                        <td data-label="ECTS" style="text-align: center; font-weight: bold;">6</td>
+                                    </tr>
+                                    <tr>
+                                        <td data-label="Asignaturas"><a href="#" class="unav-enlaceInline">Geometría</a></td>
+                                        <td data-label="Tipo">Básica</td>
+                                        <td data-label="ECTS" style="text-align: center; font-weight: bold;">6</td>
+                                    </tr>
+                                    <tr>
+                                        <td data-label="Asignaturas"><a href="#" class="unav-enlaceInline">Introducción a la Arquitectura</a></td>
+                                        <td data-label="Tipo">Obligatoria</td>
+                                        <td data-label="ECTS" style="text-align: center; font-weight: bold;">3</td>
+                                    </tr>
+                                    <tr>
+                                        <td data-label="Asignaturas"><a href="#" class="unav-enlaceInline">Taller de Arquitectura 1</a></td>
+                                        <td data-label="Tipo">Obligatoria</td>
+                                        <td data-label="ECTS" style="text-align: center; font-weight: bold;">9</td>
+                                    </tr>
+
+                                    <tr class="unav-tableGroupHeader">
+                                        <th colspan="3" scope="colgroup">Segundo Semestre / Second Semester</th>
+                                    </tr>
+                                    
+                                    <tr>
+                                        <td data-label="Asignaturas"><a href="#" class="unav-enlaceInline">Dibujo y Geometría</a></td>
+                                        <td data-label="Tipo">Básica</td>
+                                        <td data-label="ECTS" style="text-align: center; font-weight: bold;">6</td>
+                                    </tr>
+                                    <tr>
+                                        <td data-label="Asignaturas"><a href="#" class="unav-enlaceInline">Historia de la Arquitectura 1</a></td>
+                                        <td data-label="Tipo">Básica</td>
+                                        <td data-label="ECTS" style="text-align: center; font-weight: bold;">3</td>
+                                    </tr>
+                                    <tr>
+                                        <td data-label="Asignaturas"><a href="#" class="unav-enlaceInline">Historia y Teoría de la Arquitectura Clásica</a></td>
+                                        <td data-label="Tipo">Obligatoria</td>
+                                        <td data-label="ECTS" style="text-align: center; font-weight: bold;">3</td>
+                                    </tr>
+                                    <tr>
+                                        <td data-label="Asignaturas"><a href="#" class="unav-enlaceInline">Matemáticas</a></td>
+                                        <td data-label="Tipo">Básica</td>
+                                        <td data-label="ECTS" style="text-align: center; font-weight: bold;">6</td>
+                                    </tr>
+                                    <tr>
+                                        <td data-label="Asignaturas"><a href="#" class="unav-enlaceInline">Taller de Arquitectura 2</a></td>
+                                        <td data-label="Tipo">Obligatoria</td>
+                                        <td data-label="ECTS" style="text-align: center; font-weight: bold;">9</td>
+                                    </tr>
+                                    <tr>
+                                        <td data-label="Asignaturas"><a href="#" class="unav-enlaceInline">Antropología de la Arquitectura</a></td>
+                                        <td data-label="Tipo">Obligatoria</td>
+                                        <td data-label="ECTS" style="text-align: center; font-weight: bold;">3</td>
+                                    </tr>
+                                    
+                                </tbody>
+                            </table>
+                        </div>
+                    </div>
+                    <div class="col-lg-6">
+                        <p class="unav-font-primary unav-weight-light unav-text-1125 unav-lh-normal m-0" style="color: var(--unav-black-600); padding: var(--unav-spacing-lg) var(--unav-spacing-lg)">
+                            Recorrer la historia ayuda a constatar cómo un proyecto que comenzó hace más de medio siglo constituye hoy una gran Facultad, que aporta no solo excelentes profesionales, sino también personas al servicio del cuidado de las personas.
+                        </p>
+
+                        <ul class="unav-listIcon mb-0">
+                            <li class="unav-listIconItem">
+                                <i class="material-symbols-outlined unav-listIconIcon">check_circle</i>
+                                <span>Formación académica de excelencia y atención personalizada al alumno mediante un programa de mentoría único en España. El texto largo fluye de forma natural sin romper la alineación del icono.</span>
+                            </li>
+                            <li class="unav-listIconItem">
+                                <i class="material-symbols-outlined unav-listIconIcon">check_circle</i>
+                                <span>Campus biosanitario y tecnológico integrado.</span>
+                            </li>
+                            <li class="unav-listIconItem">
+                                <i class="material-symbols-outlined unav-listIconIcon">check_circle</i>
+                                <span>Bolsa de empleo y prácticas en empresas líderes.</span>
+                            </li>
+                        </ul>                    
+                    </div>
+                </div>
+            </section>
+        </div>
 
     </main>
 
@@ -1027,7 +1248,6 @@
             unavImgIds.forEach((id, index) => {
                 const wrap = document.createElement('figure');
                 
-                // INYECCIÓN OOCSS: Se inicializa con la CLASE MAESTRA
                 wrap.className = `unav-mainImageWrapper unav-efectoCrossFade ${index === 0 ? 'unav-isActive' : ''}`;
                 
                 wrap.setAttribute('itemprop', 'associatedMedia');
@@ -1039,7 +1259,7 @@
                 
                 wrap.innerHTML = `
                     <img src="${imgUrl}" class="unav-mainImage" itemprop="contentUrl" alt="Fotografía del Campus UNAV ${index + 1}" loading="lazy">
-                    <figcaption class="unav-imageCaption">
+                    <figcaption class="unav-imageCaption unav-lh-normal">
                         <span itemprop="caption">Fotografía de recurso #${index + 1}. Evento institucional de apertura de curso en las nuevas instalaciones.</span>
                         <meta itemprop="author" content="Universidad de Navarra">
                         <meta itemprop="datePublished" content="2026-05-01">
@@ -1054,16 +1274,18 @@
                 `;
                 stage.appendChild(wrap);
 
-                const thumb = document.createElement('div');
+                // CREACIÓN DE MINIATURA COMO BOTÓN (ACCESIBILIDAD)
+                const thumb = document.createElement('button');
+                thumb.type = 'button';
                 thumb.className = `unav-thumbItem ${index === 0 ? 'unav-isSelected' : ''}`;
-                thumb.innerHTML = `<img src="https://picsum.photos/id/${id}/150/150" itemprop="thumbnailUrl" alt="Miniatura ${index + 1}" loading="lazy">`;
+                thumb.setAttribute('aria-label', `Seleccionar miniatura ${index + 1}`);
+                thumb.innerHTML = `<img src="https://picsum.photos/id/${id}/150/150" itemprop="thumbnailUrl" alt="" loading="lazy">`;
                 thumb.onclick = () => goToSlide(gallery, index);
                 grid.appendChild(thumb);
             });
         });
     }
 
-    // LÓGICA DE MOTION OOCSS: Cross-Fade Sincronizado
     function goToSlide(gallery, index) {
         const slides = gallery.querySelectorAll('.unav-mainImageWrapper');
         const thumbs = gallery.querySelectorAll('.unav-thumbItem');
@@ -1072,17 +1294,13 @@
         const targetSlide = slides[index];
         const currentActive = gallery.querySelector('.unav-mainImageWrapper.unav-isActive');
 
-        // Si clickan en la foto que ya está activa, no hacemos nada
         if(currentActive === targetSlide) return;
 
-        // 1. ANIMACIÓN DE SALIDA (Fade Out de la actual)
         if(currentActive) {
             currentActive.classList.remove('unav-isActive');
             currentActive.classList.add('unav-isOutgoing');
             
-            // Limpiamos la clase saliente tras la transición para resetear su estado
             setTimeout(() => {
-                // Solo la limpiamos si el usuario no ha vuelto a hacer click en ella rápidamente
                 if(!currentActive.classList.contains('unav-isActive')) {
                     currentActive.classList.remove('unav-isOutgoing');
                 }
@@ -1092,7 +1310,6 @@
         const currentThumb = gallery.querySelector('.unav-thumbItem.unav-isSelected');
         if(currentThumb) currentThumb.classList.remove('unav-isSelected');
         
-        // 2. ANIMACIÓN DE ENTRADA (Scale Up + Fade In)
         targetSlide.classList.add('unav-isActive');
         thumbs[index].classList.add('unav-isSelected');
         
@@ -1150,12 +1367,11 @@
     ];
 
     function initVideoGalleries() {
-        const playlists = document.querySelectorAll('.unav-videoPlaylistSidebar');
+        const playlists = document.querySelectorAll('.unav-videoPlaylistItems');
         
         playlists.forEach((pl) => {
-            const stage = pl.previousElementSibling;
+            const stage = pl.closest('.unav-videoMediaContainer').querySelector('.unav-videoStage');
             
-            // Cargar el primer vídeo por defecto
             if(stage.querySelector('.unav-activeVideoIframe') && unavVideos.length > 0) {
                 stage.querySelector('.unav-activeVideoIframe').src = `https://www.youtube.com/embed/${unavVideos[0].code}?rel=0`;
             }
@@ -1174,23 +1390,11 @@
                     <div class="unav-videoThumb unav-efectoZoomImagen">
                         <img src="${vid.thumb}" alt="Miniatura de vídeo">
                         <i class="bi bi-play-fill unav-videoPlayIcon"></i>
-                        <span class="unav-tag unav-videoDuration" style="background-color: rgba(0,0,0,0.85); color: #fff; border: none; font-size: 0.75rem; padding: 0.15rem 0.4rem;">${vid.duration}</span>
+                        <span class="unav-tag unav-lh-relaxed" style="background-color: rgba(0,0,0,0.85); color: #fff; border: none; padding: 0.15rem 0.4rem; position: absolute; bottom: 4px; right: 4px;">${vid.meta.split('•')[1].trim()}</span>
                     </div>
                     <div class="unav-videoItemInfo">
                         <div class="unav-videoItemTitle" itemprop="name" title="${vid.title}">${vid.title}</div>
-                        <div class="unav-videoItemMeta">${vid.meta}</div>
-                    </div>
-                    
-                    <div itemprop="video" itemscope itemtype="http://schema.org/VideoObject" style="display:none;">
-                        <meta itemprop="name" content="${vid.title}" />
-                        <meta itemprop="thumbnailUrl" content="${vid.thumb}" />
-                        <meta itemprop="uploadDate" content="2026-01-01" />
-                        <div itemprop="contentLocation" itemscope itemtype="http://schema.org/Place">
-                            <div itemprop="geo" itemscope itemtype="http://schema.org/GeoCoordinates">
-                                <meta itemprop="latitude" content="42.8021" />
-                                <meta itemprop="longitude" content="-1.6521" />
-                            </div>
-                        </div>
+                        <div class="unav-videoItemMeta unav-lh-relaxed">${vid.meta.split('•')[0].trim()}</div>
                     </div>
                 `;
                 
@@ -1223,14 +1427,12 @@
     }
 
     window.scrollPlaylistVertical = function(btn, direction) {
-        const wrapper = btn.closest('.unav-videoGalleryWrapper');
-        const playlist = wrapper.querySelector('.unav-videoPlaylistSidebar');
+        const playlist = btn.closest('.unav-videoPlaylistSidebar').querySelector('.unav-videoPlaylistItems');
         playlist.scrollBy({ top: 120 * direction, behavior: 'smooth' });
     }
 
     window.scrollPlaylistHorizontal = function(btn, direction) {
-        const wrapper = btn.closest('.unav-videoGalleryWrapper');
-        const playlist = wrapper.querySelector('.unav-videoPlaylistSidebar');
+        const playlist = btn.closest('.unav-videoPlaylistSidebar').querySelector('.unav-videoPlaylistItems');
         playlist.scrollBy({ left: 160 * direction, behavior: 'smooth' });
     }
 

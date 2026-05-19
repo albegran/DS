@@ -1,0 +1,202 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Efecto Marcador al Scroll | Design System UNAV</title>
+    
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.1/font/bootstrap-icons.css">    
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@24,400,0,0" />
+
+    <link rel="stylesheet" href="unav-styles.css">   
+
+    <style>
+        /* Estilos de guía técnica */
+        html { scroll-behavior: smooth; background-color: var(--unav-grey-100); }
+        body { background-color: transparent; }
+
+        /* 2. COMPONENTE CSS: MARCADOR SCROLL (Full Height) */
+        
+        /* Clase base del componente */
+        .unav-resaltadorAnimado {
+            /* Definimos el token de color por defecto (amarillo) */
+            --unav-color-marca: var(--unav-yellow-300);
+            
+            /* Al poner transparent 0%, forzamos a que el color sólido cubra el 100% de la altura del texto */
+            background-image: linear-gradient(transparent 0%, var(--unav-color-marca) 0%);
+            /* Empieza con un ancho de 0% (oculto) */
+            background-size: 0% 100%;
+            background-repeat: no-repeat;
+            
+            /* Transición fluida del ancho (eje X) */
+            transition: background-size 0.8s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+            padding: 0 0.2rem;
+            border-radius: 2px;
+            color: inherit;
+        }
+
+        /* Modificador para la variante oscura / negativo */
+        .unav-resaltadorInverso {
+            /* Reemplazamos el token amarillo por un gris medio/oscuro que contraste bien con texto blanco */
+            --unav-color-marca: var(--unav-grey-600);
+        }
+
+        /* Estado activo (Añadido por JS cuando entra en viewport) */
+        .unav-resaltadorAnimado.unav-activo {
+            background-size: 100% 100%;
+        }
+
+        /* Utilidad de demostración (espaciador) */
+        .unav-espaciadorScroll {
+            height: 70vh;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            border: 2px dashed var(--unav-grey-400);
+            border-radius: 8px;
+            color: var(--unav-grey-500);
+        }
+    </style>
+</head>
+
+<body class="bg-light unav-weight-regular unav-text-100" itemscope itemtype="https://schema.org/WebPage">
+
+    <nav class="navbar navbar-light bg-white border-bottom py-3 sticky-top">
+        <div class="container-lg d-flex justify-content-between align-items-center">
+            <div itemscope itemtype="https://schema.org/WebPageElement">
+                <a itemprop="url" href="indice.html" class="unav-boton unav-botonSecundario" style="--unav-botonColorSource: var(--unav-grey-600);">
+                    <i class="bi bi-arrow-left unav-botonIcono" aria-hidden="true"></i>
+                    <span class="d-none d-md-inline" itemprop="name">Volver al Índice</span>
+                </a>
+            </div>
+            <span class="unav-font-primary-condensed unav-weight-regular unav-text-150 m-0" style="color: var(--unav-black-500); line-height: 1;">
+                Design System UNAV
+            </span>
+        </div>
+    </nav>
+
+    <!-- CONTENIDO PRINCIPAL -->
+    <main class="container-lg py-5" itemprop="mainContentOfPage">
+        
+        <header class="text-center mb-5 border-bottom pb-4">
+            <h1 class="unav-weight-medium unav-text-250 text-dark mb-3" itemprop="name">Efecto Subrayado al Scroll</h1>
+            <p class="unav-weight-regular unav-text-125 m-0" style="color: var(--unav-grey-500);" itemprop="description">
+                Componente de marcado completo (100% altura) con variantes para temas claro y oscuro.
+            </p>
+
+            <div class="unav-techSummary bg-white p-4 text-start mt-5 rounded shadow-sm border mx-auto" style="max-width: 900px;">
+                <h2 class="unav-weight-bold unav-text-150 text-dark mb-3"><i class="bi bi-gear-fill me-2" style="color: var(--unav-grey-400);"></i>Análisis Funcional y Técnico</h2>
+                
+                <p class="unav-weight-regular unav-text-100 mb-4" style="color: var(--unav-grey-600);">
+                    El componente detecta el viewport para desplegar un fondo dinámico que resalta conceptos. Ahora ajustado para cubrir toda la caja del texto (100% height) y preparado para fondos oscuros.
+                </p>
+                <div class="row g-4 unav-weight-regular unav-text-100">
+                    <div class="col-md-6">
+                        <h3 class="unav-weight-bold unav-text-125 text-dark mb-3">Análisis Funcional</h3>
+                        <ul class="mb-0 ps-3" style="color: var(--unav-grey-600);">
+                            <li class="mb-2"><strong class="text-dark">Modo Claro:</strong> Utiliza el token <code class="text-danger">--unav-yellow-300</code>. Ideal para artículos o noticias estándar.</li>
+                            <li class="mb-2"><strong class="text-dark">Modo Oscuro:</strong> Utiliza el token <code class="text-danger">--unav-grey-600</code> mediante la clase <code class="text-dark">.unav-resaltadorInverso</code> para garantizar accesibilidad sobre texto blanco.</li>
+                        </ul>
+                    </div>
+                    <div class="col-md-6 border-start-md ps-md-4">
+                        <h3 class="unav-weight-bold unav-text-125 text-dark mb-3">Especificaciones Técnicas</h3>
+                        <ul class="mb-0 ps-3" style="color: var(--unav-grey-600);">
+                            <li class="mb-2"><strong class="text-dark">Estructura CSS:</strong> Se modifica el gradiente base a <code class="text-dark">transparent 0%</code> para abarcar el total de la altura de línea de la tipografía.</li>
+                            <li class="mb-2"><strong class="text-dark">Nomenclatura y JS:</strong> API IntersectionObserver estructurada usando <code class="text-dark">camelCase</code>, inyectando la clase activa sin causar reflujos continuos en el DOM.</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </header>
+
+        <!-- ESPACIADOR INICIAL -->
+        <div class="unav-espaciadorScroll mb-5 mx-auto" style="max-width: 900px; background-color: var(--unav-grey-100);">
+            <p class="fs-4 m-0 d-flex flex-column align-items-center">
+                <span>Haz scroll para revelar los componentes</span>
+                <i class="bi bi-arrow-down fs-1 mt-3"></i>
+            </p>
+        </div>
+
+        <!-- DEMO 1: MODO CLARO ESTÁNDAR -->
+        <article itemscope itemtype="https://schema.org/TechArticle" class="mx-auto mb-5 p-5 bg-white shadow-sm rounded border" style="max-width: 900px;">
+            <meta itemprop="name" content="Ejemplo de subrayado completo en modo claro">
+            
+            <h3 class="unav-weight-bold unav-text-150 mb-4 text-dark">Variante 1: Fondo Claro (Por defecto)</h3>
+            <div class="unav-text-125" style="line-height: 1.8;" itemprop="articleBody">
+                <p>
+                    Las expediciones a las cimas más altas del planeta requieren una preparación técnica excepcional. Cuando los alpinistas superan la altitud crítica, el oxígeno escasea drásticamente. Es en este preciso instante cuando <span class="unav-resaltadorAnimado unav-weight-bold">entrar en la llamada zona de la muerte se convierte en el mayor desafío</span> para el ser humano. El tiempo corre en contra y las decisiones deben tomarse con rapidez.
+                </p>
+            </div>
+        </article>
+
+        <!-- DEMO 2: MODO NEGATIVO / INVERSO -->
+        <article itemscope itemtype="https://schema.org/TechArticle" class="mx-auto mb-5 p-5 shadow-sm rounded" style="max-width: 900px; background-color: var(--unav-black-900); color: #ffffff;">
+            <meta itemprop="name" content="Ejemplo de subrayado completo en modo oscuro (negativo)">
+            
+            <h3 class="unav-weight-bold unav-text-150 mb-4" style="color: #ffffff;">Variante 2: Fondo Oscuro (Negativo)</h3>
+            <div class="unav-text-125" style="line-height: 1.8;" itemprop="articleBody">
+                <p>
+                    La aclimatación progresiva es fundamental en cualquier escalada de nivel 8.000. Los campamentos intermedios no solo sirven para el descanso físico, sino para asegurar que el cuerpo se acostumbra a la baja presión atmosférica, un factor que <span class="unav-resaltadorAnimado unav-resaltadorInverso unav-weight-bold">marca la diferencia entre el éxito y el fracaso absoluto</span> en la ascensión final. Ignorar este paso es letal.
+                </p>
+            </div>
+        </article>
+
+        <div class="unav-espaciadorScroll mt-5 mx-auto" style="max-width: 900px;">
+            <p class="fs-4 m-0">Fin de las demostraciones</p>
+        </div>
+
+    </main>
+
+    <!-- PIE DE PÁGINA UNAV -->
+    <footer class="bg-white border-top py-4 mt-5">
+        <div class="container-lg d-flex flex-column flex-md-row justify-content-between align-items-center gap-3">
+            <div class="d-flex align-items-center gap-2">
+                <span class="material-symbols-outlined text-danger" aria-hidden="true">token</span>
+                <span class="unav-font-primary unav-weight-bold unav-text-100 text-dark">Design System UNAV</span>
+            </div>
+            <p class="unav-font-primary unav-weight-regular unav-text-075 text-muted m-0">
+                Arquitectura OOCSS &middot; Versión 2.0 &middot; &copy; 2026
+            </p>
+        </div>
+    </footer>
+
+    <!-- ==========================================
+         CÓDIGO JAVASCRIPT
+         ========================================== -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+    <script>
+        document.addEventListener('DOMContentLoaded', () => {
+            
+            // 1. Array de elementos a observar usando nomenclatura camelCase
+            const targetElements = document.querySelectorAll('.unav-resaltadorAnimado');
+
+            // 2. Opciones de configuración del Observer
+            const observerConfiguration = {
+                root: null, // Check contra el viewport del navegador
+                rootMargin: '0px 0px -15% 0px', // Activa ligeramente antes de tocar la parte inferior del scroll
+                threshold: 1.0 // Requiere que el elemento esté 100% visible
+            };
+
+            // 3. Declaración del IntersectionObserver
+            const scrollIntersectionObserver = new IntersectionObserver((entries, observerInstance) => {
+                entries.forEach(entryElement => {
+                    if (entryElement.isIntersecting) {
+                        // Aplica la clase de animación si está en el viewport
+                        entryElement.target.classList.add('unav-activo');
+                    } else {
+                        // Retira la clase al salir del viewport (permite que se repita la animación al hacer scroll arriba/abajo)
+                        entryElement.target.classList.remove('unav-activo');
+                    }
+                });
+            }, observerConfiguration);
+
+            // 4. Iniciar la observación iterando sobre el NodeList
+            targetElements.forEach(singleElement => {
+                scrollIntersectionObserver.observe(singleElement);
+            });
+            
+        });
+    </script>
+</body>
+</html>

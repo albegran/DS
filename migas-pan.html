@@ -9,14 +9,12 @@
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.1/font/bootstrap-icons.css">    
     <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@24,400,0,0" />
 
-    <!-- Archivo maestro del Ecosistema Design System UNAV -->
-    <link rel="stylesheet" href="unav-styles.css">
+    <link rel="stylesheet" href="unav-styles.css">   
 
     <style>
-        /* Estilos exclusivos para la visualización de esta guía */
-        html { scroll-behavior: smooth; }
-        h2[id], h3[id], section[id] { scroll-margin-top: 6rem; }
-        .unav-techSummary { border-left: 4px solid var(--unav-rojo-500); }
+        /* Estilos de guía técnica */
+        html { scroll-behavior: smooth; background-color: var(--unav-grey-100); }
+        body { background-color: transparent; }
     </style>
 </head>
 <body class="bg-light unav-font-primary unav-weight-regular unav-text-100" itemscope itemtype="https://schema.org/WebPage">
@@ -73,13 +71,13 @@
 
         <div class="unav-breadcrumbs-guide">
             
-            <!-- Ejemplo 1: Estilo Institucional basado en captura Liferay -->
-            <section class="bg-white p-4 p-md-5 rounded shadow-sm border mb-5">
+            <!-- Ejemplo 1: Estilo Institucional basado en captura Liferay (Fondo Blanco & Sin Bordes) -->
+            <section class="bg-white p-4 p-md-5 mb-5">
                 <h2 class="unav-font-primary unav-weight-bold unav-text-150 border-bottom pb-2 mb-4 text-dark">1. Variante Institucional Liferay</h2>
                 <p class="text-muted mb-4">Código exacto extraído de producción pero con las clases OOCSS inyectadas. Representa fielmente la captura aportada.</p>
                 
-                <div class="p-4 border rounded bg-light overflow-x-auto">
-                    <!-- Inicio del Componente de Migas -->
+                <div class="py-3 overflow-x-auto">
+                    <!-- Inicio del Componente de Migas (Limpio sobre fondo blanco y sin bordes) -->
                     <nav aria-label="Ruta de navegación" id="unav_breadcrumb_wrapper">
                         <ol class="unav-breadcrumbs" itemscope itemtype="https://schema.org/BreadcrumbList">
                             
@@ -113,7 +111,7 @@
                                 </a>
                             </li>
                             
-                            <!-- Nivel 4 (Página Actual) -->
+                            <!-- Nivel 4 (Página Actual - Texto completo sin truncar) -->
                             <li class="unav-breadcrumbItem unav-isActive" itemprop="itemListElement" itemscope itemtype="https://schema.org/ListItem">
                                 <span itemprop="name" aria-current="page">Vicedecanato de Estudiantes</span>
                                 <meta itemprop="position" content="4">
