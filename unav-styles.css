@@ -164,20 +164,20 @@
        --unav-fontSize125: 1.25rem;   /* 20px - H6 / Destacados / Leads */
        --unav-fontSize1125: 1.125rem; /* 18px - Body Base Texto */
        --unav-fontSize100: 1rem;      /* 16px - Body Base */
-       --unav-fontSize085: 0.85rem;   /* 13.6px - Small / Meta / Tags */
+       --unav-fontSize085: 0.85rem;   /* 13.6px */
        --unav-fontSize075: 0.75rem;   /* 12px - Small / Meta / Tags */
    
        /* --- INTERLINEADO (LINE HEIGHT) --- */
        --unav-lineHeightNone: 1;      /* Para componentes, iconos, botones */
        --unav-lineHeightTight: 1.1;   /* Para titulares enormes (300, 400, 500) */
        --unav-lineHeightSnug: 1.25;   /* Para titulares medios (150, 175, 200, 250) */
-       --unav-lineHeightNormal: 1.5;  /* Base lectura (100, 125) */
+       --unav-lineHeightNormal: 1.5;  /* Base lectura (100, 1125, 125) */
        --unav-lineHeightRelaxed: 1.75;/* Para párrafos muy largos (mejora legibilidad) */
    
        /* --- TRACKING (ESPACIADO DE LETRAS) --- */
        --unav-trackingTighter: -0.04em;  /* Para titulares gigantes (400, 500) */
        --unav-trackingTight: -0.02em;    /* Para titulares grandes (200, 250, 300) */
-       --unav-trackingNormal: 0em;       /* Body copy (100, 125) */
+       --unav-trackingNormal: 0em;       /* Body copy (100, 1125, 125) */
        --unav-trackingWide: 0.05em;      /* Para subtítulos en mayúsculas / Tags */
        --unav-trackingWidest: 0.1em;     /* Elementos muy pequeños que necesitan respirar */
    
