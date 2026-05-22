@@ -58,7 +58,7 @@
                     Tokens de animación y clases utilitarias para microinteracciones fluidas y estructuradas en el DOM.
                 </p>
 
-                <div class="unav-techSummary bg-white p-4 text-start mt-5 rounded shadow-sm border mx-auto" style="max-width: 900px;">
+                <div class="unav-techSummary bg-white p-4 text-start mt-5 rounded shadow-sm border mx-auto" style="max-width: 900px; border-left: 4px solid var(--unav-rojo-500);">
                     <h2 class="unav-font-primary unav-weight-bold unav-text-150 text-dark mb-3"><i class="bi bi-gear-fill me-2" style="color: var(--unav-grey-400);"></i>Análisis Funcional y Técnico</h2>
                     <div class="row g-4 unav-font-primary unav-weight-regular unav-text-100">
                         <div class="col-md-6">
@@ -69,8 +69,8 @@
                         </div>
                         <div class="col-md-6 border-start-md ps-md-4">
                             <ul class="mb-0 text-muted ps-3">
-                                <li class="mb-2"><strong>Rendimiento (GPU):</strong> Las animaciones persistentes como el Ken Burns o el Cross-Fade utilizan <code>will-change: transform</code> para renderizarse por hardware, evitando el "repaint" del navegador.</li>
-                                <li><strong>Graceful Degradation:</strong> El efecto Parallax cambia a <code>scroll</code> normal en dispositivos móviles para proteger la batería y evitar el jank en iOS.</li>
+                                <li class="mb-2"><strong>Rendimiento (GPU):</strong> Las animaciones persistentes como el Ken Burns o el Hover Zoom utilizan <code>will-change: transform</code> para renderizarse por hardware, evitando penalizar el scroll.</li>
+                                <li><strong>Graceful Degradation:</strong> El efecto Parallax cambia a <code>scroll</code> normal en dispositivos móviles para proteger la batería y evitar problemas de renderizado en iOS.</li>
                             </ul>
                         </div>
                     </div>
@@ -98,8 +98,8 @@
             </section>
 
             <section class="bg-white p-4 p-md-5 rounded shadow-sm border mb-5">
-                <h2 class="unav-font-primary unav-weight-bold unav-text-200 border-bottom pb-2 mb-4 text-dark mt-0">2. Elevación y Sombras (Z-Index)</h2>
-                <p class="text-muted mb-4">Utilizado en Tarjetas y Fichas de Persona. Al hacer hover, se elevan en Y (-4px) y proyectan una sombra suave.</p>
+                <h2 class="unav-font-primary unav-weight-bold unav-text-200 border-bottom pb-2 mb-4 text-dark mt-0">2. Elevación y Sombras (Z-Index Lift)</h2>
+                <p class="text-muted mb-4">Utilizado en Tarjetas y Fichas de Persona. Al hacer hover, se elevan en Y (-4px) y proyectan una sombra difuminada para denotar interactividad.</p>
                 <div class="row g-4 justify-content-center">
                     <div class="col-md-4">
                         <div class="unav-demoBox unav-bg-blue-600 unav-efectoElevacion">
@@ -114,10 +114,26 @@
                 </div>
             </section>
 
+            <!-- NUEVA SECCIÓN AÑADIDA: ZOOM IMAGEN -->
+            <section class="bg-white p-4 p-md-5 rounded shadow-sm border mb-5">
+                <h2 class="unav-font-primary unav-weight-bold unav-text-200 border-bottom pb-2 mb-4 text-dark mt-0">3. Microinteracción de Imagen (Hover Zoom)</h2>
+                <p class="text-muted mb-4">Utilizado extensivamente en el Grid de Noticias y el Grid de Eventos. El contenedor <code>.unav-efectoZoomImagen</code> enmascara el contenido y delega el escalado a la etiqueta <code>&lt;img&gt;</code> interior de forma optimizada por GPU.</p>
+                <div class="row justify-content-center">
+                    <div class="col-md-6 col-lg-5">
+                        <div class="unav-efectoZoomImagen shadow-sm border" style="width: 100%; display: block; aspect-ratio: 16/9; cursor: pointer; position: relative;">
+                            <img src="https://picsum.photos/id/43/800/450" style="width: 100%; height: 100%; object-fit: cover; display: block;" alt="Demo Zoom Hover">
+                            <div style="position: absolute; bottom: 15px; left: 15px;">
+                                <span class="unav-tag unav-tagWhite shadow-sm">Pasa el ratón</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
             <section class="bg-white p-4 p-md-5 rounded shadow-sm border mb-5 p-0 overflow-hidden">
                 <div class="p-4 p-md-5 pb-0">
-                    <h2 class="unav-font-primary unav-weight-bold unav-text-200 border-bottom pb-2 mb-4 text-dark mt-0">3. Profundidad Parallax</h2>
-                    <p class="text-muted mb-4">Utilizado en los Banners Fullwidth. Requiere que el elemento tenga un <code>background-image</code>. Haz scroll para ver la separación de capas.</p>
+                    <h2 class="unav-font-primary unav-weight-bold unav-text-200 border-bottom pb-2 mb-4 text-dark mt-0">4. Profundidad Espacial (Parallax)</h2>
+                    <p class="text-muted mb-4">Utilizado en los Banners Fullwidth. Requiere que el elemento tenga un <code>background-image</code> inyectado in-line. Haz scroll vertical para ver la separación de capas.</p>
                 </div>
                 <div class="unav-efectoParallax" style="background-image: url('https://images.unsplash.com/photo-1541339907198-e08756dedf3f?auto=format&fit=crop&q=80&w=1920'); height: 350px; position: relative;">
                     <div style="position: absolute; inset: 0; background: rgba(0,0,0,0.5); display: flex; align-items:center; justify-content:center;">
@@ -127,8 +143,8 @@
             </section>
 
             <section class="bg-white p-4 p-md-5 rounded shadow-sm border mb-5">
-                <h2 class="unav-font-primary unav-weight-bold unav-text-200 border-bottom pb-2 mb-4 text-dark mt-0">4. Zoom Lento Infinito (Ken Burns)</h2>
-                <p class="text-muted mb-4">Utilizado en los Componentes Hero B. Proporciona sensación cinematográfica continua. Debe aplicarse a la etiqueta <code>&lt;img&gt;</code> dentro de un contenedor con <code>overflow: hidden</code>.</p>
+                <h2 class="unav-font-primary unav-weight-bold unav-text-200 border-bottom pb-2 mb-4 text-dark mt-0">5. Zoom Lento Infinito (Ken Burns)</h2>
+                <p class="text-muted mb-4">Utilizado en los Componentes Hero B. Proporciona una sensación cinematográfica continua. Debe aplicarse directamente a la etiqueta <code>&lt;img&gt;</code> dentro de un contenedor enmascarador.</p>
                 <div style="overflow: hidden; border-radius: 8px; position: relative; height: 300px;">
                     <img src="https://images.unsplash.com/photo-1562774053-701939374585?auto=format&fit=crop&q=80&w=1200" class="unav-efectoZoomInfinito" style="width: 100%; height: 100%; object-fit: cover;" alt="Demo Zoom">
                     <div style="position: absolute; inset: 0; display: flex; align-items:center; justify-content:center; pointer-events: none;">
@@ -138,8 +154,8 @@
             </section>
 
             <section class="bg-white p-4 p-md-5 rounded shadow-sm border mb-5">
-                <h2 class="unav-font-primary unav-weight-bold unav-text-200 border-bottom pb-2 mb-4 text-dark mt-0">5. Entrada en Cascada (Scroll Fade-Up)</h2>
-                <p class="text-muted mb-4">Utilizado en el Grid de Noticias. Los elementos nacen con <code>.unav-efectoEntradaOculto</code> y JS inyecta dinámicamente <code>.unav-efectoEntradaVisible</code> mediante IntersectionObserver.</p>
+                <h2 class="unav-font-primary unav-weight-bold unav-text-200 border-bottom pb-2 mb-4 text-dark mt-0">6. Entrada en Cascada (Staggered Fade-Up)</h2>
+                <p class="text-muted mb-4">Utilizado en Grids de Colecciones (Noticias, Eventos). Los elementos nacen con <code>.unav-efectoEntradaOculto</code> (-20px) y JS inyecta dinámicamente <code>.unav-efectoEntradaVisible</code> creando un ritmo de lectura armónico.</p>
                 <div class="row g-4" id="demoCascada">
                     <div class="col-md-4"><div class="unav-demoBox unav-bg-orange-600 shadow-sm border unav-efectoEntradaOculto">Caja 1</div></div>
                     <div class="col-md-4"><div class="unav-demoBox unav-bg-orange-700 shadow-sm border unav-efectoEntradaOculto">Caja 2</div></div>
@@ -150,24 +166,40 @@
                 </div>
             </section>
 
+            <!-- NUEVA SECCIÓN AÑADIDA: FADE IN BÁSICO -->
             <section class="bg-white p-4 p-md-5 rounded shadow-sm border mb-5">
-                <h2 class="unav-font-primary unav-weight-bold unav-text-200 border-bottom pb-2 mb-4 text-dark mt-0">6. Animación de Cifras (Contadores)</h2>
-                <p class="text-muted mb-4">El cálculo matemático se procesa vía JavaScript, pero la duración hereda el Motion Token <code>--unav-durationSlower</code> del CSS central.</p>
+                <h2 class="unav-font-primary unav-weight-bold unav-text-200 border-bottom pb-2 mb-4 text-dark mt-0">7. Aparición Básica (Fade In)</h2>
+                <p class="text-muted mb-4">Animación <code>@keyframes</code> estándar (0 a 1 de opacidad) que se lanza de inmediato al asignar la clase. Ideal para revelar elementos inyectados en el DOM que no deben sufrir desplazamiento en Y.</p>
+                <div class="row justify-content-center">
+                    <div class="col-md-4">
+                        <div id="demoFadeIn" class="unav-demoBox unav-bg-teal-600 shadow-sm border unav-efectoFadeIn">
+                            <code>.unav-efectoFadeIn</code>
+                        </div>
+                    </div>
+                </div>
+                <div class="text-center mt-4">
+                    <button class="unav-boton unav-botonSecundario" onclick="triggerFadeIn()">Reproducir Fade In</button>
+                </div>
+            </section>
+
+            <section class="bg-white p-4 p-md-5 rounded shadow-sm border mb-5">
+                <h2 class="unav-font-primary unav-weight-bold unav-text-200 border-bottom pb-2 mb-4 text-dark mt-0">8. Animación de Cifras (Contadores JS)</h2>
+                <p class="text-muted mb-4">El cálculo matemático y de pintado se procesa vía JavaScript (requestAnimationFrame), pero la duración máxima hereda el Motion Token de CSS <code>--unav-durationSlower</code>.</p>
                 <div class="row g-4" id="demoCifras">
                     <div class="col-md-4">
-                        <div class="unav-demoBox unav-bg-rojo-600 shadow-sm border flex-column text-center">
+                        <div class="unav-demoBox unav-bg-rojo-600 shadow-sm border flex-column text-center" style="border-radius: 0;">
                             <span class="fs-6 text-uppercase opacity-75 mb-2" style="letter-spacing: var(--unav-trackingWide);">Red Global</span>
                             <span class="unav-counterValueDemo display-4 fw-bold" style="font-family: var(--unav-fontFamilyPrimary);">450+</span>
                         </div>
                     </div>
                     <div class="col-md-4">
-                        <div class="unav-demoBox bg-dark shadow-sm border flex-column text-center">
+                        <div class="unav-demoBox bg-dark shadow-sm border flex-column text-center" style="border-radius: 0;">
                             <span class="fs-6 text-uppercase opacity-75 mb-2" style="letter-spacing: var(--unav-trackingWide);">Innovación</span>
                             <span class="unav-counterValueDemo display-4 fw-bold" style="font-family: var(--unav-fontFamilyPrimary);">82%</span>
                         </div>
                     </div>
                     <div class="col-md-4">
-                        <div class="unav-demoBox unav-bg-blue-600 shadow-sm border flex-column text-center">
+                        <div class="unav-demoBox unav-bg-blue-600 shadow-sm border flex-column text-center" style="border-radius: 0;">
                             <span class="fs-6 text-uppercase opacity-75 mb-2" style="letter-spacing: var(--unav-trackingWide);">Estudiantes</span>
                             <span class="unav-counterValueDemo display-4 fw-bold" style="font-family: var(--unav-fontFamilyPrimary);">12000</span>
                         </div>
@@ -179,10 +211,10 @@
             </section>
 
             <section class="bg-white p-4 p-md-5 rounded shadow-sm border mb-5">
-                <h2 class="unav-font-primary unav-weight-bold unav-text-200 border-bottom pb-2 mb-4 text-dark mt-0">7. Transición Cross-Fade (Scale-Up)</h2>
-                <p class="text-muted mb-4">Utilizado en las Galerías de Imágenes. La clase <code>.unav-efectoCrossFade</code> gestiona una entrada suave aumentando de escala (Scale-Up) y una salida que mantiene el tamaño para un desvanecimiento elegante sin solapamientos forzados.</p>
+                <h2 class="unav-font-primary unav-weight-bold unav-text-200 border-bottom pb-2 mb-4 text-dark mt-0">9. Transición Cross-Fade (Scale-Up)</h2>
+                <p class="text-muted mb-4">Utilizado en las Galerías de Imágenes. La clase <code>.unav-efectoCrossFade</code> gestiona una entrada suave aumentando de escala del 96% al 100% y una salida que se desvanece manteniendo el 100% para evitar solapamientos extraños.</p>
                 
-                <div id="demoCrossFadeContainer" style="position: relative; height: 350px; overflow: hidden; border-radius: 8px; background-color: #000;" class="shadow-sm">
+                <div id="demoCrossFadeContainer" style="position: relative; height: 350px; overflow: hidden; background-color: #000;" class="shadow-sm">
                     <div class="unav-efectoCrossFade unav-isActive" style="position: absolute; inset: 0;">
                         <img src="https://picsum.photos/id/10/800/400" style="width: 100%; height: 100%; object-fit: cover;" alt="Demo 1">
                         <div style="position: absolute; bottom: 20px; left: 20px;"><span class="unav-tag unav-tagRojo">Foto 1</span></div>
@@ -232,6 +264,14 @@
             });
         }
 
+        // --- DEMO FADE IN (NUEVO) ---
+        function triggerFadeIn() {
+            const box = document.getElementById('demoFadeIn');
+            box.classList.remove('unav-efectoFadeIn');
+            void box.offsetWidth; // Dispara un reflow (repintado) del navegador
+            box.classList.add('unav-efectoFadeIn');
+        }
+
         // --- DEMO CIFRAS ---
         const unavAnimateNumberDemo = (elementNode) => {
             const textContent = elementNode.getAttribute('data-target');
@@ -265,7 +305,7 @@
             });
         }
 
-        // --- DEMO CROSS-FADE (NUEVO) ---
+        // --- DEMO CROSS-FADE ---
         let crossFadeDemoIndex = 0;
         function triggerDemoCrossFade() {
             const container = document.getElementById('demoCrossFadeContainer');

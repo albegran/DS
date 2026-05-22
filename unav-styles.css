@@ -559,7 +559,7 @@
     transition: var(--unav-transitionBase);
     /* Tipografía vía Tokens */
     font-family: var(--unav-fontFamilyPrimary);
-    font-size: var(--unav-fontSize125);
+    font-size: var(--unav-fontSize1125);
     font-weight: var(--unav-fontWeightLight);
     color: var(--unav-black-800);
 }
@@ -567,7 +567,7 @@
 /* Estado Activo: Cambio de Peso y Color */
 .unav-accordionHeader:hover,
 .unav-accordionHeader[aria-expanded="true"] {
-    font-weight: var(--unav-fontWeightBold);
+    font-weight: var(--unav-fontWeightMedium);
     color: var(--unav-black-500);
 }
 
@@ -1551,6 +1551,11 @@
     box-shadow: inset 0 0 0 1px var(--unav-grey-300); /* Borde sutil para que no se pierda sobre fondos blancos */
 }
 
+/* Nueva Variante Excepcional Solicitada por el Sistema: Inversa Negra */
+.unav-tagBlackInverso {
+    background-color: var(--unav-black-500) !important; /* Fondo Negro Puro */
+    color: #ffffff !important; /* Texto Blanco Absoluto */
+}
 
 
 
@@ -1581,7 +1586,7 @@
     border: none;
     box-shadow: none;
     background-color: transparent;
-    padding: var(--unav-personCardPadding, var(--unav-spacing-md)) 0; 
+    padding: var(--unav-personCardPadding, var(--unav-spacing-md)); 
 }
 
 /* =========================================
@@ -1617,7 +1622,7 @@
     /* Especificación: Roboto Black 18px */
     font-weight: 900; /* Black */
     font-size: 1.125rem; /* 18px */
-    color: var(--unav-rojo-600); /* Acento corporativo */
+    color: var(--unav-rojo-500); /* Acento corporativo */
     line-height: 1.2;
 }
 
@@ -1808,6 +1813,9 @@
     font-size: var(--unav-fontSize100); 
     font-weight: var(--unav-fontWeightRegular); 
     pointer-events: none;
+
+    /* REFUERZO DE ACCESIBILIDAD CORPORATIVO: */
+    **text-shadow: 1px 1px 3px rgba(0, 0, 0, 0.6);**
 }
 
 /* ==========================================
@@ -1878,10 +1886,6 @@
     flex-shrink: 0;
 }
 
-/* Modificadores de Visibilidad Sincronizada */
-.unav-btnVertical { display: inline-flex !important; }
-.unav-btnHorizontal { display: none !important; }
-
 /* =======================================================
    3. LÓGICA RESPONSIVE (Container Queries)
    ======================================================= */
@@ -1926,9 +1930,6 @@
         border-left: 1px solid rgba(255, 255, 255, 0.05);
     }
 
-    /* Inversión Mágica de Controles */
-    .unav-btnVertical { display: none !important; }
-    .unav-btnHorizontal { display: inline-flex !important; }
 }
 
 
@@ -2487,6 +2488,26 @@
 
 .unav-heroContent--center { margin: 0 auto; max-width: 50rem; }
 .unav-heroContent--left { text-align: left; width: 40%; margin-left: 0; }
+
+
+/* ==========================================
+   INTERACCIÓN MULTIMEDIA: HERO VÍDEO
+   ========================================== */
+ 
+   .unav-efectoDesvanecerTextos {
+    opacity: 1;
+    visibility: visible;
+    /* Consumo riguroso de Motion Tokens corporativos (600ms, ease) */
+    transition: opacity var(--unav-durationSlow) var(--unav-easingStandard),
+                visibility var(--unav-durationSlow) var(--unav-easingStandard);
+}
+
+/* Clase de estado interactivo controlada por JS */
+.unav-efectoDesvanecerTextos.unav-isHidden {
+    opacity: 0;
+    visibility: hidden;
+}
+
 
 /* Tipografías Hero */
 .unav-heroPretitle {
@@ -3626,6 +3647,11 @@
 /* =========================================
    MODIFICADORES DE ESTILO (OOCSS)
    ========================================= */
+/* NUEVO MODIFICADOR OOCSS: Bordes verticales internos */
+.unav-tableInnerVerticalBorders th:not(:last-child),
+.unav-tableInnerVerticalBorders td:not(:last-child) {
+    border-right: 1px solid var(--unav-tableBorderColor, var(--unav-grey-200));
+}
 
 /* Tabla con todos los bordes */
 .unav-tableBorders th,
@@ -3718,7 +3744,169 @@
     }
 }
 
+/* =========================================================
+   TEMATIZACIÓN DE TABLAS OOCSS (.unav-tableTheme[Color])
+   ========================================================= */
 
+/* Tema Rojo */
+.unav-tableThemeRojo {
+    --unav-tableCaptionBorder: var(--unav-rojo-600);
+    --unav-tableHeaderBg: var(--unav-rojo-100);
+    --unav-tableHeaderColor: var(--unav-rojo-900);
+    --unav-tableStripeBg: color-mix(in srgb, var(--unav-rojo-100) 30%, transparent);
+}
+
+/* Tema Black */
+.unav-tableThemeBlack {
+    --unav-tableCaptionBorder: var(--unav-black-600);
+    --unav-tableHeaderBg: var(--unav-black-100);
+    --unav-tableHeaderColor: var(--unav-black-900);
+    --unav-tableStripeBg: color-mix(in srgb, var(--unav-black-100) 30%, transparent);
+}
+
+/* Tema Grey */
+.unav-tableThemeGrey {
+    --unav-tableCaptionBorder: var(--unav-grey-600);
+    --unav-tableHeaderBg: var(--unav-grey-100);
+    --unav-tableHeaderColor: var(--unav-grey-900);
+    --unav-tableStripeBg: color-mix(in srgb, var(--unav-grey-100) 30%, transparent);
+}
+
+/* Tema Moss */
+.unav-tableThemeMoss {
+    --unav-tableCaptionBorder: var(--unav-moss-600);
+    --unav-tableHeaderBg: var(--unav-moss-100);
+    --unav-tableHeaderColor: var(--unav-moss-900);
+    --unav-tableStripeBg: color-mix(in srgb, var(--unav-moss-100) 30%, transparent);
+}
+
+/* Tema Green Light */
+.unav-tableThemeGreenLight {
+    --unav-tableCaptionBorder: var(--unav-green-l-600);
+    --unav-tableHeaderBg: var(--unav-green-l-100);
+    --unav-tableHeaderColor: var(--unav-green-l-900);
+    --unav-tableStripeBg: color-mix(in srgb, var(--unav-green-l-100) 30%, transparent);
+}
+
+/* Tema Green */
+.unav-tableThemeGreen {
+    --unav-tableCaptionBorder: var(--unav-green-600);
+    --unav-tableHeaderBg: var(--unav-green-100);
+    --unav-tableHeaderColor: var(--unav-green-900);
+    --unav-tableStripeBg: color-mix(in srgb, var(--unav-green-100) 30%, transparent);
+}
+
+/* Tema Teal */
+.unav-tableThemeTeal {
+    --unav-tableCaptionBorder: var(--unav-teal-600);
+    --unav-tableHeaderBg: var(--unav-teal-100);
+    --unav-tableHeaderColor: var(--unav-teal-900);
+    --unav-tableStripeBg: color-mix(in srgb, var(--unav-teal-100) 30%, transparent);
+}
+
+/* Tema Cyan */
+.unav-tableThemeCyan {
+    --unav-tableCaptionBorder: var(--unav-cyan-600);
+    --unav-tableHeaderBg: var(--unav-cyan-100);
+    --unav-tableHeaderColor: var(--unav-cyan-900);
+    --unav-tableStripeBg: color-mix(in srgb, var(--unav-cyan-100) 30%, transparent);
+}
+
+/* Tema Blue Light */
+.unav-tableThemeBlueLight {
+    --unav-tableCaptionBorder: var(--unav-blue-l-600);
+    --unav-tableHeaderBg: var(--unav-blue-l-100);
+    --unav-tableHeaderColor: var(--unav-blue-l-900);
+    --unav-tableStripeBg: color-mix(in srgb, var(--unav-blue-l-100) 30%, transparent);
+}
+
+/* Tema Blue */
+.unav-tableThemeBlue {
+    --unav-tableCaptionBorder: var(--unav-blue-600);
+    --unav-tableHeaderBg: var(--unav-blue-100);
+    --unav-tableHeaderColor: var(--unav-blue-900);
+    --unav-tableStripeBg: color-mix(in srgb, var(--unav-blue-100) 30%, transparent);
+}
+
+/* Tema Blue Dark */
+.unav-tableThemeBlueDark {
+    --unav-tableCaptionBorder: var(--unav-b-dark-600);
+    --unav-tableHeaderBg: var(--unav-b-dark-100);
+    --unav-tableHeaderColor: var(--unav-b-dark-900);
+    --unav-tableStripeBg: color-mix(in srgb, var(--unav-b-dark-100) 30%, transparent);
+}
+
+/* Tema Indigo */
+.unav-tableThemeIndigo {
+    --unav-tableCaptionBorder: var(--unav-indigo-600);
+    --unav-tableHeaderBg: var(--unav-indigo-100);
+    --unav-tableHeaderColor: var(--unav-indigo-900);
+    --unav-tableStripeBg: color-mix(in srgb, var(--unav-indigo-100) 30%, transparent);
+}
+
+/* Tema Violet */
+.unav-tableThemeViolet {
+    --unav-tableCaptionBorder: var(--unav-violet-600);
+    --unav-tableHeaderBg: var(--unav-violet-100);
+    --unav-tableHeaderColor: var(--unav-violet-900);
+    --unav-tableStripeBg: color-mix(in srgb, var(--unav-violet-100) 30%, transparent);
+}
+
+/* Tema Purple */
+.unav-tableThemePurple {
+    --unav-tableCaptionBorder: var(--unav-purple-600);
+    --unav-tableHeaderBg: var(--unav-purple-100);
+    --unav-tableHeaderColor: var(--unav-purple-900);
+    --unav-tableStripeBg: color-mix(in srgb, var(--unav-purple-100) 30%, transparent);
+}
+
+/* Tema Fuchsia */
+.unav-tableThemeFuchsia {
+    --unav-tableCaptionBorder: var(--unav-fuchsia-600);
+    --unav-tableHeaderBg: var(--unav-fuchsia-100);
+    --unav-tableHeaderColor: var(--unav-fuchsia-900);
+    --unav-tableStripeBg: color-mix(in srgb, var(--unav-fuchsia-100) 30%, transparent);
+}
+
+/* Tema Pink */
+.unav-tableThemePink {
+    --unav-tableCaptionBorder: var(--unav-pink-600);
+    --unav-tableHeaderBg: var(--unav-pink-100);
+    --unav-tableHeaderColor: var(--unav-pink-900);
+    --unav-tableStripeBg: color-mix(in srgb, var(--unav-pink-100) 30%, transparent);
+}
+
+/* Tema Rose */
+.unav-tableThemeRose {
+    --unav-tableCaptionBorder: var(--unav-rose-600);
+    --unav-tableHeaderBg: var(--unav-rose-100);
+    --unav-tableHeaderColor: var(--unav-rose-900);
+    --unav-tableStripeBg: color-mix(in srgb, var(--unav-rose-100) 30%, transparent);
+}
+
+/* Tema Orange Dark */
+.unav-tableThemeOrangeDark {
+    --unav-tableCaptionBorder: var(--unav-o-dark-600);
+    --unav-tableHeaderBg: var(--unav-o-dark-100);
+    --unav-tableHeaderColor: var(--unav-o-dark-900);
+    --unav-tableStripeBg: color-mix(in srgb, var(--unav-o-dark-100) 30%, transparent);
+}
+
+/* Tema Orange */
+.unav-tableThemeOrange {
+    --unav-tableCaptionBorder: var(--unav-orange-600);
+    --unav-tableHeaderBg: var(--unav-orange-100);
+    --unav-tableHeaderColor: var(--unav-orange-900);
+    --unav-tableStripeBg: color-mix(in srgb, var(--unav-orange-100) 30%, transparent);
+}
+
+/* Tema Yellow */
+.unav-tableThemeYellow {
+    --unav-tableCaptionBorder: var(--unav-yellow-600);
+    --unav-tableHeaderBg: var(--unav-yellow-100);
+    --unav-tableHeaderColor: var(--unav-yellow-900);
+    --unav-tableStripeBg: color-mix(in srgb, var(--unav-yellow-100) 30%, transparent);
+}
 
 
 
@@ -3983,6 +4171,19 @@
    text-decoration-thickness: 2px; /* Mayor grosor visual */
 }
 
+/* Modificador para fondos oscuros/corporativos */
+.unav-enlaceInlineBlanco {
+    color: #ffffff !important; 
+    text-decoration-color: rgba(255, 255, 255, 0.7) !important;
+    text-decoration-thickness: 2px !important; /* Más grueso para mayor visibilidad */
+    text-underline-offset: 4px !important; /* Separación forzada (offset) */
+}
+
+.unav-enlaceInlineBlanco:hover {
+    color: #ffffff !important; 
+    text-decoration-color: #ffffff !important;
+    text-decoration-thickness: 3px !important; /* Feedback grueso al hover */
+}
 
 
 

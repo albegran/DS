@@ -155,6 +155,87 @@
                     </div>
                 </div>
             </div>
+
+            <div class="mt-5 pt-4 border-top">
+                <h3 class="unav-font-primary unav-weight-bold unav-text-150 mb-3 text-dark">Variante Mini (Galerías Multimedia)</h3>
+                <p class="unav-font-primary unav-weight-regular unav-text-100 text-muted mb-4">Añadiendo el modificador <code>.unav-botonIconOnlySm</code> reducimos las dimensiones a 32px (2rem). Esta es la medida oficial requerida para los controles de miniatura y utilidades en las galerías de imágenes y vídeos.</p>
+                
+                <div class="row g-4">
+                    <div class="col-md-6">
+                        <h4 class="unav-font-primary unav-weight-bold unav-text-100 mb-3 text-uppercase" style="letter-spacing: 1px;">Sobre Fondo Oscuro (Stage)</h4>
+                        <div class="unav-bg-black-900 p-4 rounded d-flex justify-content-center gap-3 align-items-center position-relative overflow-hidden h-100">
+                            <!-- Simulación de foto / overlay de galería -->
+                            <div class="position-absolute w-100 h-100" style="background: url('https://picsum.photos/600/300?random=1') center/cover; opacity: 0.2;"></div>
+                            
+                            <!-- Controles usando el modificador Secundario Blanco + Icon Only Sm -->
+                            <button class="unav-boton unav-botonSecundario unav-botonSecundarioBlanco unav-botonIconOnly unav-botonIconOnlySm position-relative" style="z-index: 1;" aria-label="Anterior">
+                                <i class="bi bi-chevron-left unav-botonIcono"></i>
+                            </button>
+                            <button class="unav-boton unav-botonSecundario unav-botonSecundarioBlanco unav-botonIconOnly unav-botonIconOnlySm position-relative" style="z-index: 1;" aria-label="Reproducir">
+                                <i class="bi bi-play-fill unav-botonIcono"></i>
+                            </button>
+                            <button class="unav-boton unav-botonSecundario unav-botonSecundarioBlanco unav-botonIconOnly unav-botonIconOnlySm position-relative" style="z-index: 1;" aria-label="Siguiente">
+                                <i class="bi bi-chevron-right unav-botonIcono"></i>
+                            </button>
+                        </div>
+                    </div>
+                    <div class="col-md-6">
+                        <h4 class="unav-font-primary unav-weight-bold unav-text-100 mb-3 text-uppercase" style="letter-spacing: 1px;">Sobre Fondo Claro (Sidebar/UI)</h4>
+                        <div class="unav-bg-grey-100 p-4 rounded d-flex justify-content-center gap-3 align-items-center h-100">
+                            <button class="unav-boton unav-botonSecundario unav-botonIconOnly unav-botonIconOnlySm" style="--unav-botonColorSource: var(--unav-black-800);" aria-label="Cerrar">
+                                <i class="bi bi-x-lg unav-botonIcono"></i>
+                            </button>
+                            <button class="unav-boton unav-botonSecundarioInverso unav-botonIconOnly unav-botonIconOnlySm" style="--unav-botonColorSource: var(--unav-black-800);" aria-label="Expandir">
+                                <i class="bi bi-arrows-angle-expand unav-botonIcono"></i>
+                            </button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+
+
+
+
+
+            <div class="mt-5 pt-4 border-top">
+                <h3 class="unav-font-primary unav-weight-bold unav-text-150 mb-3 text-dark">Variante Redes Sociales</h3>
+                <p class="unav-font-primary unav-weight-regular unav-text-100 text-muted mb-4"></p>
+                
+                <div class="row g-4">
+                    <div class="col-md-6">
+                        <div class="unav-sampleRow p-4 bg-white border mb-3">
+                            <h4 class="unav-font-primary unav-weight-bold mb-3">4.1 Redes Sociales y Compartir (Normal)</h4>
+                            <div class="d-flex gap-2 flex-wrap">
+                                <button class="unav-boton unav-botonSecundario unav-botonIconOnly unav-botonIconOnly" style="--unav-botonColorSource: var(--unav-black-800);"  aria-label="Facebook"><i class="bi bi-facebook unav-botonIcono"></i></button>
+                                <button class="unav-boton unav-botonSecundario unav-botonIconOnly unav-botonIconOnly" style="--unav-botonColorSource: var(--unav-black-800);"  aria-label="X"><i class="bi bi-twitter-x unav-botonIcono"></i></button>
+                                <button class="unav-boton unav-botonSecundario unav-botonIconOnly unav-botonIconOnly" style="--unav-botonColorSource: var(--unav-black-800);"  aria-label="WhatsApp"><i class="bi bi-whatsapp unav-botonIcono"></i></button>
+                                <button class="unav-boton unav-botonSecundario unav-botonIconOnly unav-botonIconOnly" style="--unav-botonColorSource: var(--unav-black-800);"  aria-label="Telegram"><i class="bi bi-telegram unav-botonIcono"></i></button>
+                                <button class="unav-boton unav-botonSecundario unav-botonIconOnly unav-botonIconOnly" style="--unav-botonColorSource: var(--unav-black-800);"  aria-label="LinkedIn"><i class="bi bi-linkedin unav-botonIcono"></i></button>
+                                <button class="unav-boton unav-botonSecundario unav-botonIconOnly unav-botonIconOnly" style="--unav-botonColorSource: var(--unav-black-800);"  aria-label="Instagram"><i class="bi bi-instagram unav-botonIcono"></i></button>
+                                <button class="unav-boton unav-botonSecundario unav-botonIconOnly unav-botonIconOnly" style="--unav-botonColorSource: var(--unav-black-800);"  aria-label="Copiar enlace"><i class="bi bi-link-45deg unav-botonIcono"></i></button>
+                                <button class="unav-boton unav-botonSecundario unav-botonIconOnly unav-botonIconOnly" style="--unav-botonColorSource: var(--unav-black-800);"  aria-label="Enviar por email"><i class="bi bi-envelope-fill unav-botonIcono"></i></button>
+                            </div>
+                        </div>
+
+                        <div class="unav-sampleRow p-4 bg-white border mb-3">
+                            <h4 class="unav-font-primary unav-weight-bold mb-3">4.2 Redes Sociales y Compartir (Small - sm)</h4>
+                            <div class="d-flex gap-2 flex-wrap align-items-center">
+                                <button class="unav-boton unav-botonSecundario unav-botonIconOnly unav-botonIconOnlySm" style="--unav-botonColorSource: var(--unav-black-800);"  aria-label="Facebook"><i class="bi bi-facebook unav-botonIcono"></i></button>
+                                <button class="unav-boton unav-botonSecundario unav-botonIconOnly unav-botonIconOnlySm" style="--unav-botonColorSource: var(--unav-black-800);"  aria-label="X"><i class="bi bi-twitter-x unav-botonIcono"></i></button>
+                                <button class="unav-boton unav-botonSecundario unav-botonIconOnly unav-botonIconOnlySm" style="--unav-botonColorSource: var(--unav-black-800);"  aria-label="WhatsApp"><i class="bi bi-whatsapp unav-botonIcono"></i></button>
+                                <button class="unav-boton unav-botonSecundario unav-botonIconOnly unav-botonIconOnlySm" style="--unav-botonColorSource: var(--unav-black-800);"  aria-label="Telegram"><i class="bi bi-telegram unav-botonIcono"></i></button>
+                                <button class="unav-boton unav-botonSecundario unav-botonIconOnly unav-botonIconOnlySm" style="--unav-botonColorSource: var(--unav-black-800);"  aria-label="LinkedIn"><i class="bi bi-linkedin unav-botonIcono"></i></button>
+                                <button class="unav-boton unav-botonSecundario unav-botonIconOnly unav-botonIconOnlySm" style="--unav-botonColorSource: var(--unav-black-800);"  aria-label="Instagram"><i class="bi bi-instagram unav-botonIcono"></i></button>
+                                <button class="unav-boton unav-botonSecundario unav-botonIconOnly unav-botonIconOnlySm" style="--unav-botonColorSource: var(--unav-black-800);"  aria-label="Copiar enlace"><i class="bi bi-link-45deg unav-botonIcono"></i></button>
+                                <button class="unav-boton unav-botonSecundario unav-botonIconOnly unav-botonIconOnlySm" style="--unav-botonColorSource: var(--unav-black-800);"  aria-label="Enviar por email"><i class="bi bi-envelope-fill unav-botonIcono"></i></button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+                    
+
         </section>
 
     </main>

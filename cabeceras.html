@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Muestrario de Cabeceras | Design System UNAV</title>
+    <title>Muestrario de Cabeceras Estáticas | Design System UNAV</title>
     
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css">
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.1/font/bootstrap-icons.css">    
@@ -12,12 +12,9 @@
     <link rel="stylesheet" href="unav-styles.css">   
 
     <style>
-        /* Estilos de guía técnica */
         html { scroll-behavior: smooth; background-color: var(--unav-grey-100); }
         body { background-color: transparent; }
     </style>
-    
-
 </head>
 <body class="unav-bg-grey-100 unav-font-primary unav-weight-regular unav-text-100" itemscope itemtype="https://schema.org/WebPage">
 
@@ -38,43 +35,108 @@
     <main class="container-lg py-5" itemprop="mainContentOfPage">
         
         <header class="text-center mb-5 border-bottom pb-4">
-            <h1 class="unav-font-primary unav-weight-medium unav-text-200 text-dark mb-3" itemprop="name">Gestión de Cabeceras</h1>
+            <h1 class="unav-font-primary unav-weight-medium unav-text-200 text-dark mb-3" itemprop="name">Gestión de Cabeceras Puro</h1>
             <p class="unav-font-primary unav-weight-regular unav-text-100 text-muted m-0" itemprop="description">
-                Visualización de 66 variantes longitudinales y auditoría visual utilizando inyección de Design Tokens.
+                Demostración estática de la independencia entre Semántica Estructural y Presentación Visual.
             </p>
             
             <div class="unav-techSummary bg-white p-4 text-start mt-5 rounded shadow-sm border mx-auto" style="max-width: 900px;">
-                <h2 class="unav-font-primary unav-weight-bold unav-text-150 text-dark mb-3">
-                    <i class="bi bi-gear-fill me-2" style="color: var(--unav-grey-400);"></i>Análisis Funcional y Técnico
+                <h2 class="unav-font-primary unav-weight-bold unav-text-140 text-dark mb-3">
+                    <i class="bi bi-shield-check-fill me-2" style="color: var(--unav-rojo-500);"></i>Control Total del Editor
                 </h2>
-                <p class="unav-font-primary unav-weight-regular unav-text-100 text-muted mb-4">
-                    Este componente sirve como laboratorio de pruebas y catálogo de estilos para las etiquetas <code>&lt;h1&gt;</code> a <code>&lt;h6&gt;</code>. En esta iteración, se integra el uso oficial del componente <strong>Etiqueta (.unav-tag)</strong> para el marcado de metadatos y el <strong>nuevo cálculo automático de interlineado</strong> (Line Height) dependiente del tamaño de fuente, cruzando la información con nuestro sistema base OOCSS.
-                </p>
-                <div class="row g-4 unav-font-primary unav-weight-regular unav-text-100">
-                    <div class="col-md-6">
-                        <ul class="mb-0 text-muted ps-3">
-                            <li class="mb-2"><strong class="text-dark">Generación:</strong> Motor JS iterativo que genera las 66 permutaciones.</li>
-                            <li class="mb-2"><strong class="text-dark">Escala modular:</strong> Mapeo directo a los tokens de tamaño (<code>--unav-fontSize500</code> a <code>100</code>).</li>
-                            <li><strong class="text-dark">Interlineado Inteligente:</strong> Asignación del token <code>--unav-lineHeight</code> correcto (Tight, Snug o Normal) en función del tamaño del texto.</li>
-                        </ul>
-                    </div>
-                    <div class="col-md-6 border-start-md ps-md-4">
-                        <ul class="mb-0 text-muted ps-3">
-                            <li class="mb-2"><strong class="text-dark">Colores:</strong> JS modificado para emparejar la paleta corporativa con la clase modificadora correcta (ej. <code>.unav-tagRojo</code>).</li>
-                            <li class="mb-2"><strong class="text-dark">Layout OOCSS:</strong> Componentizado bajo el bloque <code>.unav-sampleRow</code>.</li>
-                            <li><strong class="text-dark">SEO Semántico:</strong> Inyección dinámica de <code>itemprop="headline"</code> de Schema.org.</li>
-                        </ul>
-                    </div>
-                </div>
-                <p class="unav-font-primary unav-weight-regular unav-text-100 mt-4" style="color: var(--unav-grey-600);">
-                    En esta página podemos obtener la cebera o título definido en nuestra tipografía: <a href="simulador-cabeceras.html">Cabeceras y título</a>
+                <p class="unav-font-primary unav-weight-regular unav-text-100 text-muted mb-0">
+                    Este laboratorio demuestra de forma pura que las etiquetas HTML estructuran el documento para SEO/Lectores de pantalla, mientras que el diseño visual se delega por completo en los tokens. Como puedes ver a continuación, las fuentes, los pesos, los colores y los tamaños varían arbitrariamente por decisión editorial, rompiendo el mito de que un <code>&lt;h1&gt;</code> siempre debe ser el texto más grande de la página.
                 </p>
             </div>
         </header>
 
         <section id="unav-masterContainer" class="mb-5">
-            </section>
 
+            <div class="unav-sampleRow" itemscope itemtype="https://schema.org/CreativeWork">
+                <h1 class="unav-headerElement" itemprop="headline" style="font-family: var(--unav-fontFamilySecondaryPlayfair); font-weight: var(--unav-fontWeightBold); font-size: var(--unav-fontSize175); color: var(--unav-rojo-700); line-height: var(--unav-lineHeightSnug);">
+                    Soy un &lt;h1&gt; semántico, pero mi tamaño visual es moderado (175).<br>
+                    <span style="opacity:0.6; font-size:0.75em; font-weight:normal;">(Segunda línea generada para comprobar el interlineado)</span>
+                </h1>
+                <div class="unav-dataContainer">
+                    <span class="unav-tag unav-tagBlack">Semántica HTML: &lt;h1&gt;</span>
+                    <span class="unav-tag unav-tagGrey">Tipo: Playfair Bold</span>
+                    <span class="unav-tag unav-tagGrey">Tamaño: 175 (1.75rem)</span>
+                    <span class="unav-tag unav-tagGrey">Interlineado: Snug (1.25)</span>
+                    <span class="unav-tag unav-tagRojo">Color Token: Rojo 700</span>
+                </div>
+            </div>
+
+            <div class="unav-sampleRow" itemscope itemtype="https://schema.org/CreativeWork">
+                <h2 class="unav-headerElement" itemprop="headline" style="font-family: var(--unav-fontFamilyPrimaryCondensed); font-weight: var(--unav-fontWeightBold); font-size: var(--unav-fontSize400); color: var(--unav-black-900); line-height: var(--unav-lineHeightTight);">
+                    Soy un &lt;h2&gt;, pero visualmente actúo como un título gigante (400).<br>
+                    <span style="opacity:0.6; font-size:0.75em; font-weight:normal;">(Segunda línea generada para comprobar el interlineado)</span>
+                </h2>
+                <div class="unav-dataContainer">
+                    <span class="unav-tag unav-tagBlack">Semántica HTML: &lt;h2&gt;</span>
+                    <span class="unav-tag unav-tagGrey">Tipo: Roboto Cond. Bold</span>
+                    <span class="unav-tag unav-tagGrey">Tamaño: 400 (4rem)</span>
+                    <span class="unav-tag unav-tagGrey">Interlineado: Tight (1.1)</span>
+                    <span class="unav-tag unav-tagBlack">Color Token: Black 900</span>
+                </div>
+            </div>
+
+            <div class="unav-sampleRow" itemscope itemtype="https://schema.org/CreativeWork">
+                <h3 class="unav-headerElement" itemprop="headline" style="font-family: var(--unav-fontFamilyPrimary); font-weight: var(--unav-fontWeightLight); font-size: var(--unav-fontSize250); color: var(--unav-blue-800); line-height: var(--unav-lineHeightSnug);">
+                    &lt;h3&gt; con peso Light y acento en color azul corporativo.<br>
+                    <span style="opacity:0.6; font-size:0.75em; font-weight:normal;">(Segunda línea generada para comprobar el interlineado)</span>
+                </h3>
+                <div class="unav-dataContainer">
+                    <span class="unav-tag unav-tagBlack">Semántica HTML: &lt;h3&gt;</span>
+                    <span class="unav-tag unav-tagGrey">Tipo: Roboto Light</span>
+                    <span class="unav-tag unav-tagGrey">Tamaño: 250 (2.5rem)</span>
+                    <span class="unav-tag unav-tagGrey">Interlineado: Snug (1.25)</span>
+                    <span class="unav-tag unav-tagBlue">Color Token: Blue 800</span>
+                </div>
+            </div>
+
+            <div class="unav-sampleRow" itemscope itemtype="https://schema.org/CreativeWork">
+                <h4 class="unav-headerElement" itemprop="headline" style="font-family: var(--unav-fontFamilySecondaryDm); font-weight: var(--unav-fontWeightRegular); font-size: var(--unav-fontSize200); color: var(--unav-teal-700); line-height: var(--unav-lineHeightSnug);">
+                    Utilizando fuente secundaria Serif (DM Serif) sobre un &lt;h4&gt;.<br>
+                    <span style="opacity:0.6; font-size:0.75em; font-weight:normal;">(Segunda línea generada para comprobar el interlineado)</span>
+                </h4>
+                <div class="unav-dataContainer">
+                    <span class="unav-tag unav-tagBlack">Semántica HTML: &lt;h4&gt;</span>
+                    <span class="unav-tag unav-tagGrey">Tipo: DM Serif Text</span>
+                    <span class="unav-tag unav-tagGrey">Tamaño: 200 (2rem)</span>
+                    <span class="unav-tag unav-tagGrey">Interlineado: Snug (1.25)</span>
+                    <span class="unav-tag unav-tagTeal">Color Token: Teal 700</span>
+                </div>
+            </div>
+
+            <div class="unav-sampleRow" itemscope itemtype="https://schema.org/CreativeWork">
+                <h5 class="unav-headerElement" itemprop="headline" style="font-family: var(--unav-fontFamilyPrimary); font-weight: var(--unav-fontWeightBold); font-size: var(--unav-fontSize100); color: var(--unav-moss-700); line-height: var(--unav-lineHeightNormal);">
+                    Soy un &lt;h5&gt;, con un tamaño base estandarizado (100) para bloques de lectura.<br>
+                    <span style="opacity:0.6; font-size:0.75em; font-weight:normal;">(Segunda línea generada para comprobar el interlineado)</span>
+                </h5>
+                <div class="unav-dataContainer">
+                    <span class="unav-tag unav-tagBlack">Semántica HTML: &lt;h5&gt;</span>
+                    <span class="unav-tag unav-tagGrey">Tipo: Roboto Bold</span>
+                    <span class="unav-tag unav-tagGrey">Tamaño: 100 (1rem)</span>
+                    <span class="unav-tag unav-tagGrey">Interlineado: Normal (1.5)</span>
+                    <span class="unav-tag unav-tagMoss">Color Token: Moss 700</span>
+                </div>
+            </div>
+
+            <div class="unav-sampleRow" itemscope itemtype="https://schema.org/CreativeWork">
+                <h6 class="unav-headerElement" itemprop="headline" style="font-family: var(--unav-fontFamilySecondarySlab); font-weight: var(--unav-fontWeightBold); font-size: var(--unav-fontSize300); color: var(--unav-o-dark-800); line-height: var(--unav-lineHeightTight);">
+                    Y yo soy un &lt;h6&gt;, pero el editor ha decidido mostrarme grande e impactante (300).<br>
+                    <span style="opacity:0.6; font-size:0.75em; font-weight:normal;">(Segunda línea generada para comprobar el interlineado)</span>
+                </h6>
+                <div class="unav-dataContainer">
+                    <span class="unav-tag unav-tagBlack">Semántica HTML: &lt;h6&gt;</span>
+                    <span class="unav-tag unav-tagGrey">Tipo: Roboto Slab Bold</span>
+                    <span class="unav-tag unav-tagGrey">Tamaño: 300 (3rem)</span>
+                    <span class="unav-tag unav-tagGrey">Interlineado: Tight (1.1)</span>
+                    <span class="unav-tag unav-tagOrangeDark">Color Token: O-Dark 800</span>
+                </div>
+            </div>
+
+        </section>
     </main>
 
     <footer class="bg-white border-top py-4 mt-5">
@@ -88,102 +150,6 @@
             </p>
         </div>
     </footer>
-
-    <script>
-        document.addEventListener('DOMContentLoaded', () => {
-            const mainContainer = document.getElementById('unav-masterContainer');
-
-            // 1. Tamaños mapeados a la escala modular y ASOCIADOS A SU INTERLINEADO IDEAL (Line Height)
-            const unavSizes = [
-                { token: 'var(--unav-fontSize500)', label: '500 (5rem)', lhToken: 'var(--unav-lineHeightTight)', lhLabel: 'Tight (1.1)' },
-                { token: 'var(--unav-fontSize400)', label: '400 (4rem)', lhToken: 'var(--unav-lineHeightTight)', lhLabel: 'Tight (1.1)' },
-                { token: 'var(--unav-fontSize300)', label: '300 (3rem)', lhToken: 'var(--unav-lineHeightTight)', lhLabel: 'Tight (1.1)' },
-                { token: 'var(--unav-fontSize250)', label: '250 (2.5rem)', lhToken: 'var(--unav-lineHeightSnug)', lhLabel: 'Snug (1.25)' },
-                { token: 'var(--unav-fontSize200)', label: '200 (2rem)', lhToken: 'var(--unav-lineHeightSnug)', lhLabel: 'Snug (1.25)' },
-                { token: 'var(--unav-fontSize175)', label: '175 (1.75rem)', lhToken: 'var(--unav-lineHeightSnug)', lhLabel: 'Snug (1.25)' },
-                { token: 'var(--unav-fontSize150)', label: '150 (1.5rem)', lhToken: 'var(--unav-lineHeightSnug)', lhLabel: 'Snug (1.25)' },
-                { token: 'var(--unav-fontSize125)', label: '125 (1.25rem)', lhToken: 'var(--unav-lineHeightNormal)', lhLabel: 'Normal (1.5)' },
-                { token: 'var(--unav-fontSize100)', label: '100 (1rem)', lhToken: 'var(--unav-lineHeightNormal)', lhLabel: 'Normal (1.5)' }
-            ];
-
-            // 2. Tipografías mapeadas a las variables de unav-tipografia.css
-            const unavFonts = [
-                { name: 'Roboto Thin', family: 'var(--unav-fontFamilyPrimary)', weight: 'var(--unav-fontWeightThin)' },
-                { name: 'Roboto Light', family: 'var(--unav-fontFamilyPrimary)', weight: 'var(--unav-fontWeightLight)' },
-                { name: 'Roboto Regular', family: 'var(--unav-fontFamilyPrimary)', weight: 'var(--unav-fontWeightRegular)' },
-                { name: 'Roboto Medium', family: 'var(--unav-fontFamilyPrimary)', weight: 'var(--unav-fontWeightMedium)' },
-                { name: 'Roboto Bold', family: 'var(--unav-fontFamilyPrimary)', weight: 'var(--unav-fontWeightBold)' },
-                { name: 'Roboto Cond. Regular', family: 'var(--unav-fontFamilyPrimaryCondensed)', weight: 'var(--unav-fontWeightRegular)' },
-                { name: 'Roboto Cond. Bold', family: 'var(--unav-fontFamilyPrimaryCondensed)', weight: 'var(--unav-fontWeightBold)' },
-                { name: 'Playfair Regular', family: 'var(--unav-fontFamilySecondaryPlayfair)', weight: 'var(--unav-fontWeightRegular)' },
-                { name: 'Playfair Bold', family: 'var(--unav-fontFamilySecondaryPlayfair)', weight: 'var(--unav-fontWeightBold)' },
-                { name: 'Roboto Slab Bold', family: 'var(--unav-fontFamilySecondarySlab)', weight: 'var(--unav-fontWeightBold)' },
-                { name: 'DM Serif Text', family: 'var(--unav-fontFamilySecondaryDm)', weight: 'var(--unav-fontWeightRegular)' }
-            ];
-
-            // 3. Colores corporativos MAPEADOS a su componente Tag correspondiente
-            const unavColors = [
-                { token: 'var(--unav-rojo-700)', label: 'Rojo 700', tagClass: 'unav-tagRojo' },
-                { token: 'var(--unav-blue-800)', label: 'Blue 800', tagClass: 'unav-tagBlue' },
-                { token: 'var(--unav-black-900)', label: 'Black 900', tagClass: 'unav-tagBlack' },
-                { token: 'var(--unav-moss-700)', label: 'Moss 700', tagClass: 'unav-tagMoss' },
-                { token: 'var(--unav-o-dark-800)', label: 'O-Dark 800', tagClass: 'unav-tagOrangeDark' },
-                { token: 'var(--unav-teal-700)', label: 'Teal 700', tagClass: 'unav-tagTeal' },
-                { token: 'var(--unav-pink-600)', label: 'Pink 600', tagClass: 'unav-tagPink' },
-                { token: 'var(--unav-orange-600)', label: 'Orange 600', tagClass: 'unav-tagOrange' }
-            ];
-
-            const headingLevels = ['h1', 'h2', 'h3', 'h4', 'h5', 'h6'];
-
-            headingLevels.forEach(level => {
-                // Etiqueta separadora utilizando directamente clases de tipografía OOCSS
-                const sectionLabel = document.createElement('div');
-                sectionLabel.className = 'unav-font-primary unav-weight-bold unav-text-200 mt-5 mb-4 text-dark text-uppercase';
-                sectionLabel.innerText = `Nivel Semántico: <${level}>`;
-                mainContainer.appendChild(sectionLabel);
-
-                unavFonts.forEach((fontObj) => {
-                    const randomSizeObj = unavSizes[Math.floor(Math.random() * unavSizes.length)];
-                    const randomColorObj = unavColors[Math.floor(Math.random() * unavColors.length)];
-
-                    // Fila base del Layout
-                    const sampleRow = document.createElement('div');
-                    sampleRow.className = 'unav-sampleRow';
-                    sampleRow.setAttribute('itemscope', '');
-                    sampleRow.setAttribute('itemtype', 'https://schema.org/CreativeWork');
-
-                    // Elemento Header
-                    const headingElement = document.createElement(level);
-                    headingElement.className = 'unav-headerElement';
-                    headingElement.setAttribute('itemprop', 'headline');
-                    headingElement.innerHTML = `Titular ${level.toUpperCase()} utilizando ${fontObj.name}.<br>Incluimos una segunda línea para probar el interlineado automático.`;
-                    
-                    // Aplicación directa de los Design Tokens al estilo en línea
-                    headingElement.style.fontFamily = fontObj.family;
-                    headingElement.style.fontWeight = fontObj.weight;
-                    headingElement.style.fontSize = randomSizeObj.token;
-                    headingElement.style.color = randomColorObj.token;
-                    // Nueva integración del token de Line Height
-                    headingElement.style.lineHeight = randomSizeObj.lhToken;
-
-                    // Metadatos utilizando las ETIQUETAS (.unav-tag) e incluyendo la información de LH
-                    const metadataContainer = document.createElement('div');
-                    metadataContainer.className = 'unav-dataContainer';
-                    metadataContainer.innerHTML = `
-                        <span class="unav-tag unav-tagBlack">Estructura: &lt;${level}&gt;</span>
-                        <span class="unav-tag unav-tagGrey">Tipo: ${fontObj.name}</span>
-                        <span class="unav-tag unav-tagGrey">Tamaño: ${randomSizeObj.label}</span>
-                        <span class="unav-tag unav-tagGrey">LH: ${randomSizeObj.lhLabel}</span>
-                        <span class="unav-tag ${randomColorObj.tagClass}">Color: ${randomColorObj.label}</span>
-                    `;
-
-                    sampleRow.appendChild(headingElement);
-                    sampleRow.appendChild(metadataContainer);
-                    mainContainer.appendChild(sampleRow);
-                });
-            });
-        });
-    </script>
 
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
 </body>

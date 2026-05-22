@@ -41,21 +41,43 @@
                 Estructuras semánticas para datos tabulares con comportamiento responsivo OOCSS.
             </p>
 
-            <div class="unav-techSummary bg-white p-4 text-start mt-5 rounded shadow-sm border mx-auto" style="max-width: 900px;">
-                <h2 class="unav-font-primary unav-weight-bold unav-text-150 text-dark mb-3 unav-lh-snug"><i class="bi bi-table me-2" style="color: var(--unav-grey-400);"></i>Análisis Funcional y Técnico</h2>
+            <div class="unav-techSummary bg-white p-4 p-md-5 text-start mt-5 rounded shadow-sm border mx-auto" style="max-width: 1000px;">
+                <h2 class="unav-font-primary unav-weight-bold unav-text-150 text-dark mb-4 unav-lh-snug">
+                    <i class="bi bi-gear-fill me-2" style="color: var(--unav-grey-400);"></i>Guía de Implementación y Modificadores
+                </h2>
+                <p class="unav-font-primary unav-weight-regular unav-text-100 mb-4" style="color: var(--unav-grey-600);">
+                    Nuestro sistema de tablas utiliza la metodología <strong>OOCSS</strong>. Se compone de un contenedor base, una clase principal y múltiples modificadores atómicos que puedes combinar libremente. A continuación, se detallan las reglas maestras para ensamblar cualquier tabla:
+                </p>
+
                 <div class="row g-4 unav-font-primary unav-weight-regular unav-text-100 unav-lh-normal">
+                    
                     <div class="col-md-6">
-                        <h3 class="unav-font-primary unav-weight-bold unav-text-125 text-dark mb-3 unav-lh-snug">Estructura OOCSS</h3>
-                        <ul class="mb-0 text-muted ps-3">
-                            <li class="mb-2"><strong>Marcado Nativo:</strong> Utiliza exclusivamente <code>&lt;table&gt;</code>, <code>&lt;thead&gt;</code>, <code>&lt;th&gt;</code> y <code>&lt;td&gt;</code> para garantizar la máxima accesibilidad para lectores de pantalla.</li>
-                            <li><strong>Filas de Agrupación:</strong> Uso de <code>&lt;tr class="unav-tableGroupHeader"&gt;</code> con un atributo <code>colspan</code> para segmentar datos (ej. semestres) de forma elegante y reducir el ruido visual.</li>
+                        <h3 class="unav-font-primary unav-weight-bold unav-text-125 text-dark mb-3">1. Clases Fundacionales</h3>
+                        <ul class="mb-4 text-muted ps-3">
+                            <li class="mb-2"><code>.unav-tableWrapper</code>: Contenedor obligatorio <code>&lt;div&gt;</code>. Envuelve la tabla para garantizar el scroll horizontal nativo por hardware si el contenido desborda.</li>
+                            <li><code>.unav-table</code>: Clase base obligatoria en la etiqueta <code>&lt;table&gt;</code>. Resetea estilos y aplica la tipografía, bordes horizontales y paddings corporativos.</li>
+                        </ul>
+
+                        <h3 class="unav-font-primary unav-weight-bold unav-text-125 text-dark mb-3">2. Modificadores Visuales</h3>
+                        <ul class="mb-4 text-muted ps-3">
+                            <li class="mb-2"><code>.unav-tableStriped</code>: Aplica un fondo gris alterno en filas impares (efecto zebra). Usa <code>--even</code> para filas pares.</li>
+                            <li class="mb-2"><code>.unav-tableHover</code>: Activa un resaltado de lectura sutil al pasar el ratón por encima de una fila.</li>
+                            <li class="mb-2"><code>.unav-tableBorders</code>: Dibuja todos los bordes (internos verticales y caja perimetral).</li>
+                            <li><code>.unav-tableInnerVerticalBorders</code>: Dibuja exclusivamente divisiones verticales entre columnas, omitiendo el marco exterior.</li>
                         </ul>
                     </div>
+                    
                     <div class="col-md-6 border-start-md ps-md-4">
-                        <h3 class="unav-font-primary unav-weight-bold unav-text-125 text-dark mb-3 unav-lh-snug">Control Responsivo</h3>
+                        <h3 class="unav-font-primary unav-weight-bold unav-text-125 text-dark mb-3">3. Comportamiento Responsivo</h3>
+                        <ul class="mb-4 text-muted ps-3">
+                            <li class="mb-2"><strong>Modo Tarjeta (Stack):</strong> Añade <code>.unav-tableResponsiveStack</code> a la tabla. Transforma cada fila en un bloque apilado en dispositivos móviles. <strong>REGLA DE ORO:</strong> En este modo, cada <code>&lt;td&gt;</code> debe incluir obligatoriamente el atributo HTML <code>data-label="Nombre de Columna"</code> para inyectar el título visible en móvil.</li>
+                            <li><strong>Modo Scroll:</strong> Si se omite la clase Stack (Ej. Tabla 3), la tabla conservará su layout original en móvil y el usuario podrá deslizar hacia los lados.</li>
+                        </ul>
+
+                        <h3 class="unav-font-primary unav-weight-bold unav-text-125 text-dark mb-3">4. Temas y Agrupaciones</h3>
                         <ul class="mb-0 text-muted ps-3">
-                            <li class="mb-2"><strong>Modo Stack (Apilado):</strong> Añadiendo <code>.unav-tableResponsiveStack</code>, las filas se convierten en "Tarjetas" en móvil. El atributo <code>data-label="X"</code> inyecta el nombre de la cabecera en cada celda.</li>
-                            <li><strong>Interactividad Inline:</strong> Integración natural de la clase <code>.unav-enlaceInline</code> para enlaces dentro de las celdas (ej. Guías Docentes).</li>
+                            <li class="mb-2"><strong>Tematización de Color:</strong> Se pueden aplicar "pieles" corporativas añadiendo clases como <code>.unav-tableThemeRojo</code> o <code>.unav-tableThemeTeal</code>. El OOCSS mapeará automáticamente la línea de título, la cabecera y el fondo de filas alternas.</li>
+                            <li><strong>Agrupación Semántica:</strong> Se prohíbe usar <code>rowspan</code> combinado con el Modo Stack, ya que rompe el DOM en móvil. En su lugar, segmenta las áreas insertando filas de grupo: <code>&lt;tr class="unav-tableGroupHeader"&gt;</code>.</li>
                         </ul>
                     </div>
                 </div>
@@ -63,9 +85,9 @@
         </header>
 
         <section class="bg-white p-4 p-md-5 rounded shadow-sm border mb-5">
-            <h2 class="unav-font-primary unav-weight-bold unav-text-200 border-bottom pb-2 mb-4 text-dark mt-0 unav-lh-snug">1. Tabla Responsiva Estándar (Modo Tarjetas)</h2>
+            <h2 class="unav-font-primary unav-weight-bold unav-text-200 border-bottom pb-2 mb-4 text-dark mt-0 unav-lh-snug">1. Tabla Responsiva (Tema Púrpura)</h2>
             <div class="unav-tableWrapper">
-                <table class="unav-table unav-tableStriped unav-tableHover unav-tableResponsiveStack">
+                <table class="unav-table unav-tableStriped unav-tableHover unav-tableResponsiveStack unav-tableThemePurple">
                     <caption class="unav-tableCaption">YOUNG LEARNERS CAMBRIDGE</caption>
                     <thead>
                         <tr>
@@ -73,29 +95,26 @@
                             <th scope="col" style="width: 15%;">Tipo</th>
                             <th scope="col">Fecha examen</th>
                             <th scope="col">Lugar</th>
-                            <th scope="col">Ciudad</th>
-                            <th scope="col">Resultados</th>
-                            <th scope="col">Matrícula</th>
                         </tr>
                     </thead>
                     <tbody>
                         <tr>
-                            <td data-label="Convocatoria"><span style="color: var(--unav-rojo-600); font-weight: bold;">STARTERS</span></td>
+                            <td data-label="Convocatoria"><strong>STARTERS</strong></td>
                             <td data-label="Tipo">Paper Based <i class="bi bi-file-earmark-text ms-1 text-muted"></i></td>
                             <td data-label="Fecha examen">06/06/2026</td>
-                            <td data-label="Lugar">Universidad de Navarra (Edificio Amigos)</td>
-                            <td data-label="Ciudad">Pamplona</td>
-                            <td data-label="Resultados">06/07/2026</td>
-                            <td data-label="Matrícula">Cerrada</td>
+                            <td data-label="Lugar">Universidad de Navarra</td>
                         </tr>
                         <tr>
-                            <td data-label="Convocatoria"><span style="color: var(--unav-rojo-600); font-weight: bold;">MOVERS</span></td>
+                            <td data-label="Convocatoria"><strong>STARTERS</strong></td>
                             <td data-label="Tipo">Paper Based <i class="bi bi-file-earmark-text ms-1 text-muted"></i></td>
                             <td data-label="Fecha examen">06/06/2026</td>
-                            <td data-label="Lugar">Universidad de Navarra (Edificio Amigos)</td>
-                            <td data-label="Ciudad">Pamplona</td>
-                            <td data-label="Resultados">06/07/2026</td>
-                            <td data-label="Matrícula">Cerrada</td>
+                            <td data-label="Lugar">Universidad de Navarra</td>
+                        </tr>
+                        <tr>
+                            <td data-label="Convocatoria"><strong>STARTERS</strong></td>
+                            <td data-label="Tipo">Paper Based <i class="bi bi-file-earmark-text ms-1 text-muted"></i></td>
+                            <td data-label="Fecha examen">06/06/2026</td>
+                            <td data-label="Lugar">Universidad de Navarra</td>
                         </tr>
                     </tbody>
                 </table>
@@ -103,30 +122,37 @@
         </section>
 
         <section class="bg-white p-4 p-md-5 rounded shadow-sm border mb-5">
-            <h2 class="unav-font-primary unav-weight-bold unav-text-200 border-bottom pb-2 mb-4 text-dark mt-0 unav-lh-snug">2. Personalización de Anchos y Colores del DS</h2>
+            <h2 class="unav-font-primary unav-weight-bold unav-text-200 border-bottom pb-2 mb-4 text-dark mt-0 unav-lh-snug">2. Personalización OOCSS (Tema Teal)</h2>
             <div class="unav-tableWrapper">
-                <table class="unav-table unav-tableStriped unav-tableBorders unav-tableResponsiveStack" style="--unav-tableStripeBg: var(--unav-moss-100); --unav-tableCaptionBorder: var(--unav-moss-600);">
+                <table class="unav-table unav-tableStriped unav-tableBorders unav-tableResponsiveStack unav-tableThemeTeal">
                     <caption class="unav-tableCaption">PLAN DE SOSTENIBILIDAD 2026</caption>
                     <thead>
                         <tr>
                             <th scope="col" style="width: 40%;">Iniciativa / Proyecto</th>
                             <th scope="col">Facultad Involucrada</th>
                             <th scope="col" style="width: 15%; text-align: center;">Estado</th>
-                            <th scope="col" style="width: 15%; text-align: center;">Inversión</th>
                         </tr>
                     </thead>
                     <tbody>
                         <tr>
-                            <td data-label="Iniciativa">Renovación de paneles solares y eficiencia térmica</td>
+                            <td data-label="Iniciativa">Renovación de paneles solares</td>
                             <td data-label="Facultad">Arquitectura</td>
                             <td data-label="Estado" style="text-align: center;"><span class="unav-tag unav-tagMoss">Completado</span></td>
-                            <td data-label="Inversión" style="text-align: center;">120.000€</td>
                         </tr>
                         <tr>
-                            <td data-label="Iniciativa">Gestión integral de residuos de laboratorio</td>
-                            <td data-label="Facultad">Ciencias / CIMA</td>
-                            <td data-label="Estado" style="text-align: center;"><span class="unav-tag unav-tagYellow">En progreso</span></td>
-                            <td data-label="Inversión" style="text-align: center;">45.000€</td>
+                            <td data-label="Iniciativa">Renovación de paneles solares</td>
+                            <td data-label="Facultad">Arquitectura</td>
+                            <td data-label="Estado" style="text-align: center;"><span class="unav-tag unav-tagMoss">Completado</span></td>
+                        </tr>
+                        <tr>
+                            <td data-label="Iniciativa">Renovación de paneles solares</td>
+                            <td data-label="Facultad">Arquitectura</td>
+                            <td data-label="Estado" style="text-align: center;"><span class="unav-tag unav-tagMoss">Completado</span></td>
+                        </tr>
+                        <tr>
+                            <td data-label="Iniciativa">Renovación de paneles solares</td>
+                            <td data-label="Facultad">Arquitectura</td>
+                            <td data-label="Estado" style="text-align: center;"><span class="unav-tag unav-tagMoss">Completado</span></td>
                         </tr>
                     </tbody>
                 </table>
@@ -134,9 +160,9 @@
         </section>
 
         <section class="bg-white p-4 p-md-5 rounded shadow-sm border mb-5">
-            <h2 class="unav-font-primary unav-weight-bold unav-text-200 border-bottom pb-2 mb-4 text-dark mt-0 unav-lh-snug">3. Tabla de Alta Densidad (Scroll Horizontal en Móvil)</h2>
+            <h2 class="unav-font-primary unav-weight-bold unav-text-200 border-bottom pb-2 mb-4 text-dark mt-0 unav-lh-snug">3. Tabla de Alta Densidad (Tema Rojo)</h2>
             <div class="unav-tableWrapper">
-                <table class="unav-table unav-tableStriped--even unav-tableHover" style="min-width: 800px;">
+                <table class="unav-table unav-tableStriped--even unav-tableHover unav-tableThemeRojo" style="min-width: 800px;">
                     <caption class="unav-tableCaption">TARIFAS DE CRÉDITOS ACADÉMICOS 2026/2027</caption>
                     <thead>
                         <tr>
@@ -147,14 +173,29 @@
                     </thead>
                     <tbody>
                         <tr>
-                            <td>Medicina / Odontología (Alta experimentalidad)</td>
+                            <td>Medicina / Odontología</td>
                             <td style="text-align: right;">195,50 €</td>
                             <td style="text-align: right;">215,00 €</td>
                         </tr>
                         <tr>
-                            <td>Arquitectura / Ingenierías (Nivel A)</td>
-                            <td style="text-align: right;">160,00 €</td>
-                            <td style="text-align: right;">180,00 €</td>
+                            <td>Medicina / Odontología</td>
+                            <td style="text-align: right;">195,50 €</td>
+                            <td style="text-align: right;">215,00 €</td>
+                        </tr>
+                        <tr>
+                            <td>Medicina / Odontología</td>
+                            <td style="text-align: right;">195,50 €</td>
+                            <td style="text-align: right;">215,00 €</td>
+                        </tr>
+                        <tr>
+                            <td>Medicina / Odontología</td>
+                            <td style="text-align: right;">195,50 €</td>
+                            <td style="text-align: right;">215,00 €</td>
+                        </tr>
+                        <tr>
+                            <td>Medicina / Odontología</td>
+                            <td style="text-align: right;">195,50 €</td>
+                            <td style="text-align: right;">215,00 €</td>
                         </tr>
                     </tbody>
                 </table>
@@ -246,6 +287,114 @@
                             <td data-label="ECTS" style="text-align: center; font-weight: bold;">3</td>
                         </tr>
                         
+                    </tbody>
+                </table>
+            </div>
+        </section>
+
+        <section class="bg-white p-4 p-md-5 rounded shadow-sm border mb-5">
+            <h2 class="unav-font-primary unav-weight-bold unav-text-200 border-bottom pb-2 mb-4 text-dark mt-0 unav-lh-snug">5. Tabla de Materias (Responsiva)</h2>
+            <p class="text-muted mb-4 unav-lh-normal">Para hacer la tabla completamente responsiva como la Tabla 4 y que funcione perfectamente en dispositivos móviles (Modo Tarjetas), es necesario <strong>eliminar los atributos <code>rowspan</code></strong>, ya que estos se rompen estructuralmente al apilar celdas. En su lugar, aplicamos el patrón semántico de <strong>agrupación por filas</strong> (<code>.unav-tableGroupHeader</code>). Los colores de borde y texto se mantienen con los tokens <code>var(--unav-black-500)</code>.</p>
+            
+            <div class="unav-tableWrapper">
+                <table class="unav-table unav-tableHover unav-tableResponsiveStack unav-tableInnerVerticalBorders" style="--unav-tableBorderColor: var(--unav-black-500); --unav-tableCaptionBorder: var(--unav-black-500);">
+                    <caption class="unav-tableCaption">PLAN DE ESTUDIOS: ECTS POR MATERIA</caption>
+                    <thead>
+                        <tr>
+                            <th scope="col" style="width: 70%;">Asignatura</th>
+                            <th scope="col" style="width: 30%; text-align: center;">ECTS Asignatura</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        
+                        <tr class="unav-tableGroupHeader" style="background-color: var(--unav-grey-100);">
+                            <th colspan="2" scope="colgroup" style="color: var(--unav-black-500); border-bottom: 2px solid var(--unav-black-500);">
+                                <div class="d-flex justify-content-between align-items-center flex-wrap gap-2">
+                                    <span>Materia 1. Física y Química general</span>
+                                    <span class="unav-tag unav-tagBlack">20 ECTS Total</span>
+                                </div>
+                            </th>
+                        </tr>
+                        <tr>
+                            <td data-label="Asignatura">Física I</td>
+                            <td data-label="ECTS Asignatura" style="text-align: center;">8</td>
+                        </tr>
+                        <tr>
+                            <td data-label="Asignatura">Física II</td>
+                            <td data-label="ECTS Asignatura" style="text-align: center;">6</td>
+                        </tr>
+                        <tr>
+                            <td data-label="Asignatura">Química</td>
+                            <td data-label="ECTS Asignatura" style="text-align: center;">6</td>
+                        </tr>
+                        
+                        <tr class="unav-tableGroupHeader" style="background-color: var(--unav-grey-100);">
+                            <th colspan="2" scope="colgroup" style="color: var(--unav-black-500); border-bottom: 2px solid var(--unav-black-500);">
+                                <div class="d-flex justify-content-between align-items-center flex-wrap gap-2">
+                                    <span>Materia 2. Matemática básica</span>
+                                    <span class="unav-tag unav-tagBlack">30 ECTS Total</span>
+                                </div>
+                            </th>
+                        </tr>
+                        <tr>
+                            <td data-label="Asignatura">Cálculo I</td>
+                            <td data-label="ECTS Asignatura" style="text-align: center;">6</td>
+                        </tr>
+                        <tr>
+                            <td data-label="Asignatura">Álgebra</td>
+                            <td data-label="ECTS Asignatura" style="text-align: center;">6</td>
+                        </tr>
+                        <tr>
+                            <td data-label="Asignatura">Cálculo II</td>
+                            <td data-label="ECTS Asignatura" style="text-align: center;">6</td>
+                        </tr>
+                        <tr>
+                            <td data-label="Asignatura">Estadística y probabilidad</td>
+                            <td data-label="ECTS Asignatura" style="text-align: center;">6</td>
+                        </tr>
+                        <tr>
+                            <td data-label="Asignatura">Ecuaciones diferenciales</td>
+                            <td data-label="ECTS Asignatura" style="text-align: center;">6</td>
+                        </tr>
+                        
+                        <tr class="unav-tableGroupHeader" style="background-color: var(--unav-grey-100);">
+                            <th colspan="2" scope="colgroup" style="color: var(--unav-black-500); border-bottom: 2px solid var(--unav-black-500);">
+                                <div class="d-flex justify-content-between align-items-center flex-wrap gap-2">
+                                    <span>Materia 3. Ciencias de la computación</span>
+                                    <span class="unav-tag unav-tagBlack">6 ECTS Total</span>
+                                </div>
+                            </th>
+                        </tr>
+                        <tr>
+                            <td data-label="Asignatura">Informática</td>
+                            <td data-label="ECTS Asignatura" style="text-align: center;">6</td>
+                        </tr>
+                        
+                        <tr class="unav-tableGroupHeader" style="background-color: var(--unav-grey-100);">
+                            <th colspan="2" scope="colgroup" style="color: var(--unav-black-500); border-bottom: 2px solid var(--unav-black-500);">
+                                <div class="d-flex justify-content-between align-items-center flex-wrap gap-2">
+                                    <span>Materia 4. Economía</span>
+                                    <span class="unav-tag unav-tagBlack">6 ECTS Total</span>
+                                </div>
+                            </th>
+                        </tr>
+                        <tr>
+                            <td data-label="Asignatura">Economía y empresa</td>
+                            <td data-label="ECTS Asignatura" style="text-align: center;">6</td>
+                        </tr>
+                        
+                        <tr class="unav-tableGroupHeader" style="background-color: var(--unav-grey-100);">
+                            <th colspan="2" scope="colgroup" style="color: var(--unav-black-500); border-bottom: 2px solid var(--unav-black-500);">
+                                <div class="d-flex justify-content-between align-items-center flex-wrap gap-2">
+                                    <span>Materia 5. Biología fundamental</span>
+                                    <span class="unav-tag unav-tagBlack">6 ECTS Total</span>
+                                </div>
+                            </th>
+                        </tr>
+                        <tr>
+                            <td data-label="Asignatura">Biología Fundamental</td>
+                            <td data-label="ECTS Asignatura" style="text-align: center;">6</td>
+                        </tr>
                     </tbody>
                 </table>
             </div>

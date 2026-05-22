@@ -41,27 +41,27 @@
                 Componentes modulares para representar perfiles humanos o datos de contacto de forma estructurada.
             </p>
 
-            <!-- RESUMEN TÉCNICO Y FUNCIONAL -->
             <div class="unav-techSummary bg-white p-4 text-start mt-5 rounded shadow-sm border mx-auto" style="max-width: 900px;">
                 <h2 class="unav-font-primary unav-weight-bold unav-text-150 text-dark mb-3">
-                    <i class="bi bi-gear-fill me-2" style="color: var(--unav-grey-400);"></i>Análisis Funcional y Técnico
+                    <i class="bi bi-gear-fill me-2" style="color: var(--unav-grey-400);"></i>Análisis Funcional y Técnico (Iterative Update)
                 </h2>
                 <p class="unav-font-primary unav-weight-regular unav-text-100 mb-4" style="color: var(--unav-grey-600);">
-                    El componente de <code>Ficha de Persona y Contacto</code> (.unav-personCard) es una solución modular diseñada bajo la metodología OOCSS para estructurar e identificar información de personas, cargos institucionales y departamentos. Utiliza la flexibilidad de Flexbox para alterar dinámicamente el orden visual de sus campos sin alterar la semántica del HTML ni degradar el SEO o la accesibilidad.
+                    El componente de <code>Ficha de Persona y Contacto</code> (.unav-personCard) es una solución modular diseñada bajo la metodología OOCSS para funcionar en armonía con la grilla de Bootstrap. Cada elemento está dimensionado para ocupar un ancho de 3 columnas dentro de una fila de 12 unidades (4 elementos por fila, <code>row-cols-lg-4</code>), asegurando una lectura compacta.
                 </p>
                 <div class="row g-4 unav-font-primary unav-weight-regular unav-text-100">
                     <div class="col-md-6">
                         <h3 class="unav-font-primary unav-weight-bold unav-text-125 text-dark mb-3">Análisis Funcional</h3>
                         <ul class="mb-0 ps-3" style="color: var(--unav-grey-600);">
-                            <li class="mb-2"><strong class="text-dark">Campos específicos:</strong> Soporta fotografía cuadrada (relación de aspecto 1:1), nombre, puesto de trabajo, dirección completa, teléfonos múltiples y botones secundarios de acción.</li>
+                            <li class="mb-2"><strong class="text-dark">Campos específicos:</strong> Soporta fotografía cuadrada (relación de aspecto 1:1), nombre, puesto de trabajo, y metadatos de contacto a través de listas icónicas.</li>
                             <li class="mb-2"><strong class="text-dark">Variabilidad de layouts:</strong> Permite ordenar de forma completamente asíncrona la posición de los campos mediante las clases de variante.</li>
                         </ul>
                     </div>
                     <div class="col-md-6 border-start ps-md-4">
                         <h3 class="unav-font-primary unav-weight-bold unav-text-125 text-dark mb-3">Especificaciones Técnicas</h3>
                         <ul class="mb-0 ps-3" style="color: var(--unav-grey-600);">
-                            <li class="mb-2"><strong class="text-dark">Propiedad Order:</strong> El reordenamiento de los campos se logra controlando de forma atómica la propiedad <code>order</code> de CSS en las clases modificadoras (<code>.unav-layoutPersona</code>, <code>.unav-layoutContacto</code>, <code>.unav-layoutDirectivo</code>, <code>.unav-layoutPerfilContacto</code>).</li>
-                            <li class="mb-2"><strong class="text-dark">Esquinas y Proporciones:</strong> La fotografía se fuerza mediante CSS con <code>aspect-ratio: 1 / 1</code> y <code>object-fit: cover</code> para garantizar el formato cuadrado sin distorsión.</li>
+                            <li class="mb-2"><strong class="text-dark">Grid Normalizado:</strong> Dimensionado estandarizado mediante contenedores de fila configurados con <code>row-cols-lg-4</code>.</li>
+                            <li class="mb-2"><strong class="text-dark">Composición Atómica:</strong> Integra el sub-componente <code>.unav-listIcon</code> transversalmente para presentar los datos de contacto con mayor legibilidad.</li>
+                            <li class="mb-2"><strong class="text-dark">Pautas Fotográficas Estrictas:</strong> El formato debe ser siempre de busto, mostrando cabeza y hombros (similar a Lucía Costa), forzado mediante <code>aspect-ratio: 1/1</code> y <code>object-fit: cover</code>.</li>
                         </ul>
                     </div>
                 </div>
@@ -70,36 +70,41 @@
 
         <div class="unav-components-guide">
             
-            <!-- VARIANTE A -->
             <section class="card shadow-sm mb-5 border-0">
                 <div class="card-header bg-white py-3 border-bottom-0 d-flex justify-content-between align-items-center">
                     <h3 class="unav-font-primary unav-weight-bold unav-text-125 mb-0">Variante A: Ficha Completa (Perfil)</h3>
                     <span class="unav-tag unav-tagRojo">.unav-layoutPersona</span>
                 </div>
                 <div class="card-body p-4 border-top bg-light">
-                    <p class="text-muted mb-4">Muestra todos los campos en orden vertical estricto: Foto > Nombre > Puesto > Dirección > Teléfonos > Botones Sec. > Email > Enlace final.</p>
+                    <p class="text-muted mb-4">Muestra todos los campos en orden vertical estricto dentro de un layout de 4 columnas por fila. Incorpora la lista con iconos para un contacto más visual.</p>
                     
-                    <div class="row row-cols-1 row-cols-md-3 g-4">
+                    <div class="row row-cols-1 row-cols-sm-2 row-cols-lg-4 g-4">
                         
                         <div class="col">
                             <article class="unav-personCard unav-layoutPersona" itemscope itemtype="https://schema.org/Person">
                                 
                                 <div class="unav-imageWrapper unav-efectoZoomImagen">
-                                    <img src="https://images.unsplash.com/photo-1573496359142-b8d87734a5a2?auto=format&fit=crop&w=500&q=80" alt="María García" class="unav-personImage" itemprop="image">
+                                    <img src="https://images.unsplash.com/photo-1573497019236-17f8177b81e8?q=80&w=500&auto=format&fit=crop&ixlib=rb-4.0.3" alt="María García" class="unav-personImage" itemprop="image">
                                 </div>
                                 
                                 <h3 class="unav-personName" itemprop="name">María García Fernández</h3>
                                 
                                 <div class="unav-personRole" itemprop="jobTitle">Catedrática de Derecho Civil</div>
                                 
-                                <div class="unav-personAddress" itemprop="address">
-                                    Edificio Amigos, Despacho 2340<br>
-                                    31009, Pamplona; Navarra, España.
-                                </div>
-                                
-                                <div class="unav-personPhones" itemprop="telephone">
-                                    <span>+34 948 425 600 (Ext. 802340)</span>
-                                </div>
+                                <ul class="unav-listIcon unav-listIcon--compact mt-3 mb-2" style="order: 4; --unav-listIconColor: var(--unav-grey-500);">
+                                    <li class="unav-listIconItem" itemprop="address">
+                                        <i class="material-symbols-outlined unav-listIconIcon">location_on</i>
+                                        <span>Edificio Amigos, Despacho 2340<br>31009, Pamplona; Navarra, España.</span>
+                                    </li>
+                                    <li class="unav-listIconItem" itemprop="telephone">
+                                        <i class="material-symbols-outlined unav-listIconIcon">call</i>
+                                        <span>+34 948 425 600 (Ext. 802340)</span>
+                                    </li>
+                                    <li class="unav-listIconItem" itemprop="email">
+                                        <i class="material-symbols-outlined unav-listIconIcon">mail</i>
+                                        <span><a href="mailto:mgarciaf@unav.es" class="unav-enlaceInline">mgarciaf@unav.es</a></span>
+                                    </li>
+                                </ul>
 
                                 <div class="unav-actionContainer mt-3" itemscope="" itemtype="https://schema.org/WebPageElement">
                                     <a itemprop="url" href="https://wa.me/34600123456" target="_blank" class="unav-boton unav-botonSecundario unav-botonFit" style="--unav-botonColorSource: var(--unav-green-600);">
@@ -110,10 +115,6 @@
                                         <i class="bi bi-calendar-event unav-botonIcono"></i>
                                         <span itemprop="name">AGENDAR CITA</span>
                                     </a>
-                                </div>
-
-                                <div class="unav-personEmail">
-                                    <a href="mailto:mgarciaf@unav.es" itemprop="email">mgarciaf@unav.es</a>
                                 </div>
 
                                 <div class="unav-linkContainer">
@@ -133,22 +134,29 @@
                                 </div>
                                 <h3 class="unav-personName" itemprop="name">Lucía Costa</h3>
                                 <div class="unav-personRole" itemprop="jobTitle">Orientadora</div>
-                                <div class="unav-personAddress" itemprop="address">
-                                    Edificio Central, Planta Baja<br>
-                                    31009, Pamplona; Navarra, España.
-                                </div>
-                                <div class="unav-personPhones" itemprop="telephone">
-                                    <span>+34 948 425 600 (Ext. 801122)</span>
-                                </div>
+                                
+                                <ul class="unav-listIcon unav-listIcon--compact mt-3 mb-2" style="order: 4; --unav-listIconColor: var(--unav-grey-500);">
+                                    <li class="unav-listIconItem" itemprop="address">
+                                        <i class="material-symbols-outlined unav-listIconIcon">location_on</i>
+                                        <span>Edificio Central, Planta Baja<br>31009, Pamplona; Navarra, España.</span>
+                                    </li>
+                                    <li class="unav-listIconItem" itemprop="telephone">
+                                        <i class="material-symbols-outlined unav-listIconIcon">call</i>
+                                        <span>+34 948 425 600 (Ext. 801122)</span>
+                                    </li>
+                                    <li class="unav-listIconItem" itemprop="email">
+                                        <i class="material-symbols-outlined unav-listIconIcon">mail</i>
+                                        <span><a href="mailto:lcosta@unav.es" class="unav-enlaceInline">lcosta@unav.es</a></span>
+                                    </li>
+                                </ul>
+
                                 <div class="unav-actionContainer mt-3" itemscope="" itemtype="https://schema.org/WebPageElement">
                                     <a itemprop="url" href="https://wa.me/34600123456" target="_blank" class="unav-boton unav-botonSecundario unav-botonFit" style="--unav-botonColorSource: var(--unav-green-600);">
                                         <i class="bi bi-whatsapp unav-botonIcono"></i>
                                         <span itemprop="name">WHATSAPP</span>
                                     </a>
                                 </div>
-                                <div class="unav-personEmail">
-                                    <a href="mailto:lcosta@unav.es" itemprop="email">lcosta@unav.es</a>
-                                </div>
+                                
                                 <div class="unav-linkContainer">
                                     <a href="#" class="unav-enlaceFlecha" style="--unav-enlaceColor: var(--unav-black-500);">
                                         <span class="unav-arrowWrapper"><span class="unav-arrow"></span><span class="unav-arrowClone"></span></span>
@@ -163,16 +171,15 @@
             </section>
 
 
-            <!-- VARIANTE B -->
             <section class="card shadow-sm mb-5 border-0">
                 <div class="card-header bg-white py-3 border-bottom-0 d-flex justify-content-between align-items-center">
                     <h3 class="unav-font-primary unav-weight-bold unav-text-125 mb-0">Variante B: Bloque de Contacto Directo</h3>
                     <span class="unav-tag unav-tagBlueDark">.unav-layoutContacto</span>
                 </div>
                 <div class="card-body p-4 border-top bg-light">
-                    <p class="text-muted mb-4">La clase <code>.unav-layoutContacto</code> oculta foto, nombre y puesto, y reordena el resto: Email > Dirección > Teléfonos > Enlace Flecha.</p>
+                    <p class="text-muted mb-4">La clase <code>.unav-layoutContacto</code> oculta foto, nombre y puesto, dimensionando el bloque para ocupar 3 unidades de ancho (4 por fila). Integra la lista de iconos para semántica de contacto.</p>
                     
-                    <div class="row row-cols-1 row-cols-md-3 g-4">
+                    <div class="row row-cols-1 row-cols-sm-2 row-cols-lg-4 g-4">
                         
                         <div class="col">
                             <article class="unav-personCard unav-layoutContacto" itemscope itemtype="https://schema.org/Organization">
@@ -182,16 +189,21 @@
                                 <div class="unav-personRole">Atención al Estudiante</div>
                                 <div class="unav-actionContainer"><button>Oculto</button></div>
                                 
-                                <div class="unav-personEmail">
-                                    <a href="mailto:secretaria.ciencias@unav.es" itemprop="email">secretaria.ciencias@unav.es</a>
-                                </div>
-                                <div class="unav-personAddress" itemprop="address">
-                                    Edificio de Ciencias (Hexágonos)<br>
-                                    31008, Pamplona; Navarra, España.
-                                </div>
-                                <div class="unav-personPhones" itemprop="telephone">
-                                    <span>+34 948 425 600</span>
-                                </div>
+                                <ul class="unav-listIcon unav-listIcon--compact mt-3 mb-2" style="order: 2; --unav-listIconColor: var(--unav-grey-500);">                                    
+                                    <li class="unav-listIconItem" itemprop="address">
+                                        <i class="material-symbols-outlined unav-listIconIcon">location_on</i>
+                                        <span>Edificio de Ciencias (Hexágonos)<br>31008, Pamplona; Navarra, España.</span>
+                                    </li>
+                                    <li class="unav-listIconItem" itemprop="telephone">
+                                        <i class="material-symbols-outlined unav-listIconIcon">call</i>
+                                        <span>+34 948 425 600</span>
+                                    </li>
+                                    <li class="unav-listIconItem" itemprop="email">
+                                        <i class="material-symbols-outlined unav-listIconIcon">mail</i>
+                                        <span><a href="mailto:secretaria.ciencias@unav.es" class="unav-enlaceInline">secretaria.ciencias@unav.es</a></span>
+                                    </li>
+                                </ul>
+
                                 <div class="unav-linkContainer">
                                     <a href="mailto:secretaria.ciencias@unav.es" class="unav-enlaceFlecha" style="--unav-enlaceColor: var(--unav-black-500);">
                                         <span class="unav-arrowWrapper"><span class="unav-arrow"></span><span class="unav-arrowClone"></span></span>
@@ -206,33 +218,36 @@
                 </div>
             </section>
 
-            <!-- VARIANTE C (DIRECTIVO SIN FOTO) -->
             <section class="card shadow-sm mb-5 border-0">
                 <div class="card-header bg-white py-3 border-bottom-0 d-flex justify-content-between align-items-center">
                     <h3 class="unav-font-primary unav-weight-bold unav-text-125 mb-0">Variante C: Ficha Directivo (Sin foto)</h3>
                     <span class="unav-tag unav-tagMoss">.unav-layoutDirectivo</span>
                 </div>
                 <div class="card-body p-4 border-top bg-light">
-                    <p class="text-muted mb-4">Basado en el layout clásico. Oculta la fotografía y reordena los campos: Nombre > Puesto > Email > Dirección > Teléfonos > Contactar.</p>
+                    <p class="text-muted mb-4">Oculta la fotografía y ajusta los campos de texto al ancho estandarizado de 3 columnas del grid (4 por fila, <code>row-cols-lg-4</code>). Integra la lista de iconos.</p>
                     
-                    <div class="row row-cols-1 row-cols-md-3 g-4">
+                    <div class="row row-cols-1 row-cols-sm-2 row-cols-lg-4 g-4">
                         
                         <div class="col">
                             <article class="unav-personCard unav-layoutDirectivo unav-cardNoBorder" itemscope itemtype="https://schema.org/Person">
                                 <h3 class="unav-personName" itemprop="name">Alberto Herrero Ríos</h3>
                                 <div class="unav-personRole" itemprop="jobTitle">Director Financiero</div>
-                                <div class="unav-personEmail">
-                                    <a href="mailto:ahrios@unav.es" itemprop="email">ahrios@unav.es</a>
-                                </div>
-                                <div class="unav-personAddress" itemprop="address">
-                                    Rectorado. Edificio Central<br>
-                                    Universidad de Navarra<br>
-                                    31009 Pamplona, España
-                                </div>
-                                <div class="unav-personPhones" itemprop="telephone">
-                                    <span>+34 948 425 606</span>
-                                    <span>+34 948 425 600</span>
-                                </div>
+                                
+                                <ul class="unav-listIcon unav-listIcon--compact mt-3 mb-2" style="order: 3; --unav-listIconColor: var(--unav-grey-500);">                                    
+                                    <li class="unav-listIconItem" itemprop="address">
+                                        <i class="material-symbols-outlined unav-listIconIcon">location_on</i>
+                                        <span>Rectorado. Edificio Central<br>Universidad de Navarra<br>31009 Pamplona, España</span>
+                                    </li>
+                                    <li class="unav-listIconItem" itemprop="telephone">
+                                        <i class="material-symbols-outlined unav-listIconIcon">call</i>
+                                        <span>+34 948 425 606<br>+34 948 425 600</span>
+                                    </li>
+                                    <li class="unav-listIconItem" itemprop="email">
+                                        <i class="material-symbols-outlined unav-listIconIcon">mail</i>
+                                        <span><a href="mailto:ahrios@unav.es" class="unav-enlaceInline">ahrios@unav.es</a></span>
+                                    </li>
+                                </ul>
+
                                 <div class="unav-linkContainer">
                                     <a href="mailto:ahrios@unav.es" class="unav-enlaceFlecha" style="--unav-enlaceColor: var(--unav-black-900);">
                                         <span class="unav-arrowWrapper"><span class="unav-arrow"></span><span class="unav-arrowClone"></span></span>
@@ -246,14 +261,13 @@
                 </div>
             </section>
 
-            <!-- VARIANTE D (GRID DE 12 - 4 COLUMNAS) -->
             <section class="card shadow-sm mb-5 border-0">
                 <div class="card-header bg-white py-3 border-bottom-0 d-flex justify-content-between align-items-center">
-                    <h3 class="unav-font-primary unav-weight-bold unav-text-125 mb-0">Variante D: Grid de 4 Columnas</h3>
-                    <span class="unav-tag unav-tagBlack">Responsive Grid</span>
+                    <h3 class="unav-font-primary unav-weight-bold unav-text-125 mb-0">Variante D: Grid Normalizado (4 por fila)</h3>
+                    <span class="unav-tag unav-tagBlack">Responsive Grid 4-cols</span>
                 </div>
                 <div class="card-body p-4 border-top bg-light">
-                    <p class="text-muted mb-4">Adaptación en una fila de 4 (utilizando <code>row-cols-lg-4</code>), ideal para claustros o equipos.</p>
+                    <p class="text-muted mb-4">Muestra el comportamiento real del sistema al tener múltiples elementos: cada ficha ocupa 3 columnas de Bootstrap (dimensionado mediante <code>row-cols-lg-4</code>), logrando 4 por fila. Incluye listas icónicas.</p>
                     
                     <div class="row row-cols-1 row-cols-sm-2 row-cols-lg-4 g-4">
                         
@@ -264,9 +278,14 @@
                                 </div>
                                 <h3 class="unav-personName" itemprop="name">Javier Santos</h3>
                                 <div class="unav-personRole" itemprop="jobTitle">Profesor Titular</div>
-                                <div class="unav-personEmail">
-                                    <a href="mailto:jsantos@unav.es" itemprop="email">jsantos@unav.es</a>
-                                </div>
+                                
+                                <ul class="unav-listIcon unav-listIcon--compact mt-3 mb-2" style="order: 4; --unav-listIconColor: var(--unav-grey-500);">
+                                    <li class="unav-listIconItem" itemprop="email">
+                                        <i class="material-symbols-outlined unav-listIconIcon">mail</i>
+                                        <span><a href="mailto:jsantos@unav.es" class="unav-enlaceInline">jsantos@unav.es</a></span>
+                                    </li>
+                                </ul>
+
                                 <div class="unav-linkContainer mt-auto">
                                     <a href="#" class="unav-enlaceFlecha" style="--unav-enlaceColor: var(--unav-black-900); font-size: 1rem;">
                                         <span class="unav-arrowWrapper"><span class="unav-arrow"></span><span class="unav-arrowClone"></span></span>
@@ -283,9 +302,14 @@
                                 </div>
                                 <h3 class="unav-personName" itemprop="name">Laura Gómez</h3>
                                 <div class="unav-personRole" itemprop="jobTitle">Investigadora</div>
-                                <div class="unav-personEmail">
-                                    <a href="mailto:lgomez@unav.es" itemprop="email">lgomez@unav.es</a>
-                                </div>
+                                
+                                <ul class="unav-listIcon unav-listIcon--compact mt-3 mb-2" style="order: 4; --unav-listIconColor: var(--unav-grey-500);">
+                                    <li class="unav-listIconItem" itemprop="email">
+                                        <i class="material-symbols-outlined unav-listIconIcon">mail</i>
+                                        <span><a href="mailto:lgomez@unav.es" class="unav-enlaceInline">lgomez@unav.es</a></span>
+                                    </li>
+                                </ul>
+
                                 <div class="unav-linkContainer mt-auto">
                                     <a href="#" class="unav-enlaceFlecha" style="--unav-enlaceColor: var(--unav-black-900); font-size: 1rem;">
                                         <span class="unav-arrowWrapper"><span class="unav-arrow"></span><span class="unav-arrowClone"></span></span>
@@ -302,9 +326,14 @@
                                 </div>
                                 <h3 class="unav-personName" itemprop="name">Miguel Torres</h3>
                                 <div class="unav-personRole" itemprop="jobTitle">Coordinador</div>
-                                <div class="unav-personEmail">
-                                    <a href="mailto:mtorres@unav.es" itemprop="email">mtorres@unav.es</a>
-                                </div>
+                                
+                                <ul class="unav-listIcon unav-listIcon--compact mt-3 mb-2" style="order: 4; --unav-listIconColor: var(--unav-grey-500);">
+                                    <li class="unav-listIconItem" itemprop="email">
+                                        <i class="material-symbols-outlined unav-listIconIcon">mail</i>
+                                        <span><a href="mailto:mtorres@unav.es" class="unav-enlaceInline">mtorres@unav.es</a></span>
+                                    </li>
+                                </ul>
+
                                 <div class="unav-linkContainer mt-auto">
                                     <a href="#" class="unav-enlaceFlecha" style="--unav-enlaceColor: var(--unav-black-900); font-size: 1rem;">
                                         <span class="unav-arrowWrapper"><span class="unav-arrow"></span><span class="unav-arrowClone"></span></span>
@@ -321,9 +350,14 @@
                                 </div>
                                 <h3 class="unav-personName" itemprop="name">Ana Silva</h3>
                                 <div class="unav-personRole" itemprop="jobTitle">Gestora Académica</div>
-                                <div class="unav-personEmail">
-                                    <a href="mailto:asilva@unav.es" itemprop="email">asilva@unav.es</a>
-                                </div>
+                                
+                                <ul class="unav-listIcon unav-listIcon--compact mt-3 mb-2" style="order: 4; --unav-listIconColor: var(--unav-grey-500);">
+                                    <li class="unav-listIconItem" itemprop="email">
+                                        <i class="material-symbols-outlined unav-listIconIcon">mail</i>
+                                        <span><a href="mailto:asilva@unav.es" class="unav-enlaceInline">asilva@unav.es</a></span>
+                                    </li>
+                                </ul>
+
                                 <div class="unav-linkContainer mt-auto">
                                     <a href="#" class="unav-enlaceFlecha" style="--unav-enlaceColor: var(--unav-black-900); font-size: 1rem;">
                                         <span class="unav-arrowWrapper"><span class="unav-arrow"></span><span class="unav-arrowClone"></span></span>
@@ -337,35 +371,35 @@
                 </div>
             </section>
 
-            <!-- VARIANTE E: PERFIL CONTACTO DESTACADO -->
             <section class="card shadow-sm mb-5 border-0">
                 <div class="card-header bg-white py-3 border-bottom-0 d-flex justify-content-between align-items-center">
                     <h3 class="unav-font-primary unav-weight-bold unav-text-125 mb-0">Variante E: Perfil con Contacto Destacado</h3>
                     <span class="unav-tag unav-tagCyan">.unav-layoutPerfilContacto</span>
                 </div>
                 <div class="card-body p-4 border-top bg-light">
-                    <p class="text-muted mb-4">Intercala la fotografía cuadrada entre el correo electrónico y la dirección postal, priorizando la información de contacto personal.</p>
+                    <p class="text-muted mb-4">Intercala la fotografía cuadrada entre el correo electrónico y la dirección postal, ajustando el bloque a un ancho estandarizado de 3 unidades (4 por fila, <code>row-cols-lg-4</code>). Incluye listas icónicas.</p>
                     
-                    <div class="row row-cols-1 row-cols-md-3 g-4">
+                    <div class="row row-cols-1 row-cols-sm-2 row-cols-lg-4 g-4">
                         
                         <div class="col">
                             <article class="unav-personCard unav-layoutPerfilContacto unav-cardNoBorder" itemscope itemtype="https://schema.org/Person">
                                 <h3 class="unav-personName" itemprop="name">Javier Urdiales León</h3>
-                                <div class="unav-personEmail">
-                                    <a href="mailto:jurdiales@unav.es" itemprop="email">jurdiales@unav.es</a>
-                                </div>
+                                
                                 <div class="unav-imageWrapper">
-                                    <!-- La foto respeta el cuadrado estricto -->
-                                    <img src="https://images.unsplash.com/photo-1472099645785-5658abf4ff4e?auto=format&fit=crop&w=500&q=80" alt="Javier Urdiales León" class="unav-personImage" itemprop="image">
+                                    <img src="https://images.unsplash.com/photo-1557862921-37829c790f19?q=80&w=500&auto=format&fit=crop&ixlib=rb-4.0.3" alt="Javier Urdiales León" class="unav-personImage" itemprop="image">
                                 </div>
-                                <div class="unav-personAddress" itemprop="address">
-                                    Campus Universitario, s/n<br>
-                                    31009 Pamplona, España
-                                </div>
-                                <div class="unav-personPhones" itemprop="telephone">
-                                    <span>+34 948 42 56 00</span>
-                                    <span>802377</span>
-                                </div>
+                                
+                                <ul class="unav-listIcon unav-listIcon--compact mt-3 mb-2" style="order: 4; --unav-listIconColor: var(--unav-grey-500);">
+                                    <li class="unav-listIconItem" itemprop="address">
+                                        <i class="material-symbols-outlined unav-listIconIcon">location_on</i>
+                                        <span>Campus Universitario, s/n<br>31009 Pamplona, España</span>
+                                    </li>
+                                    <li class="unav-listIconItem" itemprop="telephone">
+                                        <i class="material-symbols-outlined unav-listIconIcon">call</i>
+                                        <span>+34 948 42 56 00<br>Ext. 802377</span>
+                                    </li>
+                                </ul>
+
                                 <div class="unav-linkContainer">
                                     <a href="mailto:jurdiales@unav.es" class="unav-enlaceFlecha" style="--unav-enlaceColor: var(--unav-black-900);">
                                         <span class="unav-arrowWrapper"><span class="unav-arrow"></span><span class="unav-arrowClone"></span></span>
