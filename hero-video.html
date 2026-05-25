@@ -76,6 +76,8 @@
                 <meta itemprop="uploadDate" content="2026-04-27">
                 
                 <video class="unav-heroVideoMp4" id="unavLocalVideo1" autoplay loop muted playsinline>
+                    <!-- FIX: Archivo de vídeo específico para móvil -->
+                    <source src="video-vertical.mp4" type="video/mp4" media="(max-width: 768px)">
                     <source src="gradoEnDerecho.mp4" type="video/mp4">
                     Tu navegador no soporta la etiqueta de vídeo.
                 </video>
@@ -152,6 +154,8 @@
                 <meta itemprop="contentUrl" content="gradoEnDerecho.mp4">
                 
                 <video class="unav-heroVideoMp4" id="unavLocalVideo2" loop muted playsinline>
+                    <!-- FIX: Archivo de vídeo específico para móvil -->
+                    <source src="video-vertical.mp4" type="video/mp4" media="(max-width: 768px)">
                     <source src="gradoEnDerecho.mp4" type="video/mp4">
                 </video>
                 
@@ -222,6 +226,8 @@
                 <meta itemprop="contentUrl" content="gradoEnDerecho.mp4">
                 
                 <video class="unav-heroVideoMp4" id="unavLocalVideo3" loop muted playsinline>
+                    <!-- FIX: Archivo de vídeo específico para móvil -->
+                    <source src="video-vertical.mp4" type="video/mp4" media="(max-width: 768px)">
                     <source src="gradoEnDerecho.mp4" type="video/mp4">
                 </video>                                
                 
@@ -268,6 +274,7 @@
                 <meta itemprop="uploadDate" content="2026-04-27">
                 
                 <video class="unav-heroVideoMp4" id="unavLocalVideo4" autoplay loop muted playsinline>
+                    <source src="video-vertical.mp4" type="video/mp4" media="(max-width: 768px)">                
                     <source src="gradoEnDerecho.mp4" type="video/mp4">
                     Tu navegador no soporta la etiqueta de vídeo.
                 </video>
@@ -312,8 +319,9 @@
                 <meta itemprop="name" content="Campus Universitario UNAV">
                 <meta itemprop="description" content="Vista aérea y vida en el campus de la Universidad de Navarra.">
                 
+                <!-- FIX: Se añade ID estricto y el tag &enablejsapi=1 -->
                 <div class="unav-heroVideoYoutubeWrapper">
-                    <iframe src="https://www.youtube.com/embed/BFH1dAqjsKs?autoplay=1&mute=1&controls=1&loop=1&playlist=BFH1dAqjsKs&showinfo=0&rel=0&modestbranding=1" frameborder="0" allow="autoplay; fullscreen; picture-in-picture" allowfullscreen></iframe>
+                    <iframe id="unavYoutubeVideo8" src="https://www.youtube.com/embed/BFH1dAqjsKs?autoplay=1&mute=1&controls=1&loop=1&playlist=BFH1dAqjsKs&showinfo=0&rel=0&modestbranding=1&enablejsapi=1" frameborder="0" allow="autoplay; fullscreen; picture-in-picture" allowfullscreen></iframe>
                 </div>
                 
                 <div class="unav-heroOverlay">
@@ -344,16 +352,16 @@
                 <h2 class="unav-font-primary unav-weight-bold unav-text-150 text-dark m-0">9. Desvanecer títulos (no hay botones), vídeo MP4 Local (Autorreproducción)</h2>
             </section>
         </div>
-
-        <section class="unav-hero unav-hero--darkOverlay mb-5" itemscope itemtype="https://schema.org/WPHeader">
+        
+        <section class="unav-hero unav-hero--darkOverlay unav-hero--mobile9x16 mb-5"" itemscope itemtype="https://schema.org/WPHeader">
             <div class="unav-heroVisuals" itemprop="video" itemscope itemtype="https://schema.org/VideoObject">
                 <meta itemprop="name" content="Grado en Derecho UNAV">
                 <meta itemprop="description" content="Imágenes de las clases y graduación del grado en Derecho.">
                 <meta itemprop="contentUrl" content="gradoEnDerecho.mp4">
                 <meta itemprop="uploadDate" content="2026-04-27">
                 
-                <video class="unav-heroVideoMp4" id="unavLocalVideo1" autoplay loop muted playsinline>
-                    <source src="video-admision-marca-totem.mp4" video/mp4" media="(max-width: 768px)">                
+                <video class="unav-heroVideoMp4" id="unavLocalVideo5" autoplay loop muted playsinline>
+                    <source src="video-vertical.mp4" type="video/mp4" media="(max-width: 768px)">                
                     <source src="gradoEnDerecho.mp4" type="video/mp4">
                     Tu navegador no soporta la etiqueta de vídeo.
                 </video>
@@ -390,12 +398,12 @@
                 <meta itemprop="description" content="Vista aérea y vida en el campus de la Universidad de Navarra.">
                 
                 <div class="unav-heroVideoYoutubeWrapper d-none d-md-block">
-                    <iframe src="https://www.youtube.com/embed/BFH1dAqjsKs?autoplay=1&mute=1&controls=0&loop=1&playlist=BFH1dAqjsKs&showinfo=0&rel=0&modestbranding=1" frameborder="0" allow="autoplay; fullscreen; picture-in-picture" allowfullscreen></iframe>
+                    <iframe src="https://www.youtube.com/embed/BFH1dAqjsKs?autoplay=1&mute=1&controls=0&loop=1&playlist=BFH1dAqjsKs&showinfo=0&rel=0&modestbranding=1&enablejsapi=1" frameborder="0" allow="autoplay; fullscreen; picture-in-picture" allowfullscreen></iframe>
                 </div>
         
                 <div class="unav-heroVideoYoutubeWrapper d-block d-md-none">
                     <iframe 
-                        src="https://www.youtube.com/embed/8JI4knark24?autoplay=1&mute=1&controls=0&loop=1&playlist=8JI4knark24&showinfo=0&rel=0&modestbranding=1" 
+                        src="https://www.youtube.com/embed/8JI4knark24?autoplay=1&mute=1&controls=0&loop=1&playlist=8JI4knark24&showinfo=0&rel=0&modestbranding=1&enablejsapi=1" 
                         frameborder="0" 
                         allow="autoplay; fullscreen; picture-in-picture" 
                         allowfullscreen>
@@ -413,20 +421,14 @@
             </div>
         </section>
 
-
-
-
-
-
-
-
-
     </main>
 
     <footer class="bg-white border-top py-4 mt-5">
         <div class="container-lg d-flex flex-column flex-md-row justify-content-between align-items-center gap-3">
             <div class="d-flex align-items-center gap-2">
-                <span class="material-symbols-outlined text-danger" aria-hidden="true">token</span>
+                <svg class="unav-customIconSvg unav-icono-xl" style="color: var(--unav-rojo-500);" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                    <path d="M19 12A7 10 0 0 1 5 12A7 10 0 0 1 19 12Z M17 12A5 8 0 0 0 7 12A5 8 0 0 0 17 12Z" />
+                </svg>
                 <span class="unav-font-primary unav-weight-bold unav-text-100 text-dark">Design System UNAV</span>
             </div>
             <p class="unav-font-primary unav-weight-regular unav-text-075 text-muted m-0">
@@ -448,47 +450,77 @@
             const unavLocalVideos = document.querySelectorAll('.unav-heroVideoMp4');
             
             unavLocalVideos.forEach(video => {
-                // Buscamos el contenedor visual padre y su respectivo grupo de textos
                 const heroVisuals = video.closest('.unav-heroVisuals');
                 const textsContainer = heroVisuals ? heroVisuals.querySelector('.unav-efectoDesvanecerTextos') : null;
                 
                 if (textsContainer) {
                     let timeoutId = null;
                     
-                    // Evento Universal: Cuando el vídeo está en marcha
+                    // Cuando el vídeo está en marcha, activamos temporizador
                     video.addEventListener('playing', () => {
                         if (timeoutId) clearTimeout(timeoutId);
                         timeoutId = setTimeout(() => {
-                            // Doble validación: Aseguramos que sigue reproduciéndose
                             if (!video.paused) {
                                 textsContainer.classList.add('unav-isHidden');
                             }
                         }, 3000);
                     });
                     
-                    // Evento Universal: Cuando el usuario lo pausa
+                    // Si el vídeo se detiene o pausa recuperamos los textos
                     video.addEventListener('pause', () => {
                         if (timeoutId) clearTimeout(timeoutId);
                         textsContainer.classList.remove('unav-isHidden');
                     });
                 }
             });
+        });
 
-            // 2. SISTEMA AUTOMÁTICO PARA YOUTUBE (Iframes)
+        // ========================================================
+        // 2. SISTEMA AUTOMÁTICO PARA YOUTUBE (INTEGRACIÓN OFICIAL)
+        // ========================================================
+        
+        // Inyectar el Iframe API Oficial de YouTube
+        const unavYtScript = document.createElement('script');
+        unavYtScript.src = "https://www.youtube.com/iframe_api";
+        const unavFirstScriptTag = document.getElementsByTagName('script')[0];
+        unavFirstScriptTag.parentNode.insertBefore(unavYtScript, unavFirstScriptTag);
+
+        // Inicialización nativa del entorno Iframe de Youtube
+        window.onYouTubeIframeAPIReady = function() {
             const unavYoutubeIframes = document.querySelectorAll('.unav-heroVideoYoutubeWrapper iframe');
             
-            unavYoutubeIframes.forEach(iframe => {
-                const heroVisuals = iframe.closest('.unav-heroVisuals');
-                const textsContainer = heroVisuals ? heroVisuals.querySelector('.unav-efectoDesvanecerTextos') : null;
-                
-                // Si tiene textos y está configurado como autoplay=1 en la URL
-                if (textsContainer && iframe.src.includes('autoplay=1')) {
-                    setTimeout(() => {
-                        textsContainer.classList.add('unav-isHidden');
-                    }, 3000);
+            unavYoutubeIframes.forEach((iframe, index) => {
+                // Seguridad técnica: Asegurarnos de que tienen ID y la API activa en la URL
+                if (!iframe.id) iframe.id = 'unav-yt-player-' + index;
+                if (!iframe.src.includes('enablejsapi=1')) {
+                    iframe.src += (iframe.src.includes('?') ? '&' : '?') + 'enablejsapi=1';
                 }
+
+                new YT.Player(iframe.id, {
+                    events: {
+                        'onStateChange': function(event) {
+                            const heroVisuals = iframe.closest('.unav-heroVisuals');
+                            const textsContainer = heroVisuals ? heroVisuals.querySelector('.unav-efectoDesvanecerTextos') : null;
+                            
+                            if (textsContainer) {
+                                // 1: PLAYING
+                                if (event.data === YT.PlayerState.PLAYING) {
+                                    if (iframe.unavTimeoutId) clearTimeout(iframe.unavTimeoutId);
+                                    iframe.unavTimeoutId = setTimeout(() => {
+                                        textsContainer.classList.add('unav-isHidden');
+                                    }, 3000);
+                                } 
+                                // 2: PAUSED o 0: ENDED
+                                else if (event.data === YT.PlayerState.PAUSED || event.data === YT.PlayerState.ENDED) {
+                                    if (iframe.unavTimeoutId) clearTimeout(iframe.unavTimeoutId);
+                                    textsContainer.classList.remove('unav-isHidden');
+                                }
+                            }
+                        }
+                    }
+                });
             });
-        });
+        };
 
         // ==========================================
         // CONTROLES DE INTERACCIÓN MANUAL (Play/Mute)
