@@ -2489,8 +2489,17 @@
 .unav-heroContent {
     width: 70%;
     text-align: center;
-    pointer-events: auto; /* Captura clics en textos/botones centrados */
+    pointer-events: none; /* Dejamos que los clics atraviesen todo el contenedor */
     color: #ffffff;
+}
+
+/* Recuperamos los clics SOLO en los botones y textos para no tapar el vídeo */
+.unav-heroBtnGroup {
+    pointer-events: auto;
+}
+
+.unav-heroHeaderTexts {
+    pointer-events: auto;
 }
 
 .unav-heroContent--center { margin: 0 auto; max-width: 50rem; }
@@ -2512,7 +2521,9 @@
 /* Clase de estado interactivo controlada por JS */
 .unav-efectoDesvanecerTextos.unav-isHidden {
     opacity: 0;
-    visibility: hidden;
+    visibility: hidden; /* Esto asegura que el elemento desaparezca del árbol de clics */
+    pointer-events: none;
+    transition: opacity 0.5s ease, visibility 0.5s ease;
 }
 
 
