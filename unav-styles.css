@@ -2519,7 +2519,7 @@
 }
 
 /* Clase de estado interactivo controlada por JS */
-.unav-efectoDesvanecerTextos.unav-isHidden {
+.unav-isHidden {
     opacity: 0;
     visibility: hidden; /* Esto asegura que el elemento desaparezca del árbol de clics */
     pointer-events: none;
