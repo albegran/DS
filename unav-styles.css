@@ -253,10 +253,10 @@
     /* ==========================================
        6. TOKENS COMPONENTE: SEPARADORES
        ========================================== */
-        --unav-separadorMarginY: 2rem;
-        --unav-separadorPaddingX: 1rem;
-        --unav-separadorThicknessBase: 1px;
-        --unav-separadorColorBase: var(--unav-grey-300);
+       --unav-separadorMarginY: var(--unav-spacing-md);
+       --unav-separadorPaddingX: var(--unav-spacing-md);
+       --unav-separadorThicknessBase: 1px;
+       --unav-separadorColorBase: var(--unav-grey-300);
     
     /* ==========================================
        7. TOKENS COMPONENTE: BLOQUE DE ENLACES
@@ -2461,6 +2461,16 @@
 }
 .unav-heroVideoYoutubeWrapper iframe { width: 100%; height: 100%; pointer-events: auto; }
 
+/* Modificador OOCSS: Hero Vertical Estricto (9:16) en Móviles */
+@media (max-width: 768px) {
+    .unav-hero--mobile9x16 {
+        aspect-ratio: 9 / 16;
+        min-height: auto; /* Por si el componente base tuviera min-height */
+        height: auto;
+    }
+}
+
+
 /* Capa de Superposición y Textos (Overlay) */
 .unav-heroOverlay {
     position: absolute;
@@ -3310,20 +3320,24 @@
    COMPONENTE: SEPARADORES (.unav-separador)
    ========================================== */
 
-.unav-separador {
+   .unav-separador {
     /* Variables de instancia (Sobrescribibles vía style inline) */
     --unav-separadorWidth: 100%;
     --unav-separadorColor: var(--unav-separadorColorBase);
     --unav-separadorThickness: var(--unav-separadorThicknessBase);
     --unav-separadorStyle: solid;
+    
+    /* Variables de espaciado declaradas explícitamente */
+    --unav-separadorMarginY: var(--unav-spacing-xl);
+    --unav-separadorPaddingX: var(--unav-spacing-md);
 
     display: flex;
     align-items: center;
     width: var(--unav-separadorWidth);
     
-    /* REFACTOR: Consumo de Tokens de Espaciado (32px por defecto si no se sobrescribe) */
-    margin-top: var(--unav-separadorMarginY, var(--unav-spacing-xl));
-    margin-bottom: var(--unav-separadorMarginY, var(--unav-spacing-xl));
+    /* Consumo directo y limpio de los tokens de instancia */
+    margin-top: var(--unav-separadorMarginY);
+    margin-bottom: var(--unav-separadorMarginY);
     clear: both;
 }
 
@@ -3344,8 +3358,8 @@
 }
 
 .unav-separadorContent {
-    /* REFACTOR: Consumo de Tokens de Espaciado (16px lateral por defecto) */
-    padding: 0 var(--unav-separadorPaddingX, var(--unav-spacing-md));
+    /* Consumo directo de la variable local */
+    padding: 0 var(--unav-separadorPaddingX);
     color: var(--unav-separadorColor);
     display: flex;
     align-items: center;
