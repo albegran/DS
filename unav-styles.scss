@@ -3,38 +3,39 @@
    ========================================================================== */
 
 /* 1. FOUNDATIONS (Tokens y Variables) */
-@use '01-foundations/tokens';
+@use 'scss/01-foundations/tokens';
 
 /* 2. BASE (Reseteos globales) */
-@use '02-base/reset';
+@use 'scss/02-base/reset';
 
 /* 3. ATOMOS (Elementos indivisibles) */
-@use '03-atomos/botones';
-@use '03-atomos/enlaces';
-@use '03-atomos/etiquetas';
-@use '03-atomos/iconos';
-@use '03-atomos/separadores';
-@use '03-atomos/titulos';
+@use 'scss/03-atomos/botones';
+@use 'scss/03-atomos/enlaces';
+@use 'scss/03-atomos/etiquetas';
+@use 'scss/03-atomos/iconos';
+@use 'scss/03-atomos/separadores';
+@use 'scss/03-atomos/titulos';
 
 /* 4. MOLECULAS (Agrupaciones de átomos) */
-@use '04-molecules/tarjetas';
-@use '04-molecules/acordeon';
-@use '04-molecules/migas-pan';
-@use '04-molecules/listas';
-@use '04-molecules/paginacion';
+@use 'scss/04-moleculas/tarjetas';
+@use 'scss/04-moleculas/acordeon';
+@use 'scss/04-moleculas/migas-pan';
+@use 'scss/04-moleculas/listas';
+@use 'scss/04-moleculas/paginacion';
+@use 'scss/04-moleculas/cintillo';
 
 /* 5. ORGANISMOS (Secciones y Layouts complejos) */
-@use '05-organismos/hero';
-@use '05-organismos/banners';
-@use '05-organismos/tablas';
-@use '05-organismos/galerias';
-@use '05-organismos/panel-lateral';
-@use '05-organismos/cifras-dinamicas';
-@use '05-organismos/menu-anclas';
-@use '05-organismos/tarjetas-especiales';
+@use 'scss/05-organismos/hero';
+@use 'scss/05-organismos/banners';
+@use 'scss/05-organismos/tablas';
+@use 'scss/05-organismos/galerias';
+@use 'scss/05-organismos/panel-lateral';
+@use 'scss/05-organismos/cifras-dinamicas';
+@use 'scss/05-organismos/menu-anclas';
+@use 'scss/05-organismos/tarjetas-especiales';
 
 /* 6. UTILITIES / TRUMPS (Mayor especificidad) */
-@use '06-utilidades/tipografia';
-@use '06-utilidades/colores';
-@use '06-utilidades/movimiento';
-@use '06-utilidades/helpers';
+@use 'scss/06-utilidades/tipografia';
+@use 'scss/06-utilidades/colores';
+@use 'scss/06-utilidades/movimiento';
+@use 'scss/06-utilidades/helpers';
