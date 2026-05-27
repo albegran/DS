@@ -12,9 +12,12 @@
     <link rel="stylesheet" href="unav-styles.css">   
 
     <style>
-        /* Estilos de guía técnica */
-        html { scroll-behavior: smooth; background-color: var(--unav-grey-100); }
-        body { background-color: transparent; }
+        /* Estilos de contexto para la documentación */
+        html { scroll-behavior: smooth; }
+        body { background-color: var(--unav-grey-100); }
+        
+        .unav-doc-container { padding-top: var(--unav-spacing-3xl); padding-bottom: var(--unav-spacing-3xl); }
+        h2[id], h3[id], section[id] { scroll-margin-top: 6rem; }
         
         .unav-gridPlaceholder {
             background-color: var(--unav-grey-100);
@@ -29,7 +32,7 @@
         }
     </style>
 </head>
-<body class="bg-light">
+<body class="unav-font-primary unav-weight-regular unav-text-100" itemscope itemtype="https://schema.org/WebPage">
 
     <nav class="navbar navbar-light bg-white border-bottom py-3 sticky-top">
         <div class="container-lg d-flex justify-content-between align-items-center">
@@ -39,7 +42,7 @@
                     <span class="d-none d-md-inline" itemprop="name">Volver al Índice</span>
                 </a>
             </div>
-            <span class="unav-font-primary-condensed unav-weight-regular unav-text-150 m-0" style="color: var(--unav-black-500); line-height: 1;">
+            <span class="unav-font-primary-condensed unav-weight-regular unav-text-150 m-0" style="color: var(--unav-rojo-500); line-height: 1;">
                 Design System UNAV
             </span>
         </div>
@@ -47,32 +50,46 @@
 
     <main class="container-lg py-5" itemprop="mainContentOfPage">
         
-        <header class="text-center mb-5 border-bottom pb-4">
+        <header style="text-align: center; margin-bottom: var(--unav-spacing-2xl); border-bottom: 1px solid var(--unav-grey-200); padding-bottom: var(--unav-spacing-xl);">
             <h1 class="unav-font-primary unav-weight-medium unav-text-200 text-dark mb-3 unav-lh-tight" itemprop="name">Grid de Eventos</h1>
             <p class="unav-font-primary unav-weight-regular unav-text-100 text-muted m-0 unav-lh-normal" itemprop="description">
                 Contenedores de agenda y actividades con respuesta visual avanzada e interlineado normativo.
             </p>
+        </header>
 
-            <div class="unav-techSummary bg-white p-4 text-start mt-5 rounded shadow-sm border mx-auto" style="max-width: 900px;">
-                <h2 class="unav-font-primary unav-weight-bold unav-text-150 text-dark mb-3 unav-lh-snug"><i class="bi bi-calendar-event me-2" style="color: var(--unav-grey-400);"></i>Resumen Técnico y Funcional</h2>
-                <div class="row g-4 unav-font-primary unav-weight-regular unav-text-100 unav-lh-normal">
-                    <div class="col-md-6">
-                        <h3 class="unav-font-primary unav-weight-bold unav-text-125 text-dark mb-3 unav-lh-snug">UX y Micro-interacciones</h3>
-                        <ul class="mb-0 text-muted ps-3">
-                            <li class="mb-2"><strong>Acentuación en Hover:</strong> Al posicionarse sobre la tarjeta, el título cambia a <code>--unav-rojo-500</code> y activa un subrayado con <code>offset</code> para no interferir con la legibilidad.</li>
-                            <li><strong>Focus Visible:</strong> El anillo de foco asegura que los usuarios de teclado identifiquen el elemento activo sin ambigüedades.</li>
-                        </ul>
-                    </div>
-                    <div class="col-md-6 border-start-md ps-md-4">
-                        <h3 class="unav-font-primary unav-weight-bold unav-text-125 text-dark mb-3 unav-lh-snug">Jerarquía Editorial</h3>
-                        <ul class="mb-0 text-muted ps-3">
-                            <li class="mb-2"><strong>Fuentes de Impacto:</strong> Uso de pesos <em>Condensed Bold</em> para fechas y <em>Primary Light</em> para titulares grandes (1.50rem).</li>
-                            <li><strong>Escalabilidad:</strong> La hora se sitúa en un escalón inferior (1rem) para facilitar el escaneo rápido de la fecha principal.</li>
-                        </ul>
-                    </div>
+        <article class="unav-card unav-cardSolid" style="margin-bottom: var(--unav-spacing-3xl);">
+            <h2 class="unav-font-primary unav-weight-bold unav-text-150" style="color: var(--unav-rojo-500); border-bottom: 2px solid var(--unav-rojo-500); padding-bottom: var(--unav-spacing-sm); margin-bottom: var(--unav-spacing-lg);">Guía Técnica y Documentación Oficial</h2>
+            
+            <div class="row g-4">
+                <div class="col-md-6">
+                    <h3 class="unav-font-primary unav-weight-bold unav-text-125 mb-3" style="color: var(--unav-black-800);">1. Implementación OOCSS y Estructura</h3>
+                    <ul class="unav-font-primary unav-weight-regular unav-text-100" style="color: var(--unav-grey-700); padding-left: var(--unav-spacing-md);">
+                        <li style="margin-bottom: var(--unav-spacing-xs);"><strong>Estructura Reticular:</strong> El catálogo se apoya en el Grid nativo (<code>.row</code> y <code>.col-*</code>). Para garantizar simetría visual en eventos con descripciones dispares, es obligatorio aplicar la utilidad <code>.h-100</code> a las tarjetas internas (<code>.unav-card</code>).</li>
+                        <li style="margin-bottom: var(--unav-spacing-xs);"><strong>Composición de Tarjeta:</strong> Cada evento se divide en bloques lógicos: cabecera para imagen (opcional), bloque de fecha destacada y cuerpo (<code>.unav-cardBody</code>) para la información textual y llamadas a la acción.</li>
+                    </ul>
+        
+                    <h3 class="unav-font-primary unav-weight-bold unav-text-125 mb-3 mt-4" style="color: var(--unav-black-800);">2. Guía Técnica (JavaScript y Motion CSS)</h3>
+                    <ul class="unav-font-primary unav-weight-regular unav-text-100" style="color: var(--unav-grey-700); padding-left: var(--unav-spacing-md);">
+                        <li style="margin-bottom: var(--unav-spacing-xs);"><strong>Animación de Entrada (Staggering):</strong> Integración de un script mediante <code>IntersectionObserver</code>. Al hacer scroll, detecta los elementos con <code>.unav-efectoEntradaOculto</code> y les inyecta <code>.unav-efectoEntradaVisible</code> aplicando un retardo progresivo (staggering) para crear un efecto de cascada fluido y orgánico.</li>
+                        <li style="margin-bottom: var(--unav-spacing-xs);"><strong>Motion Tokens:</strong> Las transformaciones CSS (opacidad y traslación vertical) consumen directamente los tokens de duración y curva de aceleración del sistema (<em>easing</em>), garantizando coherencia con el resto de la interfaz.</li>
+                    </ul>
+                </div>
+                
+                <div class="col-md-6 border-start-md ps-md-4">
+                    <h3 class="unav-font-primary unav-weight-bold unav-text-125 mb-3" style="color: var(--unav-black-800);">3. Accesibilidad (A11y) y Schemas (SEO)</h3>
+                    <ul class="unav-font-primary unav-weight-regular unav-text-100" style="color: var(--unav-grey-700); padding-left: var(--unav-spacing-md);">
+                        <li style="margin-bottom: var(--unav-spacing-xs);"><strong>Marcado de Eventos (Schema.org):</strong> Es absolutamente vital envolver cada tarjeta en <code>itemscope itemtype="https://schema.org/Event"</code>. Se deben etiquetar propiedades críticas como <code>startDate</code>, <code>location</code>, <code>name</code> y <code>description</code> para su correcta indexación en Google Events.</li>
+                        <li style="margin-bottom: var(--unav-spacing-xs);"><strong>Accesibilidad:</strong> Las fechas gráficas deben tener un equivalente leído para lectores de pantalla. Los botones o enlaces "Ver más" deben incluir atributos <code>aria-label</code> o textos ocultos (<code>.visually-hidden</code>) que especifiquen a qué evento apuntan, evitando enlaces genéricos.</li>
+                    </ul>
+        
+                    <h3 class="unav-font-primary unav-weight-bold unav-text-125 mb-3 mt-4" style="color: var(--unav-black-800);">4. UX, Uso de Átomos y Layouts</h3>
+                    <ul class="unav-font-primary unav-weight-regular unav-text-100" style="color: var(--unav-grey-700); padding-left: var(--unav-spacing-md);">
+                        <li style="margin-bottom: var(--unav-spacing-xs);"><strong>Uso de Átomos:</strong> Las tarjetas de evento son organismos que consumen múltiples átomos del sistema: Etiquetas (<code>.unav-tag</code>) para categorización temática y el Enlace Flecha (<code>.unav-botonFlecha</code>) como CTA primario.</li>
+                        <li style="margin-bottom: var(--unav-spacing-xs);"><strong>Gestión de Medios:</strong> Si los eventos llevan fotografía adjunta, las imágenes deben renderizarse en formato WebP, manteniendo un <em>aspect-ratio</em> apaisado rígido (ej. 16:9 o 3:2) con un ancho de carga recomendado no superior a 600px por miniatura en grids de 3 columnas.</li>
+                    </ul>
                 </div>
             </div>
-        </header>
+        </article>
 
         <!-- 1. Cuatro Eventos (Grid 4 col) -->
         <section class="bg-white p-4 p-md-5 rounded shadow-sm border mb-5">

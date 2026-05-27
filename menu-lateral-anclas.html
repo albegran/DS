@@ -27,7 +27,7 @@
                     <span class="d-none d-md-inline" itemprop="name">Volver al Índice</span>
                 </a>
             </div>
-            <span class="unav-font-primary-condensed unav-weight-regular unav-text-150 m-0" style="color: var(--unav-black-500); line-height: 1;">
+            <span class="unav-font-primary-condensed unav-weight-regular unav-text-150 m-0" style="color: var(--unav-rojo-500); line-height: 1;">
                 Design System UNAV
             </span>
         </div>
@@ -40,27 +40,41 @@
             <p class="unav-font-primary unav-weight-regular unav-text-100 text-muted m-0" itemprop="description">
                 Navegación contextual con ScrollSpy sincronizado que hereda la física de los Bloques de Enlace.
             </p>
+        </header>
 
-            <div class="unav-techSummary bg-white p-4 text-start mt-5 rounded shadow-sm border mx-auto" style="max-width: 900px;">
-                <h2 class="unav-font-primary unav-weight-bold unav-text-150 text-dark mb-3"><i class="bi bi-gear-fill me-2" style="color: var(--unav-grey-400);"></i>Análisis Funcional y Técnico</h2>
-                <div class="row g-4 unav-font-primary unav-weight-regular unav-text-100">
-                    <div class="col-md-6">
-                        <h3 class="unav-font-primary unav-weight-bold unav-text-125 text-dark mb-3">Movimiento de Estado</h3>
-                        <ul class="mb-0 text-muted ps-3">
-                            <li class="mb-2"><strong>Sincronización OOCSS:</strong> Al entrar en una sección, el enlace recibe la clase <code>.unav-isActive</code>. La transición de color y opacidad del subrayado consume el token <code>--unav-transitionBase</code>.</li>
-                            <li><strong>Consistencia:</strong> El componente no inventa movimientos nuevos; aplica las transiciones universales del sistema para asegurar una experiencia predecible.</li>
-                        </ul>
-                    </div>
-                    <div class="col-md-6 border-start-md ps-md-4">
-                        <h3 class="unav-font-primary unav-weight-bold unav-text-125 text-dark mb-3">Especificaciones JS</h3>
-                        <ul class="mb-0 text-muted ps-3">
-                            <li class="mb-2"><strong>Intersection Observer:</strong> Motor eficiente de detección de scroll sin dependencias.</li>
-                            <li><strong>Cálculo Geométrico:</strong> Recalcula el subrayado dinámico al activarse el estado para asegurar precisión matemática en el trazo.</li>
-                        </ul>
-                    </div>
+        <article class="unav-card unav-cardSolid" style="margin-bottom: var(--unav-spacing-3xl);">
+            <h2 class="unav-font-primary unav-weight-bold unav-text-150" style="color: var(--unav-rojo-500); border-bottom: 2px solid var(--unav-rojo-500); padding-bottom: var(--unav-spacing-sm); margin-bottom: var(--unav-spacing-lg);">Guía Técnica y Documentación Oficial</h2>
+            
+            <div class="row g-4">
+                <div class="col-md-6">
+                    <h3 class="unav-font-primary unav-weight-bold unav-text-125 mb-3" style="color: var(--unav-black-800);">1. Implementación OOCSS y Estructura</h3>
+                    <ul class="unav-font-primary unav-weight-regular unav-text-100" style="color: var(--unav-grey-700); padding-left: var(--unav-spacing-md);">
+                        <li style="margin-bottom: var(--unav-spacing-xs);"><strong>Estructura Base:</strong> El menú se compone de una lista <code>ul</code> con clase <code>.unav-menuAnclas</code>. Cada ítem es un <code>li</code> que contiene un enlace con clase <code>.unav-linkAncla</code>.</li>
+                        <li style="margin-bottom: var(--unav-spacing-xs);"><strong>Estado Activo:</strong> La clase <code>.unav-isActive</code> marca el ancla correspondiente a la sección visible en pantalla, gestionada mediante lógica de <em>ScrollSpy</em>.</li>
+                    </ul>
+        
+                    <h3 class="unav-font-primary unav-weight-bold unav-text-125 mb-3 mt-4" style="color: var(--unav-black-800);">2. Guía Técnica (JavaScript y ScrollSpy)</h3>
+                    <ul class="unav-font-primary unav-weight-regular unav-text-100" style="color: var(--unav-grey-700); padding-left: var(--unav-spacing-md);">
+                        <li style="margin-bottom: var(--unav-spacing-xs);"><strong>Motor de Seguimiento:</strong> Utiliza un <code>IntersectionObserver</code> configurado con un <code>rootMargin</code> específico para detectar la sección activa mientras el usuario hace scroll.</li>
+                        <li style="margin-bottom: var(--unav-spacing-xs);"><strong>Animación de Subrayado:</strong> Un script calcula en tiempo real la posición y anchura del enlace activo, inyectando los valores en variables CSS (<code>--unav-lineWidth</code>, <code>--unav-lineLeft</code>) que animan un pseudo-elemento <code>::after</code>.</li>
+                    </ul>
+                </div>
+                
+                <div class="col-md-6 border-start-md ps-md-4">
+                    <h3 class="unav-font-primary unav-weight-bold unav-text-125 mb-3" style="color: var(--unav-black-800);">3. Accesibilidad (A11y) y Schemas (SEO)</h3>
+                    <ul class="unav-font-primary unav-weight-regular unav-text-100" style="color: var(--unav-grey-700); padding-left: var(--unav-spacing-md);">
+                        <li style="margin-bottom: var(--unav-spacing-xs);"><strong>Accesibilidad Semántica:</strong> Al ser un menú de navegación, es obligatorio envolverlo en un contenedor con <code>role="navigation"</code> o <code>nav</code>, y aplicar el schema <code>https://schema.org/SiteNavigationElement</code>.</li>
+                        <li style="margin-bottom: var(--unav-spacing-xs);"><strong>Navegación Teclado:</strong> El comportamiento de scroll suave (<code>scroll-behavior: smooth</code>) está garantizado en el CSS base, permitiendo una experiencia coherente tanto por clics como por navegación con teclado.</li>
+                    </ul>
+        
+                    <h3 class="unav-font-primary unav-weight-bold unav-text-125 mb-3 mt-4" style="color: var(--unav-black-800);">4. UX, Integración y Layout</h3>
+                    <ul class="unav-font-primary unav-weight-regular unav-text-100" style="color: var(--unav-grey-700); padding-left: var(--unav-spacing-md);">
+                        <li style="margin-bottom: var(--unav-spacing-xs);"><strong>Layout Lateral:</strong> El menú está diseñado para fijarse en el lateral mediante <code>position: sticky</code>, optimizando el espacio en pantallas de escritorio donde las secciones de contenido son extensas.</li>
+                        <li style="margin-bottom: var(--unav-spacing-xs);"><strong>Tipografía:</strong> Emplea <code>var(--unav-fontSize100)</code> con una jerarquía de pesos que distingue claramente el enlace inactivo del activo mediante el peso <code>var(--unav-fontWeightBold)</code> al activar el estado <code>.unav-isActive</code>.</li>
+                    </ul>
                 </div>
             </div>
-        </header>
+        </article>
 
         <div class="row">
             

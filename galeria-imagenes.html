@@ -12,12 +12,15 @@
     <link rel="stylesheet" href="unav-styles.css">   
 
     <style>
-        /* Estilos de guía técnica */
-        html { scroll-behavior: smooth; background-color: var(--unav-grey-100); }
-        body { background-color: transparent; }
+        /* Estilos de contexto para la documentación */
+        html { scroll-behavior: smooth; }
+        body { background-color: var(--unav-grey-100); }
+        
+        .unav-doc-container { padding-top: var(--unav-spacing-3xl); padding-bottom: var(--unav-spacing-3xl); }
+        h2[id], h3[id], section[id] { scroll-margin-top: 6rem; }
     </style>
 </head>
-<body class="bg-light" itemscope itemtype="https://schema.org/WebPage">
+<body class="unav-font-primary unav-weight-regular unav-text-100" itemscope itemtype="https://schema.org/WebPage">
 
     <nav class="navbar navbar-light bg-white border-bottom py-3 sticky-top">
         <div class="container-lg d-flex justify-content-between align-items-center">
@@ -33,32 +36,48 @@
         </div>
     </nav>
 
-    <main class="container-lg py-5" itemprop="mainContentOfPage">
+    <main class="container-lg unav-doc-container" itemprop="mainContentOfPage">
         
-        <header class="text-center mb-5 border-bottom pb-4">
+        <header style="text-align: center; margin-bottom: var(--unav-spacing-2xl); border-bottom: 1px solid var(--unav-grey-200); padding-bottom: var(--unav-spacing-xl);">
             <h1 class="unav-font-primary unav-weight-medium unav-text-200 text-dark mb-3 unav-lh-snug" itemprop="name">Galería de Imágenes Dinámica</h1>
             <p class="unav-font-primary unav-weight-regular unav-text-100 text-muted m-0 unav-lh-normal" itemprop="description">Componente responsivo inteligente con transiciones de Motion Tokens acopladas.</p>
+        </header>
+
+
+        <article class="unav-card unav-cardSolid" style="margin-bottom: var(--unav-spacing-3xl);">
+            <h2 class="unav-font-primary unav-weight-bold unav-text-150" style="color: var(--unav-rojo-500); border-bottom: 2px solid var(--unav-rojo-500); padding-bottom: var(--unav-spacing-sm); margin-bottom: var(--unav-spacing-lg);">Guía Técnica y Documentación Oficial</h2>
             
-            <div class="unav-techSummary bg-white p-4 text-start mt-5 rounded shadow-sm border mx-auto" style="max-width: 900px;">
-                <h2 class="unav-font-primary unav-weight-bold unav-text-150 text-dark mb-3 unav-lh-snug"><i class="bi bi-gear-fill me-2" style="color: var(--unav-grey-400);"></i>Resumen Técnico y Funcional</h2>
-                <div class="row g-4 unav-font-primary unav-weight-regular unav-text-100 unav-lh-normal">
-                    <div class="col-md-6">
-                        <h3 class="unav-font-primary unav-weight-bold unav-text-125 text-dark mb-3 unav-lh-snug">UX y Accesibilidad</h3>
-                        <ul class="mb-0 text-muted ps-3">
-                            <li class="mb-2"><strong>Focus Teclado Total:</strong> Las miniaturas inyectadas por JS ahora son botones nativos (<code>&lt;button&gt;</code>), permitiendo tabulación y foco interactivo integrado con <code>focus-visible</code>.</li>
-                            <li><strong>Despeje Visual:</strong> El scroll y contador unificados en una <em>Control Bar</em> inferior con botones de alto contraste y respuesta hover adaptativa.</li>
-                        </ul>
-                    </div>
-                    <div class="col-md-6 border-start-md ps-md-4">
-                        <h3 class="unav-font-primary unav-weight-bold unav-text-125 text-dark mb-3 unav-lh-snug">Movimiento y Layout</h3>
-                        <ul class="mb-0 text-muted ps-3">
-                            <li class="mb-2"><strong>Transición limpia:</strong> La imagen saliente se marca con <code>.unav-isOutgoing</code> para realizar el desvanecimiento de fondo (Cross-Fade) sin colapsar.</li>
-                            <li><strong>Sincronización Inteligente:</strong> Las flechas mutan de Arriba/Abajo a Izquierda/Derecha usando JS <code>ResizeObserver</code> para garantizar el scroll direccional correcto según el layout activo (Desktop vs Móvil).</li>
-                        </ul>
-                    </div>
+            <div class="row g-4">
+                <div class="col-md-6">
+                    <h3 class="unav-font-primary unav-weight-bold unav-text-125 mb-3" style="color: var(--unav-black-800);">1. Implementación OOCSS y Estructura</h3>
+                    <ul class="unav-font-primary unav-weight-regular unav-text-100" style="color: var(--unav-grey-700); padding-left: var(--unav-spacing-md);">
+                        <li style="margin-bottom: var(--unav-spacing-xs);"><strong>Estructura Base:</strong> El organismo completo se envuelve en <code>.unav-galleryWrapper</code>. Internamente gestiona la pista de medios con <code>.unav-mediaGallery</code> y aloja las diapositivas independientes en <code>.unav-mainImageWrapper</code>.</li>
+                        <li style="margin-bottom: var(--unav-spacing-xs);"><strong>Estado Dinámico:</strong> A través del atributo de datos <code>data-unav-scrolldir</code>, el componente define si su eje de lectura principal es horizontal o vertical, adaptándose al espacio disponible.</li>
+                    </ul>
+        
+                    <h3 class="unav-font-primary unav-weight-bold unav-text-125 mb-3 mt-4" style="color: var(--unav-black-800);">2. Guía Técnica (JavaScript y CSS)</h3>
+                    <ul class="unav-font-primary unav-weight-regular unav-text-100" style="color: var(--unav-grey-700); padding-left: var(--unav-spacing-md);">
+                        <li style="margin-bottom: var(--unav-spacing-xs);"><strong>Motor JS:</strong> Un script vigila el DOM (mediante <code>IntersectionObserver</code>) inicializando los contadores de las diapositivas de forma automática (ej. "1 / X") en el nodo <code>.unav-counter</code> según la cantidad de elementos detectados.</li>
+                        <li style="margin-bottom: var(--unav-spacing-xs);"><strong>Mutación de UI:</strong> El JavaScript muta inteligentemente las clases de los iconos de los botones (<code>bi-chevron-left/right</code> vs <code>bi-chevron-up/down</code>) basándose en la dirección del scroll asignada al contenedor.</li>
+                    </ul>
+                </div>
+                
+                <div class="col-md-6 border-start-md ps-md-4">
+                    <h3 class="unav-font-primary unav-weight-bold unav-text-125 mb-3" style="color: var(--unav-black-800);">3. Accesibilidad (A11y) y Schemas (SEO)</h3>
+                    <ul class="unav-font-primary unav-weight-regular unav-text-100" style="color: var(--unav-grey-700); padding-left: var(--unav-spacing-md);">
+                        <li style="margin-bottom: var(--unav-spacing-xs);"><strong>Soporte Teclado (A11y):</strong> Nivel AAA. El script integra un <em>Event Listener</em> global (<code>keydown</code>) que mapea las teclas direccionales (<code>ArrowLeft</code>, <code>ArrowRight</code>) a la función de cambio de <em>slide</em> cuando la galería está en pantalla.</li>
+                        <li style="margin-bottom: var(--unav-spacing-xs);"><strong>Microdatos Multimedia:</strong> La galería debe portar <code>itemscope itemtype="https://schema.org/ImageGallery"</code>, etiquetando cada diapositiva individual (o imagen ampliada) como <code>ImageObject</code>.</li>
+                    </ul>
+        
+                    <h3 class="unav-font-primary unav-weight-bold unav-text-125 mb-3 mt-4" style="color: var(--unav-black-800);">4. UX, Integración de Átomos y Layouts</h3>
+                    <ul class="unav-font-primary unav-weight-regular unav-text-100" style="color: var(--unav-grey-700); padding-left: var(--unav-spacing-md);">
+                        <li style="margin-bottom: var(--unav-spacing-xs);"><strong>Componentes Anidados (Átomos):</strong> Para los controles físicos de navegación se reutiliza el átomo <code>.unav-botonSecundario .unav-botonIconOnlySm</code>, garantizando el tamaño táctil mínimo normativo (32px).</li>
+                        <li style="margin-bottom: var(--unav-spacing-xs);"><strong>Medios y Carga:</strong> Las imágenes pesadas de la galería requieren carga diferida (<code>loading="lazy"</code>). El componente se adapta de forma fluida a las retículas responsivas de Bootstrap sin romper el <em>viewport</em>.</li>
+                    </ul>
                 </div>
             </div>
-        </header>
+        </article>
+
 
         <section class="bg-white p-4 p-md-5 rounded shadow-sm border mb-5">
             <h2 class="unav-font-primary unav-weight-bold unav-text-200 border-bottom pb-2 mb-4 text-dark mt-0 unav-lh-snug">1. Galería a 12 Columnas (Ancho Completo)</h2>

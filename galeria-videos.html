@@ -12,12 +12,15 @@
     <link rel="stylesheet" href="unav-styles.css">   
 
     <style>
-        /* Estilos de guía técnica */
-        html { scroll-behavior: smooth; background-color: var(--unav-grey-100); }
-        body { background-color: transparent; }
+        /* Estilos de contexto para la documentación */
+        html { scroll-behavior: smooth; }
+        body { background-color: var(--unav-grey-100); }
+        
+        .unav-doc-container { padding-top: var(--unav-spacing-3xl); padding-bottom: var(--unav-spacing-3xl); }
+        h2[id], h3[id], section[id] { scroll-margin-top: 6rem; }
     </style>
 </head>
-<body class="bg-light" itemscope itemtype="https://schema.org/WebPage">
+<body class="unav-font-primary unav-weight-regular unav-text-100" itemscope itemtype="https://schema.org/WebPage">
 
     <nav class="navbar navbar-light bg-white border-bottom py-3 sticky-top">
         <div class="container-lg d-flex justify-content-between align-items-center">
@@ -35,30 +38,44 @@
 
     <main class="container-lg py-5" itemprop="mainContentOfPage">
         
-        <header class="text-center mb-5 border-bottom pb-4">
+        <header style="text-align: center; margin-bottom: var(--unav-spacing-2xl); border-bottom: 1px solid var(--unav-grey-200); padding-bottom: var(--unav-spacing-xl);">
             <h1 class="unav-font-primary unav-weight-medium unav-text-200 text-dark mb-3 unav-lh-tight" itemprop="name">Galería de Vídeos</h1>
             <p class="unav-font-primary unav-weight-regular unav-text-100 text-muted m-0 unav-lh-normal" itemprop="description">Lista de reproducción multimedia responsiva con protección CSS contra títulos excesivamente largos e integración nativa de Motion Tokens.</p>
+        </header>
+
+        <article class="unav-card unav-cardSolid" style="margin-bottom: var(--unav-spacing-3xl);">
+            <h2 class="unav-font-primary unav-weight-bold unav-text-150" style="color: var(--unav-rojo-500); border-bottom: 2px solid var(--unav-rojo-500); padding-bottom: var(--unav-spacing-sm); margin-bottom: var(--unav-spacing-lg);">Guía Técnica y Documentación Oficial</h2>
             
-            <div class="unav-techSummary bg-white p-4 text-start mt-5 rounded shadow-sm border mx-auto" style="max-width: 900px;">
-                <h2 class="unav-font-primary unav-weight-bold unav-text-150 text-dark mb-3 unav-lh-snug"><i class="bi bi-gear-fill me-2" style="color: var(--unav-grey-400);"></i>Análisis Funcional y Técnico</h2>
-                <div class="row g-4 unav-font-primary unav-weight-regular unav-text-100 unav-lh-normal">
-                    <div class="col-md-6">
-                        <h3 class="unav-font-primary unav-weight-bold unav-text-125 text-dark mb-3 unav-lh-snug">UX: Enmarcado Fijo</h3>
-                        <ul class="mb-0 text-muted ps-3">
-                            <li class="mb-2"><strong>Visibilidad Continua:</strong> Los controles de navegación están anclados a los extremos (Arriba/Abajo o Izquierda/Derecha) envolviendo las miniaturas. El usuario nunca pierde los controles de vista al hacer scroll.</li>
-                            <li><strong>Responsividad Fluida:</strong> La estructura Flex muta de columna a fila según las <em>Container Queries</em> de forma automática y fluida.</li>
-                        </ul>
-                    </div>
-                    <div class="col-md-6 border-start-md ps-md-4">
-                        <h3 class="unav-font-primary unav-weight-bold unav-text-125 text-dark mb-3 unav-lh-snug">Accesibilidad y Tipografía</h3>
-                        <ul class="mb-0 text-muted ps-3">
-                            <li class="mb-2"><strong>Marcado SEO / GEO:</strong> Generación estructurada de <code>VideoObject</code> e <code>ItemList</code> mediante Javascript para facilitar el rastreo algorítmico.</li>
-                            <li><strong>Interlineado Normativo:</strong> Integración estricta de las clases <code>.unav-lh-tight</code>, <code>snug</code> y <code>normal</code> según las especificaciones tipográficas del DS.</li>
-                        </ul>
-                    </div>
+            <div class="row g-4">
+                <div class="col-md-6">
+                    <h3 class="unav-font-primary unav-weight-bold unav-text-125 mb-3" style="color: var(--unav-black-800);">1. Implementación OOCSS y Arquitectura</h3>
+                    <ul class="unav-font-primary unav-weight-regular unav-text-100" style="color: var(--unav-grey-700); padding-left: var(--unav-spacing-md);">
+                        <li style="margin-bottom: var(--unav-spacing-xs);"><strong>Estructura Base:</strong> El organismo <code>.unav-videoGalleryWrapper</code> encapsula dos grandes bloques: el escenario principal (<code>.unav-videoStage</code>) y la barra lateral de reproducción (<code>.unav-videoPlaylistSidebar</code>).</li>
+                        <li style="margin-bottom: var(--unav-spacing-xs);"><strong>Responsividad Fluida:</strong> La estructura muta automáticamente de un layout de columnas (lista vertical) a filas (lista horizontal en el <em>bottom</em>) según el espacio disponible en el Grid de Bootstrap.</li>
+                    </ul>
+        
+                    <h3 class="unav-font-primary unav-weight-bold unav-text-125 mb-3 mt-4" style="color: var(--unav-black-800);">2. Guía Técnica (JavaScript y Renderizado)</h3>
+                    <ul class="unav-font-primary unav-weight-regular unav-text-100" style="color: var(--unav-grey-700); padding-left: var(--unav-spacing-md);">
+                        <li style="margin-bottom: var(--unav-spacing-xs);"><strong>Inyección Dinámica:</strong> Un script lee un array de datos (JSON) y construye los botones de la playlist inyectando dinámicamente reproductores de YouTube (mediante <code>iframe</code>) o vídeos nativos (<code>&lt;video&gt;</code> HTML5) en el escenario.</li>
+                        <li style="margin-bottom: var(--unav-spacing-xs);"><strong>Motor de Scroll:</strong> Las funciones <code>scrollPlaylistVertical</code> y <code>scrollPlaylistHorizontal</code> desplazan la lista matemáticamente, mientras que al seleccionar un vídeo se ejecuta <code>scrollIntoView</code> para centrar la miniatura activa en pantalla.</li>
+                    </ul>
+                </div>
+                
+                <div class="col-md-6 border-start-md ps-md-4">
+                    <h3 class="unav-font-primary unav-weight-bold unav-text-125 mb-3" style="color: var(--unav-black-800);">3. Accesibilidad (A11y) y Schemas (SEO)</h3>
+                    <ul class="unav-font-primary unav-weight-regular unav-text-100" style="color: var(--unav-grey-700); padding-left: var(--unav-spacing-md);">
+                        <li style="margin-bottom: var(--unav-spacing-xs);"><strong>A11y (Roles ARIA):</strong> La lista de reproducción se declara como <code>role="tablist"</code> y cada miniatura de vídeo como <code>role="tab"</code>. Los botones de scroll incluyen <code>aria-label</code> descriptivos ("Subir vídeos", etc.).</li>
+                        <li style="margin-bottom: var(--unav-spacing-xs);"><strong>Microdatos SEO en JS:</strong> El script inyecta el esquema <code>https://schema.org/ItemList</code> en la lista, y a cada botón le asigna <code>ListItem</code>, generando la etiqueta <code>itemprop="position"</code> y <code>itemprop="name"</code> al vuelo para maximizar la indexación de las listas de reproducción de vídeo.</li>
+                    </ul>
+        
+                    <h3 class="unav-font-primary unav-weight-bold unav-text-125 mb-3 mt-4" style="color: var(--unav-black-800);">4. UX, Tipografía y Uso de Átomos</h3>
+                    <ul class="unav-font-primary unav-weight-regular unav-text-100" style="color: var(--unav-grey-700); padding-left: var(--unav-spacing-md);">
+                        <li style="margin-bottom: var(--unav-spacing-xs);"><strong>UX (Enmarcado Fijo):</strong> Los controles de navegación están anclados a los extremos (Arriba/Abajo o Izq/Der). El usuario nunca pierde la botonera al hacer scroll por la lista de miniaturas.</li>
+                        <li style="margin-bottom: var(--unav-spacing-xs);"><strong>Tipografía Segura:</strong> Se imponen las clases de interlineado <code>.unav-lh-snug</code> y <code>.unav-lh-relaxed</code> para evitar que los títulos excesivamente largos de YouTube colapsen y desborden la geometría de las tarjetas.</li>
+                    </ul>
                 </div>
             </div>
-        </header>
+        </article>
 
         <section class="bg-white p-4 p-md-5 rounded shadow-sm border mb-5">
             <h2 class="unav-sectionTitle unav-font-primary unav-weight-bold unav-text-200 border-bottom pb-2 mb-4 text-dark mt-0 unav-lh-snug">1. Galería a 12 Columnas (Ancho Completo)</h2>

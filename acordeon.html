@@ -15,6 +15,9 @@
         /* Estilos de guía técnica */
         html { scroll-behavior: smooth; background-color: var(--unav-grey-100); }
         body { background-color: transparent; }
+
+        .unav-doc-container { padding-top: var(--unav-spacing-3xl); padding-bottom: var(--unav-spacing-3xl); }
+        h2[id], h3[id], section[id] { scroll-margin-top: 6rem; }
     </style>
 </head>
 <body class="bg-light">
@@ -33,33 +36,47 @@
         </div>
     </nav>
 
-    <main class="container-lg py-5" itemprop="mainContentOfPage">
+    <main class="container-lg unav-doc-container" itemprop="mainContentOfPage">
         
-        <header class="text-center mb-5 border-bottom pb-4">
+        <header style="text-align: center; margin-bottom: var(--unav-spacing-2xl); border-bottom: 1px solid var(--unav-grey-200); padding-bottom: var(--unav-spacing-xl);">
             <h1 class="unav-font-primary unav-weight-medium unav-text-200 text-dark mb-3" itemprop="name">Acordeones y Desplegables</h1>
             <p class="unav-font-primary unav-weight-regular unav-text-100 text-muted m-0" itemprop="description">Componente flexible para la gestión de contenidos densos mediante visibilidad progresiva.</p>
+        </header>
 
-            <div class="unav-techSummary bg-white p-4 text-start mt-5 rounded shadow-sm border mx-auto" style="max-width: 900px;">
-                <h2 class="unav-font-primary unav-weight-bold unav-text-150 text-dark mb-3"><i class="bi bi-gear-fill me-2" style="color: var(--unav-grey-400);"></i>Análisis Funcional y Técnico</h2>
-                <div class="row g-4 unav-font-primary unav-weight-regular unav-text-100">
-                    <div class="col-md-6">
-                        <h3 class="unav-font-primary unav-weight-bold unav-text-125 text-dark mb-3">Movimiento Estructural</h3>
-                        <ul class="mb-0 text-muted ps-3">
-                            <li class="mb-2"><strong>Transición por Tokens:</strong> La apertura y cierre en <code>max-height</code> consume dinámicamente los Motion Tokens de <code>unav-movimiento.css</code>.</li>
-                            <li><strong>Tipografía Reactiva:</strong> Transición de Roboto Light (300) a Bold (700) sincronizada con el giro del icono para indicar estado activo.</li>
-                        </ul>
-                    </div>
-                    <div class="col-md-6 border-start-md ps-md-4">
-                        <h3 class="unav-font-primary unav-weight-bold unav-text-125 text-dark mb-3">Especificaciones JS y SEO</h3>
-                        <ul class="mb-0 text-muted ps-3">
-                            <li class="mb-2"><strong>OOCSS Multi-Apertura:</strong> Inyección de la clase <code>.unav-allowMulti</code> permite la coexistencia de múltiples paneles abiertos simultáneamente.</li>
-                            <li class="mb-2"><strong>Vanilla JS Unificado:</strong> Variables del DOM y funciones de evento renombradas para cumplir la nomenclatura <code>camelCase</code> con prefijo <code>unav-</code>.</li>
-                            <li><strong>SEO:</strong> Marcado <code>FAQPage</code> y <code>Question</code>/<code>Answer</code> para indexación enriquecida en buscadores.</li>
-                        </ul>
-                    </div>
+        <article class="unav-card unav-cardSolid" style="margin-bottom: var(--unav-spacing-3xl);">
+            <h2 class="unav-font-primary unav-weight-bold unav-text-150" style="color: var(--unav-rojo-500); border-bottom: 2px solid var(--unav-rojo-500); padding-bottom: var(--unav-spacing-sm); margin-bottom: var(--unav-spacing-lg);">Guía Técnica y Documentación Oficial</h2>
+            
+            <div class="row g-4">
+                <div class="col-md-6">
+                    <h3 class="unav-font-primary unav-weight-bold unav-text-125 mb-3" style="color: var(--unav-black-800);">1. Implementación OOCSS y Modificadores</h3>
+                    <ul class="unav-font-primary unav-weight-regular unav-text-100" style="color: var(--unav-grey-700); padding-left: var(--unav-spacing-md);">
+                        <li style="margin-bottom: var(--unav-spacing-xs);"><strong>Estructura Base:</strong> El organismo se envuelve en <code>.unav-accordionGroup</code>. Cada ítem consta de un botón <code>.unav-accordionHeader</code> y un contenedor <code>.unav-accordionPanel</code>.</li>
+                        <li style="margin-bottom: var(--unav-spacing-xs);"><strong>Modificador de Comportamiento:</strong> Por defecto, los acordeones actúan como "mutuamente excluyentes" (cerrando el anterior). Si se añade la clase <code>.unav-allowMulti</code> al grupo contenedor, se permite la apertura simultánea de múltiples paneles.</li>
+                    </ul>
+        
+                    <h3 class="unav-font-primary unav-weight-bold unav-text-125 mb-3 mt-4" style="color: var(--unav-black-800);">2. Guía Técnica (HTML/CSS/JS)</h3>
+                    <ul class="unav-font-primary unav-weight-regular unav-text-100" style="color: var(--unav-grey-700); padding-left: var(--unav-spacing-md);">
+                        <li style="margin-bottom: var(--unav-spacing-xs);"><strong>Renderizado DOM (JS):</strong> Un script ligero y nativo interactúa con el DOM calculando dinámicamente el <code>scrollHeight</code> del panel al hacer clic, inyectándolo en la propiedad CSS <code>max-height</code> para sortear la limitación clásica de animación de <code>height: auto</code>.</li>
+                        <li style="margin-bottom: var(--unav-spacing-xs);"><strong>CSS Motion:</strong> El movimiento y la rotación del icono indicador se gestionan vía CSS delegando la velocidad a los <em>Motion Tokens</em> del sistema, como <code>var(--unav-durationNormal)</code>.</li>
+                    </ul>
+                </div>
+                
+                <div class="col-md-6 border-start-md ps-md-4">
+                    <h3 class="unav-font-primary unav-weight-bold unav-text-125 mb-3" style="color: var(--unav-black-800);">3. Accesibilidad (A11y) y Schemas (SEO)</h3>
+                    <ul class="unav-font-primary unav-weight-regular unav-text-100" style="color: var(--unav-grey-700); padding-left: var(--unav-spacing-md);">
+                        <li style="margin-bottom: var(--unav-spacing-xs);"><strong>A11y (Lectores de Pantalla):</strong> Es estricto el uso bidireccional de atributos. El botón requiere <code>aria-expanded="true/false"</code> y el panel oculto se gestiona visualmente a través del JS pero se oculta a la semántica si es necesario.</li>
+                        <li style="margin-bottom: var(--unav-spacing-xs);"><strong>Microdatos de Google:</strong> Si el acordeón se usa para Preguntas Frecuentes, el contenedor global debe incluir <code>itemscope itemtype="https://schema.org/FAQPage"</code>, marcando cada ítem como <code>Question</code> y el panel como <code>Answer</code>.</li>
+                    </ul>
+        
+                    <h3 class="unav-font-primary unav-weight-bold unav-text-125 mb-3 mt-4" style="color: var(--unav-black-800);">4. UX, Uso de Átomos y Layout</h3>
+                    <ul class="unav-font-primary unav-weight-regular unav-text-100" style="color: var(--unav-grey-700); padding-left: var(--unav-spacing-md);">
+                        <li style="margin-bottom: var(--unav-spacing-xs);"><strong>Integración de Átomos:</strong> El panel desplegable funciona como un lienzo libre que puede contener textos, "Botones Flecha" o listas en su interior.</li>
+                        <li style="margin-bottom: var(--unav-spacing-xs);"><strong>Grids y Layouts:</strong> Los grupos de acordeón ocupan por defecto el 100% del contenedor padre. Se adaptan perfectamente a las columnas de Bootstrap, recomendándose anchos de lectura entre <code>col-md-8</code> y <code>col-md-10</code> centrados para evitar líneas de texto excesivamente largas.</li>
+                    </ul>
                 </div>
             </div>
-        </header>
+        </article>
+        
 
         <section class="bg-white p-4 p-md-5 rounded shadow-sm border mb-5">
             <h2 class="unav-font-primary unav-weight-bold unav-text-200 border-bottom pb-2 mb-4 text-dark mt-0">1. Alineación e Iconografía</h2>

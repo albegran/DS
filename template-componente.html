@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <link rel="stylesheet" href="unav-styles.css">
+    <style>
+        .unav-doc-section { margin-bottom: var(--unav-spacing-3xl); }
+        .unav-doc-header { border-bottom: 2px solid var(--unav-rojo-600); margin-bottom: var(--unav-spacing-xl); }
+    </style>
+</head>
+<body>
+    <main class="container-lg py-5">
+        <div class="row">
+            <!-- Columna principal de 12 -->
+            <article class="col-12">
+                <header class="unav-doc-header">
+                    <h1 class="unav-text-400">Nombre del Componente</h1>
+                </header>
+
+                <!-- 1. Guía de Implementación -->
+                <section class="unav-doc-section">
+                    <h2>Guía de Implementación y Modificadores</h2>
+                    <p>Uso de clases: <code>.unav-nombreComponente</code>. Modificadores: <code>.unav-nombreComponente--tipo</code>.</p>
+                </section>
+
+                <!-- 2. Guía Técnica -->
+                <section class="unav-doc-section">
+                    <h2>Guía Técnica</h2>
+                    <p>Construcción: HTML5 semántico. CSS: Consumo de variables <code>var(--unav-...)</code>. JS: IntersectionObserver para animaciones.</p>
+                </section>
+
+                <!-- 3. Accesibilidad y Schema -->
+                <section class="unav-doc-section">
+                    <h2>Accesibilidad (A11y) y Schema.org</h2>
+                    <p>Atributos: <code>aria-label</code>, <code>role</code>. Esquema: <code>itemscope itemtype="..."</code>.</p>
+                </section>
+
+                <!-- 4. UX, Layout y Medios -->
+                <section class="unav-doc-section">
+                    <h2>UX, Layout y Medios</h2>
+                    <p>Imágenes: Proporción 16:9, formato WebP. Tipografía: Uso de clases <code>.unav-text-100</code>.</p>
+                </section>
+            </article>
+        </div>
+    </main>
+</body>
+</html>

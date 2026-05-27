@@ -75,7 +75,7 @@
         /* Contenedor de la imagen Hero */
         .unav-heroEditorial-imageWrapper {
             width: 100%;
-            border-radius: 8px;
+            border-radius: 0px;
             overflow: hidden;
             box-shadow: 0 10px 30px rgba(0,0,0,0.08);
         }
@@ -87,6 +87,20 @@
             object-fit: cover;
             display: block;
         }
+
+
+
+        /* Nuevo componente: Cita Destacada (Pull Quote) */
+.unav-pullquote {
+    border-left: 4px solid var(--unav-rojo-500);
+    padding-left: var(--unav-spacing-lg);
+    font-family: var(--unav-fontFamilySecondaryPlayfair);
+    font-size: var(--unav-fontSize200);
+    line-height: var(--unav-lineHeightTight);
+    margin: var(--unav-spacing-xl) 0;
+    color: var(--unav-black-800);
+    font-style: italic;
+}
     </style>
 </head>
 
@@ -141,67 +155,156 @@
             </div>
         </header>
 
-        <!-- ZONA DEL COMPONENTE: HERO EDITORIAL -->
-        <article class="unav-heroEditorial border rounded shadow-sm mx-auto mb-5" style="max-width: 1100px;" itemscope itemtype="https://schema.org/Article">
-            
-            <!-- Etiqueta oculta para SEO requerida por Schema -->
-            <meta itemprop="headline" content="La OTAN existe para que las familias de Occidente puedan criar a sus hijos">
-            <meta itemprop="author" content="Nuestro Tiempo">
-            
-            <div class="container px-4 px-lg-5">
-                
-                <!-- Etiqueta superior (Animada) -->
-                <div class="mb-4 text-center unav-heroEditorial-fadeInUp" style="animation-delay: 0.1s;">
-                    <span class="unav-font-primary-condensed unav-weight-bold text-uppercase" style="letter-spacing: var(--unav-trackingWide); color: var(--unav-rojo-500); font-size: var(--unav-fontSize075);" itemprop="articleSection">
-                        Geopolítica &middot; Nuestro Tiempo
-                    </span>
+
+
+
+
+
+
+
+
+
+
+
+
+<!-- ESTRUCTURA HERO EDITORIAL: INTEGRACIÓN DE EFECTOS Y GRID 4/8 -->
+<article class="container unav-heroEditorial my-5" itemscope itemtype="https://schema.org/Article">
+    
+    <!-- HEADER (12 COLUMNAS) -->
+    <header class="row mb-5">
+        <div class="col-12 text-center">
+            <!-- TITULAR CON EFECTO REVEAL -->
+            <h1 class="unav-heroEditorial-title unav-font-secondary-playfair mb-3" itemprop="name">
+                <span class="unav-heroEditorial-mask">
+                    <span class="unav-heroEditorial-revealText" style="animation-delay: 0.2s;">La OTAN existe para que</span>
+                </span>
+                <span class="unav-heroEditorial-mask">
+                    <span class="unav-heroEditorial-revealText" style="animation-delay: 0.35s;">las familias de Occidente</span>
+                </span>
+                <span class="unav-heroEditorial-mask">
+                    <span class="unav-heroEditorial-revealText" style="animation-delay: 0.5s;">puedan criar a sus hijos</span>
+                </span>
+            </h1>
+
+            <!-- FECHA (Token Rojo-500) Y AUTOR -->
+            <div class="mb-2">
+                <span class="unav-font-primary unav-weight-bold" style="color: var(--unav-rojo-500);">26 de mayo de 2026</span>
+            </div>
+            <div class="mb-4 text-muted unav-font-primary unav-weight-medium">
+                Por: <span itemprop="author">Ignacio J. M.</span>
+            </div>
+
+            <!-- FOTOGRAFÍA (Ángulos rectos, sin borde) -->
+            <figure class="unav-heroEditorial-imageWrapper mb-2" style="border: none;" itemprop="image">
+                <img src="https://picsum.photos/id/1015/1200/500" alt="OTAN Cumbre" class="img-fluid w-100" style="border-radius: 0;" itemprop="contentUrl">
+            </figure>
+
+            <div class="row align-items-center mb-5">
+                <div class="col-10 text-start">
+                    <p class="unav-font-primary text-muted small m-0">Detalle de la arquitectura durante la cumbre.</p>
                 </div>
+                <div class="col-2 text-end">
+                    <span class="unav-font-primary unav-weight-bold small">Foto: EFE</span>
+                </div>
+            </div>
+        </div>
+    </header>
 
-                <!-- TITULAR (Animación Reveal) -->
-                <h1 class="unav-heroEditorial-title unav-font-secondary-playfair text-center mb-5" itemprop="name">
-                    <!-- Línea 1 -->
-                    <span class="unav-heroEditorial-mask">
-                        <span class="unav-heroEditorial-revealText unav-weight-regular" style="animation-delay: 0.2s;">
-                            «La OTAN existe para que
-                        </span>
-                    </span>
-                    <!-- Línea 2 -->
-                    <span class="unav-heroEditorial-mask">
-                        <span class="unav-heroEditorial-revealText unav-weight-regular" style="animation-delay: 0.35s;">
-                            las familias de Occidente
-                        </span>
-                    </span>
-                    <!-- Línea 3 -->
-                    <span class="unav-heroEditorial-mask">
-                        <span class="unav-heroEditorial-revealText unav-weight-regular" style="animation-delay: 0.5s;">
-                            puedan criar a sus hijos»
-                        </span>
-                    </span>
-                </h1>
-
-                <!-- ENTRADILLA / ABSTRACT (Animada) -->
-                <div class="row justify-content-center unav-heroEditorial-fadeInUp" style="animation-delay: 0.7s;">
-                    <div class="col-lg-8 text-center">
-                        <p class="unav-font-primary unav-weight-regular unav-text-125" style="color: var(--unav-grey-600); line-height: 1.6;" itemprop="abstract">
-                            Ante el cambio actual de las dinámicas de política exterior, el historiador militar Michael Neiberg apuesta por un entendimiento cultural profundo entre Europa y Estados Unidos.
-                        </p>
+    <!-- CUERPO DE LA NOTICIA (4 COLUMNAS ACORDEÓN / 8 COLUMNAS NOTICIA) -->
+    <div class="row">
+        
+        <!-- SIDEBAR: ACORDEÓN COMPARTIR -->
+        <aside class="col-md-4 mb-4">
+            <div class="accordion unav-accordion" id="accordionCompartir">
+                <div class="accordion-item" style="border-radius: 0;">
+                    <h2 class="accordion-header" id="headingCompartir">
+                        <button class="accordion-button collapsed unav-font-primary" type="button" data-bs-toggle="collapse" data-bs-target="#collapseCompartir">
+                            <i class="bi bi-share me-2"></i> COMPARTE EN REDES
+                        </button>
+                    </h2>
+                    <div id="collapseCompartir" class="accordion-collapse collapse" data-bs-parent="#accordionCompartir">
+                        <div class="accordion-body d-flex flex-column gap-2">
+                            <a href="#" class="unav-botonSecundario unav-botonFit">Facebook</a>
+                            <a href="#" class="unav-botonSecundario unav-botonFit">Twitter / X</a>
+                            <a href="#" class="unav-botonSecundario unav-botonFit">LinkedIn</a>
+                        </div>
                     </div>
                 </div>
-                
-                <!-- IMAGEN HERO (Animada) -->
-                <div class="mt-5 unav-heroEditorial-fadeInUp" style="animation-delay: 0.9s;">
-                    <figure class="unav-heroEditorial-imageWrapper m-0" itemprop="image" itemscope itemtype="https://schema.org/ImageObject">
-                        <!-- Se inserta una imagen representativa para visualización del componente -->
-                        <img src="https://images.unsplash.com/photo-1529156069898-49953eb1b5ae?auto=format&fit=crop&w=1600&q=80" 
-                             alt="Fotografía conceptual de política exterior y familia" 
-                             class="img-fluid" 
-                             itemprop="contentUrl">
-                        <meta itemprop="description" content="Imagen representativa de la geopolítica y familia">
-                    </figure>
-                </div>
-
             </div>
-        </article>
+        </aside>
+
+        <!-- MAIN: ENTRADILLA Y CUERPO (8 COLUMNAS) -->
+        <main class="col-md-8 unav-articleBody">
+            <p class="unav-font-primary unav-text-125 unav-lh-normal mb-5" style="color: var(--unav-grey-600);">
+                Ante el <a href="#" class="unav-enlaceInline">cambio actual</a> de las dinámicas de política exterior, el historiador militar Michael Neiberg apuesta por un entendimiento cultural profundo.
+            </p>
+
+            <p class="unav-font-primary unav-weight-regular unav-text-100 unav-lh-normal m-0">
+                En la era actual, la seguridad transatlántica no es solo una cuestión de despliegue militar, sino una arquitectura cimentada en valores compartidos. Neiberg argumenta que la percepción pública de la <a href="#" class="unav-enlaceInline">OTAN</a> ha sufrido una transformación radical.
+            </p>
+
+            <!-- CITA DESTACADA -->
+            <blockquote class="unav-pullquote">
+                "La estabilidad familiar es el motor silencioso que sostiene la seguridad de las democracias occidentales."
+            </blockquote>
+
+            <p class="unav-font-primary unav-weight-regular unav-text-100 unav-lh-normal m-0">
+                La alianza ha pasado de ser un ente puramente defensivo a convertirse en un nodo de cooperación cultural y tecnológica. Este cambio de paradigma requiere un nuevo contrato social con las generaciones jóvenes.
+            </p>
+
+            <!-- IMAGEN DE APOYO HORIZONTAL -->
+            <figure class="mb-4">
+                <img src="https://picsum.photos/id/1025/800/400" class="img-fluid w-100" style="border-radius: 0;">
+                <div class="row mt-2"><div class="col-10 small text-muted">Sala de conferencias.</div><div class="col-2 text-end small fw-bold">Foto: AP</div></div>
+            </figure>
+
+            <h2 class="unav-font-primary unav-weight-bold mb-3" style="font-size: 1.25rem;">La metamorfosis del concepto de defensa</h2>
+            <p class="unav-font-primary unav-weight-regular unav-text-100 unav-lh-normal m-0">
+                La capacidad de las <a href="#" class="unav-enlaceInline">familias</a> para proyectar su futuro depende, en última instancia, de la estabilidad que las instituciones internacionales son capaces de garantizar.
+            </p>
+
+            <!-- IMAGEN VERTICAL + TEXTO -->
+            <div class="row mb-4">
+                <div class="col-6">
+                    <img src="https://picsum.photos/id/103/400/600" class="img-fluid w-100" style="border-radius: 0;">
+                    <div class="small text-muted mt-2">Retrato institucional.</div>
+                </div>
+                <div class="col-6">
+                    <p class="unav-font-primary unav-weight-regular unav-text-100 unav-lh-normal m-0">
+                        Es precisamente en este punto donde la narrativa de la seguridad cobra un sentido humano. No se trata solo de la protección de las fronteras físicas, sino de la preservación de un estilo de vida.
+                    </p>
+                </div>
+            </div>
+        </main>
+    </div>
+</article>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
     </main>
 

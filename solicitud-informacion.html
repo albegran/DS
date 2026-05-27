@@ -27,7 +27,7 @@
                     <span class="d-none d-md-inline" itemprop="name">Volver al Índice</span>
                 </a>
             </div>
-            <span class="unav-font-primary-condensed unav-weight-regular unav-text-150 m-0" style="color: var(--unav-black-500); line-height: 1;">
+            <span class="unav-font-primary-condensed unav-weight-regular unav-text-150 m-0" style="color: var(--unav-rojo-500); line-height: 1;">
                 Design System UNAV
             </span>
         </div>
@@ -40,28 +40,41 @@
             <p class="unav-font-primary unav-weight-regular unav-text-100 text-muted m-0" itemprop="description">
                 Componente lateral desplegable (Offcanvas) con botón de llamada a la acción (CTA) flotante e Iframe integrado.
             </p>
+        </header>
 
-            <div class="unav-techSummary bg-white p-4 text-start mt-5 rounded shadow-sm border mx-auto" style="max-width: 900px;">
-                <h2 class="unav-font-primary unav-weight-bold unav-text-150 text-dark mb-3"><i class="bi bi-code-slash me-2" style="color: var(--unav-grey-400);"></i>Especificaciones del Componente</h2>
-                <div class="row g-4 unav-font-primary unav-weight-regular unav-text-100">
-                    <div class="col-md-6">
-                        <h3 class="unav-font-primary unav-weight-bold unav-text-125 text-dark mb-3">Comportamiento OOCSS</h3>
-                        <ul class="mb-0 text-muted ps-3">
-                            <li class="mb-2"><strong>Despliegue Dinámico:</strong> Contenedor gobernado por las clases de estado <code>.unav-isOpen</code> y <code>.unav-isActive</code> manipuladas vía JS para controlar los transforms.</li>
-                            <li><strong>Responsividad Estructural:</strong> Transiciona de un panel lateral (right-side) en Desktop a un "bottom-sheet" interactivo en dispositivos móviles.</li>
-                        </ul>
-                    </div>
-                    <div class="col-md-6 border-start-md ps-md-4">
-                        <h3 class="unav-font-primary unav-weight-bold unav-text-125 text-dark mb-3">Accesibilidad Inteligente</h3>
-                        <ul class="mb-0 text-muted ps-3">
-                            <li class="mb-2"><strong>Foco Asimétrico:</strong> El anillo de foco (teclado) se dibuja mediante un pseudo-elemento <code>::before</code> que crea un marco exterior de alto contraste omitiendo estratégicamente el lado adherido al panel para no solaparlo.</li>
-                            <li class="mb-2"><strong>SEO Contextual:</strong> Marcado estricto bajo jerarquía <code>ContactPage</code> y <code>ContactPoint</code>.</li>
-                            <li><strong>UX de Bloqueo:</strong> Bloqueo del <code>overflow</code> en el documento principal al abrir, previniendo doble scroll.</li>
-                        </ul>
-                    </div>
+        <article class="unav-card unav-cardSolid" style="margin-bottom: var(--unav-spacing-3xl);">
+            <h2 class="unav-font-primary unav-weight-bold unav-text-150" style="color: var(--unav-rojo-500); border-bottom: 2px solid var(--unav-rojo-500); padding-bottom: var(--unav-spacing-sm); margin-bottom: var(--unav-spacing-lg);">Guía Técnica y Documentación Oficial</h2>
+            
+            <div class="row g-4">
+                <div class="col-md-6">
+                    <h3 class="unav-font-primary unav-weight-bold unav-text-125 mb-3" style="color: var(--unav-black-800);">1. Implementación OOCSS y Estructura</h3>
+                    <ul class="unav-font-primary unav-weight-regular unav-text-100" style="color: var(--unav-grey-700); padding-left: var(--unav-spacing-md);">
+                        <li style="margin-bottom: var(--unav-spacing-xs);"><strong>Estructura Base:</strong> El componente se basa en un panel lateral <code>.unav-panelSolicitud</code> (oculto por defecto) y un <code>#unavOverlay</code> para oscurecer el fondo.</li>
+                        <li style="margin-bottom: var(--unav-spacing-xs);"><strong>Estado Activo:</strong> La apertura y cierre se gestionan inyectando la clase <code>.unav-isOpen</code> al panel y <code>.unav-isActive</code> al overlay.</li>
+                    </ul>
+        
+                    <h3 class="unav-font-primary unav-weight-bold unav-text-125 mb-3 mt-4" style="color: var(--unav-black-800);">2. Guía Técnica (JavaScript y Control)</h3>
+                    <ul class="unav-font-primary unav-weight-regular unav-text-100" style="color: var(--unav-grey-700); padding-left: var(--unav-spacing-md);">
+                        <li style="margin-bottom: var(--unav-spacing-xs);"><strong>Bloqueo de Scroll:</strong> El JS gestiona el estado <code>overflow: hidden</code> en el <code>body</code> para evitar el scroll del fondo mientras el panel está activo, garantizando una UX inmersiva.</li>
+                        <li style="margin-bottom: var(--unav-spacing-xs);"><strong>Accesibilidad con Teclado:</strong> Se implementa un listener para la tecla <code>Escape</code>, permitiendo cerrar el panel de forma inmediata sin necesidad de interactuar con el ratón.</li>
+                    </ul>
+                </div>
+                
+                <div class="col-md-6 border-start-md ps-md-4">
+                    <h3 class="unav-font-primary unav-weight-bold unav-text-125 mb-3" style="color: var(--unav-black-800);">3. Accesibilidad (A11y) y Schemas (SEO)</h3>
+                    <ul class="unav-font-primary unav-weight-regular unav-text-100" style="color: var(--unav-grey-700); padding-left: var(--unav-spacing-md);">
+                        <li style="margin-bottom: var(--unav-spacing-xs);"><strong>Control ARIA:</strong> El botón de apertura debe gestionar correctamente el atributo <code>aria-expanded="true/false"</code>, comunicando el estado real del panel a los lectores de pantalla.</li>
+                        <li style="margin-bottom: var(--unav-spacing-xs);"><strong>Schemas:</strong> La estructura debe portar <code>https://schema.org/ContactPoint</code> para facilitar la indexación de los métodos de contacto ofrecidos en el panel.</li>
+                    </ul>
+        
+                    <h3 class="unav-font-primary unav-weight-bold unav-text-125 mb-3 mt-4" style="color: var(--unav-black-800);">4. UX, Uso de Átomos y Layouts</h3>
+                    <ul class="unav-font-primary unav-weight-regular unav-text-100" style="color: var(--unav-grey-700); padding-left: var(--unav-spacing-md);">
+                        <li style="margin-bottom: var(--unav-spacing-xs);"><strong>UX de Navegación:</strong> Al hacer clic en el overlay, el sistema fuerza el cierre automático (<em>Click-outside</em>), reduciendo la fricción del usuario.</li>
+                        <li style="margin-bottom: var(--unav-spacing-xs);"><strong>Layouts:</strong> Diseñado con <code>position: fixed</code> para el panel, asegurando que el contenido del formulario pueda tener su propio scroll independiente si el dispositivo es de altura reducida.</li>
+                    </ul>
                 </div>
             </div>
-        </header>
+        </article>
 
         <section class="row justify-content-center mb-5">
             <div class="col-md-8">

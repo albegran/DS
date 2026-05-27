@@ -15,6 +15,17 @@
         /* Estilos de guía técnica */
         html { scroll-behavior: smooth; background-color: var(--unav-grey-100); }
         body { background-color: transparent; }
+
+        .unav-doc-container { padding-top: var(--unav-spacing-3xl); padding-bottom: var(--unav-spacing-3xl); }
+        h2[id], h3[id], section[id] { scroll-margin-top: 6rem; }
+        
+        /* Clase base de previsualización vinculada a color.css */
+        .unav-preview-text {
+            margin: 0;
+            line-height: 1.1;
+            white-space: nowrap;   
+            color: var(--unav-black-500);
+        }
     </style>
 </head>
 <body class="bg-light">
@@ -33,56 +44,60 @@
         </div>
     </nav>
 
-    <main class="container-lg py-5" itemprop="mainContentOfPage">
+    <main class="container-lg unav-doc-container" itemprop="mainContentOfPage">
         
-        <header class="text-center mb-5 border-bottom pb-4">
+        <header style="text-align: center; margin-bottom: var(--unav-spacing-2xl); border-bottom: 1px solid var(--unav-grey-200); padding-bottom: var(--unav-spacing-xl);">
             <h1 class="unav-font-primary unav-weight-medium unav-text-200 text-dark mb-3 unav-lh-tight" itemprop="name">Tablas de Datos</h1>
             <p class="unav-font-primary unav-weight-regular unav-text-100 text-muted m-0 unav-lh-normal" itemprop="description">
                 Estructuras semánticas para datos tabulares con comportamiento responsivo OOCSS.
             </p>
+        </header>
 
-            <div class="unav-techSummary bg-white p-4 p-md-5 text-start mt-5 rounded shadow-sm border mx-auto" style="max-width: 1000px;">
-                <h2 class="unav-font-primary unav-weight-bold unav-text-150 text-dark mb-4 unav-lh-snug">
-                    <i class="bi bi-gear-fill me-2" style="color: var(--unav-grey-400);"></i>Guía de Implementación y Modificadores
-                </h2>
-                <p class="unav-font-primary unav-weight-regular unav-text-100 mb-4" style="color: var(--unav-grey-600);">
-                    Nuestro sistema de tablas utiliza la metodología <strong>OOCSS</strong>. Se compone de un contenedor base, una clase principal y múltiples modificadores atómicos que puedes combinar libremente. A continuación, se detallan las reglas maestras para ensamblar cualquier tabla:
-                </p>
 
-                <div class="row g-4 unav-font-primary unav-weight-regular unav-text-100 unav-lh-normal">
+            
+
+        <article class="unav-card unav-cardSolid" style="margin-bottom: var(--unav-spacing-3xl);">
+            <h2 class="unav-font-primary unav-weight-bold unav-text-150 text-dark mb-4 unav-lh-snug">
+                <i class="bi bi-gear-fill me-2" style="color: var(--unav-grey-400);"></i>Guía de Implementación y Modificadores
+            </h2>
+            <p class="unav-font-primary unav-weight-regular unav-text-100 mb-4" style="color: var(--unav-grey-600);">
+                Nuestro sistema de tablas utiliza la metodología <strong>OOCSS</strong>. Se compone de un contenedor base, una clase principal y múltiples modificadores atómicos que puedes combinar libremente. A continuación, se detallan las reglas maestras para ensamblar cualquier tabla:
+            </p>
+
+            <div class="row g-4 unav-font-primary unav-weight-regular unav-text-100 unav-lh-normal">
+                
+                <div class="col-md-6">
+                    <h3 class="unav-font-primary unav-weight-bold unav-text-125 text-dark mb-3">1. Clases Fundacionales</h3>
                     
-                    <div class="col-md-6">
-                        <h3 class="unav-font-primary unav-weight-bold unav-text-125 text-dark mb-3">1. Clases Fundacionales</h3>
-                        <ul class="mb-4 text-muted ps-3">
-                            <li class="mb-2"><code>.unav-tableWrapper</code>: Contenedor obligatorio <code>&lt;div&gt;</code>. Envuelve la tabla para garantizar el scroll horizontal nativo por hardware si el contenido desborda.</li>
-                            <li><code>.unav-table</code>: Clase base obligatoria en la etiqueta <code>&lt;table&gt;</code>. Resetea estilos y aplica la tipografía, bordes horizontales y paddings corporativos.</li>
-                        </ul>
-
-                        <h3 class="unav-font-primary unav-weight-bold unav-text-125 text-dark mb-3">2. Modificadores Visuales</h3>
-                        <ul class="mb-4 text-muted ps-3">
-                            <li class="mb-2"><code>.unav-tableStriped</code>: Aplica un fondo gris alterno en filas impares (efecto zebra). Usa <code>--even</code> para filas pares.</li>
-                            <li class="mb-2"><code>.unav-tableHover</code>: Activa un resaltado de lectura sutil al pasar el ratón por encima de una fila.</li>
-                            <li class="mb-2"><code>.unav-tableBorders</code>: Dibuja todos los bordes (internos verticales y caja perimetral).</li>
-                            <li><code>.unav-tableInnerVerticalBorders</code>: Dibuja exclusivamente divisiones verticales entre columnas, omitiendo el marco exterior.</li>
-                        </ul>
-                    </div>
+                        <p><code>.unav-tableWrapper</code>: Contenedor obligatorio <code>&lt;div&gt;</code>. Envuelve la tabla para garantizar el scroll horizontal nativo por hardware si el contenido desborda.</p>
+                        <p><code>.unav-table</code>: Clase base obligatoria en la etiqueta <code>&lt;table&gt;</code>. Resetea estilos y aplica la tipografía, bordes horizontales y paddings corporativos.</p>
                     
-                    <div class="col-md-6 border-start-md ps-md-4">
-                        <h3 class="unav-font-primary unav-weight-bold unav-text-125 text-dark mb-3">3. Comportamiento Responsivo</h3>
-                        <ul class="mb-4 text-muted ps-3">
-                            <li class="mb-2"><strong>Modo Tarjeta (Stack):</strong> Añade <code>.unav-tableResponsiveStack</code> a la tabla. Transforma cada fila en un bloque apilado en dispositivos móviles. <strong>REGLA DE ORO:</strong> En este modo, cada <code>&lt;td&gt;</code> debe incluir obligatoriamente el atributo HTML <code>data-label="Nombre de Columna"</code> para inyectar el título visible en móvil.</li>
-                            <li><strong>Modo Scroll:</strong> Si se omite la clase Stack (Ej. Tabla 3), la tabla conservará su layout original en móvil y el usuario podrá deslizar hacia los lados.</li>
-                        </ul>
 
-                        <h3 class="unav-font-primary unav-weight-bold unav-text-125 text-dark mb-3">4. Temas y Agrupaciones</h3>
-                        <ul class="mb-0 text-muted ps-3">
-                            <li class="mb-2"><strong>Tematización de Color:</strong> Se pueden aplicar "pieles" corporativas añadiendo clases como <code>.unav-tableThemeRojo</code> o <code>.unav-tableThemeTeal</code>. El OOCSS mapeará automáticamente la línea de título, la cabecera y el fondo de filas alternas.</li>
-                            <li><strong>Agrupación Semántica:</strong> Se prohíbe usar <code>rowspan</code> combinado con el Modo Stack, ya que rompe el DOM en móvil. En su lugar, segmenta las áreas insertando filas de grupo: <code>&lt;tr class="unav-tableGroupHeader"&gt;</code>.</li>
-                        </ul>
-                    </div>
+                    <h3 class="unav-font-primary unav-weight-bold unav-text-125 text-dark mb-3">2. Modificadores Visuales</h3>
+                    
+                        <p><code>.unav-tableStriped</code>: Aplica un fondo gris alterno en filas impares (efecto zebra). Usa <code>--even</code> para filas pares.</p>
+                        <p><code>.unav-tableHover</code>: Activa un resaltado de lectura sutil al pasar el ratón por encima de una fila.</p>
+                        <p><code>.unav-tableBorders</code>: Dibuja todos los bordes (internos verticales y caja perimetral).</p>
+                        <p><code>.unav-tableInnerVerticalBorders</code>: Dibuja exclusivamente divisiones verticales entre columnas, omitiendo el marco exterior.</p>
+                    
+                </div>
+                
+                <div class="col-md-6 border-start-md ps-md-4">
+                    <h3 class="unav-font-primary unav-weight-bold unav-text-125 text-dark mb-3">3. Comportamiento Responsivo</h3>
+                    
+                        <p><strong>Modo Tarjeta (Stack):</strong> Añade <code>.unav-tableResponsiveStack</code> a la tabla. Transforma cada fila en un bloque apilado en dispositivos móviles. <strong>REGLA DE ORO:</strong> En este modo, cada <code>&lt;td&gt;</code> debe incluir obligatoriamente el atributo HTML <code>data-label="Nombre de Columna"</code> para inyectar el título visible en móvil.</p>
+                        <p><strong>Modo Scroll:</strong> Si se omite la clase Stack (Ej. Tabla 3), la tabla conservará su layout original en móvil y el usuario podrá deslizar hacia los lados.</p>
+                    
+
+                    <h3 class="unav-font-primary unav-weight-bold unav-text-125 text-dark mb-3">4. Temas y Agrupaciones</h3>
+                    
+                        <p><strong>Tematización de Color:</strong> Se pueden aplicar "pieles" corporativas añadiendo clases como <code>.unav-tableThemeRojo</code> o <code>.unav-tableThemeTeal</code>. El OOCSS mapeará automáticamente la línea de título, la cabecera y el fondo de filas alternas.</p>
+                        <p><strong>Agrupación Semántica:</strong> Se prohíbe usar <code>rowspan</code> combinado con el Modo Stack, ya que rompe el DOM en móvil. En su lugar, segmenta las áreas insertando filas de grupo: <code>&lt;tr class="unav-tableGroupHeader"&gt;</code>.</p>
+                    
                 </div>
             </div>
-        </header>
+        </article>
+     
 
         <section class="bg-white p-4 p-md-5 rounded shadow-sm border mb-5">
             <h2 class="unav-font-primary unav-weight-bold unav-text-200 border-bottom pb-2 mb-4 text-dark mt-0 unav-lh-snug">1. Tabla Responsiva (Tema Púrpura)</h2>

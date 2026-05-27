@@ -120,6 +120,7 @@
     /* --- ESCALA DE ESPACIADO (Spacing) --- */
     /* Basada en pasos de 4px para mantener el ritmo vertical */
     --unav-spacing-0: 0;
+    --unav-spacing-1: 0.063rem;   /* 1px  - Separación mímina */    
     --unav-spacing-xs: 0.25rem;  /* 4px  - Micro ajustes */
     --unav-spacing-sm: 0.5rem;   /* 8px  - Gaps pequeños */
     --unav-spacing-md: 1rem;     /* 16px - Padding estándar */
@@ -454,16 +455,21 @@
         --unav-videoGalleryActiveBg: var(--unav-rojo-100);
         --unav-videoGalleryActiveBorder: var(--unav-rojo-600);
     
+
+
+
+
+        
     /* ==========================================
        21. TOKENS ESTRUCTURALES: LAB DE MUESTRAS
        ========================================== */
         --unav-sampleRowPaddingY: 3rem;
         --unav-sampleRowPaddingX: 2rem;
         --unav-sectionLabelPaddingY: 1rem;
-        --unav-sectionLabelPaddingX: 2rem;
-    
+        --unav-sectionLabelPaddingX: 2rem;    
     
 }
+
 
 /* ==========================================
    00. ACCESIBILIDAD GLOBAL Y LECTORES DE PANTALLA
@@ -485,9 +491,6 @@
     position: absolute;
     width: 1px;
 }
-
-
-
 
 
 /* ==========================================
@@ -523,10 +526,12 @@
 .unav-text-500 { font-size: var(--unav-fontSize500) !important; }
 
 
+
+
+
 /* ==========================================
    COMPONENTE: ACORDEÓN UNAV (OOCSS)
    ========================================== */
-
 .unav-accordionGroup {
     border-top: 1px solid var(--unav-accordionBorderColor, var(--unav-grey-200));
     width: 100%;
@@ -544,9 +549,8 @@
     align-items: center;
     background: transparent;
     border: none;
-    outline: none; /* Reseteamos el outline nativo del navegador */
+    outline: none; /* Reseteamos el outline nativo del navegador */    
     
-    /* REFACTOR: Consumo de Tokens de Espaciado (16px vertical, 48px derecha para el icono, 24px izquierda) */
     padding: var(--unav-accordionHeaderPaddingY, var(--unav-spacing-md)) 
              var(--unav-accordionHeaderPaddingRight, var(--unav-spacing-2xl)) 
              var(--unav-accordionHeaderPaddingY, var(--unav-spacing-md)) 
@@ -573,8 +577,7 @@
 
 .unav-accordionTitleWrapper {
     display: flex;
-    align-items: center;
-    /* REFACTOR: Consumo de Tokens de Espaciado (8px) */
+    align-items: center;    
     gap: var(--unav-accordionTitleGap, var(--unav-spacing-sm));
     flex-grow: 1;
 }
@@ -585,8 +588,7 @@
 
 /* Icono Toggle */
 .unav-accordionToggleIcon {
-    position: absolute;
-    /* REFACTOR: Consumo de Tokens de Espaciado (24px de margen derecho) */
+    position: absolute;    
     right: var(--unav-spacing-lg);
     top: 50%;
     transform: translateY(-50%);
@@ -632,7 +634,9 @@
 .unav-accordionItem.unav-isThemed .unav-accordionToggleIcon {
     color: #ffffff;
 }
-
+/* ==========================================
+   ..........................................
+   ========================================== */
 
 
 
@@ -705,9 +709,6 @@
 .unav-banner.unav-alignCenter .unav-bannerText { margin-left: auto; margin-right: auto; }
 
 
-
-
-
 /* ==========================================
    VARIANTES DE TAMAÑO / LAYOUT
    ========================================== */
@@ -715,8 +716,7 @@
 /* 1. Banner Ancho Completo (Fullwidth) */
 .unav-bannerFull {
     width: 100%; /* Ocupa el 100vw al estar fuera del container en HTML */
-    min-height: var(--unav-bannerMinHeightFull);
-    /* REFACTOR: Fallback a Token de Espaciado Gigante (64px) */
+    min-height: var(--unav-bannerMinHeightFull);    
     padding: var(--unav-bannerPaddingFull, var(--unav-spacing-3xl));
 }
 .unav-bannerFull .unav-bannerTitle { font-size: var(--unav-fontSize250); }
@@ -1420,7 +1420,7 @@
     display: flex;
     flex-direction: column;
     /* Consumo de Token de Espacio: 2px no está en la escala, pero usamos 'xs' (4px) o un gap base */
-    gap: var(--unav-spacing-xs, 4px);
+    gap: var(--unav-spacing-1, 4px);
     width: 100%;
 }
 

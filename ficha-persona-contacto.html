@@ -17,7 +17,7 @@
         body { background-color: transparent; }
     </style>
 </head>
-<body class="bg-light" itemscope itemtype="https://schema.org/WebPage">
+<body class="unav-font-primary unav-weight-regular unav-text-100" itemscope itemtype="https://schema.org/WebPage">
 
     <nav class="navbar navbar-light bg-white border-bottom py-3 sticky-top">
         <div class="container-lg d-flex justify-content-between align-items-center">
@@ -35,38 +35,48 @@
 
     <main class="container-lg py-5">
         
-        <header class="text-center mb-5 border-bottom pb-4">
+        <header style="text-align: center; margin-bottom: var(--unav-spacing-2xl); border-bottom: 1px solid var(--unav-grey-200); padding-bottom: var(--unav-spacing-xl);">
             <h1 class="unav-font-primary unav-weight-medium unav-text-200 text-dark mb-3">Fichas de Persona y Contacto</h1>
             <p class="unav-font-primary unav-weight-regular unav-text-100 m-0" style="color: var(--unav-grey-600);">
                 Componentes modulares para representar perfiles humanos o datos de contacto de forma estructurada.
             </p>
+        </header>
 
-            <div class="unav-techSummary bg-white p-4 text-start mt-5 rounded shadow-sm border mx-auto" style="max-width: 900px;">
-                <h2 class="unav-font-primary unav-weight-bold unav-text-150 text-dark mb-3">
-                    <i class="bi bi-gear-fill me-2" style="color: var(--unav-grey-400);"></i>Análisis Funcional y Técnico (Iterative Update)
-                </h2>
-                <p class="unav-font-primary unav-weight-regular unav-text-100 mb-4" style="color: var(--unav-grey-600);">
-                    El componente de <code>Ficha de Persona y Contacto</code> (.unav-personCard) es una solución modular diseñada bajo la metodología OOCSS para funcionar en armonía con la grilla de Bootstrap. Cada elemento está dimensionado para ocupar un ancho de 3 columnas dentro de una fila de 12 unidades (4 elementos por fila, <code>row-cols-lg-4</code>), asegurando una lectura compacta.
-                </p>
-                <div class="row g-4 unav-font-primary unav-weight-regular unav-text-100">
-                    <div class="col-md-6">
-                        <h3 class="unav-font-primary unav-weight-bold unav-text-125 text-dark mb-3">Análisis Funcional</h3>
-                        <ul class="mb-0 ps-3" style="color: var(--unav-grey-600);">
-                            <li class="mb-2"><strong class="text-dark">Campos específicos:</strong> Soporta fotografía cuadrada (relación de aspecto 1:1), nombre, puesto de trabajo, y metadatos de contacto a través de listas icónicas.</li>
-                            <li class="mb-2"><strong class="text-dark">Variabilidad de layouts:</strong> Permite ordenar de forma completamente asíncrona la posición de los campos mediante las clases de variante.</li>
-                        </ul>
-                    </div>
-                    <div class="col-md-6 border-start ps-md-4">
-                        <h3 class="unav-font-primary unav-weight-bold unav-text-125 text-dark mb-3">Especificaciones Técnicas</h3>
-                        <ul class="mb-0 ps-3" style="color: var(--unav-grey-600);">
-                            <li class="mb-2"><strong class="text-dark">Grid Normalizado:</strong> Dimensionado estandarizado mediante contenedores de fila configurados con <code>row-cols-lg-4</code>.</li>
-                            <li class="mb-2"><strong class="text-dark">Composición Atómica:</strong> Integra el sub-componente <code>.unav-listIcon</code> transversalmente para presentar los datos de contacto con mayor legibilidad.</li>
-                            <li class="mb-2"><strong class="text-dark">Pautas Fotográficas Estrictas:</strong> El formato debe ser siempre de busto, mostrando cabeza y hombros (similar a Lucía Costa), forzado mediante <code>aspect-ratio: 1/1</code> y <code>object-fit: cover</code>.</li>
-                        </ul>
-                    </div>
+        <article class="unav-card unav-cardSolid" style="margin-bottom: var(--unav-spacing-3xl);">
+            <h2 class="unav-font-primary unav-weight-bold unav-text-150" style="color: var(--unav-rojo-500); border-bottom: 2px solid var(--unav-rojo-500); padding-bottom: var(--unav-spacing-sm); margin-bottom: var(--unav-spacing-lg);">Guía Técnica y Documentación Oficial</h2>
+            
+            <div class="row g-4">
+                <div class="col-md-6">
+                    <h3 class="unav-font-primary unav-weight-bold unav-text-125 mb-3" style="color: var(--unav-black-800);">1. Implementación OOCSS y Modificadores</h3>
+                    <ul class="unav-font-primary unav-weight-regular unav-text-100" style="color: var(--unav-grey-700); padding-left: var(--unav-spacing-md);">
+                        <li style="margin-bottom: var(--unav-spacing-xs);"><strong>Estructura Base:</strong> El componente maestro se construye sobre <code>.unav-card.unav-cardSolid</code>. Internamente se orquesta mediante los bloques <code>.unav-avatar</code> para la imagen de perfil y <code>.unav-contactoBox</code> para las tarjetas internas de información.</li>
+                        <li style="margin-bottom: var(--unav-spacing-xs);"><strong>Modificadores de Avatar:</strong> La clase <code>.unav-avatarImg</code> asegura que la fotografía se adapte perfectamente al círculo geométrico, recortando los excesos proporcionalmente (object-fit).</li>
+                    </ul>
+        
+                    <h3 class="unav-font-primary unav-weight-bold unav-text-125 mb-3 mt-4" style="color: var(--unav-black-800);">2. Guía Técnica (HTML/CSS)</h3>
+                    <ul class="unav-font-primary unav-weight-regular unav-text-100" style="color: var(--unav-grey-700); padding-left: var(--unav-spacing-md);">
+                        <li style="margin-bottom: var(--unav-spacing-xs);"><strong>Renderizado CSS:</strong> Las tarjetas de contacto utilizan utilidades nativas de Flexbox para alinear iconos descriptivos con la información textual en perfecta simetría vertical.</li>
+                        <li style="margin-bottom: var(--unav-spacing-xs);"><strong>Interactividad Funcional:</strong> Los enlaces a teléfonos y correos electrónicos exigen el uso estricto de los protocolos nativos <code>tel:</code> y <code>mailto:</code> en el atributo <code>href</code> para disparar la acción en dispositivos móviles de forma automática.</li>
+                    </ul>
+                </div>
+                
+                <div class="col-md-6 border-start-md ps-md-4">
+                    <h3 class="unav-font-primary unav-weight-bold unav-text-125 mb-3" style="color: var(--unav-black-800);">3. Accesibilidad (A11y) y Schemas (SEO)</h3>
+                    <ul class="unav-font-primary unav-weight-regular unav-text-100" style="color: var(--unav-grey-700); padding-left: var(--unav-spacing-md);">
+                        <li style="margin-bottom: var(--unav-spacing-xs);"><strong>Microdatos Personales:</strong> Es absolutamente crítico el uso de <code>itemscope itemtype="https://schema.org/Person"</code>, etiquetando el nombre (<code>itemprop="name"</code>), el cargo (<code>itemprop="jobTitle"</code>) y la imagen (<code>itemprop="image"</code>).</li>
+                        <li style="margin-bottom: var(--unav-spacing-xs);"><strong>Microdatos de Contacto:</strong> Las vías de comunicación deben envolverse obligatoriamente en <code>https://schema.org/ContactPoint</code>, identificando los valores <code>telephone</code> y <code>email</code> para los motores de búsqueda.</li>
+                        <li style="margin-bottom: var(--unav-spacing-xs);"><strong>Accesibilidad:</strong> Las imágenes de avatar deben llevar atributo <code>alt</code> explícito con el nombre de la persona para facilitar la labor de los lectores de pantalla.</li>
+                    </ul>
+        
+                    <h3 class="unav-font-primary unav-weight-bold unav-text-125 mb-3 mt-4" style="color: var(--unav-black-800);">4. UX, Integración de Átomos y Layouts</h3>
+                    <ul class="unav-font-primary unav-weight-regular unav-text-100" style="color: var(--unav-grey-700); padding-left: var(--unav-spacing-md);">
+                        <li style="margin-bottom: var(--unav-spacing-xs);"><strong>Componentes Anidados:</strong> Este organismo es un "contenedor de átomos". Consume internamente Etiquetas (<code>.unav-tag</code>) para mostrar el departamento, e incorpora los Enlaces Flecha (<code>.unav-enlaceFlecha</code>) o botones secundarios como Call To Action (CTA).</li>
+                        <li style="margin-bottom: var(--unav-spacing-xs);"><strong>Layouts y Medios:</strong> Adaptación líquida en el Grid de Bootstrap. Las imágenes de perfil (Avatares) deben suministrarse con relación de aspecto 1:1, formato WebP y peso ligero, recomendándose una resolución óptima de 400x400px.</li>
+                    </ul>
                 </div>
             </div>
-        </header>
+        </article>
+
 
         <div class="unav-components-guide">
             

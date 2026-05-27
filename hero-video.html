@@ -27,7 +27,7 @@
                     <span class="d-none d-md-inline" itemprop="name">Volver al Índice</span>
                 </a>
             </div>
-            <span class="unav-font-primary-condensed unav-weight-regular unav-text-150 m-0" style="color: var(--unav-black-500); line-height: 1;">
+            <span class="unav-font-primary-condensed unav-weight-regular unav-text-150 m-0" style="color: var(--unav-rojo-500); line-height: 1;">
                 Design System UNAV
             </span>
         </div>
@@ -41,25 +41,41 @@
                 <p class="unav-font-primary unav-weight-regular unav-text-100 text-muted m-0" itemprop="description">
                     Cabeceras inmensas (fullwidth) utilizando fondos dinámicos multimedia (YouTube o archivos locales).
                 </p>
+            </header>
 
-                <div class="unav-techSummary bg-white p-4 text-start mt-5 rounded shadow-sm border mx-auto" style="max-width: 900px;">
-                    <h2 class="unav-font-primary unav-weight-bold unav-text-150 text-dark mb-3"><i class="bi bi-gear-fill me-2" style="color: var(--unav-grey-400);"></i>Análisis Funcional y Técnico</h2>
-                    <div class="row g-4 unav-font-primary unav-weight-regular unav-text-100">
-                        <div class="col-md-6">
-                            <ul class="mb-0 text-muted ps-3">
-                                <li class="mb-2"><strong>OOCSS Riguroso:</strong> Se han reemplazado los botones antiguos por componentes atómicos (<code>.unav-botonSecundario.unav-botonIconOnly</code>), heredando nativamente el color y el comportamiento del <em>Focus Visible</em>.</li>
-                                <li><strong>Controles JS Locales:</strong> Funciones en <code>camelCase</code> vinculadas a los ID inyectan en tiempo real cambios de accesibilidad y actualización de iconografía.</li>
-                            </ul>
-                        </div>
-                        <div class="col-md-6 border-start-md ps-md-4">
-                            <ul class="mb-0 text-muted ps-3">
-                                <li class="mb-2"><strong>SEO Multimedia:</strong> Marcado semántico riguroso inyectando <code>VideoObject</code> con <code>contentUrl</code>, <code>uploadDate</code> y <code>name</code> dentro de la jerarquía de la página para facilitar el rastreo.</li>
-                                <li><strong>Accesibilidad:</strong> Atributos ARIA dinámicos en los botones de control de reproducción para informar del estado activo a lectores de pantalla.</li>
-                            </ul>
-                        </div>
+            <article class="unav-card unav-cardSolid" style="margin-bottom: var(--unav-spacing-3xl);">
+                <h2 class="unav-font-primary unav-weight-bold unav-text-150" style="color: var(--unav-rojo-500); border-bottom: 2px solid var(--unav-rojo-500); padding-bottom: var(--unav-spacing-sm); margin-bottom: var(--unav-spacing-lg);">Guía Técnica y Documentación Oficial</h2>
+                
+                <div class="row g-4">
+                    <div class="col-md-6">
+                        <h3 class="unav-font-primary unav-weight-bold unav-text-125 mb-3" style="color: var(--unav-black-800);">1. Implementación OOCSS y Estructura</h3>
+                        <ul class="unav-font-primary unav-weight-regular unav-text-100" style="color: var(--unav-grey-700); padding-left: var(--unav-spacing-md);">
+                            <li style="margin-bottom: var(--unav-spacing-xs);"><strong>Estructura Base:</strong> El componente se envuelve en <code>.unav-heroVideo</code>. Requiere el contenedor <code>.unav-videoStage</code> para el reproductor y <code>.unav-heroContent</code> para la capa tipográfica superior.</li>
+                            <li style="margin-bottom: var(--unav-spacing-xs);"><strong>Capa de Contraste:</strong> Obligatorio el uso de un <code>.unav-heroOverlay</code> con gradientes oscuros para asegurar que el contenido textual y los botones (CTAs) sean legibles sobre cualquier vídeo.</li>
+                        </ul>
+            
+                        <h3 class="unav-font-primary unav-weight-bold unav-text-125 mb-3 mt-4" style="color: var(--unav-black-800);">2. Guía Técnica (JavaScript y API)</h3>
+                        <ul class="unav-font-primary unav-weight-regular unav-text-100" style="color: var(--unav-grey-700); padding-left: var(--unav-spacing-md);">
+                            <li style="margin-bottom: var(--unav-spacing-xs);"><strong>Integración YouTube:</strong> El componente utiliza la API oficial de YouTube (<code>window.unavYtPlayers</code>) para instanciar reproductores. Esto permite controlar mediante botones del sistema (átomos) la reproducción/pausa y el muteo/activación de sonido.</li>
+                            <li style="margin-bottom: var(--unav-spacing-xs);"><strong>Eventos de Control:</strong> Los botones de control invocan funciones nativas del sistema (<code>unavToggleYoutubeSound</code>, etc.) que actualizan los iconos (BI Icons) en tiempo real según el estado del player.</li>
+                        </ul>
+                    </div>
+                    
+                    <div class="col-md-6 border-start-md ps-md-4">
+                        <h3 class="unav-font-primary unav-weight-bold unav-text-125 mb-3" style="color: var(--unav-black-800);">3. Accesibilidad (A11y) y Schemas (SEO)</h3>
+                        <ul class="unav-font-primary unav-weight-regular unav-text-100" style="color: var(--unav-grey-700); padding-left: var(--unav-spacing-md);">
+                            <li style="margin-bottom: var(--unav-spacing-xs);"><strong>A11y (Control de Audio):</strong> Es fundamental incluir botones de control con <code>aria-label</code> dinámicos (ej: "Activar sonido" / "Desactivar sonido") para informar al usuario de los cambios de estado.</li>
+                            <li style="margin-bottom: var(--unav-spacing-xs);"><strong>Microdatos Multimedia:</strong> El contenedor debe portar <code>itemscope itemtype="https://schema.org/VideoObject"</code>, asegurando que se declaren propiedades como <code>name</code>, <code>description</code>, <code>thumbnailUrl</code> y <code>uploadDate</code>.</li>
+                        </ul>
+            
+                        <h3 class="unav-font-primary unav-weight-bold unav-text-125 mb-3 mt-4" style="color: var(--unav-black-800);">4. UX, Uso de Átomos y Medios</h3>
+                        <ul class="unav-font-primary unav-weight-regular unav-text-100" style="color: var(--unav-grey-700); padding-left: var(--unav-spacing-md);">
+                            <li style="margin-bottom: var(--unav-spacing-xs);"><strong>Integración de Átomos:</strong> Los controles de reproducción y sonido reutilizan el átomo <code>.unav-botonSecundario .unav-botonIconOnly</code>, manteniendo el tamaño normativo de 32px para la zona de interacción táctil.</li>
+                            <li style="margin-bottom: var(--unav-spacing-xs);"><strong>Medios y Rendimiento:</strong> Aunque el vídeo se carga vía API, es vital asegurar que la red esté optimizada. El Hero Vídeo debe tener un comportamiento de carga diferida inicial hasta que el contenedor entra en el <em>viewport</em>.</li>
+                        </ul>
                     </div>
                 </div>
-            </header>
+            </article>
         </div>
 
         <div class="container-lg">
@@ -319,31 +335,34 @@
                 <meta itemprop="name" content="Campus Universitario UNAV">
                 <meta itemprop="description" content="Vista aérea y vida en el campus de la Universidad de Navarra.">
                 
-                <!-- FIX: Se añade ID estricto y el tag &enablejsapi=1 -->
-                <div class="unav-heroVideoYoutubeWrapper">
-                    <iframe id="unavYoutubeVideo8" src="https://www.youtube.com/embed/BFH1dAqjsKs?autoplay=1&mute=1&controls=1&loop=1&playlist=BFH1dAqjsKs&showinfo=0&rel=0&modestbranding=1&enablejsapi=1" frameborder="0" allow="autoplay; fullscreen; picture-in-picture" allowfullscreen></iframe>
+                <div class="unav-heroVideoYoutubeWrapper d-none d-md-block">
+                    <!-- FIX: Añadimos controls=0 y enablejsapi=1 -->
+                    <iframe id="unavYtVideo1" src="https://www.youtube.com/embed/BFH1dAqjsKs?autoplay=1&mute=1&controls=0&loop=1&playlist=BFH1dAqjsKs&showinfo=0&rel=0&modestbranding=1&enablejsapi=1" frameborder="0" allow="autoplay; fullscreen; picture-in-picture" allowfullscreen></iframe>
                 </div>
-                
+        
+                <!-- Textos del Hero -->
                 <div class="unav-heroOverlay">
-                    <div class="unav-heroContent unav-heroContent--center">
-                        
-                        <div class="unav-heroHeaderTexts unav-efectoDesvanecerTextos" id="unavHeroTexts5">
+                    <div class="unav-heroContent unav-heroContent--center">                        
+                        <div class="unav-heroHeaderTexts unav-efectoDesvanecerTextos" id="unavHeroTextsYt1">
                             <p class="unav-heroPretitle" itemprop="headline">Facultad de Derecho</p>
                             <h1 class="unav-heroTitle">Forjando la Justicia del Mañana</h1>
                         </div>
-                        
-                        <div class="unav-heroBtnGroup">
-                            <a class="unav-boton unav-botonPrimario unav-botonFit" href="#" style="--unav-botonBg: var(--unav-rojo-600); --unav-botonText: #fff; --unav-botonBorder: var(--unav-rojo-600); --unav-botonHoverBg: #fff; --unav-botonHoverText: var(--unav-rojo-600); --unav-botonHoverBorder: var(--unav-rojo-600);">
-                                <span>Conocer el Grado</span>
-                            </a>
-                            <a class="unav-boton unav-botonPrimario unav-botonFit" href="#" style="--unav-botonBg: transparent; --unav-botonText: #fff; --unav-botonBorder: #fff; --unav-botonHoverBg: #fff; --unav-botonHoverText: var(--unav-black-800); --unav-botonHoverBorder: #fff;">
-                                <span>Salidas Profesionales</span>
-                            </a>
-                        </div>
                     </div>
                 </div>
+        
+                <!-- NUEVO: Botonera corporativa vinculada al Iframe -->
+                <div class="unav-heroVideoControls">
+                    <button class="unav-boton unav-botonSecundario unav-botonIconOnly" style="--unav-botonColorSource: var(--unav-grey-100); --unav-botonTextHover: var(--unav-black-900);" id="unavBtnToggleYtVideo1" onclick="unavToggleYoutubePlayback('unavYtVideo1', 'unavBtnToggleYtVideo1')" aria-label="Pausar vídeo">
+                        <i class="bi bi-pause-fill unav-botonIcono"></i>
+                    </button>
+                    <button class="unav-boton unav-botonSecundario unav-botonIconOnly" style="--unav-botonColorSource: var(--unav-grey-100); --unav-botonTextHover: var(--unav-black-900);" id="unavBtnToggleYtSound1" onclick="unavToggleYoutubeSound('unavYtVideo1', 'unavBtnToggleYtSound1')" aria-label="Activar sonido">
+                        <i class="bi bi-volume-mute-fill unav-botonIcono"></i>
+                    </button>
+                </div>
+        
             </div>
         </section>
+
 
 
 
@@ -557,6 +576,83 @@
                 button.setAttribute('aria-label', 'Desactivar sonido');
             } else {
                 video.muted = true;
+                button.innerHTML = '<i class="bi bi-volume-mute-fill unav-botonIcono"></i>';
+                button.setAttribute('aria-label', 'Activar sonido');
+            }
+        }
+
+        // Diccionario global para almacenar las instancias de los reproductores YouTube
+        window.unavYtPlayers = {};
+
+        window.onYouTubeIframeAPIReady = function() {
+            const unavYoutubeIframes = document.querySelectorAll('.unav-heroVideoYoutubeWrapper iframe');
+            
+            unavYoutubeIframes.forEach((iframe, index) => {
+                if (!iframe.id) iframe.id = 'unav-yt-player-' + index;
+                if (!iframe.src.includes('enablejsapi=1')) {
+                    iframe.src += (iframe.src.includes('?') ? '&' : '?') + 'enablejsapi=1';
+                }
+
+                // Guardamos la instancia en nuestro objeto global
+                window.unavYtPlayers[iframe.id] = new YT.Player(iframe.id, {
+                    events: {
+                        'onStateChange': function(event) {
+                            const heroVisuals = iframe.closest('.unav-heroVisuals');
+                            const textsContainer = heroVisuals ? heroVisuals.querySelector('.unav-efectoDesvanecerTextos') : null;
+                            
+                            if (textsContainer) {
+                                if (event.data === YT.PlayerState.PLAYING) {
+                                    if (iframe.unavTimeoutId) clearTimeout(iframe.unavTimeoutId);
+                                    iframe.unavTimeoutId = setTimeout(() => {
+                                        textsContainer.classList.add('unav-isHidden');
+                                    }, 3000);
+                                } else if (event.data === YT.PlayerState.PAUSED || event.data === YT.PlayerState.ENDED) {
+                                    if (iframe.unavTimeoutId) clearTimeout(iframe.unavTimeoutId);
+                                    textsContainer.classList.remove('unav-isHidden');
+                                }
+                            }
+                        }
+                    }
+                });
+            });
+        };
+
+        // ==========================================
+        // CONTROLES DE INTERACCIÓN YOUTUBE
+        // ==========================================
+
+        // Función OOCSS para Reproducción de YouTube
+        function unavToggleYoutubePlayback(iframeId, buttonId) {
+            const player = window.unavYtPlayers[iframeId];
+            const button = document.getElementById(buttonId);
+            
+            if (!player || !button) return;
+
+            const state = player.getPlayerState();
+            if (state === YT.PlayerState.PLAYING) {
+                player.pauseVideo();
+                button.innerHTML = '<i class="bi bi-play-fill unav-botonIcono"></i>';
+                button.setAttribute('aria-label', 'Reproducir vídeo');
+            } else {
+                player.playVideo();
+                button.innerHTML = '<i class="bi bi-pause-fill unav-botonIcono"></i>';
+                button.setAttribute('aria-label', 'Pausar vídeo');
+            }
+        }
+
+        // Función OOCSS para Sonido de YouTube
+        function unavToggleYoutubeSound(iframeId, buttonId) {
+            const player = window.unavYtPlayers[iframeId];
+            const button = document.getElementById(buttonId);
+            
+            if (!player || !button) return;
+
+            if (player.isMuted()) {
+                player.unMute();
+                button.innerHTML = '<i class="bi bi-volume-up-fill unav-botonIcono"></i>';
+                button.setAttribute('aria-label', 'Desactivar sonido');
+            } else {
+                player.mute();
                 button.innerHTML = '<i class="bi bi-volume-mute-fill unav-botonIcono"></i>';
                 button.setAttribute('aria-label', 'Activar sonido');
             }

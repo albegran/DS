@@ -14,10 +14,11 @@
     <style>
         /* Estilos de guía técnica */
         html { scroll-behavior: smooth; background-color: var(--unav-grey-100); }
-        body { background-color: transparent; }
+        .unav-doc-container { padding-top: var(--unav-spacing-3xl); padding-bottom: var(--unav-spacing-3xl); }
+        h2[id], h3[id], section[id] { scroll-margin-top: 6rem; }
     </style>
 </head>
-<body class="unav-bg-grey-100 unav-font-primary unav-weight-regular unav-text-100" itemscope itemtype="https://schema.org/WebPage">
+<body class="unav-font-primary unav-weight-regular unav-text-100" itemscope itemtype="https://schema.org/WebPage">
 
     <nav class="navbar navbar-light bg-white border-bottom py-3 sticky-top">
         <div class="container-lg d-flex justify-content-between align-items-center">
@@ -33,38 +34,50 @@
         </div>
     </nav>
 
-    <main class="container-lg py-5" itemprop="mainContentOfPage">
+    <main class="container-lg unav-doc-container" itemprop="mainContentOfPage">
         
-        <header class="text-center mb-5 border-bottom pb-4">
-            <h1 class="unav-font-primary unav-weight-medium unav-text-200 text-dark mb-3" itemprop="name">
-                Botón Flecha 
-            </h1>
-            <p class="unav-font-primary m-0 unav-weight-regular unav-text-100 text-muted" itemprop="description">Componente interactivo con microinteracción de bucle infinito y validación WCAG integrada de forma 100% estática.</p>
+        <header style="text-align: center; margin-bottom: var(--unav-spacing-2xl); border-bottom: 1px solid var(--unav-grey-200); padding-bottom: var(--unav-spacing-xl);">
+            <h1 class="unav-font-primary unav-weight-medium unav-text-200 m-0" style="color: var(--unav-black-900); margin-bottom: var(--unav-spacing-sm) !important;" itemprop="name">Enlace Flecha (CTA Terciario)</h1>
+            <p class="unav-font-primary unav-weight-regular unav-text-100 m-0" style="color: var(--unav-grey-600);" itemprop="description">
+                Componente de navegación ágil para enlaces de texto con animación de flecha integrada (efecto swipe).
+            </p>
+        </header>
+
+        <article class="unav-card unav-cardSolid" style="margin-bottom: var(--unav-spacing-3xl);">
+            <h2 class="unav-font-primary unav-weight-bold unav-text-150" style="color: var(--unav-rojo-500); border-bottom: 2px solid var(--unav-rojo-500); padding-bottom: var(--unav-spacing-sm); margin-bottom: var(--unav-spacing-lg);">Análisis Técnico y Documentación de Estilos</h2>
             
-            <div class="unav-techSummary bg-white p-4 text-start mt-5 rounded shadow-sm border mx-auto" style="max-width: 900px;">
-                <h2 class="unav-font-primary unav-weight-bold unav-text-150 text-dark mb-3"><i class="bi bi-gear-fill me-2" style="color: var(--unav-grey-400);"></i>Análisis Funcional y Técnico</h2>
-                <p class="unav-font-primary unav-weight-regular unav-text-100 text-muted mb-4">
-                    Este componente visual está diseñado para actuar como un enlace de acción. Su propósito principal es guiar la navegación del usuario de forma intuitiva hacia detalles o continuaciones de contenido sin el peso visual de un botón primario o secundario.
-                </p>
-                <div class="row g-4 unav-font-primary unav-weight-regular unav-text-100">
-                    <div class="col-md-6">
-                        <h3 class="unav-font-primary unav-weight-bold unav-text-125 text-dark mb-3">Especificaciones Técnicas</h3>
-                        <ul class="mb-0 text-muted ps-3">
-                            <li class="mb-2"><strong class="text-dark">OOCSS:</strong> Su clase principal es <code class="text-danger">.unav-enlaceFlecha</code>, la cual requiere la reasignación de su token local <code class="text-danger">--unav-enlaceColor</code> para adaptarse al entorno.</li>
-                            <li class="mb-1"><strong class="text-dark">Trazos:</strong> Consume <code class="text-dark">var(--unav-botonSecundarioBorderWidth)</code> para mantener el grosor de la flecha sincronizado.</li>
-                        </ul>
-                    </div>
-                    <div class="col-md-6 border-start-md ps-md-4">
-                        <h3 class="unav-font-primary unav-weight-bold unav-text-125 text-dark mb-3">Interacción y Accesibilidad</h3>
-                        <ul class="mb-0 text-muted ps-3">
-                            <li class="mb-2"><strong class="text-dark">Animación y Subrayado:</strong> Al hacer hover, la flecha entra en un bucle infinito. Como respaldo de accesibilidad para usuarios con movimiento reducido, el texto revela un subrayado <code>currentColor</code> con un offset de 4px.</li>
-                            <li class="mb-2"><strong class="text-dark">Teclado y Foco:</strong> Equipado nativamente con el <code>focus-visible</code> estandarizado a <code>--unav-rojo-500</code>.</li>
-                            <li class="mb-1"><strong class="text-dark">WCAG Visual:</strong> El visualizador indica la ratio de contraste. Las opciones <span class="badge bg-danger">FAIL</span> no deben utilizarse.</li>
-                        </ul>
-                    </div>
+            <div class="row g-4">
+                <div class="col-md-6">
+                    <h3 class="unav-font-primary unav-weight-bold unav-text-125 mb-3" style="color: var(--unav-black-800);">1. Implementación, Modificadores y Técnica</h3>
+                    <ul class="unav-font-primary unav-weight-regular unav-text-100" style="color: var(--unav-grey-700); padding-left: var(--unav-spacing-md);">
+                        <li style="margin-bottom: var(--unav-spacing-xs);"><strong>Implementación OOCSS:</strong> Invocar mediante la clase contenedora <code>.unav-botonFlecha</code> sobre una etiqueta de anclaje.</li>
+                        <li style="margin-bottom: var(--unav-spacing-xs);"><strong>Modificadores de Instancia:</strong> La colorización es dinámica. Se inyecta la variable CSS <code>--unav-arrowColor: var(--unav-color-*)</code> directamente en el atributo <code>style</code> del elemento para alterar el color de todo el conjunto.</li>
+                        <li style="margin-bottom: var(--unav-spacing-xs);"><strong>Construcción HTML/CSS/JS:</strong> Desarrollado en CSS puro (sin JS). Utiliza dos nodos <code>&lt;span&gt;</code> superpuestos (<code>.unav-arrow</code> y <code>.unav-arrowClone</code>) dentro de <code>.unav-arrowWrapper</code> para generar la ilusión óptica de deslizamiento continuo al hacer <em>hover</em>, aprovechando transiciones de <code>transform</code>.</li>
+                    </ul>
+
+                    <h3 class="unav-font-primary unav-weight-bold unav-text-125 mb-3 mt-4" style="color: var(--unav-black-800);">2. Accesibilidad (A11y) y Schemas</h3>
+                    <ul class="unav-font-primary unav-weight-regular unav-text-100" style="color: var(--unav-grey-700); padding-left: var(--unav-spacing-md);">
+                        <li style="margin-bottom: var(--unav-spacing-xs);"><strong>Accesibilidad:</strong> Los elementos <code>span</code> internos que componen la flecha gráfica no contienen texto; por ello, los lectores de pantalla los ignoran. El enlace debe tener un texto descriptivo claro.</li>
+                        <li style="margin-bottom: var(--unav-spacing-xs);"><strong>Schemas:</strong> Al ser un enlace de acción principal/secundaria, debe estar marcado con <code>itemscope itemtype="https://schema.org/WebPageElement"</code>, definiendo su URL con <code>itemprop="url"</code> y su etiqueta con <code>itemprop="name"</code>.</li>
+                    </ul>
+                </div>
+                
+                <div class="col-md-6 border-start-md ps-md-4">
+                    <h3 class="unav-font-primary unav-weight-bold unav-text-125 mb-3" style="color: var(--unav-black-800);">3. UX, Layout y Átomos en Componentes</h3>
+                    <ul class="unav-font-primary unav-weight-regular unav-text-100" style="color: var(--unav-grey-700); padding-left: var(--unav-spacing-md);">
+                        <li style="margin-bottom: var(--unav-spacing-xs);"><strong>UX y Layout:</strong> Al ser un elemento de tipo <em>inline-flex</em>, respeta el flujo de los textos (puede colocarse al final de un párrafo) o alinearse mediante las utilidades Flexbox de Bootstrap dentro de un Grid.</li>
+                        <li style="margin-bottom: var(--unav-spacing-xs);"><strong>Uso de Átomos en Organismos:</strong> Este botón terciario es el átomo por defecto requerido al final de las "Tarjetas Modulares de Noticia" o dentro de "Acordeones" cuando se necesita redirigir a una página de profundidad.</li>
+                    </ul>
+
+                    <h3 class="unav-font-primary unav-weight-bold unav-text-125 mb-3 mt-4" style="color: var(--unav-black-800);">4. Formato de Medios y Tipografía</h3>
+                    <ul class="unav-font-primary unav-weight-regular unav-text-100" style="color: var(--unav-grey-700); padding-left: var(--unav-spacing-md);">
+                        <li style="margin-bottom: var(--unav-spacing-xs);"><strong>Tipografía:</strong> El texto ancla consume el tamaño <code>var(--unav-fontSize100)</code> (16px) utilizando la fuente secundaria en mayúsculas <code>var(--unav-fontFamilyPrimaryCondensed)</code> con <code>var(--unav-fontWeightBold)</code>, garantizando una lectura impactante.</li>
+                        <li style="margin-bottom: var(--unav-spacing-xs);"><strong>Imágenes/Vídeos:</strong> Si este botón acompaña a un bloque multimedia (ej. Card de noticia), la imagen superior debe respetar un ratio estricto de <code>16:9</code> y suministrarse en formato WebP con un ancho máximo de 800px para la retícula de tarjetas.</li>
+                    </ul>
                 </div>
             </div>
-        </header>
+        </article>
+
 
         <section class="bg-white p-4 p-md-5 rounded shadow-sm border mb-5">
             <h2 class="unav-font-primary unav-weight-bold unav-text-200 border-bottom pb-2 mb-4 text-dark mt-0">Muestrario Completo de Colores (Grid Responsivo Sin Scroll)</h2>

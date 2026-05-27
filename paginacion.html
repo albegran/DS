@@ -40,32 +40,42 @@
             <p class="unav-font-primary unav-weight-regular unav-text-100 text-muted m-0" itemprop="description">
                 Control de navegación secuencial desacoplado basado en la arquitectura atómica de botones.
             </p>
+        </header>
             
-            <div class="unav-techSummary bg-white p-4 text-start mt-5 rounded shadow-sm border mx-auto" style="max-width: 900px;">
-                <h2 class="unav-font-primary unav-weight-bold unav-text-150 text-dark mb-3">
-                    <i class="bi bi-gear-fill me-2" style="color: var(--unav-grey-400);"></i>Análisis Funcional y Técnico
-                </h2>
-                <p class="unav-font-primary unav-weight-regular unav-text-100 text-muted mb-4">
-                    Este componente de paginación aprovecha de forma directa los tokens estéticos y el comportamiento de <code>.unav-botonPrimario</code>. Se estructura mediante una lista ordenada semántica enriquecida con metadatos de Schema.org para asegurar una correcta accesibilidad (a11y) y rastreo SEO de listados profundos de resultados. El bloque central de elipsis incluye un menú desplegable con scroll adaptativo para saltos rápidos de página.
-                </p>
-                <div class="row g-4 unav-font-primary unav-weight-regular unav-text-100">
-                    <div class="col-md-6">
-                        <ul class="mb-0 text-muted ps-3">
-                            <li class="mb-2"><strong class="text-dark">Bloque Base:</strong> El contenedor utiliza la clase estructural <code>.unav-paginacion</code>.</li>
-                            <li class="mb-2"><strong class="text-dark">Elementos de Enlace:</strong> Cada celda implementa <code>.unav-paginacionItem</code> para regular las dimensiones fijas (44x44px).</li>
-                            <li><strong class="text-dark">Eliminación de Bordes:</strong> Las reglas avanzadas de combinación anulan los dobles contornos internos entre ítems adyacentes.</li>
-                        </ul>
-                    </div>
-                    <div class="col-md-6 border-start-md ps-md-4">
-                        <ul class="mb-0 text-muted ps-3">
-                            <li class="mb-2"><strong class="text-dark">Control de Estado Activo:</strong> La clase ejecutiva <code>.active</code> aplicada al <code>&lt;li&gt;</code> conmuta dinámicamente el color al Rojo Institucional y anula los eventos del puntero.</li>
-                            <li class="mb-2"><strong class="text-dark">Desplegable Elíptico:</strong> Un componente `dropdown` integrado con scroll vertical interno limitado a 200px permite navegar dinámicamente por la serie completa de páginas.</li>
-                            <li><strong class="text-dark">SEO:</strong> Marcado estricto mediante colecciones <code>SiteNavigationElement</code>.</li>
-                        </ul>
-                    </div>
+        
+        <article class="unav-card unav-cardSolid" style="margin-bottom: var(--unav-spacing-3xl);">
+            <h2 class="unav-font-primary unav-weight-bold unav-text-150" style="color: var(--unav-rojo-500); border-bottom: 2px solid var(--unav-rojo-500); padding-bottom: var(--unav-spacing-sm); margin-bottom: var(--unav-spacing-lg);">Guía Técnica y Documentación Oficial</h2>
+            
+            <div class="row g-4">
+                <div class="col-md-6">
+                    <h3 class="unav-font-primary unav-weight-bold unav-text-125 mb-3" style="color: var(--unav-black-800);">1. Implementación OOCSS y Estructura</h3>
+                    <ul class="unav-font-primary unav-weight-regular unav-text-100" style="color: var(--unav-grey-700); padding-left: var(--unav-spacing-md);">
+                        <li style="margin-bottom: var(--unav-spacing-xs);"><strong>Estructura Base:</strong> El componente se enmarca en un elemento <code>&lt;nav&gt;</code> con clase <code>.unav-paginacionContainer</code>. Los ítems se organizan en una lista desordenada <code>&lt;ul&gt;</code> con elementos <code>&lt;li&gt;</code>.</li>
+                        <li style="margin-bottom: var(--unav-spacing-xs);"><strong>Modificadores:</strong> La clase <code>.unav-paginacionItem</code> estandariza el tamaño táctil. El estado activo o actual se señala mediante <code>.unav-isActive</code>, que aplica una variante de estilo específica mediante el sistema OOCSS.</li>
+                    </ul>
+        
+                    <h3 class="unav-font-primary unav-weight-bold unav-text-125 mb-3 mt-4" style="color: var(--unav-black-800);">2. Guía Técnica (HTML/CSS)</h3>
+                    <ul class="unav-font-primary unav-weight-regular unav-text-100" style="color: var(--unav-grey-700); padding-left: var(--unav-spacing-md);">
+                        <li style="margin-bottom: var(--unav-spacing-xs);"><strong>Geometría:</strong> Basado en el sistema de botones del DS, reutiliza los tokens de <code>padding</code> y <code>border-radius</code> para garantizar que cada número sea un área de clic óptima (mínimo 44px de zona táctil).</li>
+                        <li style="margin-bottom: var(--unav-spacing-xs);"><strong>Iconografía:</strong> Utiliza el átomo <code>.material-symbols-outlined</code> para los indicadores de flecha, garantizando una escala vectorial perfecta y escalable sin degradación.</li>
+                    </ul>
+                </div>
+                
+                <div class="col-md-6 border-start-md ps-md-4">
+                    <h3 class="unav-font-primary unav-weight-bold unav-text-125 mb-3" style="color: var(--unav-black-800);">3. Accesibilidad (A11y) y Schemas (SEO)</h3>
+                    <ul class="unav-font-primary unav-weight-regular unav-text-100" style="color: var(--unav-grey-700); padding-left: var(--unav-spacing-md);">
+                        <li style="margin-bottom: var(--unav-spacing-xs);"><strong>Accesibilidad (A11y):</strong> Obligatorio el uso de <code>aria-label</code> descriptivos en los botones de "Página siguiente/anterior" para que los lectores de pantalla expliquen la navegación correctamente. La página actual debe incluir <code>aria-current="page"</code>.</li>
+                        <li style="margin-bottom: var(--unav-spacing-xs);"><strong>Schemas:</strong> Es recomendable envolver el contenedor en un schema de navegación <code>https://schema.org/SiteNavigationElement</code>.</li>
+                    </ul>
+        
+                    <h3 class="unav-font-primary unav-weight-bold unav-text-125 mb-3 mt-4" style="color: var(--unav-black-800);">4. UX, Integración y Layouts</h3>
+                    <ul class="unav-font-primary unav-weight-regular unav-text-100" style="color: var(--unav-grey-700); padding-left: var(--unav-spacing-md);">
+                        <li style="margin-bottom: var(--unav-spacing-xs);"><strong>UX de Navegación:</strong> La paginación siempre debe ser predecible. Se recomienda centrar el componente mediante <code>justify-content-center</code> en el contenedor <code>&lt;ul&gt;</code> para mejorar la visibilidad dentro de la página.</li>
+                        <li style="margin-bottom: var(--unav-spacing-xs);"><strong>Layouts:</strong> Este átomo es extremadamente ligero y se inserta al pie de cualquier grid de datos (noticias, eventos, tablas). No tiene dependencias de ancho fijo, adaptándose al flujo de la columna donde se sitúe.</li>
+                    </ul>
                 </div>
             </div>
-        </header>
+        </article>
 
         <section class="bg-white p-4 p-md-5 rounded shadow-sm border mb-5">
             <h3 class="unav-sectionTitle unav-font-primary unav-weight-bold unav-text-150 mt-0 mb-4 border-bottom pb-2 text-dark">Ejemplo de Implementación en Producción</h3>
