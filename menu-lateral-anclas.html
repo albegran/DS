@@ -12,127 +12,142 @@
     <link rel="stylesheet" href="unav-styles.css">   
 
     <style>
-        /* Estilos de guía técnica */
-        html { scroll-behavior: smooth; background-color: var(--unav-grey-100); }
-        body { background-color: transparent; }
+        /* Estilos de contexto para la documentación */
+        html { scroll-behavior: smooth; }
+        body { background-color: var(--unav-grey-100); }
+        
+        .unav-doc-container { padding-top: var(--unav-spacing-3xl); padding-bottom: var(--unav-spacing-3xl); }
+        h2[id], h3[id], section[id] { scroll-margin-top: 6rem; }
     </style>
 </head>
-<body class="bg-light">
+<body class="unav-font-primary unav-weight-regular unav-text-100" itemscope itemtype="https://schema.org/WebPage">
 
-    <nav class="navbar navbar-light bg-white border-bottom py-3 sticky-top">
-        <div class="container-lg d-flex justify-content-between align-items-center">
+    <nav style="background-color: #ffffff; border-bottom: 1px solid var(--unav-grey-200); padding: var(--unav-spacing-md) 0; position: sticky; top: 0; z-index: var(--unav-zIndex-sticky);">
+        <div class="container-lg d-flex justify-content-between align-items-center position-relative">
+            
             <div itemscope itemtype="https://schema.org/WebPageElement">
-                <a itemprop="url" href="indice.html" class="unav-boton unav-botonSecundario" style="--unav-botonColorSource: var(--unav-grey-600);">
+                <a itemprop="url" href="indice.html" class="unav-boton unav-botonSecundario">
                     <i class="bi bi-arrow-left unav-botonIcono" aria-hidden="true"></i>
                     <span class="d-none d-md-inline" itemprop="name">Volver al Índice</span>
                 </a>
             </div>
-            <span class="unav-font-primary-condensed unav-weight-regular unav-text-150 m-0" style="color: var(--unav-rojo-500); line-height: 1;">
+    
+            <span class="unav-font-primary-condensed unav-weight-regular unav-text-150 m-0 position-absolute start-50 translate-middle-x" style="color: var(--unav-rojo-500); line-height: 1;">
                 Design System UNAV
             </span>
+    
         </div>
     </nav>
 
-    <main class="container-lg py-5" itemprop="mainContentOfPage">
+    
         
-        <header class="text-center mb-5 border-bottom pb-4">
-            <h1 class="unav-font-primary unav-weight-medium unav-text-200 text-dark mb-3" itemprop="name">Menú Lateral de Anclas</h1>
-            <p class="unav-font-primary unav-weight-regular unav-text-100 text-muted m-0" itemprop="description">
-                Navegación contextual con ScrollSpy sincronizado que hereda la física de los Bloques de Enlace.
-            </p>
-        </header>
+        
 
-        <article class="unav-card unav-cardSolid" style="margin-bottom: var(--unav-spacing-3xl);">
-            <h2 class="unav-font-primary unav-weight-bold unav-text-150" style="color: var(--unav-rojo-500); border-bottom: 2px solid var(--unav-rojo-500); padding-bottom: var(--unav-spacing-sm); margin-bottom: var(--unav-spacing-lg);">Guía Técnica y Documentación Oficial</h2>
-            
-            <div class="row g-4">
-                <div class="col-md-6">
-                    <h3 class="unav-font-primary unav-weight-bold unav-text-125 mb-3" style="color: var(--unav-black-800);">1. Implementación OOCSS y Estructura</h3>
-                    <ul class="unav-font-primary unav-weight-regular unav-text-100" style="color: var(--unav-grey-700); padding-left: var(--unav-spacing-md);">
-                        <li style="margin-bottom: var(--unav-spacing-xs);"><strong>Estructura Base:</strong> El menú se compone de una lista <code>ul</code> con clase <code>.unav-menuAnclas</code>. Cada ítem es un <code>li</code> que contiene un enlace con clase <code>.unav-linkAncla</code>.</li>
-                        <li style="margin-bottom: var(--unav-spacing-xs);"><strong>Estado Activo:</strong> La clase <code>.unav-isActive</code> marca el ancla correspondiente a la sección visible en pantalla, gestionada mediante lógica de <em>ScrollSpy</em>.</li>
-                    </ul>
+    <!-- Envoltorio general de documentación -->
+    <main itemprop="mainContentOfPage">
         
-                    <h3 class="unav-font-primary unav-weight-bold unav-text-125 mb-3 mt-4" style="color: var(--unav-black-800);">2. Guía Técnica (JavaScript y ScrollSpy)</h3>
-                    <ul class="unav-font-primary unav-weight-regular unav-text-100" style="color: var(--unav-grey-700); padding-left: var(--unav-spacing-md);">
-                        <li style="margin-bottom: var(--unav-spacing-xs);"><strong>Motor de Seguimiento:</strong> Utiliza un <code>IntersectionObserver</code> configurado con un <code>rootMargin</code> específico para detectar la sección activa mientras el usuario hace scroll.</li>
-                        <li style="margin-bottom: var(--unav-spacing-xs);"><strong>Animación de Subrayado:</strong> Un script calcula en tiempo real la posición y anchura del enlace activo, inyectando los valores en variables CSS (<code>--unav-lineWidth</code>, <code>--unav-lineLeft</code>) que animan un pseudo-elemento <code>::after</code>.</li>
-                    </ul>
-                </div>
+
+        <!-- Header Documentación (Encapsulado) -->
+        <div class="container-lg py-5">
+            <header style="text-align: center; margin-bottom: var(--unav-spacing-md); padding-bottom: var(--unav-spacing-md);">
+
+                <h1 class="unav-font-primary unav-weight-medium unav-text-200 text-dark mb-3" itemprop="name">Menú Lateral de Anclas</h1>
+                <p class="unav-font-primary unav-weight-regular unav-text-100 text-muted m-0" itemprop="description">
+                    Navegación contextual con ScrollSpy sincronizado que hereda la física de los Bloques de Enlace.
+                </p>
+            </header>
+
+            <article class="unav-card unav-cardSolid" style="margin-bottom: var(--unav-spacing-3xl);">
+                <h2 class="unav-font-primary unav-weight-bold unav-text-150" style="color: var(--unav-rojo-500); border-bottom: 2px solid var(--unav-rojo-500); padding-bottom: var(--unav-spacing-sm); margin-bottom: var(--unav-spacing-lg);">Guía Técnica y Documentación Oficial</h2>
                 
-                <div class="col-md-6 border-start-md ps-md-4">
-                    <h3 class="unav-font-primary unav-weight-bold unav-text-125 mb-3" style="color: var(--unav-black-800);">3. Accesibilidad (A11y) y Schemas (SEO)</h3>
-                    <ul class="unav-font-primary unav-weight-regular unav-text-100" style="color: var(--unav-grey-700); padding-left: var(--unav-spacing-md);">
-                        <li style="margin-bottom: var(--unav-spacing-xs);"><strong>Accesibilidad Semántica:</strong> Al ser un menú de navegación, es obligatorio envolverlo en un contenedor con <code>role="navigation"</code> o <code>nav</code>, y aplicar el schema <code>https://schema.org/SiteNavigationElement</code>.</li>
-                        <li style="margin-bottom: var(--unav-spacing-xs);"><strong>Navegación Teclado:</strong> El comportamiento de scroll suave (<code>scroll-behavior: smooth</code>) está garantizado en el CSS base, permitiendo una experiencia coherente tanto por clics como por navegación con teclado.</li>
-                    </ul>
-        
-                    <h3 class="unav-font-primary unav-weight-bold unav-text-125 mb-3 mt-4" style="color: var(--unav-black-800);">4. UX, Integración y Layout</h3>
-                    <ul class="unav-font-primary unav-weight-regular unav-text-100" style="color: var(--unav-grey-700); padding-left: var(--unav-spacing-md);">
-                        <li style="margin-bottom: var(--unav-spacing-xs);"><strong>Layout Lateral:</strong> El menú está diseñado para fijarse en el lateral mediante <code>position: sticky</code>, optimizando el espacio en pantallas de escritorio donde las secciones de contenido son extensas.</li>
-                        <li style="margin-bottom: var(--unav-spacing-xs);"><strong>Tipografía:</strong> Emplea <code>var(--unav-fontSize100)</code> con una jerarquía de pesos que distingue claramente el enlace inactivo del activo mediante el peso <code>var(--unav-fontWeightBold)</code> al activar el estado <code>.unav-isActive</code>.</li>
-                    </ul>
-                </div>
-            </div>
-        </article>
-
-        <div class="row">
+                <div class="row g-4">
+                    <div class="col-md-6">
+                        <h3 class="unav-font-primary unav-weight-bold unav-text-125 mb-3" style="color: var(--unav-black-800);">1. Implementación OOCSS y Estructura</h3>
+                        <ul class="unav-font-primary unav-weight-regular unav-text-100" style="color: var(--unav-grey-700); padding-left: var(--unav-spacing-md);">
+                            <li style="margin-bottom: var(--unav-spacing-xs);"><strong>Estructura Base:</strong> El menú se compone de una lista <code>ul</code> con clase <code>.unav-menuAnclas</code>. Cada ítem es un <code>li</code> que contiene un enlace con clase <code>.unav-linkAncla</code>.</li>
+                            <li style="margin-bottom: var(--unav-spacing-xs);"><strong>Estado Activo:</strong> La clase <code>.unav-isActive</code> marca el ancla correspondiente a la sección visible en pantalla, gestionada mediante lógica de <em>ScrollSpy</em>.</li>
+                        </ul>
             
-            <div class="col-md-8 col-xl-9 pe-lg-5">
-                <div class="bg-white p-4 p-md-5 rounded shadow-sm border mb-4">
-                    <div id="seccion-1" class="unav-contentSection">
-                        <h2 class="unav-font-primary unav-text-200 unav-weight-bold">1. Admisión y Ayudas</h2>
-                        <p class="text-muted">Desarrollo del contenido de la primera sección. El menú lateral de la derecha rastrea automáticamente tu posición en este bloque. Este patrón es ideal para páginas informativas extensas donde el usuario necesita orientación constante sobre su ubicación en la arquitectura de la página.</p>
-                        <br><br><br>
-                    </div>
-
-                    <div id="seccion-2" class="unav-contentSection">
-                        <h2 class="unav-font-primary unav-text-200 unav-weight-bold">2. Grados y Programas Estructurales</h2>
-                        <p class="text-muted">Nota cómo el bloque de enlace en el menú lateral reacciona trazando el subrayado matemático bajo la última línea renderizada. Si redimensionas la ventana y el texto del menú salta a dos líneas, el sistema recalcula la geometría del subrayado para mantener la elegancia visual.</p>
-                        <br><br><br>
-                    </div>
-
-                    <div id="seccion-3" class="unav-contentSection">
-                        <h2 class="unav-font-primary unav-text-200 unav-weight-bold">3. Másteres y Postgrado</h2>
-                        <p class="text-muted">El uso de la propiedad CSS <code>scroll-margin-top</code> y la compensación de margin/padding evita que el menú de navegación superior oculte el inicio de esta sección cuando haces clic en el enlace lateral.</p>
-                        <br><br><br>
-                    </div>
-
-                    <div id="seccion-4" class="unav-contentSection">
-                        <h2 class="unav-font-primary unav-weight-bold unav-text-200">4. Facultades y Escuelas</h2>
-                        <p class="text-muted">Contenido de la última sección. El script del menú incluye un detector de final de página (Bottom detection) para asegurar que esta última ancla siempre se marque como activa, incluso si el contenido de la sección no es lo suficientemente largo como para cruzar el umbral del observador.</p>
+                        <h3 class="unav-font-primary unav-weight-bold unav-text-125 mb-3 mt-4" style="color: var(--unav-black-800);">2. Guía Técnica (JavaScript y ScrollSpy)</h3>
+                        <ul class="unav-font-primary unav-weight-regular unav-text-100" style="color: var(--unav-grey-700); padding-left: var(--unav-spacing-md);">
+                            <li style="margin-bottom: var(--unav-spacing-xs);"><strong>Motor de Seguimiento:</strong> Utiliza un <code>IntersectionObserver</code> configurado con un <code>rootMargin</code> específico para detectar la sección activa mientras el usuario hace scroll.</li>
+                            <li style="margin-bottom: var(--unav-spacing-xs);"><strong>Animación de Subrayado:</strong> Un script calcula en tiempo real la posición y anchura del enlace activo, inyectando los valores en variables CSS (<code>--unav-lineWidth</code>, <code>--unav-lineLeft</code>) que animan un pseudo-elemento <code>::after</code>.</li>
+                        </ul>
                     </div>
                     
-                    <div class="unav-pageFooterBuffer"></div>
+                    <div class="col-md-6 border-start-md ps-md-4">
+                        <h3 class="unav-font-primary unav-weight-bold unav-text-125 mb-3" style="color: var(--unav-black-800);">3. Accesibilidad (A11y) y Schemas (SEO)</h3>
+                        <ul class="unav-font-primary unav-weight-regular unav-text-100" style="color: var(--unav-grey-700); padding-left: var(--unav-spacing-md);">
+                            <li style="margin-bottom: var(--unav-spacing-xs);"><strong>Accesibilidad Semántica:</strong> Al ser un menú de navegación, es obligatorio envolverlo en un contenedor con <code>role="navigation"</code> o <code>nav</code>, y aplicar el schema <code>https://schema.org/SiteNavigationElement</code>.</li>
+                            <li style="margin-bottom: var(--unav-spacing-xs);"><strong>Navegación Teclado:</strong> El comportamiento de scroll suave (<code>scroll-behavior: smooth</code>) está garantizado en el CSS base, permitiendo una experiencia coherente tanto por clics como por navegación con teclado.</li>
+                        </ul>
+            
+                        <h3 class="unav-font-primary unav-weight-bold unav-text-125 mb-3 mt-4" style="color: var(--unav-black-800);">4. UX, Integración y Layout</h3>
+                        <ul class="unav-font-primary unav-weight-regular unav-text-100" style="color: var(--unav-grey-700); padding-left: var(--unav-spacing-md);">
+                            <li style="margin-bottom: var(--unav-spacing-xs);"><strong>Layout Lateral:</strong> El menú está diseñado para fijarse en el lateral mediante <code>position: sticky</code>, optimizando el espacio en pantallas de escritorio donde las secciones de contenido son extensas.</li>
+                            <li style="margin-bottom: var(--unav-spacing-xs);"><strong>Tipografía:</strong> Emplea <code>var(--unav-fontSize100)</code> con una jerarquía de pesos que distingue claramente el enlace inactivo del activo mediante el peso <code>var(--unav-fontWeightBold)</code> al activar el estado <code>.unav-isActive</code>.</li>
+                        </ul>
+                    </div>
                 </div>
-            </div>
+            </article>
 
-            <div class="col-md-4 col-xl-3 d-none d-md-block">
-                <div class="unav-menuAnclasWrapper sticky-top" itemscope itemtype="https://schema.org/SiteNavigationElement">
-                    <nav class="unav-menuAnclas">
-                        <div class="unav-menuAnclasHeader">
-                            <span class="unav-menuAnclasSubtitle">En esta página</span>
-                            <h2 class="unav-menuAnclasTitle">Oferta Académica</h2>
+            <div class="row">
+                
+                <div class="col-md-8 col-xl-9 pe-lg-5">
+                    <div class="bg-white p-4 p-md-5 rounded shadow-sm border mb-4">
+                        <div id="seccion-1" class="unav-contentSection">
+                            <h2 class="unav-font-primary unav-text-200 unav-weight-bold">1. Admisión y Ayudas</h2>
+                            <p class="text-muted">Desarrollo del contenido de la primera sección. El menú lateral de la derecha rastrea automáticamente tu posición en este bloque. Este patrón es ideal para páginas informativas extensas donde el usuario necesita orientación constante sobre su ubicación en la arquitectura de la página.</p>
+                            <br><br><br>
                         </div>
 
-                        <div class="unav-listadoEnlaces" id="unavAnchorContainer">
-                            <a itemprop="url" href="#seccion-1" class="unav-bloqueEnlace unav-anchorLink">
-                                <span itemprop="name" class="unav-bloqueEnlaceText">Admisión y Ayudas</span>
-                            </a>
-                            <a itemprop="url" href="#seccion-2" class="unav-bloqueEnlace unav-anchorLink">
-                                <span itemprop="name" class="unav-bloqueEnlaceText">Grados y Programas Estructurales</span>
-                            </a>
-                            <a itemprop="url" href="#seccion-3" class="unav-bloqueEnlace unav-anchorLink">
-                                <span itemprop="name" class="unav-bloqueEnlaceText">Másteres y Postgrado</span>
-                            </a>
-                            <a itemprop="url" href="#seccion-4" class="unav-bloqueEnlace unav-anchorLink">
-                                <span itemprop="name" class="unav-bloqueEnlaceText">Facultades y Escuelas</span>
-                            </a>
+                        <div id="seccion-2" class="unav-contentSection">
+                            <h2 class="unav-font-primary unav-text-200 unav-weight-bold">2. Grados y Programas Estructurales</h2>
+                            <p class="text-muted">Nota cómo el bloque de enlace en el menú lateral reacciona trazando el subrayado matemático bajo la última línea renderizada. Si redimensionas la ventana y el texto del menú salta a dos líneas, el sistema recalcula la geometría del subrayado para mantener la elegancia visual.</p>
+                            <br><br><br>
                         </div>
-                    </nav>
+
+                        <div id="seccion-3" class="unav-contentSection">
+                            <h2 class="unav-font-primary unav-text-200 unav-weight-bold">3. Másteres y Postgrado</h2>
+                            <p class="text-muted">El uso de la propiedad CSS <code>scroll-margin-top</code> y la compensación de margin/padding evita que el menú de navegación superior oculte el inicio de esta sección cuando haces clic en el enlace lateral.</p>
+                            <br><br><br>
+                        </div>
+
+                        <div id="seccion-4" class="unav-contentSection">
+                            <h2 class="unav-font-primary unav-weight-bold unav-text-200">4. Facultades y Escuelas</h2>
+                            <p class="text-muted">Contenido de la última sección. El script del menú incluye un detector de final de página (Bottom detection) para asegurar que esta última ancla siempre se marque como activa, incluso si el contenido de la sección no es lo suficientemente largo como para cruzar el umbral del observador.</p>
+                        </div>
+                        
+                        <div class="unav-pageFooterBuffer"></div>
+                    </div>
+                </div>
+
+                <div class="col-md-4 col-xl-3 d-none d-md-block">
+                    <div class="unav-menuAnclasWrapper sticky-top" itemscope itemtype="https://schema.org/SiteNavigationElement">
+                        <nav class="unav-menuAnclas">
+                            <div class="unav-menuAnclasHeader">
+                                <span class="unav-menuAnclasSubtitle">En esta página</span>
+                                <h2 class="unav-menuAnclasTitle">Oferta Académica</h2>
+                            </div>
+
+                            <div class="unav-listadoEnlaces" id="unavAnchorContainer">
+                                <a itemprop="url" href="#seccion-1" class="unav-bloqueEnlace unav-anchorLink">
+                                    <span itemprop="name" class="unav-bloqueEnlaceText">Admisión y Ayudas</span>
+                                </a>
+                                <a itemprop="url" href="#seccion-2" class="unav-bloqueEnlace unav-anchorLink">
+                                    <span itemprop="name" class="unav-bloqueEnlaceText">Grados y Programas Estructurales</span>
+                                </a>
+                                <a itemprop="url" href="#seccion-3" class="unav-bloqueEnlace unav-anchorLink">
+                                    <span itemprop="name" class="unav-bloqueEnlaceText">Másteres y Postgrado</span>
+                                </a>
+                                <a itemprop="url" href="#seccion-4" class="unav-bloqueEnlace unav-anchorLink">
+                                    <span itemprop="name" class="unav-bloqueEnlaceText">Facultades y Escuelas</span>
+                                </a>
+                            </div>
+                        </nav>
+                    </div>
                 </div>
             </div>
-
         </div>
     </main>
 

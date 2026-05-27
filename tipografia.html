@@ -22,22 +22,25 @@
 <body class="unav-font-primary unav-weight-regular unav-text-100" itemscope itemtype="https://schema.org/WebPage">
 
     <nav style="background-color: #ffffff; border-bottom: 1px solid var(--unav-grey-200); padding: var(--unav-spacing-md) 0; position: sticky; top: 0; z-index: var(--unav-zIndex-sticky);">
-        <div class="container-lg d-flex justify-content-between align-items-center">
+        <div class="container-lg d-flex justify-content-between align-items-center position-relative">
+            
             <div itemscope itemtype="https://schema.org/WebPageElement">
                 <a itemprop="url" href="indice.html" class="unav-boton unav-botonSecundario">
                     <i class="bi bi-arrow-left unav-botonIcono" aria-hidden="true"></i>
                     <span class="d-none d-md-inline" itemprop="name">Volver al Índice</span>
                 </a>
             </div>
-            <span class="unav-font-primary-condensed unav-weight-regular unav-text-150 m-0" style="color: var(--unav-rojo-500); line-height: 1;">
+    
+            <span class="unav-font-primary-condensed unav-weight-regular unav-text-150 m-0 position-absolute start-50 translate-middle-x" style="color: var(--unav-rojo-500); line-height: 1;">
                 Design System UNAV
             </span>
+    
         </div>
     </nav>
 
     <main class="container-lg unav-doc-container" itemprop="mainContentOfPage">
         
-        <header style="text-align: center; margin-bottom: var(--unav-spacing-2xl); border-bottom: 1px solid var(--unav-grey-200); padding-bottom: var(--unav-spacing-xl);">
+        <header style="text-align: center; margin-bottom: var(--unav-spacing-md); padding-bottom: var(--unav-spacing-md);">
             <h1 class="unav-font-primary unav-weight-medium unav-text-200 m-0" style="color: var(--unav-black-900); margin-bottom: var(--unav-spacing-sm) !important;" itemprop="name">Sistema Tipográfico</h1>
             <p class="unav-font-primary unav-weight-regular unav-text-100 m-0" style="color: var(--unav-grey-600);" itemprop="description">
                 Consumo de clases utilitarias "Tokens" para aplicaciones web.
@@ -310,7 +313,7 @@
                     <div class="col-md-6">
                         <div class="unav-card unav-cardSolid" style="height: 100%;">
                             <div style="margin-bottom: var(--unav-spacing-md);"><span class="unav-tag unav-tagBlack">.unav-lh-normal (1.5)</span></div>
-                            <p class="unav-font-primary unav-weight-regular unav-text-100 unav-lh-normal m-0" style="white-space: normal; color: var(--unav-grey-600);">
+                            <p class="unav-font-primary unav-weight-regular unav-text-1125 unav-lh-normal m-0" style="white-space: normal; color: var(--unav-grey-600);">
                                 Este es el interlineado base estándar del sistema. Se utiliza para la lectura de párrafos convencionales. Permite que el ojo humano transite de una línea a otra sin esfuerzo, evitando la fatiga visual en textos de media y larga extensión.
                             </p>
                         </div>
@@ -339,14 +342,14 @@
             <section id="enlaces-inline" style="margin-top: var(--unav-spacing-3xl); padding-top: var(--unav-spacing-2xl); border-top: 1px solid var(--unav-grey-300);">
                 <h2 class="unav-font-primary unav-weight-bold unav-text-200" style="border-bottom: 1px solid var(--unav-grey-300); padding-bottom: var(--unav-spacing-sm); margin-bottom: var(--unav-spacing-md); color: var(--unav-black-900);">4. Enlaces Inline (Cuerpo de texto)</h2>
                 <p class="unav-font-primary unav-weight-regular unav-text-100 unav-lh-normal" style="color: var(--unav-grey-600); margin-bottom: var(--unav-spacing-xl);">
-                    Los enlaces que conviven dentro de párrafos estándar (Roboto, Regular 400, 1rem) deben utilizar la clase <code>.unav-enlaceInline</code>. Esta abstracción aplica el color corporativo institucional y un subrayado desplazado (offset) que mejora significativamente la legibilidad y la accesibilidad (WCAG) sin recargar la lectura. Para fondos oscuros o corporativos, se utiliza el modificador <code>.unav-enlaceInlineBlanco</code>.
+                    Los enlaces que conviven dentro de párrafos estándar (Roboto, Regular 400, 1.125rem) deben utilizar la clase <code>.unav-enlaceInline</code>. Esta abstracción aplica el color corporativo institucional y un subrayado desplazado (offset) que mejora significativamente la legibilidad y la accesibilidad (WCAG) sin recargar la lectura. Para fondos oscuros o corporativos, se utiliza el modificador <code>.unav-enlaceInlineBlanco</code>.
                 </p>
                 
                 <div class="row g-4">
                     <div class="col-md-6">
                         <div class="unav-card unav-cardSolid" style="height: 100%;">
                             <div style="margin-bottom: var(--unav-spacing-md);"><span class="unav-tag unav-tagRojo">.unav-enlaceInline</span></div>
-                            <p class="unav-font-primary unav-weight-regular unav-text-100 unav-lh-normal m-0" style="color: var(--unav-black-800);">
+                            <p class="unav-font-primary unav-weight-regular unav-text-1125 unav-lh-normal m-0" style="color: var(--unav-black-800);">
                                 La Universidad de Navarra promueve la investigación interdisciplinar en diferentes campos de la ciencia y las humanidades. Para conocer más detalles sobre nuestros últimos proyectos, puedes <a href="#" class="unav-enlaceInline">consultar el informe anual de investigación</a> publicado recientemente por el rectorado.
                             </p>
                         </div>
@@ -355,7 +358,7 @@
                     <div class="col-md-6">
                         <div class="unav-card unav-cardSolid unav-cardDark unav-bg-rojo-600" style="height: 100%; border: 1px solid var(--unav-rojo-700); --unav-cardBgBase: var(--unav-rojo-600);">
                             <div style="margin-bottom: var(--unav-spacing-md);"><span class="unav-tag unav-tagWhite">.unav-enlaceInlineBlanco</span></div>
-                            <p class="unav-font-primary unav-weight-regular unav-text-100 unav-lh-normal m-0" style="color: rgba(255, 255, 255, 0.9);">
+                            <p class="unav-font-primary unav-weight-regular unav-text-1125 unav-lh-normal m-0" style="color: rgba(255, 255, 255, 0.9);">
                                 La Universidad de Navarra promueve la investigación interdisciplinar en diferentes campos de la ciencia y las humanidades. Para conocer más detalles sobre nuestros últimos proyectos, puedes <a href="#" class="unav-enlaceInline unav-enlaceInlineBlanco">consultar el informe anual de investigación</a> publicado recientemente por el rectorado.
                             </p>
                         </div>

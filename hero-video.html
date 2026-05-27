@@ -12,31 +12,45 @@
     <link rel="stylesheet" href="unav-styles.css">   
 
     <style>
-        /* Estilos de guía técnica */
-        html { scroll-behavior: smooth; background-color: var(--unav-grey-100); }
-        body { background-color: transparent; }
+        /* Estilos de contexto para la documentación */
+        html { scroll-behavior: smooth; }
+        body { background-color: var(--unav-grey-100); }
+        
+        .unav-doc-container { padding-top: var(--unav-spacing-3xl); padding-bottom: var(--unav-spacing-3xl); }
+        h2[id], h3[id], section[id] { scroll-margin-top: 6rem; }
     </style>
 </head>
-<body class="bg-light">
+<body class="unav-font-primary unav-weight-regular unav-text-100" itemscope itemtype="https://schema.org/WebPage">
 
-    <nav class="navbar navbar-light bg-white border-bottom py-3 sticky-top">
-        <div class="container-lg d-flex justify-content-between align-items-center">
+    <nav style="background-color: #ffffff; border-bottom: 1px solid var(--unav-grey-200); padding: var(--unav-spacing-md) 0; position: sticky; top: 0; z-index: var(--unav-zIndex-sticky);">
+        <div class="container-lg d-flex justify-content-between align-items-center position-relative">
+            
             <div itemscope itemtype="https://schema.org/WebPageElement">
-                <a itemprop="url" href="indice.html" class="unav-boton unav-botonSecundario" style="--unav-botonColorSource: var(--unav-grey-600);">
+                <a itemprop="url" href="indice.html" class="unav-boton unav-botonSecundario">
                     <i class="bi bi-arrow-left unav-botonIcono" aria-hidden="true"></i>
                     <span class="d-none d-md-inline" itemprop="name">Volver al Índice</span>
                 </a>
             </div>
-            <span class="unav-font-primary-condensed unav-weight-regular unav-text-150 m-0" style="color: var(--unav-rojo-500); line-height: 1;">
+    
+            <span class="unav-font-primary-condensed unav-weight-regular unav-text-150 m-0 position-absolute start-50 translate-middle-x" style="color: var(--unav-rojo-500); line-height: 1;">
                 Design System UNAV
             </span>
+    
         </div>
     </nav>
 
+    
+        
+        
+
+    <!-- Envoltorio general de documentación -->
     <main itemprop="mainContentOfPage">
         
+
+        <!-- Header Documentación (Encapsulado) -->
         <div class="container-lg py-5">
-            <header class="text-center mb-5 border-bottom pb-4">
+            <header style="text-align: center; margin-bottom: var(--unav-spacing-md); padding-bottom: var(--unav-spacing-md);">
+
                 <h1 class="unav-font-primary unav-weight-medium unav-text-200 text-dark mb-3" itemprop="name">Componente Hero Vídeo</h1>
                 <p class="unav-font-primary unav-weight-regular unav-text-100 text-muted m-0" itemprop="description">
                     Cabeceras inmensas (fullwidth) utilizando fondos dinámicos multimedia (YouTube o archivos locales).

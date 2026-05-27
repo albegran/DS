@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Catálogo de Eventos | Design System UNAV</title>
+    <title>Grid de Eventos | Design System UNAV</title>
     
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css">
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.1/font/bootstrap-icons.css">    
@@ -18,39 +18,30 @@
         
         .unav-doc-container { padding-top: var(--unav-spacing-3xl); padding-bottom: var(--unav-spacing-3xl); }
         h2[id], h3[id], section[id] { scroll-margin-top: 6rem; }
-        
-        .unav-gridPlaceholder {
-            background-color: var(--unav-grey-100);
-            border: 2px dashed var(--unav-grey-300);
-            height: 100%;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            color: var(--unav-grey-500);
-            min-height: 300px;
-            border-radius: var(--unav-eventCardRadius, 4px);
-        }
     </style>
 </head>
 <body class="unav-font-primary unav-weight-regular unav-text-100" itemscope itemtype="https://schema.org/WebPage">
 
-    <nav class="navbar navbar-light bg-white border-bottom py-3 sticky-top">
-        <div class="container-lg d-flex justify-content-between align-items-center">
+    <nav style="background-color: #ffffff; border-bottom: 1px solid var(--unav-grey-200); padding: var(--unav-spacing-md) 0; position: sticky; top: 0; z-index: var(--unav-zIndex-sticky);">
+        <div class="container-lg d-flex justify-content-between align-items-center position-relative">
+            
             <div itemscope itemtype="https://schema.org/WebPageElement">
-                <a itemprop="url" href="indice.html" class="unav-boton unav-botonSecundario" style="--unav-botonColorSource: var(--unav-grey-600);">
+                <a itemprop="url" href="indice.html" class="unav-boton unav-botonSecundario">
                     <i class="bi bi-arrow-left unav-botonIcono" aria-hidden="true"></i>
                     <span class="d-none d-md-inline" itemprop="name">Volver al Índice</span>
                 </a>
             </div>
-            <span class="unav-font-primary-condensed unav-weight-regular unav-text-150 m-0" style="color: var(--unav-rojo-500); line-height: 1;">
+    
+            <span class="unav-font-primary-condensed unav-weight-regular unav-text-150 m-0 position-absolute start-50 translate-middle-x" style="color: var(--unav-rojo-500); line-height: 1;">
                 Design System UNAV
             </span>
+    
         </div>
     </nav>
 
-    <main class="container-lg py-5" itemprop="mainContentOfPage">
+    <main class="container-lg unav-doc-container" itemprop="mainContentOfPage">
         
-        <header style="text-align: center; margin-bottom: var(--unav-spacing-2xl); border-bottom: 1px solid var(--unav-grey-200); padding-bottom: var(--unav-spacing-xl);">
+        <header style="text-align: center; margin-bottom: var(--unav-spacing-md); padding-bottom: var(--unav-spacing-md);">
             <h1 class="unav-font-primary unav-weight-medium unav-text-200 text-dark mb-3 unav-lh-tight" itemprop="name">Grid de Eventos</h1>
             <p class="unav-font-primary unav-weight-regular unav-text-100 text-muted m-0 unav-lh-normal" itemprop="description">
                 Contenedores de agenda y actividades con respuesta visual avanzada e interlineado normativo.

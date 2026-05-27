@@ -471,6 +471,9 @@
 }
 
 
+
+
+
 /* ==========================================
    00. ACCESIBILIDAD GLOBAL Y LECTORES DE PANTALLA
    ========================================== */
@@ -491,6 +494,10 @@
     position: absolute;
     width: 1px;
 }
+
+
+
+
 
 
 /* ==========================================
@@ -4148,9 +4155,9 @@
    .unav-text-250 { font-size: var(--unav-fontSize250); }
    .unav-text-200 { font-size: var(--unav-fontSize200); }
    .unav-text-175 { font-size: var(--unav-fontSize175); }
-   .unav-text-150 { font-size: var(--unav-fontSize150); }
-   .unav-text-1125 { font-size: var(--unav-fontSize1125); }
+   .unav-text-150 { font-size: var(--unav-fontSize150); }   
    .unav-text-125 { font-size: var(--unav-fontSize125); }
+   .unav-text-1125 { font-size: var(--unav-fontSize1125); } /* Base para UNAV, un poquito más grande que lo habitual (tomar decisión definitiva) */
    .unav-text-100 { font-size: var(--unav-fontSize100); }
    .unav-text-075 { font-size: var(--unav-fontSize075); }
    
