@@ -111,10 +111,9 @@
     <!-- CONTENIDO PRINCIPAL -->
     <main class="container-lg py-5" itemprop="mainContentOfPage">
         
-        <!-- BLOQUE DE RESUMEN TÉCNICO -->
-        <header class="text-center mb-5 border-bottom pb-4" style="border-color: var(--unav-grey-200) !important;">
-            <h1 class="unav-font-primary unav-weight-medium unav-text-250 mb-3" style="color: var(--unav-black-900);" itemprop="name">Layouts de Detalle Noticia</h1>
-            <p class="unav-font-primary unav-weight-regular unav-text-125 m-0" style="color: var(--unav-grey-600);" itemprop="description">
+        <header style="text-align: center; margin-bottom: var(--unav-spacing-md); padding-bottom: var(--unav-spacing-md);">
+            <h1 class="unav-font-primary unav-weight-medium unav-text-200 m-0" style="color: var(--unav-black-900); margin-bottom: var(--unav-spacing-sm) !important;" itemprop="name">Layouts de Detalle Noticia</h1>
+            <p class="unav-font-primary unav-weight-regular unav-text-100 m-0" style="color: var(--unav-grey-600);" itemprop="description">
                 Muestrario de variaciones estructurales para reportajes en profundidad y notas de prensa.
             </p>
         </header>
@@ -143,10 +142,7 @@
                     <!-- TITULAR CON EFECTO REVEAL (Adaptado a 2 líneas fluidas) -->
                     <h1 class="unav-heroEditorial-title unav-font-secondary-playfair mb-3" itemprop="headline">
                         <span class="unav-heroEditorial-mask">
-                            <span class="unav-heroEditorial-revealText" style="animation-delay: 0.15s;">La OTAN redefine su estrategia global para</span>
-                        </span>
-                        <span class="unav-heroEditorial-mask">
-                            <span class="unav-heroEditorial-revealText" style="animation-delay: 0.35s;">garantizar el futuro de las democracias</span>
+                            <span class="unav-heroEditorial-revealText" style="animation-delay: 0.15s;">La OTAN redefine su estrategia global para garantizar el futuro de las democracias</span>
                         </span>
                     </h1>
 
@@ -163,7 +159,7 @@
                         <img src="https://picsum.photos/id/1015/1200/500" alt="OTAN Cumbre" class="img-fluid w-100" style="border-radius: var(--unav-radius-none);" itemprop="contentUrl">
                     </figure>
 
-                    <div class="row align-items-center mb-5">
+                    <div class="row align-items-center">
                         <div class="col-10 text-start">
                             <p class="unav-font-primary unav-text-085 m-0" style="color: var(--unav-grey-600);">Detalle de la arquitectura durante la cumbre.</p>
                         </div>
@@ -183,25 +179,21 @@
                             <button class="unav-accordionHeader" aria-expanded="false">
                                 <div class="unav-accordionTitleWrapper">
                                     <span class="unav-weight-bold unav-text-085" style="letter-spacing: var(--unav-trackingWide);">
-                                        <i class="bi bi-share me-2" style="color: var(--unav-rojo-500);"></i> COMPARTE EN REDES
+                                        <i class="bi bi-share me-2" style="color: var(--unav-rojo-500);"></i> COMPARTE
                                     </span>
                                 </div>
                                 <span class="material-symbols-outlined unav-accordionToggleIcon" aria-hidden="true">expand_more</span>
                             </button>
                             <div class="unav-accordionPanel">
                                 <div class="unav-accordionInner d-flex flex-column gap-3">
-                                    <a href="#" class="unav-boton unav-botonSecundario unav-botonFit">
-                                        <i class="bi bi-whatsapp unav-botonIcono"></i>
-                                        <span>WhatsApp</span>
-                                    </a>
-                                    <a href="#" class="unav-boton unav-botonSecundario unav-botonFit">
-                                        <i class="bi bi-facebook unav-botonIcono"></i>
-                                        <span>Facebook</span>
-                                    </a>
-                                    <a href="#" class="unav-boton unav-botonSecundario unav-botonFit">
-                                        <i class="bi bi-twitter-x unav-botonIcono"></i>
-                                        <span>Twitter / X</span>
-                                    </a>
+                                    <div class="d-flex gap-2 flex-wrap align-items-center">
+                                        <button class="unav-boton unav-botonSecundario unav-botonIconOnly unav-botonIconOnlySm" style="--unav-botonColorSource: var(--unav-black-800);"  aria-label="Facebook"><i class="bi bi-facebook unav-botonIcono"></i></button>
+                                        <button class="unav-boton unav-botonSecundario unav-botonIconOnly unav-botonIconOnlySm" style="--unav-botonColorSource: var(--unav-black-800);"  aria-label="X"><i class="bi bi-twitter-x unav-botonIcono"></i></button>
+                                        <button class="unav-boton unav-botonSecundario unav-botonIconOnly unav-botonIconOnlySm" style="--unav-botonColorSource: var(--unav-black-800);"  aria-label="WhatsApp"><i class="bi bi-whatsapp unav-botonIcono"></i></button>                                
+                                        <button class="unav-boton unav-botonSecundario unav-botonIconOnly unav-botonIconOnlySm" style="--unav-botonColorSource: var(--unav-black-800);"  aria-label="LinkedIn"><i class="bi bi-linkedin unav-botonIcono"></i></button>                                
+                                        <button class="unav-boton unav-botonSecundario unav-botonIconOnly unav-botonIconOnlySm" style="--unav-botonColorSource: var(--unav-black-800);"  aria-label="Copiar enlace"><i class="bi bi-link-45deg unav-botonIcono"></i></button>
+                                        <button class="unav-boton unav-botonSecundario unav-botonIconOnly unav-botonIconOnlySm" style="--unav-botonColorSource: var(--unav-black-800);"  aria-label="Enviar por email"><i class="bi bi-envelope-fill unav-botonIcono"></i></button>                                    
+                                    </div>
                                 </div>
                             </div>
                         </div>
@@ -211,7 +203,7 @@
                 <!-- MAIN: ENTRADILLA Y CUERPO -->
                 <main class="col-md-8 unav-articleBody">
                     <p class="unav-font-primary unav-text-125 unav-lh-normal mb-5" style="color: var(--unav-grey-700);">
-                        Ante el <a href="#" class="unav-enlaceInline">cambio actual</a> de las dinámicas de política exterior, el historiador militar Michael Neiberg apuesta por un entendimiento cultural profundo.
+                        Ante el cambio actual de las dinámicas de política exterior, el historiador militar Michael Neiberg apuesta por un entendimiento cultural profundo.
                     </p>
                     <p class="unav-font-primary unav-weight-regular unav-text-100 unav-lh-normal m-0" style="color: var(--unav-black-800);">
                         En la era actual, la seguridad transatlántica no es solo una cuestión de despliegue militar, sino una arquitectura cimentada en valores compartidos...
@@ -245,10 +237,7 @@
                     <!-- TITULAR CON EFECTO REVEAL (2 Líneas) -->
                     <h1 class="unav-heroEditorial-title unav-font-secondary-playfair mb-4" itemprop="headline">
                         <span class="unav-heroEditorial-mask">
-                            <span class="unav-heroEditorial-revealText" style="animation-delay: 0.15s;">La OTAN redefine su estrategia global para</span>
-                        </span>
-                        <span class="unav-heroEditorial-mask">
-                            <span class="unav-heroEditorial-revealText" style="animation-delay: 0.35s;">garantizar el futuro de las democracias</span>
+                            <span class="unav-heroEditorial-revealText" style="animation-delay: 0.15s;">La OTAN redefine su estrategia global para garantizar el futuro de las democracias</span>
                         </span>
                     </h1>
 
@@ -262,7 +251,7 @@
 
                     <!-- NUEVO: ENTRADILLA EN LA CABECERA -->
                     <p class="unav-font-primary unav-text-125 unav-lh-normal mx-auto mt-4" style="color: var(--unav-grey-700); max-width: 90%;">
-                        Ante el <a href="#" class="unav-enlaceInline">cambio actual</a> de las dinámicas de política exterior, el historiador militar Michael Neiberg apuesta por un entendimiento cultural profundo.
+                        Ante el cambio actual de las dinámicas de política exterior, el historiador militar Michael Neiberg apuesta por un entendimiento cultural profundo.
                     </p>
 
                 </div>
@@ -293,29 +282,21 @@
                             <button class="unav-accordionHeader" aria-expanded="false">
                                 <div class="unav-accordionTitleWrapper">
                                     <span class="unav-weight-bold unav-text-085" style="letter-spacing: var(--unav-trackingWide);">
-                                        <i class="bi bi-share me-2" style="color: var(--unav-rojo-500);"></i> COMPARTE EN REDES
+                                        <i class="bi bi-share me-2" style="color: var(--unav-rojo-500);"></i> COMPARTE
                                     </span>
                                 </div>
                                 <span class="material-symbols-outlined unav-accordionToggleIcon" aria-hidden="true">expand_more</span>
                             </button>
                             <div class="unav-accordionPanel">
                                 <div class="unav-accordionInner d-flex flex-column gap-3">
-                                    <a href="#" class="unav-boton unav-botonSecundario unav-botonFit">
-                                        <i class="bi bi-whatsapp unav-botonIcono"></i>
-                                        <span>WhatsApp</span>
-                                    </a>
-                                    <a href="#" class="unav-boton unav-botonSecundario unav-botonFit">
-                                        <i class="bi bi-facebook unav-botonIcono"></i>
-                                        <span>Facebook</span>
-                                    </a>
-                                    <a href="#" class="unav-boton unav-botonSecundario unav-botonFit">
-                                        <i class="bi bi-twitter-x unav-botonIcono"></i>
-                                        <span>Twitter / X</span>
-                                    </a>
-                                    <a href="#" class="unav-boton unav-botonSecundario unav-botonFit">
-                                        <i class="bi bi-linkedin unav-botonIcono"></i>
-                                        <span>LinkedIn</span>
-                                    </a>
+                                    <div class="d-flex gap-2 flex-wrap align-items-center">
+                                        <button class="unav-boton unav-botonSecundario unav-botonIconOnly unav-botonIconOnlySm" style="--unav-botonColorSource: var(--unav-black-800);"  aria-label="Facebook"><i class="bi bi-facebook unav-botonIcono"></i></button>
+                                        <button class="unav-boton unav-botonSecundario unav-botonIconOnly unav-botonIconOnlySm" style="--unav-botonColorSource: var(--unav-black-800);"  aria-label="X"><i class="bi bi-twitter-x unav-botonIcono"></i></button>
+                                        <button class="unav-boton unav-botonSecundario unav-botonIconOnly unav-botonIconOnlySm" style="--unav-botonColorSource: var(--unav-black-800);"  aria-label="WhatsApp"><i class="bi bi-whatsapp unav-botonIcono"></i></button>                                
+                                        <button class="unav-boton unav-botonSecundario unav-botonIconOnly unav-botonIconOnlySm" style="--unav-botonColorSource: var(--unav-black-800);"  aria-label="LinkedIn"><i class="bi bi-linkedin unav-botonIcono"></i></button>                                
+                                        <button class="unav-boton unav-botonSecundario unav-botonIconOnly unav-botonIconOnlySm" style="--unav-botonColorSource: var(--unav-black-800);"  aria-label="Copiar enlace"><i class="bi bi-link-45deg unav-botonIcono"></i></button>
+                                        <button class="unav-boton unav-botonSecundario unav-botonIconOnly unav-botonIconOnlySm" style="--unav-botonColorSource: var(--unav-black-800);"  aria-label="Enviar por email"><i class="bi bi-envelope-fill unav-botonIcono"></i></button>                                    
+                                    </div>
                                 </div>
                             </div>
                         </div>
