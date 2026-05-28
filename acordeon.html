@@ -120,9 +120,9 @@
             <h2 class="unav-font-primary unav-weight-bold unav-text-200 border-bottom pb-2 mb-4 text-dark mt-0">2. Pestañas con Colores Configurables</h2>
             <p class="text-muted mb-4">Se puede inyectar cualquier clase de la paleta <code>unav-color.css</code> añadiendo la clase estructural <code>.unav-isThemed</code> a la tarjeta del acordeón.</p>
             
-            <div class="unav-accordionGroup">
+            <div class="unav-accordionGroup" itemscope itemtype="https://schema.org/FAQPage">
                 
-                <div class="unav-accordionItem unav-isThemed unav-bg-rojo-600">
+                <div class="unav-accordionItem unav-isThemed unav-bg-rojo-600" itemscope itemprop="mainEntity" itemtype="https://schema.org/Question">
                     <button class="unav-accordionHeader" aria-expanded="false">
                         <div class="unav-accordionTitleWrapper">
                             <span class="material-symbols-outlined" aria-hidden="true">school</span>
@@ -130,10 +130,12 @@
                         </div>
                         <span class="material-symbols-outlined unav-accordionToggleIcon" aria-hidden="true">expand_more</span>
                     </button>
-                    <div class="unav-accordionPanel"><div class="unav-accordionInner">Información institucional clave asociada al color principal de la Universidad de Navarra.</div></div>
+                    <div class="unav-accordionPanel" itemscope itemprop="acceptedAnswer" itemtype="https://schema.org/Answer">
+                        <div class="unav-accordionInner">Información institucional clave asociada al color principal de la Universidad de Navarra.</div>
+                    </div>
                 </div>
                 
-                <div class="unav-accordionItem unav-isThemed unav-bg-moss-600">
+                <div class="unav-accordionItem unav-isThemed unav-bg-moss-600" itemscope itemprop="mainEntity" itemtype="https://schema.org/Question">
                     <button class="unav-accordionHeader" aria-expanded="false">
                         <div class="unav-accordionTitleWrapper">
                             <span class="material-symbols-outlined" aria-hidden="true">eco</span>
@@ -141,10 +143,12 @@
                         </div>
                         <span class="material-symbols-outlined unav-accordionToggleIcon" aria-hidden="true">expand_more</span>
                     </button>
-                    <div class="unav-accordionPanel"><div class="unav-accordionInner">Iniciativas verdes, plan estratégico medioambiental y cuidado del ecosistema del campus.</div></div>
+                    <div class="unav-accordionPanel" itemscope itemprop="acceptedAnswer" itemtype="https://schema.org/Answer">
+                        <div class="unav-accordionInner">Iniciativas verdes, plan estratégico medioambiental y cuidado del ecosistema del campus.</div>
+                    </div>
                 </div>
                 
-                <div class="unav-accordionItem unav-isThemed unav-bg-blue-dark-800">
+                <div class="unav-accordionItem unav-isThemed unav-bg-blue-dark-800" itemscope itemprop="mainEntity" itemtype="https://schema.org/Question">
                     <button class="unav-accordionHeader unav-alignCenter" aria-expanded="false">
                         <div class="unav-accordionTitleWrapper">
                             <span class="material-symbols-outlined" aria-hidden="true">biotech</span>
@@ -152,7 +156,7 @@
                         </div>
                         <span class="material-symbols-outlined unav-accordionToggleIcon" aria-hidden="true">expand_more</span>
                     </button>
-                    <div class="unav-accordionPanel">
+                    <div class="unav-accordionPanel" itemscope itemprop="acceptedAnswer" itemtype="https://schema.org/Answer">
                         <div class="unav-accordionInner">Directorio de centros de investigación avanzada, laboratorios e innovación biomédica.</div>
                     </div>
                 </div>
@@ -163,21 +167,25 @@
             <h2 class="unav-font-primary unav-weight-bold unav-text-200 border-bottom pb-2 mb-4 text-dark mt-0">3. Apertura Múltiple (.unav-allowMulti)</h2>
             <p class="text-muted mb-4">Si se añade la clase <code>.unav-allowMulti</code> al contenedor principal, los paneles no se colapsan automáticamente al abrir uno nuevo.</p>
             
-            <div class="unav-accordionGroup unav-allowMulti">
-                <div class="unav-accordionItem">
+            <div class="unav-accordionGroup unav-allowMulti" itemscope itemtype="https://schema.org/FAQPage">
+                <div class="unav-accordionItem" itemscope itemprop="mainEntity" itemtype="https://schema.org/Question"></div>>
                     <button class="unav-accordionHeader" aria-expanded="false">
                         <div class="unav-accordionTitleWrapper"><span>Configuración A Independiente</span></div>
                         <span class="material-symbols-outlined unav-accordionToggleIcon" aria-hidden="true">expand_more</span>
                     </button>
-                    <div class="unav-accordionPanel"><div class="unav-accordionInner">Este panel no se cerrará al abrir el Panel B, permitiendo mantener la visibilidad de los datos.</div></div>
+                    <div class="unav-accordionPanel" itemscope itemprop="acceptedAnswer" itemtype="https://schema.org/Answer">
+                        <div class="unav-accordionInner">Este panel no se cerrará al abrir el Panel B, permitiendo mantener la visibilidad de los datos.</div>
+                    </div>
                 </div>
                 
-                <div class="unav-accordionItem">
+                <div class="unav-accordionItem" itemscope itemprop="mainEntity" itemtype="https://schema.org/Question"></div>>
                     <button class="unav-accordionHeader unav-alignCenter" aria-expanded="false">
                         <div class="unav-accordionTitleWrapper"><span>Configuración B Independiente</span></div>
                         <span class="material-symbols-outlined unav-accordionToggleIcon" aria-hidden="true">expand_more</span>
                     </button>
-                    <div class="unav-accordionPanel"><div class="unav-accordionInner">Ideal para comparar grandes volúmenes de datos simultáneamente entre dos respuestas extensas.</div></div>
+                    <div class="unav-accordionPanel" itemscope itemprop="acceptedAnswer" itemtype="https://schema.org/Answer">
+                        <div class="unav-accordionInner">Ideal para comparar grandes volúmenes de datos simultáneamente entre dos respuestas extensas.</div>
+                    </div>
                 </div>
             </div>
         </section>
