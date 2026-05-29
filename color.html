@@ -60,15 +60,15 @@
         }
     </style>
 </head>
-<body class="unav-font-primary unav-weight-regular unav-text-100" itemscope itemtype="https://schema.org/WebPage">
+<body class="unav-font-primary unav-weight-regular unav-text-100">
 
     <nav style="background-color: #ffffff; border-bottom: 1px solid var(--unav-grey-200); padding: var(--unav-spacing-md) 0; position: sticky; top: 0; z-index: var(--unav-zIndex-sticky);">
         <div class="container-lg d-flex justify-content-between align-items-center position-relative">
             
-            <div itemscope itemtype="https://schema.org/WebPageElement">
-                <a itemprop="url" href="indice.html" class="unav-boton unav-botonSecundario">
+            <div>
+                <a  href="indice.html" class="unav-boton unav-botonSecundario">
                     <i class="bi bi-arrow-left unav-botonIcono" aria-hidden="true"></i>
-                    <span class="d-none d-md-inline" itemprop="name">Volver al Índice</span>
+                    <span class="d-none d-md-inline">Volver al Índice</span>
                 </a>
             </div>
     
@@ -79,11 +79,11 @@
         </div>
     </nav>
 
-    <main class="container-lg unav-doc-container" itemprop="mainContentOfPage">
+    <main class="container-lg unav-doc-container">
         
         <header style="text-align: center; margin-bottom: var(--unav-spacing-md); padding-bottom: var(--unav-spacing-md);">
-            <h1 class="unav-font-primary unav-weight-medium unav-text-200 m-0" style="color: var(--unav-black-900); margin-bottom: var(--unav-spacing-sm) !important;" itemprop="name">Guía de Color y Accesibilidad</h1>
-            <p class="unav-font-primary unav-weight-regular unav-text-100 m-0" style="color: var(--unav-grey-600);" itemprop="description">
+            <h1 class="unav-font-primary unav-weight-medium unav-text-200 m-0" style="color: var(--unav-black-900); margin-bottom: var(--unav-spacing-sm) !important;">Guía de Color y Accesibilidad</h1>
+            <p class="unav-font-primary unav-weight-regular unav-text-100 m-0" style="color: var(--unav-grey-600);">
                 Paleta corporativa auditada automáticamente bajo estándares WCAG 2.1.
             </p>
         </header>
@@ -113,7 +113,7 @@
                 </div>
                 
                 <div class="col-md-6">
-                    <h3 class="unav-font-primary unav-weight-bold unav-text-125" style="color: var(--unav-black-800); margin-bottom: var(--unav-spacing-xs);">3.- Accesibilidad (A11y) y Schema.org</h3>
+                    <h3 class="unav-font-primary unav-weight-bold unav-text-125" style="color: var(--unav-black-800); margin-bottom: var(--unav-spacing-xs);">3.- Accesibilidad (A11y)</h3>
                     <p class="unav-font-primary unav-weight-regular unav-text-100" style="color: var(--unav-grey-700); margin-bottom: var(--unav-spacing-sm);">
                         <strong>Evaluación WCAG 2.1 (Ratio Contraste):</strong> 
                         El rojo corporativo histórico (#ff0000) falla las métricas AA. Para asegurar el cumplimiento, usamos <code>--unav-rojo-500 (#EB0000)</code> que alcanza un ratio de 4.63:1.
@@ -138,8 +138,8 @@
             </div>
         </article>
 
-        <div class="unav-color-guide" itemscope itemtype="https://schema.org/TechArticle">
-            <meta itemprop="name" content="Sistema de Color UNAV">
+        <div class="unav-color-guide">
+            <meta  content="Sistema de Color UNAV">
 
             <h2 class="unav-font-primary unav-weight-bold unav-text-200" style="border-bottom: 1px solid var(--unav-grey-300); padding-bottom: var(--unav-spacing-sm); margin-bottom: var(--unav-spacing-xl); color: var(--unav-black-900);">1. Colores Primarios</h2>
 
@@ -567,9 +567,9 @@
             // Función matemática para Luminancia Relativa (WCAG)
             function getLuminance(hex) {
                 let rgb = parseInt(hex.substring(1), 16);
-                let r = (rgb >> 16) & 0xff;
-                let g = (rgb >>  8) & 0xff;
-                let b = (rgb >>  0) & 0xff;
+                let r = (rgb>> 16) & 0xff;
+                let g = (rgb>>  8) & 0xff;
+                let b = (rgb>>  0) & 0xff;
 
                 let a = [r, g, b].map(function (v) {
                     v /= 255;
@@ -597,13 +597,13 @@
                 let level = "FAIL";
                 let badgeClass = "unav-tag unav-tagRojo"; // Usamos nuestros propios tags
                 
-                if (ratio >= 7) {
+                if (ratio>= 7) {
                     level = "AAA";
                     badgeClass = "unav-tag unav-tagGreen";
-                } else if (ratio >= 4.5) {
+                } else if (ratio>= 4.5) {
                     level = "AA";
                     badgeClass = "unav-tag unav-tagGreenLight";
-                } else if (ratio >= 3) {
+                } else if (ratio>= 3) {
                     level = "AA Large";
                     badgeClass = "unav-tag unav-tagYellow";
                 }

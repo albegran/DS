@@ -20,15 +20,15 @@
         h2[id], h3[id], section[id] { scroll-margin-top: 6rem; }
     </style>
 </head>
-<body class="unav-font-primary unav-weight-regular unav-text-100" itemscope itemtype="https://schema.org/WebPage">
+<body class="unav-font-primary unav-weight-regular unav-text-100">
 
     <nav style="background-color: #ffffff; border-bottom: 1px solid var(--unav-grey-200); padding: var(--unav-spacing-md) 0; position: sticky; top: 0; z-index: var(--unav-zIndex-sticky);">
         <div class="container-lg d-flex justify-content-between align-items-center position-relative">
             
-            <div itemscope itemtype="https://schema.org/WebPageElement">
-                <a itemprop="url" href="indice.html" class="unav-boton unav-botonSecundario">
+            <div>
+                <a  href="indice.html" class="unav-boton unav-botonSecundario">
                     <i class="bi bi-arrow-left unav-botonIcono" aria-hidden="true"></i>
-                    <span class="d-none d-md-inline" itemprop="name">Volver al Índice</span>
+                    <span class="d-none d-md-inline">Volver al Índice</span>
                 </a>
             </div>
     
@@ -39,11 +39,11 @@
         </div>
     </nav>
 
-    <main class="container-lg unav-doc-container" itemprop="mainContentOfPage">
+    <main class="container-lg unav-doc-container">
         
         <header style="text-align: center; margin-bottom: var(--unav-spacing-md); padding-bottom: var(--unav-spacing-md);">
-            <h1 class="unav-font-primary unav-weight-medium unav-text-200 text-dark mb-3 unav-lh-tight" itemprop="name">Galería de Vídeos</h1>
-            <p class="unav-font-primary unav-weight-regular unav-text-100 text-muted m-0 unav-lh-normal" itemprop="description">Lista de reproducción multimedia responsiva con protección CSS contra títulos excesivamente largos e integración nativa de Motion Tokens.</p>
+            <h1 class="unav-font-primary unav-weight-medium unav-text-200 text-dark mb-3 unav-lh-tight">Galería de Vídeos</h1>
+            <p class="unav-font-primary unav-weight-regular unav-text-100 text-muted m-0 unav-lh-normal">Lista de reproducción multimedia responsiva con protección CSS contra títulos excesivamente largos e integración nativa de Motion Tokens.</p>
         </header>
 
         <article class="unav-card unav-cardSolid" style="margin-bottom: var(--unav-spacing-3xl);">
@@ -65,10 +65,10 @@
                 </div>
                 
                 <div class="col-md-6 border-start-md ps-md-4">
-                    <h3 class="unav-font-primary unav-weight-bold unav-text-125 mb-3" style="color: var(--unav-black-800);">3. Accesibilidad (A11y) y Schemas (SEO)</h3>
+                    <h3 class="unav-font-primary unav-weight-bold unav-text-125 mb-3" style="color: var(--unav-black-800);">3. Accesibilidad (A11y)</h3>
                     <ul class="unav-font-primary unav-weight-regular unav-text-100" style="color: var(--unav-grey-700); padding-left: var(--unav-spacing-md);">
                         <li style="margin-bottom: var(--unav-spacing-xs);"><strong>A11y (Roles ARIA):</strong> La lista de reproducción se declara como <code>role="tablist"</code> y cada miniatura de vídeo como <code>role="tab"</code>. Los botones de scroll incluyen <code>aria-label</code> descriptivos ("Subir vídeos", etc.).</li>
-                        <li style="margin-bottom: var(--unav-spacing-xs);"><strong>Microdatos SEO en JS:</strong> El script inyecta el esquema <code>https://schema.org/ItemList</code> en la lista, y a cada botón le asigna <code>ListItem</code>, generando la etiqueta <code>itemprop="position"</code> y <code>itemprop="name"</code> al vuelo para maximizar la indexación de las listas de reproducción de vídeo.</li>
+                        
                     </ul>
         
                     <h3 class="unav-font-primary unav-weight-bold unav-text-125 mb-3 mt-4" style="color: var(--unav-black-800);">4. UX, Tipografía y Uso de Átomos</h3>
@@ -95,7 +95,7 @@
                                     <button class="unav-boton unav-botonSecundario unav-botonIconOnly unav-botonIconOnlySm unav-btnHorizontal" style="--unav-botonColorSource: var(--unav-black-800);" onclick="scrollPlaylistHorizontal(this, -1)" aria-label="Anteriores vídeos"><i class="bi bi-chevron-left unav-botonIcono"></i></button>
                                 </div>
 
-                                <div class="unav-videoPlaylistItems" id="playlist-v1" role="tablist" itemscope itemtype="https://schema.org/ItemList">
+                                <div class="unav-videoPlaylistItems" id="playlist-v1" role="tablist">
                                     </div>
 
                                 <div class="unav-videoControlNav unav-navBottom">
@@ -203,7 +203,7 @@
         playlists.forEach((pl) => {
             const stage = pl.closest('.unav-videoMediaContainer').querySelector('.unav-videoStage');
             
-            if(stage.querySelector('.unav-activeVideoIframe') && unavVideos.length > 0) {
+            if(stage.querySelector('.unav-activeVideoIframe') && unavVideos.length> 0) {
                 stage.querySelector('.unav-activeVideoIframe').src = `https://www.youtube.com/embed/${unavVideos[0].code}?rel=0`;
             }
 
@@ -212,19 +212,14 @@
                 btn.className = `unav-videoItem ${vIdx === 0 ? 'unav-isActive' : ''}`;
                 btn.setAttribute('role', 'tab');
                 
-                btn.setAttribute('itemprop', 'itemListElement');
-                btn.setAttribute('itemscope', '');
-                btn.setAttribute('itemtype', 'https://schema.org/ListItem');
-
-                btn.innerHTML = `
-                    <meta itemprop="position" content="${vIdx + 1}" />
+                btn.innerHTML = `                    
                     <div class="unav-videoThumb unav-efectoZoomImagen">
                         <img src="${vid.thumb}" alt="Miniatura de vídeo">
                         <i class="bi bi-play-fill unav-videoPlayIcon"></i>
                         <span class="unav-tag unav-lh-relaxed" style="background-color: rgba(0,0,0,0.85); color: #fff; border: none; padding: 0.15rem 0.4rem; position: absolute; bottom: 4px; right: 4px;">${vid.meta.split('•')[1].trim()}</span>
                     </div>
                     <div class="unav-videoItemInfo">
-                        <div class="unav-videoItemTitle" itemprop="name" title="${vid.title}">${vid.title}</div>
+                        <div class="unav-videoItemTitle"  title="${vid.title}">${vid.title}</div>
                         <div class="unav-videoItemMeta unav-lh-relaxed">${vid.meta.split('•')[0].trim()}</div>
                     </div>
                 `;

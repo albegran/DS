@@ -20,15 +20,15 @@
         h2[id], h3[id], section[id] { scroll-margin-top: 6rem; }
     </style>
 </head>
-<body class="unav-font-primary unav-weight-regular unav-text-100" itemscope itemtype="https://schema.org/WebPage">
+<body class="unav-font-primary unav-weight-regular unav-text-100">
 
     <nav style="background-color: #ffffff; border-bottom: 1px solid var(--unav-grey-200); padding: var(--unav-spacing-md) 0; position: sticky; top: 0; z-index: var(--unav-zIndex-sticky);">
         <div class="container-lg d-flex justify-content-between align-items-center position-relative">
             
-            <div itemscope itemtype="https://schema.org/WebPageElement">
-                <a itemprop="url" href="indice.html" class="unav-boton unav-botonSecundario">
+            <div>
+                <a  href="indice.html" class="unav-boton unav-botonSecundario">
                     <i class="bi bi-arrow-left unav-botonIcono" aria-hidden="true"></i>
-                    <span class="d-none d-md-inline" itemprop="name">Volver al Índice</span>
+                    <span class="d-none d-md-inline">Volver al Índice</span>
                 </a>
             </div>
     
@@ -39,11 +39,11 @@
         </div>
     </nav>
 
-    <main class="container-lg unav-doc-container" itemprop="mainContentOfPage">
+    <main class="container-lg unav-doc-container">
         
         <header style="text-align: center; margin-bottom: var(--unav-spacing-md); padding-bottom: var(--unav-spacing-md);">
-            <h1 class="unav-font-primary unav-weight-medium unav-text-200 m-0" style="color: var(--unav-black-900); margin-bottom: var(--unav-spacing-sm) !important;" itemprop="name">Gestión de Cabeceras</h1>
-            <p class="unav-font-primary unav-weight-regular unav-text-100 m-0" style="color: var(--unav-grey-600);" itemprop="description">
+            <h1 class="unav-font-primary unav-weight-medium unav-text-200 m-0" style="color: var(--unav-black-900); margin-bottom: var(--unav-spacing-sm) !important;">Gestión de Cabeceras</h1>
+            <p class="unav-font-primary unav-weight-regular unav-text-100 m-0" style="color: var(--unav-grey-600);">
                 Demostración estática de la independencia absoluta entre Semántica Estructural y Presentación Visual.
             </p>
         </header>
@@ -73,12 +73,12 @@
                 </div>
                 
                 <div class="col-md-6">
-                    <h3 class="unav-font-primary unav-weight-bold unav-text-125" style="color: var(--unav-black-800); margin-bottom: var(--unav-spacing-xs);">3.- Accesibilidad (A11y) y Schema.org</h3>
+                    <h3 class="unav-font-primary unav-weight-bold unav-text-125" style="color: var(--unav-black-800); margin-bottom: var(--unav-spacing-xs);">3.- Accesibilidad (A11y)</h3>
                     <p class="unav-font-primary unav-weight-regular unav-text-100" style="color: var(--unav-grey-700); margin-bottom: var(--unav-spacing-sm);">
                         <strong>Lógica WCAG:</strong> Los lectores de pantalla analizan la etiqueta HTML y sus atributos (ej. <code>role="heading" aria-level="2"</code>), ignorando el tamaño de fuente visual.
                     </p>
                     <p class="unav-font-primary unav-weight-regular unav-text-100" style="color: var(--unav-grey-700); margin: 0;">
-                        <strong>Esquema:</strong> Las cabeceras principales que definen el título central de un documento o sección deben incluir <code>itemprop="headline"</code> o <code>itemprop="name"</code> en el contexto de su <code>itemscope itemtype="..."</code> correspondiente (CreativeWork, TechArticle, etc).
+                        
                     </p>
                 </div>
                 
@@ -96,8 +96,8 @@
 
         <section id="unav-masterContainer" style="margin-top: var(--unav-spacing-3xl);">
 
-            <div class="unav-sampleRow" itemscope itemtype="https://schema.org/CreativeWork">
-                <h1 class="unav-headerElement unav-font-secondary-playfair unav-weight-bold unav-text-175 unav-lh-snug" itemprop="headline" style="color: var(--unav-rojo-700);">
+            <div class="unav-sampleRow">
+                <h1 class="unav-headerElement unav-font-secondary-playfair unav-weight-bold unav-text-175 unav-lh-snug" style="color: var(--unav-rojo-700);">
                     Soy un &lt;h1&gt; semántico, pero mi tamaño visual es moderado (175).<br>
                     <span style="opacity:0.6; font-size:0.75em; font-weight:normal;">(Segunda línea generada para comprobar el interlineado)</span>
                 </h1>
@@ -110,8 +110,8 @@
                 </div>
             </div>
 
-            <div class="unav-sampleRow" itemscope itemtype="https://schema.org/CreativeWork">
-                <h2 class="unav-headerElement unav-font-primary-condensed unav-weight-bold unav-text-400 unav-lh-tight" itemprop="headline" style="color: var(--unav-black-900);">
+            <div class="unav-sampleRow">
+                <h2 class="unav-headerElement unav-font-primary-condensed unav-weight-bold unav-text-400 unav-lh-tight" style="color: var(--unav-black-900);">
                     Soy un &lt;h2&gt;, pero visualmente actúo como un título gigante (400).<br>
                     <span style="opacity:0.6; font-size:0.75em; font-weight:normal;">(Segunda línea generada para comprobar el interlineado)</span>
                 </h2>
@@ -124,8 +124,8 @@
                 </div>
             </div>
 
-            <div class="unav-sampleRow" itemscope itemtype="https://schema.org/CreativeWork">
-                <h3 class="unav-headerElement unav-font-primary unav-weight-light unav-text-250 unav-lh-snug" itemprop="headline" style="color: var(--unav-blue-800);">
+            <div class="unav-sampleRow">
+                <h3 class="unav-headerElement unav-font-primary unav-weight-light unav-text-250 unav-lh-snug" style="color: var(--unav-blue-800);">
                     &lt;h3&gt; con peso Light y acento en color azul corporativo.<br>
                     <span style="opacity:0.6; font-size:0.75em; font-weight:normal;">(Segunda línea generada para comprobar el interlineado)</span>
                 </h3>
@@ -138,8 +138,8 @@
                 </div>
             </div>
 
-            <div class="unav-sampleRow" itemscope itemtype="https://schema.org/CreativeWork">
-                <h4 class="unav-headerElement unav-font-secondary-dm unav-weight-regular unav-text-200 unav-lh-snug" itemprop="headline" style="color: var(--unav-teal-700);">
+            <div class="unav-sampleRow">
+                <h4 class="unav-headerElement unav-font-secondary-dm unav-weight-regular unav-text-200 unav-lh-snug" style="color: var(--unav-teal-700);">
                     Utilizando fuente secundaria Serif (DM Serif) sobre un &lt;h4&gt;.<br>
                     <span style="opacity:0.6; font-size:0.75em; font-weight:normal;">(Segunda línea generada para comprobar el interlineado)</span>
                 </h4>
@@ -152,8 +152,8 @@
                 </div>
             </div>
 
-            <div class="unav-sampleRow" itemscope itemtype="https://schema.org/CreativeWork">
-                <h5 class="unav-headerElement unav-font-primary unav-weight-bold unav-text-100 unav-lh-normal" itemprop="headline" style="color: var(--unav-moss-700);">
+            <div class="unav-sampleRow">
+                <h5 class="unav-headerElement unav-font-primary unav-weight-bold unav-text-100 unav-lh-normal" style="color: var(--unav-moss-700);">
                     Soy un &lt;h5&gt;, con un tamaño base estandarizado (100) para bloques de lectura.<br>
                     <span style="opacity:0.6; font-size:0.75em; font-weight:normal;">(Segunda línea generada para comprobar el interlineado)</span>
                 </h5>
@@ -166,8 +166,8 @@
                 </div>
             </div>
 
-            <div class="unav-sampleRow" style="border-bottom: none; border-radius: 0 0 var(--unav-radius-lg) var(--unav-radius-lg);" itemscope itemtype="https://schema.org/CreativeWork">
-                <h6 class="unav-headerElement unav-font-secondary-slab unav-weight-bold unav-text-300 unav-lh-tight" itemprop="headline" style="color: var(--unav-o-dark-800);">
+            <div class="unav-sampleRow" style="border-bottom: none; border-radius: 0 0 var(--unav-radius-lg) var(--unav-radius-lg);">
+                <h6 class="unav-headerElement unav-font-secondary-slab unav-weight-bold unav-text-300 unav-lh-tight" style="color: var(--unav-o-dark-800);">
                     Y yo soy un &lt;h6&gt;, pero el editor ha decidido mostrarme grande e impactante (300).<br>
                     <span style="opacity:0.6; font-size:0.75em; font-weight:normal;">(Segunda línea generada para comprobar el interlineado)</span>
                 </h6>

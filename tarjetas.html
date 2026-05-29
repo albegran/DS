@@ -20,15 +20,15 @@
         h2[id], h3[id], section[id] { scroll-margin-top: 6rem; }
     </style>
 </head>
-<body class="unav-font-primary unav-weight-regular unav-text-100" itemscope itemtype="https://schema.org/WebPage">
+<body class="unav-font-primary unav-weight-regular unav-text-100">
 
     <nav style="background-color: #ffffff; border-bottom: 1px solid var(--unav-grey-200); padding: var(--unav-spacing-md) 0; position: sticky; top: 0; z-index: var(--unav-zIndex-sticky);">
         <div class="container-lg d-flex justify-content-between align-items-center position-relative">
             
-            <div itemscope itemtype="https://schema.org/WebPageElement">
-                <a itemprop="url" href="indice.html" class="unav-boton unav-botonSecundario">
+            <div>
+                <a  href="indice.html" class="unav-boton unav-botonSecundario">
                     <i class="bi bi-arrow-left unav-botonIcono" aria-hidden="true"></i>
-                    <span class="d-none d-md-inline" itemprop="name">Volver al Índice</span>
+                    <span class="d-none d-md-inline">Volver al Índice</span>
                 </a>
             </div>
     
@@ -39,11 +39,11 @@
         </div>
     </nav>
 
-    <main class="container-lg unav-doc-container" itemprop="mainContentOfPage">
+    <main class="container-lg unav-doc-container">
         
         <header style="text-align: center; margin-bottom: var(--unav-spacing-md); padding-bottom: var(--unav-spacing-md);">
-            <h1 class="unav-font-primary unav-weight-medium unav-text-200 text-dark mb-3" itemprop="name">Tarjetas Modulares</h1>
-            <p class="unav-font-primary unav-weight-regular unav-text-100 text-muted m-0" itemprop="description">
+            <h1 class="unav-font-primary unav-weight-medium unav-text-200 text-dark mb-3">Tarjetas Modulares</h1>
+            <p class="unav-font-primary unav-weight-regular unav-text-100 text-muted m-0">
                 Catálogo completo de la arquitectura unificada. Combina modificadores de layout (Flotante, Sólida, Media), alineación (Izquierda, Centro) y modos de color (Claro, Oscuro).
             </p>
         </header>
@@ -67,10 +67,8 @@
                 </div>
                 
                 <div class="col-md-6 border-start-md ps-md-4">
-                    <h3 class="unav-font-primary unav-weight-bold unav-text-125 mb-3" style="color: var(--unav-black-800);">3. Accesibilidad (A11y) y Schemas (SEO)</h3>
+                    <h3 class="unav-font-primary unav-weight-bold unav-text-125 mb-3" style="color: var(--unav-black-800);">3. Accesibilidad (A11y)</h3>
                     <ul class="unav-font-primary unav-weight-regular unav-text-100" style="color: var(--unav-grey-700); padding-left: var(--unav-spacing-md);">
-                        <li style="margin-bottom: var(--unav-spacing-xs);"><strong>Microdatos Semánticos:</strong> Cada tarjeta representa un bloque de contenido independiente y debe declararse con <code>itemscope itemtype="https://schema.org/Article"</code> (o <code>NewsArticle</code> / <code>Course</code> según contexto).</li>
-                        <li style="margin-bottom: var(--unav-spacing-xs);"><strong>Propiedades Obligatorias:</strong> El título debe portar <code>itemprop="headline"</code>, el extracto <code>itemprop="description"</code>, las etiquetas <code>itemprop="keywords"</code> y, si existe fecha, <code>itemprop="datePublished"</code>.</li>
                         <li style="margin-bottom: var(--unav-spacing-xs);"><strong>Accesibilidad Táctil:</strong> En tarjetas enlazables enteras, se recomienda inyectar un pseudo-elemento <code>::after</code> sobre el enlace principal (CTA) que cubra toda la tarjeta, evitando duplicar enlaces semánticos y ruido en los lectores de pantalla.</li>
                     </ul>
         
@@ -88,9 +86,9 @@
             <p class="text-muted mb-4">Uso de <code>.unav-cardFloating</code>. Ideal para listados extensos de servicios o facultades.</p>
             
             <h4 class="unav-font-primary unav-weight-bold unav-text-125 mt-4 mb-3 text-dark">Alineación Izquierda</h4>
-            <div class="row g-4 mb-5" itemscope itemtype="https://schema.org/ItemList">
-                <div class="col-12 col-md-4" itemprop="itemListElement" itemscope itemtype="https://schema.org/ListItem">
-                    <article class="unav-card unav-cardFloating unav-cardAlignLeft unav-efectoElevacion unav-efectoEntradaOculto" style="background-color: var(--unav-rojo-100);" itemprop="item" itemscope itemtype="https://schema.org/Course">
+            <div class="row g-4 mb-5">
+                <div class="col-12 col-md-4">
+                    <article class="unav-card unav-cardFloating unav-cardAlignLeft unav-efectoElevacion unav-efectoEntradaOculto" style="background-color: var(--unav-rojo-100);">
                         <div class="unav-cardIconFloating" style="background-color: var(--unav-rojo-600); border-color: var(--unav-rojo-100);">
                             <span class="material-symbols-outlined">monitor_heart</span>
                         </div>
@@ -99,8 +97,8 @@
                                 <span class="unav-tag unav-tagRojo">Salud</span>
                                 <span class="unav-tag unav-tagBlueDark">Grado</span>
                             </div>
-                            <h4 class="unav-cardTitle" itemprop="name">Enfermería Avanzada</h4>
-                            <p class="unav-cardText" itemprop="description">Desarrolla habilidades clínicas de vanguardia en nuestro centro de simulación médica internacional.</p>
+                            <h4 class="unav-cardTitle">Enfermería Avanzada</h4>
+                            <p class="unav-cardText">Desarrolla habilidades clínicas de vanguardia en nuestro centro de simulación médica internacional.</p>
                             <div class="unav-cardAction">
                                 <a href="#" class="unav-enlaceFlecha" style="--unav-enlaceColor: var(--unav-rojo-800);">
                                     <span class="unav-arrowWrapper"><span class="unav-arrow"></span><span class="unav-arrowClone"></span></span><span>Ver Programa</span>
@@ -110,8 +108,8 @@
                     </article>
                 </div>
 
-                <div class="col-12 col-md-4" itemprop="itemListElement" itemscope itemtype="https://schema.org/ListItem">
-                    <article class="unav-card unav-cardFloating unav-cardAlignLeft unav-efectoElevacion unav-efectoEntradaOculto" style="background-color: var(--unav-b-dark-100);" itemprop="item" itemscope itemtype="https://schema.org/Course">
+                <div class="col-12 col-md-4">
+                    <article class="unav-card unav-cardFloating unav-cardAlignLeft unav-efectoElevacion unav-efectoEntradaOculto" style="background-color: var(--unav-b-dark-100);">
                         <div class="unav-cardIconFloating" style="background-color: var(--unav-b-dark-600); border-color: var(--unav-b-dark-100);">
                             <span class="material-symbols-outlined">language</span>
                         </div>
@@ -119,8 +117,8 @@
                             <div class="unav-cardTags">
                                 <span class="unav-tag unav-tagBlueDark">Internacional</span>
                             </div>
-                            <h4 class="unav-cardTitle" itemprop="name">Relaciones Globales</h4>
-                            <p class="unav-cardText" itemprop="description">Programas de intercambio y convenios en los 5 continentes para impulsar tu carrera sin fronteras.</p>
+                            <h4 class="unav-cardTitle">Relaciones Globales</h4>
+                            <p class="unav-cardText">Programas de intercambio y convenios en los 5 continentes para impulsar tu carrera sin fronteras.</p>
                             <div class="unav-cardAction">
                                 <a href="#" class="unav-enlaceFlecha" style="--unav-enlaceColor: var(--unav-b-dark-800);">
                                     <span class="unav-arrowWrapper"><span class="unav-arrow"></span><span class="unav-arrowClone"></span></span><span>Descubrir Destinos</span>
@@ -130,8 +128,8 @@
                     </article>
                 </div>
 
-                <div class="col-12 col-md-4" itemprop="itemListElement" itemscope itemtype="https://schema.org/ListItem">
-                    <article class="unav-card unav-cardFloating unav-cardAlignLeft unav-efectoElevacion unav-efectoEntradaOculto" style="background-color: var(--unav-moss-100);" itemprop="item" itemscope itemtype="https://schema.org/Course">
+                <div class="col-12 col-md-4">
+                    <article class="unav-card unav-cardFloating unav-cardAlignLeft unav-efectoElevacion unav-efectoEntradaOculto" style="background-color: var(--unav-moss-100);">
                         <div class="unav-cardIconFloating" style="background-color: var(--unav-moss-600); border-color: var(--unav-moss-100);">
                             <span class="material-symbols-outlined">eco</span>
                         </div>
@@ -139,8 +137,8 @@
                             <div class="unav-cardTags">
                                 <span class="unav-tag unav-tagMoss">Sostenibilidad</span>
                             </div>
-                            <h4 class="unav-cardTitle" itemprop="name">Campus Verde</h4>
-                            <p class="unav-cardText" itemprop="description">Participa en proyectos de integración ecológica e investigación medioambiental aplicada.</p>
+                            <h4 class="unav-cardTitle">Campus Verde</h4>
+                            <p class="unav-cardText">Participa en proyectos de integración ecológica e investigación medioambiental aplicada.</p>
                             <div class="unav-cardAction">
                                 <a href="#" class="unav-enlaceFlecha" style="--unav-enlaceColor: var(--unav-moss-800);">
                                     <span class="unav-arrowWrapper"><span class="unav-arrow"></span><span class="unav-arrowClone"></span></span><span>Iniciativas</span>
@@ -152,9 +150,9 @@
             </div>
 
             <h4 class="unav-font-primary unav-weight-bold unav-text-125 mt-4 mb-3 text-dark">Alineación Centrada</h4>
-            <div class="row g-4 justify-content-center" itemscope itemtype="https://schema.org/ItemList">
-                <div class="col-12 col-md-6" itemprop="itemListElement" itemscope itemtype="https://schema.org/ListItem">
-                    <article class="unav-card unav-cardFloating unav-cardAlignCenter unav-efectoElevacion unav-efectoEntradaOculto" style="background-color: var(--unav-purple-100);" itemprop="item" itemscope itemtype="https://schema.org/Course">
+            <div class="row g-4 justify-content-center">
+                <div class="col-12 col-md-6">
+                    <article class="unav-card unav-cardFloating unav-cardAlignCenter unav-efectoElevacion unav-efectoEntradaOculto" style="background-color: var(--unav-purple-100);">
                         <div class="unav-cardIconFloating" style="background-color: var(--unav-purple-600); border-color: var(--unav-purple-100);">
                             <span class="material-symbols-outlined">psychology</span>
                         </div>
@@ -163,8 +161,8 @@
                                 <span class="unav-tag unav-tagPurple">Máster</span>
                                 <span class="unav-tag unav-tagOrange">Online</span>
                             </div>
-                            <h4 class="unav-cardTitle" itemprop="name">Psicopedagogía Digital</h4>
-                            <p class="unav-cardText" itemprop="description">Lidera el cambio educativo mediante el uso de nuevas tecnologías y el entendimiento del comportamiento del estudiante.</p>
+                            <h4 class="unav-cardTitle">Psicopedagogía Digital</h4>
+                            <p class="unav-cardText">Lidera el cambio educativo mediante el uso de nuevas tecnologías y el entendimiento del comportamiento del estudiante.</p>
                             <div class="unav-cardAction">
                                 <a href="#" class="unav-enlaceFlecha" style="--unav-enlaceColor: var(--unav-purple-800);">
                                     <span class="unav-arrowWrapper"><span class="unav-arrow"></span><span class="unav-arrowClone"></span></span><span>Solicitar Admisión</span>
@@ -174,8 +172,8 @@
                     </article>
                 </div>
 
-                <div class="col-12 col-md-6" itemprop="itemListElement" itemscope itemtype="https://schema.org/ListItem">
-                    <article class="unav-card unav-cardFloating unav-cardAlignCenter unav-efectoElevacion unav-efectoEntradaOculto" style="background-color: var(--unav-orange-100);" itemprop="item" itemscope itemtype="https://schema.org/Course">
+                <div class="col-12 col-md-6">
+                    <article class="unav-card unav-cardFloating unav-cardAlignCenter unav-efectoElevacion unav-efectoEntradaOculto" style="background-color: var(--unav-orange-100);">
                         <div class="unav-cardIconFloating" style="background-color: var(--unav-orange-600); border-color: var(--unav-orange-100);">
                             <span class="material-symbols-outlined">architecture</span>
                         </div>
@@ -183,8 +181,8 @@
                             <div class="unav-cardTags">
                                 <span class="unav-tag unav-tagOrange">Arquitectura</span>
                             </div>
-                            <h4 class="unav-cardTitle" itemprop="name">Diseño de Espacios</h4>
-                            <p class="unav-cardText" itemprop="description">Combina el diseño técnico riguroso con la visión humanista para crear espacios que mejoren la calidad de vida.</p>
+                            <h4 class="unav-cardTitle">Diseño de Espacios</h4>
+                            <p class="unav-cardText">Combina el diseño técnico riguroso con la visión humanista para crear espacios que mejoren la calidad de vida.</p>
                             <div class="unav-cardAction">
                                 <a href="#" class="unav-enlaceFlecha" style="--unav-enlaceColor: var(--unav-orange-800);">
                                     <span class="unav-arrowWrapper"><span class="unav-arrow"></span><span class="unav-arrowClone"></span></span><span>Ver Facultad</span>
@@ -201,9 +199,9 @@
             <p class="text-muted mb-4">Uso de <code>.unav-cardSolid</code>. Integra el icono dentro del cuerpo y permite fondos oscuros fluidos con <code>.unav-cardDark</code>.</p>
             
             <h4 class="unav-font-primary unav-weight-bold unav-text-125 mt-4 mb-3 text-dark">Alineación Izquierda (Modos Claro y Oscuro)</h4>
-            <div class="row g-4 mb-5" itemscope itemtype="https://schema.org/ItemList">
-                <div class="col-12 col-md-4" itemprop="itemListElement" itemscope itemtype="https://schema.org/ListItem">
-                    <article class="unav-card unav-cardSolid unav-cardAlignLeft unav-efectoElevacion unav-efectoEntradaOculto" itemprop="item" itemscope itemtype="https://schema.org/Course">
+            <div class="row g-4 mb-5">
+                <div class="col-12 col-md-4">
+                    <article class="unav-card unav-cardSolid unav-cardAlignLeft unav-efectoElevacion unav-efectoEntradaOculto">
                         <div class="unav-cardBody p-0">
                             <div class="unav-cardIconInner" style="background-color: var(--unav-rojo-100); color: var(--unav-rojo-600);">
                                 <span class="material-symbols-outlined">medical_services</span>
@@ -211,19 +209,19 @@
                             <div class="unav-cardTags">
                                 <span class="unav-tag unav-tagRojo">Salud</span>
                             </div>
-                            <h4 class="unav-cardTitle" itemprop="name">Facultad de Medicina</h4>
-                            <p class="unav-cardText" itemprop="description">Referente internacional en formación médica con una metodología centrada en el paciente y la investigación.</p>
+                            <h4 class="unav-cardTitle">Facultad de Medicina</h4>
+                            <p class="unav-cardText">Referente internacional en formación médica con una metodología centrada en el paciente y la investigación.</p>
                             <div class="unav-cardAction">
-                                <a itemprop="url" href="#" class="unav-boton unav-botonSecundario" style="--unav-botonColorSource: var(--unav-rojo-800);">
-                                    <span itemprop="name">VER GRADO</span>
+                                <a  href="#" class="unav-boton unav-botonSecundario" style="--unav-botonColorSource: var(--unav-rojo-800);">
+                                    <span>VER GRADO</span>
                                 </a>
                             </div>
                         </div>
                     </article>
                 </div>
 
-                <div class="col-12 col-md-4" itemprop="itemListElement" itemscope itemtype="https://schema.org/ListItem">
-                    <article class="unav-card unav-cardSolid unav-cardAlignLeft unav-cardDark unav-efectoElevacion unav-efectoEntradaOculto" style="background-color: var(--unav-b-dark-800);" itemprop="item" itemscope itemtype="https://schema.org/Course">
+                <div class="col-12 col-md-4">
+                    <article class="unav-card unav-cardSolid unav-cardAlignLeft unav-cardDark unav-efectoElevacion unav-efectoEntradaOculto" style="background-color: var(--unav-b-dark-800);">
                         <div class="unav-cardBody p-0">
                             <div class="unav-cardIconInner">
                                 <span class="material-symbols-outlined">biotech</span>
@@ -231,19 +229,19 @@
                             <div class="unav-cardTags">
                                 <span class="unav-tag unav-tagBlueLight">Ingeniería</span>
                             </div>
-                            <h4 class="unav-cardTitle" itemprop="name">Biomedicina</h4>
-                            <p class="unav-cardText" itemprop="description">Aplica principios de ingeniería al campo de la salud para desarrollar soluciones tecnológicas en laboratorios premium.</p>
+                            <h4 class="unav-cardTitle">Biomedicina</h4>
+                            <p class="unav-cardText">Aplica principios de ingeniería al campo de la salud para desarrollar soluciones tecnológicas en laboratorios premium.</p>
                             <div class="unav-cardAction">
-                                <a itemprop="url" href="#" class="unav-boton unav-botonSecundario" style="--unav-botonColorSource: #ffffff; --unav-botonTextHover: var(--unav-b-dark-800);">
-                                    <span itemprop="name">EXPLORAR</span>
+                                <a  href="#" class="unav-boton unav-botonSecundario" style="--unav-botonColorSource: #ffffff; --unav-botonTextHover: var(--unav-b-dark-800);">
+                                    <span>EXPLORAR</span>
                                 </a>
                             </div>
                         </div>
                     </article>
                 </div>
 
-                <div class="col-12 col-md-4" itemprop="itemListElement" itemscope itemtype="https://schema.org/ListItem">
-                    <article class="unav-card unav-cardSolid unav-cardAlignLeft unav-efectoElevacion unav-efectoEntradaOculto" itemprop="item" itemscope itemtype="https://schema.org/Course">
+                <div class="col-12 col-md-4">
+                    <article class="unav-card unav-cardSolid unav-cardAlignLeft unav-efectoElevacion unav-efectoEntradaOculto">
                         <div class="unav-cardBody p-0">
                             <div class="unav-cardIconInner" style="background-color: var(--unav-moss-100); color: var(--unav-moss-600);">
                                 <span class="material-symbols-outlined">agriculture</span>
@@ -251,8 +249,8 @@
                             <div class="unav-cardTags">
                                 <span class="unav-tag unav-tagMoss">Sostenibilidad</span>
                             </div>
-                            <h4 class="unav-cardTitle" itemprop="name">Gestión Ambiental</h4>
-                            <p class="unav-cardText" itemprop="description">Lidera proyectos de impacto positivo en el entorno natural mediante la ciencia y la estrategia sostenible.</p>
+                            <h4 class="unav-cardTitle">Gestión Ambiental</h4>
+                            <p class="unav-cardText">Lidera proyectos de impacto positivo en el entorno natural mediante la ciencia y la estrategia sostenible.</p>
                             <div class="unav-cardAction">
                                 <a href="#" class="unav-enlaceFlecha" style="--unav-enlaceColor: var(--unav-moss-800);">
                                     <span class="unav-arrowWrapper"><span class="unav-arrow"></span><span class="unav-arrowClone"></span></span><span>Información</span>
@@ -264,9 +262,9 @@
             </div>
 
             <h4 class="unav-font-primary unav-weight-bold unav-text-125 mt-4 mb-3 text-dark">Alineación Centrada (Modos Oscuro y Claro)</h4>
-            <div class="row g-4 justify-content-center" itemscope itemtype="https://schema.org/ItemList">
-                <div class="col-12 col-md-6" itemprop="itemListElement" itemscope itemtype="https://schema.org/ListItem">
-                    <article class="unav-card unav-cardSolid unav-cardAlignCenter unav-cardDark unav-efectoElevacion unav-efectoEntradaOculto" style="background-color: var(--unav-purple-800);" itemprop="item" itemscope itemtype="https://schema.org/Course">
+            <div class="row g-4 justify-content-center">
+                <div class="col-12 col-md-6">
+                    <article class="unav-card unav-cardSolid unav-cardAlignCenter unav-cardDark unav-efectoElevacion unav-efectoEntradaOculto" style="background-color: var(--unav-purple-800);">
                         <div class="unav-cardBody p-0">
                             <div class="unav-cardIconInner">
                                 <span class="material-symbols-outlined">psychology</span>
@@ -274,8 +272,8 @@
                             <div class="unav-cardTags">
                                 <span class="unav-tag unav-tagPurple">Máster</span>
                             </div>
-                            <h4 class="unav-cardTitle" itemprop="name">Psicología Aplicada</h4>
-                            <p class="unav-cardText" itemprop="description">Un enfoque integral para entender el comportamiento humano en entornos complejos. Desarrolla competencias en terapia.</p>
+                            <h4 class="unav-cardTitle">Psicología Aplicada</h4>
+                            <p class="unav-cardText">Un enfoque integral para entender el comportamiento humano en entornos complejos. Desarrolla competencias en terapia.</p>
                             <div class="unav-cardAction">
                                 <a href="#" class="unav-enlaceFlecha" style="--unav-enlaceColor: #ffffff;">
                                     <span class="unav-arrowWrapper"><span class="unav-arrow"></span><span class="unav-arrowClone"></span></span><span>Ver Postgrado</span>
@@ -285,8 +283,8 @@
                     </article>
                 </div>
 
-                <div class="col-12 col-md-6" itemprop="itemListElement" itemscope itemtype="https://schema.org/ListItem">
-                    <article class="unav-card unav-cardSolid unav-cardAlignCenter unav-efectoElevacion unav-efectoEntradaOculto" itemprop="item" itemscope itemtype="https://schema.org/Course">
+                <div class="col-12 col-md-6">
+                    <article class="unav-card unav-cardSolid unav-cardAlignCenter unav-efectoElevacion unav-efectoEntradaOculto">
                         <div class="unav-cardBody p-0">
                             <div class="unav-cardIconInner" style="background-color: var(--unav-orange-100); color: var(--unav-orange-600);">
                                 <span class="material-symbols-outlined">palette</span>
@@ -294,11 +292,11 @@
                             <div class="unav-cardTags">
                                 <span class="unav-tag unav-tagOrange">Artes</span>
                             </div>
-                            <h4 class="unav-cardTitle" itemprop="name">Diseño Creativo</h4>
-                            <p class="unav-cardText" itemprop="description">Potencia tu talento artístico con herramientas digitales avanzadas y una visión crítica del diseño contemporáneo.</p>
+                            <h4 class="unav-cardTitle">Diseño Creativo</h4>
+                            <p class="unav-cardText">Potencia tu talento artístico con herramientas digitales avanzadas y una visión crítica del diseño contemporáneo.</p>
                             <div class="unav-cardAction">
-                                <a itemprop="url" href="#" class="unav-boton unav-botonSecundario" style="--unav-botonColorSource: var(--unav-orange-800);">
-                                    <span itemprop="name">VER GALERÍA</span>
+                                <a  href="#" class="unav-boton unav-botonSecundario" style="--unav-botonColorSource: var(--unav-orange-800);">
+                                    <span>VER GALERÍA</span>
                                 </a>
                             </div>
                         </div>
@@ -312,20 +310,20 @@
             <p class="text-muted mb-4">Uso de <code>.unav-cardMedia</code>. Soporta montajes tipo Overlay (texto sobre imagen) o Standard (texto bajo imagen).</p>
             
             <h4 class="unav-font-primary unav-weight-bold unav-text-125 mt-4 mb-3 text-dark">Visualización: Texto sobre Imagen (Overlay)</h4>
-            <div class="row g-4 mb-5" itemscope itemtype="https://schema.org/ItemList">
-                <div class="col-12 col-lg-4 col-md-6" itemprop="itemListElement" itemscope itemtype="https://schema.org/ListItem">
-                    <article class="unav-card unav-cardMedia unav-cardAlignLeft unav-efectoElevacion unav-efectoEntradaOculto" itemprop="item" itemscope itemtype="https://schema.org/Service">
+            <div class="row g-4 mb-5">
+                <div class="col-12 col-lg-4 col-md-6">
+                    <article class="unav-card unav-cardMedia unav-cardAlignLeft unav-efectoElevacion unav-efectoEntradaOculto">
                         <div class="unav-cardImageContainer unav-efectoZoomImagen">
                             <img src="https://picsum.photos/id/180/800/500" class="unav-cardImg" alt="Investigación">
                             <div class="unav-cardOverlay">
                                 <div class="unav-cardTags">
                                     <span class="unav-tag" style="background: rgba(255,255,255,0.25); color: #fff; backdrop-filter: blur(8px);">Salud</span>
                                 </div>
-                                <h4 class="unav-cardTitle" itemprop="name">Facultad de Medicina</h4>
+                                <h4 class="unav-cardTitle">Facultad de Medicina</h4>
                             </div>
                         </div>
                         <div class="unav-cardBody">
-                            <p class="unav-cardText" itemprop="description">Prácticas clínicas desde el primer día en un entorno de excelencia internacional y tecnología punta.</p>
+                            <p class="unav-cardText">Prácticas clínicas desde el primer día en un entorno de excelencia internacional y tecnología punta.</p>
                             <div class="unav-cardAction">
                                 <a href="#" class="unav-boton unav-botonPrimario unav-botonHoverInnerBorder" style="--unav-botonBg: var(--unav-rojo-600); --unav-botonText: #fff; --unav-botonBorder: var(--unav-rojo-600); --unav-botonHoverBg: var(--unav-rojo-800);">
                                     VER GRADO
@@ -335,41 +333,41 @@
                     </article>
                 </div>
 
-                <div class="col-12 col-lg-4 col-md-6" itemprop="itemListElement" itemscope itemtype="https://schema.org/ListItem">
-                    <article class="unav-card unav-cardMedia unav-cardAlignCenter unav-cardDark unav-efectoElevacion unav-efectoEntradaOculto" style="background-color: var(--unav-b-dark-800);" itemprop="item" itemscope itemtype="https://schema.org/Service">
+                <div class="col-12 col-lg-4 col-md-6">
+                    <article class="unav-card unav-cardMedia unav-cardAlignCenter unav-cardDark unav-efectoElevacion unav-efectoEntradaOculto" style="background-color: var(--unav-b-dark-800);">
                         <div class="unav-cardImageContainer unav-efectoZoomImagen">
                             <img src="https://picsum.photos/id/122/800/500" class="unav-cardImg" alt="Arquitectura">
                             <div class="unav-cardOverlay">
                                 <div class="unav-cardTags">
                                     <span class="unav-tag" style="background: rgba(255,255,255,0.25); color: #fff; backdrop-filter: blur(8px);">Diseño</span>
                                 </div>
-                                <h4 class="unav-cardTitle" itemprop="name">Escuela de Arquitectura</h4>
+                                <h4 class="unav-cardTitle">Escuela de Arquitectura</h4>
                             </div>
                         </div>
                         <div class="unav-cardBody">
-                            <p class="unav-cardText" itemprop="description">Crea espacios que transforman la vida de las personas uniendo técnica, arte y visión humanista.</p>
+                            <p class="unav-cardText">Crea espacios que transforman la vida de las personas uniendo técnica, arte y visión humanista.</p>
                             <div class="unav-cardAction">
-                                <a itemprop="url" href="#" class="unav-boton unav-botonSecundario" style="--unav-botonColorSource: #ffffff; --unav-botonTextHover: var(--unav-b-dark-800);">
-                                    <span itemprop="name">MÁS INFO</span>
+                                <a  href="#" class="unav-boton unav-botonSecundario" style="--unav-botonColorSource: #ffffff; --unav-botonTextHover: var(--unav-b-dark-800);">
+                                    <span>MÁS INFO</span>
                                 </a>
                             </div>
                         </div>
                     </article>
                 </div>
 
-                <div class="col-12 col-lg-4 col-md-6" itemprop="itemListElement" itemscope itemtype="https://schema.org/ListItem">
-                    <article class="unav-card unav-cardMedia unav-cardAlignLeft unav-efectoElevacion unav-efectoEntradaOculto" itemprop="item" itemscope itemtype="https://schema.org/Service">
+                <div class="col-12 col-lg-4 col-md-6">
+                    <article class="unav-card unav-cardMedia unav-cardAlignLeft unav-efectoElevacion unav-efectoEntradaOculto">
                         <div class="unav-cardImageContainer unav-efectoZoomImagen">
                             <img src="https://picsum.photos/id/119/800/500" class="unav-cardImg" alt="Empresa">
                             <div class="unav-cardOverlay">
                                 <div class="unav-cardTags">
                                     <span class="unav-tag" style="background: rgba(255,255,255,0.25); color: #fff; backdrop-filter: blur(8px);">Negocios</span>
                                 </div>
-                                <h4 class="unav-cardTitle" itemprop="name">School of Economics</h4>
+                                <h4 class="unav-cardTitle">School of Economics</h4>
                             </div>
                         </div>
                         <div class="unav-cardBody">
-                            <p class="unav-cardText" itemprop="description">Lidera el cambio global con una visión ética y estratégica de la economía y la empresa.</p>
+                            <p class="unav-cardText">Lidera el cambio global con una visión ética y estratégica de la economía y la empresa.</p>
                             <div class="unav-cardAction">
                                 <a href="#" class="unav-enlaceFlecha" style="--unav-enlaceColor: var(--unav-b-dark-800);">
                                     <span class="unav-arrowWrapper"><span class="unav-arrow"></span><span class="unav-arrowClone"></span></span><span>Ver Facultad</span>
@@ -381,9 +379,9 @@
             </div>
 
             <h4 class="unav-font-primary unav-weight-bold unav-text-125 mt-4 mb-3 text-dark">Visualización: Texto debajo de Imagen (Standard)</h4>
-            <div class="row g-4" itemscope itemtype="https://schema.org/ItemList">
-                <div class="col-12 col-lg-4 col-md-6" itemprop="itemListElement" itemscope itemtype="https://schema.org/ListItem">
-                    <article class="unav-card unav-cardMedia unav-cardDark unav-cardAlignLeft unav-efectoElevacion unav-efectoEntradaOculto" style="background-color: var(--unav-moss-800);" itemprop="item" itemscope itemtype="https://schema.org/Service">
+            <div class="row g-4">
+                <div class="col-12 col-lg-4 col-md-6">
+                    <article class="unav-card unav-cardMedia unav-cardDark unav-cardAlignLeft unav-efectoElevacion unav-efectoEntradaOculto" style="background-color: var(--unav-moss-800);">
                         <div class="unav-cardImageContainer unav-efectoZoomImagen">
                             <img src="https://picsum.photos/id/200/800/500" class="unav-cardImg" alt="Campus">
                         </div>
@@ -392,8 +390,8 @@
                                 <span class="unav-tag unav-tagMoss">Campus</span>
                                 <span class="unav-tag" style="background-color: var(--unav-grey-100); color: var(--unav-grey-800);">Pamplona</span>
                             </div>
-                            <h4 class="unav-cardTitle" itemprop="name">Vida Universitaria</h4>
-                            <p class="unav-cardText" itemprop="description">Descubre todas las actividades culturales, deportivas y sociales que ofrece nuestro campus.</p>
+                            <h4 class="unav-cardTitle">Vida Universitaria</h4>
+                            <p class="unav-cardText">Descubre todas las actividades culturales, deportivas y sociales que ofrece nuestro campus.</p>
                             <div class="unav-cardAction">
                                 <a href="#" class="unav-boton unav-botonPrimario unav-botonHoverInnerBorder" style="--unav-botonBg: #ffffff; --unav-botonText: var(--unav-moss-800); --unav-botonBorder: #ffffff; --unav-botonHoverBg: rgba(255,255,255,0.9); --unav-botonHoverText: var(--unav-moss-800);">
                                     SOLICITAR INFO
@@ -403,8 +401,8 @@
                     </article>
                 </div>
 
-                <div class="col-12 col-lg-4 col-md-6" itemprop="itemListElement" itemscope itemtype="https://schema.org/ListItem">
-                    <article class="unav-card unav-cardMedia unav-cardAlignCenter unav-efectoElevacion unav-efectoEntradaOculto" itemprop="item" itemscope itemtype="https://schema.org/Service">
+                <div class="col-12 col-lg-4 col-md-6">
+                    <article class="unav-card unav-cardMedia unav-cardAlignCenter unav-efectoElevacion unav-efectoEntradaOculto">
                         <div class="unav-cardImageContainer unav-efectoZoomImagen">
                             <img src="https://picsum.photos/id/149/800/500" class="unav-cardImg" alt="Graduación">
                         </div>
@@ -412,19 +410,19 @@
                             <div class="unav-cardTags">
                                 <span class="unav-tag unav-tagPurple">Postgrado</span>
                             </div>
-                            <h4 class="unav-cardTitle" itemprop="name">Másteres y Doctorados</h4>
-                            <p class="unav-cardText" itemprop="description">Especialízate con programas de postgrado diseñados para profesionales que buscan impacto real.</p>
+                            <h4 class="unav-cardTitle">Másteres y Doctorados</h4>
+                            <p class="unav-cardText">Especialízate con programas de postgrado diseñados para profesionales que buscan impacto real.</p>
                             <div class="unav-cardAction">
-                                <a itemprop="url" href="#" class="unav-boton unav-botonSecundario" style="--unav-botonColorSource: var(--unav-purple-800);">
-                                    <span itemprop="name">CATÁLOGO</span>
+                                <a  href="#" class="unav-boton unav-botonSecundario" style="--unav-botonColorSource: var(--unav-purple-800);">
+                                    <span>CATÁLOGO</span>
                                 </a>
                             </div>
                         </div>
                     </article>
                 </div>
 
-                <div class="col-12 col-lg-4 col-md-6" itemprop="itemListElement" itemscope itemtype="https://schema.org/ListItem">
-                    <article class="unav-card unav-cardMedia unav-cardDark unav-cardAlignLeft unav-efectoElevacion unav-efectoEntradaOculto" style="background-color: var(--unav-orange-800);" itemprop="item" itemscope itemtype="https://schema.org/Service">
+                <div class="col-12 col-lg-4 col-md-6">
+                    <article class="unav-card unav-cardMedia unav-cardDark unav-cardAlignLeft unav-efectoElevacion unav-efectoEntradaOculto" style="background-color: var(--unav-orange-800);">
                         <div class="unav-cardImageContainer unav-efectoZoomImagen">
                             <img src="https://picsum.photos/id/48/800/500" class="unav-cardImg" alt="Equipo">
                         </div>
@@ -432,8 +430,8 @@
                             <div class="unav-cardTags">
                                 <span class="unav-tag unav-tagOrange">Talento</span>
                             </div>
-                            <h4 class="unav-cardTitle" itemprop="name">Carreras Profesionales</h4>
-                            <p class="unav-cardText" itemprop="description">Acompañamos a nuestros alumnos en su salto al mundo laboral con convenios en las mejores empresas.</p>
+                            <h4 class="unav-cardTitle">Carreras Profesionales</h4>
+                            <p class="unav-cardText">Acompañamos a nuestros alumnos en su salto al mundo laboral con convenios en las mejores empresas.</p>
                             <div class="unav-cardAction">
                                 <a href="#" class="unav-enlaceFlecha" style="--unav-enlaceColor: #ffffff;">
                                     <span class="unav-arrowWrapper"><span class="unav-arrow"></span><span class="unav-arrowClone"></span></span><span>Ver Convenios</span>

@@ -20,15 +20,15 @@
         h2[id], h3[id], section[id] { scroll-margin-top: 6rem; }
     </style>
 </head>
-<body class="unav-font-primary unav-weight-regular unav-text-100" itemscope itemtype="https://schema.org/WebPage">
+<body class="unav-font-primary unav-weight-regular unav-text-100">
 
     <nav style="background-color: #ffffff; border-bottom: 1px solid var(--unav-grey-200); padding: var(--unav-spacing-md) 0; position: sticky; top: 0; z-index: var(--unav-zIndex-sticky);">
         <div class="container-lg d-flex justify-content-between align-items-center position-relative">
             
-            <div itemscope itemtype="https://schema.org/WebPageElement">
-                <a itemprop="url" href="indice.html" class="unav-boton unav-botonSecundario">
+            <div>
+                <a  href="indice.html" class="unav-boton unav-botonSecundario">
                     <i class="bi bi-arrow-left unav-botonIcono" aria-hidden="true"></i>
-                    <span class="d-none d-md-inline" itemprop="name">Volver al Índice</span>
+                    <span class="d-none d-md-inline">Volver al Índice</span>
                 </a>
             </div>
     
@@ -39,11 +39,11 @@
         </div>
     </nav>
 
-    <main class="container-lg unav-doc-container" itemprop="mainContentOfPage">
+    <main class="container-lg unav-doc-container">
         
         <header style="text-align: center; margin-bottom: var(--unav-spacing-md); padding-bottom: var(--unav-spacing-md);">
-            <h1 class="unav-font-primary unav-weight-medium unav-text-200 text-dark mb-3 unav-lh-snug" itemprop="name">Galería de Imágenes Dinámica</h1>
-            <p class="unav-font-primary unav-weight-regular unav-text-100 text-muted m-0 unav-lh-normal" itemprop="description">Componente responsivo inteligente con transiciones de Motion Tokens acopladas.</p>
+            <h1 class="unav-font-primary unav-weight-medium unav-text-200 text-dark mb-3 unav-lh-snug">Galería de Imágenes Dinámica</h1>
+            <p class="unav-font-primary unav-weight-regular unav-text-100 text-muted m-0 unav-lh-normal">Componente responsivo inteligente con transiciones de Motion Tokens acopladas.</p>
         </header>
 
 
@@ -66,10 +66,10 @@
                 </div>
                 
                 <div class="col-md-6 border-start-md ps-md-4">
-                    <h3 class="unav-font-primary unav-weight-bold unav-text-125 mb-3" style="color: var(--unav-black-800);">3. Accesibilidad (A11y) y Schemas (SEO)</h3>
+                    <h3 class="unav-font-primary unav-weight-bold unav-text-125 mb-3" style="color: var(--unav-black-800);">3. Accesibilidad (A11y)</h3>
                     <ul class="unav-font-primary unav-weight-regular unav-text-100" style="color: var(--unav-grey-700); padding-left: var(--unav-spacing-md);">
                         <li style="margin-bottom: var(--unav-spacing-xs);"><strong>Soporte Teclado (A11y):</strong> Nivel AAA. El script integra un <em>Event Listener</em> global (<code>keydown</code>) que mapea las teclas direccionales (<code>ArrowLeft</code>, <code>ArrowRight</code>) a la función de cambio de <em>slide</em> cuando la galería está en pantalla.</li>
-                        <li style="margin-bottom: var(--unav-spacing-xs);"><strong>Microdatos Multimedia:</strong> La galería debe portar <code>itemscope itemtype="https://schema.org/ImageGallery"</code>, etiquetando cada diapositiva individual (o imagen ampliada) como <code>ImageObject</code>.</li>
+                        
                     </ul>
         
                     <h3 class="unav-font-primary unav-weight-bold unav-text-125 mb-3 mt-4" style="color: var(--unav-black-800);">4. UX, Integración de Átomos y Layouts</h3>
@@ -88,7 +88,7 @@
                 <div class="col-12">
                     <div class="unav-galleryWrapper">
                         <div class="unav-galleryWrapper">
-                            <div class="unav-mediaGallery" itemscope itemtype="http://schema.org/ImageGallery">
+                            <div class="unav-mediaGallery">
                                 
                                 <div class="unav-galleryStage position-relative">
                                     <button class="unav-boton unav-botonSecundario unav-botonIconOnly position-absolute top-50 translate-middle-y start-0 ms-3 unav-prevBtn" style="--unav-botonColorSource: #ffffff; --unav-botonTextHover: var(--unav-black-500); z-index: 10;" onclick="changeSlide(this, -1)" aria-label="Anterior">
@@ -98,250 +98,250 @@
                                         <i class="bi bi-chevron-right unav-botonIcono"></i>
                                     </button>
                         
-                                    <figure class="unav-mainImageWrapper unav-efectoCrossFade unav-isActive" itemprop="associatedMedia" itemscope itemtype="http://schema.org/ImageObject">
-                                        <img src="https://picsum.photos/id/10/1200/800" class="unav-mainImage" itemprop="contentUrl" alt="Fotografía del Campus UNAV 1" loading="eager">
+                                    <figure class="unav-mainImageWrapper unav-efectoCrossFade unav-isActive" >
+                                        <img src="https://picsum.photos/id/10/1200/800" class="unav-mainImage"  alt="Fotografía del Campus UNAV 1" loading="eager">
                                         <figcaption class="unav-imageCaption unav-lh-normal" style="text-shadow: 1px 1px 3px rgba(0, 0, 0, 0.6);">
-                                            <span itemprop="caption">Fotografía de recurso #1. Evento institucional de apertura de curso en las nuevas instalaciones.</span>
-                                            <meta itemprop="author" content="Universidad de Navarra">
-                                            <meta itemprop="datePublished" content="2026-05-01">
-                                            <div itemprop="contentLocation" itemscope itemtype="http://schema.org/Place" style="display:none;"><meta itemprop="name" content="Campus Universidad de Navarra"></div>
+                                            <span>Fotografía de recurso #1. Evento institucional de apertura de curso en las nuevas instalaciones.</span>
+                                            <meta  content="Universidad de Navarra">
+                                            <meta  content="2026-05-01">
+                                            <div   style="display:none;"><meta  content="Campus Universidad de Navarra"></div>
                                         </figure>
                         
-                                    <figure class="unav-mainImageWrapper unav-efectoCrossFade" itemprop="associatedMedia" itemscope itemtype="http://schema.org/ImageObject">
-                                        <img src="https://picsum.photos/id/11/1200/800" class="unav-mainImage" itemprop="contentUrl" alt="Fotografía del Campus UNAV 2" loading="lazy">
+                                    <figure class="unav-mainImageWrapper unav-efectoCrossFade" >
+                                        <img src="https://picsum.photos/id/11/1200/800" class="unav-mainImage"  alt="Fotografía del Campus UNAV 2" loading="lazy">
                                         <figcaption class="unav-imageCaption unav-lh-normal" style="text-shadow: 1px 1px 3px rgba(0, 0, 0, 0.6);">
-                                            <span itemprop="caption">Fotografía de recurso #2. Actividades de los alumnos en el campus durante el periodo primaveral.</span>
-                                            <meta itemprop="author" content="Universidad de Navarra"><meta itemprop="datePublished" content="2026-05-01">
-                                            <div itemprop="contentLocation" itemscope itemtype="http://schema.org/Place" style="display:none;"><meta itemprop="name" content="Campus Universidad de Navarra"></div>
+                                            <span>Fotografía de recurso #2. Actividades de los alumnos en el campus durante el periodo primaveral.</span>
+                                            <meta  content="Universidad de Navarra"><meta  content="2026-05-01">
+                                            <div   style="display:none;"><meta  content="Campus Universidad de Navarra"></div>
                                         </figcaption>
                                     </figure>
                         
-                                    <figure class="unav-mainImageWrapper unav-efectoCrossFade" itemprop="associatedMedia" itemscope itemtype="http://schema.org/ImageObject">
-                                        <img src="https://picsum.photos/id/12/1200/800" class="unav-mainImage" itemprop="contentUrl" alt="Fotografía del Campus UNAV 3" loading="lazy">
+                                    <figure class="unav-mainImageWrapper unav-efectoCrossFade" >
+                                        <img src="https://picsum.photos/id/12/1200/800" class="unav-mainImage"  alt="Fotografía del Campus UNAV 3" loading="lazy">
                                         <figcaption class="unav-imageCaption unav-lh-normal" style="text-shadow: 1px 1px 3px rgba(0, 0, 0, 0.6);">
-                                            <span itemprop="caption">Fotografía de recurso #3. Fachada del edificio principal reflejada bajo la luz del atardecer.</span>
-                                            <meta itemprop="author" content="Universidad de Navarra"><meta itemprop="datePublished" content="2026-05-01">
-                                            <div itemprop="contentLocation" itemscope itemtype="http://schema.org/Place" style="display:none;"><meta itemprop="name" content="Campus Universidad de Navarra"></div>
+                                            <span>Fotografía de recurso #3. Fachada del edificio principal reflejada bajo la luz del atardecer.</span>
+                                            <meta  content="Universidad de Navarra"><meta  content="2026-05-01">
+                                            <div   style="display:none;"><meta  content="Campus Universidad de Navarra"></div>
                                         </figcaption>
                                     </figure>
                         
-                                    <figure class="unav-mainImageWrapper unav-efectoCrossFade" itemprop="associatedMedia" itemscope itemtype="http://schema.org/ImageObject">
-                                        <img src="https://picsum.photos/id/13/1200/800" class="unav-mainImage" itemprop="contentUrl" alt="Fotografía del Campus UNAV 4" loading="lazy">
+                                    <figure class="unav-mainImageWrapper unav-efectoCrossFade" >
+                                        <img src="https://picsum.photos/id/13/1200/800" class="unav-mainImage"  alt="Fotografía del Campus UNAV 4" loading="lazy">
                                         <figcaption class="unav-imageCaption unav-lh-normal" style="text-shadow: 1px 1px 3px rgba(0, 0, 0, 0.6);">
-                                            <span itemprop="caption">Fotografía de recurso #4. Zonas de estudio y espacios abiertos en la biblioteca de ciencias.</span>
-                                            <meta itemprop="author" content="Universidad de Navarra"><meta itemprop="datePublished" content="2026-05-01">
-                                            <div itemprop="contentLocation" itemscope itemtype="http://schema.org/Place" style="display:none;"><meta itemprop="name" content="Campus Universidad de Navarra"></div>
+                                            <span>Fotografía de recurso #4. Zonas de estudio y espacios abiertos en la biblioteca de ciencias.</span>
+                                            <meta  content="Universidad de Navarra"><meta  content="2026-05-01">
+                                            <div   style="display:none;"><meta  content="Campus Universidad de Navarra"></div>
                                         </figcaption>
                                     </figure>
                         
-                                    <figure class="unav-mainImageWrapper unav-efectoCrossFade" itemprop="associatedMedia" itemscope itemtype="http://schema.org/ImageObject">
-                                        <img src="https://picsum.photos/id/14/1200/800" class="unav-mainImage" itemprop="contentUrl" alt="Fotografía del Campus UNAV 5" loading="lazy">
+                                    <figure class="unav-mainImageWrapper unav-efectoCrossFade" >
+                                        <img src="https://picsum.photos/id/14/1200/800" class="unav-mainImage"  alt="Fotografía del Campus UNAV 5" loading="lazy">
                                         <figcaption class="unav-imageCaption unav-lh-normal" style="text-shadow: 1px 1px 3px rgba(0, 0, 0, 0.6);">
-                                            <span itemprop="caption">Fotografía de recurso #5. Entorno natural que rodea las facultades del campus de Pamplona.</span>
-                                            <meta itemprop="author" content="Universidad de Navarra"><meta itemprop="datePublished" content="2026-05-01">
-                                            <div itemprop="contentLocation" itemscope itemtype="http://schema.org/Place" style="display:none;"><meta itemprop="name" content="Campus Universidad de Navarra"></div>
+                                            <span>Fotografía de recurso #5. Entorno natural que rodea las facultades del campus de Pamplona.</span>
+                                            <meta  content="Universidad de Navarra"><meta  content="2026-05-01">
+                                            <div   style="display:none;"><meta  content="Campus Universidad de Navarra"></div>
                                         </figcaption>
                                     </figure>
                         
-                                    <figure class="unav-mainImageWrapper unav-efectoCrossFade" itemprop="associatedMedia" itemscope itemtype="http://schema.org/ImageObject">
-                                        <img src="https://picsum.photos/id/15/1200/800" class="unav-mainImage" itemprop="contentUrl" alt="Fotografía del Campus UNAV 6" loading="lazy">
+                                    <figure class="unav-mainImageWrapper unav-efectoCrossFade" >
+                                        <img src="https://picsum.photos/id/15/1200/800" class="unav-mainImage"  alt="Fotografía del Campus UNAV 6" loading="lazy">
                                         <figcaption class="unav-imageCaption unav-lh-normal" style="text-shadow: 1px 1px 3px rgba(0, 0, 0, 0.6);">
-                                            <span itemprop="caption">Fotografía de recurso #6. Detalle arquitectónico de las nuevas aulas polivalentes.</span>
-                                            <meta itemprop="author" content="Universidad de Navarra"><meta itemprop="datePublished" content="2026-05-01">
-                                            <div itemprop="contentLocation" itemscope itemtype="http://schema.org/Place" style="display:none;"><meta itemprop="name" content="Campus Universidad de Navarra"></div>
+                                            <span>Fotografía de recurso #6. Detalle arquitectónico de las nuevas aulas polivalentes.</span>
+                                            <meta  content="Universidad de Navarra"><meta  content="2026-05-01">
+                                            <div   style="display:none;"><meta  content="Campus Universidad de Navarra"></div>
                                         </figcaption>
                                     </figure>
                         
-                                    <figure class="unav-mainImageWrapper unav-efectoCrossFade" itemprop="associatedMedia" itemscope itemtype="http://schema.org/ImageObject">
-                                        <img src="https://picsum.photos/id/16/1200/800" class="unav-mainImage" itemprop="contentUrl" alt="Fotografía del Campus UNAV 7" loading="lazy">
+                                    <figure class="unav-mainImageWrapper unav-efectoCrossFade" >
+                                        <img src="https://picsum.photos/id/16/1200/800" class="unav-mainImage"  alt="Fotografía del Campus UNAV 7" loading="lazy">
                                         <figcaption class="unav-imageCaption unav-lh-normal" style="text-shadow: 1px 1px 3px rgba(0, 0, 0, 0.6);">
-                                            <span itemprop="caption">Fotografía de recurso #7. Investigadores trabajando en los laboratorios del centro tecnológico.</span>
-                                            <meta itemprop="author" content="Universidad de Navarra"><meta itemprop="datePublished" content="2026-05-01">
-                                            <div itemprop="contentLocation" itemscope itemtype="http://schema.org/Place" style="display:none;"><meta itemprop="name" content="Campus Universidad de Navarra"></div>
+                                            <span>Fotografía de recurso #7. Investigadores trabajando en los laboratorios del centro tecnológico.</span>
+                                            <meta  content="Universidad de Navarra"><meta  content="2026-05-01">
+                                            <div   style="display:none;"><meta  content="Campus Universidad de Navarra"></div>
                                         </figcaption>
                                     </figure>
                         
-                                    <figure class="unav-mainImageWrapper unav-efectoCrossFade" itemprop="associatedMedia" itemscope itemtype="http://schema.org/ImageObject">
-                                        <img src="https://picsum.photos/id/17/1200/800" class="unav-mainImage" itemprop="contentUrl" alt="Fotografía del Campus UNAV 8" loading="lazy">
+                                    <figure class="unav-mainImageWrapper unav-efectoCrossFade" >
+                                        <img src="https://picsum.photos/id/17/1200/800" class="unav-mainImage"  alt="Fotografía del Campus UNAV 8" loading="lazy">
                                         <figcaption class="unav-imageCaption unav-lh-normal" style="text-shadow: 1px 1px 3px rgba(0, 0, 0, 0.6);">
-                                            <span itemprop="caption">Fotografía de recurso #8. Panorámica del anfiteatro exterior durante una sesión cultural.</span>
-                                            <meta itemprop="author" content="Universidad de Navarra"><meta itemprop="datePublished" content="2026-05-01">
-                                            <div itemprop="contentLocation" itemscope itemtype="http://schema.org/Place" style="display:none;"><meta itemprop="name" content="Campus Universidad de Navarra"></div>
+                                            <span>Fotografía de recurso #8. Panorámica del anfiteatro exterior durante una sesión cultural.</span>
+                                            <meta  content="Universidad de Navarra"><meta  content="2026-05-01">
+                                            <div   style="display:none;"><meta  content="Campus Universidad de Navarra"></div>
                                         </figcaption>
                                     </figure>
                         
-                                    <figure class="unav-mainImageWrapper unav-efectoCrossFade" itemprop="associatedMedia" itemscope itemtype="http://schema.org/ImageObject">
-                                        <img src="https://picsum.photos/id/18/1200/800" class="unav-mainImage" itemprop="contentUrl" alt="Fotografía del Campus UNAV 9" loading="lazy">
+                                    <figure class="unav-mainImageWrapper unav-efectoCrossFade" >
+                                        <img src="https://picsum.photos/id/18/1200/800" class="unav-mainImage"  alt="Fotografía del Campus UNAV 9" loading="lazy">
                                         <figcaption class="unav-imageCaption unav-lh-normal" style="text-shadow: 1px 1px 3px rgba(0, 0, 0, 0.6);">
-                                            <span itemprop="caption">Fotografía de recurso #9. Entrada de estudiantes al edificio de Amigos a primera hora de la mañana.</span>
-                                            <meta itemprop="author" content="Universidad de Navarra"><meta itemprop="datePublished" content="2026-05-01">
-                                            <div itemprop="contentLocation" itemscope itemtype="http://schema.org/Place" style="display:none;"><meta itemprop="name" content="Campus Universidad de Navarra"></div>
+                                            <span>Fotografía de recurso #9. Entrada de estudiantes al edificio de Amigos a primera hora de la mañana.</span>
+                                            <meta  content="Universidad de Navarra"><meta  content="2026-05-01">
+                                            <div   style="display:none;"><meta  content="Campus Universidad de Navarra"></div>
                                         </figcaption>
                                     </figure>
                         
-                                    <figure class="unav-mainImageWrapper unav-efectoCrossFade" itemprop="associatedMedia" itemscope itemtype="http://schema.org/ImageObject">
-                                        <img src="https://picsum.photos/id/19/1200/800" class="unav-mainImage" itemprop="contentUrl" alt="Fotografía del Campus UNAV 10" loading="lazy">
+                                    <figure class="unav-mainImageWrapper unav-efectoCrossFade" >
+                                        <img src="https://picsum.photos/id/19/1200/800" class="unav-mainImage"  alt="Fotografía del Campus UNAV 10" loading="lazy">
                                         <figcaption class="unav-imageCaption unav-lh-normal" style="text-shadow: 1px 1px 3px rgba(0, 0, 0, 0.6);">
-                                            <span itemprop="caption">Fotografía de recurso #10. Soportales de la escuela de arquitectura bajo un prisma invernal.</span>
-                                            <meta itemprop="author" content="Universidad de Navarra"><meta itemprop="datePublished" content="2026-05-01">
-                                            <div itemprop="contentLocation" itemscope itemtype="http://schema.org/Place" style="display:none;"><meta itemprop="name" content="Campus Universidad de Navarra"></div>
+                                            <span>Fotografía de recurso #10. Soportales de la escuela de arquitectura bajo un prisma invernal.</span>
+                                            <meta  content="Universidad de Navarra"><meta  content="2026-05-01">
+                                            <div   style="display:none;"><meta  content="Campus Universidad de Navarra"></div>
                                         </figcaption>
                                     </figure>
                         
-                                    <figure class="unav-mainImageWrapper unav-efectoCrossFade" itemprop="associatedMedia" itemscope itemtype="http://schema.org/ImageObject">
-                                        <img src="https://picsum.photos/id/20/1200/800" class="unav-mainImage" itemprop="contentUrl" alt="Fotografía del Campus UNAV 11" loading="lazy">
+                                    <figure class="unav-mainImageWrapper unav-efectoCrossFade" >
+                                        <img src="https://picsum.photos/id/20/1200/800" class="unav-mainImage"  alt="Fotografía del Campus UNAV 11" loading="lazy">
                                         <figcaption class="unav-imageCaption unav-lh-normal" style="text-shadow: 1px 1px 3px rgba(0, 0, 0, 0.6);">
-                                            <span itemprop="caption">Fotografía de recurso #11. Acceso peatonal que conecta el campus con el entorno de la Clínica.</span>
-                                            <meta itemprop="author" content="Universidad de Navarra"><meta itemprop="datePublished" content="2026-05-01">
-                                            <div itemprop="contentLocation" itemscope itemtype="http://schema.org/Place" style="display:none;"><meta itemprop="name" content="Campus Universidad de Navarra"></div>
+                                            <span>Fotografía de recurso #11. Acceso peatonal que conecta el campus con el entorno de la Clínica.</span>
+                                            <meta  content="Universidad de Navarra"><meta  content="2026-05-01">
+                                            <div   style="display:none;"><meta  content="Campus Universidad de Navarra"></div>
                                         </figcaption>
                                     </figure>
                         
-                                    <figure class="unav-mainImageWrapper unav-efectoCrossFade" itemprop="associatedMedia" itemscope itemtype="http://schema.org/ImageObject">
-                                        <img src="https://picsum.photos/id/21/1200/800" class="unav-mainImage" itemprop="contentUrl" alt="Fotografía del Campus UNAV 12" loading="lazy">
+                                    <figure class="unav-mainImageWrapper unav-efectoCrossFade" >
+                                        <img src="https://picsum.photos/id/21/1200/800" class="unav-mainImage"  alt="Fotografía del Campus UNAV 12" loading="lazy">
                                         <figcaption class="unav-imageCaption unav-lh-normal" style="text-shadow: 1px 1px 3px rgba(0, 0, 0, 0.6);">
-                                            <span itemprop="caption">Fotografía de recurso #12. Detalle de la arboleda patrimonial en las inmediaciones del río Sadar.</span>
-                                            <meta itemprop="author" content="Universidad de Navarra"><meta itemprop="datePublished" content="2026-05-01">
-                                            <div itemprop="contentLocation" itemscope itemtype="http://schema.org/Place" style="display:none;"><meta itemprop="name" content="Campus Universidad de Navarra"></div>
+                                            <span>Fotografía de recurso #12. Detalle de la arboleda patrimonial en las inmediaciones del río Sadar.</span>
+                                            <meta  content="Universidad de Navarra"><meta  content="2026-05-01">
+                                            <div   style="display:none;"><meta  content="Campus Universidad de Navarra"></div>
                                         </figcaption>
                                     </figure>
                         
-                                    <figure class="unav-mainImageWrapper unav-efectoCrossFade" itemprop="associatedMedia" itemscope itemtype="http://schema.org/ImageObject">
-                                        <img src="https://picsum.photos/id/1011/800/1200" class="unav-mainImage" itemprop="contentUrl" alt="Fotografía del Campus UNAV 13" loading="lazy">
+                                    <figure class="unav-mainImageWrapper unav-efectoCrossFade" >
+                                        <img src="https://picsum.photos/id/1011/800/1200" class="unav-mainImage"  alt="Fotografía del Campus UNAV 13" loading="lazy">
                                         <figcaption class="unav-imageCaption unav-lh-normal" style="text-shadow: 1px 1px 3px rgba(0, 0, 0, 0.6);">
-                                            <span itemprop="caption">Fotografía de recurso #13. Perspectiva vertical de la pasarela peatonal central.</span>
-                                            <meta itemprop="author" content="Universidad de Navarra"><meta itemprop="datePublished" content="2026-05-01">
-                                            <div itemprop="contentLocation" itemscope itemtype="http://schema.org/Place" style="display:none;"><meta itemprop="name" content="Campus Universidad de Navarra"></div>
+                                            <span>Fotografía de recurso #13. Perspectiva vertical de la pasarela peatonal central.</span>
+                                            <meta  content="Universidad de Navarra"><meta  content="2026-05-01">
+                                            <div   style="display:none;"><meta  content="Campus Universidad de Navarra"></div>
                                         </figcaption>
                                     </figure>
                         
-                                    <figure class="unav-mainImageWrapper unav-efectoCrossFade" itemprop="associatedMedia" itemscope itemtype="http://schema.org/ImageObject">
-                                        <img src="https://picsum.photos/id/1012/800/1200" class="unav-mainImage" itemprop="contentUrl" alt="Fotografía del Campus UNAV 14" loading="lazy">
+                                    <figure class="unav-mainImageWrapper unav-efectoCrossFade" >
+                                        <img src="https://picsum.photos/id/1012/800/1200" class="unav-mainImage"  alt="Fotografía del Campus UNAV 14" loading="lazy">
                                         <figcaption class="unav-imageCaption unav-lh-normal" style="text-shadow: 1px 1px 3px rgba(0, 0, 0, 0.6);">
-                                            <span itemprop="caption">Fotografía de recurso #14. Encuadre vertical de las escalinatas principales de Comunicación.</span>
-                                            <meta itemprop="author" content="Universidad de Navarra"><meta itemprop="datePublished" content="2026-05-01">
-                                            <div itemprop="contentLocation" itemscope itemtype="http://schema.org/Place" style="display:none;"><meta itemprop="name" content="Campus Universidad de Navarra"></div>
+                                            <span>Fotografía de recurso #14. Encuadre vertical de las escalinatas principales de Comunicación.</span>
+                                            <meta  content="Universidad de Navarra"><meta  content="2026-05-01">
+                                            <div   style="display:none;"><meta  content="Campus Universidad de Navarra"></div>
                                         </figcaption>
                                     </figure>
                         
-                                    <figure class="unav-mainImageWrapper unav-efectoCrossFade" itemprop="associatedMedia" itemscope itemtype="http://schema.org/ImageObject">
-                                        <img src="https://picsum.photos/id/1015/800/1200" class="unav-mainImage" itemprop="contentUrl" alt="Fotografía del Campus UNAV 15" loading="lazy">
+                                    <figure class="unav-mainImageWrapper unav-efectoCrossFade" >
+                                        <img src="https://picsum.photos/id/1015/800/1200" class="unav-mainImage"  alt="Fotografía del Campus UNAV 15" loading="lazy">
                                         <figcaption class="unav-imageCaption unav-lh-normal" style="text-shadow: 1px 1px 3px rgba(0, 0, 0, 0.6);">
-                                            <span itemprop="caption">Fotografía de recurso #15. Primer plano del escudo institucional tallado en piedra.</span>
-                                            <meta itemprop="author" content="Universidad de Navarra"><meta itemprop="datePublished" content="2026-05-01">
-                                            <div itemprop="contentLocation" itemscope itemtype="http://schema.org/Place" style="display:none;"><meta itemprop="name" content="Campus Universidad de Navarra"></div>
+                                            <span>Fotografía de recurso #15. Primer plano del escudo institucional tallado en piedra.</span>
+                                            <meta  content="Universidad de Navarra"><meta  content="2026-05-01">
+                                            <div   style="display:none;"><meta  content="Campus Universidad de Navarra"></div>
                                         </figcaption>
                                     </figure>
                         
-                                    <figure class="unav-mainImageWrapper unav-efectoCrossFade" itemprop="associatedMedia" itemscope itemtype="http://schema.org/ImageObject">
-                                        <img src="https://picsum.photos/id/1016/800/1200" class="unav-mainImage" itemprop="contentUrl" alt="Fotografía del Campus UNAV 16" loading="lazy">
+                                    <figure class="unav-mainImageWrapper unav-efectoCrossFade" >
+                                        <img src="https://picsum.photos/id/1016/800/1200" class="unav-mainImage"  alt="Fotografía del Campus UNAV 16" loading="lazy">
                                         <figcaption class="unav-imageCaption unav-lh-normal" style="text-shadow: 1px 1px 3px rgba(0, 0, 0, 0.6);">
-                                            <span itemprop="caption">Fotografía de recurso #16. Líneas verticales del lucernario en el edificio de posgrado.</span>
-                                            <meta itemprop="author" content="Universidad de Navarra"><meta itemprop="datePublished" content="2026-05-01">
-                                            <div itemprop="contentLocation" itemscope itemtype="http://schema.org/Place" style="display:none;"><meta itemprop="name" content="Campus Universidad de Navarra"></div>
+                                            <span>Fotografía de recurso #16. Líneas verticales del lucernario en el edificio de posgrado.</span>
+                                            <meta  content="Universidad de Navarra"><meta  content="2026-05-01">
+                                            <div   style="display:none;"><meta  content="Campus Universidad de Navarra"></div>
                                         </figcaption>
                                     </figure>
                         
-                                    <figure class="unav-mainImageWrapper weights-light unav-efectoCrossFade" itemprop="associatedMedia" itemscope itemtype="http://schema.org/ImageObject">
-                                        <img src="https://picsum.photos/id/1018/800/1200" class="unav-mainImage" itemprop="contentUrl" alt="Fotografía del Campus UNAV 17" loading="lazy">
+                                    <figure class="unav-mainImageWrapper weights-light unav-efectoCrossFade" >
+                                        <img src="https://picsum.photos/id/1018/800/1200" class="unav-mainImage"  alt="Fotografía del Campus UNAV 17" loading="lazy">
                                         <figcaption class="unav-imageCaption unav-lh-normal" style="text-shadow: 1px 1px 3px rgba(0, 0, 0, 0.6);">
-                                            <span itemprop="caption">Fotografía de recurso #17. Vista cenital de los senderos universitarios cubiertos de hojas en otoño.</span>
-                                            <meta itemprop="author" content="Universidad de Navarra"><meta itemprop="datePublished" content="2026-05-01">
-                                            <div itemprop="contentLocation" itemscope itemtype="http://schema.org/Place" style="display:none;"><meta itemprop="name" content="Campus Universidad de Navarra"></div>
+                                            <span>Fotografía de recurso #17. Vista cenital de los senderos universitarios cubiertos de hojas en otoño.</span>
+                                            <meta  content="Universidad de Navarra"><meta  content="2026-05-01">
+                                            <div   style="display:none;"><meta  content="Campus Universidad de Navarra"></div>
                                         </figcaption>
                                     </figure>
                         
-                                    <figure class="unav-mainImageWrapper unav-efectoCrossFade" itemprop="associatedMedia" itemscope itemtype="http://schema.org/ImageObject">
-                                        <img src="https://picsum.photos/id/1019/800/1200" class="unav-mainImage" itemprop="contentUrl" alt="Fotografía del Campus UNAV 18" loading="lazy">
+                                    <figure class="unav-mainImageWrapper unav-efectoCrossFade" >
+                                        <img src="https://picsum.photos/id/1019/800/1200" class="unav-mainImage"  alt="Fotografía del Campus UNAV 18" loading="lazy">
                                         <figcaption class="unav-imageCaption unav-lh-normal" style="text-shadow: 1px 1px 3px rgba(0, 0, 0, 0.6);">
-                                            <span itemprop="caption">Fotografía de recurso #18. Reflejo de la torre del edificio central sobre los ventanales limítrofes.</span>
-                                            <meta itemprop="author" content="Universidad de Navarra"><meta itemprop="datePublished" content="2026-05-01">
-                                            <div itemprop="contentLocation" itemscope itemtype="http://schema.org/Place" style="display:none;"><meta itemprop="name" content="Campus Universidad de Navarra"></div>
+                                            <span>Fotografía de recurso #18. Reflejo de la torre del edificio central sobre los ventanales limítrofes.</span>
+                                            <meta  content="Universidad de Navarra"><meta  content="2026-05-01">
+                                            <div   style="display:none;"><meta  content="Campus Universidad de Navarra"></div>
                                         </figcaption>
                                     </figure>
                         
-                                    <figure class="unav-mainImageWrapper unav-efectoCrossFade" itemprop="associatedMedia" itemscope itemtype="http://schema.org/ImageObject">
-                                        <img src="https://picsum.photos/id/1020/800/1200" class="unav-mainImage" itemprop="contentUrl" alt="Fotografía del Campus UNAV 19" loading="lazy">
+                                    <figure class="unav-mainImageWrapper unav-efectoCrossFade" >
+                                        <img src="https://picsum.photos/id/1020/800/1200" class="unav-mainImage"  alt="Fotografía del Campus UNAV 19" loading="lazy">
                                         <figcaption class="unav-imageCaption unav-lh-normal" style="text-shadow: 1px 1px 3px rgba(0, 0, 0, 0.6);">
-                                            <span itemprop="caption">Fotografía de recurso #19. Foco lineal sobre los puestos de lectura individuales de la biblioteca.</span>
-                                            <meta itemprop="author" content="Universidad de Navarra"><meta itemprop="datePublished" content="2026-05-01">
-                                            <div itemprop="contentLocation" itemscope itemtype="http://schema.org/Place" style="display:none;"><meta itemprop="name" content="Campus Universidad de Navarra"></div>
+                                            <span>Fotografía de recurso #19. Foco lineal sobre los puestos de lectura individuales de la biblioteca.</span>
+                                            <meta  content="Universidad de Navarra"><meta  content="2026-05-01">
+                                            <div   style="display:none;"><meta  content="Campus Universidad de Navarra"></div>
                                         </figcaption>
                                     </figure>
                         
-                                    <figure class="unav-mainImageWrapper unav-efectoCrossFade" itemprop="associatedMedia" itemscope itemtype="http://schema.org/ImageObject">
-                                        <img src="https://picsum.photos/id/1021/800/1200" class="unav-mainImage" itemprop="contentUrl" alt="Fotografía del Campus UNAV 20" loading="lazy">
+                                    <figure class="unav-mainImageWrapper unav-efectoCrossFade" >
+                                        <img src="https://picsum.photos/id/1021/800/1200" class="unav-mainImage"  alt="Fotografía del Campus UNAV 20" loading="lazy">
                                         <figcaption class="unav-imageCaption unav-lh-normal" style="text-shadow: 1px 1px 3px rgba(0, 0, 0, 0.6);">
-                                            <span itemprop="caption">Fotografía de recurso #20. Contraluz de las cristaleras del Museo Universidad de Navarra.</span>
-                                            <meta itemprop="author" content="Universidad de Navarra"><meta itemprop="datePublished" content="2026-05-01">
-                                            <div itemprop="contentLocation" itemscope itemtype="http://schema.org/Place" style="display:none;"><meta itemprop="name" content="Campus Universidad de Navarra"></div>
+                                            <span>Fotografía de recurso #20. Contraluz de las cristaleras del Museo Universidad de Navarra.</span>
+                                            <meta  content="Universidad de Navarra"><meta  content="2026-05-01">
+                                            <div   style="display:none;"><meta  content="Campus Universidad de Navarra"></div>
                                         </figcaption>
                                     </figure>
                         
-                                    <figure class="unav-mainImageWrapper unav-efectoCrossFade" itemprop="associatedMedia" itemscope itemtype="http://schema.org/ImageObject">
-                                        <img src="https://picsum.photos/id/1022/800/1200" class="unav-mainImage" itemprop="contentUrl" alt="Fotografía del Campus UNAV 21" loading="lazy">
+                                    <figure class="unav-mainImageWrapper unav-efectoCrossFade" >
+                                        <img src="https://picsum.photos/id/1022/800/1200" class="unav-mainImage"  alt="Fotografía del Campus UNAV 21" loading="lazy">
                                         <figcaption class="unav-imageCaption unav-lh-normal" style="text-shadow: 1px 1px 3px rgba(0, 0, 0, 0.6);">
-                                            <span itemprop="caption">Fotografía de recurso #21. Encuadre arquitectónico simétrico de los pasillos de la Facultad de Derecho.</span>
-                                            <meta itemprop="author" content="Universidad de Navarra"><meta itemprop="datePublished" content="2026-05-01">
-                                            <div itemprop="contentLocation" itemscope itemtype="http://schema.org/Place" style="display:none;"><meta itemprop="name" content="Campus Universidad de Navarra"></div>
+                                            <span>Fotografía de recurso #21. Encuadre arquitectónico simétrico de los pasillos de la Facultad de Derecho.</span>
+                                            <meta  content="Universidad de Navarra"><meta  content="2026-05-01">
+                                            <div   style="display:none;"><meta  content="Campus Universidad de Navarra"></div>
                                         </figcaption>
                                     </figure>
                         
-                                    <figure class="unav-mainImageWrapper unav-efectoCrossFade" itemprop="associatedMedia" itemscope itemtype="http://schema.org/ImageObject">
-                                        <img src="https://picsum.photos/id/1023/800/1200" class="unav-mainImage" itemprop="contentUrl" alt="Fotografía del Campus UNAV 22" loading="lazy">
+                                    <figure class="unav-mainImageWrapper unav-efectoCrossFade" >
+                                        <img src="https://picsum.photos/id/1023/800/1200" class="unav-mainImage"  alt="Fotografía del Campus UNAV 22" loading="lazy">
                                         <figcaption class="unav-imageCaption unav-lh-normal" style="text-shadow: 1px 1px 3px rgba(0, 0, 0, 0.6);">
-                                            <span itemprop="caption">Fotografía de recurso #22. Zona de taquillas e interconexión del alumnado en Económicas.</span>
-                                            <meta itemprop="author" content="Universidad de Navarra"><meta itemprop="datePublished" content="2026-05-01">
-                                            <div itemprop="contentLocation" itemscope itemtype="http://schema.org/Place" style="display:none;"><meta itemprop="name" content="Campus Universidad de Navarra"></div>
+                                            <span>Fotografía de recurso #22. Zona de taquillas e interconexión del alumnado en Económicas.</span>
+                                            <meta  content="Universidad de Navarra"><meta  content="2026-05-01">
+                                            <div   style="display:none;"><meta  content="Campus Universidad de Navarra"></div>
                                         </figcaption>
                                     </figure>
                         
-                                    <figure class="unav-mainImageWrapper unav-efectoCrossFade" itemprop="associatedMedia" itemscope itemtype="http://schema.org/ImageObject">
-                                        <img src="https://picsum.photos/id/1024/800/1200" class="unav-mainImage" itemprop="contentUrl" alt="Fotografía del Campus UNAV 23" loading="lazy">
+                                    <figure class="unav-mainImageWrapper unav-efectoCrossFade" >
+                                        <img src="https://picsum.photos/id/1024/800/1200" class="unav-mainImage"  alt="Fotografía del Campus UNAV 23" loading="lazy">
                                         <figcaption class="unav-imageCaption unav-lh-normal" style="text-shadow: 1px 1px 3px rgba(0, 0, 0, 0.6);">
-                                            <span itemprop="caption">Fotografía de recurso #23. Detalle exterior de los volúmenes de hormigón del museo bajo cielo despejado.</span>
-                                            <meta itemprop="author" content="Universidad de Navarra"><meta itemprop="datePublished" content="2026-05-01">
-                                            <div itemprop="contentLocation" itemscope itemtype="http://schema.org/Place" style="display:none;"><meta itemprop="name" content="Campus Universidad de Navarra"></div>
+                                            <span>Fotografía de recurso #23. Detalle exterior de los volúmenes de hormigón del museo bajo cielo despejado.</span>
+                                            <meta  content="Universidad de Navarra"><meta  content="2026-05-01">
+                                            <div   style="display:none;"><meta  content="Campus Universidad de Navarra"></div>
                                         </figcaption>
                                     </figure>
                         
-                                    <figure class="unav-mainImageWrapper unav-efectoCrossFade" itemprop="associatedMedia" itemscope itemtype="http://schema.org/ImageObject">
-                                        <img src="https://picsum.photos/id/1025/800/1200" class="unav-mainImage" itemprop="contentUrl" alt="Fotografía del Campus UNAV 24" loading="lazy">
+                                    <figure class="unav-mainImageWrapper unav-efectoCrossFade" >
+                                        <img src="https://picsum.photos/id/1025/800/1200" class="unav-mainImage"  alt="Fotografía del Campus UNAV 24" loading="lazy">
                                         <figcaption class="unav-imageCaption unav-lh-normal" style="text-shadow: 1px 1px 3px rgba(0, 0, 0, 0.6);">
-                                            <span itemprop="caption">Fotografía de recurso #24. Atrio interior del edificio de Ciencias Sociales y Aula Magna.</span>
-                                            <meta itemprop="author" content="Universidad de Navarra"><meta itemprop="datePublished" content="2026-05-01">
-                                            <div itemprop="contentLocation" itemscope itemtype="http://schema.org/Place" style="display:none;"><meta itemprop="name" content="Campus Universidad de Navarra"></div>
+                                            <span>Fotografía de recurso #24. Atrio interior del edificio de Ciencias Sociales y Aula Magna.</span>
+                                            <meta  content="Universidad de Navarra"><meta  content="2026-05-01">
+                                            <div   style="display:none;"><meta  content="Campus Universidad de Navarra"></div>
                                         </figcaption>
                                     </figure>
                                 </div>
                         
                                 <div class="unav-gallerySidebar">
                                     <div class="unav-thumbGrid">
-                                        <button type="button" class="unav-thumbItem unav-isSelected" aria-label="Seleccionar miniatura 1" onclick="goToSlide(this.closest('.unav-mediaGallery'), 0)"><img src="https://picsum.photos/id/10/150/150" itemprop="thumbnailUrl" alt="" loading="lazy"></button>
-                                        <button type="button" class="unav-thumbItem" aria-label="Seleccionar miniatura 2" onclick="goToSlide(this.closest('.unav-mediaGallery'), 1)"><img src="https://picsum.photos/id/11/150/150" itemprop="thumbnailUrl" alt="" loading="lazy"></button>
-                                        <button type="button" class="unav-thumbItem" aria-label="Seleccionar miniatura 3" onclick="goToSlide(this.closest('.unav-mediaGallery'), 2)"><img src="https://picsum.photos/id/12/150/150" itemprop="thumbnailUrl" alt="" loading="lazy"></button>
-                                        <button type="button" class="unav-thumbItem" aria-label="Seleccionar miniatura 4" onclick="goToSlide(this.closest('.unav-mediaGallery'), 3)"><img src="https://picsum.photos/id/13/150/150" itemprop="thumbnailUrl" alt="" loading="lazy"></button>
-                                        <button type="button" class="unav-thumbItem" aria-label="Seleccionar miniatura 5" onclick="goToSlide(this.closest('.unav-mediaGallery'), 4)"><img src="https://picsum.photos/id/14/150/150" itemprop="thumbnailUrl" alt="" loading="lazy"></button>
-                                        <button type="button" class="unav-thumbItem" aria-label="Seleccionar miniatura 6" onclick="goToSlide(this.closest('.unav-mediaGallery'), 5)"><img src="https://picsum.photos/id/15/150/150" itemprop="thumbnailUrl" alt="" loading="lazy"></button>
-                                        <button type="button" class="unav-thumbItem" aria-label="Seleccionar miniatura 7" onclick="goToSlide(this.closest('.unav-mediaGallery'), 6)"><img src="https://picsum.photos/id/16/150/150" itemprop="thumbnailUrl" alt="" loading="lazy"></button>
-                                        <button type="button" class="unav-thumbItem" aria-label="Seleccionar miniatura 8" onclick="goToSlide(this.closest('.unav-mediaGallery'), 7)"><img src="https://picsum.photos/id/17/150/150" itemprop="thumbnailUrl" alt="" loading="lazy"></button>
-                                        <button type="button" class="unav-thumbItem" aria-label="Seleccionar miniatura 9" onclick="goToSlide(this.closest('.unav-mediaGallery'), 8)"><img src="https://picsum.photos/id/18/150/150" itemprop="thumbnailUrl" alt="" loading="lazy"></button>
-                                        <button type="button" class="unav-thumbItem" aria-label="Seleccionar miniatura 10" onclick="goToSlide(this.closest('.unav-mediaGallery'), 9)"><img src="https://picsum.photos/id/19/150/150" itemprop="thumbnailUrl" alt="" loading="lazy"></button>
-                                        <button type="button" class="unav-thumbItem" aria-label="Seleccionar miniatura 11" onclick="goToSlide(this.closest('.unav-mediaGallery'), 10)"><img src="https://picsum.photos/id/20/150/150" itemprop="thumbnailUrl" alt="" loading="lazy"></button>
-                                        <button type="button" class="unav-thumbItem" aria-label="Seleccionar miniatura 12" onclick="goToSlide(this.closest('.unav-mediaGallery'), 11)"><img src="https://picsum.photos/id/21/150/150" itemprop="thumbnailUrl" alt="" loading="lazy"></button>
+                                        <button type="button" class="unav-thumbItem unav-isSelected" aria-label="Seleccionar miniatura 1" onclick="goToSlide(this.closest('.unav-mediaGallery'), 0)"><img src="https://picsum.photos/id/10/150/150" alt="" loading="lazy"></button>
+                                        <button type="button" class="unav-thumbItem" aria-label="Seleccionar miniatura 2" onclick="goToSlide(this.closest('.unav-mediaGallery'), 1)"><img src="https://picsum.photos/id/11/150/150" alt="" loading="lazy"></button>
+                                        <button type="button" class="unav-thumbItem" aria-label="Seleccionar miniatura 3" onclick="goToSlide(this.closest('.unav-mediaGallery'), 2)"><img src="https://picsum.photos/id/12/150/150" alt="" loading="lazy"></button>
+                                        <button type="button" class="unav-thumbItem" aria-label="Seleccionar miniatura 4" onclick="goToSlide(this.closest('.unav-mediaGallery'), 3)"><img src="https://picsum.photos/id/13/150/150" alt="" loading="lazy"></button>
+                                        <button type="button" class="unav-thumbItem" aria-label="Seleccionar miniatura 5" onclick="goToSlide(this.closest('.unav-mediaGallery'), 4)"><img src="https://picsum.photos/id/14/150/150" alt="" loading="lazy"></button>
+                                        <button type="button" class="unav-thumbItem" aria-label="Seleccionar miniatura 6" onclick="goToSlide(this.closest('.unav-mediaGallery'), 5)"><img src="https://picsum.photos/id/15/150/150" alt="" loading="lazy"></button>
+                                        <button type="button" class="unav-thumbItem" aria-label="Seleccionar miniatura 7" onclick="goToSlide(this.closest('.unav-mediaGallery'), 6)"><img src="https://picsum.photos/id/16/150/150" alt="" loading="lazy"></button>
+                                        <button type="button" class="unav-thumbItem" aria-label="Seleccionar miniatura 8" onclick="goToSlide(this.closest('.unav-mediaGallery'), 7)"><img src="https://picsum.photos/id/17/150/150" alt="" loading="lazy"></button>
+                                        <button type="button" class="unav-thumbItem" aria-label="Seleccionar miniatura 9" onclick="goToSlide(this.closest('.unav-mediaGallery'), 8)"><img src="https://picsum.photos/id/18/150/150" alt="" loading="lazy"></button>
+                                        <button type="button" class="unav-thumbItem" aria-label="Seleccionar miniatura 10" onclick="goToSlide(this.closest('.unav-mediaGallery'), 9)"><img src="https://picsum.photos/id/19/150/150" alt="" loading="lazy"></button>
+                                        <button type="button" class="unav-thumbItem" aria-label="Seleccionar miniatura 11" onclick="goToSlide(this.closest('.unav-mediaGallery'), 10)"><img src="https://picsum.photos/id/20/150/150" alt="" loading="lazy"></button>
+                                        <button type="button" class="unav-thumbItem" aria-label="Seleccionar miniatura 12" onclick="goToSlide(this.closest('.unav-mediaGallery'), 11)"><img src="https://picsum.photos/id/21/150/150" alt="" loading="lazy"></button>
                                         
-                                        <button type="button" class="unav-thumbItem" aria-label="Seleccionar miniatura 13" onclick="goToSlide(this.closest('.unav-mediaGallery'), 12)"><img src="https://picsum.photos/id/1011/150/150" itemprop="thumbnailUrl" alt="" loading="lazy"></button>
-                                        <button type="button" class="unav-thumbItem" aria-label="Seleccionar miniatura 14" onclick="goToSlide(this.closest('.unav-mediaGallery'), 13)"><img src="https://picsum.photos/id/1012/150/150" itemprop="thumbnailUrl" alt="" loading="lazy"></button>
-                                        <button type="button" class="unav-thumbItem" aria-label="Seleccionar miniatura 15" onclick="goToSlide(this.closest('.unav-mediaGallery'), 14)"><img src="https://picsum.photos/id/1015/150/150" itemprop="thumbnailUrl" alt="" loading="lazy"></button>
-                                        <button type="button" class="unav-thumbItem" aria-label="Seleccionar miniatura 16" onclick="goToSlide(this.closest('.unav-mediaGallery'), 15)"><img src="https://picsum.photos/id/1016/150/150" itemprop="thumbnailUrl" alt="" loading="lazy"></button>
-                                        <button type="button" class="unav-thumbItem" aria-label="Seleccionar miniatura 17" onclick="goToSlide(this.closest('.unav-mediaGallery'), 16)"><img src="https://picsum.photos/id/1018/150/150" itemprop="thumbnailUrl" alt="" loading="lazy"></button>
-                                        <button type="button" class="unav-thumbItem" aria-label="Seleccionar miniatura 18" onclick="goToSlide(this.closest('.unav-mediaGallery'), 17)"><img src="https://picsum.photos/id/1019/150/150" itemprop="thumbnailUrl" alt="" loading="lazy"></button>
-                                        <button type="button" class="unav-thumbItem" aria-label="Seleccionar miniatura 19" onclick="goToSlide(this.closest('.unav-mediaGallery'), 18)"><img src="https://picsum.photos/id/1020/150/150" itemprop="thumbnailUrl" alt="" loading="lazy"></button>
-                                        <button type="button" class="unav-thumbItem" aria-label="Seleccionar miniatura 20" onclick="goToSlide(this.closest('.unav-mediaGallery'), 19)"><img src="https://picsum.photos/id/1021/150/150" itemprop="thumbnailUrl" alt="" loading="lazy"></button>
-                                        <button type="button" class="unav-thumbItem" aria-label="Seleccionar miniatura 21" onclick="goToSlide(this.closest('.unav-mediaGallery'), 20)"><img src="https://picsum.photos/id/1022/150/150" itemprop="thumbnailUrl" alt="" loading="lazy"></button>
-                                        <button type="button" class="unav-thumbItem" aria-label="Seleccionar miniatura 22" onclick="goToSlide(this.closest('.unav-mediaGallery'), 21)"><img src="https://picsum.photos/id/1023/150/150" itemprop="thumbnailUrl" alt="" loading="lazy"></button>
-                                        <button type="button" class="unav-thumbItem" aria-label="Seleccionar miniatura 23" onclick="goToSlide(this.closest('.unav-mediaGallery'), 22)"><img src="https://picsum.photos/id/1024/150/150" itemprop="thumbnailUrl" alt="" loading="lazy"></button>
-                                        <button type="button" class="unav-thumbItem" aria-label="Seleccionar miniatura 24" onclick="goToSlide(this.closest('.unav-mediaGallery'), 23)"><img src="https://picsum.photos/id/1025/150/150" itemprop="thumbnailUrl" alt="" loading="lazy"></button>
+                                        <button type="button" class="unav-thumbItem" aria-label="Seleccionar miniatura 13" onclick="goToSlide(this.closest('.unav-mediaGallery'), 12)"><img src="https://picsum.photos/id/1011/150/150" alt="" loading="lazy"></button>
+                                        <button type="button" class="unav-thumbItem" aria-label="Seleccionar miniatura 14" onclick="goToSlide(this.closest('.unav-mediaGallery'), 13)"><img src="https://picsum.photos/id/1012/150/150" alt="" loading="lazy"></button>
+                                        <button type="button" class="unav-thumbItem" aria-label="Seleccionar miniatura 15" onclick="goToSlide(this.closest('.unav-mediaGallery'), 14)"><img src="https://picsum.photos/id/1015/150/150" alt="" loading="lazy"></button>
+                                        <button type="button" class="unav-thumbItem" aria-label="Seleccionar miniatura 16" onclick="goToSlide(this.closest('.unav-mediaGallery'), 15)"><img src="https://picsum.photos/id/1016/150/150" alt="" loading="lazy"></button>
+                                        <button type="button" class="unav-thumbItem" aria-label="Seleccionar miniatura 17" onclick="goToSlide(this.closest('.unav-mediaGallery'), 16)"><img src="https://picsum.photos/id/1018/150/150" alt="" loading="lazy"></button>
+                                        <button type="button" class="unav-thumbItem" aria-label="Seleccionar miniatura 18" onclick="goToSlide(this.closest('.unav-mediaGallery'), 17)"><img src="https://picsum.photos/id/1019/150/150" alt="" loading="lazy"></button>
+                                        <button type="button" class="unav-thumbItem" aria-label="Seleccionar miniatura 19" onclick="goToSlide(this.closest('.unav-mediaGallery'), 18)"><img src="https://picsum.photos/id/1020/150/150" alt="" loading="lazy"></button>
+                                        <button type="button" class="unav-thumbItem" aria-label="Seleccionar miniatura 20" onclick="goToSlide(this.closest('.unav-mediaGallery'), 19)"><img src="https://picsum.photos/id/1021/150/150" alt="" loading="lazy"></button>
+                                        <button type="button" class="unav-thumbItem" aria-label="Seleccionar miniatura 21" onclick="goToSlide(this.closest('.unav-mediaGallery'), 20)"><img src="https://picsum.photos/id/1022/150/150" alt="" loading="lazy"></button>
+                                        <button type="button" class="unav-thumbItem" aria-label="Seleccionar miniatura 22" onclick="goToSlide(this.closest('.unav-mediaGallery'), 21)"><img src="https://picsum.photos/id/1023/150/150" alt="" loading="lazy"></button>
+                                        <button type="button" class="unav-thumbItem" aria-label="Seleccionar miniatura 23" onclick="goToSlide(this.closest('.unav-mediaGallery'), 22)"><img src="https://picsum.photos/id/1024/150/150" alt="" loading="lazy"></button>
+                                        <button type="button" class="unav-thumbItem" aria-label="Seleccionar miniatura 24" onclick="goToSlide(this.closest('.unav-mediaGallery'), 23)"><img src="https://picsum.photos/id/1025/150/150" alt="" loading="lazy"></button>
                                     </div>
                                     
                                     <div class="unav-galleryControlsBar bg-white border-top d-flex justify-content-center align-items-center gap-2">
@@ -371,7 +371,7 @@
             <div class="row justify-content-center">
                 <div class="col-lg-8">
                     <div class="unav-galleryWrapper">
-                        <div class="unav-mediaGallery" itemscope itemtype="http://schema.org/ImageGallery">
+                        <div class="unav-mediaGallery">
                             
                             <div class="unav-galleryStage position-relative">
                                 <button class="unav-boton unav-botonSecundario unav-botonIconOnly position-absolute top-50 translate-middle-y start-0 ms-3 unav-prevBtn" style="--unav-botonColorSource: #ffffff; --unav-botonTextHover: var(--unav-black-500); z-index: 10;" onclick="changeSlide(this, -1)" aria-label="Anterior">
@@ -381,250 +381,250 @@
                                     <i class="bi bi-chevron-right unav-botonIcono"></i>
                                 </button>
                     
-                                <figure class="unav-mainImageWrapper unav-efectoCrossFade unav-isActive" itemprop="associatedMedia" itemscope itemtype="http://schema.org/ImageObject">
-                                    <img src="https://picsum.photos/id/10/1200/800" class="unav-mainImage" itemprop="contentUrl" alt="Fotografía del Campus UNAV 1" loading="eager">
+                                <figure class="unav-mainImageWrapper unav-efectoCrossFade unav-isActive" >
+                                    <img src="https://picsum.photos/id/10/1200/800" class="unav-mainImage"  alt="Fotografía del Campus UNAV 1" loading="eager">
                                     <figcaption class="unav-imageCaption unav-lh-normal" style="text-shadow: 1px 1px 3px rgba(0, 0, 0, 0.6);">
-                                        <span itemprop="caption">Fotografía de recurso #1. Evento institucional de apertura de curso en las nuevas instalaciones.</span>
-                                        <meta itemprop="author" content="Universidad de Navarra">
-                                        <meta itemprop="datePublished" content="2026-05-01">
-                                        <div itemprop="contentLocation" itemscope itemtype="http://schema.org/Place" style="display:none;"><meta itemprop="name" content="Campus Universidad de Navarra"></div>
+                                        <span>Fotografía de recurso #1. Evento institucional de apertura de curso en las nuevas instalaciones.</span>
+                                        <meta  content="Universidad de Navarra">
+                                        <meta  content="2026-05-01">
+                                        <div   style="display:none;"><meta  content="Campus Universidad de Navarra"></div>
                                     </figure>
                     
-                                <figure class="unav-mainImageWrapper unav-efectoCrossFade" itemprop="associatedMedia" itemscope itemtype="http://schema.org/ImageObject">
-                                    <img src="https://picsum.photos/id/11/1200/800" class="unav-mainImage" itemprop="contentUrl" alt="Fotografía del Campus UNAV 2" loading="lazy">
+                                <figure class="unav-mainImageWrapper unav-efectoCrossFade" >
+                                    <img src="https://picsum.photos/id/11/1200/800" class="unav-mainImage"  alt="Fotografía del Campus UNAV 2" loading="lazy">
                                     <figcaption class="unav-imageCaption unav-lh-normal" style="text-shadow: 1px 1px 3px rgba(0, 0, 0, 0.6);">
-                                        <span itemprop="caption">Fotografía de recurso #2. Actividades de los alumnos en el campus durante el periodo primaveral.</span>
-                                        <meta itemprop="author" content="Universidad de Navarra"><meta itemprop="datePublished" content="2026-05-01">
-                                        <div itemprop="contentLocation" itemscope itemtype="http://schema.org/Place" style="display:none;"><meta itemprop="name" content="Campus Universidad de Navarra"></div>
+                                        <span>Fotografía de recurso #2. Actividades de los alumnos en el campus durante el periodo primaveral.</span>
+                                        <meta  content="Universidad de Navarra"><meta  content="2026-05-01">
+                                        <div   style="display:none;"><meta  content="Campus Universidad de Navarra"></div>
                                     </figcaption>
                                 </figure>
                     
-                                <figure class="unav-mainImageWrapper unav-efectoCrossFade" itemprop="associatedMedia" itemscope itemtype="http://schema.org/ImageObject">
-                                    <img src="https://picsum.photos/id/12/1200/800" class="unav-mainImage" itemprop="contentUrl" alt="Fotografía del Campus UNAV 3" loading="lazy">
+                                <figure class="unav-mainImageWrapper unav-efectoCrossFade" >
+                                    <img src="https://picsum.photos/id/12/1200/800" class="unav-mainImage"  alt="Fotografía del Campus UNAV 3" loading="lazy">
                                     <figcaption class="unav-imageCaption unav-lh-normal" style="text-shadow: 1px 1px 3px rgba(0, 0, 0, 0.6);">
-                                        <span itemprop="caption">Fotografía de recurso #3. Fachada del edificio principal reflejada bajo la luz del atardecer.</span>
-                                        <meta itemprop="author" content="Universidad de Navarra"><meta itemprop="datePublished" content="2026-05-01">
-                                        <div itemprop="contentLocation" itemscope itemtype="http://schema.org/Place" style="display:none;"><meta itemprop="name" content="Campus Universidad de Navarra"></div>
+                                        <span>Fotografía de recurso #3. Fachada del edificio principal reflejada bajo la luz del atardecer.</span>
+                                        <meta  content="Universidad de Navarra"><meta  content="2026-05-01">
+                                        <div   style="display:none;"><meta  content="Campus Universidad de Navarra"></div>
                                     </figcaption>
                                 </figure>
                     
-                                <figure class="unav-mainImageWrapper unav-efectoCrossFade" itemprop="associatedMedia" itemscope itemtype="http://schema.org/ImageObject">
-                                    <img src="https://picsum.photos/id/13/1200/800" class="unav-mainImage" itemprop="contentUrl" alt="Fotografía del Campus UNAV 4" loading="lazy">
+                                <figure class="unav-mainImageWrapper unav-efectoCrossFade" >
+                                    <img src="https://picsum.photos/id/13/1200/800" class="unav-mainImage"  alt="Fotografía del Campus UNAV 4" loading="lazy">
                                     <figcaption class="unav-imageCaption unav-lh-normal" style="text-shadow: 1px 1px 3px rgba(0, 0, 0, 0.6);">
-                                        <span itemprop="caption">Fotografía de recurso #4. Zonas de estudio y espacios abiertos en la biblioteca de ciencias.</span>
-                                        <meta itemprop="author" content="Universidad de Navarra"><meta itemprop="datePublished" content="2026-05-01">
-                                        <div itemprop="contentLocation" itemscope itemtype="http://schema.org/Place" style="display:none;"><meta itemprop="name" content="Campus Universidad de Navarra"></div>
+                                        <span>Fotografía de recurso #4. Zonas de estudio y espacios abiertos en la biblioteca de ciencias.</span>
+                                        <meta  content="Universidad de Navarra"><meta  content="2026-05-01">
+                                        <div   style="display:none;"><meta  content="Campus Universidad de Navarra"></div>
                                     </figcaption>
                                 </figure>
                     
-                                <figure class="unav-mainImageWrapper unav-efectoCrossFade" itemprop="associatedMedia" itemscope itemtype="http://schema.org/ImageObject">
-                                    <img src="https://picsum.photos/id/14/1200/800" class="unav-mainImage" itemprop="contentUrl" alt="Fotografía del Campus UNAV 5" loading="lazy">
+                                <figure class="unav-mainImageWrapper unav-efectoCrossFade" >
+                                    <img src="https://picsum.photos/id/14/1200/800" class="unav-mainImage"  alt="Fotografía del Campus UNAV 5" loading="lazy">
                                     <figcaption class="unav-imageCaption unav-lh-normal" style="text-shadow: 1px 1px 3px rgba(0, 0, 0, 0.6);">
-                                        <span itemprop="caption">Fotografía de recurso #5. Entorno natural que rodea las facultades del campus de Pamplona.</span>
-                                        <meta itemprop="author" content="Universidad de Navarra"><meta itemprop="datePublished" content="2026-05-01">
-                                        <div itemprop="contentLocation" itemscope itemtype="http://schema.org/Place" style="display:none;"><meta itemprop="name" content="Campus Universidad de Navarra"></div>
+                                        <span>Fotografía de recurso #5. Entorno natural que rodea las facultades del campus de Pamplona.</span>
+                                        <meta  content="Universidad de Navarra"><meta  content="2026-05-01">
+                                        <div   style="display:none;"><meta  content="Campus Universidad de Navarra"></div>
                                     </figcaption>
                                 </figure>
                     
-                                <figure class="unav-mainImageWrapper unav-efectoCrossFade" itemprop="associatedMedia" itemscope itemtype="http://schema.org/ImageObject">
-                                    <img src="https://picsum.photos/id/15/1200/800" class="unav-mainImage" itemprop="contentUrl" alt="Fotografía del Campus UNAV 6" loading="lazy">
+                                <figure class="unav-mainImageWrapper unav-efectoCrossFade" >
+                                    <img src="https://picsum.photos/id/15/1200/800" class="unav-mainImage"  alt="Fotografía del Campus UNAV 6" loading="lazy">
                                     <figcaption class="unav-imageCaption unav-lh-normal" style="text-shadow: 1px 1px 3px rgba(0, 0, 0, 0.6);">
-                                        <span itemprop="caption">Fotografía de recurso #6. Detalle arquitectónico de las nuevas aulas polivalentes.</span>
-                                        <meta itemprop="author" content="Universidad de Navarra"><meta itemprop="datePublished" content="2026-05-01">
-                                        <div itemprop="contentLocation" itemscope itemtype="http://schema.org/Place" style="display:none;"><meta itemprop="name" content="Campus Universidad de Navarra"></div>
+                                        <span>Fotografía de recurso #6. Detalle arquitectónico de las nuevas aulas polivalentes.</span>
+                                        <meta  content="Universidad de Navarra"><meta  content="2026-05-01">
+                                        <div   style="display:none;"><meta  content="Campus Universidad de Navarra"></div>
                                     </figcaption>
                                 </figure>
                     
-                                <figure class="unav-mainImageWrapper unav-efectoCrossFade" itemprop="associatedMedia" itemscope itemtype="http://schema.org/ImageObject">
-                                    <img src="https://picsum.photos/id/16/1200/800" class="unav-mainImage" itemprop="contentUrl" alt="Fotografía del Campus UNAV 7" loading="lazy">
+                                <figure class="unav-mainImageWrapper unav-efectoCrossFade" >
+                                    <img src="https://picsum.photos/id/16/1200/800" class="unav-mainImage"  alt="Fotografía del Campus UNAV 7" loading="lazy">
                                     <figcaption class="unav-imageCaption unav-lh-normal" style="text-shadow: 1px 1px 3px rgba(0, 0, 0, 0.6);">
-                                        <span itemprop="caption">Fotografía de recurso #7. Investigadores trabajando en los laboratorios del centro tecnológico.</span>
-                                        <meta itemprop="author" content="Universidad de Navarra"><meta itemprop="datePublished" content="2026-05-01">
-                                        <div itemprop="contentLocation" itemscope itemtype="http://schema.org/Place" style="display:none;"><meta itemprop="name" content="Campus Universidad de Navarra"></div>
+                                        <span>Fotografía de recurso #7. Investigadores trabajando en los laboratorios del centro tecnológico.</span>
+                                        <meta  content="Universidad de Navarra"><meta  content="2026-05-01">
+                                        <div   style="display:none;"><meta  content="Campus Universidad de Navarra"></div>
                                     </figcaption>
                                 </figure>
                     
-                                <figure class="unav-mainImageWrapper unav-efectoCrossFade" itemprop="associatedMedia" itemscope itemtype="http://schema.org/ImageObject">
-                                    <img src="https://picsum.photos/id/17/1200/800" class="unav-mainImage" itemprop="contentUrl" alt="Fotografía del Campus UNAV 8" loading="lazy">
+                                <figure class="unav-mainImageWrapper unav-efectoCrossFade" >
+                                    <img src="https://picsum.photos/id/17/1200/800" class="unav-mainImage"  alt="Fotografía del Campus UNAV 8" loading="lazy">
                                     <figcaption class="unav-imageCaption unav-lh-normal" style="text-shadow: 1px 1px 3px rgba(0, 0, 0, 0.6);">
-                                        <span itemprop="caption">Fotografía de recurso #8. Panorámica del anfiteatro exterior durante una sesión cultural.</span>
-                                        <meta itemprop="author" content="Universidad de Navarra"><meta itemprop="datePublished" content="2026-05-01">
-                                        <div itemprop="contentLocation" itemscope itemtype="http://schema.org/Place" style="display:none;"><meta itemprop="name" content="Campus Universidad de Navarra"></div>
+                                        <span>Fotografía de recurso #8. Panorámica del anfiteatro exterior durante una sesión cultural.</span>
+                                        <meta  content="Universidad de Navarra"><meta  content="2026-05-01">
+                                        <div   style="display:none;"><meta  content="Campus Universidad de Navarra"></div>
                                     </figcaption>
                                 </figure>
                     
-                                <figure class="unav-mainImageWrapper unav-efectoCrossFade" itemprop="associatedMedia" itemscope itemtype="http://schema.org/ImageObject">
-                                    <img src="https://picsum.photos/id/18/1200/800" class="unav-mainImage" itemprop="contentUrl" alt="Fotografía del Campus UNAV 9" loading="lazy">
+                                <figure class="unav-mainImageWrapper unav-efectoCrossFade" >
+                                    <img src="https://picsum.photos/id/18/1200/800" class="unav-mainImage"  alt="Fotografía del Campus UNAV 9" loading="lazy">
                                     <figcaption class="unav-imageCaption unav-lh-normal" style="text-shadow: 1px 1px 3px rgba(0, 0, 0, 0.6);">
-                                        <span itemprop="caption">Fotografía de recurso #9. Entrada de estudiantes al edificio de Amigos a primera hora de la mañana.</span>
-                                        <meta itemprop="author" content="Universidad de Navarra"><meta itemprop="datePublished" content="2026-05-01">
-                                        <div itemprop="contentLocation" itemscope itemtype="http://schema.org/Place" style="display:none;"><meta itemprop="name" content="Campus Universidad de Navarra"></div>
+                                        <span>Fotografía de recurso #9. Entrada de estudiantes al edificio de Amigos a primera hora de la mañana.</span>
+                                        <meta  content="Universidad de Navarra"><meta  content="2026-05-01">
+                                        <div   style="display:none;"><meta  content="Campus Universidad de Navarra"></div>
                                     </figcaption>
                                 </figure>
                     
-                                <figure class="unav-mainImageWrapper unav-efectoCrossFade" itemprop="associatedMedia" itemscope itemtype="http://schema.org/ImageObject">
-                                    <img src="https://picsum.photos/id/19/1200/800" class="unav-mainImage" itemprop="contentUrl" alt="Fotografía del Campus UNAV 10" loading="lazy">
+                                <figure class="unav-mainImageWrapper unav-efectoCrossFade" >
+                                    <img src="https://picsum.photos/id/19/1200/800" class="unav-mainImage"  alt="Fotografía del Campus UNAV 10" loading="lazy">
                                     <figcaption class="unav-imageCaption unav-lh-normal" style="text-shadow: 1px 1px 3px rgba(0, 0, 0, 0.6);">
-                                        <span itemprop="caption">Fotografía de recurso #10. Soportales de la escuela de arquitectura bajo un prisma invernal.</span>
-                                        <meta itemprop="author" content="Universidad de Navarra"><meta itemprop="datePublished" content="2026-05-01">
-                                        <div itemprop="contentLocation" itemscope itemtype="http://schema.org/Place" style="display:none;"><meta itemprop="name" content="Campus Universidad de Navarra"></div>
+                                        <span>Fotografía de recurso #10. Soportales de la escuela de arquitectura bajo un prisma invernal.</span>
+                                        <meta  content="Universidad de Navarra"><meta  content="2026-05-01">
+                                        <div   style="display:none;"><meta  content="Campus Universidad de Navarra"></div>
                                     </figcaption>
                                 </figure>
                     
-                                <figure class="unav-mainImageWrapper unav-efectoCrossFade" itemprop="associatedMedia" itemscope itemtype="http://schema.org/ImageObject">
-                                    <img src="https://picsum.photos/id/20/1200/800" class="unav-mainImage" itemprop="contentUrl" alt="Fotografía del Campus UNAV 11" loading="lazy">
+                                <figure class="unav-mainImageWrapper unav-efectoCrossFade" >
+                                    <img src="https://picsum.photos/id/20/1200/800" class="unav-mainImage"  alt="Fotografía del Campus UNAV 11" loading="lazy">
                                     <figcaption class="unav-imageCaption unav-lh-normal" style="text-shadow: 1px 1px 3px rgba(0, 0, 0, 0.6);">
-                                        <span itemprop="caption">Fotografía de recurso #11. Acceso peatonal que conecta el campus con el entorno de la Clínica.</span>
-                                        <meta itemprop="author" content="Universidad de Navarra"><meta itemprop="datePublished" content="2026-05-01">
-                                        <div itemprop="contentLocation" itemscope itemtype="http://schema.org/Place" style="display:none;"><meta itemprop="name" content="Campus Universidad de Navarra"></div>
+                                        <span>Fotografía de recurso #11. Acceso peatonal que conecta el campus con el entorno de la Clínica.</span>
+                                        <meta  content="Universidad de Navarra"><meta  content="2026-05-01">
+                                        <div   style="display:none;"><meta  content="Campus Universidad de Navarra"></div>
                                     </figcaption>
                                 </figure>
                     
-                                <figure class="unav-mainImageWrapper unav-efectoCrossFade" itemprop="associatedMedia" itemscope itemtype="http://schema.org/ImageObject">
-                                    <img src="https://picsum.photos/id/21/1200/800" class="unav-mainImage" itemprop="contentUrl" alt="Fotografía del Campus UNAV 12" loading="lazy">
+                                <figure class="unav-mainImageWrapper unav-efectoCrossFade" >
+                                    <img src="https://picsum.photos/id/21/1200/800" class="unav-mainImage"  alt="Fotografía del Campus UNAV 12" loading="lazy">
                                     <figcaption class="unav-imageCaption unav-lh-normal" style="text-shadow: 1px 1px 3px rgba(0, 0, 0, 0.6);">
-                                        <span itemprop="caption">Fotografía de recurso #12. Detalle de la arboleda patrimonial en las inmediaciones del río Sadar.</span>
-                                        <meta itemprop="author" content="Universidad de Navarra"><meta itemprop="datePublished" content="2026-05-01">
-                                        <div itemprop="contentLocation" itemscope itemtype="http://schema.org/Place" style="display:none;"><meta itemprop="name" content="Campus Universidad de Navarra"></div>
+                                        <span>Fotografía de recurso #12. Detalle de la arboleda patrimonial en las inmediaciones del río Sadar.</span>
+                                        <meta  content="Universidad de Navarra"><meta  content="2026-05-01">
+                                        <div   style="display:none;"><meta  content="Campus Universidad de Navarra"></div>
                                     </figcaption>
                                 </figure>
                     
-                                <figure class="unav-mainImageWrapper unav-efectoCrossFade" itemprop="associatedMedia" itemscope itemtype="http://schema.org/ImageObject">
-                                    <img src="https://picsum.photos/id/1011/800/1200" class="unav-mainImage" itemprop="contentUrl" alt="Fotografía del Campus UNAV 13" loading="lazy">
+                                <figure class="unav-mainImageWrapper unav-efectoCrossFade" >
+                                    <img src="https://picsum.photos/id/1011/800/1200" class="unav-mainImage"  alt="Fotografía del Campus UNAV 13" loading="lazy">
                                     <figcaption class="unav-imageCaption unav-lh-normal" style="text-shadow: 1px 1px 3px rgba(0, 0, 0, 0.6);">
-                                        <span itemprop="caption">Fotografía de recurso #13. Perspectiva vertical de la pasarela peatonal central.</span>
-                                        <meta itemprop="author" content="Universidad de Navarra"><meta itemprop="datePublished" content="2026-05-01">
-                                        <div itemprop="contentLocation" itemscope itemtype="http://schema.org/Place" style="display:none;"><meta itemprop="name" content="Campus Universidad de Navarra"></div>
+                                        <span>Fotografía de recurso #13. Perspectiva vertical de la pasarela peatonal central.</span>
+                                        <meta  content="Universidad de Navarra"><meta  content="2026-05-01">
+                                        <div   style="display:none;"><meta  content="Campus Universidad de Navarra"></div>
                                     </figcaption>
                                 </figure>
                     
-                                <figure class="unav-mainImageWrapper unav-efectoCrossFade" itemprop="associatedMedia" itemscope itemtype="http://schema.org/ImageObject">
-                                    <img src="https://picsum.photos/id/1012/800/1200" class="unav-mainImage" itemprop="contentUrl" alt="Fotografía del Campus UNAV 14" loading="lazy">
+                                <figure class="unav-mainImageWrapper unav-efectoCrossFade" >
+                                    <img src="https://picsum.photos/id/1012/800/1200" class="unav-mainImage"  alt="Fotografía del Campus UNAV 14" loading="lazy">
                                     <figcaption class="unav-imageCaption unav-lh-normal" style="text-shadow: 1px 1px 3px rgba(0, 0, 0, 0.6);">
-                                        <span itemprop="caption">Fotografía de recurso #14. Encuadre vertical de las escalinatas principales de Comunicación.</span>
-                                        <meta itemprop="author" content="Universidad de Navarra"><meta itemprop="datePublished" content="2026-05-01">
-                                        <div itemprop="contentLocation" itemscope itemtype="http://schema.org/Place" style="display:none;"><meta itemprop="name" content="Campus Universidad de Navarra"></div>
+                                        <span>Fotografía de recurso #14. Encuadre vertical de las escalinatas principales de Comunicación.</span>
+                                        <meta  content="Universidad de Navarra"><meta  content="2026-05-01">
+                                        <div   style="display:none;"><meta  content="Campus Universidad de Navarra"></div>
                                     </figcaption>
                                 </figure>
                     
-                                <figure class="unav-mainImageWrapper unav-efectoCrossFade" itemprop="associatedMedia" itemscope itemtype="http://schema.org/ImageObject">
-                                    <img src="https://picsum.photos/id/1015/800/1200" class="unav-mainImage" itemprop="contentUrl" alt="Fotografía del Campus UNAV 15" loading="lazy">
+                                <figure class="unav-mainImageWrapper unav-efectoCrossFade" >
+                                    <img src="https://picsum.photos/id/1015/800/1200" class="unav-mainImage"  alt="Fotografía del Campus UNAV 15" loading="lazy">
                                     <figcaption class="unav-imageCaption unav-lh-normal" style="text-shadow: 1px 1px 3px rgba(0, 0, 0, 0.6);">
-                                        <span itemprop="caption">Fotografía de recurso #15. Primer plano del escudo institucional tallado en piedra.</span>
-                                        <meta itemprop="author" content="Universidad de Navarra"><meta itemprop="datePublished" content="2026-05-01">
-                                        <div itemprop="contentLocation" itemscope itemtype="http://schema.org/Place" style="display:none;"><meta itemprop="name" content="Campus Universidad de Navarra"></div>
+                                        <span>Fotografía de recurso #15. Primer plano del escudo institucional tallado en piedra.</span>
+                                        <meta  content="Universidad de Navarra"><meta  content="2026-05-01">
+                                        <div   style="display:none;"><meta  content="Campus Universidad de Navarra"></div>
                                     </figcaption>
                                 </figure>
                     
-                                <figure class="unav-mainImageWrapper unav-efectoCrossFade" itemprop="associatedMedia" itemscope itemtype="http://schema.org/ImageObject">
-                                    <img src="https://picsum.photos/id/1016/800/1200" class="unav-mainImage" itemprop="contentUrl" alt="Fotografía del Campus UNAV 16" loading="lazy">
+                                <figure class="unav-mainImageWrapper unav-efectoCrossFade" >
+                                    <img src="https://picsum.photos/id/1016/800/1200" class="unav-mainImage"  alt="Fotografía del Campus UNAV 16" loading="lazy">
                                     <figcaption class="unav-imageCaption unav-lh-normal" style="text-shadow: 1px 1px 3px rgba(0, 0, 0, 0.6);">
-                                        <span itemprop="caption">Fotografía de recurso #16. Líneas verticales del lucernario en el edificio de posgrado.</span>
-                                        <meta itemprop="author" content="Universidad de Navarra"><meta itemprop="datePublished" content="2026-05-01">
-                                        <div itemprop="contentLocation" itemscope itemtype="http://schema.org/Place" style="display:none;"><meta itemprop="name" content="Campus Universidad de Navarra"></div>
+                                        <span>Fotografía de recurso #16. Líneas verticales del lucernario en el edificio de posgrado.</span>
+                                        <meta  content="Universidad de Navarra"><meta  content="2026-05-01">
+                                        <div   style="display:none;"><meta  content="Campus Universidad de Navarra"></div>
                                     </figcaption>
                                 </figure>
                     
-                                <figure class="unav-mainImageWrapper weights-light unav-efectoCrossFade" itemprop="associatedMedia" itemscope itemtype="http://schema.org/ImageObject">
-                                    <img src="https://picsum.photos/id/1018/800/1200" class="unav-mainImage" itemprop="contentUrl" alt="Fotografía del Campus UNAV 17" loading="lazy">
+                                <figure class="unav-mainImageWrapper weights-light unav-efectoCrossFade" >
+                                    <img src="https://picsum.photos/id/1018/800/1200" class="unav-mainImage"  alt="Fotografía del Campus UNAV 17" loading="lazy">
                                     <figcaption class="unav-imageCaption unav-lh-normal" style="text-shadow: 1px 1px 3px rgba(0, 0, 0, 0.6);">
-                                        <span itemprop="caption">Fotografía de recurso #17. Vista cenital de los senderos universitarios cubiertos de hojas en otoño.</span>
-                                        <meta itemprop="author" content="Universidad de Navarra"><meta itemprop="datePublished" content="2026-05-01">
-                                        <div itemprop="contentLocation" itemscope itemtype="http://schema.org/Place" style="display:none;"><meta itemprop="name" content="Campus Universidad de Navarra"></div>
+                                        <span>Fotografía de recurso #17. Vista cenital de los senderos universitarios cubiertos de hojas en otoño.</span>
+                                        <meta  content="Universidad de Navarra"><meta  content="2026-05-01">
+                                        <div   style="display:none;"><meta  content="Campus Universidad de Navarra"></div>
                                     </figcaption>
                                 </figure>
                     
-                                <figure class="unav-mainImageWrapper unav-efectoCrossFade" itemprop="associatedMedia" itemscope itemtype="http://schema.org/ImageObject">
-                                    <img src="https://picsum.photos/id/1019/800/1200" class="unav-mainImage" itemprop="contentUrl" alt="Fotografía del Campus UNAV 18" loading="lazy">
+                                <figure class="unav-mainImageWrapper unav-efectoCrossFade" >
+                                    <img src="https://picsum.photos/id/1019/800/1200" class="unav-mainImage"  alt="Fotografía del Campus UNAV 18" loading="lazy">
                                     <figcaption class="unav-imageCaption unav-lh-normal" style="text-shadow: 1px 1px 3px rgba(0, 0, 0, 0.6);">
-                                        <span itemprop="caption">Fotografía de recurso #18. Reflejo de la torre del edificio central sobre los ventanales limítrofes.</span>
-                                        <meta itemprop="author" content="Universidad de Navarra"><meta itemprop="datePublished" content="2026-05-01">
-                                        <div itemprop="contentLocation" itemscope itemtype="http://schema.org/Place" style="display:none;"><meta itemprop="name" content="Campus Universidad de Navarra"></div>
+                                        <span>Fotografía de recurso #18. Reflejo de la torre del edificio central sobre los ventanales limítrofes.</span>
+                                        <meta  content="Universidad de Navarra"><meta  content="2026-05-01">
+                                        <div   style="display:none;"><meta  content="Campus Universidad de Navarra"></div>
                                     </figcaption>
                                 </figure>
                     
-                                <figure class="unav-mainImageWrapper unav-efectoCrossFade" itemprop="associatedMedia" itemscope itemtype="http://schema.org/ImageObject">
-                                    <img src="https://picsum.photos/id/1020/800/1200" class="unav-mainImage" itemprop="contentUrl" alt="Fotografía del Campus UNAV 19" loading="lazy">
+                                <figure class="unav-mainImageWrapper unav-efectoCrossFade" >
+                                    <img src="https://picsum.photos/id/1020/800/1200" class="unav-mainImage"  alt="Fotografía del Campus UNAV 19" loading="lazy">
                                     <figcaption class="unav-imageCaption unav-lh-normal" style="text-shadow: 1px 1px 3px rgba(0, 0, 0, 0.6);">
-                                        <span itemprop="caption">Fotografía de recurso #19. Foco lineal sobre los puestos de lectura individuales de la biblioteca.</span>
-                                        <meta itemprop="author" content="Universidad de Navarra"><meta itemprop="datePublished" content="2026-05-01">
-                                        <div itemprop="contentLocation" itemscope itemtype="http://schema.org/Place" style="display:none;"><meta itemprop="name" content="Campus Universidad de Navarra"></div>
+                                        <span>Fotografía de recurso #19. Foco lineal sobre los puestos de lectura individuales de la biblioteca.</span>
+                                        <meta  content="Universidad de Navarra"><meta  content="2026-05-01">
+                                        <div   style="display:none;"><meta  content="Campus Universidad de Navarra"></div>
                                     </figcaption>
                                 </figure>
                     
-                                <figure class="unav-mainImageWrapper unav-efectoCrossFade" itemprop="associatedMedia" itemscope itemtype="http://schema.org/ImageObject">
-                                    <img src="https://picsum.photos/id/1021/800/1200" class="unav-mainImage" itemprop="contentUrl" alt="Fotografía del Campus UNAV 20" loading="lazy">
+                                <figure class="unav-mainImageWrapper unav-efectoCrossFade" >
+                                    <img src="https://picsum.photos/id/1021/800/1200" class="unav-mainImage"  alt="Fotografía del Campus UNAV 20" loading="lazy">
                                     <figcaption class="unav-imageCaption unav-lh-normal" style="text-shadow: 1px 1px 3px rgba(0, 0, 0, 0.6);">
-                                        <span itemprop="caption">Fotografía de recurso #20. Contraluz de las cristaleras del Museo Universidad de Navarra.</span>
-                                        <meta itemprop="author" content="Universidad de Navarra"><meta itemprop="datePublished" content="2026-05-01">
-                                        <div itemprop="contentLocation" itemscope itemtype="http://schema.org/Place" style="display:none;"><meta itemprop="name" content="Campus Universidad de Navarra"></div>
+                                        <span>Fotografía de recurso #20. Contraluz de las cristaleras del Museo Universidad de Navarra.</span>
+                                        <meta  content="Universidad de Navarra"><meta  content="2026-05-01">
+                                        <div   style="display:none;"><meta  content="Campus Universidad de Navarra"></div>
                                     </figcaption>
                                 </figure>
                     
-                                <figure class="unav-mainImageWrapper unav-efectoCrossFade" itemprop="associatedMedia" itemscope itemtype="http://schema.org/ImageObject">
-                                    <img src="https://picsum.photos/id/1022/800/1200" class="unav-mainImage" itemprop="contentUrl" alt="Fotografía del Campus UNAV 21" loading="lazy">
+                                <figure class="unav-mainImageWrapper unav-efectoCrossFade" >
+                                    <img src="https://picsum.photos/id/1022/800/1200" class="unav-mainImage"  alt="Fotografía del Campus UNAV 21" loading="lazy">
                                     <figcaption class="unav-imageCaption unav-lh-normal" style="text-shadow: 1px 1px 3px rgba(0, 0, 0, 0.6);">
-                                        <span itemprop="caption">Fotografía de recurso #21. Encuadre arquitectónico simétrico de los pasillos de la Facultad de Derecho.</span>
-                                        <meta itemprop="author" content="Universidad de Navarra"><meta itemprop="datePublished" content="2026-05-01">
-                                        <div itemprop="contentLocation" itemscope itemtype="http://schema.org/Place" style="display:none;"><meta itemprop="name" content="Campus Universidad de Navarra"></div>
+                                        <span>Fotografía de recurso #21. Encuadre arquitectónico simétrico de los pasillos de la Facultad de Derecho.</span>
+                                        <meta  content="Universidad de Navarra"><meta  content="2026-05-01">
+                                        <div   style="display:none;"><meta  content="Campus Universidad de Navarra"></div>
                                     </figcaption>
                                 </figure>
                     
-                                <figure class="unav-mainImageWrapper unav-efectoCrossFade" itemprop="associatedMedia" itemscope itemtype="http://schema.org/ImageObject">
-                                    <img src="https://picsum.photos/id/1023/800/1200" class="unav-mainImage" itemprop="contentUrl" alt="Fotografía del Campus UNAV 22" loading="lazy">
+                                <figure class="unav-mainImageWrapper unav-efectoCrossFade" >
+                                    <img src="https://picsum.photos/id/1023/800/1200" class="unav-mainImage"  alt="Fotografía del Campus UNAV 22" loading="lazy">
                                     <figcaption class="unav-imageCaption unav-lh-normal" style="text-shadow: 1px 1px 3px rgba(0, 0, 0, 0.6);">
-                                        <span itemprop="caption">Fotografía de recurso #22. Zona de taquillas e interconexión del alumnado en Económicas.</span>
-                                        <meta itemprop="author" content="Universidad de Navarra"><meta itemprop="datePublished" content="2026-05-01">
-                                        <div itemprop="contentLocation" itemscope itemtype="http://schema.org/Place" style="display:none;"><meta itemprop="name" content="Campus Universidad de Navarra"></div>
+                                        <span>Fotografía de recurso #22. Zona de taquillas e interconexión del alumnado en Económicas.</span>
+                                        <meta  content="Universidad de Navarra"><meta  content="2026-05-01">
+                                        <div   style="display:none;"><meta  content="Campus Universidad de Navarra"></div>
                                     </figcaption>
                                 </figure>
                     
-                                <figure class="unav-mainImageWrapper unav-efectoCrossFade" itemprop="associatedMedia" itemscope itemtype="http://schema.org/ImageObject">
-                                    <img src="https://picsum.photos/id/1024/800/1200" class="unav-mainImage" itemprop="contentUrl" alt="Fotografía del Campus UNAV 23" loading="lazy">
+                                <figure class="unav-mainImageWrapper unav-efectoCrossFade" >
+                                    <img src="https://picsum.photos/id/1024/800/1200" class="unav-mainImage"  alt="Fotografía del Campus UNAV 23" loading="lazy">
                                     <figcaption class="unav-imageCaption unav-lh-normal" style="text-shadow: 1px 1px 3px rgba(0, 0, 0, 0.6);">
-                                        <span itemprop="caption">Fotografía de recurso #23. Detalle exterior de los volúmenes de hormigón del museo bajo cielo despejado.</span>
-                                        <meta itemprop="author" content="Universidad de Navarra"><meta itemprop="datePublished" content="2026-05-01">
-                                        <div itemprop="contentLocation" itemscope itemtype="http://schema.org/Place" style="display:none;"><meta itemprop="name" content="Campus Universidad de Navarra"></div>
+                                        <span>Fotografía de recurso #23. Detalle exterior de los volúmenes de hormigón del museo bajo cielo despejado.</span>
+                                        <meta  content="Universidad de Navarra"><meta  content="2026-05-01">
+                                        <div   style="display:none;"><meta  content="Campus Universidad de Navarra"></div>
                                     </figcaption>
                                 </figure>
                     
-                                <figure class="unav-mainImageWrapper unav-efectoCrossFade" itemprop="associatedMedia" itemscope itemtype="http://schema.org/ImageObject">
-                                    <img src="https://picsum.photos/id/1025/800/1200" class="unav-mainImage" itemprop="contentUrl" alt="Fotografía del Campus UNAV 24" loading="lazy">
+                                <figure class="unav-mainImageWrapper unav-efectoCrossFade" >
+                                    <img src="https://picsum.photos/id/1025/800/1200" class="unav-mainImage"  alt="Fotografía del Campus UNAV 24" loading="lazy">
                                     <figcaption class="unav-imageCaption unav-lh-normal" style="text-shadow: 1px 1px 3px rgba(0, 0, 0, 0.6);">
-                                        <span itemprop="caption">Fotografía de recurso #24. Atrio interior del edificio de Ciencias Sociales y Aula Magna.</span>
-                                        <meta itemprop="author" content="Universidad de Navarra"><meta itemprop="datePublished" content="2026-05-01">
-                                        <div itemprop="contentLocation" itemscope itemtype="http://schema.org/Place" style="display:none;"><meta itemprop="name" content="Campus Universidad de Navarra"></div>
+                                        <span>Fotografía de recurso #24. Atrio interior del edificio de Ciencias Sociales y Aula Magna.</span>
+                                        <meta  content="Universidad de Navarra"><meta  content="2026-05-01">
+                                        <div   style="display:none;"><meta  content="Campus Universidad de Navarra"></div>
                                     </figcaption>
                                 </figure>
                             </div>
                     
                             <div class="unav-gallerySidebar">
                                 <div class="unav-thumbGrid">
-                                    <button type="button" class="unav-thumbItem unav-isSelected" aria-label="Seleccionar miniatura 1" onclick="goToSlide(this.closest('.unav-mediaGallery'), 0)"><img src="https://picsum.photos/id/10/150/150" itemprop="thumbnailUrl" alt="" loading="lazy"></button>
-                                    <button type="button" class="unav-thumbItem" aria-label="Seleccionar miniatura 2" onclick="goToSlide(this.closest('.unav-mediaGallery'), 1)"><img src="https://picsum.photos/id/11/150/150" itemprop="thumbnailUrl" alt="" loading="lazy"></button>
-                                    <button type="button" class="unav-thumbItem" aria-label="Seleccionar miniatura 3" onclick="goToSlide(this.closest('.unav-mediaGallery'), 2)"><img src="https://picsum.photos/id/12/150/150" itemprop="thumbnailUrl" alt="" loading="lazy"></button>
-                                    <button type="button" class="unav-thumbItem" aria-label="Seleccionar miniatura 4" onclick="goToSlide(this.closest('.unav-mediaGallery'), 3)"><img src="https://picsum.photos/id/13/150/150" itemprop="thumbnailUrl" alt="" loading="lazy"></button>
-                                    <button type="button" class="unav-thumbItem" aria-label="Seleccionar miniatura 5" onclick="goToSlide(this.closest('.unav-mediaGallery'), 4)"><img src="https://picsum.photos/id/14/150/150" itemprop="thumbnailUrl" alt="" loading="lazy"></button>
-                                    <button type="button" class="unav-thumbItem" aria-label="Seleccionar miniatura 6" onclick="goToSlide(this.closest('.unav-mediaGallery'), 5)"><img src="https://picsum.photos/id/15/150/150" itemprop="thumbnailUrl" alt="" loading="lazy"></button>
-                                    <button type="button" class="unav-thumbItem" aria-label="Seleccionar miniatura 7" onclick="goToSlide(this.closest('.unav-mediaGallery'), 6)"><img src="https://picsum.photos/id/16/150/150" itemprop="thumbnailUrl" alt="" loading="lazy"></button>
-                                    <button type="button" class="unav-thumbItem" aria-label="Seleccionar miniatura 8" onclick="goToSlide(this.closest('.unav-mediaGallery'), 7)"><img src="https://picsum.photos/id/17/150/150" itemprop="thumbnailUrl" alt="" loading="lazy"></button>
-                                    <button type="button" class="unav-thumbItem" aria-label="Seleccionar miniatura 9" onclick="goToSlide(this.closest('.unav-mediaGallery'), 8)"><img src="https://picsum.photos/id/18/150/150" itemprop="thumbnailUrl" alt="" loading="lazy"></button>
-                                    <button type="button" class="unav-thumbItem" aria-label="Seleccionar miniatura 10" onclick="goToSlide(this.closest('.unav-mediaGallery'), 9)"><img src="https://picsum.photos/id/19/150/150" itemprop="thumbnailUrl" alt="" loading="lazy"></button>
-                                    <button type="button" class="unav-thumbItem" aria-label="Seleccionar miniatura 11" onclick="goToSlide(this.closest('.unav-mediaGallery'), 10)"><img src="https://picsum.photos/id/20/150/150" itemprop="thumbnailUrl" alt="" loading="lazy"></button>
-                                    <button type="button" class="unav-thumbItem" aria-label="Seleccionar miniatura 12" onclick="goToSlide(this.closest('.unav-mediaGallery'), 11)"><img src="https://picsum.photos/id/21/150/150" itemprop="thumbnailUrl" alt="" loading="lazy"></button>
+                                    <button type="button" class="unav-thumbItem unav-isSelected" aria-label="Seleccionar miniatura 1" onclick="goToSlide(this.closest('.unav-mediaGallery'), 0)"><img src="https://picsum.photos/id/10/150/150" alt="" loading="lazy"></button>
+                                    <button type="button" class="unav-thumbItem" aria-label="Seleccionar miniatura 2" onclick="goToSlide(this.closest('.unav-mediaGallery'), 1)"><img src="https://picsum.photos/id/11/150/150" alt="" loading="lazy"></button>
+                                    <button type="button" class="unav-thumbItem" aria-label="Seleccionar miniatura 3" onclick="goToSlide(this.closest('.unav-mediaGallery'), 2)"><img src="https://picsum.photos/id/12/150/150" alt="" loading="lazy"></button>
+                                    <button type="button" class="unav-thumbItem" aria-label="Seleccionar miniatura 4" onclick="goToSlide(this.closest('.unav-mediaGallery'), 3)"><img src="https://picsum.photos/id/13/150/150" alt="" loading="lazy"></button>
+                                    <button type="button" class="unav-thumbItem" aria-label="Seleccionar miniatura 5" onclick="goToSlide(this.closest('.unav-mediaGallery'), 4)"><img src="https://picsum.photos/id/14/150/150" alt="" loading="lazy"></button>
+                                    <button type="button" class="unav-thumbItem" aria-label="Seleccionar miniatura 6" onclick="goToSlide(this.closest('.unav-mediaGallery'), 5)"><img src="https://picsum.photos/id/15/150/150" alt="" loading="lazy"></button>
+                                    <button type="button" class="unav-thumbItem" aria-label="Seleccionar miniatura 7" onclick="goToSlide(this.closest('.unav-mediaGallery'), 6)"><img src="https://picsum.photos/id/16/150/150" alt="" loading="lazy"></button>
+                                    <button type="button" class="unav-thumbItem" aria-label="Seleccionar miniatura 8" onclick="goToSlide(this.closest('.unav-mediaGallery'), 7)"><img src="https://picsum.photos/id/17/150/150" alt="" loading="lazy"></button>
+                                    <button type="button" class="unav-thumbItem" aria-label="Seleccionar miniatura 9" onclick="goToSlide(this.closest('.unav-mediaGallery'), 8)"><img src="https://picsum.photos/id/18/150/150" alt="" loading="lazy"></button>
+                                    <button type="button" class="unav-thumbItem" aria-label="Seleccionar miniatura 10" onclick="goToSlide(this.closest('.unav-mediaGallery'), 9)"><img src="https://picsum.photos/id/19/150/150" alt="" loading="lazy"></button>
+                                    <button type="button" class="unav-thumbItem" aria-label="Seleccionar miniatura 11" onclick="goToSlide(this.closest('.unav-mediaGallery'), 10)"><img src="https://picsum.photos/id/20/150/150" alt="" loading="lazy"></button>
+                                    <button type="button" class="unav-thumbItem" aria-label="Seleccionar miniatura 12" onclick="goToSlide(this.closest('.unav-mediaGallery'), 11)"><img src="https://picsum.photos/id/21/150/150" alt="" loading="lazy"></button>
                                     
-                                    <button type="button" class="unav-thumbItem" aria-label="Seleccionar miniatura 13" onclick="goToSlide(this.closest('.unav-mediaGallery'), 12)"><img src="https://picsum.photos/id/1011/150/150" itemprop="thumbnailUrl" alt="" loading="lazy"></button>
-                                    <button type="button" class="unav-thumbItem" aria-label="Seleccionar miniatura 14" onclick="goToSlide(this.closest('.unav-mediaGallery'), 13)"><img src="https://picsum.photos/id/1012/150/150" itemprop="thumbnailUrl" alt="" loading="lazy"></button>
-                                    <button type="button" class="unav-thumbItem" aria-label="Seleccionar miniatura 15" onclick="goToSlide(this.closest('.unav-mediaGallery'), 14)"><img src="https://picsum.photos/id/1015/150/150" itemprop="thumbnailUrl" alt="" loading="lazy"></button>
-                                    <button type="button" class="unav-thumbItem" aria-label="Seleccionar miniatura 16" onclick="goToSlide(this.closest('.unav-mediaGallery'), 15)"><img src="https://picsum.photos/id/1016/150/150" itemprop="thumbnailUrl" alt="" loading="lazy"></button>
-                                    <button type="button" class="unav-thumbItem" aria-label="Seleccionar miniatura 17" onclick="goToSlide(this.closest('.unav-mediaGallery'), 16)"><img src="https://picsum.photos/id/1018/150/150" itemprop="thumbnailUrl" alt="" loading="lazy"></button>
-                                    <button type="button" class="unav-thumbItem" aria-label="Seleccionar miniatura 18" onclick="goToSlide(this.closest('.unav-mediaGallery'), 17)"><img src="https://picsum.photos/id/1019/150/150" itemprop="thumbnailUrl" alt="" loading="lazy"></button>
-                                    <button type="button" class="unav-thumbItem" aria-label="Seleccionar miniatura 19" onclick="goToSlide(this.closest('.unav-mediaGallery'), 18)"><img src="https://picsum.photos/id/1020/150/150" itemprop="thumbnailUrl" alt="" loading="lazy"></button>
-                                    <button type="button" class="unav-thumbItem" aria-label="Seleccionar miniatura 20" onclick="goToSlide(this.closest('.unav-mediaGallery'), 19)"><img src="https://picsum.photos/id/1021/150/150" itemprop="thumbnailUrl" alt="" loading="lazy"></button>
-                                    <button type="button" class="unav-thumbItem" aria-label="Seleccionar miniatura 21" onclick="goToSlide(this.closest('.unav-mediaGallery'), 20)"><img src="https://picsum.photos/id/1022/150/150" itemprop="thumbnailUrl" alt="" loading="lazy"></button>
-                                    <button type="button" class="unav-thumbItem" aria-label="Seleccionar miniatura 22" onclick="goToSlide(this.closest('.unav-mediaGallery'), 21)"><img src="https://picsum.photos/id/1023/150/150" itemprop="thumbnailUrl" alt="" loading="lazy"></button>
-                                    <button type="button" class="unav-thumbItem" aria-label="Seleccionar miniatura 23" onclick="goToSlide(this.closest('.unav-mediaGallery'), 22)"><img src="https://picsum.photos/id/1024/150/150" itemprop="thumbnailUrl" alt="" loading="lazy"></button>
-                                    <button type="button" class="unav-thumbItem" aria-label="Seleccionar miniatura 24" onclick="goToSlide(this.closest('.unav-mediaGallery'), 23)"><img src="https://picsum.photos/id/1025/150/150" itemprop="thumbnailUrl" alt="" loading="lazy"></button>
+                                    <button type="button" class="unav-thumbItem" aria-label="Seleccionar miniatura 13" onclick="goToSlide(this.closest('.unav-mediaGallery'), 12)"><img src="https://picsum.photos/id/1011/150/150" alt="" loading="lazy"></button>
+                                    <button type="button" class="unav-thumbItem" aria-label="Seleccionar miniatura 14" onclick="goToSlide(this.closest('.unav-mediaGallery'), 13)"><img src="https://picsum.photos/id/1012/150/150" alt="" loading="lazy"></button>
+                                    <button type="button" class="unav-thumbItem" aria-label="Seleccionar miniatura 15" onclick="goToSlide(this.closest('.unav-mediaGallery'), 14)"><img src="https://picsum.photos/id/1015/150/150" alt="" loading="lazy"></button>
+                                    <button type="button" class="unav-thumbItem" aria-label="Seleccionar miniatura 16" onclick="goToSlide(this.closest('.unav-mediaGallery'), 15)"><img src="https://picsum.photos/id/1016/150/150" alt="" loading="lazy"></button>
+                                    <button type="button" class="unav-thumbItem" aria-label="Seleccionar miniatura 17" onclick="goToSlide(this.closest('.unav-mediaGallery'), 16)"><img src="https://picsum.photos/id/1018/150/150" alt="" loading="lazy"></button>
+                                    <button type="button" class="unav-thumbItem" aria-label="Seleccionar miniatura 18" onclick="goToSlide(this.closest('.unav-mediaGallery'), 17)"><img src="https://picsum.photos/id/1019/150/150" alt="" loading="lazy"></button>
+                                    <button type="button" class="unav-thumbItem" aria-label="Seleccionar miniatura 19" onclick="goToSlide(this.closest('.unav-mediaGallery'), 18)"><img src="https://picsum.photos/id/1020/150/150" alt="" loading="lazy"></button>
+                                    <button type="button" class="unav-thumbItem" aria-label="Seleccionar miniatura 20" onclick="goToSlide(this.closest('.unav-mediaGallery'), 19)"><img src="https://picsum.photos/id/1021/150/150" alt="" loading="lazy"></button>
+                                    <button type="button" class="unav-thumbItem" aria-label="Seleccionar miniatura 21" onclick="goToSlide(this.closest('.unav-mediaGallery'), 20)"><img src="https://picsum.photos/id/1022/150/150" alt="" loading="lazy"></button>
+                                    <button type="button" class="unav-thumbItem" aria-label="Seleccionar miniatura 22" onclick="goToSlide(this.closest('.unav-mediaGallery'), 21)"><img src="https://picsum.photos/id/1023/150/150" alt="" loading="lazy"></button>
+                                    <button type="button" class="unav-thumbItem" aria-label="Seleccionar miniatura 23" onclick="goToSlide(this.closest('.unav-mediaGallery'), 22)"><img src="https://picsum.photos/id/1024/150/150" alt="" loading="lazy"></button>
+                                    <button type="button" class="unav-thumbItem" aria-label="Seleccionar miniatura 24" onclick="goToSlide(this.closest('.unav-mediaGallery'), 23)"><img src="https://picsum.photos/id/1025/150/150" alt="" loading="lazy"></button>
                                 </div>
                                 
                                 <div class="unav-galleryControlsBar bg-white border-top d-flex justify-content-center align-items-center gap-2">
@@ -653,7 +653,7 @@
             <div class="row">
                 <div class="col-lg-5">
                     <div class="unav-galleryWrapper">
-                        <div class="unav-mediaGallery" itemscope itemtype="http://schema.org/ImageGallery">
+                        <div class="unav-mediaGallery">
                             
                             <div class="unav-galleryStage position-relative">
                                 <button class="unav-boton unav-botonSecundario unav-botonIconOnly position-absolute top-50 translate-middle-y start-0 ms-3 unav-prevBtn" style="--unav-botonColorSource: #ffffff; --unav-botonTextHover: var(--unav-black-500); z-index: 10;" onclick="changeSlide(this, -1)" aria-label="Anterior">
@@ -663,250 +663,250 @@
                                     <i class="bi bi-chevron-right unav-botonIcono"></i>
                                 </button>
                     
-                                <figure class="unav-mainImageWrapper unav-efectoCrossFade unav-isActive" itemprop="associatedMedia" itemscope itemtype="http://schema.org/ImageObject">
-                                    <img src="https://picsum.photos/id/10/1200/800" class="unav-mainImage" itemprop="contentUrl" alt="Fotografía del Campus UNAV 1" loading="eager">
+                                <figure class="unav-mainImageWrapper unav-efectoCrossFade unav-isActive" >
+                                    <img src="https://picsum.photos/id/10/1200/800" class="unav-mainImage"  alt="Fotografía del Campus UNAV 1" loading="eager">
                                     <figcaption class="unav-imageCaption unav-lh-normal" style="text-shadow: 1px 1px 3px rgba(0, 0, 0, 0.6);">
-                                        <span itemprop="caption">Fotografía de recurso #1. Evento institucional de apertura de curso en las nuevas instalaciones.</span>
-                                        <meta itemprop="author" content="Universidad de Navarra">
-                                        <meta itemprop="datePublished" content="2026-05-01">
-                                        <div itemprop="contentLocation" itemscope itemtype="http://schema.org/Place" style="display:none;"><meta itemprop="name" content="Campus Universidad de Navarra"></div>
+                                        <span>Fotografía de recurso #1. Evento institucional de apertura de curso en las nuevas instalaciones.</span>
+                                        <meta  content="Universidad de Navarra">
+                                        <meta  content="2026-05-01">
+                                        <div   style="display:none;"><meta  content="Campus Universidad de Navarra"></div>
                                     </figure>
                     
-                                <figure class="unav-mainImageWrapper unav-efectoCrossFade" itemprop="associatedMedia" itemscope itemtype="http://schema.org/ImageObject">
-                                    <img src="https://picsum.photos/id/11/1200/800" class="unav-mainImage" itemprop="contentUrl" alt="Fotografía del Campus UNAV 2" loading="lazy">
+                                <figure class="unav-mainImageWrapper unav-efectoCrossFade" >
+                                    <img src="https://picsum.photos/id/11/1200/800" class="unav-mainImage"  alt="Fotografía del Campus UNAV 2" loading="lazy">
                                     <figcaption class="unav-imageCaption unav-lh-normal" style="text-shadow: 1px 1px 3px rgba(0, 0, 0, 0.6);">
-                                        <span itemprop="caption">Fotografía de recurso #2. Actividades de los alumnos en el campus durante el periodo primaveral.</span>
-                                        <meta itemprop="author" content="Universidad de Navarra"><meta itemprop="datePublished" content="2026-05-01">
-                                        <div itemprop="contentLocation" itemscope itemtype="http://schema.org/Place" style="display:none;"><meta itemprop="name" content="Campus Universidad de Navarra"></div>
+                                        <span>Fotografía de recurso #2. Actividades de los alumnos en el campus durante el periodo primaveral.</span>
+                                        <meta  content="Universidad de Navarra"><meta  content="2026-05-01">
+                                        <div   style="display:none;"><meta  content="Campus Universidad de Navarra"></div>
                                     </figcaption>
                                 </figure>
                     
-                                <figure class="unav-mainImageWrapper unav-efectoCrossFade" itemprop="associatedMedia" itemscope itemtype="http://schema.org/ImageObject">
-                                    <img src="https://picsum.photos/id/12/1200/800" class="unav-mainImage" itemprop="contentUrl" alt="Fotografía del Campus UNAV 3" loading="lazy">
+                                <figure class="unav-mainImageWrapper unav-efectoCrossFade" >
+                                    <img src="https://picsum.photos/id/12/1200/800" class="unav-mainImage"  alt="Fotografía del Campus UNAV 3" loading="lazy">
                                     <figcaption class="unav-imageCaption unav-lh-normal" style="text-shadow: 1px 1px 3px rgba(0, 0, 0, 0.6);">
-                                        <span itemprop="caption">Fotografía de recurso #3. Fachada del edificio principal reflejada bajo la luz del atardecer.</span>
-                                        <meta itemprop="author" content="Universidad de Navarra"><meta itemprop="datePublished" content="2026-05-01">
-                                        <div itemprop="contentLocation" itemscope itemtype="http://schema.org/Place" style="display:none;"><meta itemprop="name" content="Campus Universidad de Navarra"></div>
+                                        <span>Fotografía de recurso #3. Fachada del edificio principal reflejada bajo la luz del atardecer.</span>
+                                        <meta  content="Universidad de Navarra"><meta  content="2026-05-01">
+                                        <div   style="display:none;"><meta  content="Campus Universidad de Navarra"></div>
                                     </figcaption>
                                 </figure>
                     
-                                <figure class="unav-mainImageWrapper unav-efectoCrossFade" itemprop="associatedMedia" itemscope itemtype="http://schema.org/ImageObject">
-                                    <img src="https://picsum.photos/id/13/1200/800" class="unav-mainImage" itemprop="contentUrl" alt="Fotografía del Campus UNAV 4" loading="lazy">
+                                <figure class="unav-mainImageWrapper unav-efectoCrossFade" >
+                                    <img src="https://picsum.photos/id/13/1200/800" class="unav-mainImage"  alt="Fotografía del Campus UNAV 4" loading="lazy">
                                     <figcaption class="unav-imageCaption unav-lh-normal" style="text-shadow: 1px 1px 3px rgba(0, 0, 0, 0.6);">
-                                        <span itemprop="caption">Fotografía de recurso #4. Zonas de estudio y espacios abiertos en la biblioteca de ciencias.</span>
-                                        <meta itemprop="author" content="Universidad de Navarra"><meta itemprop="datePublished" content="2026-05-01">
-                                        <div itemprop="contentLocation" itemscope itemtype="http://schema.org/Place" style="display:none;"><meta itemprop="name" content="Campus Universidad de Navarra"></div>
+                                        <span>Fotografía de recurso #4. Zonas de estudio y espacios abiertos en la biblioteca de ciencias.</span>
+                                        <meta  content="Universidad de Navarra"><meta  content="2026-05-01">
+                                        <div   style="display:none;"><meta  content="Campus Universidad de Navarra"></div>
                                     </figcaption>
                                 </figure>
                     
-                                <figure class="unav-mainImageWrapper unav-efectoCrossFade" itemprop="associatedMedia" itemscope itemtype="http://schema.org/ImageObject">
-                                    <img src="https://picsum.photos/id/14/1200/800" class="unav-mainImage" itemprop="contentUrl" alt="Fotografía del Campus UNAV 5" loading="lazy">
+                                <figure class="unav-mainImageWrapper unav-efectoCrossFade" >
+                                    <img src="https://picsum.photos/id/14/1200/800" class="unav-mainImage"  alt="Fotografía del Campus UNAV 5" loading="lazy">
                                     <figcaption class="unav-imageCaption unav-lh-normal" style="text-shadow: 1px 1px 3px rgba(0, 0, 0, 0.6);">
-                                        <span itemprop="caption">Fotografía de recurso #5. Entorno natural que rodea las facultades del campus de Pamplona.</span>
-                                        <meta itemprop="author" content="Universidad de Navarra"><meta itemprop="datePublished" content="2026-05-01">
-                                        <div itemprop="contentLocation" itemscope itemtype="http://schema.org/Place" style="display:none;"><meta itemprop="name" content="Campus Universidad de Navarra"></div>
+                                        <span>Fotografía de recurso #5. Entorno natural que rodea las facultades del campus de Pamplona.</span>
+                                        <meta  content="Universidad de Navarra"><meta  content="2026-05-01">
+                                        <div   style="display:none;"><meta  content="Campus Universidad de Navarra"></div>
                                     </figcaption>
                                 </figure>
                     
-                                <figure class="unav-mainImageWrapper unav-efectoCrossFade" itemprop="associatedMedia" itemscope itemtype="http://schema.org/ImageObject">
-                                    <img src="https://picsum.photos/id/15/1200/800" class="unav-mainImage" itemprop="contentUrl" alt="Fotografía del Campus UNAV 6" loading="lazy">
+                                <figure class="unav-mainImageWrapper unav-efectoCrossFade" >
+                                    <img src="https://picsum.photos/id/15/1200/800" class="unav-mainImage"  alt="Fotografía del Campus UNAV 6" loading="lazy">
                                     <figcaption class="unav-imageCaption unav-lh-normal" style="text-shadow: 1px 1px 3px rgba(0, 0, 0, 0.6);">
-                                        <span itemprop="caption">Fotografía de recurso #6. Detalle arquitectónico de las nuevas aulas polivalentes.</span>
-                                        <meta itemprop="author" content="Universidad de Navarra"><meta itemprop="datePublished" content="2026-05-01">
-                                        <div itemprop="contentLocation" itemscope itemtype="http://schema.org/Place" style="display:none;"><meta itemprop="name" content="Campus Universidad de Navarra"></div>
+                                        <span>Fotografía de recurso #6. Detalle arquitectónico de las nuevas aulas polivalentes.</span>
+                                        <meta  content="Universidad de Navarra"><meta  content="2026-05-01">
+                                        <div   style="display:none;"><meta  content="Campus Universidad de Navarra"></div>
                                     </figcaption>
                                 </figure>
                     
-                                <figure class="unav-mainImageWrapper unav-efectoCrossFade" itemprop="associatedMedia" itemscope itemtype="http://schema.org/ImageObject">
-                                    <img src="https://picsum.photos/id/16/1200/800" class="unav-mainImage" itemprop="contentUrl" alt="Fotografía del Campus UNAV 7" loading="lazy">
+                                <figure class="unav-mainImageWrapper unav-efectoCrossFade" >
+                                    <img src="https://picsum.photos/id/16/1200/800" class="unav-mainImage"  alt="Fotografía del Campus UNAV 7" loading="lazy">
                                     <figcaption class="unav-imageCaption unav-lh-normal" style="text-shadow: 1px 1px 3px rgba(0, 0, 0, 0.6);">
-                                        <span itemprop="caption">Fotografía de recurso #7. Investigadores trabajando en los laboratorios del centro tecnológico.</span>
-                                        <meta itemprop="author" content="Universidad de Navarra"><meta itemprop="datePublished" content="2026-05-01">
-                                        <div itemprop="contentLocation" itemscope itemtype="http://schema.org/Place" style="display:none;"><meta itemprop="name" content="Campus Universidad de Navarra"></div>
+                                        <span>Fotografía de recurso #7. Investigadores trabajando en los laboratorios del centro tecnológico.</span>
+                                        <meta  content="Universidad de Navarra"><meta  content="2026-05-01">
+                                        <div   style="display:none;"><meta  content="Campus Universidad de Navarra"></div>
                                     </figcaption>
                                 </figure>
                     
-                                <figure class="unav-mainImageWrapper unav-efectoCrossFade" itemprop="associatedMedia" itemscope itemtype="http://schema.org/ImageObject">
-                                    <img src="https://picsum.photos/id/17/1200/800" class="unav-mainImage" itemprop="contentUrl" alt="Fotografía del Campus UNAV 8" loading="lazy">
+                                <figure class="unav-mainImageWrapper unav-efectoCrossFade" >
+                                    <img src="https://picsum.photos/id/17/1200/800" class="unav-mainImage"  alt="Fotografía del Campus UNAV 8" loading="lazy">
                                     <figcaption class="unav-imageCaption unav-lh-normal" style="text-shadow: 1px 1px 3px rgba(0, 0, 0, 0.6);">
-                                        <span itemprop="caption">Fotografía de recurso #8. Panorámica del anfiteatro exterior durante una sesión cultural.</span>
-                                        <meta itemprop="author" content="Universidad de Navarra"><meta itemprop="datePublished" content="2026-05-01">
-                                        <div itemprop="contentLocation" itemscope itemtype="http://schema.org/Place" style="display:none;"><meta itemprop="name" content="Campus Universidad de Navarra"></div>
+                                        <span>Fotografía de recurso #8. Panorámica del anfiteatro exterior durante una sesión cultural.</span>
+                                        <meta  content="Universidad de Navarra"><meta  content="2026-05-01">
+                                        <div   style="display:none;"><meta  content="Campus Universidad de Navarra"></div>
                                     </figcaption>
                                 </figure>
                     
-                                <figure class="unav-mainImageWrapper unav-efectoCrossFade" itemprop="associatedMedia" itemscope itemtype="http://schema.org/ImageObject">
-                                    <img src="https://picsum.photos/id/18/1200/800" class="unav-mainImage" itemprop="contentUrl" alt="Fotografía del Campus UNAV 9" loading="lazy">
+                                <figure class="unav-mainImageWrapper unav-efectoCrossFade" >
+                                    <img src="https://picsum.photos/id/18/1200/800" class="unav-mainImage"  alt="Fotografía del Campus UNAV 9" loading="lazy">
                                     <figcaption class="unav-imageCaption unav-lh-normal" style="text-shadow: 1px 1px 3px rgba(0, 0, 0, 0.6);">
-                                        <span itemprop="caption">Fotografía de recurso #9. Entrada de estudiantes al edificio de Amigos a primera hora de la mañana.</span>
-                                        <meta itemprop="author" content="Universidad de Navarra"><meta itemprop="datePublished" content="2026-05-01">
-                                        <div itemprop="contentLocation" itemscope itemtype="http://schema.org/Place" style="display:none;"><meta itemprop="name" content="Campus Universidad de Navarra"></div>
+                                        <span>Fotografía de recurso #9. Entrada de estudiantes al edificio de Amigos a primera hora de la mañana.</span>
+                                        <meta  content="Universidad de Navarra"><meta  content="2026-05-01">
+                                        <div   style="display:none;"><meta  content="Campus Universidad de Navarra"></div>
                                     </figcaption>
                                 </figure>
                     
-                                <figure class="unav-mainImageWrapper unav-efectoCrossFade" itemprop="associatedMedia" itemscope itemtype="http://schema.org/ImageObject">
-                                    <img src="https://picsum.photos/id/19/1200/800" class="unav-mainImage" itemprop="contentUrl" alt="Fotografía del Campus UNAV 10" loading="lazy">
+                                <figure class="unav-mainImageWrapper unav-efectoCrossFade" >
+                                    <img src="https://picsum.photos/id/19/1200/800" class="unav-mainImage"  alt="Fotografía del Campus UNAV 10" loading="lazy">
                                     <figcaption class="unav-imageCaption unav-lh-normal" style="text-shadow: 1px 1px 3px rgba(0, 0, 0, 0.6);">
-                                        <span itemprop="caption">Fotografía de recurso #10. Soportales de la escuela de arquitectura bajo un prisma invernal.</span>
-                                        <meta itemprop="author" content="Universidad de Navarra"><meta itemprop="datePublished" content="2026-05-01">
-                                        <div itemprop="contentLocation" itemscope itemtype="http://schema.org/Place" style="display:none;"><meta itemprop="name" content="Campus Universidad de Navarra"></div>
+                                        <span>Fotografía de recurso #10. Soportales de la escuela de arquitectura bajo un prisma invernal.</span>
+                                        <meta  content="Universidad de Navarra"><meta  content="2026-05-01">
+                                        <div   style="display:none;"><meta  content="Campus Universidad de Navarra"></div>
                                     </figcaption>
                                 </figure>
                     
-                                <figure class="unav-mainImageWrapper unav-efectoCrossFade" itemprop="associatedMedia" itemscope itemtype="http://schema.org/ImageObject">
-                                    <img src="https://picsum.photos/id/20/1200/800" class="unav-mainImage" itemprop="contentUrl" alt="Fotografía del Campus UNAV 11" loading="lazy">
+                                <figure class="unav-mainImageWrapper unav-efectoCrossFade" >
+                                    <img src="https://picsum.photos/id/20/1200/800" class="unav-mainImage"  alt="Fotografía del Campus UNAV 11" loading="lazy">
                                     <figcaption class="unav-imageCaption unav-lh-normal" style="text-shadow: 1px 1px 3px rgba(0, 0, 0, 0.6);">
-                                        <span itemprop="caption">Fotografía de recurso #11. Acceso peatonal que conecta el campus con el entorno de la Clínica.</span>
-                                        <meta itemprop="author" content="Universidad de Navarra"><meta itemprop="datePublished" content="2026-05-01">
-                                        <div itemprop="contentLocation" itemscope itemtype="http://schema.org/Place" style="display:none;"><meta itemprop="name" content="Campus Universidad de Navarra"></div>
+                                        <span>Fotografía de recurso #11. Acceso peatonal que conecta el campus con el entorno de la Clínica.</span>
+                                        <meta  content="Universidad de Navarra"><meta  content="2026-05-01">
+                                        <div   style="display:none;"><meta  content="Campus Universidad de Navarra"></div>
                                     </figcaption>
                                 </figure>
                     
-                                <figure class="unav-mainImageWrapper unav-efectoCrossFade" itemprop="associatedMedia" itemscope itemtype="http://schema.org/ImageObject">
-                                    <img src="https://picsum.photos/id/21/1200/800" class="unav-mainImage" itemprop="contentUrl" alt="Fotografía del Campus UNAV 12" loading="lazy">
+                                <figure class="unav-mainImageWrapper unav-efectoCrossFade" >
+                                    <img src="https://picsum.photos/id/21/1200/800" class="unav-mainImage"  alt="Fotografía del Campus UNAV 12" loading="lazy">
                                     <figcaption class="unav-imageCaption unav-lh-normal" style="text-shadow: 1px 1px 3px rgba(0, 0, 0, 0.6);">
-                                        <span itemprop="caption">Fotografía de recurso #12. Detalle de la arboleda patrimonial en las inmediaciones del río Sadar.</span>
-                                        <meta itemprop="author" content="Universidad de Navarra"><meta itemprop="datePublished" content="2026-05-01">
-                                        <div itemprop="contentLocation" itemscope itemtype="http://schema.org/Place" style="display:none;"><meta itemprop="name" content="Campus Universidad de Navarra"></div>
+                                        <span>Fotografía de recurso #12. Detalle de la arboleda patrimonial en las inmediaciones del río Sadar.</span>
+                                        <meta  content="Universidad de Navarra"><meta  content="2026-05-01">
+                                        <div   style="display:none;"><meta  content="Campus Universidad de Navarra"></div>
                                     </figcaption>
                                 </figure>
                     
-                                <figure class="unav-mainImageWrapper unav-efectoCrossFade" itemprop="associatedMedia" itemscope itemtype="http://schema.org/ImageObject">
-                                    <img src="https://picsum.photos/id/1011/800/1200" class="unav-mainImage" itemprop="contentUrl" alt="Fotografía del Campus UNAV 13" loading="lazy">
+                                <figure class="unav-mainImageWrapper unav-efectoCrossFade" >
+                                    <img src="https://picsum.photos/id/1011/800/1200" class="unav-mainImage"  alt="Fotografía del Campus UNAV 13" loading="lazy">
                                     <figcaption class="unav-imageCaption unav-lh-normal" style="text-shadow: 1px 1px 3px rgba(0, 0, 0, 0.6);">
-                                        <span itemprop="caption">Fotografía de recurso #13. Perspectiva vertical de la pasarela peatonal central.</span>
-                                        <meta itemprop="author" content="Universidad de Navarra"><meta itemprop="datePublished" content="2026-05-01">
-                                        <div itemprop="contentLocation" itemscope itemtype="http://schema.org/Place" style="display:none;"><meta itemprop="name" content="Campus Universidad de Navarra"></div>
+                                        <span>Fotografía de recurso #13. Perspectiva vertical de la pasarela peatonal central.</span>
+                                        <meta  content="Universidad de Navarra"><meta  content="2026-05-01">
+                                        <div   style="display:none;"><meta  content="Campus Universidad de Navarra"></div>
                                     </figcaption>
                                 </figure>
                     
-                                <figure class="unav-mainImageWrapper unav-efectoCrossFade" itemprop="associatedMedia" itemscope itemtype="http://schema.org/ImageObject">
-                                    <img src="https://picsum.photos/id/1012/800/1200" class="unav-mainImage" itemprop="contentUrl" alt="Fotografía del Campus UNAV 14" loading="lazy">
+                                <figure class="unav-mainImageWrapper unav-efectoCrossFade" >
+                                    <img src="https://picsum.photos/id/1012/800/1200" class="unav-mainImage"  alt="Fotografía del Campus UNAV 14" loading="lazy">
                                     <figcaption class="unav-imageCaption unav-lh-normal" style="text-shadow: 1px 1px 3px rgba(0, 0, 0, 0.6);">
-                                        <span itemprop="caption">Fotografía de recurso #14. Encuadre vertical de las escalinatas principales de Comunicación.</span>
-                                        <meta itemprop="author" content="Universidad de Navarra"><meta itemprop="datePublished" content="2026-05-01">
-                                        <div itemprop="contentLocation" itemscope itemtype="http://schema.org/Place" style="display:none;"><meta itemprop="name" content="Campus Universidad de Navarra"></div>
+                                        <span>Fotografía de recurso #14. Encuadre vertical de las escalinatas principales de Comunicación.</span>
+                                        <meta  content="Universidad de Navarra"><meta  content="2026-05-01">
+                                        <div   style="display:none;"><meta  content="Campus Universidad de Navarra"></div>
                                     </figcaption>
                                 </figure>
                     
-                                <figure class="unav-mainImageWrapper unav-efectoCrossFade" itemprop="associatedMedia" itemscope itemtype="http://schema.org/ImageObject">
-                                    <img src="https://picsum.photos/id/1015/800/1200" class="unav-mainImage" itemprop="contentUrl" alt="Fotografía del Campus UNAV 15" loading="lazy">
+                                <figure class="unav-mainImageWrapper unav-efectoCrossFade" >
+                                    <img src="https://picsum.photos/id/1015/800/1200" class="unav-mainImage"  alt="Fotografía del Campus UNAV 15" loading="lazy">
                                     <figcaption class="unav-imageCaption unav-lh-normal" style="text-shadow: 1px 1px 3px rgba(0, 0, 0, 0.6);">
-                                        <span itemprop="caption">Fotografía de recurso #15. Primer plano del escudo institucional tallado en piedra.</span>
-                                        <meta itemprop="author" content="Universidad de Navarra"><meta itemprop="datePublished" content="2026-05-01">
-                                        <div itemprop="contentLocation" itemscope itemtype="http://schema.org/Place" style="display:none;"><meta itemprop="name" content="Campus Universidad de Navarra"></div>
+                                        <span>Fotografía de recurso #15. Primer plano del escudo institucional tallado en piedra.</span>
+                                        <meta  content="Universidad de Navarra"><meta  content="2026-05-01">
+                                        <div   style="display:none;"><meta  content="Campus Universidad de Navarra"></div>
                                     </figcaption>
                                 </figure>
                     
-                                <figure class="unav-mainImageWrapper unav-efectoCrossFade" itemprop="associatedMedia" itemscope itemtype="http://schema.org/ImageObject">
-                                    <img src="https://picsum.photos/id/1016/800/1200" class="unav-mainImage" itemprop="contentUrl" alt="Fotografía del Campus UNAV 16" loading="lazy">
+                                <figure class="unav-mainImageWrapper unav-efectoCrossFade" >
+                                    <img src="https://picsum.photos/id/1016/800/1200" class="unav-mainImage"  alt="Fotografía del Campus UNAV 16" loading="lazy">
                                     <figcaption class="unav-imageCaption unav-lh-normal" style="text-shadow: 1px 1px 3px rgba(0, 0, 0, 0.6);">
-                                        <span itemprop="caption">Fotografía de recurso #16. Líneas verticales del lucernario en el edificio de posgrado.</span>
-                                        <meta itemprop="author" content="Universidad de Navarra"><meta itemprop="datePublished" content="2026-05-01">
-                                        <div itemprop="contentLocation" itemscope itemtype="http://schema.org/Place" style="display:none;"><meta itemprop="name" content="Campus Universidad de Navarra"></div>
+                                        <span>Fotografía de recurso #16. Líneas verticales del lucernario en el edificio de posgrado.</span>
+                                        <meta  content="Universidad de Navarra"><meta  content="2026-05-01">
+                                        <div   style="display:none;"><meta  content="Campus Universidad de Navarra"></div>
                                     </figcaption>
                                 </figure>
                     
-                                <figure class="unav-mainImageWrapper weights-light unav-efectoCrossFade" itemprop="associatedMedia" itemscope itemtype="http://schema.org/ImageObject">
-                                    <img src="https://picsum.photos/id/1018/800/1200" class="unav-mainImage" itemprop="contentUrl" alt="Fotografía del Campus UNAV 17" loading="lazy">
+                                <figure class="unav-mainImageWrapper weights-light unav-efectoCrossFade" >
+                                    <img src="https://picsum.photos/id/1018/800/1200" class="unav-mainImage"  alt="Fotografía del Campus UNAV 17" loading="lazy">
                                     <figcaption class="unav-imageCaption unav-lh-normal" style="text-shadow: 1px 1px 3px rgba(0, 0, 0, 0.6);">
-                                        <span itemprop="caption">Fotografía de recurso #17. Vista cenital de los senderos universitarios cubiertos de hojas en otoño.</span>
-                                        <meta itemprop="author" content="Universidad de Navarra"><meta itemprop="datePublished" content="2026-05-01">
-                                        <div itemprop="contentLocation" itemscope itemtype="http://schema.org/Place" style="display:none;"><meta itemprop="name" content="Campus Universidad de Navarra"></div>
+                                        <span>Fotografía de recurso #17. Vista cenital de los senderos universitarios cubiertos de hojas en otoño.</span>
+                                        <meta  content="Universidad de Navarra"><meta  content="2026-05-01">
+                                        <div   style="display:none;"><meta  content="Campus Universidad de Navarra"></div>
                                     </figcaption>
                                 </figure>
                     
-                                <figure class="unav-mainImageWrapper unav-efectoCrossFade" itemprop="associatedMedia" itemscope itemtype="http://schema.org/ImageObject">
-                                    <img src="https://picsum.photos/id/1019/800/1200" class="unav-mainImage" itemprop="contentUrl" alt="Fotografía del Campus UNAV 18" loading="lazy">
+                                <figure class="unav-mainImageWrapper unav-efectoCrossFade" >
+                                    <img src="https://picsum.photos/id/1019/800/1200" class="unav-mainImage"  alt="Fotografía del Campus UNAV 18" loading="lazy">
                                     <figcaption class="unav-imageCaption unav-lh-normal" style="text-shadow: 1px 1px 3px rgba(0, 0, 0, 0.6);">
-                                        <span itemprop="caption">Fotografía de recurso #18. Reflejo de la torre del edificio central sobre los ventanales limítrofes.</span>
-                                        <meta itemprop="author" content="Universidad de Navarra"><meta itemprop="datePublished" content="2026-05-01">
-                                        <div itemprop="contentLocation" itemscope itemtype="http://schema.org/Place" style="display:none;"><meta itemprop="name" content="Campus Universidad de Navarra"></div>
+                                        <span>Fotografía de recurso #18. Reflejo de la torre del edificio central sobre los ventanales limítrofes.</span>
+                                        <meta  content="Universidad de Navarra"><meta  content="2026-05-01">
+                                        <div   style="display:none;"><meta  content="Campus Universidad de Navarra"></div>
                                     </figcaption>
                                 </figure>
                     
-                                <figure class="unav-mainImageWrapper unav-efectoCrossFade" itemprop="associatedMedia" itemscope itemtype="http://schema.org/ImageObject">
-                                    <img src="https://picsum.photos/id/1020/800/1200" class="unav-mainImage" itemprop="contentUrl" alt="Fotografía del Campus UNAV 19" loading="lazy">
+                                <figure class="unav-mainImageWrapper unav-efectoCrossFade" >
+                                    <img src="https://picsum.photos/id/1020/800/1200" class="unav-mainImage"  alt="Fotografía del Campus UNAV 19" loading="lazy">
                                     <figcaption class="unav-imageCaption unav-lh-normal" style="text-shadow: 1px 1px 3px rgba(0, 0, 0, 0.6);">
-                                        <span itemprop="caption">Fotografía de recurso #19. Foco lineal sobre los puestos de lectura individuales de la biblioteca.</span>
-                                        <meta itemprop="author" content="Universidad de Navarra"><meta itemprop="datePublished" content="2026-05-01">
-                                        <div itemprop="contentLocation" itemscope itemtype="http://schema.org/Place" style="display:none;"><meta itemprop="name" content="Campus Universidad de Navarra"></div>
+                                        <span>Fotografía de recurso #19. Foco lineal sobre los puestos de lectura individuales de la biblioteca.</span>
+                                        <meta  content="Universidad de Navarra"><meta  content="2026-05-01">
+                                        <div   style="display:none;"><meta  content="Campus Universidad de Navarra"></div>
                                     </figcaption>
                                 </figure>
                     
-                                <figure class="unav-mainImageWrapper unav-efectoCrossFade" itemprop="associatedMedia" itemscope itemtype="http://schema.org/ImageObject">
-                                    <img src="https://picsum.photos/id/1021/800/1200" class="unav-mainImage" itemprop="contentUrl" alt="Fotografía del Campus UNAV 20" loading="lazy">
+                                <figure class="unav-mainImageWrapper unav-efectoCrossFade" >
+                                    <img src="https://picsum.photos/id/1021/800/1200" class="unav-mainImage"  alt="Fotografía del Campus UNAV 20" loading="lazy">
                                     <figcaption class="unav-imageCaption unav-lh-normal" style="text-shadow: 1px 1px 3px rgba(0, 0, 0, 0.6);">
-                                        <span itemprop="caption">Fotografía de recurso #20. Contraluz de las cristaleras del Museo Universidad de Navarra.</span>
-                                        <meta itemprop="author" content="Universidad de Navarra"><meta itemprop="datePublished" content="2026-05-01">
-                                        <div itemprop="contentLocation" itemscope itemtype="http://schema.org/Place" style="display:none;"><meta itemprop="name" content="Campus Universidad de Navarra"></div>
+                                        <span>Fotografía de recurso #20. Contraluz de las cristaleras del Museo Universidad de Navarra.</span>
+                                        <meta  content="Universidad de Navarra"><meta  content="2026-05-01">
+                                        <div   style="display:none;"><meta  content="Campus Universidad de Navarra"></div>
                                     </figcaption>
                                 </figure>
                     
-                                <figure class="unav-mainImageWrapper unav-efectoCrossFade" itemprop="associatedMedia" itemscope itemtype="http://schema.org/ImageObject">
-                                    <img src="https://picsum.photos/id/1022/800/1200" class="unav-mainImage" itemprop="contentUrl" alt="Fotografía del Campus UNAV 21" loading="lazy">
+                                <figure class="unav-mainImageWrapper unav-efectoCrossFade" >
+                                    <img src="https://picsum.photos/id/1022/800/1200" class="unav-mainImage"  alt="Fotografía del Campus UNAV 21" loading="lazy">
                                     <figcaption class="unav-imageCaption unav-lh-normal" style="text-shadow: 1px 1px 3px rgba(0, 0, 0, 0.6);">
-                                        <span itemprop="caption">Fotografía de recurso #21. Encuadre arquitectónico simétrico de los pasillos de la Facultad de Derecho.</span>
-                                        <meta itemprop="author" content="Universidad de Navarra"><meta itemprop="datePublished" content="2026-05-01">
-                                        <div itemprop="contentLocation" itemscope itemtype="http://schema.org/Place" style="display:none;"><meta itemprop="name" content="Campus Universidad de Navarra"></div>
+                                        <span>Fotografía de recurso #21. Encuadre arquitectónico simétrico de los pasillos de la Facultad de Derecho.</span>
+                                        <meta  content="Universidad de Navarra"><meta  content="2026-05-01">
+                                        <div   style="display:none;"><meta  content="Campus Universidad de Navarra"></div>
                                     </figcaption>
                                 </figure>
                     
-                                <figure class="unav-mainImageWrapper unav-efectoCrossFade" itemprop="associatedMedia" itemscope itemtype="http://schema.org/ImageObject">
-                                    <img src="https://picsum.photos/id/1023/800/1200" class="unav-mainImage" itemprop="contentUrl" alt="Fotografía del Campus UNAV 22" loading="lazy">
+                                <figure class="unav-mainImageWrapper unav-efectoCrossFade" >
+                                    <img src="https://picsum.photos/id/1023/800/1200" class="unav-mainImage"  alt="Fotografía del Campus UNAV 22" loading="lazy">
                                     <figcaption class="unav-imageCaption unav-lh-normal" style="text-shadow: 1px 1px 3px rgba(0, 0, 0, 0.6);">
-                                        <span itemprop="caption">Fotografía de recurso #22. Zona de taquillas e interconexión del alumnado en Económicas.</span>
-                                        <meta itemprop="author" content="Universidad de Navarra"><meta itemprop="datePublished" content="2026-05-01">
-                                        <div itemprop="contentLocation" itemscope itemtype="http://schema.org/Place" style="display:none;"><meta itemprop="name" content="Campus Universidad de Navarra"></div>
+                                        <span>Fotografía de recurso #22. Zona de taquillas e interconexión del alumnado en Económicas.</span>
+                                        <meta  content="Universidad de Navarra"><meta  content="2026-05-01">
+                                        <div   style="display:none;"><meta  content="Campus Universidad de Navarra"></div>
                                     </figcaption>
                                 </figure>
                     
-                                <figure class="unav-mainImageWrapper unav-efectoCrossFade" itemprop="associatedMedia" itemscope itemtype="http://schema.org/ImageObject">
-                                    <img src="https://picsum.photos/id/1024/800/1200" class="unav-mainImage" itemprop="contentUrl" alt="Fotografía del Campus UNAV 23" loading="lazy">
+                                <figure class="unav-mainImageWrapper unav-efectoCrossFade" >
+                                    <img src="https://picsum.photos/id/1024/800/1200" class="unav-mainImage"  alt="Fotografía del Campus UNAV 23" loading="lazy">
                                     <figcaption class="unav-imageCaption unav-lh-normal" style="text-shadow: 1px 1px 3px rgba(0, 0, 0, 0.6);">
-                                        <span itemprop="caption">Fotografía de recurso #23. Detalle exterior de los volúmenes de hormigón del museo bajo cielo despejado.</span>
-                                        <meta itemprop="author" content="Universidad de Navarra"><meta itemprop="datePublished" content="2026-05-01">
-                                        <div itemprop="contentLocation" itemscope itemtype="http://schema.org/Place" style="display:none;"><meta itemprop="name" content="Campus Universidad de Navarra"></div>
+                                        <span>Fotografía de recurso #23. Detalle exterior de los volúmenes de hormigón del museo bajo cielo despejado.</span>
+                                        <meta  content="Universidad de Navarra"><meta  content="2026-05-01">
+                                        <div   style="display:none;"><meta  content="Campus Universidad de Navarra"></div>
                                     </figcaption>
                                 </figure>
                     
-                                <figure class="unav-mainImageWrapper unav-efectoCrossFade" itemprop="associatedMedia" itemscope itemtype="http://schema.org/ImageObject">
-                                    <img src="https://picsum.photos/id/1025/800/1200" class="unav-mainImage" itemprop="contentUrl" alt="Fotografía del Campus UNAV 24" loading="lazy">
+                                <figure class="unav-mainImageWrapper unav-efectoCrossFade" >
+                                    <img src="https://picsum.photos/id/1025/800/1200" class="unav-mainImage"  alt="Fotografía del Campus UNAV 24" loading="lazy">
                                     <figcaption class="unav-imageCaption unav-lh-normal" style="text-shadow: 1px 1px 3px rgba(0, 0, 0, 0.6);">
-                                        <span itemprop="caption">Fotografía de recurso #24. Atrio interior del edificio de Ciencias Sociales y Aula Magna.</span>
-                                        <meta itemprop="author" content="Universidad de Navarra"><meta itemprop="datePublished" content="2026-05-01">
-                                        <div itemprop="contentLocation" itemscope itemtype="http://schema.org/Place" style="display:none;"><meta itemprop="name" content="Campus Universidad de Navarra"></div>
+                                        <span>Fotografía de recurso #24. Atrio interior del edificio de Ciencias Sociales y Aula Magna.</span>
+                                        <meta  content="Universidad de Navarra"><meta  content="2026-05-01">
+                                        <div   style="display:none;"><meta  content="Campus Universidad de Navarra"></div>
                                     </figcaption>
                                 </figure>
                             </div>
                     
                             <div class="unav-gallerySidebar">
                                 <div class="unav-thumbGrid">
-                                    <button type="button" class="unav-thumbItem unav-isSelected" aria-label="Seleccionar miniatura 1" onclick="goToSlide(this.closest('.unav-mediaGallery'), 0)"><img src="https://picsum.photos/id/10/150/150" itemprop="thumbnailUrl" alt="" loading="lazy"></button>
-                                    <button type="button" class="unav-thumbItem" aria-label="Seleccionar miniatura 2" onclick="goToSlide(this.closest('.unav-mediaGallery'), 1)"><img src="https://picsum.photos/id/11/150/150" itemprop="thumbnailUrl" alt="" loading="lazy"></button>
-                                    <button type="button" class="unav-thumbItem" aria-label="Seleccionar miniatura 3" onclick="goToSlide(this.closest('.unav-mediaGallery'), 2)"><img src="https://picsum.photos/id/12/150/150" itemprop="thumbnailUrl" alt="" loading="lazy"></button>
-                                    <button type="button" class="unav-thumbItem" aria-label="Seleccionar miniatura 4" onclick="goToSlide(this.closest('.unav-mediaGallery'), 3)"><img src="https://picsum.photos/id/13/150/150" itemprop="thumbnailUrl" alt="" loading="lazy"></button>
-                                    <button type="button" class="unav-thumbItem" aria-label="Seleccionar miniatura 5" onclick="goToSlide(this.closest('.unav-mediaGallery'), 4)"><img src="https://picsum.photos/id/14/150/150" itemprop="thumbnailUrl" alt="" loading="lazy"></button>
-                                    <button type="button" class="unav-thumbItem" aria-label="Seleccionar miniatura 6" onclick="goToSlide(this.closest('.unav-mediaGallery'), 5)"><img src="https://picsum.photos/id/15/150/150" itemprop="thumbnailUrl" alt="" loading="lazy"></button>
-                                    <button type="button" class="unav-thumbItem" aria-label="Seleccionar miniatura 7" onclick="goToSlide(this.closest('.unav-mediaGallery'), 6)"><img src="https://picsum.photos/id/16/150/150" itemprop="thumbnailUrl" alt="" loading="lazy"></button>
-                                    <button type="button" class="unav-thumbItem" aria-label="Seleccionar miniatura 8" onclick="goToSlide(this.closest('.unav-mediaGallery'), 7)"><img src="https://picsum.photos/id/17/150/150" itemprop="thumbnailUrl" alt="" loading="lazy"></button>
-                                    <button type="button" class="unav-thumbItem" aria-label="Seleccionar miniatura 9" onclick="goToSlide(this.closest('.unav-mediaGallery'), 8)"><img src="https://picsum.photos/id/18/150/150" itemprop="thumbnailUrl" alt="" loading="lazy"></button>
-                                    <button type="button" class="unav-thumbItem" aria-label="Seleccionar miniatura 10" onclick="goToSlide(this.closest('.unav-mediaGallery'), 9)"><img src="https://picsum.photos/id/19/150/150" itemprop="thumbnailUrl" alt="" loading="lazy"></button>
-                                    <button type="button" class="unav-thumbItem" aria-label="Seleccionar miniatura 11" onclick="goToSlide(this.closest('.unav-mediaGallery'), 10)"><img src="https://picsum.photos/id/20/150/150" itemprop="thumbnailUrl" alt="" loading="lazy"></button>
-                                    <button type="button" class="unav-thumbItem" aria-label="Seleccionar miniatura 12" onclick="goToSlide(this.closest('.unav-mediaGallery'), 11)"><img src="https://picsum.photos/id/21/150/150" itemprop="thumbnailUrl" alt="" loading="lazy"></button>
+                                    <button type="button" class="unav-thumbItem unav-isSelected" aria-label="Seleccionar miniatura 1" onclick="goToSlide(this.closest('.unav-mediaGallery'), 0)"><img src="https://picsum.photos/id/10/150/150" alt="" loading="lazy"></button>
+                                    <button type="button" class="unav-thumbItem" aria-label="Seleccionar miniatura 2" onclick="goToSlide(this.closest('.unav-mediaGallery'), 1)"><img src="https://picsum.photos/id/11/150/150" alt="" loading="lazy"></button>
+                                    <button type="button" class="unav-thumbItem" aria-label="Seleccionar miniatura 3" onclick="goToSlide(this.closest('.unav-mediaGallery'), 2)"><img src="https://picsum.photos/id/12/150/150" alt="" loading="lazy"></button>
+                                    <button type="button" class="unav-thumbItem" aria-label="Seleccionar miniatura 4" onclick="goToSlide(this.closest('.unav-mediaGallery'), 3)"><img src="https://picsum.photos/id/13/150/150" alt="" loading="lazy"></button>
+                                    <button type="button" class="unav-thumbItem" aria-label="Seleccionar miniatura 5" onclick="goToSlide(this.closest('.unav-mediaGallery'), 4)"><img src="https://picsum.photos/id/14/150/150" alt="" loading="lazy"></button>
+                                    <button type="button" class="unav-thumbItem" aria-label="Seleccionar miniatura 6" onclick="goToSlide(this.closest('.unav-mediaGallery'), 5)"><img src="https://picsum.photos/id/15/150/150" alt="" loading="lazy"></button>
+                                    <button type="button" class="unav-thumbItem" aria-label="Seleccionar miniatura 7" onclick="goToSlide(this.closest('.unav-mediaGallery'), 6)"><img src="https://picsum.photos/id/16/150/150" alt="" loading="lazy"></button>
+                                    <button type="button" class="unav-thumbItem" aria-label="Seleccionar miniatura 8" onclick="goToSlide(this.closest('.unav-mediaGallery'), 7)"><img src="https://picsum.photos/id/17/150/150" alt="" loading="lazy"></button>
+                                    <button type="button" class="unav-thumbItem" aria-label="Seleccionar miniatura 9" onclick="goToSlide(this.closest('.unav-mediaGallery'), 8)"><img src="https://picsum.photos/id/18/150/150" alt="" loading="lazy"></button>
+                                    <button type="button" class="unav-thumbItem" aria-label="Seleccionar miniatura 10" onclick="goToSlide(this.closest('.unav-mediaGallery'), 9)"><img src="https://picsum.photos/id/19/150/150" alt="" loading="lazy"></button>
+                                    <button type="button" class="unav-thumbItem" aria-label="Seleccionar miniatura 11" onclick="goToSlide(this.closest('.unav-mediaGallery'), 10)"><img src="https://picsum.photos/id/20/150/150" alt="" loading="lazy"></button>
+                                    <button type="button" class="unav-thumbItem" aria-label="Seleccionar miniatura 12" onclick="goToSlide(this.closest('.unav-mediaGallery'), 11)"><img src="https://picsum.photos/id/21/150/150" alt="" loading="lazy"></button>
                                     
-                                    <button type="button" class="unav-thumbItem" aria-label="Seleccionar miniatura 13" onclick="goToSlide(this.closest('.unav-mediaGallery'), 12)"><img src="https://picsum.photos/id/1011/150/150" itemprop="thumbnailUrl" alt="" loading="lazy"></button>
-                                    <button type="button" class="unav-thumbItem" aria-label="Seleccionar miniatura 14" onclick="goToSlide(this.closest('.unav-mediaGallery'), 13)"><img src="https://picsum.photos/id/1012/150/150" itemprop="thumbnailUrl" alt="" loading="lazy"></button>
-                                    <button type="button" class="unav-thumbItem" aria-label="Seleccionar miniatura 15" onclick="goToSlide(this.closest('.unav-mediaGallery'), 14)"><img src="https://picsum.photos/id/1015/150/150" itemprop="thumbnailUrl" alt="" loading="lazy"></button>
-                                    <button type="button" class="unav-thumbItem" aria-label="Seleccionar miniatura 16" onclick="goToSlide(this.closest('.unav-mediaGallery'), 15)"><img src="https://picsum.photos/id/1016/150/150" itemprop="thumbnailUrl" alt="" loading="lazy"></button>
-                                    <button type="button" class="unav-thumbItem" aria-label="Seleccionar miniatura 17" onclick="goToSlide(this.closest('.unav-mediaGallery'), 16)"><img src="https://picsum.photos/id/1018/150/150" itemprop="thumbnailUrl" alt="" loading="lazy"></button>
-                                    <button type="button" class="unav-thumbItem" aria-label="Seleccionar miniatura 18" onclick="goToSlide(this.closest('.unav-mediaGallery'), 17)"><img src="https://picsum.photos/id/1019/150/150" itemprop="thumbnailUrl" alt="" loading="lazy"></button>
-                                    <button type="button" class="unav-thumbItem" aria-label="Seleccionar miniatura 19" onclick="goToSlide(this.closest('.unav-mediaGallery'), 18)"><img src="https://picsum.photos/id/1020/150/150" itemprop="thumbnailUrl" alt="" loading="lazy"></button>
-                                    <button type="button" class="unav-thumbItem" aria-label="Seleccionar miniatura 20" onclick="goToSlide(this.closest('.unav-mediaGallery'), 19)"><img src="https://picsum.photos/id/1021/150/150" itemprop="thumbnailUrl" alt="" loading="lazy"></button>
-                                    <button type="button" class="unav-thumbItem" aria-label="Seleccionar miniatura 21" onclick="goToSlide(this.closest('.unav-mediaGallery'), 20)"><img src="https://picsum.photos/id/1022/150/150" itemprop="thumbnailUrl" alt="" loading="lazy"></button>
-                                    <button type="button" class="unav-thumbItem" aria-label="Seleccionar miniatura 22" onclick="goToSlide(this.closest('.unav-mediaGallery'), 21)"><img src="https://picsum.photos/id/1023/150/150" itemprop="thumbnailUrl" alt="" loading="lazy"></button>
-                                    <button type="button" class="unav-thumbItem" aria-label="Seleccionar miniatura 23" onclick="goToSlide(this.closest('.unav-mediaGallery'), 22)"><img src="https://picsum.photos/id/1024/150/150" itemprop="thumbnailUrl" alt="" loading="lazy"></button>
-                                    <button type="button" class="unav-thumbItem" aria-label="Seleccionar miniatura 24" onclick="goToSlide(this.closest('.unav-mediaGallery'), 23)"><img src="https://picsum.photos/id/1025/150/150" itemprop="thumbnailUrl" alt="" loading="lazy"></button>
+                                    <button type="button" class="unav-thumbItem" aria-label="Seleccionar miniatura 13" onclick="goToSlide(this.closest('.unav-mediaGallery'), 12)"><img src="https://picsum.photos/id/1011/150/150" alt="" loading="lazy"></button>
+                                    <button type="button" class="unav-thumbItem" aria-label="Seleccionar miniatura 14" onclick="goToSlide(this.closest('.unav-mediaGallery'), 13)"><img src="https://picsum.photos/id/1012/150/150" alt="" loading="lazy"></button>
+                                    <button type="button" class="unav-thumbItem" aria-label="Seleccionar miniatura 15" onclick="goToSlide(this.closest('.unav-mediaGallery'), 14)"><img src="https://picsum.photos/id/1015/150/150" alt="" loading="lazy"></button>
+                                    <button type="button" class="unav-thumbItem" aria-label="Seleccionar miniatura 16" onclick="goToSlide(this.closest('.unav-mediaGallery'), 15)"><img src="https://picsum.photos/id/1016/150/150" alt="" loading="lazy"></button>
+                                    <button type="button" class="unav-thumbItem" aria-label="Seleccionar miniatura 17" onclick="goToSlide(this.closest('.unav-mediaGallery'), 16)"><img src="https://picsum.photos/id/1018/150/150" alt="" loading="lazy"></button>
+                                    <button type="button" class="unav-thumbItem" aria-label="Seleccionar miniatura 18" onclick="goToSlide(this.closest('.unav-mediaGallery'), 17)"><img src="https://picsum.photos/id/1019/150/150" alt="" loading="lazy"></button>
+                                    <button type="button" class="unav-thumbItem" aria-label="Seleccionar miniatura 19" onclick="goToSlide(this.closest('.unav-mediaGallery'), 18)"><img src="https://picsum.photos/id/1020/150/150" alt="" loading="lazy"></button>
+                                    <button type="button" class="unav-thumbItem" aria-label="Seleccionar miniatura 20" onclick="goToSlide(this.closest('.unav-mediaGallery'), 19)"><img src="https://picsum.photos/id/1021/150/150" alt="" loading="lazy"></button>
+                                    <button type="button" class="unav-thumbItem" aria-label="Seleccionar miniatura 21" onclick="goToSlide(this.closest('.unav-mediaGallery'), 20)"><img src="https://picsum.photos/id/1022/150/150" alt="" loading="lazy"></button>
+                                    <button type="button" class="unav-thumbItem" aria-label="Seleccionar miniatura 22" onclick="goToSlide(this.closest('.unav-mediaGallery'), 21)"><img src="https://picsum.photos/id/1023/150/150" alt="" loading="lazy"></button>
+                                    <button type="button" class="unav-thumbItem" aria-label="Seleccionar miniatura 23" onclick="goToSlide(this.closest('.unav-mediaGallery'), 22)"><img src="https://picsum.photos/id/1024/150/150" alt="" loading="lazy"></button>
+                                    <button type="button" class="unav-thumbItem" aria-label="Seleccionar miniatura 24" onclick="goToSlide(this.closest('.unav-mediaGallery'), 23)"><img src="https://picsum.photos/id/1025/150/150" alt="" loading="lazy"></button>
                                 </div>
                                 
                                 <div class="unav-galleryControlsBar bg-white border-top d-flex justify-content-center align-items-center gap-2">
@@ -953,7 +953,7 @@ function goToSlide(gallery, index) {
     const thumbs = gallery.querySelectorAll('.unav-thumbItem');
     const counter = gallery.querySelector('.unav-counter');
     
-    if (index < 0 || index >= slides.length) return;
+    if (index < 0 || index>= slides.length) return;
 
     const targetSlide = slides[index];
     const currentActive = gallery.querySelector('.unav-mainImageWrapper.unav-isActive');
@@ -992,7 +992,7 @@ function changeSlide(btn, delta) {
     const currentIdx = Array.from(thumbs).findIndex(t => t.classList.contains('unav-isSelected'));
     
     let nextIdx = currentIdx + delta;
-    if (nextIdx >= totalPhotos) nextIdx = 0;
+    if (nextIdx>= totalPhotos) nextIdx = 0;
     if (nextIdx < 0) nextIdx = totalPhotos - 1;
     
     goToSlide(gallery, nextIdx);
@@ -1043,7 +1043,7 @@ document.addEventListener('DOMContentLoaded', () => {
         // Inicializar los contadores de forma nativa al arrancar según el HTML presente
         const slides = gallery.querySelectorAll('.unav-mainImageWrapper');
         const counter = gallery.querySelector('.unav-counter');
-        if (counter && slides.length > 0) {
+        if (counter && slides.length> 0) {
             counter.innerText = `1 / ${slides.length}`;
         }
     });

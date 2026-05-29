@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="es" itemscope itemtype="https://schema.org/WebPage">
+<html lang="es">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -20,15 +20,15 @@
         h2[id], h3[id], section[id] { scroll-margin-top: 6rem; }
     </style>
 </head>
-<body class="unav-font-primary unav-weight-regular unav-text-100" itemscope itemtype="https://schema.org/WebPage">
+<body class="unav-font-primary unav-weight-regular unav-text-100">
 
     <nav style="background-color: #ffffff; border-bottom: 1px solid var(--unav-grey-200); padding: var(--unav-spacing-md) 0; position: sticky; top: 0; z-index: var(--unav-zIndex-sticky);">
         <div class="container-lg d-flex justify-content-between align-items-center position-relative">
             
-            <div itemscope itemtype="https://schema.org/WebPageElement">
-                <a itemprop="url" href="indice.html" class="unav-boton unav-botonSecundario">
+            <div>
+                <a  href="indice.html" class="unav-boton unav-botonSecundario">
                     <i class="bi bi-arrow-left unav-botonIcono" aria-hidden="true"></i>
-                    <span class="d-none d-md-inline" itemprop="name">Volver al Índice</span>
+                    <span class="d-none d-md-inline">Volver al Índice</span>
                 </a>
             </div>
     
@@ -39,11 +39,11 @@
         </div>
     </nav>
 
-    <main class="container-lg unav-doc-container" itemprop="mainContentOfPage">
+    <main class="container-lg unav-doc-container">
         
         <header style="text-align: center; margin-bottom: var(--unav-spacing-md); padding-bottom: var(--unav-spacing-md);">
-            <h1 class="unav-font-primary unav-weight-medium unav-text-200 text-dark mb-3 unav-lh-tight" itemprop="name">Grid de Eventos</h1>
-            <p class="unav-font-primary unav-weight-regular unav-text-100 text-muted m-0 unav-lh-normal" itemprop="description">
+            <h1 class="unav-font-primary unav-weight-medium unav-text-200 text-dark mb-3 unav-lh-tight">Grid de Eventos</h1>
+            <p class="unav-font-primary unav-weight-regular unav-text-100 text-muted m-0 unav-lh-normal">
                 Contenedores de agenda y actividades con respuesta visual avanzada e interlineado normativo.
             </p>
         </header>
@@ -67,9 +67,8 @@
                 </div>
                 
                 <div class="col-md-6 border-start-md ps-md-4">
-                    <h3 class="unav-font-primary unav-weight-bold unav-text-125 mb-3" style="color: var(--unav-black-800);">3. Accesibilidad (A11y) y Schemas (SEO)</h3>
+                    <h3 class="unav-font-primary unav-weight-bold unav-text-125 mb-3" style="color: var(--unav-black-800);">3. Accesibilidad (A11y)</h3>
                     <ul class="unav-font-primary unav-weight-regular unav-text-100" style="color: var(--unav-grey-700); padding-left: var(--unav-spacing-md);">
-                        <li style="margin-bottom: var(--unav-spacing-xs);"><strong>Marcado de Eventos (Schema.org):</strong> Es absolutamente vital envolver cada tarjeta en <code>itemscope itemtype="https://schema.org/Event"</code>. Se deben etiquetar propiedades críticas como <code>startDate</code>, <code>location</code>, <code>name</code> y <code>description</code> para su correcta indexación en Google Events.</li>
                         <li style="margin-bottom: var(--unav-spacing-xs);"><strong>Accesibilidad:</strong> Las fechas gráficas deben tener un equivalente leído para lectores de pantalla. Los botones o enlaces "Ver más" deben incluir atributos <code>aria-label</code> o textos ocultos (<code>.visually-hidden</code>) que especifiquen a qué evento apuntan, evitando enlaces genéricos.</li>
                     </ul>
         
@@ -88,22 +87,22 @@
             <div class="row g-3 unav-gridScrollMobile" id="unavGrid-4-col">
                 <!-- Evento 0 (ID: 1015) -->
                 <div class="col-12 col-md-6 col-lg-3">
-                    <a href="#" class="unav-eventLink unav-efectoEntradaOculto" itemscope itemtype="https://schema.org/Event">
+                    <a href="#" class="unav-eventLink unav-efectoEntradaOculto">
                         <div class="unav-eventCard unav-efectoElevacion">
                             <figure class="unav-eventImageWrapper unav-efectoZoomImagen">
-                                <img src="https://picsum.photos/id/1015/400/250" alt="Jornada de Puertas Abiertas para Grados" loading="lazy" itemprop="image">
+                                <img src="https://picsum.photos/id/1015/400/250" alt="Jornada de Puertas Abiertas para Grados" loading="lazy">
                             </figure>
                             <div class="unav-eventBody">
                                 <div class="unav-eventDateGroup">
-                                    <p class="unav-eventDate unav-lh-normal" itemprop="startDate">23 Abr. 2026</p>
+                                    <p class="unav-eventDate unav-lh-normal">23 Abr. 2026</p>
                                     <span class="unav-tag unav-tagRojo">HOY</span>
                                 </div>
                                 <p class="unav-eventTime unav-lh-normal">10:00h.</p>
-                                <h3 class="unav-eventTitle unav-lh-snug" itemprop="name">Jornada de Puertas Abiertas para Grados</h3>
+                                <h3 class="unav-eventTitle unav-lh-snug">Jornada de Puertas Abiertas para Grados</h3>
                             </div>
-                            <div class="unav-eventLocation unav-lh-relaxed" itemprop="location" itemscope itemtype="https://schema.org/Place">
+                            <div class="unav-eventLocation unav-lh-relaxed" >
                                 <i class="bi bi-geo-alt-fill" aria-hidden="true"></i>
-                                <span itemprop="name">Aula 30 del Edificio Central</span>
+                                <span>Aula 30 del Edificio Central</span>
                             </div>
                         </div>
                     </a>
@@ -111,22 +110,22 @@
 
                 <!-- Evento 1 (ID: 1021) -->
                 <div class="col-12 col-md-6 col-lg-3">
-                    <a href="#" class="unav-eventLink unav-efectoEntradaOculto" itemscope itemtype="https://schema.org/Event">
+                    <a href="#" class="unav-eventLink unav-efectoEntradaOculto">
                         <div class="unav-eventCard unav-efectoElevacion">
                             <figure class="unav-eventImageWrapper unav-efectoZoomImagen">
-                                <img src="https://picsum.photos/id/1021/400/250" alt="Encuentro Alumni Internacional 2026" loading="lazy" itemprop="image">
+                                <img src="https://picsum.photos/id/1021/400/250" alt="Encuentro Alumni Internacional 2026" loading="lazy">
                             </figure>
                             <div class="unav-eventBody">
                                 <div class="unav-eventDateGroup">
-                                    <p class="unav-eventDate unav-lh-normal" itemprop="startDate">23 Abr. 2026</p>
+                                    <p class="unav-eventDate unav-lh-normal">23 Abr. 2026</p>
                                     <span class="unav-tag unav-tagRojo">HOY</span>
                                 </div>
                                 <p class="unav-eventTime unav-lh-normal">11:15h.</p>
-                                <h3 class="unav-eventTitle unav-lh-snug" itemprop="name">Encuentro Alumni Internacional 2026</h3>
+                                <h3 class="unav-eventTitle unav-lh-snug">Encuentro Alumni Internacional 2026</h3>
                             </div>
-                            <div class="unav-eventLocation unav-lh-relaxed" itemprop="location" itemscope itemtype="https://schema.org/Place">
+                            <div class="unav-eventLocation unav-lh-relaxed" >
                                 <i class="bi bi-geo-alt-fill" aria-hidden="true"></i>
-                                <span itemprop="name">Explanada Central</span>
+                                <span>Explanada Central</span>
                             </div>
                         </div>
                     </a>
@@ -134,21 +133,21 @@
 
                 <!-- Evento 2 (ID: 1022) -->
                 <div class="col-12 col-md-6 col-lg-3">
-                    <a href="#" class="unav-eventLink unav-efectoEntradaOculto" itemscope itemtype="https://schema.org/Event">
+                    <a href="#" class="unav-eventLink unav-efectoEntradaOculto">
                         <div class="unav-eventCard unav-efectoElevacion">
                             <figure class="unav-eventImageWrapper unav-efectoZoomImagen">
-                                <img src="https://picsum.photos/id/1022/400/250" alt="Congreso de Comunicación y Empresa Digital" loading="lazy" itemprop="image">
+                                <img src="https://picsum.photos/id/1022/400/250" alt="Congreso de Comunicación y Empresa Digital" loading="lazy">
                             </figure>
                             <div class="unav-eventBody">
                                 <div class="unav-eventDateGroup">
-                                    <p class="unav-eventDate unav-lh-normal" itemprop="startDate">24 Abr. 2026</p>
+                                    <p class="unav-eventDate unav-lh-normal">24 Abr. 2026</p>
                                 </div>
                                 <p class="unav-eventTime unav-lh-normal">08:30h.</p>
-                                <h3 class="unav-eventTitle unav-lh-snug" itemprop="name">Congreso de Comunicación y Empresa Digital</h3>
+                                <h3 class="unav-eventTitle unav-lh-snug">Congreso de Comunicación y Empresa Digital</h3>
                             </div>
-                            <div class="unav-eventLocation unav-lh-relaxed" itemprop="location" itemscope itemtype="https://schema.org/Place">
+                            <div class="unav-eventLocation unav-lh-relaxed" >
                                 <i class="bi bi-geo-alt-fill" aria-hidden="true"></i>
-                                <span itemprop="name">Facultad de Comunicación</span>
+                                <span>Facultad de Comunicación</span>
                             </div>
                         </div>
                     </a>
@@ -156,21 +155,21 @@
 
                 <!-- Evento 3 (ID: 1016) -->
                 <div class="col-12 col-md-6 col-lg-3">
-                    <a href="#" class="unav-eventLink unav-efectoEntradaOculto" itemscope itemtype="https://schema.org/Event">
+                    <a href="#" class="unav-eventLink unav-efectoEntradaOculto">
                         <div class="unav-eventCard unav-efectoElevacion">
                             <figure class="unav-eventImageWrapper unav-efectoZoomImagen">
-                                <img src="https://picsum.photos/id/1016/400/250" alt="Seminario Internacional de Bioética Aplicada" loading="lazy" itemprop="image">
+                                <img src="https://picsum.photos/id/1016/400/250" alt="Seminario Internacional de Bioética Aplicada" loading="lazy">
                             </figure>
                             <div class="unav-eventBody">
                                 <div class="unav-eventDateGroup">
-                                    <p class="unav-eventDate unav-lh-normal" itemprop="startDate">24 Abr. 2026</p>
+                                    <p class="unav-eventDate unav-lh-normal">24 Abr. 2026</p>
                                 </div>
                                 <p class="unav-eventTime unav-lh-normal">16:30h.</p>
-                                <h3 class="unav-eventTitle unav-lh-snug" itemprop="name">Seminario Internacional de Bioética Aplicada</h3>
+                                <h3 class="unav-eventTitle unav-lh-snug">Seminario Internacional de Bioética Aplicada</h3>
                             </div>
-                            <div class="unav-eventLocation unav-lh-relaxed" itemprop="location" itemscope itemtype="https://schema.org/Place">
+                            <div class="unav-eventLocation unav-lh-relaxed" >
                                 <i class="bi bi-geo-alt-fill" aria-hidden="true"></i>
-                                <span itemprop="name">Aula Magna</span>
+                                <span>Aula Magna</span>
                             </div>
                         </div>
                     </a>
@@ -184,21 +183,21 @@
             <div class="row g-3 unav-gridScrollMobile" id="unavGrid-3-col">
                 <!-- Evento 4 (ID: 1018) -->
                 <div class="col-12 col-md-4">
-                    <a href="#" class="unav-eventLink unav-efectoEntradaOculto" itemscope itemtype="https://schema.org/Event">
+                    <a href="#" class="unav-eventLink unav-efectoEntradaOculto">
                         <div class="unav-eventCard unav-efectoElevacion">
                             <figure class="unav-eventImageWrapper unav-efectoZoomImagen">
-                                <img src="https://picsum.photos/id/1018/400/250" alt="Defensa de Tesis Doctoral: Avances Oncología" loading="lazy" itemprop="image">
+                                <img src="https://picsum.photos/id/1018/400/250" alt="Defensa de Tesis Doctoral: Avances Oncología" loading="lazy">
                             </figure>
                             <div class="unav-eventBody">
                                 <div class="unav-eventDateGroup">
-                                    <p class="unav-eventDate unav-lh-normal" itemprop="startDate">15 May. 2026</p>
+                                    <p class="unav-eventDate unav-lh-normal">15 May. 2026</p>
                                 </div>
                                 <p class="unav-eventTime unav-lh-normal">09:00h.</p>
-                                <h3 class="unav-eventTitle unav-lh-snug" itemprop="name">Defensa de Tesis Doctoral: Avances Oncología</h3>
+                                <h3 class="unav-eventTitle unav-lh-snug">Defensa de Tesis Doctoral: Avances Oncología</h3>
                             </div>
-                            <div class="unav-eventLocation unav-lh-relaxed" itemprop="location" itemscope itemtype="https://schema.org/Place">
+                            <div class="unav-eventLocation unav-lh-relaxed" >
                                 <i class="bi bi-geo-alt-fill" aria-hidden="true"></i>
-                                <span itemprop="name">Edificio CIMA</span>
+                                <span>Edificio CIMA</span>
                             </div>
                         </div>
                     </a>
@@ -206,21 +205,21 @@
 
                 <!-- Evento 5 (ID: 1019) -->
                 <div class="col-12 col-md-4">
-                    <a href="#" class="unav-eventLink unav-efectoEntradaOculto" itemscope itemtype="https://schema.org/Event">
+                    <a href="#" class="unav-eventLink unav-efectoEntradaOculto">
                         <div class="unav-eventCard unav-efectoElevacion">
                             <figure class="unav-eventImageWrapper unav-efectoZoomImagen">
-                                <img src="https://picsum.photos/id/1019/400/250" alt="Mesa Redonda: Sostenibilidad en el Campus" loading="lazy" itemprop="image">
+                                <img src="https://picsum.photos/id/1019/400/250" alt="Mesa Redonda: Sostenibilidad en el Campus" loading="lazy">
                             </figure>
                             <div class="unav-eventBody">
                                 <div class="unav-eventDateGroup">
-                                    <p class="unav-eventDate unav-lh-normal" itemprop="startDate">25 May. 2026</p>
+                                    <p class="unav-eventDate unav-lh-normal">25 May. 2026</p>
                                 </div>
                                 <p class="unav-eventTime unav-lh-normal">12:00h.</p>
-                                <h3 class="unav-eventTitle unav-lh-snug" itemprop="name">Mesa Redonda: Sostenibilidad en el Campus</h3>
+                                <h3 class="unav-eventTitle unav-lh-snug">Mesa Redonda: Sostenibilidad en el Campus</h3>
                             </div>
-                            <div class="unav-eventLocation unav-lh-relaxed" itemprop="location" itemscope itemtype="https://schema.org/Place">
+                            <div class="unav-eventLocation unav-lh-relaxed" >
                                 <i class="bi bi-geo-alt-fill" aria-hidden="true"></i>
-                                <span itemprop="name">Biblioteca de Ciencias</span>
+                                <span>Biblioteca de Ciencias</span>
                             </div>
                         </div>
                     </a>
@@ -228,21 +227,21 @@
 
                 <!-- Evento 2 (ID: 1022) -->
                 <div class="col-12 col-md-4">
-                    <a href="#" class="unav-eventLink unav-efectoEntradaOculto" itemscope itemtype="https://schema.org/Event">
+                    <a href="#" class="unav-eventLink unav-efectoEntradaOculto">
                         <div class="unav-eventCard unav-efectoElevacion">
                             <figure class="unav-eventImageWrapper unav-efectoZoomImagen">
-                                <img src="https://picsum.photos/id/1022/400/250" alt="Congreso de Comunicación y Empresa Digital" loading="lazy" itemprop="image">
+                                <img src="https://picsum.photos/id/1022/400/250" alt="Congreso de Comunicación y Empresa Digital" loading="lazy">
                             </figure>
                             <div class="unav-eventBody">
                                 <div class="unav-eventDateGroup">
-                                    <p class="unav-eventDate unav-lh-normal" itemprop="startDate">24 Abr. 2026</p>
+                                    <p class="unav-eventDate unav-lh-normal">24 Abr. 2026</p>
                                 </div>
                                 <p class="unav-eventTime unav-lh-normal">08:30h.</p>
-                                <h3 class="unav-eventTitle unav-lh-snug" itemprop="name">Congreso de Comunicación y Empresa Digital</h3>
+                                <h3 class="unav-eventTitle unav-lh-snug">Congreso de Comunicación y Empresa Digital</h3>
                             </div>
-                            <div class="unav-eventLocation unav-lh-relaxed" itemprop="location" itemscope itemtype="https://schema.org/Place">
+                            <div class="unav-eventLocation unav-lh-relaxed" >
                                 <i class="bi bi-geo-alt-fill" aria-hidden="true"></i>
-                                <span itemprop="name">Facultad de Comunicación</span>
+                                <span>Facultad de Comunicación</span>
                             </div>
                         </div>
                     </a>
@@ -256,22 +255,22 @@
             <div class="row g-3" id="unavGrid-2-col">
                 <!-- Evento 1 (ID: 1021) -->
                 <div class="col-12 col-md-6">
-                    <a href="#" class="unav-eventLink unav-efectoEntradaOculto" itemscope itemtype="https://schema.org/Event">
+                    <a href="#" class="unav-eventLink unav-efectoEntradaOculto">
                         <div class="unav-eventCard unav-efectoElevacion">
                             <figure class="unav-eventImageWrapper unav-efectoZoomImagen">
-                                <img src="https://picsum.photos/id/1021/400/250" alt="Encuentro Alumni Internacional 2026" loading="lazy" itemprop="image">
+                                <img src="https://picsum.photos/id/1021/400/250" alt="Encuentro Alumni Internacional 2026" loading="lazy">
                             </figure>
                             <div class="unav-eventBody">
                                 <div class="unav-eventDateGroup">
-                                    <p class="unav-eventDate unav-lh-normal" itemprop="startDate">23 Abr. 2026</p>
+                                    <p class="unav-eventDate unav-lh-normal">23 Abr. 2026</p>
                                     <span class="unav-tag unav-tagRojo">HOY</span>
                                 </div>
                                 <p class="unav-eventTime unav-lh-normal">11:15h.</p>
-                                <h3 class="unav-eventTitle unav-lh-snug" itemprop="name">Encuentro Alumni Internacional 2026</h3>
+                                <h3 class="unav-eventTitle unav-lh-snug">Encuentro Alumni Internacional 2026</h3>
                             </div>
-                            <div class="unav-eventLocation unav-lh-relaxed" itemprop="location" itemscope itemtype="https://schema.org/Place">
+                            <div class="unav-eventLocation unav-lh-relaxed" >
                                 <i class="bi bi-geo-alt-fill" aria-hidden="true"></i>
-                                <span itemprop="name">Explanada Central</span>
+                                <span>Explanada Central</span>
                             </div>
                         </div>
                     </a>
@@ -279,21 +278,21 @@
 
                 <!-- Evento 3 (ID: 1016) -->
                 <div class="col-12 col-md-6">
-                    <a href="#" class="unav-eventLink unav-efectoEntradaOculto" itemscope itemtype="https://schema.org/Event">
+                    <a href="#" class="unav-eventLink unav-efectoEntradaOculto">
                         <div class="unav-eventCard unav-efectoElevacion">
                             <figure class="unav-eventImageWrapper unav-efectoZoomImagen">
-                                <img src="https://picsum.photos/id/1016/400/250" alt="Seminario Internacional de Bioética Aplicada" loading="lazy" itemprop="image">
+                                <img src="https://picsum.photos/id/1016/400/250" alt="Seminario Internacional de Bioética Aplicada" loading="lazy">
                             </figure>
                             <div class="unav-eventBody">
                                 <div class="unav-eventDateGroup">
-                                    <p class="unav-eventDate unav-lh-normal" itemprop="startDate">24 Abr. 2026</p>
+                                    <p class="unav-eventDate unav-lh-normal">24 Abr. 2026</p>
                                 </div>
                                 <p class="unav-eventTime unav-lh-normal">16:30h.</p>
-                                <h3 class="unav-eventTitle unav-lh-snug" itemprop="name">Seminario Internacional de Bioética Aplicada</h3>
+                                <h3 class="unav-eventTitle unav-lh-snug">Seminario Internacional de Bioética Aplicada</h3>
                             </div>
-                            <div class="unav-eventLocation unav-lh-relaxed" itemprop="location" itemscope itemtype="https://schema.org/Place">
+                            <div class="unav-eventLocation unav-lh-relaxed" >
                                 <i class="bi bi-geo-alt-fill" aria-hidden="true"></i>
-                                <span itemprop="name">Aula Magna</span>
+                                <span>Aula Magna</span>
                             </div>
                         </div>
                     </a>
@@ -309,22 +308,22 @@
                     <div class="row g-3" id="unavGrid-nested-2-col">
                         <!-- Evento 0 (ID: 1015) -->
                         <div class="col-12 col-md-6">
-                            <a href="#" class="unav-eventLink unav-efectoEntradaOculto" itemscope itemtype="https://schema.org/Event">
+                            <a href="#" class="unav-eventLink unav-efectoEntradaOculto">
                                 <div class="unav-eventCard unav-efectoElevacion">
                                     <figure class="unav-eventImageWrapper unav-efectoZoomImagen">
-                                        <img src="https://picsum.photos/id/1015/400/250" alt="Jornada de Puertas Abiertas para Grados" loading="lazy" itemprop="image">
+                                        <img src="https://picsum.photos/id/1015/400/250" alt="Jornada de Puertas Abiertas para Grados" loading="lazy">
                                     </figure>
                                     <div class="unav-eventBody">
                                         <div class="unav-eventDateGroup">
-                                            <p class="unav-eventDate unav-lh-normal" itemprop="startDate">23 Abr. 2026</p>
+                                            <p class="unav-eventDate unav-lh-normal">23 Abr. 2026</p>
                                             <span class="unav-tag unav-tagRojo">HOY</span>
                                         </div>
                                         <p class="unav-eventTime unav-lh-normal">10:00h.</p>
-                                        <h3 class="unav-eventTitle unav-lh-snug" itemprop="name">Jornada de Puertas Abiertas para Grados</h3>
+                                        <h3 class="unav-eventTitle unav-lh-snug">Jornada de Puertas Abiertas para Grados</h3>
                                     </div>
-                                    <div class="unav-eventLocation unav-lh-relaxed" itemprop="location" itemscope itemtype="https://schema.org/Place">
+                                    <div class="unav-eventLocation unav-lh-relaxed" >
                                         <i class="bi bi-geo-alt-fill" aria-hidden="true"></i>
-                                        <span itemprop="name">Aula 30 del Edificio Central</span>
+                                        <span>Aula 30 del Edificio Central</span>
                                     </div>
                                 </div>
                             </a>
@@ -332,21 +331,21 @@
 
                         <!-- Evento 5 (ID: 1019) -->
                         <div class="col-12 col-md-6">
-                            <a href="#" class="unav-eventLink unav-efectoEntradaOculto" itemscope itemtype="https://schema.org/Event">
+                            <a href="#" class="unav-eventLink unav-efectoEntradaOculto">
                                 <div class="unav-eventCard unav-efectoElevacion">
                                     <figure class="unav-eventImageWrapper unav-efectoZoomImagen">
-                                        <img src="https://picsum.photos/id/1019/400/250" alt="Mesa Redonda: Sostenibilidad en el Campus" loading="lazy" itemprop="image">
+                                        <img src="https://picsum.photos/id/1019/400/250" alt="Mesa Redonda: Sostenibilidad en el Campus" loading="lazy">
                                     </figure>
                                     <div class="unav-eventBody">
                                         <div class="unav-eventDateGroup">
-                                            <p class="unav-eventDate unav-lh-normal" itemprop="startDate">25 May. 2026</p>
+                                            <p class="unav-eventDate unav-lh-normal">25 May. 2026</p>
                                         </div>
                                         <p class="unav-eventTime unav-lh-normal">12:00h.</p>
-                                        <h3 class="unav-eventTitle unav-lh-snug" itemprop="name">Mesa Redonda: Sostenibilidad en el Campus</h3>
+                                        <h3 class="unav-eventTitle unav-lh-snug">Mesa Redonda: Sostenibilidad en el Campus</h3>
                                     </div>
-                                    <div class="unav-eventLocation unav-lh-relaxed" itemprop="location" itemscope itemtype="https://schema.org/Place">
+                                    <div class="unav-eventLocation unav-lh-relaxed" >
                                         <i class="bi bi-geo-alt-fill" aria-hidden="true"></i>
-                                        <span itemprop="name">Biblioteca de Ciencias</span>
+                                        <span>Biblioteca de Ciencias</span>
                                     </div>
                                 </div>
                             </a>

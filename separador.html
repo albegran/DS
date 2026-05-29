@@ -20,15 +20,15 @@
         h2[id], h3[id], section[id] { scroll-margin-top: 6rem; }
     </style>
 </head>
-<body class="unav-font-primary unav-weight-regular unav-text-100" itemscope itemtype="https://schema.org/WebPage">
+<body class="unav-font-primary unav-weight-regular unav-text-100">
 
     <nav style="background-color: #ffffff; border-bottom: 1px solid var(--unav-grey-200); padding: var(--unav-spacing-md) 0; position: sticky; top: 0; z-index: var(--unav-zIndex-sticky);">
         <div class="container-lg d-flex justify-content-between align-items-center position-relative">
             
-            <div itemscope itemtype="https://schema.org/WebPageElement">
-                <a itemprop="url" href="indice.html" class="unav-boton unav-botonSecundario">
+            <div>
+                <a  href="indice.html" class="unav-boton unav-botonSecundario">
                     <i class="bi bi-arrow-left unav-botonIcono" aria-hidden="true"></i>
-                    <span class="d-none d-md-inline" itemprop="name">Volver al Índice</span>
+                    <span class="d-none d-md-inline">Volver al Índice</span>
                 </a>
             </div>
     
@@ -39,11 +39,11 @@
         </div>
     </nav>
 
-    <main class="container-lg unav-doc-container" itemprop="mainContentOfPage">
+    <main class="container-lg unav-doc-container">
         
         <header style="text-align: center; margin-bottom: var(--unav-spacing-md); padding-bottom: var(--unav-spacing-md);">
-            <h1 class="unav-font-primary unav-weight-medium unav-text-200 m-0" style="color: var(--unav-black-900); margin-bottom: var(--unav-spacing-sm) !important;" itemprop="name">Separadores (Dividers)</h1>
-            <p class="unav-font-primary unav-weight-regular unav-text-100 m-0" style="color: var(--unav-grey-600);" itemprop="description">
+            <h1 class="unav-font-primary unav-weight-medium unav-text-200 m-0" style="color: var(--unav-black-900); margin-bottom: var(--unav-spacing-sm) !important;">Separadores (Dividers)</h1>
+            <p class="unav-font-primary unav-weight-regular unav-text-100 m-0" style="color: var(--unav-grey-600);">
                 Abstracciones estructurales OOCSS para delimitar secciones modulares mediante líneas, textos o iconografía corporativa.
             </p>
         </header>
@@ -73,7 +73,7 @@
                 </div>
                 
                 <div class="col-md-6">
-                    <h3 class="unav-font-primary unav-weight-bold unav-text-125" style="color: var(--unav-black-800); margin-bottom: var(--unav-spacing-xs);">3.- Accesibilidad (A11y) y Schema.org</h3>
+                    <h3 class="unav-font-primary unav-weight-bold unav-text-125" style="color: var(--unav-black-800); margin-bottom: var(--unav-spacing-xs);">3.- Accesibilidad (A11y)</h3>
                     <p class="unav-font-primary unav-weight-regular unav-text-100" style="color: var(--unav-grey-700); margin-bottom: var(--unav-spacing-sm);">
                         <strong>Lógica Semántica WCAG:</strong> Dado que el componente cumple una función puramente visual de segmentación y no un salto de contenido semántico de lectura, se debe implementar de forma nativa el atributo de accesibilidad <code>role="separator"</code>.
                     </p>
@@ -101,8 +101,8 @@
                 <h3 class="unav-font-primary unav-weight-bold unav-text-1125" style="color: var(--unav-grey-600); margin-bottom: var(--unav-spacing-sm);">1. Línea Simple Ancho Completo (Default)</h3>
                 <p class="unav-font-primary unav-weight-regular unav-text-100" style="color: var(--unav-grey-500); margin-bottom: var(--unav-spacing-md);">Hereda por defecto el color gris-300, 1px de grosor y márgenes verticales XL (32px).</p>
                 
-                <div class="unav-separador" role="separator" itemscope itemtype="https://schema.org/WebPageElement">
-                    <meta itemprop="name" content="Separador Línea Simple Completa">
+                <div class="unav-separador" role="separator">
+                    <meta  content="Separador Línea Simple Completa">
                     <div class="unav-separadorLine"></div>
                 </div>
             </div>
@@ -111,8 +111,8 @@
                 <h3 class="unav-font-primary unav-weight-bold unav-text-1125" style="color: var(--unav-grey-600); margin-bottom: var(--unav-spacing-sm);">2. Con Texto Central</h3>
                 <p class="unav-font-primary unav-weight-regular unav-text-100" style="color: var(--unav-grey-500); margin-bottom: var(--unav-spacing-md);">Las líneas gemelas laterales crecen simétricamente adaptándose a la longitud del claim central.</p>
                 
-                <div class="unav-separador" role="separator" itemscope itemtype="https://schema.org/WebPageElement">
-                    <meta itemprop="name" content="Separador con Texto Central">
+                <div class="unav-separador" role="separator">
+                    <meta  content="Separador con Texto Central">
                     <div class="unav-separadorLine"></div>
                     <div class="unav-separadorContent">
                         <p class="unav-separadorText">Fin de la sección académica</p>
@@ -125,8 +125,8 @@
                 <h3 class="unav-font-primary unav-weight-bold unav-text-1125" style="color: var(--unav-grey-600); margin-bottom: var(--unav-spacing-sm);">3. Con Icono Central (Sobrescribiendo Color Token)</h3>
                 <p class="unav-font-primary unav-weight-regular unav-text-100" style="color: var(--unav-grey-500); margin-bottom: var(--unav-spacing-md);">Inyección local inline del token Rojo 500 corporativo.</p>
                 
-                <div class="unav-separador" role="separator" style="--unav-separadorColor: var(--unav-rojo-500);" itemscope itemtype="https://schema.org/WebPageElement">
-                    <meta itemprop="name" content="Separador con Icono Rojo">
+                <div class="unav-separador" role="separator" style="--unav-separadorColor: var(--unav-rojo-500);">
+                    <meta  content="Separador con Icono Rojo">
                     <div class="unav-separadorLine"></div>
                     <div class="unav-separadorContent">
                         <i class="bi bi-star-fill unav-separadorIcon" aria-hidden="true"></i>
@@ -139,8 +139,8 @@
                 <h3 class="unav-font-primary unav-weight-bold unav-text-1125" style="color: var(--unav-grey-600); margin-bottom: var(--unav-spacing-sm);">4. Estilo Discontinuo Avanzado (Dotted / Grueso)</h3>
                 <p class="unav-font-primary unav-weight-regular unav-text-100" style="color: var(--unav-grey-500); margin-bottom: var(--unav-spacing-md);">Modificación local del grosor a 3px y tipo de trazado dotted consumiendo el token Moss 600.</p>
                 
-                <div class="unav-separador" role="separator" style="--unav-separadorColor: var(--unav-moss-600); --unav-separadorThickness: 3px; --unav-separadorStyle: dotted;" itemscope itemtype="https://schema.org/WebPageElement">
-                    <meta itemprop="name" content="Separador Discontinuo Moss">
+                <div class="unav-separador" role="separator" style="--unav-separadorColor: var(--unav-moss-600); --unav-separadorThickness: 3px; --unav-separadorStyle: dotted;">
+                    <meta  content="Separador Discontinuo Moss">
                     <div class="unav-separadorLine"></div>
                     <div class="unav-separadorContent">
                         <span class="unav-separadorText">Documentación Técnica</span>
@@ -153,8 +153,8 @@
                 <h3 class="unav-font-primary unav-weight-bold unav-text-1125" style="color: var(--unav-grey-600); margin-bottom: var(--unav-spacing-sm);">5. Reducción de Escala y Alineaciones del Layout</h3>
                 <p class="unav-font-primary unav-weight-regular unav-text-100" style="color: var(--unav-grey-500); margin-bottom: var(--unav-spacing-md);">Separador acortado al 60% de su contenedor, centrado y con una gran apertura vertical mediante el token de espacio 3XL (64px).</p>
                 
-                <div class="unav-separador unav-separadorAlignCenter" role="separator" style="--unav-separadorColor: var(--unav-black-900); --unav-separadorThickness: 1px; --unav-separadorStyle: solid; --unav-separadorWidth: 60%; --unav-separadorMarginY: var(--unav-spacing-3xl);" itemscope itemtype="https://schema.org/WebPageElement">
-                    <meta itemprop="name" content="Separador Línea Simple 60% Negro">
+                <div class="unav-separador unav-separadorAlignCenter" role="separator" style="--unav-separadorColor: var(--unav-black-900); --unav-separadorThickness: 1px; --unav-separadorStyle: solid; --unav-separadorWidth: 60%; --unav-separadorMarginY: var(--unav-spacing-3xl);">
+                    <meta  content="Separador Línea Simple 60% Negro">
                     <div class="unav-separadorLine"></div>
                 </div>
             </div>
@@ -163,7 +163,7 @@
                 <h3 class="unav-font-primary unav-weight-bold unav-text-1125" style="color: var(--unav-grey-600); margin-bottom: var(--unav-spacing-sm);">6. Separador con Texto e Icono Alineado a la Izquierda</h3>
                 <p class="unav-font-primary unav-weight-regular unav-text-100" style="color: var(--unav-grey-500); margin-bottom: var(--unav-spacing-md);">Separador con texto más icono con alineación izquierda.</p>
                 
-                <div class="unav-separador unav-separadorAlignLeft" role="separator" style="--unav-separadorColor: var(--unav-rojo-500); --unav-separadorMarginY: var(--unav-spacing-xl);" itemscope itemtype="https://schema.org/WebPageElement">
+                <div class="unav-separador unav-separadorAlignLeft" role="separator" style="--unav-separadorColor: var(--unav-rojo-500); --unav-separadorMarginY: var(--unav-spacing-xl);">
             
                     <div class="unav-separadorContent" style="padding-left: 0; padding-right: var(--unav-spacing-md);">
                         <i class="bi bi-bookmark-fill unav-separadorIcon" style="margin-right: var(--unav-spacing-sm);" aria-hidden="true"></i>

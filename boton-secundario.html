@@ -20,15 +20,15 @@
         h2[id], h3[id], section[id] { scroll-margin-top: 6rem; }
     </style>
 </head>
-<body class="unav-font-primary unav-weight-regular unav-text-100" itemscope itemtype="https://schema.org/WebPage">
+<body class="unav-font-primary unav-weight-regular unav-text-100">
 
     <nav style="background-color: #ffffff; border-bottom: 1px solid var(--unav-grey-200); padding: var(--unav-spacing-md) 0; position: sticky; top: 0; z-index: var(--unav-zIndex-sticky);">
         <div class="container-lg d-flex justify-content-between align-items-center position-relative">
             
-            <div itemscope itemtype="https://schema.org/WebPageElement">
-                <a itemprop="url" href="indice.html" class="unav-boton unav-botonSecundario">
+            <div>
+                <a  href="indice.html" class="unav-boton unav-botonSecundario">
                     <i class="bi bi-arrow-left unav-botonIcono" aria-hidden="true"></i>
-                    <span class="d-none d-md-inline" itemprop="name">Volver al Índice</span>
+                    <span class="d-none d-md-inline">Volver al Índice</span>
                 </a>
             </div>
     
@@ -39,11 +39,11 @@
         </div>
     </nav>
 
-    <main class="container-lg unav-doc-container" itemprop="mainContentOfPage">
+    <main class="container-lg unav-doc-container">
         
         <header style="text-align: center; margin-bottom: var(--unav-spacing-md); padding-bottom: var(--unav-spacing-md);">
-            <h1 class="unav-font-primary unav-weight-medium unav-text-200 m-0" style="color: var(--unav-black-900); margin-bottom: var(--unav-spacing-sm) !important;" itemprop="name">Botón Secundario</h1>
-            <p class="unav-font-primary unav-weight-regular unav-text-100 m-0" style="color: var(--unav-grey-600);" itemprop="description">
+            <h1 class="unav-font-primary unav-weight-medium unav-text-200 m-0" style="color: var(--unav-black-900); margin-bottom: var(--unav-spacing-sm) !important;">Botón Secundario</h1>
+            <p class="unav-font-primary unav-weight-regular unav-text-100 m-0" style="color: var(--unav-grey-600);">
                 Componente versátil para acciones complementarias y controles de interfaz.
             </p>
         </header>
@@ -74,12 +74,12 @@
                 </div>
                 
                 <div class="col-md-6">
-                    <h3 class="unav-font-primary unav-weight-bold unav-text-125" style="color: var(--unav-black-800); margin-bottom: var(--unav-spacing-xs);">3.- Accesibilidad (A11y) y Schema</h3>
+                    <h3 class="unav-font-primary unav-weight-bold unav-text-125" style="color: var(--unav-black-800); margin-bottom: var(--unav-spacing-xs);">3.- Accesibilidad (A11y)</h3>
                     <p class="unav-font-primary unav-weight-regular unav-text-100" style="color: var(--unav-grey-700); margin-bottom: var(--unav-spacing-sm);">
                         <strong>Soporte para Lectores de Pantalla:</strong> Todo botón que use la variante <code>.unav-botonIconOnly</code> carece de texto visible. Es estricto añadir <code>aria-label="Acción"</code> al botón y <code>aria-hidden="true"</code> al icono.
                     </p>
                     <p class="unav-font-primary unav-weight-regular unav-text-100" style="color: var(--unav-grey-700); margin: 0;">
-                        <strong>Microdatos SEO:</strong> Los enlaces de navegación secundaria deben declararse como <code>WebPageElement</code> y sus textos con <code>itemprop="name"</code>.
+                        
                     </p>
                 </div>
                 
@@ -99,26 +99,26 @@
         <section class="unav-card unav-cardSolid" style="margin-bottom: var(--unav-spacing-3xl);" id="colores">
             <h2 class="unav-font-primary unav-weight-bold unav-text-200" style="color: var(--unav-black-900); border-bottom: 1px solid var(--unav-grey-300); padding-bottom: var(--unav-spacing-sm); margin-bottom: var(--unav-spacing-lg);">1. Variantes Estándar (Fondo Transparente)</h2>
             <div class="d-flex flex-wrap gap-3 mb-4">
-                <div itemscope itemtype="https://schema.org/WebPageElement">
-                    <a itemprop="url" href="#" class="unav-boton unav-botonSecundario" style="--unav-botonColorSource: var(--unav-rojo-600);">
-                        <span itemprop="name">VER MÁS</span>
+                <div>
+                    <a  href="#" class="unav-boton unav-botonSecundario" style="--unav-botonColorSource: var(--unav-rojo-600);">
+                        <span>VER MÁS</span>
                     </a>
                 </div>
-                <div itemscope itemtype="https://schema.org/WebPageElement">
-                    <a itemprop="url" href="#" class="unav-boton unav-botonSecundario" style="--unav-botonColorSource: var(--unav-teal-600);">
+                <div>
+                    <a  href="#" class="unav-boton unav-botonSecundario" style="--unav-botonColorSource: var(--unav-teal-600);">
                         <span class="material-symbols-outlined unav-botonIcono" aria-hidden="true">download</span>
-                        <span itemprop="name">DESCARGAR</span>
+                        <span>DESCARGAR</span>
                     </a>
                 </div>
-                <div itemscope itemtype="https://schema.org/WebPageElement">
-                    <a itemprop="url" href="#" class="unav-boton unav-botonSecundario" style="--unav-botonColorSource: var(--unav-moss-600);">
-                        <span itemprop="name">SIGUIENTE</span>
+                <div>
+                    <a  href="#" class="unav-boton unav-botonSecundario" style="--unav-botonColorSource: var(--unav-moss-600);">
+                        <span>SIGUIENTE</span>
                         <span class="material-symbols-outlined unav-botonIcono" aria-hidden="true">arrow_forward</span>
                     </a>
                 </div>
-                <div itemscope itemtype="https://schema.org/WebPageElement">
-                    <a itemprop="url" href="#" class="unav-boton unav-botonSecundario unav-botonDisabled">
-                        <span itemprop="name">DESACTIVADO</span>
+                <div>
+                    <a  href="#" class="unav-boton unav-botonSecundario unav-botonDisabled">
+                        <span>DESACTIVADO</span>
                     </a>
                 </div>
             </div>
@@ -128,21 +128,21 @@
         <section class="unav-card unav-cardSolid" style="margin-bottom: var(--unav-spacing-3xl);" id="variante-inversa">
             <h2 class="unav-font-primary unav-weight-bold unav-text-200" style="color: var(--unav-black-900); border-bottom: 1px solid var(--unav-grey-300); padding-bottom: var(--unav-spacing-sm); margin-bottom: var(--unav-spacing-lg);">2. Variantes Inversas (Fondo Sólido)</h2>
             <div class="d-flex flex-wrap gap-3 mb-4">
-                <div itemscope itemtype="https://schema.org/WebPageElement">
-                    <a itemprop="url" href="#" class="unav-boton unav-botonSecundarioInverso" style="--unav-botonColorSource: var(--unav-rojo-600);">
+                <div>
+                    <a  href="#" class="unav-boton unav-botonSecundarioInverso" style="--unav-botonColorSource: var(--unav-rojo-600);">
                         <i class="bi bi-bookmark-fill unav-botonIcono" aria-hidden="true"></i>
-                        <span itemprop="name">GUARDAR CURSO</span>
+                        <span>GUARDAR CURSO</span>
                     </a>
                 </div>
-                <div itemscope itemtype="https://schema.org/WebPageElement">
-                    <a itemprop="url" href="#" class="unav-boton unav-botonSecundarioInverso" style="--unav-botonColorSource: var(--unav-indigo-600);">
+                <div>
+                    <a  href="#" class="unav-boton unav-botonSecundarioInverso" style="--unav-botonColorSource: var(--unav-indigo-600);">
                         <i class="bi bi-share unav-botonIcono" aria-hidden="true"></i>
-                        <span itemprop="name">COMPARTIR</span>
+                        <span>COMPARTIR</span>
                     </a>
                 </div>
-                <div itemscope itemtype="https://schema.org/WebPageElement">
-                    <a itemprop="url" href="#" class="unav-boton unav-botonSecundarioInverso" style="--unav-botonColorSource: var(--unav-black-800);">
-                        <span itemprop="name">OPCIONES</span>
+                <div>
+                    <a  href="#" class="unav-boton unav-botonSecundarioInverso" style="--unav-botonColorSource: var(--unav-black-800);">
+                        <span>OPCIONES</span>
                         <i class="bi bi-gear unav-botonIcono" aria-hidden="true"></i>
                     </a>
                 </div>

@@ -92,14 +92,14 @@
     </style>
 </head>
 
-<body itemscope itemtype="https://schema.org/WebPage">
+<body>
 
     <nav style="background-color: #ffffff; border-bottom: 1px solid var(--unav-grey-200); padding: var(--unav-spacing-md) 0; position: sticky; top: 0; z-index: var(--unav-zIndex-sticky);">
         <div class="container-lg d-flex justify-content-between align-items-center position-relative">
-            <div itemscope itemtype="https://schema.org/WebPageElement">
-                <a itemprop="url" href="indice.html" class="unav-boton unav-botonSecundario" style="--unav-botonColorSource: var(--unav-grey-600);">
+            <div>
+                <a  href="indice.html" class="unav-boton unav-botonSecundario" style="--unav-botonColorSource: var(--unav-grey-600);">
                     <i class="bi bi-arrow-left unav-botonIcono" aria-hidden="true"></i>
-                    <span class="d-none d-md-inline" itemprop="name">Volver al Índice</span>
+                    <span class="d-none d-md-inline">Volver al Índice</span>
                 </a>
             </div>
             <span class="unav-font-primary-condensed unav-weight-regular unav-text-150 m-0 position-absolute start-50 translate-middle-x" style="color: var(--unav-rojo-500); line-height: 1;">
@@ -109,11 +109,11 @@
     </nav>
 
     <!-- CONTENIDO PRINCIPAL -->
-    <main class="container-lg py-5" itemprop="mainContentOfPage">
+    <main class="container-lg py-5">
         
         <header style="text-align: center; margin-bottom: var(--unav-spacing-md); padding-bottom: var(--unav-spacing-md);">
-            <h1 class="unav-font-primary unav-weight-medium unav-text-200 m-0" style="color: var(--unav-black-900); margin-bottom: var(--unav-spacing-sm) !important;" itemprop="name">Layouts de Detalle Noticia</h1>
-            <p class="unav-font-primary unav-weight-regular unav-text-100 m-0" style="color: var(--unav-grey-600);" itemprop="description">
+            <h1 class="unav-font-primary unav-weight-medium unav-text-200 m-0" style="color: var(--unav-black-900); margin-bottom: var(--unav-spacing-sm) !important;">Layouts de Detalle Noticia</h1>
+            <p class="unav-font-primary unav-weight-regular unav-text-100 m-0" style="color: var(--unav-grey-600);">
                 Muestrario de variaciones estructurales para reportajes en profundidad y notas de prensa.
             </p>
         </header>
@@ -126,21 +126,21 @@
             <h2 class="unav-font-primary unav-weight-bold unav-text-150" style="color: var(--unav-black-900); border-left: 4px solid var(--unav-rojo-500); padding-left: var(--unav-spacing-md);">Variante 1: Centrado Clásico (Fullwidth)</h2>
         </div>
 
-        <article class="container unav-heroEditorial mb-5 shadow-sm border" style="border-color: var(--unav-grey-200) !important;" itemscope itemtype="https://schema.org/Article">
+        <article class="container unav-heroEditorial mb-5 shadow-sm border" style="border-color: var(--unav-grey-200) !important;">
             
             <!-- HEADER (12 COLUMNAS CENTRADO) -->
             <header class="row mb-5">
                 <div class="col-12 text-center">
                     
                     <!-- ETIQUETAS ALINEADAS AL CENTRO -->
-                    <div class="d-flex justify-content-center flex-wrap" style="gap: var(--unav-spacing-sm); margin-bottom: var(--unav-spacing-md);" itemprop="keywords">
+                    <div class="d-flex justify-content-center flex-wrap" style="gap: var(--unav-spacing-sm); margin-bottom: var(--unav-spacing-md);">
                         <span class="unav-tag unav-tagRojo">Política</span>
                         <span class="unav-tag unav-tagBlackInverso">Internacional</span>
                         <span class="unav-tag unav-tagGrey">Análisis</span>
                     </div>
 
                     <!-- TITULAR CON EFECTO REVEAL (Adaptado a 2 líneas fluidas) -->
-                    <h1 class="unav-heroEditorial-title unav-font-secondary-playfair mb-3" itemprop="headline">
+                    <h1 class="unav-heroEditorial-title unav-font-secondary-playfair mb-3">
                         <span class="unav-heroEditorial-mask">
                             <span class="unav-heroEditorial-revealText" style="animation-delay: 0.15s;">La OTAN redefine su estrategia global para garantizar el futuro de las democracias</span>
                         </span>
@@ -151,12 +151,12 @@
                         <span class="unav-font-primary unav-weight-bold" style="color: var(--unav-rojo-500);">26 de mayo de 2026</span>
                     </div>
                     <div class="mb-4 unav-font-primary unav-weight-medium" style="color: var(--unav-grey-600);">
-                        Por: <span itemprop="author" style="color: var(--unav-black-800);">Ignacio J. M.</span>
+                        Por: <span  style="color: var(--unav-black-800);">Ignacio J. M.</span>
                     </div>
 
                     <!-- FOTOGRAFÍA -->
-                    <figure class="unav-heroEditorial-imageWrapper mb-2" itemprop="image">
-                        <img src="https://picsum.photos/id/1015/1200/500" alt="OTAN Cumbre" class="img-fluid w-100" style="border-radius: var(--unav-radius-none);" itemprop="contentUrl">
+                    <figure class="unav-heroEditorial-imageWrapper mb-2">
+                        <img src="https://picsum.photos/id/1015/1200/500" alt="OTAN Cumbre" class="img-fluid w-100" style="border-radius: var(--unav-radius-none);">
                     </figure>
 
                     <div class="row align-items-center">
@@ -220,7 +220,7 @@
             <h2 class="unav-font-primary unav-weight-bold unav-text-150" style="color: var(--unav-black-900); border-left: 4px solid var(--unav-rojo-500); padding-left: var(--unav-spacing-md);">Variante 2: Split Layout (Columna Doble)</h2>
         </div>
 
-        <article class="container unav-heroEditorial mb-5 shadow-sm border" style="border-color: var(--unav-grey-200) !important;" itemscope itemtype="https://schema.org/Article">
+        <article class="container unav-heroEditorial mb-5 shadow-sm border" style="border-color: var(--unav-grey-200) !important;">
             
             <!-- HEADER (6 COLUMNAS IZQUIERDA / 6 DERECHA) -->
             <header class="row mb-5 align-items-center gx-5">
@@ -229,13 +229,13 @@
                 <div class="col-lg-6 text-center mb-4 mb-lg-0">
                     
                     <!-- ETIQUETAS ALINEADAS AL CENTRO -->
-                    <div class="d-flex justify-content-center flex-wrap" style="gap: var(--unav-spacing-sm); margin-bottom: var(--unav-spacing-md);" itemprop="keywords">
+                    <div class="d-flex justify-content-center flex-wrap" style="gap: var(--unav-spacing-sm); margin-bottom: var(--unav-spacing-md);">
                         <span class="unav-tag unav-tagMoss">Defensa</span>
                         <span class="unav-tag unav-tagBlackInverso">Internacional</span>
                     </div>
 
                     <!-- TITULAR CON EFECTO REVEAL (2 Líneas) -->
-                    <h1 class="unav-heroEditorial-title unav-font-secondary-playfair mb-4" itemprop="headline">
+                    <h1 class="unav-heroEditorial-title unav-font-secondary-playfair mb-4">
                         <span class="unav-heroEditorial-mask">
                             <span class="unav-heroEditorial-revealText" style="animation-delay: 0.15s;">La OTAN redefine su estrategia global para garantizar el futuro de las democracias</span>
                         </span>
@@ -246,7 +246,7 @@
                         <span class="unav-font-primary unav-weight-bold" style="color: var(--unav-rojo-500);">26 de mayo de 2026</span>
                     </div>
                     <div class="unav-font-primary unav-weight-medium" style="color: var(--unav-grey-600);">
-                        Por: <span itemprop="author" style="color: var(--unav-black-800);">Ignacio J. M.</span>
+                        Por: <span  style="color: var(--unav-black-800);">Ignacio J. M.</span>
                     </div>
 
                     <!-- NUEVO: ENTRADILLA EN LA CABECERA -->
@@ -258,8 +258,8 @@
 
                 <!-- COLUMNA DERECHA: IMAGEN -->
                 <div class="col-lg-6">
-                    <figure class="unav-heroEditorial-imageWrapper mb-2" itemprop="image">
-                        <img src="https://picsum.photos/id/1015/800/600" alt="OTAN Cumbre" class="img-fluid w-100" style="border-radius: var(--unav-radius-none);" itemprop="contentUrl">
+                    <figure class="unav-heroEditorial-imageWrapper mb-2">
+                        <img src="https://picsum.photos/id/1015/800/600" alt="OTAN Cumbre" class="img-fluid w-100" style="border-radius: var(--unav-radius-none);">
                     </figure>
                     <div class="row align-items-center">
                         <div class="col-8 text-start">

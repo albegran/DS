@@ -20,15 +20,15 @@
         h2[id], h3[id], section[id] { scroll-margin-top: 6rem; }
     </style>
 </head>
-<body class="unav-font-primary unav-weight-regular unav-text-100" itemscope itemtype="https://schema.org/WebPage">
+<body class="unav-font-primary unav-weight-regular unav-text-100">
 
     <nav style="background-color: #ffffff; border-bottom: 1px solid var(--unav-grey-200); padding: var(--unav-spacing-md) 0; position: sticky; top: 0; z-index: var(--unav-zIndex-sticky);">
         <div class="container-lg d-flex justify-content-between align-items-center position-relative">
             
-            <div itemscope itemtype="https://schema.org/WebPageElement">
-                <a itemprop="url" href="indice.html" class="unav-boton unav-botonSecundario">
+            <div>
+                <a  href="indice.html" class="unav-boton unav-botonSecundario">
                     <i class="bi bi-arrow-left unav-botonIcono" aria-hidden="true"></i>
-                    <span class="d-none d-md-inline" itemprop="name">Volver al Índice</span>
+                    <span class="d-none d-md-inline">Volver al Índice</span>
                 </a>
             </div>
     
@@ -39,11 +39,11 @@
         </div>
     </nav>
 
-    <main class="container-lg unav-doc-container" itemprop="mainContentOfPage">
+    <main class="container-lg unav-doc-container">
         
         <header style="text-align: center; margin-bottom: var(--unav-spacing-md); padding-bottom: var(--unav-spacing-md);">
-            <h1 class="unav-font-primary unav-weight-medium unav-text-200 m-0" style="color: var(--unav-black-900); margin-bottom: var(--unav-spacing-sm) !important;" itemprop="name">Migas de Pan (Breadcrumbs)</h1>
-            <p class="unav-font-primary unav-weight-regular unav-text-100 m-0" style="color: var(--unav-grey-600);" itemprop="description">
+            <h1 class="unav-font-primary unav-weight-medium unav-text-200 m-0" style="color: var(--unav-black-900); margin-bottom: var(--unav-spacing-sm) !important;">Migas de Pan (Breadcrumbs)</h1>
+            <p class="unav-font-primary unav-weight-regular unav-text-100 m-0" style="color: var(--unav-grey-600);">
                 Componente de navigation secundaria para ubicar jerárquicamente la página actual dentro del árbol del sitio web.
             </p>
         </header>
@@ -73,12 +73,12 @@
                 </div>
                 
                 <div class="col-md-6">
-                    <h3 class="unav-font-primary unav-weight-bold unav-text-125" style="color: var(--unav-black-800); margin-bottom: var(--unav-spacing-xs);">3.- Accesibilidad (A11y) y Schema.org</h3>
+                    <h3 class="unav-font-primary unav-weight-bold unav-text-125" style="color: var(--unav-black-800); margin-bottom: var(--unav-spacing-xs);">3.- Accesibilidad (A11y)</h3>
                     <p class="unav-font-primary unav-weight-regular unav-text-100" style="color: var(--unav-grey-700); margin-bottom: var(--unav-spacing-sm);">
                         <strong>Atributos Semánticos WCAG:</strong> La etiqueta contenedora <code>&lt;nav&gt;</code> debe portar de forma obligatoria un atributo descriptivo <code>aria-label="Breadcrumb"</code>. Adicionalmente, el ítem activo final no debe ser cliqueable.
                     </p>
                     <p class="unav-font-primary unav-weight-regular unav-text-100" style="color: var(--unav-grey-700); margin: 0;">
-                        <strong>Microdatos estructurados SEO:</strong> Toda la lista modular debe ir armada con el estándar Schema.org: <code>itemscope itemtype="https://schema.org/BreadcrumbList"</code>, y cada ítem debe desglosar su entidad respectiva mediante propiedades de <code>itemListElement</code>, <code>ListItem</code>, <code>name</code>, <code>item</code> y <code>position</code>.
+                        
                     </p>
                 </div>
                 
@@ -98,41 +98,35 @@
             <h2 class="unav-font-primary unav-weight-bold unav-text-200" style="border-bottom: 1px solid var(--unav-grey-300); padding-bottom: var(--unav-spacing-sm); margin-bottom: var(--unav-spacing-xl); color: var(--unav-black-900);">Ejemplo del Componente</h2>
 
             <nav aria-label="Breadcrumb">
-                <ol class="unav-breadcrumbs" itemscope itemtype="https://schema.org/BreadcrumbList">
+                <ol class="unav-breadcrumbs">
                     <li class="unav-breadcrumbHere">Estás en:</li>
                     
-                    <li class="unav-breadcrumbItem" itemprop="itemListElement" itemscope itemtype="https://schema.org/ListItem">
-                        <a itemprop="item" href="https://www.unav.edu" class="unav-breadcrumbLink">
-                            <span itemprop="name">Inicio</span>
+                    <li class="unav-breadcrumbItem">
+                        <a href="https://www.unav.edu" class="unav-breadcrumbLink">
+                            <span>Inicio</span>
                         </a>
-                        <meta itemprop="position" content="1">
                     </li>
                     
-                    <li class="unav-breadcrumbItem" itemprop="itemListElement" itemscope itemtype="https://schema.org/ListItem">
-                        <a itemprop="item" href="https://www.unav.edu/web/facultad-de-ciencias" class="unav-breadcrumbLink">
-                            <span itemprop="name">Facultad de Ciencias</span>
+                    <li class="unav-breadcrumbItem">
+                        <a href="https://www.unav.edu/web/facultad-de-ciencias" class="unav-breadcrumbLink">
+                            <span>Facultad de Ciencias</span>
                         </a>
-                        <meta itemprop="position" content="2">
                     </li>
                     
-                    <li class="unav-breadcrumbItem" itemprop="itemListElement" itemscope itemtype="https://schema.org/ListItem">
-                        <a itemprop="item" href="https://www.unav.edu/web/facultad-de-ciencias/conoce-la-facultad" class="unav-breadcrumbLink">
-                            <span itemprop="name">Conoce la Facultad</span>
+                    <li class="unav-breadcrumbItem">
+                        <a href="https://www.unav.edu/web/facultad-de-ciencias/conoce-la-facultad" class="unav-breadcrumbLink">
+                            <span>Conoce la Facultad</span>
                         </a>
-                        <meta itemprop="position" content="3">
                     </li>
                     
-                    <li class="unav-breadcrumbItem" itemprop="itemListElement" itemscope itemtype="https://schema.org/ListItem">
-                        <a itemprop="item" href="https://www.unav.edu/web/facultad-de-ciencias/conoce-la-facultad/quienes-somos" class="unav-breadcrumbLink">
-                            <span itemprop="name">Quiénes Somos</span>
+                    <li class="unav-breadcrumbItem">
+                        <a href="https://www.unav.edu/web/facultad-de-ciencias/conoce-la-facultad/quienes-somos" class="unav-breadcrumbLink">
+                            <span>Quiénes Somos</span>
                         </a>
-                        <meta itemprop="position" content="4">
                     </li>
                     
-                    <li class="unav-breadcrumbItem unav-isActive" itemprop="itemListElement" itemscope itemtype="https://schema.org/ListItem">
-                        <span itemprop="name" aria-current="page">Vicedecanato de Estudiantes</span>
-                        <meta itemprop="position" content="5">
-                        <meta itemprop="item" content="https://www.unav.edu/web/facultad-de-ciencias/conoce-la-facultad/quienes-somos/vicedecanato-de-estudiantes">
+                    <li class="unav-breadcrumbItem unav-isActive">
+                        <span  aria-current="page">Vicedecanato de Estudiantes</span>                        
                     </li>
                 </ol>
             </nav>

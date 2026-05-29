@@ -2531,14 +2531,14 @@
 }
 
 /* Integración del Botón Terciario (Enlace Flecha) y Primarios */
-.unav-bannerMini .unav-bannerContent > .unav-enlaceFlecha,
-.unav-bannerMini .unav-bannerContent > .unav-boton {
+.unav-bannerMini .unav-bannerContent> .unav-enlaceFlecha,
+.unav-bannerMini .unav-bannerContent> .unav-boton {
   margin-top: auto;
   align-self: flex-start;
 }
 
-.unav-bannerMini.unav-alignCenter .unav-bannerContent > .unav-enlaceFlecha,
-.unav-bannerMini.unav-alignCenter .unav-bannerContent > .unav-boton {
+.unav-bannerMini.unav-alignCenter .unav-bannerContent> .unav-enlaceFlecha,
+.unav-bannerMini.unav-alignCenter .unav-bannerContent> .unav-boton {
   align-self: center;
 }
 
@@ -5246,7 +5246,7 @@
 }
 
 /* Soporte de herencia: Si el padre tiene hover, la imagen reacciona */
-*:hover > .unav-efectoZoomImagen img,
+*:hover> .unav-efectoZoomImagen img,
 .unav-efectoZoomImagen:hover img {
   transform: scale(1.05) translateZ(0); /* translateZ fuerza la aceleración GPU en Safari */
 }
@@ -5314,7 +5314,7 @@
     display: none; /* Oculta la barra de scroll en Chrome/Safari/Edge */
   }
   /* Forzado geométrico de los hijos directos (columnas) */
-  .unav-gridScrollMobile > [class*=col-] {
+  .unav-gridScrollMobile> [class*=col-] {
     /* Ocupa el 82% del viewport, permitiendo revelar un 18% del siguiente evento */
     flex: 0 0 82% !important;
     width: 82% !important;

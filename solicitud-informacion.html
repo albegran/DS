@@ -20,15 +20,15 @@
         h2[id], h3[id], section[id] { scroll-margin-top: 6rem; }
     </style>
 </head>
-<body class="unav-font-primary unav-weight-regular unav-text-100" itemscope itemtype="https://schema.org/WebPage">
+<body class="unav-font-primary unav-weight-regular unav-text-100">
 
     <nav style="background-color: #ffffff; border-bottom: 1px solid var(--unav-grey-200); padding: var(--unav-spacing-md) 0; position: sticky; top: 0; z-index: var(--unav-zIndex-sticky);">
         <div class="container-lg d-flex justify-content-between align-items-center position-relative">
             
-            <div itemscope itemtype="https://schema.org/WebPageElement">
-                <a itemprop="url" href="indice.html" class="unav-boton unav-botonSecundario">
+            <div>
+                <a  href="indice.html" class="unav-boton unav-botonSecundario">
                     <i class="bi bi-arrow-left unav-botonIcono" aria-hidden="true"></i>
-                    <span class="d-none d-md-inline" itemprop="name">Volver al Índice</span>
+                    <span class="d-none d-md-inline">Volver al Índice</span>
                 </a>
             </div>
     
@@ -39,11 +39,11 @@
         </div>
     </nav>
 
-    <main class="container-lg unav-doc-container" itemprop="mainContentOfPage">
+    <main class="container-lg unav-doc-container">
         
         <header style="text-align: center; margin-bottom: var(--unav-spacing-md); padding-bottom: var(--unav-spacing-md);">
-            <h1 class="unav-font-primary unav-weight-medium unav-text-200 m-0" style="color: var(--unav-black-900); margin-bottom: var(--unav-spacing-sm) !important;" itemprop="name">Panel Solicitud de Información</h1>
-            <p class="unav-font-primary unav-weight-regular unav-text-100 m-0" style="color: var(--unav-grey-600);" itemprop="description">
+            <h1 class="unav-font-primary unav-weight-medium unav-text-200 m-0" style="color: var(--unav-black-900); margin-bottom: var(--unav-spacing-sm) !important;">Panel Solicitud de Información</h1>
+            <p class="unav-font-primary unav-weight-regular unav-text-100 m-0" style="color: var(--unav-grey-600);">
                 Componente lateral desplegable (Offcanvas) con botón de llamada a la acción (CTA) flotante e Iframe integrado.
             </p>
         </header>
@@ -67,10 +67,9 @@
                 </div>
                 
                 <div class="col-md-6 border-start-md ps-md-4">
-                    <h3 class="unav-font-primary unav-weight-bold unav-text-125 mb-3" style="color: var(--unav-black-800);">3. Accesibilidad (A11y) y Schemas (SEO)</h3>
+                    <h3 class="unav-font-primary unav-weight-bold unav-text-125 mb-3" style="color: var(--unav-black-800);">3. Accesibilidad (A11y)</h3>
                     <ul class="unav-font-primary unav-weight-regular unav-text-100" style="color: var(--unav-grey-700); padding-left: var(--unav-spacing-md);">
                         <li style="margin-bottom: var(--unav-spacing-xs);"><strong>Control ARIA:</strong> El botón de apertura debe gestionar correctamente el atributo <code>aria-expanded="true/false"</code>, comunicando el estado real del panel a los lectores de pantalla.</li>
-                        <li style="margin-bottom: var(--unav-spacing-xs);"><strong>Schemas:</strong> La estructura debe portar <code>https://schema.org/ContactPoint</code> para facilitar la indexación de los métodos de contacto ofrecidos en el panel.</li>
                     </ul>
         
                     <h3 class="unav-font-primary unav-weight-bold unav-text-125 mb-3 mt-4" style="color: var(--unav-black-800);">4. UX, Uso de Átomos y Layouts</h3>
@@ -108,11 +107,11 @@
         </div>
     </footer>
 
-    <div class="unav-stickyWrapper" itemscope itemtype="https://schema.org/ContactPage">
+    <div class="unav-stickyWrapper">
         
         <div class="unav-panelOverlay" id="unavOverlay" aria-hidden="true"></div>
 
-        <aside class="unav-sidePanel" id="unavSidePanel" itemprop="mainEntity" itemscope itemtype="https://schema.org/ContactPoint">
+        <aside class="unav-sidePanel" id="unavSidePanel">
             
             <button class="unav-stickyButton" 
                     id="unavBtnToggle"
@@ -121,14 +120,14 @@
                 <span class="unav-iconArrow">
                     <svg viewBox="0 0 24 24" width="24" height="24"><path d="M15.41 16.59L10.83 12l4.58-4.59L14 6l-6 6 6 6 1.41-1.41z"/></svg>
                 </span>
-                <span class="unav-buttonText" itemprop="contactType">Solicitar Información</span>
+                <span class="unav-buttonText">Solicitar Información</span>
             </button>
 
             <div class="unav-panelBody">
                 <iframe src="https://cloud.marketing.unav.edu/formularioGradoTest" 
                         class="unav-iframeContainer"
                         title="Formulario de Solicitud de Información"
-                        itemprop="url"></iframe>
+                       ></iframe>
             </div>
             
         </aside>

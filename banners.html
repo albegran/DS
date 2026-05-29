@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="es" itemscope itemtype="https://schema.org/WebPage">
+<html lang="es">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -20,15 +20,15 @@
         h2[id], h3[id], section[id] { scroll-margin-top: 6rem; }
     </style>
 </head>
-<body class="unav-font-primary unav-weight-regular unav-text-100" itemscope itemtype="https://schema.org/WebPage">
+<body class="unav-font-primary unav-weight-regular unav-text-100">
 
     <nav style="background-color: #ffffff; border-bottom: 1px solid var(--unav-grey-200); padding: var(--unav-spacing-md) 0; position: sticky; top: 0; z-index: var(--unav-zIndex-sticky);">
         <div class="container-lg d-flex justify-content-between align-items-center position-relative">
             
-            <div itemscope itemtype="https://schema.org/WebPageElement">
-                <a itemprop="url" href="indice.html" class="unav-boton unav-botonSecundario">
+            <div>
+                <a  href="indice.html" class="unav-boton unav-botonSecundario">
                     <i class="bi bi-arrow-left unav-botonIcono" aria-hidden="true"></i>
-                    <span class="d-none d-md-inline" itemprop="name">Volver al Índice</span>
+                    <span class="d-none d-md-inline">Volver al Índice</span>
                 </a>
             </div>
     
@@ -39,11 +39,11 @@
         </div>
     </nav>
 
-    <main itemprop="mainContentOfPage">
+    <main>
         
         <header class="container-lg unav-doc-container" style="text-align: center; margin-bottom: var(--unav-spacing-2xl); border-bottom: 1px solid var(--unav-grey-200); padding-bottom: var(--unav-spacing-xl);">
-            <h1 class="unav-font-primary unav-weight-medium unav-text-200 m-0 unav-lh-tight" style="color: var(--unav-black-900); margin-bottom: var(--unav-spacing-sm) !important;" itemprop="name">Sistema de Banners</h1>
-            <p class="unav-font-primary unav-weight-regular unav-text-100 m-0 unav-lh-normal" style="color: var(--unav-grey-600);" itemprop="description">
+            <h1 class="unav-font-primary unav-weight-medium unav-text-200 m-0 unav-lh-tight" style="color: var(--unav-black-900); margin-bottom: var(--unav-spacing-sm) !important;">Sistema de Banners</h1>
+            <p class="unav-font-primary unav-weight-regular unav-text-100 m-0 unav-lh-normal" style="color: var(--unav-grey-600);">
                 Arquitectura unificada para bloques promocionales con colorización dinámica de CTAs e interlineado normativo.
             </p>
         </header>
@@ -68,10 +68,9 @@
                     </div>
                     
                     <div class="col-md-6 border-start-md ps-md-4">
-                        <h3 class="unav-font-primary unav-weight-bold unav-text-125 mb-3" style="color: var(--unav-black-800);">3. Accesibilidad (A11y) y Schemas</h3>
+                        <h3 class="unav-font-primary unav-weight-bold unav-text-125 mb-3" style="color: var(--unav-black-800);">3. Accesibilidad (A11y)</h3>
                         <ul class="unav-font-primary unav-weight-regular unav-text-100" style="color: var(--unav-grey-700); padding-left: var(--unav-spacing-md);">
                             <li style="margin-bottom: var(--unav-spacing-xs);"><strong>Contraste Seguro:</strong> El uso de <code>.unav-bannerOverlay</code> es obligatorio sobre imágenes fotográficas para garantizar el contraste AAA exigido por las normativas WCAG.</li>
-                            <li style="margin-bottom: var(--unav-spacing-xs);"><strong>Microdatos:</strong> Todo banner promocional debe marcarse semánticamente como <code>itemscope itemtype="https://schema.org/WPAdBlock"</code>, identificando el título y la descripción para motores de búsqueda.</li>
                         </ul>
 
                         <h3 class="unav-font-primary unav-weight-bold unav-text-125 mb-3 mt-4" style="color: var(--unav-black-800);">4. Layout, Tipografía y Medios</h3>
@@ -90,20 +89,20 @@
         </div>
 
         <section class="mb-2">
-            <div class="unav-banner unav-bannerFull unav-efectoParallax unav-themeDark" style="background-image: url('https://images.unsplash.com/photo-1498243691581-b145c3f54a5a?auto=format&fit=crop&q=80&w=1920');" itemscope itemtype="https://schema.org/WPAdBlock">
+            <div class="unav-banner unav-bannerFull unav-efectoParallax unav-themeDark" style="background-image: url('https://images.unsplash.com/photo-1498243691581-b145c3f54a5a?auto=format&fit=crop&q=80&w=1920');">
                 <div class="unav-bannerOverlay"></div>
                 <div class="container-lg unav-bannerContent">
                     <div class="row align-items-center">
                         <div class="col-md-8">
-                            <h3 class="unav-bannerTitle unav-lh-snug" itemprop="headline">INVESTIGACIÓN Y DESARROLLO</h3>
-                            <p class="unav-bannerText unav-lh-normal" itemprop="description">Descubre nuestros últimos avances científicos y súmate a los grupos de investigación de vanguardia de la universidad.</p>
+                            <h3 class="unav-bannerTitle unav-lh-snug">INVESTIGACIÓN Y DESARROLLO</h3>
+                            <p class="unav-bannerText unav-lh-normal">Descubre nuestros últimos avances científicos y súmate a los grupos de investigación de vanguardia de la universidad.</p>
                         </div>
-                        <div class="col-md-4 d-flex flex-column align-items-md-end gap-2 mt-4 mt-md-0" itemscope itemtype="https://schema.org/WebPageElement">
-                            <a href="#" class="unav-boton unav-botonSecundario" style="--unav-botonColorSource: #ffffff; --unav-botonTextHover: var(--unav-black-800);" itemprop="url">
-                                <span itemprop="name">VER PROYECTOS</span>
+                        <div class="col-md-4 d-flex flex-column align-items-md-end gap-2 mt-4 mt-md-0">
+                            <a href="#" class="unav-boton unav-botonSecundario" style="--unav-botonColorSource: #ffffff; --unav-botonTextHover: var(--unav-black-800);">
+                                <span>VER PROYECTOS</span>
                             </a>
-                            <a href="#" class="unav-boton unav-botonSecundario" style="--unav-botonColorSource: var(--unav-cyan-400); --unav-botonTextHover: var(--unav-black-900);" itemprop="url">
-                                <span itemprop="name">SOLICITAR INFO</span>
+                            <a href="#" class="unav-boton unav-botonSecundario" style="--unav-botonColorSource: var(--unav-cyan-400); --unav-botonTextHover: var(--unav-black-900);">
+                                <span>SOLICITAR INFO</span>
                             </a>
                         </div>
                     </div>
@@ -112,17 +111,17 @@
         </section>
 
         <section class="mb-5">
-            <div class="unav-banner unav-bannerFull unav-efectoParallax unav-themeDark unav-alignCenter" style="background-image: url('https://images.unsplash.com/photo-1541339907198-e08756dedf3f?auto=format&fit=crop&q=80&w=1920');" itemscope itemtype="https://schema.org/WPAdBlock">
+            <div class="unav-banner unav-bannerFull unav-efectoParallax unav-themeDark unav-alignCenter" style="background-image: url('https://images.unsplash.com/photo-1541339907198-e08756dedf3f?auto=format&fit=crop&q=80&w=1920');">
                 <div class="unav-bannerOverlay"></div>
                 <div class="container-lg unav-bannerContent d-flex flex-column align-items-center">
-                    <h3 class="unav-bannerTitle unav-lh-snug" itemprop="headline">ADMISIÓN CURSO 2026/27</h3>
-                    <p class="unav-bannerText mx-auto unav-lh-normal" style="max-width: 800px;" itemprop="description">El periodo de solicitud de admisión se encuentra abierto. Consulta la oferta académica y descubre por qué miles de alumnos nos eligen cada año para forjar su futuro.</p>
-                    <div class="d-flex flex-wrap justify-content-center gap-3 mt-4" itemscope itemtype="https://schema.org/WebPageElement">
-                        <a href="#" class="unav-boton unav-botonSecundario" style="--unav-botonColorSource: #ffffff; --unav-botonTextHover: var(--unav-black-800);" itemprop="url">
-                            <span itemprop="name">OFERTA ACADÉMICA</span>
+                    <h3 class="unav-bannerTitle unav-lh-snug">ADMISIÓN CURSO 2026/27</h3>
+                    <p class="unav-bannerText mx-auto unav-lh-normal" style="max-width: 800px;">El periodo de solicitud de admisión se encuentra abierto. Consulta la oferta académica y descubre por qué miles de alumnos nos eligen cada año para forjar su futuro.</p>
+                    <div class="d-flex flex-wrap justify-content-center gap-3 mt-4">
+                        <a href="#" class="unav-boton unav-botonSecundario" style="--unav-botonColorSource: #ffffff; --unav-botonTextHover: var(--unav-black-800);">
+                            <span>OFERTA ACADÉMICA</span>
                         </a>
-                        <a href="#" class="unav-boton unav-botonSecundario" style="--unav-botonColorSource: #ffffff; --unav-botonTextHover: var(--unav-black-800);" itemprop="url">
-                            <span itemprop="name">INICIAR SOLICITUD</span>
+                        <a href="#" class="unav-boton unav-botonSecundario" style="--unav-botonColorSource: #ffffff; --unav-botonTextHover: var(--unav-black-800);">
+                            <span>INICIAR SOLICITUD</span>
                         </a>
                     </div>
                 </div>
@@ -134,63 +133,63 @@
                 <h2 class="unav-font-primary unav-weight-bold unav-text-200 border-bottom pb-2 mb-4 mt-0 unav-lh-snug" style="color: var(--unav-black-900);">2. Banner Ancho (12 Columnas Grid)</h2>
                 <p class="unav-font-primary unav-weight-regular unav-text-100 mb-4 unav-lh-normal" style="color: var(--unav-grey-600);">Se encajan en un contenedor manteniendo el ancho de 12 columnas (100% de la caja padre).</p>
 
-                <div class="unav-banner unav-bannerWide unav-themeDark mb-4" style="background-image: url('https://images.unsplash.com/photo-1541339907198-e08756dedf3f?auto=format&fit=crop&q=80&w=1200');" itemscope itemtype="https://schema.org/WPAdBlock">
+                <div class="unav-banner unav-bannerWide unav-themeDark mb-4" style="background-image: url('https://images.unsplash.com/photo-1541339907198-e08756dedf3f?auto=format&fit=crop&q=80&w=1200');">
                     <div class="unav-bannerOverlay"></div>
                     <div class="unav-bannerContent">
                         <div class="row align-items-center">
                             <div class="col-md-8">
-                                <h3 class="unav-bannerTitle unav-lh-snug" itemprop="headline">INVESTIGACIÓN Y DESARROLLO</h3>
-                                <p class="unav-bannerText unav-lh-normal" itemprop="description">Descubre nuestros últimos avances científicos y súmate a los grupos de investigación de vanguardia.</p>
+                                <h3 class="unav-bannerTitle unav-lh-snug">INVESTIGACIÓN Y DESARROLLO</h3>
+                                <p class="unav-bannerText unav-lh-normal">Descubre nuestros últimos avances científicos y súmate a los grupos de investigación de vanguardia.</p>
                             </div>
-                            <div class="col-md-4 d-flex flex-column align-items-md-end mt-4 mt-md-0" itemscope itemtype="https://schema.org/WebPageElement">
-                                <a href="#" class="unav-boton unav-botonSecundario" style="--unav-botonColorSource: #ffffff; --unav-botonTextHover: var(--unav-black-800);" itemprop="url">
-                                    <span itemprop="name">VER PROYECTOS</span>
+                            <div class="col-md-4 d-flex flex-column align-items-md-end mt-4 mt-md-0">
+                                <a href="#" class="unav-boton unav-botonSecundario" style="--unav-botonColorSource: #ffffff; --unav-botonTextHover: var(--unav-black-800);">
+                                    <span>VER PROYECTOS</span>
                                 </a>
                             </div>
                         </div>
                     </div>
                 </div>
 
-                <div class="unav-banner unav-bannerWide unav-themeDark unav-bg-rojo-600 mb-4" itemscope itemtype="https://schema.org/WPAdBlock">
+                <div class="unav-banner unav-bannerWide unav-themeDark unav-bg-rojo-600 mb-4">
                     <div class="unav-bannerContent">
                         <div class="row align-items-center">
                             <div class="col-md-7">
-                                <h3 class="unav-bannerTitle unav-lh-snug" itemprop="headline">ALUMNI UNAV</h3>
-                                <p class="unav-bannerText mb-0 unav-lh-normal" itemprop="description">Mantén tu vínculo con la Universidad y disfruta de formación continua exclusiva para antiguos alumnos.</p>
+                                <h3 class="unav-bannerTitle unav-lh-snug">ALUMNI UNAV</h3>
+                                <p class="unav-bannerText mb-0 unav-lh-normal">Mantén tu vínculo con la Universidad y disfruta de formación continua exclusiva para antiguos alumnos.</p>
                             </div>
-                            <div class="col-md-5 d-flex flex-column align-items-md-end mt-4 mt-md-0" itemscope itemtype="https://schema.org/WebPageElement">
-                                <a href="#" class="unav-boton unav-botonSecundarioInverso" style="--unav-botonColorSource: #ffffff; --unav-botonTextHover: var(--unav-rojo-600);" itemprop="url">
-                                    <span itemprop="name">VER BENEFICIOS</span>
+                            <div class="col-md-5 d-flex flex-column align-items-md-end mt-4 mt-md-0">
+                                <a href="#" class="unav-boton unav-botonSecundarioInverso" style="--unav-botonColorSource: #ffffff; --unav-botonTextHover: var(--unav-rojo-600);">
+                                    <span>VER BENEFICIOS</span>
                                 </a>
                             </div>
                         </div>
                     </div>
                 </div>
 
-                <div class="unav-banner unav-bannerWide unav-themeDark unav-alignCenter mb-4" style="background-image: url('https://images.unsplash.com/photo-1562774053-701939374585?auto=format&fit=crop&q=80&w=1200');" itemscope itemtype="https://schema.org/WPAdBlock">
+                <div class="unav-banner unav-bannerWide unav-themeDark unav-alignCenter mb-4" style="background-image: url('https://images.unsplash.com/photo-1562774053-701939374585?auto=format&fit=crop&q=80&w=1200');">
                     <div class="unav-bannerOverlay"></div>
                     <div class="unav-bannerContent d-flex flex-column align-items-center">
-                        <h3 class="unav-bannerTitle unav-lh-snug" itemprop="headline">ADMISIÓN CURSO 2026/27</h3>
-                        <p class="unav-bannerText mx-auto unav-lh-normal" style="max-width: 700px;" itemprop="description">El periodo de solicitud de admisión se encuentra abierto. Consulta la oferta académica y los requisitos necesarios.</p>
-                        <div class="d-flex flex-wrap justify-content-center gap-3 mt-4" itemscope itemtype="https://schema.org/WebPageElement">
-                            <a href="#" class="unav-boton unav-botonSecundario" style="--unav-botonColorSource: #ffffff; --unav-botonTextHover: var(--unav-black-800);" itemprop="url">
-                                <span itemprop="name">OFERTA ACADÉMICA</span>
+                        <h3 class="unav-bannerTitle unav-lh-snug">ADMISIÓN CURSO 2026/27</h3>
+                        <p class="unav-bannerText mx-auto unav-lh-normal" style="max-width: 700px;">El periodo de solicitud de admisión se encuentra abierto. Consulta la oferta académica y los requisitos necesarios.</p>
+                        <div class="d-flex flex-wrap justify-content-center gap-3 mt-4">
+                            <a href="#" class="unav-boton unav-botonSecundario" style="--unav-botonColorSource: #ffffff; --unav-botonTextHover: var(--unav-black-800);">
+                                <span>OFERTA ACADÉMICA</span>
                             </a>
-                            <a href="#" class="unav-boton unav-botonSecundarioInverso" style="--unav-botonColorSource: var(--unav-cyan-400); --unav-botonTextHover: var(--unav-black-900);" itemprop="url">
-                                <span itemprop="name">INICIAR SOLICITUD</span>
+                            <a href="#" class="unav-boton unav-botonSecundarioInverso" style="--unav-botonColorSource: var(--unav-cyan-400); --unav-botonTextHover: var(--unav-black-900);">
+                                <span>INICIAR SOLICITUD</span>
                             </a>
                         </div>
                     </div>
                 </div>
 
-                <div class="unav-banner unav-bannerWide unav-themeDark unav-alignCenter" style="background-image: url('https://images.unsplash.com/photo-1524178232363-1fb2b075b655?auto=format&fit=crop&q=80&w=1200');" itemscope itemtype="https://schema.org/WPAdBlock">
+                <div class="unav-banner unav-bannerWide unav-themeDark unav-alignCenter" style="background-image: url('https://images.unsplash.com/photo-1524178232363-1fb2b075b655?auto=format&fit=crop&q=80&w=1200');">
                     <div class="unav-bannerOverlay"></div>
                     <div class="unav-bannerContent d-flex flex-column align-items-center">
-                        <h3 class="unav-bannerTitle unav-lh-snug" itemprop="headline">CAMPUS VIDA Y CULTURA</h3>
-                        <p class="unav-bannerText mx-auto unav-lh-normal" style="max-width: 700px;" itemprop="description">Explora las actividades deportivas, culturales y sociales que hacen de nuestro campus un lugar único para crecer.</p>
-                        <div class="d-flex flex-wrap justify-content-center gap-3 mt-4" itemscope itemtype="https://schema.org/WebPageElement">
-                            <a href="#" class="unav-boton unav-botonSecundario" style="--unav-botonColorSource: #ffffff; --unav-botonTextHover: var(--unav-black-800);" itemprop="url">
-                                <span itemprop="name">VER ACTIVIDADES</span>
+                        <h3 class="unav-bannerTitle unav-lh-snug">CAMPUS VIDA Y CULTURA</h3>
+                        <p class="unav-bannerText mx-auto unav-lh-normal" style="max-width: 700px;">Explora las actividades deportivas, culturales y sociales que hacen de nuestro campus un lugar único para crecer.</p>
+                        <div class="d-flex flex-wrap justify-content-center gap-3 mt-4">
+                            <a href="#" class="unav-boton unav-botonSecundario" style="--unav-botonColorSource: #ffffff; --unav-botonTextHover: var(--unav-black-800);">
+                                <span>VER ACTIVIDADES</span>
                             </a>
                         </div>
                     </div>
@@ -205,27 +204,27 @@
                 <h3 class="unav-font-primary unav-weight-bold unav-text-125 mt-4 mb-3 unav-lh-normal" style="color: var(--unav-black-800);">Variantes con Imagen de Fondo</h3>
                 <div class="row g-4 mb-5">
                     <div class="col-md-6">
-                        <div class="unav-banner unav-bannerMini unav-themeDark" style="background-image: url('https://images.unsplash.com/photo-1501785888041-af3ef285b470?auto=format&fit=crop&q=80&w=800');" itemscope itemtype="https://schema.org/WPAdBlock">
+                        <div class="unav-banner unav-bannerMini unav-themeDark" style="background-image: url('https://images.unsplash.com/photo-1501785888041-af3ef285b470?auto=format&fit=crop&q=80&w=800');">
                             <div class="unav-bannerOverlay"></div>
                             <div class="unav-bannerContent">
-                                <h3 class="unav-bannerTitle unav-lh-snug" itemprop="headline">ADMISIÓN 2026</h3>
-                                <p class="unav-bannerText unav-lh-normal" itemprop="description">Inicia tu proceso de admisión hoy mismo 100% online.</p>
-                                <a itemprop="url" href="#" class="unav-enlaceFlecha" style="text-transform: none; --unav-enlaceColor: var(--unav-yellow-400);">
+                                <h3 class="unav-bannerTitle unav-lh-snug">ADMISIÓN 2026</h3>
+                                <p class="unav-bannerText unav-lh-normal">Inicia tu proceso de admisión hoy mismo 100% online.</p>
+                                <a  href="#" class="unav-enlaceFlecha" style="text-transform: none; --unav-enlaceColor: var(--unav-yellow-400);">
                                     <span class="unav-arrowWrapper"><span class="unav-arrow"></span><span class="unav-arrowClone"></span></span>
-                                    <span itemprop="name">Empezar ahora</span>
+                                    <span>Empezar ahora</span>
                                 </a>
                             </div>
                         </div>
                     </div>
                     <div class="col-md-6">
-                        <div class="unav-banner unav-bannerMini unav-themeDark unav-alignCenter" style="background-image: url('https://images.unsplash.com/photo-1541339907198-e08756dedf3f?auto=format&fit=crop&q=80&w=800');" itemscope itemtype="https://schema.org/WPAdBlock">
+                        <div class="unav-banner unav-bannerMini unav-themeDark unav-alignCenter" style="background-image: url('https://images.unsplash.com/photo-1541339907198-e08756dedf3f?auto=format&fit=crop&q=80&w=800');">
                             <div class="unav-bannerOverlay"></div>
                             <div class="unav-bannerContent">
-                                <h3 class="unav-bannerTitle Movie unav-lh-snug" itemprop="headline">CAMPUS VIDA</h3>
-                                <p class="unav-bannerText unav-lh-normal" itemprop="description">Descubre las instalaciones deportivas y la vida universitaria.</p>
-                                <a itemprop="url" href="#" class="unav-enlaceFlecha" style="text-transform: none; --unav-enlaceColor: #ffffff;">
+                                <h3 class="unav-bannerTitle Movie unav-lh-snug">CAMPUS VIDA</h3>
+                                <p class="unav-bannerText unav-lh-normal">Descubre las instalaciones deportivas y la vida universitaria.</p>
+                                <a  href="#" class="unav-enlaceFlecha" style="text-transform: none; --unav-enlaceColor: #ffffff;">
                                     <span class="unav-arrowWrapper"><span class="unav-arrow"></span><span class="unav-arrowClone"></span></span>
-                                    <span itemprop="name">Ver campus</span>
+                                    <span>Ver campus</span>
                                 </a>
                             </div>
                         </div>
@@ -235,25 +234,25 @@
                 <h3 class="unav-font-primary unav-weight-bold unav-text-125 mt-0 mb-3 unav-lh-normal" style="color: var(--unav-black-800);">Variantes con Colores Sólidos</h3>
                 <div class="row g-4 mb-5">
                     <div class="col-md-6">
-                        <div class="unav-banner unav-bannerMini unav-themeDark unav-bg-rojo-600" itemscope itemtype="https://schema.org/WPAdBlock">
+                        <div class="unav-banner unav-bannerMini unav-themeDark unav-bg-rojo-600">
                             <div class="unav-bannerContent">
-                                <h3 class="unav-bannerTitle unav-lh-snug" itemprop="headline">BECAS ALUMNI</h3>
-                                <p class="unav-bannerText unav-lh-normal" itemprop="description">Opciones de financiación y becas disponibles para este curso.</p>
-                                <a itemprop="url" href="#" class="unav-enlaceFlecha" style="text-transform: none; --unav-enlaceColor: #ffffff;">
+                                <h3 class="unav-bannerTitle unav-lh-snug">BECAS ALUMNI</h3>
+                                <p class="unav-bannerText unav-lh-normal">Opciones de financiación y becas disponibles para este curso.</p>
+                                <a  href="#" class="unav-enlaceFlecha" style="text-transform: none; --unav-enlaceColor: #ffffff;">
                                     <span class="unav-arrowWrapper"><span class="unav-arrow"></span><span class="unav-arrowClone"></span></span>
-                                    <span itemprop="name">Solicitar beca</span>
+                                    <span>Solicitar beca</span>
                                 </a>
                             </div>
                         </div>
                     </div>
                     <div class="col-md-6">
-                        <div class="unav-banner unav-bannerMini unav-bg-grey-100" style="border: 1px solid var(--unav-grey-200);" itemscope itemtype="https://schema.org/WPAdBlock">
+                        <div class="unav-banner unav-bannerMini unav-bg-grey-100" style="border: 1px solid var(--unav-grey-200);">
                             <div class="unav-bannerContent">
-                                <h3 class="unav-bannerTitle unav-lh-snug" itemprop="headline">MÁSTERES</h3>
-                                <p class="unav-bannerText unav-lh-normal" itemprop="description">Especialízate con nuestros programas líderes en investigación.</p>
-                                <a itemprop="url" href="#" class="unav-enlaceFlecha" style="text-transform: none; --unav-enlaceColor: var(--unav-rojo-600);">
+                                <h3 class="unav-bannerTitle unav-lh-snug">MÁSTERES</h3>
+                                <p class="unav-bannerText unav-lh-normal">Especialízate con nuestros programas líderes en investigación.</p>
+                                <a  href="#" class="unav-enlaceFlecha" style="text-transform: none; --unav-enlaceColor: var(--unav-rojo-600);">
                                     <span class="unav-arrowWrapper"><span class="unav-arrow"></span><span class="unav-arrowClone"></span></span>
-                                    <span itemprop="name">Ver programas</span>
+                                    <span>Ver programas</span>
                                 </a>
                             </div>
                         </div>
@@ -263,37 +262,37 @@
                 <h3 class="unav-font-primary unav-weight-bold unav-text-125 mt-0 mb-3 unav-lh-normal" style="color: var(--unav-black-800);">Rendimiento en Grid Pequeño (3 Columnas)</h3>
                 <div class="row g-3">
                     <div class="col-lg-4 col-md-6">
-                        <div class="unav-banner unav-bannerMini unav-themeDark unav-bg-black-800" itemscope itemtype="https://schema.org/WPAdBlock">
+                        <div class="unav-banner unav-bannerMini unav-themeDark unav-bg-black-800">
                             <div class="unav-bannerContent">
-                                <h3 class="unav-bannerTitle unav-lh-normal" style="font-size: 20px;" itemprop="headline">INVESTIGACIÓN</h3>
-                                <p class="unav-bannerText unav-lh-normal" style="font-size: 15px;" itemprop="description">Centros de investigación biomédica y tecnológica.</p>
-                                <a itemprop="url" href="#" class="unav-enlaceFlecha" style="text-transform: none; --unav-enlaceColor: #ffffff;">
+                                <h3 class="unav-bannerTitle unav-lh-normal" style="font-size: 20px;">INVESTIGACIÓN</h3>
+                                <p class="unav-bannerText unav-lh-normal" style="font-size: 15px;">Centros de investigación biomédica y tecnológica.</p>
+                                <a  href="#" class="unav-enlaceFlecha" style="text-transform: none; --unav-enlaceColor: #ffffff;">
                                     <span class="unav-arrowWrapper"><span class="unav-arrow"></span><span class="unav-arrowClone"></span></span>
-                                    <span itemprop="name">Leer más</span>
+                                    <span>Leer más</span>
                                 </a>
                             </div>
                         </div>
                     </div>
                     <div class="col-lg-4 col-md-6">
-                        <div class="unav-banner unav-bannerMini unav-themeDark unav-bg-blue-600" itemscope itemtype="https://schema.org/WPAdBlock">
+                        <div class="unav-banner unav-bannerMini unav-themeDark unav-bg-blue-600">
                             <div class="unav-bannerContent">
-                                <h3 class="unav-bannerTitle unav-lh-normal" style="font-size: 20px;" itemprop="headline">BIBLIOTECA</h3>
-                                <p class="unav-bannerText unav-lh-normal" style="font-size: 15px;" itemprop="description">Accede a miles de recursos digitales y revistas.</p>
-                                <a itemprop="url" href="#" class="unav-enlaceFlecha" style="text-transform: none; --unav-enlaceColor: #ffffff;">
+                                <h3 class="unav-bannerTitle unav-lh-normal" style="font-size: 20px;">BIBLIOTECA</h3>
+                                <p class="unav-bannerText unav-lh-normal" style="font-size: 15px;">Accede a miles de recursos digitales y revistas.</p>
+                                <a  href="#" class="unav-enlaceFlecha" style="text-transform: none; --unav-enlaceColor: #ffffff;">
                                     <span class="unav-arrowWrapper"><span class="unav-arrow"></span><span class="unav-arrowClone"></span></span>
-                                    <span itemprop="name">Acceder</span>
+                                    <span>Acceder</span>
                                 </a>
                             </div>
                         </div>
                     </div>
                     <div class="col-lg-4 col-md-12">
-                        <div class="unav-banner unav-bannerMini unav-themeDark unav-bg-moss-600" itemscope itemtype="https://schema.org/WPAdBlock">
+                        <div class="unav-banner unav-bannerMini unav-themeDark unav-bg-moss-600">
                             <div class="unav-bannerContent">
-                                <h3 class="unav-bannerTitle unav-lh-normal" style="font-size: 20px;" itemprop="headline">SOSTENIBILIDAD</h3>
-                                <p class="unav-bannerText unav-lh-normal" style="font-size: 15px;" itemprop="description">Conoce nuestro plan medioambiental.</p>
-                                <a itemprop="url" href="#" class="unav-enlaceFlecha" style="text-transform: none; --unav-enlaceColor: #ffffff;">
+                                <h3 class="unav-bannerTitle unav-lh-normal" style="font-size: 20px;">SOSTENIBILIDAD</h3>
+                                <p class="unav-bannerText unav-lh-normal" style="font-size: 15px;">Conoce nuestro plan medioambiental.</p>
+                                <a  href="#" class="unav-enlaceFlecha" style="text-transform: none; --unav-enlaceColor: #ffffff;">
                                     <span class="unav-arrowWrapper"><span class="unav-arrow"></span><span class="unav-arrowClone"></span></span>
-                                    <span itemprop="name">Ver plan</span>
+                                    <span>Ver plan</span>
                                 </a>
                             </div>
                         </div>

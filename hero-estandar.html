@@ -1,9 +1,9 @@
 <!DOCTYPE html>
-<html lang="es" itemscope itemtype="https://schema.org/WebPage">
+<html lang="es">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Componente Hero Estándar | Design System UNAV</title>
+    <title>Hero estándar | Design System UNAV</title>
     
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css">
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.1/font/bootstrap-icons.css">    
@@ -20,15 +20,15 @@
         h2[id], h3[id], section[id] { scroll-margin-top: 6rem; }
     </style>
 </head>
-<body class="unav-font-primary unav-weight-regular unav-text-100" itemscope itemtype="https://schema.org/WebPage">
+<body class="unav-font-primary unav-weight-regular unav-text-100">
 
     <nav style="background-color: #ffffff; border-bottom: 1px solid var(--unav-grey-200); padding: var(--unav-spacing-md) 0; position: sticky; top: 0; z-index: var(--unav-zIndex-sticky);">
         <div class="container-lg d-flex justify-content-between align-items-center position-relative">
             
-            <div itemscope itemtype="https://schema.org/WebPageElement">
-                <a itemprop="url" href="indice.html" class="unav-boton unav-botonSecundario">
+            <div>
+                <a  href="indice.html" class="unav-boton unav-botonSecundario">
                     <i class="bi bi-arrow-left unav-botonIcono" aria-hidden="true"></i>
-                    <span class="d-none d-md-inline" itemprop="name">Volver al Índice</span>
+                    <span class="d-none d-md-inline">Volver al Índice</span>
                 </a>
             </div>
     
@@ -44,14 +44,14 @@
         
 
     <!-- Envoltorio general de documentación -->
-    <main itemprop="mainContentOfPage">
+    <main>
         
 
         <!-- Header Documentación (Encapsulado) -->
         <div class="container-lg py-5">
             <header style="text-align: center; margin-bottom: var(--unav-spacing-md); padding-bottom: var(--unav-spacing-md);">
-                <h1 class="unav-font-primary unav-weight-medium unav-text-200 text-dark mb-3" itemprop="name">Componente Hero Estándar</h1>
-                <p class="unav-font-primary unav-weight-regular unav-text-100 text-muted m-0" itemprop="description">
+                <h1 class="unav-font-primary unav-weight-medium unav-text-200 text-dark mb-3">Hero Estándar</h1>
+                <p class="unav-font-primary unav-weight-regular unav-text-100 text-muted m-0">
                     Cabeceras inmensas (fullwidth) animadas con distribución modular de botones por cuadrantes.
                 </p>
             </header>        
@@ -75,9 +75,9 @@
                     </div>
                     
                     <div class="col-md-6 border-start-md ps-md-4">
-                        <h3 class="unav-font-primary unav-weight-bold unav-text-125 mb-3" style="color: var(--unav-black-800);">3. Accesibilidad (A11y) y Schemas (SEO)</h3>
+                        <h3 class="unav-font-primary unav-weight-bold unav-text-125 mb-3" style="color: var(--unav-black-800);">3. Accesibilidad (A11y)</h3>
                         <ul class="unav-font-primary unav-weight-regular unav-text-100" style="color: var(--unav-grey-700); padding-left: var(--unav-spacing-md);">
-                            <li style="margin-bottom: var(--unav-spacing-xs);"><strong>Semántica SEO:</strong> El contenedor global debe marcarse como <code>itemscope itemtype="https://schema.org/WebPageElement"</code> o <code>WPHeader</code> (Semánticamente solo debe haber <strong>un único WPHeader por página</strong>). El título principal debe usar <code>&lt;h1&gt;</code> con <code>itemprop="headline"</code>.</li>
+                            
                             <li style="margin-bottom: var(--unav-spacing-xs);"><strong>Contraste (WCAG):</strong> Es mandatorio el uso de una capa oscura (overlay) entre la imagen y el texto para superar los estándares de accesibilidad, especialmente sobre fotografías con zonas de brillo.</li>
                         </ul>
             
@@ -101,15 +101,15 @@
             </section>
         </div>
         
-        <section class="unav-hero mb-5" itemscope itemtype="https://schema.org/WPHeader">
+        <section class="unav-hero mb-5" ">
             <div class="unav-heroVisuals">
-                <img class="unav-heroImgMobile unav-efectoZoomInfinito" src="https://picsum.photos/800/1000?random=1" alt="Fondo Móvil" itemprop="image">
-                <img class="unav-heroImgDesktop unav-efectoZoomInfinito" src="https://picsum.photos/1920/800?random=1" alt="Fondo Escritorio" itemprop="image">
+                <img class="unav-heroImgMobile unav-efectoZoomInfinito" src="https://picsum.photos/800/1000?random=1" alt="Fondo Móvil">
+                <img class="unav-heroImgDesktop unav-efectoZoomInfinito" src="https://picsum.photos/1920/800?random=1" alt="Fondo Escritorio">
                 
                 <div class="unav-heroOverlay">
                     <div class="unav-heroContent">
-                        <p class="unav-heroPretitle" itemprop="headline">Facultad de Ciencias</p>
-                        <h1 class="unav-heroTitle" itemprop="name">Investigación y Futuro</h1>
+                        <p class="unav-heroPretitle">Facultad de Ciencias</p>
+                        <h1 class="unav-heroTitle">Investigación y Futuro</h1>
                     </div>
                 </div>
 
@@ -149,15 +149,15 @@
             </section>
         </div>
 
-        <section class="unav-hero mb-5" itemscope itemtype="https://schema.org/WPHeader">
+        <section class="unav-hero mb-5" ">
             <div class="unav-heroVisuals">
-                <img class="unav-heroImgMobile unav-efectoZoomInfinito" src="https://picsum.photos/800/1000?random=2" alt="Fondo Móvil" itemprop="image">
-                <img class="unav-heroImgDesktop unav-efectoZoomInfinito" src="https://picsum.photos/1920/800?random=2" alt="Fondo Escritorio" itemprop="image">
+                <img class="unav-heroImgMobile unav-efectoZoomInfinito" src="https://picsum.photos/800/1000?random=2" alt="Fondo Móvil">
+                <img class="unav-heroImgDesktop unav-efectoZoomInfinito" src="https://picsum.photos/1920/800?random=2" alt="Fondo Escritorio">
                 
                 <div class="unav-heroOverlay">
                     <div class="unav-heroContent">
-                        <p class="unav-heroPretitle" itemprop="headline">Admisión 2026</p>
-                        <h1 class="unav-heroTitle" itemprop="name">Tu viaje empieza aquí</h1>
+                        <p class="unav-heroPretitle">Admisión 2026</p>
+                        <h1 class="unav-heroTitle">Tu viaje empieza aquí</h1>
                     </div>
                 </div>
 
@@ -192,15 +192,15 @@
             </section>
         </div>
 
-        <section class="unav-hero mb-5" itemscope itemtype="https://schema.org/WPHeader">
+        <section class="unav-hero mb-5" ">
             <div class="unav-heroVisuals">
-                <img class="unav-heroImgMobile unav-efectoZoomInfinito" src="https://picsum.photos/800/1000?random=3" alt="Fondo Móvil" itemprop="image">
-                <img class="unav-heroImgDesktop unav-efectoZoomInfinito" src="https://picsum.photos/1920/800?random=3" alt="Fondo Escritorio" itemprop="image">
+                <img class="unav-heroImgMobile unav-efectoZoomInfinito" src="https://picsum.photos/800/1000?random=3" alt="Fondo Móvil">
+                <img class="unav-heroImgDesktop unav-efectoZoomInfinito" src="https://picsum.photos/1920/800?random=3" alt="Fondo Escritorio">
                 
                 <div class="unav-heroOverlay">
                     <div class="unav-heroContent">
-                        <p class="unav-heroPretitle" itemprop="headline">Facultad de Enfermería</p>
-                        <h1 class="unav-heroTitle" itemprop="name">Pasión por cuidar</h1>
+                        <p class="unav-heroPretitle">Facultad de Enfermería</p>
+                        <h1 class="unav-heroTitle">Pasión por cuidar</h1>
                     </div>
                 </div>
 
@@ -235,15 +235,15 @@
             </section>
         </div>
 
-        <section class="unav-hero mb-5" itemscope itemtype="https://schema.org/WPHeader">
+        <section class="unav-hero mb-5" ">
             <div class="unav-heroVisuals">
-                <img class="unav-heroImgMobile unav-efectoZoomInfinito" src="https://picsum.photos/800/1000?random=4" alt="Fondo Móvil" itemprop="image">
-                <img class="unav-heroImgDesktop unav-efectoZoomInfinito" src="https://picsum.photos/1920/800?random=4" alt="Fondo Escritorio" itemprop="image">
+                <img class="unav-heroImgMobile unav-efectoZoomInfinito" src="https://picsum.photos/800/1000?random=4" alt="Fondo Móvil">
+                <img class="unav-heroImgDesktop unav-efectoZoomInfinito" src="https://picsum.photos/1920/800?random=4" alt="Fondo Escritorio">
                 
                 <div class="unav-heroOverlay">
                     <div class="unav-heroContent">
-                        <p class="unav-heroPretitle" itemprop="headline">Alumni</p>
-                        <h1 class="unav-heroTitle" itemprop="name">Mantén el vínculo</h1>
+                        <p class="unav-heroPretitle">Alumni</p>
+                        <h1 class="unav-heroTitle">Mantén el vínculo</h1>
                     </div>
                 </div>
 
@@ -282,15 +282,15 @@
             </section>
         </div>
 
-        <section class="unav-hero mb-5" itemscope itemtype="https://schema.org/WPHeader">
+        <section class="unav-hero mb-5" ">
             <div class="unav-heroVisuals">
-                <img class="unav-heroImgMobile unav-unav-efectoZoomInfinito" src="https://picsum.photos/800/1000?random=5" alt="Fondo Móvil Centrado" itemprop="image">
-                <img class="unav-heroImgDesktop unav-unav-efectoZoomInfinito" src="https://picsum.photos/1920/800?random=5" alt="Fondo Escritorio Centrado" itemprop="image">
+                <img class="unav-heroImgMobile unav-unav-efectoZoomInfinito" src="https://picsum.photos/800/1000?random=5" alt="Fondo Móvil Centrado">
+                <img class="unav-heroImgDesktop unav-unav-efectoZoomInfinito" src="https://picsum.photos/1920/800?random=5" alt="Fondo Escritorio Centrado">
                 
                 <div class="unav-heroOverlay">
                     <div class="unav-heroContent unav-heroContent--center">
-                        <p class="unav-heroPretitle" itemprop="headline">Universidad de Navarra</p>
-                        <h1 class="unav-heroTitle" itemprop="name">Formando profesionales con valores</h1>
+                        <p class="unav-heroPretitle">Universidad de Navarra</p>
+                        <h1 class="unav-heroTitle">Formando profesionales con valores</h1>
                         
                         <div class="unav-heroBtnGroup unav-heroBtnGroup--horizontal">
                             <a class="unav-boton unav-botonPrimario unav-botonFit" href="#" style="--unav-botonBg: var(--unav-rojo-600); --unav-botonText: #fff; --unav-botonBorder: var(--unav-rojo-600); --unav-botonHoverBg: #fff; --unav-botonHoverText: var(--unav-rojo-600); --unav-botonHoverBorder: var(--unav-rojo-600);">

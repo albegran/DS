@@ -20,15 +20,15 @@
         h2[id], h3[id], section[id] { scroll-margin-top: 6rem; }
     </style>
 </head>
-<body class="unav-font-primary unav-weight-regular unav-text-100" itemscope itemtype="https://schema.org/WebPage">
+<body class="unav-font-primary unav-weight-regular unav-text-100">
 
     <nav style="background-color: #ffffff; border-bottom: 1px solid var(--unav-grey-200); padding: var(--unav-spacing-md) 0; position: sticky; top: 0; z-index: var(--unav-zIndex-sticky);">
         <div class="container-lg d-flex justify-content-between align-items-center position-relative">
             
-            <div itemscope itemtype="https://schema.org/WebPageElement">
-                <a itemprop="url" href="indice.html" class="unav-boton unav-botonSecundario">
+            <div>
+                <a  href="indice.html" class="unav-boton unav-botonSecundario">
                     <i class="bi bi-arrow-left unav-botonIcono" aria-hidden="true"></i>
-                    <span class="d-none d-md-inline" itemprop="name">Volver al Índice</span>
+                    <span class="d-none d-md-inline">Volver al Índice</span>
                 </a>
             </div>
     
@@ -39,7 +39,7 @@
         </div>
     </nav>
 
-    <main class="container-lg unav-doc-container" itemprop="mainContentOfPage">
+    <main class="container-lg unav-doc-container">
         
         <header style="text-align: center; margin-bottom: var(--unav-spacing-md); padding-bottom: var(--unav-spacing-md);">
             <h1 class="unav-font-primary unav-weight-medium unav-text-200 text-dark mb-3">Fichas de Persona y Contacto</h1>
@@ -67,10 +67,8 @@
                 </div>
                 
                 <div class="col-md-6 border-start-md ps-md-4">
-                    <h3 class="unav-font-primary unav-weight-bold unav-text-125 mb-3" style="color: var(--unav-black-800);">3. Accesibilidad (A11y) y Schemas (SEO)</h3>
+                    <h3 class="unav-font-primary unav-weight-bold unav-text-125 mb-3" style="color: var(--unav-black-800);">3. Accesibilidad (A11y)</h3>
                     <ul class="unav-font-primary unav-weight-regular unav-text-100" style="color: var(--unav-grey-700); padding-left: var(--unav-spacing-md);">
-                        <li style="margin-bottom: var(--unav-spacing-xs);"><strong>Microdatos Personales:</strong> Es absolutamente crítico el uso de <code>itemscope itemtype="https://schema.org/Person"</code>, etiquetando el nombre (<code>itemprop="name"</code>), el cargo (<code>itemprop="jobTitle"</code>) y la imagen (<code>itemprop="image"</code>).</li>
-                        <li style="margin-bottom: var(--unav-spacing-xs);"><strong>Microdatos de Contacto:</strong> Las vías de comunicación deben envolverse obligatoriamente en <code>https://schema.org/ContactPoint</code>, identificando los valores <code>telephone</code> y <code>email</code> para los motores de búsqueda.</li>
                         <li style="margin-bottom: var(--unav-spacing-xs);"><strong>Accesibilidad:</strong> Las imágenes de avatar deben llevar atributo <code>alt</code> explícito con el nombre de la persona para facilitar la labor de los lectores de pantalla.</li>
                     </ul>
         
@@ -97,39 +95,39 @@
                     <div class="row row-cols-1 row-cols-sm-2 row-cols-lg-4 g-4">
                         
                         <div class="col">
-                            <article class="unav-personCard unav-layoutPersona" itemscope itemtype="https://schema.org/Person">
+                            <article class="unav-personCard unav-layoutPersona">
                                 
                                 <div class="unav-imageWrapper unav-efectoZoomImagen">
-                                    <img src="https://images.unsplash.com/photo-1573497019236-17f8177b81e8?q=80&w=500&auto=format&fit=crop&ixlib=rb-4.0.3" alt="María García" class="unav-personImage" itemprop="image">
+                                    <img src="https://images.unsplash.com/photo-1573497019236-17f8177b81e8?q=80&w=500&auto=format&fit=crop&ixlib=rb-4.0.3" alt="María García" class="unav-personImage">
                                 </div>
                                 
-                                <h3 class="unav-personName" itemprop="name">María García Fernández</h3>
+                                <h3 class="unav-personName">María García Fernández</h3>
                                 
-                                <div class="unav-personRole" itemprop="jobTitle">Catedrática de Derecho Civil</div>
+                                <div class="unav-personRole">Catedrática de Derecho Civil</div>
                                 
                                 <ul class="unav-listIcon unav-listIcon--compact mt-3 mb-2" style="order: 4; --unav-listIconColor: var(--unav-grey-500);">
-                                    <li class="unav-listIconItem" itemprop="address">
+                                    <li class="unav-listIconItem">
                                         <i class="material-symbols-outlined unav-listIconIcon">location_on</i>
                                         <span>Edificio Amigos, Despacho 2340<br>31009, Pamplona; Navarra, España.</span>
                                     </li>
-                                    <li class="unav-listIconItem" itemprop="telephone">
+                                    <li class="unav-listIconItem">
                                         <i class="material-symbols-outlined unav-listIconIcon">call</i>
                                         <span>+34 948 425 600 (Ext. 802340)</span>
                                     </li>
-                                    <li class="unav-listIconItem" itemprop="email">
+                                    <li class="unav-listIconItem">
                                         <i class="material-symbols-outlined unav-listIconIcon">mail</i>
                                         <span><a href="mailto:mgarciaf@unav.es" class="unav-enlaceInline">mgarciaf@unav.es</a></span>
                                     </li>
                                 </ul>
 
-                                <div class="unav-actionContainer mt-3" itemscope="" itemtype="https://schema.org/WebPageElement">
-                                    <a itemprop="url" href="https://wa.me/34600123456" target="_blank" class="unav-boton unav-botonSecundario unav-botonFit" style="--unav-botonColorSource: var(--unav-green-600);">
+                                <div class="unav-actionContainer mt-3">
+                                    <a  href="https://wa.me/34600123456" target="_blank" class="unav-boton unav-botonSecundario unav-botonFit" style="--unav-botonColorSource: var(--unav-green-600);">
                                         <i class="bi bi-whatsapp unav-botonIcono"></i>
-                                        <span itemprop="name">WHATSAPP</span>
+                                        <span>WHATSAPP</span>
                                     </a>
-                                    <a itemprop="url" href="#" target="_blank" class="unav-boton unav-botonSecundario unav-botonFit" style="--unav-botonColorSource: var(--unav-blue-600);">
+                                    <a  href="#" target="_blank" class="unav-boton unav-botonSecundario unav-botonFit" style="--unav-botonColorSource: var(--unav-blue-600);">
                                         <i class="bi bi-calendar-event unav-botonIcono"></i>
-                                        <span itemprop="name">AGENDAR CITA</span>
+                                        <span>AGENDAR CITA</span>
                                     </a>
                                 </div>
 
@@ -144,32 +142,32 @@
                         </div>
 
                         <div class="col">
-                            <article class="unav-personCard unav-layoutPersona unav-cardNoBorder" itemscope itemtype="https://schema.org/Person">
+                            <article class="unav-personCard unav-layoutPersona unav-cardNoBorder">
                                 <div class="unav-imageWrapper unav-efectoZoomImagen">
-                                    <img src="https://images.unsplash.com/photo-1534528741775-53994a69daeb?ixlib=rb-4.0.3&auto=format&fit=crop&w=500&q=80" alt="Lucía Costa" class="unav-personImage" itemprop="image">
+                                    <img src="https://images.unsplash.com/photo-1534528741775-53994a69daeb?ixlib=rb-4.0.3&auto=format&fit=crop&w=500&q=80" alt="Lucía Costa" class="unav-personImage">
                                 </div>
-                                <h3 class="unav-personName" itemprop="name">Lucía Costa</h3>
-                                <div class="unav-personRole" itemprop="jobTitle">Orientadora</div>
+                                <h3 class="unav-personName">Lucía Costa</h3>
+                                <div class="unav-personRole">Orientadora</div>
                                 
                                 <ul class="unav-listIcon unav-listIcon--compact mt-3 mb-2" style="order: 4; --unav-listIconColor: var(--unav-grey-500);">
-                                    <li class="unav-listIconItem" itemprop="address">
+                                    <li class="unav-listIconItem">
                                         <i class="material-symbols-outlined unav-listIconIcon">location_on</i>
                                         <span>Edificio Central, Planta Baja<br>31009, Pamplona; Navarra, España.</span>
                                     </li>
-                                    <li class="unav-listIconItem" itemprop="telephone">
+                                    <li class="unav-listIconItem">
                                         <i class="material-symbols-outlined unav-listIconIcon">call</i>
                                         <span>+34 948 425 600 (Ext. 801122)</span>
                                     </li>
-                                    <li class="unav-listIconItem" itemprop="email">
+                                    <li class="unav-listIconItem">
                                         <i class="material-symbols-outlined unav-listIconIcon">mail</i>
                                         <span><a href="mailto:lcosta@unav.es" class="unav-enlaceInline">lcosta@unav.es</a></span>
                                     </li>
                                 </ul>
 
-                                <div class="unav-actionContainer mt-3" itemscope="" itemtype="https://schema.org/WebPageElement">
-                                    <a itemprop="url" href="https://wa.me/34600123456" target="_blank" class="unav-boton unav-botonSecundario unav-botonFit" style="--unav-botonColorSource: var(--unav-green-600);">
+                                <div class="unav-actionContainer mt-3">
+                                    <a  href="https://wa.me/34600123456" target="_blank" class="unav-boton unav-botonSecundario unav-botonFit" style="--unav-botonColorSource: var(--unav-green-600);">
                                         <i class="bi bi-whatsapp unav-botonIcono"></i>
-                                        <span itemprop="name">WHATSAPP</span>
+                                        <span>WHATSAPP</span>
                                     </a>
                                 </div>
                                 
@@ -198,7 +196,7 @@
                     <div class="row row-cols-1 row-cols-sm-2 row-cols-lg-4 g-4">
                         
                         <div class="col">
-                            <article class="unav-personCard unav-layoutContacto" itemscope itemtype="https://schema.org/Organization">
+                            <article class="unav-personCard unav-layoutContacto">
                                 
                                 <div class="unav-imageWrapper"><img src="" alt="Secretaría" class="unav-personImage"></div>
                                 <h3 class="unav-personName">Secretaría de Alumnos</h3>
@@ -206,15 +204,15 @@
                                 <div class="unav-actionContainer"><button>Oculto</button></div>
                                 
                                 <ul class="unav-listIcon unav-listIcon--compact mt-3 mb-2" style="order: 2; --unav-listIconColor: var(--unav-grey-500);">                                    
-                                    <li class="unav-listIconItem" itemprop="address">
+                                    <li class="unav-listIconItem">
                                         <i class="material-symbols-outlined unav-listIconIcon">location_on</i>
                                         <span>Edificio de Ciencias (Hexágonos)<br>31008, Pamplona; Navarra, España.</span>
                                     </li>
-                                    <li class="unav-listIconItem" itemprop="telephone">
+                                    <li class="unav-listIconItem">
                                         <i class="material-symbols-outlined unav-listIconIcon">call</i>
                                         <span>+34 948 425 600</span>
                                     </li>
-                                    <li class="unav-listIconItem" itemprop="email">
+                                    <li class="unav-listIconItem">
                                         <i class="material-symbols-outlined unav-listIconIcon">mail</i>
                                         <span><a href="mailto:secretaria.ciencias@unav.es" class="unav-enlaceInline">secretaria.ciencias@unav.es</a></span>
                                     </li>
@@ -245,20 +243,20 @@
                     <div class="row row-cols-1 row-cols-sm-2 row-cols-lg-4 g-4">
                         
                         <div class="col">
-                            <article class="unav-personCard unav-layoutDirectivo unav-cardNoBorder" itemscope itemtype="https://schema.org/Person">
-                                <h3 class="unav-personName" itemprop="name">Alberto Herrero Ríos</h3>
-                                <div class="unav-personRole" itemprop="jobTitle">Director Financiero</div>
+                            <article class="unav-personCard unav-layoutDirectivo unav-cardNoBorder">
+                                <h3 class="unav-personName">Alberto Herrero Ríos</h3>
+                                <div class="unav-personRole">Director Financiero</div>
                                 
                                 <ul class="unav-listIcon unav-listIcon--compact mt-3 mb-2" style="order: 3; --unav-listIconColor: var(--unav-grey-500);">                                    
-                                    <li class="unav-listIconItem" itemprop="address">
+                                    <li class="unav-listIconItem">
                                         <i class="material-symbols-outlined unav-listIconIcon">location_on</i>
                                         <span>Rectorado. Edificio Central<br>Universidad de Navarra<br>31009 Pamplona, España</span>
                                     </li>
-                                    <li class="unav-listIconItem" itemprop="telephone">
+                                    <li class="unav-listIconItem">
                                         <i class="material-symbols-outlined unav-listIconIcon">call</i>
                                         <span>+34 948 425 606<br>+34 948 425 600</span>
                                     </li>
-                                    <li class="unav-listIconItem" itemprop="email">
+                                    <li class="unav-listIconItem">
                                         <i class="material-symbols-outlined unav-listIconIcon">mail</i>
                                         <span><a href="mailto:ahrios@unav.es" class="unav-enlaceInline">ahrios@unav.es</a></span>
                                     </li>
@@ -288,15 +286,15 @@
                     <div class="row row-cols-1 row-cols-sm-2 row-cols-lg-4 g-4">
                         
                         <div class="col">
-                            <article class="unav-personCard unav-layoutPersona" itemscope itemtype="https://schema.org/Person">
+                            <article class="unav-personCard unav-layoutPersona">
                                 <div class="unav-imageWrapper unav-efectoZoomImagen">
-                                    <img src="https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?auto=format&fit=crop&w=500&q=80" alt="Javier Santos" class="unav-personImage" itemprop="image">
+                                    <img src="https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?auto=format&fit=crop&w=500&q=80" alt="Javier Santos" class="unav-personImage">
                                 </div>
-                                <h3 class="unav-personName" itemprop="name">Javier Santos</h3>
-                                <div class="unav-personRole" itemprop="jobTitle">Profesor Titular</div>
+                                <h3 class="unav-personName">Javier Santos</h3>
+                                <div class="unav-personRole">Profesor Titular</div>
                                 
                                 <ul class="unav-listIcon unav-listIcon--compact mt-3 mb-2" style="order: 4; --unav-listIconColor: var(--unav-grey-500);">
-                                    <li class="unav-listIconItem" itemprop="email">
+                                    <li class="unav-listIconItem">
                                         <i class="material-symbols-outlined unav-listIconIcon">mail</i>
                                         <span><a href="mailto:jsantos@unav.es" class="unav-enlaceInline">jsantos@unav.es</a></span>
                                     </li>
@@ -312,15 +310,15 @@
                         </div>
 
                         <div class="col">
-                            <article class="unav-personCard unav-layoutPersona" itemscope itemtype="https://schema.org/Person">
+                            <article class="unav-personCard unav-layoutPersona">
                                 <div class="unav-imageWrapper unav-efectoZoomImagen">
-                                    <img src="https://images.unsplash.com/photo-1573497019940-1c28c88b4f3e?auto=format&fit=crop&w=500&q=80" alt="Laura Gómez" class="unav-personImage" itemprop="image">
+                                    <img src="https://images.unsplash.com/photo-1573497019940-1c28c88b4f3e?auto=format&fit=crop&w=500&q=80" alt="Laura Gómez" class="unav-personImage">
                                 </div>
-                                <h3 class="unav-personName" itemprop="name">Laura Gómez</h3>
-                                <div class="unav-personRole" itemprop="jobTitle">Investigadora</div>
+                                <h3 class="unav-personName">Laura Gómez</h3>
+                                <div class="unav-personRole">Investigadora</div>
                                 
                                 <ul class="unav-listIcon unav-listIcon--compact mt-3 mb-2" style="order: 4; --unav-listIconColor: var(--unav-grey-500);">
-                                    <li class="unav-listIconItem" itemprop="email">
+                                    <li class="unav-listIconItem">
                                         <i class="material-symbols-outlined unav-listIconIcon">mail</i>
                                         <span><a href="mailto:lgomez@unav.es" class="unav-enlaceInline">lgomez@unav.es</a></span>
                                     </li>
@@ -336,15 +334,15 @@
                         </div>
 
                         <div class="col">
-                            <article class="unav-personCard unav-layoutPersona" itemscope itemtype="https://schema.org/Person">
+                            <article class="unav-personCard unav-layoutPersona">
                                 <div class="unav-imageWrapper unav-efectoZoomImagen">
-                                    <img src="https://images.unsplash.com/photo-1566492031773-4f4e44671857?auto=format&fit=crop&w=500&q=80" alt="Miguel Torres" class="unav-personImage" itemprop="image">
+                                    <img src="https://images.unsplash.com/photo-1566492031773-4f4e44671857?auto=format&fit=crop&w=500&q=80" alt="Miguel Torres" class="unav-personImage">
                                 </div>
-                                <h3 class="unav-personName" itemprop="name">Miguel Torres</h3>
-                                <div class="unav-personRole" itemprop="jobTitle">Coordinador</div>
+                                <h3 class="unav-personName">Miguel Torres</h3>
+                                <div class="unav-personRole">Coordinador</div>
                                 
                                 <ul class="unav-listIcon unav-listIcon--compact mt-3 mb-2" style="order: 4; --unav-listIconColor: var(--unav-grey-500);">
-                                    <li class="unav-listIconItem" itemprop="email">
+                                    <li class="unav-listIconItem">
                                         <i class="material-symbols-outlined unav-listIconIcon">mail</i>
                                         <span><a href="mailto:mtorres@unav.es" class="unav-enlaceInline">mtorres@unav.es</a></span>
                                     </li>
@@ -360,15 +358,15 @@
                         </div>
 
                         <div class="col">
-                            <article class="unav-personCard unav-layoutPersona" itemscope itemtype="https://schema.org/Person">
+                            <article class="unav-personCard unav-layoutPersona">
                                 <div class="unav-imageWrapper unav-efectoZoomImagen">
-                                    <img src="https://images.unsplash.com/photo-1580489944761-15a19d654956?auto=format&fit=crop&w=500&q=80" alt="Ana Silva" class="unav-personImage" itemprop="image">
+                                    <img src="https://images.unsplash.com/photo-1580489944761-15a19d654956?auto=format&fit=crop&w=500&q=80" alt="Ana Silva" class="unav-personImage">
                                 </div>
-                                <h3 class="unav-personName" itemprop="name">Ana Silva</h3>
-                                <div class="unav-personRole" itemprop="jobTitle">Gestora Académica</div>
+                                <h3 class="unav-personName">Ana Silva</h3>
+                                <div class="unav-personRole">Gestora Académica</div>
                                 
                                 <ul class="unav-listIcon unav-listIcon--compact mt-3 mb-2" style="order: 4; --unav-listIconColor: var(--unav-grey-500);">
-                                    <li class="unav-listIconItem" itemprop="email">
+                                    <li class="unav-listIconItem">
                                         <i class="material-symbols-outlined unav-listIconIcon">mail</i>
                                         <span><a href="mailto:asilva@unav.es" class="unav-enlaceInline">asilva@unav.es</a></span>
                                     </li>
@@ -398,19 +396,19 @@
                     <div class="row row-cols-1 row-cols-sm-2 row-cols-lg-4 g-4">
                         
                         <div class="col">
-                            <article class="unav-personCard unav-layoutPerfilContacto unav-cardNoBorder" itemscope itemtype="https://schema.org/Person">
-                                <h3 class="unav-personName" itemprop="name">Javier Urdiales León</h3>
+                            <article class="unav-personCard unav-layoutPerfilContacto unav-cardNoBorder">
+                                <h3 class="unav-personName">Javier Urdiales León</h3>
                                 
                                 <div class="unav-imageWrapper">
-                                    <img src="https://images.unsplash.com/photo-1557862921-37829c790f19?q=80&w=500&auto=format&fit=crop&ixlib=rb-4.0.3" alt="Javier Urdiales León" class="unav-personImage" itemprop="image">
+                                    <img src="https://images.unsplash.com/photo-1557862921-37829c790f19?q=80&w=500&auto=format&fit=crop&ixlib=rb-4.0.3" alt="Javier Urdiales León" class="unav-personImage">
                                 </div>
                                 
                                 <ul class="unav-listIcon unav-listIcon--compact mt-3 mb-2" style="order: 4; --unav-listIconColor: var(--unav-grey-500);">
-                                    <li class="unav-listIconItem" itemprop="address">
+                                    <li class="unav-listIconItem">
                                         <i class="material-symbols-outlined unav-listIconIcon">location_on</i>
                                         <span>Campus Universitario, s/n<br>31009 Pamplona, España</span>
                                     </li>
-                                    <li class="unav-listIconItem" itemprop="telephone">
+                                    <li class="unav-listIconItem">
                                         <i class="material-symbols-outlined unav-listIconIcon">call</i>
                                         <span>+34 948 42 56 00<br>Ext. 802377</span>
                                     </li>

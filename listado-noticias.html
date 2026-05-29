@@ -1,6 +1,6 @@
 
 <!DOCTYPE html>
-<html lang="es" itemscope itemtype="https://schema.org/WebPage">
+<html lang="es">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -21,15 +21,15 @@
         h2[id], h3[id], section[id] { scroll-margin-top: 6rem; }
     </style>
 </head>
-<body class="unav-font-primary unav-weight-regular unav-text-100" itemscope itemtype="https://schema.org/WebPage">
+<body class="unav-font-primary unav-weight-regular unav-text-100">
 
     <nav style="background-color: #ffffff; border-bottom: 1px solid var(--unav-grey-200); padding: var(--unav-spacing-md) 0; position: sticky; top: 0; z-index: var(--unav-zIndex-sticky);">
         <div class="container-lg d-flex justify-content-between align-items-center position-relative">
             
-            <div itemscope itemtype="https://schema.org/WebPageElement">
-                <a itemprop="url" href="indice.html" class="unav-boton unav-botonSecundario">
+            <div>
+                <a  href="indice.html" class="unav-boton unav-botonSecundario">
                     <i class="bi bi-arrow-left unav-botonIcono" aria-hidden="true"></i>
-                    <span class="d-none d-md-inline" itemprop="name">Volver al Índice</span>
+                    <span class="d-none d-md-inline">Volver al Índice</span>
                 </a>
             </div>
     
@@ -40,11 +40,11 @@
         </div>
     </nav>
 
-    <main class="container-lg unav-doc-container" itemprop="mainContentOfPage">
+    <main class="container-lg unav-doc-container">
         
         <header style="text-align: center; margin-bottom: var(--unav-spacing-md); padding-bottom: var(--unav-spacing-md);">
-            <h1 class="unav-font-primary unav-weight-medium unav-text-200 text-dark mb-3" itemprop="name">Listado de Noticias (8 Col)</h1>
-            <p class="unav-font-primary unav-weight-regular unav-text-100 text-muted m-0" itemprop="description">Refinamiento del componente de lista con formato de fecha editorial y contención en grid central.</p>
+            <h1 class="unav-font-primary unav-weight-medium unav-text-200 text-dark mb-3">Listado de Noticias (8 Col)</h1>
+            <p class="unav-font-primary unav-weight-regular unav-text-100 text-muted m-0">Refinamiento del componente de lista con formato de fecha editorial y contención en grid central.</p>
         </header>
             
         
@@ -67,9 +67,8 @@
                 </div>
                 
                 <div class="col-md-6 border-start-md ps-md-4">
-                    <h3 class="unav-font-primary unav-weight-bold unav-text-125 mb-3" style="color: var(--unav-black-800);">3. Accesibilidad (A11y) y Schemas (SEO)</h3>
-                    <ul class="unav-font-primary unav-weight-regular unav-text-100" style="color: var(--unav-grey-700); padding-left: var(--unav-spacing-md);">
-                        <li style="margin-bottom: var(--unav-spacing-xs);"><strong>Microdatos de Noticias:</strong> Cada iteración del listado es un organismo en sí mismo y debe encapsularse en <code>itemscope itemtype="https://schema.org/NewsArticle"</code>. Es vital declarar las propiedades <code>headline</code>, <code>datePublished</code> y <code>image</code>.</li>
+                    <h3 class="unav-font-primary unav-weight-bold unav-text-125 mb-3" style="color: var(--unav-black-800);">3. Accesibilidad (A11y)</h3>
+                    <ul class="unav-font-primary unav-weight-regular unav-text-100" style="color: var(--unav-grey-700); padding-left: var(--unav-spacing-md);">                        
                         <li style="margin-bottom: var(--unav-spacing-xs);"><strong>Accesibilidad Semántica:</strong> Las fechas de las noticias deben usar el nodo nativo <code>&lt;time datetime="YYYY-MM-DD"&gt;</code>. Los enlaces de "Leer noticia" deben abarcar toda el área interactiva de la tarjeta para evitar redundancia focal en el lector de pantalla.</li>
                     </ul>
         
@@ -87,174 +86,172 @@
             <div class="col-12 col-md-10 col-lg-8">
                 <section class="bg-white p-4 p-md-5 rounded shadow-sm border mb-5">
                     
-                    <div class="unav-newsListContainer" itemscope itemtype="https://schema.org/ItemList">
-                        <link itemprop="itemListOrder" href="https://schema.org/ItemListOrderDescending" />
-                        
+                    <div class="unav-newsListContainer">
                         <!-- Noticia 1 -->
-                        <article class="unav-newsListItem unav-efectoEntradaOculto" itemprop="itemListElement" itemscope itemtype="https://schema.org/NewsArticle">
+                        <article class="unav-newsListItem unav-efectoEntradaOculto">
                             <div class="row g-4 align-items-center">
                                 <div class="col-12 col-sm-4">
                                     <div class="unav-newsImageWrapper unav-efectoZoomImagen">
-                                        <img src="https://picsum.photos/600/400?random=1" alt="Cima Universidad de Navarra" class="unav-newsImage" loading="lazy" itemprop="image">
+                                        <img src="https://picsum.photos/600/400?random=1" alt="Cima Universidad de Navarra" class="unav-newsImage" loading="lazy">
                                     </div>
                                 </div>
                                 <div class="col-12 col-sm-8">
-                                    <p class="unav-newsDate" itemprop="datePublished">07 May. 2026</p>
-                                    <h3 class="unav-newsTitle" itemprop="headline">
-                                        <a href="#" itemprop="url">El Cima Universidad de Navarra obtiene la acreditación como Centro de Excelencia Severo Ochoa</a>
+                                    <p class="unav-newsDate">07 May. 2026</p>
+                                    <h3 class="unav-newsTitle">
+                                        <a href="#">El Cima Universidad de Navarra obtiene la acreditación como Centro de Excelencia Severo Ochoa</a>
                                     </h3>
                                 </div>
                             </div>
                         </article>
 
                         <!-- Noticia 2 -->
-                        <article class="unav-newsListItem unav-efectoEntradaOculto" itemprop="itemListElement" itemscope itemtype="https://schema.org/NewsArticle">
+                        <article class="unav-newsListItem unav-efectoEntradaOculto">
                             <div class="row g-4 align-items-center">
                                 <div class="col-12 col-sm-4">
                                     <div class="unav-newsImageWrapper unav-efectoZoomImagen">
-                                        <img src="https://picsum.photos/600/400?random=2" alt="Ranking El Mundo" class="unav-newsImage" loading="lazy" itemprop="image">
+                                        <img src="https://picsum.photos/600/400?random=2" alt="Ranking El Mundo" class="unav-newsImage" loading="lazy">
                                     </div>
                                 </div>
                                 <div class="col-12 col-sm-8">
-                                    <p class="unav-newsDate" itemprop="datePublished">06 May. 2026</p>
-                                    <h3 class="unav-newsTitle" itemprop="headline">
-                                        <a href="#" itemprop="url">Doce grados de la Universidad, entre los mejores de España, según el 'ranking' de 'El Mundo'</a>
+                                    <p class="unav-newsDate">06 May. 2026</p>
+                                    <h3 class="unav-newsTitle">
+                                        <a href="#">Doce grados de la Universidad, entre los mejores de España, según el 'ranking' de 'El Mundo'</a>
                                     </h3>
                                 </div>
                             </div>
                         </article>
 
                         <!-- Noticia 3 -->
-                        <article class="unav-newsListItem unav-efectoEntradaOculto" itemprop="itemListElement" itemscope itemtype="https://schema.org/NewsArticle">
+                        <article class="unav-newsListItem unav-efectoEntradaOculto">
                             <div class="row g-4 align-items-center">
                                 <div class="col-12 col-sm-4">
                                     <div class="unav-newsImageWrapper unav-efectoZoomImagen">
-                                        <img src="https://picsum.photos/600/400?random=3" alt="Naiara Urralburu" class="unav-newsImage" loading="lazy" itemprop="image">
+                                        <img src="https://picsum.photos/600/400?random=3" alt="Naiara Urralburu" class="unav-newsImage" loading="lazy">
                                     </div>
                                 </div>
                                 <div class="col-12 col-sm-8">
-                                    <p class="unav-newsDate" itemprop="datePublished">05 May. 2026</p>
-                                    <h3 class="unav-newsTitle" itemprop="headline">
-                                        <a href="#" itemprop="url">Naiara Urralburu obtiene plaza en el QIR y se incorpora al Hospital del Mar de Barcelona</a>
+                                    <p class="unav-newsDate">05 May. 2026</p>
+                                    <h3 class="unav-newsTitle">
+                                        <a href="#">Naiara Urralburu obtiene plaza en el QIR y se incorpora al Hospital del Mar de Barcelona</a>
                                     </h3>
                                 </div>
                             </div>
                         </article>
 
                         <!-- Noticia 4 -->
-                        <article class="unav-newsListItem unav-efectoEntradaOculto" itemprop="itemListElement" itemscope itemtype="https://schema.org/NewsArticle">
+                        <article class="unav-newsListItem unav-efectoEntradaOculto">
                             <div class="row g-4 align-items-center">
                                 <div class="col-12 col-sm-4">
                                     <div class="unav-newsImageWrapper unav-efectoZoomImagen">
-                                        <img src="https://picsum.photos/600/400?random=4" alt="Inmunoterapia" class="unav-newsImage" loading="lazy" itemprop="image">
+                                        <img src="https://picsum.photos/600/400?random=4" alt="Inmunoterapia" class="unav-newsImage" loading="lazy">
                                     </div>
                                 </div>
                                 <div class="col-12 col-sm-8">
-                                    <p class="unav-newsDate" itemprop="datePublished">28 Abr. 2026</p>
-                                    <h3 class="unav-newsTitle" itemprop="headline">
-                                        <a href="#" itemprop="url">Nueva vía para mejorar la inmunoterapia en cáncer de hígado</a>
+                                    <p class="unav-newsDate">28 Abr. 2026</p>
+                                    <h3 class="unav-newsTitle">
+                                        <a href="#">Nueva vía para mejorar la inmunoterapia en cáncer de hígado</a>
                                     </h3>
                                 </div>
                             </div>
                         </article>
 
                         <!-- Noticia 5 -->
-                        <article class="unav-newsListItem unav-efectoEntradaOculto" itemprop="itemListElement" itemscope itemtype="https://schema.org/NewsArticle">
+                        <article class="unav-newsListItem unav-efectoEntradaOculto">
                             <div class="row g-4 align-items-center">
                                 <div class="col-12 col-sm-4">
                                     <div class="unav-newsImageWrapper unav-efectoZoomImagen">
-                                        <img src="https://picsum.photos/600/400?random=5" alt="Campus Madrid" class="unav-newsImage" loading="lazy" itemprop="image">
+                                        <img src="https://picsum.photos/600/400?random=5" alt="Campus Madrid" class="unav-newsImage" loading="lazy">
                                     </div>
                                 </div>
                                 <div class="col-12 col-sm-8">
-                                    <p class="unav-newsDate" itemprop="datePublished">25 Abr. 2026</p>
-                                    <h3 class="unav-newsTitle" itemprop="headline">
-                                        <a href="#" itemprop="url">La sede de la Universidad de Navarra en Madrid acoge un foro sobre emprendimiento</a>
+                                    <p class="unav-newsDate">25 Abr. 2026</p>
+                                    <h3 class="unav-newsTitle">
+                                        <a href="#">La sede de la Universidad de Navarra en Madrid acoge un foro sobre emprendimiento</a>
                                     </h3>
                                 </div>
                             </div>
                         </article>
 
                         <!-- Noticia 6 -->
-                        <article class="unav-newsListItem unav-efectoEntradaOculto" itemprop="itemListElement" itemscope itemtype="https://schema.org/NewsArticle">
+                        <article class="unav-newsListItem unav-efectoEntradaOculto">
                             <div class="row g-4 align-items-center">
                                 <div class="col-12 col-sm-4">
                                     <div class="unav-newsImageWrapper unav-efectoZoomImagen">
-                                        <img src="https://picsum.photos/600/400?random=6" alt="Cursos de verano" class="unav-newsImage" loading="lazy" itemprop="image">
+                                        <img src="https://picsum.photos/600/400?random=6" alt="Cursos de verano" class="unav-newsImage" loading="lazy">
                                     </div>
                                 </div>
                                 <div class="col-12 col-sm-8">
-                                    <p class="unav-newsDate" itemprop="datePublished">20 Abr. 2026</p>
-                                    <h3 class="unav-newsTitle" itemprop="headline">
-                                        <a href="#" itemprop="url">Publicada la oferta de cursos de verano de la Universidad de Navarra</a>
+                                    <p class="unav-newsDate">20 Abr. 2026</p>
+                                    <h3 class="unav-newsTitle">
+                                        <a href="#">Publicada la oferta de cursos de verano de la Universidad de Navarra</a>
                                     </h3>
                                 </div>
                             </div>
                         </article>
 
                         <!-- Noticia 7 -->
-                        <article class="unav-newsListItem unav-efectoEntradaOculto" itemprop="itemListElement" itemscope itemtype="https://schema.org/NewsArticle">
+                        <article class="unav-newsListItem unav-efectoEntradaOculto">
                             <div class="row g-4 align-items-center">
                                 <div class="col-12 col-sm-4">
                                     <div class="unav-newsImageWrapper unav-efectoZoomImagen">
-                                        <img src="https://picsum.photos/600/400?random=7" alt="Inteligencia Artificial" class="unav-newsImage" loading="lazy" itemprop="image">
+                                        <img src="https://picsum.photos/600/400?random=7" alt="Inteligencia Artificial" class="unav-newsImage" loading="lazy">
                                     </div>
                                 </div>
                                 <div class="col-12 col-sm-8">
-                                    <p class="unav-newsDate" itemprop="datePublished">15 Abr. 2026</p>
-                                    <h3 class="unav-newsTitle" itemprop="headline">
-                                        <a href="#" itemprop="url">Expertos analizan en el campus los retos éticos de la inteligencia artificial</a>
+                                    <p class="unav-newsDate">15 Abr. 2026</p>
+                                    <h3 class="unav-newsTitle">
+                                        <a href="#">Expertos analizan en el campus los retos éticos de la inteligencia artificial</a>
                                     </h3>
                                 </div>
                             </div>
                         </article>
 
                         <!-- Noticia 8 -->
-                        <article class="unav-newsListItem unav-efectoEntradaOculto" itemprop="itemListElement" itemscope itemtype="https://schema.org/NewsArticle">
+                        <article class="unav-newsListItem unav-efectoEntradaOculto">
                             <div class="row g-4 align-items-center">
                                 <div class="col-12 col-sm-4">
                                     <div class="unav-newsImageWrapper unav-efectoZoomImagen">
-                                        <img src="https://picsum.photos/600/400?random=8" alt="Biblioteca" class="unav-newsImage" loading="lazy" itemprop="image">
+                                        <img src="https://picsum.photos/600/400?random=8" alt="Biblioteca" class="unav-newsImage" loading="lazy">
                                     </div>
                                 </div>
                                 <div class="col-12 col-sm-8">
-                                    <p class="unav-newsDate" itemprop="datePublished">12 Abr. 2026</p>
-                                    <h3 class="unav-newsTitle" itemprop="headline">
-                                        <a href="#" itemprop="url">La Biblioteca de la Universidad de Navarra digitaliza su fondo de incunables</a>
+                                    <p class="unav-newsDate">12 Abr. 2026</p>
+                                    <h3 class="unav-newsTitle">
+                                        <a href="#">La Biblioteca de la Universidad de Navarra digitaliza su fondo de incunables</a>
                                     </h3>
                                 </div>
                             </div>
                         </article>
 
                         <!-- Noticia 9 -->
-                        <article class="unav-newsListItem unav-efectoEntradaOculto" itemprop="itemListElement" itemscope itemtype="https://schema.org/NewsArticle">
+                        <article class="unav-newsListItem unav-efectoEntradaOculto">
                             <div class="row g-4 align-items-center">
                                 <div class="col-12 col-sm-4">
                                     <div class="unav-newsImageWrapper unav-efectoZoomImagen">
-                                        <img src="https://picsum.photos/600/400?random=9" alt="Alumni" class="unav-newsImage" loading="lazy" itemprop="image">
+                                        <img src="https://picsum.photos/600/400?random=9" alt="Alumni" class="unav-newsImage" loading="lazy">
                                     </div>
                                 </div>
                                 <div class="col-12 col-sm-8">
-                                    <p class="unav-newsDate" itemprop="datePublished">10 Abr. 2026</p>
-                                    <h3 class="unav-newsTitle" itemprop="headline">
-                                        <a href="#" itemprop="url">Becas Alumni: Un impulso para el talento en la Universidad</a>
+                                    <p class="unav-newsDate">10 Abr. 2026</p>
+                                    <h3 class="unav-newsTitle">
+                                        <a href="#">Becas Alumni: Un impulso para el talento en la Universidad</a>
                                     </h3>
                                 </div>
                             </div>
                         </article>
 
                         <!-- Noticia 10 -->
-                        <article class="unav-newsListItem unav-efectoEntradaOculto" itemprop="itemListElement" itemscope itemtype="https://schema.org/NewsArticle">
+                        <article class="unav-newsListItem unav-efectoEntradaOculto">
                             <div class="row g-4 align-items-center">
                                 <div class="col-12 col-sm-4">
                                     <div class="unav-newsImageWrapper unav-efectoZoomImagen">
-                                        <img src="https://picsum.photos/600/400?random=10" alt="Medicina" class="unav-newsImage" loading="lazy" itemprop="image">
+                                        <img src="https://picsum.photos/600/400?random=10" alt="Medicina" class="unav-newsImage" loading="lazy">
                                     </div>
                                 </div>
                                 <div class="col-12 col-sm-8">
-                                    <p class="unav-newsDate" itemprop="datePublished">05 Abr. 2026</p>
-                                    <h3 class="unav-newsTitle" itemprop="headline">
-                                        <a href="#" itemprop="url">La Facultad de Medicina lidera un proyecto internacional sobre oncología</a>
+                                    <p class="unav-newsDate">05 Abr. 2026</p>
+                                    <h3 class="unav-newsTitle">
+                                        <a href="#">La Facultad de Medicina lidera un proyecto internacional sobre oncología</a>
                                     </h3>
                                 </div>
                             </div>

@@ -364,7 +364,7 @@
         }
 
         /* Elemento Activo: Se subraya */
-        .unav-menuItem.unav-isActive > .unav-menuText {
+        .unav-menuItem.unav-isActive> .unav-menuText {
             font-weight: 300;
             text-decoration: underline;
             text-underline-offset: 4px;
@@ -396,7 +396,7 @@
             font-size: 1.1rem;
         }
 
-        .unav-iconBox:hover, .unav-menuItem.unav-isActive > .unav-iconBox {
+        .unav-iconBox:hover, .unav-menuItem.unav-isActive> .unav-iconBox {
             border-color: var(--unav-text-main);
             color: var(--unav-text-main);
         }
@@ -552,11 +552,11 @@
 <body>
 
     <!-- CABECERA BASE -->
-    <header class="unav-headerBase" itemscope itemtype="https://schema.org/WPHeader">
+    <header class="unav-headerBase" ">
         <div class="container d-flex justify-content-between align-items-center">
             
-            <div class="unav-logoWrapper" itemscope itemtype="https://schema.org/Organization">
-                <a href="https://www.unav.edu" itemprop="url" class="unav-logoLink">
+            <div class="unav-logoWrapper">
+                <a href="https://www.unav.edu"  class="unav-logoLink">
                     <img src="unav-black-logo.svg" alt="Universidad de Navarra" class="unav-brandLogo">
                 </a>
             </div>
@@ -621,12 +621,12 @@
 
 
     <!-- MEGAMENU -->
-    <nav id="unavMegaMenu" class="unav-megaMenuOverlay" itemscope itemtype="https://schema.org/SiteNavigationElement">
+    <nav id="unavMegaMenu" class="unav-megaMenuOverlay">
         
         <!-- Top Bar -->
         <div class="container unav-menuTopBar">
-            <div class="unav-logoWrapper" itemscope itemtype="https://schema.org/Organization">
-                <a href="https://www.unav.edu" itemprop="url" class="unav-logoLink">
+            <div class="unav-logoWrapper">
+                <a href="https://www.unav.edu"  class="unav-logoLink">
                     <img src="unav-black-logo.svg" alt="Universidad de Navarra" class="unav-brandLogo">
                 </a>
             </div>
@@ -646,31 +646,31 @@
                 <div class="col-lg-4 col-md-6 unav-colPrimary unav-scrollableCol" id="unavCol1">
                     <ul class="unav-menuList">
                         <li class="unav-menuItem">
-                            <a href="#" class="unav-menuText unav-trigger-col2" data-target="col2-estudios" itemprop="url"><span itemprop="name">Estudios</span></a> 
+                            <a href="#" class="unav-menuText unav-trigger-col2" data-target="col2-estudios"><span>Estudios</span></a> 
                             <span class="unav-iconBox unav-trigger-col2" data-target="col2-estudios" aria-label="Abrir submenú"><span class="material-symbols-outlined">chevron_right</span></span>
                         </li>
                         <li class="unav-menuItem">
-                            <a href="/admision" class="unav-menuText" itemprop="url"><span itemprop="name">Admisión y Ayudas</span></a> 
+                            <a href="/admision" class="unav-menuText"><span>Admisión y Ayudas</span></a> 
                             <span class="unav-iconBox unav-trigger-col2" data-target="col2-admision" aria-label="Abrir submenú"><span class="material-symbols-outlined">chevron_right</span></span>
                         </li>
                         <li class="unav-menuItem">
-                            <a href="/investigacion" class="unav-menuText" itemprop="url"><span itemprop="name">Investigación</span></a> 
+                            <a href="/investigacion" class="unav-menuText"><span>Investigación</span></a> 
                             <span class="unav-iconBox unav-trigger-col2" data-target="col2-investigacion"><span class="material-symbols-outlined">chevron_right</span></span>
                         </li>
                         <li class="unav-menuItem">
-                            <a href="#" class="unav-menuText unav-trigger-col2" data-target="col2-facultades" itemprop="url"><span itemprop="name">Facultades y Escuelas</span></a>
+                            <a href="#" class="unav-menuText unav-trigger-col2" data-target="col2-facultades"><span>Facultades y Escuelas</span></a>
                             <span class="unav-iconBox unav-trigger-col2" data-target="col2-facultades"><span class="material-symbols-outlined">chevron_right</span></span>
                         </li>
                         <li class="unav-menuItem">
-                            <a href="#" class="unav-menuText unav-trigger-col2" data-target="col2-conoce" itemprop="url"><span itemprop="name">Conoce la universidad</span></a> 
+                            <a href="#" class="unav-menuText unav-trigger-col2" data-target="col2-conoce"><span>Conoce la universidad</span></a> 
                             <span class="unav-iconBox unav-trigger-col2" data-target="col2-conoce"><span class="material-symbols-outlined">chevron_right</span></span>
                         </li>
                         <li class="unav-menuItem">
-                            <a href="#" class="unav-menuText unav-trigger-col2" data-target="col2-vida" itemprop="url"><span itemprop="name">Vida universitaria</span></a>
+                            <a href="#" class="unav-menuText unav-trigger-col2" data-target="col2-vida"><span>Vida universitaria</span></a>
                             <span class="unav-iconBox unav-trigger-col2" data-target="col2-vida"><span class="material-symbols-outlined">chevron_right</span></span>
                         </li>
                         <li class="unav-menuItem">
-                            <a href="#" class="unav-menuText unav-trigger-col2" data-target="col2-noticias" itemprop="url"><span itemprop="name">Noticias y eventos</span></a>
+                            <a href="#" class="unav-menuText unav-trigger-col2" data-target="col2-noticias"><span>Noticias y eventos</span></a>
                             <span class="unav-iconBox unav-trigger-col2" data-target="col2-noticias"><span class="material-symbols-outlined">chevron_right</span></span>
                         </li>
                     </ul>
@@ -680,43 +680,43 @@
                 <div class="col-lg-4 col-md-6 unav-colSecondary unav-scrollableCol d-none" id="unavCol2">
                     
                     <ul id="col2-estudios" class="unav-menuList d-none">
-                        <li class="unav-menuItem"><a href="#" class="unav-menuText"><span itemprop="name">¿Qué quieres estudiar?</span></a></li>
-                        <li class="unav-menuItem"><a href="#" class="unav-menuText"><span itemprop="name">Grados</span></a></li>
-                        <li class="unav-menuItem"><a href="#" class="unav-menuText"><span itemprop="name">Másteres</span></a></li>
-                        <li class="unav-menuItem"><a href="#" class="unav-menuText"><span itemprop="name">Programas de doctorado</span></a></li>
-                        <li class="unav-menuItem"><a href="#" class="unav-menuText"><span itemprop="name">Programas profesionales</span></a></li>
+                        <li class="unav-menuItem"><a href="#" class="unav-menuText"><span>¿Qué quieres estudiar?</span></a></li>
+                        <li class="unav-menuItem"><a href="#" class="unav-menuText"><span>Grados</span></a></li>
+                        <li class="unav-menuItem"><a href="#" class="unav-menuText"><span>Másteres</span></a></li>
+                        <li class="unav-menuItem"><a href="#" class="unav-menuText"><span>Programas de doctorado</span></a></li>
+                        <li class="unav-menuItem"><a href="#" class="unav-menuText"><span>Programas profesionales</span></a></li>
                     </ul>
 
                     <ul id="col2-admision" class="unav-menuList d-none">
-                        <li class="unav-menuItem"><a href="#" class="unav-menuText"><span itemprop="name">¿Por qué la Universidad de Navarra?</span></a></li>
+                        <li class="unav-menuItem"><a href="#" class="unav-menuText"><span>¿Por qué la Universidad de Navarra?</span></a></li>
                         <li class="unav-menuItem">
-                            <a href="#" class="unav-menuText unav-trigger-col3" data-target="col3-grado"><span itemprop="name">Grado</span></a> 
+                            <a href="#" class="unav-menuText unav-trigger-col3" data-target="col3-grado"><span>Grado</span></a> 
                             <span class="unav-iconBox unav-trigger-col3" data-target="col3-grado"><span class="material-symbols-outlined">chevron_right</span></span>
                         </li>
                         <li class="unav-menuItem">
-                            <a href="#" class="unav-menuText unav-trigger-col3" data-target="col3-master"><span itemprop="name">Máster</span></a> 
+                            <a href="#" class="unav-menuText unav-trigger-col3" data-target="col3-master"><span>Máster</span></a> 
                             <span class="unav-iconBox unav-trigger-col3" data-target="col3-master"><span class="material-symbols-outlined">chevron_right</span></span>
                         </li>
-                        <li class="unav-menuItem"><a href="#" class="unav-menuText"><span itemprop="name">Salidas profesionales</span></a></li>
-                        <li class="unav-menuItem"><a href="#" class="unav-menuText"><span itemprop="name">Doctorado</span></a></li>
-                        <li class="unav-menuItem"><a href="#" class="unav-menuText"><span itemprop="name">Alojamiento</span></a></li>
-                        <li class="unav-menuItem"><a href="#" class="unav-menuText"><span itemprop="name">Visita nuestros campus</span></a></li>
-                        <li class="unav-menuItem"><a href="#" class="unav-menuText"><span itemprop="name">Nuestros delegados</span></a></li>
+                        <li class="unav-menuItem"><a href="#" class="unav-menuText"><span>Salidas profesionales</span></a></li>
+                        <li class="unav-menuItem"><a href="#" class="unav-menuText"><span>Doctorado</span></a></li>
+                        <li class="unav-menuItem"><a href="#" class="unav-menuText"><span>Alojamiento</span></a></li>
+                        <li class="unav-menuItem"><a href="#" class="unav-menuText"><span>Visita nuestros campus</span></a></li>
+                        <li class="unav-menuItem"><a href="#" class="unav-menuText"><span>Nuestros delegados</span></a></li>
                     </ul>
 
                     <ul id="col2-investigacion" class="unav-menuList d-none">
-                        <li class="unav-menuItem"><a href="#" class="unav-menuText"><span itemprop="name">Nuestra investigación</span></a></li>
+                        <li class="unav-menuItem"><a href="#" class="unav-menuText"><span>Nuestra investigación</span></a></li>
                         <li class="unav-menuItem">
-                            <a href="#" class="unav-menuText unav-trigger-col3" data-target="col3-colaboracion"><span itemprop="name">Colaboración con empresas</span></a> 
+                            <a href="#" class="unav-menuText unav-trigger-col3" data-target="col3-colaboracion"><span>Colaboración con empresas</span></a> 
                             <span class="unav-iconBox unav-trigger-col3" data-target="col3-colaboracion"><span class="material-symbols-outlined">chevron_right</span></span>
                         </li>
                         <li class="unav-menuItem">
-                            <a href="#" class="unav-menuText unav-trigger-col3" data-target="col3-servicios"><span itemprop="name">Servicios para investigadores</span></a> 
+                            <a href="#" class="unav-menuText unav-trigger-col3" data-target="col3-servicios"><span>Servicios para investigadores</span></a> 
                             <span class="unav-iconBox unav-trigger-col3" data-target="col3-servicios"><span class="material-symbols-outlined">chevron_right</span></span>
                         </li>
-                        <li class="unav-menuItem"><a href="#" class="unav-menuText"><span itemprop="name">Escuela de doctorado, etc.</span></a></li>
+                        <li class="unav-menuItem"><a href="#" class="unav-menuText"><span>Escuela de doctorado, etc.</span></a></li>
                         <li class="unav-menuItem">
-                            <a href="#" class="unav-menuText unav-trigger-col3" data-target="col3-cultura"><span itemprop="name">Unidad de Cultura Científica y de la Innovación</span></a> 
+                            <a href="#" class="unav-menuText unav-trigger-col3" data-target="col3-cultura"><span>Unidad de Cultura Científica y de la Innovación</span></a> 
                             <span class="unav-iconBox unav-trigger-col3" data-target="col3-cultura"><span class="material-symbols-outlined">chevron_right</span></span>
                         </li>
                     </ul>
@@ -964,13 +964,13 @@
         <div class="unav-menuBottomBar">
             <div class="container d-flex flex-wrap align-items-center">
                 <div class="unav-bottomLinks w-100">
-                    <a href="#" itemprop="url">Estudiantes</a>
-                    <a href="#" itemprop="url">Profesores y empleados</a>
-                    <a href="#" itemprop="url">Alumni</a>
-                    <a href="#" itemprop="url">Enlaces rápidos</a>
-                    <a href="#" itemprop="url">¿Qué quieres estudiar?</a>
-                    <a href="#" itemprop="url">Colabora</a>
-                    <a href="#" itemprop="url">Medios</a>
+                    <a href="#">Estudiantes</a>
+                    <a href="#">Profesores y empleados</a>
+                    <a href="#">Alumni</a>
+                    <a href="#">Enlaces rápidos</a>
+                    <a href="#">¿Qué quieres estudiar?</a>
+                    <a href="#">Colabora</a>
+                    <a href="#">Medios</a>
                 </div>
                 
                 <a href="#" class="unav-btnUp" aria-label="Volver arriba">

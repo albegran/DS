@@ -19,15 +19,15 @@
         .unav-doc-container { padding-top: var(--unav-spacing-3xl); padding-bottom: var(--unav-spacing-3xl); }
     </style>
 </head>
-<body class="unav-font-primary unav-weight-regular unav-text-100" itemscope itemtype="https://schema.org/WebPage">
+<body class="unav-font-primary unav-weight-regular unav-text-100">
 
     <nav style="background-color: #ffffff; border-bottom: 1px solid var(--unav-grey-200); padding: var(--unav-spacing-md) 0; position: sticky; top: 0; z-index: var(--unav-zIndex-sticky);">
         <div class="container-lg d-flex justify-content-between align-items-center position-relative">
             
-            <div itemscope itemtype="https://schema.org/WebPageElement">
-                <a itemprop="url" href="indice.html" class="unav-boton unav-botonSecundario">
+            <div>
+                <a  href="indice.html" class="unav-boton unav-botonSecundario">
                     <i class="bi bi-arrow-left unav-botonIcono" aria-hidden="true"></i>
-                    <span class="d-none d-md-inline" itemprop="name">Volver al Índice</span>
+                    <span class="d-none d-md-inline">Volver al Índice</span>
                 </a>
             </div>
     
@@ -38,11 +38,11 @@
         </div>
     </nav>
 
-    <main class="container-lg unav-doc-container" itemprop="mainContentOfPage">
+    <main class="container-lg unav-doc-container">
         
         <header style="text-align: center; margin-bottom: var(--unav-spacing-md); padding-bottom: var(--unav-spacing-md);">
-            <h1 class="unav-font-primary unav-weight-medium unav-text-200 m-0" style="color: var(--unav-black-900); margin-bottom: var(--unav-spacing-sm) !important;" itemprop="name">Sistema Tipográfico</h1>
-            <p class="unav-font-primary unav-weight-regular unav-text-100 m-0" style="color: var(--unav-grey-600);" itemprop="description">
+            <h1 class="unav-font-primary unav-weight-medium unav-text-200 m-0" style="color: var(--unav-black-900); margin-bottom: var(--unav-spacing-sm) !important;">Sistema Tipográfico</h1>
+            <p class="unav-font-primary unav-weight-regular unav-text-100 m-0" style="color: var(--unav-grey-600);">
                 Consumo de clases utilitarias "Tokens" para aplicaciones web.
             </p>
         </header>
@@ -72,12 +72,12 @@
                 </div>
                 
                 <div class="col-md-6">
-                    <h3 class="unav-font-primary unav-weight-bold unav-text-125" style="color: var(--unav-black-800); margin-bottom: var(--unav-spacing-xs);">3.- Accesibilidad (A11y) y Schema.org</h3>
+                    <h3 class="unav-font-primary unav-weight-bold unav-text-125" style="color: var(--unav-black-800); margin-bottom: var(--unav-spacing-xs);">3.- Accesibilidad (A11y)</h3>
                     <p class="unav-font-primary unav-weight-regular unav-text-100" style="color: var(--unav-grey-700); margin-bottom: var(--unav-spacing-sm);">
                         <strong>Cumplimiento WCAG 2.1 Nivel AA:</strong> Todas las combinaciones de color tipográfico sobre fondos deben pasar un ratio de contraste mínimo de <strong>4.5:1</strong> para textos estándar (<code>.unav-text-100</code>) y <strong>3:1</strong> para textos grandes o en negrita. El uso de <code>rem</code> permite a los usuarios con discapacidades visuales reescalar las fuentes globalmente desde su navegador sin romper el layout.
                     </p>
                     <p class="unav-font-primary unav-weight-regular unav-text-100" style="color: var(--unav-grey-700); margin: 0;">
-                        <strong>Microdatos:</strong> Los titulares principales deben llevar el atributo <code>itemprop="headline"</code> o <code>itemprop="name"</code>, mientras que los bloques de texto informativos deben emplear <code>itemprop="description"</code> o <code>itemprop="articleBody"</code>, vinculados siempre a su entidad padre (ej. <code>TechArticle</code>, <code>Event</code>, <code>Person</code>).
+                    
                     </p>
                 </div>
                 
@@ -93,8 +93,8 @@
             </div>
         </article>
 
-        <div class="unav-typography-guide" itemscope itemtype="https://schema.org/TechArticle">
-            <meta itemprop="name" content="Guía de Consumo Tipográfico UNAV">
+        <div class="unav-typography-guide">
+            <meta  content="Guía de Consumo Tipográfico UNAV">
             
             <h2 class="unav-font-primary unav-weight-bold unav-text-200" style="border-bottom: 1px solid var(--unav-grey-300); padding-bottom: var(--unav-spacing-sm); margin-bottom: var(--unav-spacing-xl); color: var(--unav-black-900);">1. Familia Principal: Roboto</h2>
 

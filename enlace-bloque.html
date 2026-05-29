@@ -20,15 +20,15 @@
         h2[id], h3[id], section[id] { scroll-margin-top: 6rem; }
     </style>
 </head>
-<body class="unav-font-primary unav-weight-regular unav-text-100" itemscope itemtype="https://schema.org/WebPage">
+<body class="unav-font-primary unav-weight-regular unav-text-100">
 
     <nav style="background-color: #ffffff; border-bottom: 1px solid var(--unav-grey-200); padding: var(--unav-spacing-md) 0; position: sticky; top: 0; z-index: var(--unav-zIndex-sticky);">
         <div class="container-lg d-flex justify-content-between align-items-center position-relative">
             
-            <div itemscope itemtype="https://schema.org/WebPageElement">
-                <a itemprop="url" href="indice.html" class="unav-boton unav-botonSecundario">
+            <div>
+                <a  href="indice.html" class="unav-boton unav-botonSecundario">
                     <i class="bi bi-arrow-left unav-botonIcono" aria-hidden="true"></i>
-                    <span class="d-none d-md-inline" itemprop="name">Volver al Índice</span>
+                    <span class="d-none d-md-inline">Volver al Índice</span>
                 </a>
             </div>
     
@@ -39,11 +39,11 @@
         </div>
     </nav>
 
-    <main class="container-lg unav-doc-container" itemprop="mainContentOfPage">
+    <main class="container-lg unav-doc-container">
         
         <header style="text-align: center; margin-bottom: var(--unav-spacing-md); padding-bottom: var(--unav-spacing-md);">
-            <h1 class="unav-font-primary unav-weight-medium unav-text-200 m-0" style="color: var(--unav-black-900); margin-bottom: var(--unav-spacing-sm) !important;" itemprop="name">Enlace Bloque</h1>
-            <p class="unav-font-primary unav-weight-regular unav-text-100 m-0" style="color: var(--unav-grey-600);" itemprop="description">
+            <h1 class="unav-font-primary unav-weight-medium unav-text-200 m-0" style="color: var(--unav-black-900); margin-bottom: var(--unav-spacing-sm) !important;">Enlace Bloque</h1>
+            <p class="unav-font-primary unav-weight-regular unav-text-100 m-0" style="color: var(--unav-grey-600);">
                 Ítem de lista accionable con altura dinámica que abraza el texto. Conserva el color histórico mediante tokens locales e incluye microinteracción JS.
             </p>
         </header>
@@ -67,10 +67,9 @@
                 </div>
                 
                 <div class="col-md-6 border-start-md ps-md-4">
-                    <h3 class="unav-font-primary unav-weight-bold unav-text-125 mb-3" style="color: var(--unav-black-800);">3. Accesibilidad (A11y) y Schemas</h3>
+                    <h3 class="unav-font-primary unav-weight-bold unav-text-125 mb-3" style="color: var(--unav-black-800);">3. Accesibilidad (A11y)</h3>
                     <ul class="unav-font-primary unav-weight-regular unav-text-100" style="color: var(--unav-grey-700); padding-left: var(--unav-spacing-md);">
-                        <li style="margin-bottom: var(--unav-spacing-xs);"><strong>Accesibilidad:</strong> Alto ratio de contraste en hover asegurado. Todo bloque enlaza de forma descriptiva, y la animación del subrayado respeta el flujo sin causar saltos en el lector de pantalla.</li>
-                        <li style="margin-bottom: var(--unav-spacing-xs);"><strong>Microdatos SEO:</strong> Al ser un menú lateral o un sumario de navegación profunda, debe envolverse en <code>itemscope itemtype="https://schema.org/SiteNavigationElement"</code> con enlaces marcados vía <code>itemprop="url"</code> y <code>itemprop="name"</code>.</li>
+                        <li style="margin-bottom: var(--unav-spacing-xs);"><strong>Accesibilidad:</strong> Alto ratio de contraste en hover asegurado. Todo bloque enlaza de forma descriptiva, y la animación del subrayado respeta el flujo sin causar saltos en el lector de pantalla.</li>                        
                     </ul>
 
                     <h3 class="unav-font-primary unav-weight-bold unav-text-125 mb-3 mt-4" style="color: var(--unav-black-800);">4. UX, Tipografía y Layouts</h3>
@@ -92,9 +91,9 @@
             <div class="row mb-5">
                 <div class="col-12 col-md-6">
                     <p class="unav-font-primary unav-weight-bold unav-text-075 mb-2 text-uppercase" style="color: var(--unav-grey-500);">Ejemplo en 6 Columnas (50% del ancho)</p>
-                    <div itemscope itemtype="https://schema.org/SiteNavigationElement">
-                        <a itemprop="url" href="#" class="unav-bloqueEnlace">
-                            <span itemprop="name" class="unav-bloqueEnlaceText">Grado en Química con mención en Química Ambiental y nuevos materiales. Programa especial internacional y prácticas en laboratorio avanzado.</span>
+                    <div>
+                        <a  href="#" class="unav-bloqueEnlace">
+                            <span  class="unav-bloqueEnlaceText">Grado en Química con mención en Química Ambiental y nuevos materiales. Programa especial internacional y prácticas en laboratorio avanzado.</span>
                         </a>
                     </div>
                 </div>
@@ -103,9 +102,9 @@
             <div class="row justify-content-center mb-5">
                 <div class="col-12 col-md-5">
                     <p class="unav-font-primary unav-weight-bold unav-text-075 mb-2 text-uppercase" style="color: var(--unav-grey-500);">Ejemplo en 5 Columnas (~41% del ancho)</p>
-                    <div itemscope itemtype="https://schema.org/SiteNavigationElement">
-                        <a itemprop="url" href="#" class="unav-bloqueEnlace">
-                            <span itemprop="name" class="unav-bloqueEnlaceText">ADE y General Management & Strategy /<br>Dirección Empresas y Estrategia</span>
+                    <div>
+                        <a  href="#" class="unav-bloqueEnlace">
+                            <span  class="unav-bloqueEnlaceText">ADE y General Management & Strategy /<br>Dirección Empresas y Estrategia</span>
                         </a>
                     </div>
                 </div>
@@ -116,15 +115,15 @@
                 <div class="col-12 col-md-4 border-end-md pe-md-4">
                     <p class="unav-font-primary unav-weight-bold unav-text-075 mb-2 text-uppercase" style="color: var(--unav-grey-500);">Ejemplo en 4 Columnas (33% del ancho)</p>
                     
-                    <div class="unav-listadoEnlaces" itemscope itemtype="https://schema.org/SiteNavigationElement">
-                        <a itemprop="url" href="#" class="unav-bloqueEnlace">
-                            <span itemprop="name" class="unav-bloqueEnlaceText">Doble Grado en Farmacia y Nutrición Humana y Dietética</span>
+                    <div class="unav-listadoEnlaces">
+                        <a  href="#" class="unav-bloqueEnlace">
+                            <span  class="unav-bloqueEnlaceText">Doble Grado en Farmacia y Nutrición Humana y Dietética</span>
                         </a>
-                        <a itemprop="url" href="#" class="unav-bloqueEnlace">
-                            <span itemprop="name" class="unav-bloqueEnlaceText">Grado en Enfermería</span>
+                        <a  href="#" class="unav-bloqueEnlace">
+                            <span  class="unav-bloqueEnlaceText">Grado en Enfermería</span>
                         </a>
-                        <a itemprop="url" href="#" class="unav-bloqueEnlace">
-                            <span itemprop="name" class="unav-bloqueEnlaceText">Máster de Práctica Avanzada y Gestión en Enfermería</span>
+                        <a  href="#" class="unav-bloqueEnlace">
+                            <span  class="unav-bloqueEnlaceText">Máster de Práctica Avanzada y Gestión en Enfermería</span>
                         </a>
                     </div>
                 </div>
@@ -132,18 +131,18 @@
                 <div class="col-12 col-md-3">
                     <p class="unav-font-primary unav-weight-bold unav-text-075 mb-2 text-uppercase" style="color: var(--unav-grey-500);">Ejemplo en 3 Columnas (25% del ancho)</p>
                     
-                    <div class="unav-listadoEnlaces" itemscope itemtype="https://schema.org/SiteNavigationElement">
-                        <a itemprop="url" href="#" class="unav-bloqueEnlace">
-                            <span itemprop="name" class="unav-bloqueEnlaceText">Arquitectura</span>
+                    <div class="unav-listadoEnlaces">
+                        <a  href="#" class="unav-bloqueEnlace">
+                            <span  class="unav-bloqueEnlaceText">Arquitectura</span>
                         </a>
-                        <a itemprop="url" href="#" class="unav-bloqueEnlace">
-                            <span itemprop="name" class="unav-bloqueEnlaceText">Medicina</span>
+                        <a  href="#" class="unav-bloqueEnlace">
+                            <span  class="unav-bloqueEnlaceText">Medicina</span>
                         </a>
-                        <a itemprop="url" href="#" class="unav-bloqueEnlace">
-                            <span itemprop="name" class="unav-bloqueEnlaceText">Filosofía y Letras</span>
+                        <a  href="#" class="unav-bloqueEnlace">
+                            <span  class="unav-bloqueEnlaceText">Filosofía y Letras</span>
                         </a>
-                        <a itemprop="url" href="#" class="unav-bloqueEnlace">
-                            <span itemprop="name" class="unav-bloqueEnlaceText">Teología</span>
+                        <a  href="#" class="unav-bloqueEnlace">
+                            <span  class="unav-bloqueEnlaceText">Teología</span>
                         </a>
                     </div>
                 </div>
@@ -188,7 +187,7 @@
                 // Extracción de rectángulos renderizados
                 const rects = textNode.getClientRects();
                 
-                if (rects.length > 0) {
+                if (rects.length> 0) {
                     const lastRect = rects[rects.length - 1];
                     const containerRect = item.getBoundingClientRect();
 
