@@ -1,0 +1,438 @@
+/* ==========================================
+   COMPONENTE: GALERÍA DE IMÁGENES UNAV (OOCSS)
+   ========================================== */
+
+/* Envoltorio Base para Container Queries */
+.unav-galleryWrapper {
+    container-type: inline-size;
+    container-name: unavGallery;
+    width: 100%;
+}
+
+/* Contenedor Grid Principal */
+.unav-mediaGallery {
+    display: grid;
+    grid-template-columns: 1fr var(--unav-gallerySidebarWidth, 250px);
+    background-color: var(--unav-galleryBg, var(--unav-black-900));
+    /* REFACTOR: Consumo de Tokens de Forma (Esquinas rectas estrictas) */
+    border-radius: var(--unav-radius-none) !important; 
+    overflow: hidden;
+    box-shadow: var(--unav-cardShadowBase);
+    width: 100%;
+    aspect-ratio: 16 / 9; 
+    min-height: var(--unav-galleryMinHeight, 400px);
+}
+
+/* ==========================================
+   1. ÁREA VISUALIZADORA (Stage)
+   ========================================== */
+.unav-galleryStage {
+    position: relative;
+    background-color: var(--unav-galleryStageBg, var(--unav-black-800));
+    overflow: hidden;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.unav-mainImageWrapper {
+    position: absolute;
+    inset: 0;
+    display: flex; /* Siempre flex para centrar contenido */
+    align-items: center;
+    justify-content: center;
+    /* REFACTOR: Consumo de Tokens de Espaciado (24px default) */
+    padding: var(--unav-galleryStagePadding, var(--unav-spacing-lg));
+    pointer-events: none; /* Inactivo por defecto */
+}
+
+.unav-mainImageWrapper.unav-isActive { 
+    pointer-events: auto; /* Interactivo solo si está activa */
+}
+
+.unav-mainImage { 
+    max-width: 100%; 
+    max-height: 100%; 
+    object-fit: contain; 
+}
+
+/* Pie de Foto */
+.unav-imageCaption {
+    position: absolute;
+    bottom: 0; left: 0; right: 0;
+    /* REFACTOR: Consumo de Tokens de Espaciado (Top: 32px, Laterales: 24px, Bottom: 16px) */
+    padding: var(--unav-spacing-xl) var(--unav-spacing-lg) var(--unav-spacing-md); 
+    background: linear-gradient(transparent, rgba(0,0,0,0.85));
+    color: #ffffff;
+    font-family: var(--unav-fontFamilyPrimary); 
+    font-size: var(--unav-fontSize100); 
+    font-weight: var(--unav-fontWeightRegular); 
+    pointer-events: none;
+}
+
+/* ==========================================
+   2. SIDEBAR DE MINIATURAS Y CONTROLES
+   ========================================== */
+.unav-gallerySidebar {
+    background-color: var(--unav-gallerySidebarBg, var(--unav-black-900));
+    border-left: 1px solid var(--unav-galleryBorderColor, var(--unav-grey-800));
+    display: flex;
+    flex-direction: column; /* Permite empujar la barra de controles al fondo */
+    overflow: hidden;
+    min-height: 0;
+    position: relative;
+}
+
+.unav-thumbGrid {
+    flex-grow: 1; /* Ocupa el espacio sobrante empujando los controles al fondo */
+    overflow-y: auto;
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    grid-auto-rows: max-content;
+    /* REFACTOR: Consumo de Tokens de Espaciado (4px default) */
+    gap: var(--unav-galleryThumbGap, var(--unav-spacing-xs));
+    /* REFACTOR: Consumo de Tokens de Espaciado (8px) */
+    padding: var(--unav-spacing-sm);
+    align-content: start;
+    scrollbar-width: none; /* Oculta scrollbar en Firefox */
+}
+.unav-thumbGrid::-webkit-scrollbar { display: none; /* Oculta scrollbar en Webkit */ }
+
+/* Ítem de Miniatura (Convertido a botón semántico en JS) */
+.unav-thumbItem {
+    position: relative;
+    width: 100%;
+    aspect-ratio: 1/1;
+    cursor: pointer;
+    opacity: 0.6;
+    transition: opacity var(--unav-transitionBase), border-color var(--unav-transitionBase);
+    border: 2px solid transparent;
+    overflow: hidden;
+    display: block;
+    
+    /* Resets para elemento <button> */
+    padding: 0;
+    margin: 0;
+    background: transparent;
+    outline: none; /* Evita el marco nativo del navegador */
+}
+
+.unav-thumbItem img { 
+    position: absolute; top: 0; left: 0;
+    width: 100%; height: 100%; 
+    object-fit: cover; 
+}
+
+.unav-thumbItem:hover { opacity: 1; }
+.unav-thumbItem.unav-isSelected { 
+    opacity: 1; 
+    border-color: var(--unav-rojo-600);
+}
+
+/* Estilos de la Barra de Controles integrada */
+.unav-galleryControlsBar {
+    background-color: rgba(0, 0, 0, 0.2); 
+    border-top: 1px solid rgba(255, 255, 255, 0.05);
+    /* REFACTOR: Consumo de Tokens de Espaciado (16px) */
+    padding: var(--unav-spacing-md);
+    flex-shrink: 0;
+}
+
+/* =======================================================
+   3. LÓGICA RESPONSIVE (Container Queries)
+   ======================================================= */
+@container unavGallery (max-width: 850px) {
+    .unav-mediaGallery { grid-template-columns: 1fr 200px; }
+    .unav-thumbGrid { grid-template-columns: repeat(2, 1fr); }
+}
+
+@container unavGallery (max-width: 550px) {
+    .unav-mediaGallery { 
+        grid-template-columns: 1fr; 
+        grid-template-rows: auto 120px; 
+        aspect-ratio: auto;
+        height: 500px;
+    }
+    .unav-galleryStage { height: 100%; }
+    
+    .unav-gallerySidebar { 
+        border-left: none;
+        border-top: 1px solid var(--unav-galleryBorderColor, var(--unav-grey-800));
+        flex-direction: row; /* En móvil, el sidebar pasa a horizontal */
+    }
+    
+    .unav-thumbGrid { 
+        display: flex; flex-direction: row;
+        overflow-x: auto; overflow-y: hidden; 
+        height: 100%; align-items: center; 
+        /* REFACTOR: Consumo de Tokens de Espaciado (4px default) */
+        gap: var(--unav-galleryThumbGap, var(--unav-spacing-xs));
+        scroll-snap-type: x mandatory;
+        min-width: 0; /* Crucial para permitir scroll horizontal interno en flexbox */
+    }
+    .unav-thumbItem { 
+        flex: 0 0 var(--unav-galleryThumbSizeMobile, 80px); 
+        width: var(--unav-galleryThumbSizeMobile, 80px);
+        height: var(--unav-galleryThumbSizeMobile, 80px);
+        scroll-snap-align: center;
+    }
+
+    .unav-galleryControlsBar {
+        border-top: none;
+        border-left: 1px solid rgba(255, 255, 255, 0.05);
+    }
+
+}
+
+
+
+
+
+/* ==========================================
+   COMPONENTE: GALERÍA DE VÍDEOS UNAV (OOCSS)
+   ========================================== */
+
+/* Envoltorio para Container Queries */
+.unav-videoGalleryWrapper {
+    container-type: inline-size;
+    container-name: unavVideoGallery;
+    width: 100%;
+    background-color: var(--unav-videoGalleryBg, #ffffff);
+    border: 1px solid var(--unav-videoGalleryBorderColor, var(--unav-grey-200));
+    position: relative;
+    /* REFACTOR: Consumo de Tokens de Forma (Esquinas rectas estrictas) */
+    border-radius: var(--unav-radius-none) !important; 
+}
+
+/* Contenedor Flex Principal */
+.unav-videoMediaContainer {
+    position: relative;
+    padding-right: var(--unav-videoSidebarWidth, 320px); 
+    background-color: var(--unav-videoGalleryStageBg, var(--unav-black-900));
+}
+
+/* Área Visualizadora (Stage 16:9) */
+.unav-videoStage {
+    width: 100%;
+    position: relative;
+    aspect-ratio: 16 / 9;
+    background-color: var(--unav-black-900);
+}
+
+.unav-videoFluid { 
+    position: absolute;
+    top: 0; left: 0;
+    width: 100%; height: 100%; 
+    object-fit: contain; 
+    border: none; 
+    display: block; 
+}
+
+/* Sidebar de la Playlist (Estructura Flex Vertical por defecto) */
+.unav-videoPlaylistSidebar {
+    position: absolute;
+    top: 0; right: 0; bottom: 0;
+    width: var(--unav-videoSidebarWidth, 320px);
+    background-color: var(--unav-videoGalleryBg, #ffffff);
+    display: flex;
+    flex-direction: column; /* Organiza: Botón Arriba -> Miniaturas -> Botón Abajo */
+    border-left: 1px solid var(--unav-videoGalleryBorderColor, var(--unav-grey-200));
+    overflow: hidden;
+}
+
+/* Contenedores de los Botones (Fijos en los extremos) */
+.unav-videoControlNav {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: var(--unav-grey-100);
+    flex-shrink: 0; /* Impide que los botones se encojan */
+    z-index: 10;
+}
+/* REFACTOR: Consumo de Tokens de Espaciado (8px) */
+.unav-videoControlNav.unav-navTop { border-bottom: 1px solid var(--unav-grey-200); padding: var(--unav-spacing-sm); }
+.unav-videoControlNav.unav-navBottom { border-top: 1px solid var(--unav-grey-200); padding: var(--unav-spacing-sm); }
+
+/* Lista de miniaturas (Scrollable) */
+.unav-videoPlaylistItems {
+    flex-grow: 1; /* Ocupa todo el espacio entre los botones */
+    min-height: 0; /* Truco CSS vital para que el overflow funcione en Flexbox */
+    overflow-y: auto;
+    scrollbar-width: none; /* Oculta scrollbar en Firefox */
+    display: flex;
+    flex-direction: column;
+}
+.unav-videoPlaylistItems::-webkit-scrollbar { display: none; /* Oculta scrollbar en Chrome/Safari */ }
+
+/* Ítem de Vídeo en Playlist */
+.unav-videoItem {
+    display: flex;
+    /* REFACTOR: Consumo de Tokens de Espaciado (16px) */
+    padding: var(--unav-spacing-md); 
+    background-color: transparent;
+    border: none;
+    outline: none; /* Reseteo del outline nativo */
+    border-bottom: 1px solid var(--unav-videoGalleryBorderColor, var(--unav-grey-200));
+    cursor: pointer;
+    text-align: left;
+    /* REFACTOR: Consumo de Tokens de Espaciado (16px) */
+    gap: var(--unav-spacing-md); 
+    transition: background-color var(--unav-transitionBase);
+    width: 100%;
+    position: relative;
+}
+
+.unav-videoItem:hover { 
+    background-color: var(--unav-videoGalleryHoverBg, var(--unav-grey-100)); 
+}
+.unav-videoItem.unav-isActive {
+    background-color: var(--unav-videoGalleryActiveBg, var(--unav-rojo-100));
+    box-shadow: inset 4px 0 0 0 var(--unav-videoGalleryActiveBorder, var(--unav-rojo-600));
+}
+
+/* Miniatura del Vídeo */
+.unav-videoThumb {
+    position: relative; 
+    width: var(--unav-videoThumbWidth, 120px);
+    flex-shrink: 0;
+    aspect-ratio: 16/9;
+    background-color: var(--unav-black-800);
+    /* REFACTOR: Consumo de Tokens de Forma (4px) */
+    border-radius: var(--unav-radius-md);
+}
+.unav-videoThumb img { 
+    width: 100%; height: 100%; 
+    object-fit: cover; 
+    opacity: 0.8; 
+    transition: opacity var(--unav-transitionBase); 
+}
+.unav-videoItem:hover .unav-videoThumb img, 
+.unav-videoItem.unav-isActive .unav-videoThumb img { 
+    opacity: 1; 
+}
+
+/* Icono Play (Motion Tokens) */
+.unav-videoPlayIcon {
+    position: absolute;
+    top: 50%; left: 50%;
+    transform: translate(-50%, -50%);
+    font-size: 2rem;
+    color: #ffffff;
+    opacity: 0.8;
+    z-index: 5;
+    transition: transform var(--unav-durationNormal, 250ms) var(--unav-easingStandard, ease), 
+                color var(--unav-durationNormal, 250ms) var(--unav-easingStandard, ease),
+                opacity var(--unav-durationNormal, 250ms) var(--unav-easingStandard, ease);
+}
+.unav-videoItem:hover .unav-videoPlayIcon {
+    transform: translate(-50%, -50%) scale(1.2); 
+    color: var(--unav-rojo-500);
+    opacity: 1;
+}
+.unav-videoItem.unav-isActive .unav-videoPlayIcon {
+    color: var(--unav-rojo-600);
+    opacity: 1;
+}
+
+/* Textos de la Playlist */
+.unav-videoItemInfo { 
+    overflow: hidden; 
+    display: flex; 
+    flex-direction: column; 
+    justify-content: center; 
+}
+
+/* Line Clamping (Protección contra textos largos) */
+.unav-videoItemTitle {
+    font-family: var(--unav-fontFamilyPrimary);
+    font-size: var(--unav-fontSize075, 0.875rem);
+    font-weight: var(--unav-fontWeightBold);
+    color: var(--unav-black-800);
+    line-height: 1.2;
+    display: -webkit-box;
+
+    /* Truncamiento a 2 líneas compatible con compiladores SCSS / Autoprefixer */
+    -webkit-line-clamp: 2;
+    line-clamp: 2; /* Propiedad estándar emergente (Evita el error del Linter) */
+    /* autoprefixer: ignore next */
+    -webkit-box-orient: vertical;
+
+    overflow: hidden;
+    /* REFACTOR: Consumo de Tokens de Espaciado (4px) */
+    margin-bottom: var(--unav-spacing-xs); 
+}
+
+.unav-videoItemMeta {
+    font-family: var(--unav-fontFamilyPrimary);
+    font-size: 0.75rem;
+    color: var(--unav-grey-600);
+}
+
+/* Modificadores de Visibilidad Sincronizada */
+.unav-btnVertical { display: inline-flex !important; }
+.unav-btnHorizontal { display: none !important; }
+
+/* =======================================================
+   RESPONSIVIDAD POR CONTENEDOR (Container Queries)
+   ======================================================= */
+
+@container unavVideoGallery (max-width: 850px) {
+    .unav-videoMediaContainer { padding-right: var(--unav-videoSidebarWidthTablet, 280px); }
+    .unav-videoPlaylistSidebar { width: var(--unav-videoSidebarWidthTablet, 280px); }
+    .unav-videoThumb { width: var(--unav-videoThumbWidthTablet, 100px); }
+    /* REFACTOR: Consumo de Tokens de Espaciado (8px o 16px según densidad) */
+    .unav-videoItem { padding: var(--unav-spacing-sm); }
+}
+
+@container unavVideoGallery (max-width: 600px) {
+    .unav-videoMediaContainer { 
+        padding-right: 0; 
+        display: flex; 
+        flex-direction: column; 
+    }
+    
+    .unav-videoPlaylistSidebar {
+        position: relative;
+        width: 100%;
+        border-left: none;
+        border-top: 1px solid var(--unav-videoGalleryBorderColor, var(--unav-grey-200));
+        flex-direction: row; /* Cambio mágico a Horizontal */
+    }
+    
+    /* REFACTOR: Consumo de Tokens de Espaciado (8px) en móvil */
+    .unav-videoControlNav.unav-navTop { 
+        border-bottom: none; 
+        border-right: 1px solid var(--unav-grey-200); 
+        padding: var(--unav-spacing-sm); 
+    }
+    .unav-videoControlNav.unav-navBottom { 
+        border-top: none; 
+        border-left: 1px solid var(--unav-grey-200); 
+        padding: var(--unav-spacing-sm); 
+    }
+
+    .unav-videoPlaylistItems {
+        flex-direction: row;
+        overflow-x: auto;
+        overflow-y: hidden;
+        min-width: 0; /* Truco vital para scroll horizontal en Flexbox */
+        scroll-snap-type: x mandatory;
+    }
+    
+    .unav-videoItem {
+        width: var(--unav-videoItemWidthMobile, 200px);
+        flex-shrink: 0;
+        border-bottom: none;
+        border-right: 1px solid var(--unav-videoGalleryBorderColor, var(--unav-grey-200));
+        scroll-snap-align: start;
+        flex-direction: column;
+    }
+    
+    .unav-videoThumb { width: 100%; }
+    .unav-videoItemInfo { display: none; }
+    .unav-videoItem.unav-isActive { box-shadow: inset 0 -4px 0 0 var(--unav-videoGalleryActiveBorder, var(--unav-rojo-600)); }
+
+    /* Inversión Mágica de Controles */
+    .unav-btnVertical { display: none !important; }
+    .unav-btnHorizontal { display: inline-flex !important; }
+}
