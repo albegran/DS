@@ -1,0 +1,260 @@
+/* ==========================================
+   COMPONENTE: LISTA DESCRIPTIVA (.unav-descList)
+   ========================================== */
+
+   .unav-descList {
+    margin: 0;
+    padding: 0;
+    display: flex;
+    flex-direction: column;
+}
+
+.unav-descItem {
+    display: flex;
+    flex-direction: column;
+    /* REFACTOR: Consumo de Tokens de Espaciado (16px default) */
+    margin-bottom: var(--unav-descItemMarginBottom, var(--unav-spacing-md));
+    padding-bottom: var(--unav-descItemPaddingBottom, var(--unav-spacing-md));
+    font-family: var(--unav-fontFamilyPrimary);
+    width: 100%;
+    box-sizing: border-box;
+    transition: var(--unav-transitionBase);
+}
+
+.unav-descItem:last-child {
+    margin-bottom: 0; 
+}
+
+/* Modificador de Borde Inferior */
+.unav-hasBorder {
+    border-bottom: 1px solid var(--unav-descBorderColor, var(--unav-descBorderColorDefault));
+}
+
+/* Título del Término (Term) */
+.unav-descTerm {
+    display: flex;
+    align-items: center;
+    /* REFACTOR: Consumo de Tokens de Espaciado (8px default) */
+    gap: var(--unav-descTermGap, var(--unav-spacing-sm));
+    font-size: var(--unav-fontSize125, 1.125rem); /* Uso de escala tipográfica */
+    font-weight: var(--unav-fontWeightBold);
+    /* REFACTOR: Consumo de Tokens de Espaciado (4px default) */
+    margin-bottom: var(--unav-descTermMarginBottom, var(--unav-spacing-xs));
+    color: var(--unav-descColorPrimary, var(--unav-black-800));
+    transition: var(--unav-transitionBase);
+}
+
+/* Icono (Si existe) */
+.unav-descIcon {
+    font-size: var(--unav-iconSizeMd);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: var(--unav-descColorPrimary, inherit);
+}
+
+/* Texto de Definición (Definition) */
+.unav-descDefinition {
+    margin: 0;
+    font-size: var(--unav-fontSize100);
+    line-height: var(--unav-descDefinitionLineHeight);
+    font-weight: var(--unav-fontWeightRegular);
+    color: var(--unav-grey-700);
+}
+
+/* =========================================
+   VARIANTE: ICONO COLGANTE (.unav-descItemHanging)
+   ========================================= */
+.unav-descItemHanging {
+    /* Desplaza el contenedor y su borde a la derecha */
+    /* REFACTOR: Consumo de Tokens de Espaciado (32px default) */
+    margin-left: var(--unav-descHangingOffset, var(--unav-spacing-xl)); 
+    width: calc(100% - var(--unav-descHangingOffset, var(--unav-spacing-xl)));
+}
+
+.unav-descItemHanging .unav-descTerm {
+    display: block; 
+    position: relative;
+}
+
+.unav-descItemHanging .unav-descIcon {
+    /* Posiciona el icono fuera del flujo, hacia la izquierda */
+    position: absolute;
+    left: calc(var(--unav-descHangingOffset, var(--unav-spacing-xl)) * -1);
+    /* REFACTOR: Ajuste óptico mediante token xs (4px) */
+    top: var(--unav-spacing-xs); 
+    display: inline-flex;
+    justify-content: flex-start;
+}
+
+/* Layout de la Documentación */
+.unav-techSummary { border-left: 4px solid var(--unav-rojo-600); }
+.unav-sectionTitle { 
+    color: var(--unav-black-800); 
+    border-bottom: 2px solid var(--unav-grey-200); 
+    /* REFACTOR: Consumo de Tokens de Espaciado (8px) */
+    padding-bottom: var(--unav-spacing-sm); 
+}
+
+
+
+
+
+/* ==========================================
+   COMPONENTE: LISTA CON ICONOS (.unav-listIcon)
+   ========================================== */
+
+/* Contenedor principal de la lista (ul) */
+.unav-listIcon {
+    list-style: none; /* Eliminamos los bullets nativos del navegador */
+    padding-left: 0;
+    margin: 0;
+    /* REFACTOR: Consumo de Tokens de Espaciado (24px de margen inferior por defecto) */
+    margin-bottom: var(--unav-spacing-lg);
+    display: flex;
+    flex-direction: column;
+    /* REFACTOR: Consumo de Tokens de Espaciado (8px de separación entre los elementos) */
+    gap: var(--unav-spacing-sm);
+}
+
+/* Último elemento sin margen inferior para no romper cajas contenedoras */
+.unav-listIcon:last-child {
+    margin-bottom: 0;
+}
+
+/* Elemento de la lista (li) */
+.unav-listIconItem {
+    display: flex;
+    align-items: flex-start; /* Alinea el icono a la parte superior del texto (ideal para textos largos) */
+    /* REFACTOR: Consumo de Tokens de Espaciado (8px de separación entre icono y texto) */
+    gap: var(--unav-spacing-sm);
+    font-family: var(--unav-fontFamilyPrimary);
+    font-size: var(--unav-fontSize100);
+    line-height: var(--unav-lineHeightNormal, 1.5);
+    color: var(--unav-black-800);
+}
+
+/* Contenedor del Icono (i, span o svg) */
+.unav-listIconIcon {
+    flex-shrink: 0; /* Evita que el icono se aplaste si el texto es muy largo */
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    color: var(--unav-listIconColor, var(--unav-rojo-600)); /* Rojo corporativo por defecto */
+    font-size: var(--unav-iconSizeMd, 1.5rem);
+    /* Ajuste óptico: Baja el icono unos píxeles para que su centro visual se alinee con la primera línea de texto */
+    /* REFACTOR: Consumo de token micro (4px) */
+    margin-top: var(--unav-spacing-xs); 
+}
+
+/* =========================================
+   MODIFICADORES DE DENSIDAD
+   ========================================= */
+
+/* Lista relajada (Más espacio entre los li) */
+.unav-listIcon--relaxed {
+    /* REFACTOR: Consumo de Tokens de Espaciado (16px) */
+    gap: var(--unav-spacing-md);
+}
+
+/* Lista compacta (Menos espacio entre los li) */
+.unav-listIcon--compact {
+    /* REFACTOR: Consumo de Tokens de Espaciado (4px) */
+    gap: var(--unav-spacing-xs);
+}
+
+/* =========================================
+   MODIFICADORES DE ESTILO (Pieles)
+   ========================================= */
+
+/* Variante Neutra (Iconos en gris/negro) */
+.unav-listIcon--neutral .unav-listIconIcon {
+    color: var(--unav-black-800);
+}
+
+/* Variante Oscura (Para usar sobre fondos oscuros o banners) */
+.unav-listIcon--dark .unav-listIconItem {
+    color: rgba(255, 255, 255, 0.9);
+}
+.unav-listIcon--dark .unav-listIconIcon {
+    color: #ffffff; /* Opcional: Podría ser var(--unav-rojo-400) si quieres mantener el acento */
+}
+
+
+/* ==========================================
+   COMPONENTE: BLOQUE DE ENLACES UNAV (OOCSS)
+   ========================================== */
+
+/* Contenedor Flex para el apilamiento automático */
+.unav-listadoEnlaces {
+    display: flex;
+    flex-direction: column;
+    /* Consumo de Token de Espacio: 2px no está en la escala, pero usamos 'xs' (4px) o un gap base */
+    gap: var(--unav-spacing-1, 4px);
+    width: 100%;
+}
+
+/* Átomo: Bloque Individual */
+.unav-bloqueEnlace {
+    display: block; 
+    width: 100%;
+    position: relative; 
+    box-sizing: border-box;
+    text-decoration: none;
+    cursor: pointer;
+    transition: var(--unav-transitionBase);
+    outline: none; /* Reseteo del outline nativo */
+    
+    /* Consumo de Tokens Corporativos */
+    color: var(--unav-bloqueEnlaceText);
+    background-color: var(--unav-bloqueEnlaceBg);
+    
+    /* El padding dependerá de las variables de instancia, pero su fallback consume tokens */
+    padding: var(--unav-bloqueEnlacePadding, var(--unav-spacing-md));
+    
+    font-family: var(--unav-fontFamilyPrimary);
+    font-size: var(--unav-fontSize100);
+    line-height: var(--unav-bloqueEnlaceLineHeight);
+    
+    /* Consumo de Token de Forma: Esquinas rectas estrictas */
+    border-radius: var(--unav-radius-none) !important; 
+}
+
+.unav-bloqueEnlace:hover {
+    background-color: var(--unav-bloqueEnlaceHoverBg);
+    color: var(--unav-bloqueEnlaceHoverText);
+    text-decoration: none; 
+}
+
+.unav-bloqueEnlaceText {
+    display: inline; 
+    font-weight: var(--unav-fontWeightRegular); 
+    transition: font-weight 0.1s ease;
+}
+
+/* Estado de medición (JS) y Hover (Transición a Bold) */
+.unav-bloqueEnlace.unav-measuringBold .unav-bloqueEnlaceText,
+.unav-bloqueEnlace:hover .unav-bloqueEnlaceText {
+    font-weight: var(--unav-fontWeightBold);
+    text-decoration: none;
+}
+
+/* Línea de subrayado trazada vía JavaScript */
+.unav-bloqueEnlace::after {
+    content: '';
+    position: absolute;
+    height: 1px;
+    background-color: currentColor; /* Hereda el color del hover automáticamente */
+    
+    /* Coordenadas inyectadas por el motor JS */
+    left: var(--unav-lineLeft, var(--unav-spacing-md));
+    width: var(--unav-lineWidth, 0px);
+    bottom: var(--unav-lineBottom, var(--unav-spacing-sm)); /* Fallback asimilado al token sm */
+    
+    opacity: 0;
+    transition: opacity var(--unav-transitionBase);
+}
+
+.unav-bloqueEnlace:hover::after {
+    opacity: 1;
+}

@@ -1,1 +1,105 @@
+/* ==========================================
+   COMPONENTE: ACORDEÓN UNAV (OOCSS)
+   ========================================== */
+   .unav-accordionGroup {
+    border-top: 1px solid var(--unav-accordionBorderColor, var(--unav-grey-200));
+    width: 100%;
+}
 
+.unav-accordionItem {
+    border-bottom: 1px solid var(--unav-accordionBorderColor, var(--unav-grey-200));
+    transition: background-color var(--unav-transitionBase);
+}
+
+/* Cabecera / Botón */
+.unav-accordionHeader {
+    width: 100%;
+    display: flex;
+    align-items: center;
+    background: transparent;
+    border: none;
+    outline: none; /* Reseteamos el outline nativo del navegador */    
+    
+    padding: var(--unav-accordionHeaderPaddingY, var(--unav-spacing-md)) 
+             var(--unav-accordionHeaderPaddingRight, var(--unav-spacing-2xl)) 
+             var(--unav-accordionHeaderPaddingY, var(--unav-spacing-md)) 
+             var(--unav-accordionHeaderPaddingX, var(--unav-spacing-lg));
+             
+    cursor: pointer;
+    position: relative;
+    text-align: inherit;
+    /* Consumo del token de movimiento transversal */
+    transition: var(--unav-transitionBase);
+    /* Tipografía vía Tokens */
+    font-family: var(--unav-fontFamilyPrimary);
+    font-size: var(--unav-fontSize1125);
+    font-weight: var(--unav-fontWeightLight);
+    color: var(--unav-black-800);
+}
+
+/* Estado Activo: Cambio de Peso y Color */
+.unav-accordionHeader:hover,
+.unav-accordionHeader[aria-expanded="true"] {
+    font-weight: var(--unav-fontWeightMedium);
+    color: var(--unav-black-500);
+}
+
+.unav-accordionTitleWrapper {
+    display: flex;
+    align-items: center;    
+    gap: var(--unav-accordionTitleGap, var(--unav-spacing-sm));
+    flex-grow: 1;
+}
+
+/* Alineaciones dinámicas */
+.unav-alignCenter .unav-accordionTitleWrapper { justify-content: center; }
+.unav-alignRight .unav-accordionTitleWrapper { justify-content: flex-end; }
+
+/* Icono Toggle */
+.unav-accordionToggleIcon {
+    position: absolute;    
+    right: var(--unav-spacing-lg);
+    top: 50%;
+    transform: translateY(-50%);
+    /* Rotación sincronizada con el Motion System */
+    transition: transform var(--unav-transitionBase);
+    font-size: var(--unav-accordionIconSize, 1.5rem);
+}
+
+.unav-accordionHeader[aria-expanded="true"] .unav-accordionToggleIcon {
+    transform: translateY(-50%) rotate(180deg);
+}
+
+/* Panel Desplegable */
+.unav-accordionPanel {
+    max-height: 0;
+    overflow: hidden;
+    /* Expansión estructural basada en Motion Tokens */
+    transition: var(--unav-accordionPanelTransition, max-height 0.4s ease-out);
+    background-color: var(--unav-cardBgBase, #ffffff);
+}
+
+.unav-accordionInner {
+    /* REFACTOR: Consumo de Tokens de Espaciado (24px alrededor del contenido) */
+    padding: var(--unav-spacing-lg);
+    font-family: var(--unav-fontFamilyPrimary);
+    font-size: var(--unav-fontSize100);
+    line-height: 1.6;
+    color: var(--unav-grey-700);
+}
+
+/* --- LÓGICA DE TEMATIZACIÓN DINÁMICA --- */
+.unav-accordionItem.unav-isThemed .unav-accordionHeader {
+    color: #ffffff;
+}
+
+.unav-accordionItem.unav-isThemed .unav-accordionHeader:hover,
+.unav-accordionItem.unav-isThemed .unav-accordionHeader[aria-expanded="true"] {
+    /* Filtro dinámico de opacidad */
+    background-color: rgba(0, 0, 0, 0.1);
+    color: #ffffff;
+}
+
+.unav-accordionItem.unav-isThemed .unav-accordionToggleIcon {
+    color: #ffffff;
+}

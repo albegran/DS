@@ -1,0 +1,52 @@
+        /* ==========================================
+           COMPONENTE: CINTILLO DE TITULACIONES
+           ========================================== */
+        
+        .unav-cintillo {
+            background-color: var(--unav-grey-100);
+            /* Opcional: bordes sutiles superior e inferior para enmarcarlo en la página */
+            border-top: 1px solid var(--unav-grey-200);
+            border-bottom: 1px solid var(--unav-grey-200);
+            width: 100%;
+        }
+
+        /* Contenedor Flex con Scroll Horizontal para Móviles */
+        .unav-cintilloList {
+            display: flex;
+            flex-wrap: nowrap;
+            align-items: stretch; /* Estira los ítems para que el borde vertical ocupe todo el alto */
+            margin: 0;
+            padding: 0;
+            list-style: none;
+            overflow-x: auto;
+            -webkit-overflow-scrolling: touch; /* Scroll fluido en iOS */
+            scrollbar-width: none; /* Oculta la barra en Firefox */
+        }
+
+        .unav-cintilloList::-webkit-scrollbar {
+            display: none; /* Oculta la barra en Chrome/Safari/Edge */
+        }
+
+        /* Cada característica */
+        .unav-cintilloItem {
+            display: flex;
+            align-items: center;
+            gap: var(--unav-spacing-sm);
+            padding: var(--unav-spacing-md) var(--unav-spacing-lg);
+            border-right: 1px solid var(--unav-black-800);
+            flex-shrink: 0; /* Evita que los ítems se compriman en pantallas pequeñas */
+            color: var(--unav-black-800);
+        }
+
+        .unav-cintilloItem:last-child {
+            border-right: none; /* Quitamos el borde al último ítem */
+        }
+
+        /* Contenedor del Icono */
+        .unav-cintilloIcon {
+            font-size: var(--unav-iconSizeLg);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: inherit;
+        }

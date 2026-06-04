@@ -1,0 +1,77 @@
+/* ==========================================
+   COMPONENTE: PAGINACIÓN UNAV (ESTÁNDAR)
+   Basado en .unav-botonPrimario y OOCSS
+   ========================================== */
+
+   .unav-paginacion {
+    display: inline-flex;
+    list-style: none;
+    padding-left: 0;
+    margin: 0;
+}
+
+/* Evitamos el doble borde unificando los laterales de ítems contiguos */
+.unav-paginacion li:not(:first-child) .unav-paginacionItem,
+.unav-paginacion li:not(:first-child) .unav-paginacionTrigger {
+    border-left: none;
+}
+
+/* Forzar esquinas en ángulo recto perfectas en todo el componente, incluidos extremos (Chevrons) */
+.unav-paginacion .unav-paginacionItem,
+.unav-paginacion .unav-paginacionTrigger {
+    /* REFACTOR: Consumo de Tokens de Forma (Esquinas vivas) */
+    border-radius: var(--unav-radius-none) !important; 
+    min-width: 44px; /* Touch target size (WCAG) */
+    height: 44px; /* Touch target size (WCAG) */
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    /* REFACTOR: Consumo de Tokens de Espaciado (16px lateral) */
+    padding: 0 var(--unav-spacing-md);
+    font-family: var(--unav-fontFamilyPrimaryCondensed);
+    font-size: var(--unav-fontSize100);
+    font-weight: var(--unav-fontWeightBold);
+    text-decoration: none;
+}
+
+/* Modificador de Estado Activo (Página Actual) */
+.unav-paginacion li.active .unav-paginacionItem {
+    background-color: var(--unav-rojo-600) !important;
+    color: #ffffff !important;
+    border-color: var(--unav-rojo-600) !important;
+    cursor: default;
+    pointer-events: none;
+}
+
+/* ==========================================
+   SELECTOR DESPLEGABLE CON SCROLL (...) 
+   ========================================== */
+.unav-paginacionDropdownMenu {
+    max-height: 200px;              /* Altura máxima para ver 4-5 opciones */
+    overflow-y: auto;               /* Activación del scroll vertical */
+    min-width: 90px;
+    /* REFACTOR: Consumo de Tokens de Espaciado (4px vertical, 0 horizontal) */
+    padding: var(--unav-spacing-xs) 0;
+    border: 1px solid var(--unav-grey-300);
+    box-shadow: 0 4px 6px rgba(0,0,0,0.05);
+    /* REFACTOR: Consumo de Tokens de Forma (Esquinas rectas) */
+    border-radius: var(--unav-radius-none) !important;    
+}
+
+/* Estilos de las opciones dentro del desplegable con scroll */
+.unav-paginacionDropdownMenu .dropdown-item {
+    font-family: var(--unav-fontFamilyPrimaryCondensed);
+    font-weight: var(--unav-fontWeightBold);
+    font-size: var(--unav-fontSize085);
+    text-align: center;
+    /* REFACTOR: Consumo de Tokens de Espaciado (4px vertical, 8px horizontal) */
+    padding: var(--unav-spacing-xs) var(--unav-spacing-sm);
+    color: var(--unav-grey-700);
+    transition: background-color var(--unav-transitionBase), color var(--unav-transitionBase);
+}
+
+.unav-paginacionDropdownMenu .dropdown-item:hover {
+    background-color: var(--unav-grey-100);
+    color: var(--unav-rojo-600);
+}
+
