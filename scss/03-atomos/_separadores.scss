@@ -1,0 +1,75 @@
+/* ==========================================
+   COMPONENTE: SEPARADORES (.unav-separador)
+   ========================================== */
+
+   .unav-separador {
+    /* Variables de instancia (Sobrescribibles vía style inline) */
+    --unav-separadorWidth: 100%;
+    --unav-separadorColor: var(--unav-separadorColorBase);
+    --unav-separadorThickness: var(--unav-separadorThicknessBase);
+    --unav-separadorStyle: solid;
+    
+    /* Variables de espaciado declaradas explícitamente */
+    --unav-separadorMarginY: var(--unav-spacing-xl);
+    --unav-separadorPaddingX: var(--unav-spacing-md);
+
+    display: flex;
+    align-items: center;
+    width: var(--unav-separadorWidth);
+    
+    /* Consumo directo y limpio de los tokens de instancia */
+    margin-top: var(--unav-separadorMarginY);
+    margin-bottom: var(--unav-separadorMarginY);
+    clear: both;
+}
+
+/* --- Modificadores de Alineación --- */
+.unav-separadorAlignLeft { margin-left: 0; margin-right: auto; }
+.unav-separadorAlignCenter { margin-left: auto; margin-right: auto; }
+.unav-separadorAlignRight { margin-left: auto; margin-right: 0; }
+
+/* --- Elementos Internos --- */
+.unav-separadorLine {
+    flex-grow: 1;
+    border: none;
+    border-top-width: var(--unav-separadorThickness);
+    border-top-style: var(--unav-separadorStyle);
+    border-top-color: var(--unav-separadorColor);
+    margin: 0;
+    transition: var(--unav-transitionBase);
+}
+
+.unav-separadorContent {
+    /* Consumo directo de la variable local */
+    padding: 0 var(--unav-separadorPaddingX);
+    color: var(--unav-separadorColor);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transition: var(--unav-transitionBase);
+}
+
+.unav-separadorText {
+    font-family: var(--unav-fontFamilyPrimaryCondensed);
+    font-weight: var(--unav-fontWeightBold);
+    font-size: var(--unav-fontSize100);
+    text-transform: uppercase;
+    letter-spacing: var(--unav-trackingWide);
+    margin: 0;
+    color: inherit;
+}
+
+.unav-separadorIcon {
+    font-size: var(--unav-iconSizeLg);
+    color: inherit;
+}
+
+/* --- Layout de Documentación --- */
+/* (Se asume el borde en px porque forma parte de la geometría estructural de la caja) */
+.unav-techSummary { border-left: 4px solid var(--unav-rojo-600); }
+.unav-sectionTitle { 
+    color: var(--unav-black-800); 
+    border-bottom: 2px solid var(--unav-grey-200); 
+    /* REFACTOR: Consumo de Tokens de Espaciado (8px) */
+    padding-bottom: var(--unav-spacing-sm); 
+}

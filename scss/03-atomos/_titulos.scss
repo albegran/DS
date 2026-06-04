@@ -1,0 +1,14 @@
+/* ==========================================
+   COMPONENTE: TÍTULOS VISUALES (Desacoplados)
+   ========================================== */
+
+/* Clase Base Estructural (OOCSS) */
+/* Se aplica a <p>, <div>, <span>, etc., para darles comportamiento de bloque de título */
+.unav-titulo {
+    display: block;
+    margin: 0;
+    padding: 0;
+    line-height: 1.15;
+    word-wrap: break-word;
+    /* La tipografía, peso y color se inyectan vía clases utilitarias o tokens */
+}

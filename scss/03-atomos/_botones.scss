@@ -1,1 +1,184 @@
+/* ==========================================
+   COMPONENTE: BOTONES UNAV
+   ========================================== */
 
+/* 1. CLASE BASE (Estructura y Comportamiento) */
+.unav-boton {
+    font-family: var(--unav-fontFamilyPrimaryCondensed);
+    font-weight: var(--unav-fontWeightBold);
+    font-size: var(--unav-botonFontSize);
+    text-transform: uppercase;
+    letter-spacing: var(--unav-trackingWide);
+    
+    padding: var(--unav-botonPaddingY) var(--unav-botonPaddingX);
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    gap: var(--unav-botonGap);
+    
+    text-decoration: none;
+    transition: var(--unav-transitionBase);
+    cursor: pointer;
+    border: 1px solid transparent; 
+    outline: none; /* Reseteamos outline nativo del navegador */
+}
+
+.unav-boton .unav-botonIcono {
+    font-size: var(--unav-iconSizeMd);
+    color: var(--unav-botonIcon, inherit); 
+    transition: var(--unav-transitionBase);
+}
+
+.unav-boton:hover .unav-botonIcono {
+    color: inherit;
+}
+
+/* =========================================
+   2. PIEL: BOTÓN PRIMARIO
+   ========================================= */
+.unav-botonPrimario {
+    width: 100%; 
+    
+    --unav-botonBg: #ffffff;
+    --unav-botonText: var(--unav-black-500);
+    --unav-botonBorder: var(--unav-black-500);
+    --unav-botonIcon: inherit;
+    
+    --unav-botonHoverBg: var(--unav-black-500);
+    --unav-botonHoverText: #ffffff;
+    --unav-botonHoverBorder: var(--unav-black-500);
+
+    background-color: var(--unav-botonBg);
+    color: var(--unav-botonText);
+    border-color: var(--unav-botonBorder); 
+}
+
+.unav-botonPrimario:hover {
+    background-color: var(--unav-botonHoverBg);
+    color: var(--unav-botonHoverText);
+    border-color: var(--unav-botonHoverBorder);
+}
+
+/* =========================================
+   3. PIEL: BOTÓN SECUNDARIO (Outlined)
+   ========================================= */
+.unav-botonSecundario {
+    font-size: var(--unav-botonSecundarioFontSize);
+    letter-spacing: var(--unav-trackingMedium);
+    padding: var(--unav-botonSecundarioPaddingY) var(--unav-botonSecundarioPaddingX);
+    border-radius: var(--unav-botonSecundarioRadius);
+    width: fit-content; 
+    
+    --unav-botonColorSource: var(--unav-black-800); 
+    --unav-botonTextHover: #ffffff;
+    
+    background-color: transparent;
+    color: var(--unav-botonColorSource);
+    border: var(--unav-botonSecundarioBorderWidth) solid var(--unav-botonColorSource);
+}
+
+.unav-botonSecundario .unav-botonIcono,
+.unav-botonSecundarioInverso .unav-botonIcono {
+    font-size: var(--unav-iconSizeSm);
+}
+
+.unav-botonSecundario:hover {
+    background-color: var(--unav-botonColorSource);
+    color: var(--unav-botonTextHover);
+    box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1);
+}
+
+/* MODIFICADOR: BOTÓN SECUNDARIO BLANCO (Para fondos oscuros/banners) */
+.unav-botonSecundarioBlanco {
+    --unav-botonColorSource: #ffffff;
+    --unav-botonTextHover: var(--unav-black-800);
+}
+
+/* =========================================
+   4. PIEL: BOTÓN SECUNDARIO INVERSO (Solid)
+   ========================================= */
+.unav-botonSecundarioInverso {
+    font-size: var(--unav-botonSecundarioFontSize);
+    letter-spacing: var(--unav-trackingMedium);
+    padding: var(--unav-botonSecundarioPaddingY) var(--unav-botonSecundarioPaddingX);
+    border-radius: var(--unav-botonSecundarioRadius);
+    width: fit-content; 
+    
+    --unav-botonColorSource: var(--unav-black-800); 
+    --unav-botonTextHover: #ffffff;
+    
+    background-color: var(--unav-botonColorSource);
+    color: var(--unav-botonTextHover);
+    border: var(--unav-botonSecundarioBorderWidth) solid var(--unav-botonColorSource);
+}
+
+.unav-botonSecundarioInverso .unav-botonIcono {
+    font-size: 1.1rem;
+}
+
+.unav-botonSecundarioInverso:hover {
+    background-color: transparent;
+    color: var(--unav-botonColorSource);
+    box-shadow: none;
+}
+
+
+
+
+
+
+
+/* =========================================
+   5. VARIANTES Y ESTADOS UTILITARIOS GLOBALES
+   ========================================= */
+.unav-botonFit { width: fit-content !important; }
+.unav-botonHoverInnerBorder:hover { box-shadow: inset 0 0 0 1px #ffffff; }
+
+.unav-botonDisabled {
+    opacity: 0.4;
+    cursor: not-allowed;
+    pointer-events: none;
+    box-shadow: none !important;
+}
+
+.unav-botonPrimario.unav-botonDisabled {
+    --unav-botonBg: var(--unav-black-200) !important;
+    --unav-botonText: var(--unav-black-400) !important;
+    --unav-botonBorder: var(--unav-black-300) !important;
+    opacity: 1; 
+}
+
+/* =========================================
+   6. MODIFICADOR: BOTÓN SOLO ICONO (Icon Only)
+   ========================================= */
+.unav-botonIconOnly {
+    width: 2.75rem; 
+    height: 2.75rem;
+    /* Consumo de Tokens de Espacio y Forma */
+    padding: var(--unav-spacing-0) !important; 
+    border-radius: var(--unav-radius-full) !important; 
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    flex-shrink: 0;
+}
+
+.unav-botonIconOnly .unav-botonIcono {
+    /* Consumo de Token de Espacio */
+    margin: var(--unav-spacing-0) !important; 
+    font-size: 1.25rem; 
+}
+
+.unav-botonGroup .unav-botonIconOnly {
+    /* Consumo de Token de Espacio para separar iconos hermanos */
+    margin: var(--unav-spacing-0) var(--unav-spacing-xs);
+}
+
+.unav-botonIconOnlySm {
+    width: 2rem !important; 
+    height: 2rem !important;
+    min-width: 2rem !important;
+}
+.unav-botonIconOnlySm .unav-botonIcono {
+    font-size: 1rem !important;
+}

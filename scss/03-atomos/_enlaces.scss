@@ -1,0 +1,128 @@
+/* ==========================================
+   COMPONENTE: ENLACE FLECHA (Botón Terciario)
+   ========================================== */
+   .unav-enlaceFlecha {
+    --unav-enlaceColor: var(--unav-black-800);
+    
+    color: var(--unav-enlaceColor); 
+    
+    font-family: var(--unav-fontFamilyPrimary);
+    font-weight: var(--unav-fontWeightBold);
+    font-size: 1.125rem; 
+    letter-spacing: 0.5px;
+    
+    text-transform: none !important;
+    
+    display: inline-flex;
+    align-items: center;
+    /* Consumo de Token de Espacio */
+    padding: var(--unav-spacing-sm) var(--unav-spacing-0);
+    white-space: nowrap;
+    outline: none;
+    
+    text-decoration: underline transparent;
+    /* Consumo de Token de Espacio para el offset del subrayado */
+    text-underline-offset: var(--unav-spacing-xs);
+    text-decoration-thickness: 1px;
+    
+    transition: opacity var(--unav-transitionBase),
+                text-decoration-color var(--unav-transitionBase),
+                text-decoration-thickness var(--unav-transitionBase);
+}
+
+.unav-enlaceFlecha:hover { 
+    opacity: var(--unav-hoverOpacity); 
+    text-decoration-color: currentColor; 
+    text-decoration-thickness: 2px;
+}
+
+.unav-enlaceFlecha .unav-arrowWrapper {
+    position: relative;
+    display: inline-block;
+    width: 2.5875rem; 
+    height: 0.75rem; 
+    overflow: hidden;
+    /* Mantenemos REM aquí porque afecta directamente a la física de la animación SVG/Línea */
+    margin-right: 0.625rem;
+    vertical-align: middle;
+}
+
+.unav-enlaceFlecha .unav-arrow, 
+.unav-enlaceFlecha .unav-arrowClone {
+    position: absolute;
+    top: 50%;
+    width: 2.5rem;
+    height: var(--unav-botonSecundarioBorderWidth); 
+    background-color: currentColor; 
+}
+
+.unav-enlaceFlecha .unav-arrow { left: 0; transform: translateY(-50%); }
+.unav-enlaceFlecha .unav-arrowClone { left: -4.375rem; transform: translateY(-50%); }
+
+.unav-enlaceFlecha .unav-arrow::after, 
+.unav-enlaceFlecha .unav-arrowClone::after {
+    content: '';
+    position: absolute;
+    right: 0;
+    top: 50%;
+    width: 0.375rem;
+    height: 0.375rem;
+    border-top: var(--unav-botonSecundarioBorderWidth) solid currentColor;
+    border-right: var(--unav-botonSecundarioBorderWidth) solid currentColor;
+    transform: translateY(-50%) rotate(45deg);
+}
+
+@keyframes unav-arrowConveyor {
+    0% { transform: translateY(-50%) translateX(0); }
+    100% { transform: translateY(-50%) translateX(4.375rem); }
+}
+
+.unav-enlaceFlecha:hover .unav-arrow,
+.unav-enlaceFlecha:hover .unav-arrowClone {
+    animation: unav-arrowConveyor 1.2s linear infinite;
+}
+
+
+
+
+/* ==========================================
+   COMPONENTE: ENLACES INLINE (Cuerpo de texto)
+   ========================================== */
+   .unav-enlaceInline {
+    /* 1. Identidad: Color institucional y peso destacado */
+    color: var(--unav-rojo-500); 
+    font-weight: var(--unav-fontWeightMedium); 
+    
+    /* 2. Subrayado Moderno y Legible */
+    text-decoration: underline;
+    text-decoration-color: var(--unav-rojo-300); /* Línea más suave por defecto para no saturar la lectura */
+    text-decoration-thickness: 1px;
+    text-underline-offset: 4px; /* Evita tachar las letras como la 'p', 'y', 'g' */
+    
+    /* 3. Transiciones */
+    transition: color var(--unav-transitionBase), 
+                text-decoration-color var(--unav-transitionBase), 
+                text-decoration-thickness var(--unav-transitionBase);
+    outline: none;
+ }
+ 
+ /* Estado Hover: Oscurece y engrosa la línea para dar feedback interactivo */
+ .unav-enlaceInline:hover {
+    color: var(--unav-rojo-600); /* Bajamos un tono para indicar acción */
+    text-decoration-color: var(--unav-rojo-600); /* La línea se vuelve del color del texto */
+    text-decoration-thickness: 2px; /* Mayor grosor visual */
+ }
+ 
+ /* Modificador para fondos oscuros/corporativos */
+ .unav-enlaceInlineBlanco {
+     color: #ffffff; 
+     text-decoration-color: rgba(255, 255, 255, 0.7);
+     text-decoration-thickness: 2px; /* Más grueso para mayor visibilidad */
+     text-underline-offset: 4px; /* Separación forzada (offset) */
+ }
+ 
+ .unav-enlaceInlineBlanco:hover {
+     color: #ffffff; 
+     text-decoration-color: #ffffff;
+     text-decoration-thickness: 3px; /* Feedback grueso al hover */
+ }
