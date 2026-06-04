@@ -1,0 +1,180 @@
+/* ==========================================
+   SISTEMA DE MOVIMIENTO UNAV (OOCSS)
+   Motor central de físicas, transiciones y utilidades de animación
+   ========================================== */
+
+/* ==========================================
+   1. OPACIDADES SUTILES AL HOVER
+   ========================================== */
+   .unav-efectoOpacidadSutil {
+    transition: opacity var(--unav-transitionBase);
+}
+.unav-efectoOpacidadSutil:hover {
+    opacity: var(--unav-opacityHoverSubtle);
+}
+
+.unav-efectoOpacidadIntensa {
+    transition: opacity var(--unav-transitionBase);
+}
+.unav-efectoOpacidadIntensa:hover {
+    opacity: var(--unav-opacityHoverIntense);
+}
+
+/* ==========================================
+   2. PROFUNDIDAD ESPACIAL (PARALLAX)
+   ========================================== */
+.unav-efectoParallax {
+    background-attachment: fixed;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+}
+
+/* Fallback de rendimiento para dispositivos móviles (Evita jank y consumo de batería) */
+@media (max-width: 768px) {
+    .unav-efectoParallax {
+        background-attachment: scroll;
+    }
+}
+
+/* ==========================================
+   3. ANIMACIÓN CONTINUA (KEN BURNS)
+   ========================================== */
+@keyframes unav-slowZoomIn {
+    0% { transform: scale(1); }
+    100% { transform: scale(1.15); }
+}
+
+.unav-efectoZoomInfinito {
+    animation: unav-slowZoomIn var(--unav-durationEpic) ease-in-out infinite alternate;
+    will-change: transform; /* Optimización estricta por GPU */
+}
+
+/* ==========================================
+   4. ELEVACIÓN 3D E INTERACCIÓN (Z-INDEX LIFT)
+   ========================================== */
+.unav-efectoElevacion {
+    transition: transform var(--unav-durationNormal) var(--unav-easingStandard), 
+                box-shadow var(--unav-durationNormal) var(--unav-easingStandard);
+}
+
+.unav-efectoElevacion:hover {
+    transform: translateY(var(--unav-translateHoverElevation));
+    box-shadow: var(--unav-cardShadowHover);
+}
+
+/* ==========================================
+   5. APARICIÓN EN SCROLL (STAGGERED FADE-UP)
+   ========================================== */
+.unav-efectoEntradaOculto {
+    opacity: 0;
+    transform: translateY(var(--unav-translateEntranceY));
+    transition: opacity var(--unav-durationSlow) var(--unav-easingDecel), 
+                transform var(--unav-durationSlow) var(--unav-easingDecel);
+    will-change: opacity, transform;
+}
+
+/* Clase inyectada vía JS (IntersectionObserver) */
+.unav-efectoEntradaVisible {
+    opacity: 1;
+    transform: translateY(0);
+}
+
+/* ==========================================
+   6. MICROINTERACCIONES DE IMAGEN (ZOOM)
+   ========================================== */
+.unav-efectoZoomImagen {
+    overflow: hidden;
+}
+
+.unav-efectoZoomImagen img {
+    /* Soportamos tanto transform como filter para no pisar el grayscale de otras vistas */
+    transition: transform var(--unav-durationSlow) var(--unav-easingDecel),
+                filter var(--unav-durationSlow) var(--unav-easingDecel);
+    will-change: transform;
+}
+
+/* Soporte de herencia: Si el padre tiene hover, la imagen reacciona */
+*:hover> .unav-efectoZoomImagen img,
+.unav-efectoZoomImagen:hover img {
+    transform: scale(1.05) translateZ(0); /* translateZ fuerza la aceleración GPU en Safari */
+}
+
+/* ==========================================
+   7. TRANSICIONES DE ESTADO Y GALERÍAS
+   ========================================== */
+
+/* --- 7.1. Aparición Básica (Fade In) --- */
+@keyframes unav-fadeInKeyframes {
+    from { opacity: 0; }
+    to { opacity: 1; }
+}
+
+.unav-efectoFadeIn {
+    animation: unav-fadeInKeyframes var(--unav-durationNormal) var(--unav-easingStandard) forwards;
+}
+
+/* --- 7.2. Transición Cross-Fade (Pixelflakes Style) --- */
+/* Estado Base: Oculta, escalada al 96% y apilada por debajo */
+.unav-efectoCrossFade {
+    opacity: 0;
+    transform: scale(0.96);
+    visibility: hidden;
+    z-index: 1;
+    
+    transition: opacity var(--unav-durationNormal) var(--unav-easingStandard),
+                transform var(--unav-durationNormal) var(--unav-easingStandard),
+                visibility var(--unav-durationNormal) var(--unav-easingStandard);
+    will-change: transform, opacity;
+}
+
+/* Estado Activo: Visible, escala 100% y apilada por encima */
+.unav-efectoCrossFade.unav-isActive {
+    opacity: 1;
+    transform: scale(1);
+    visibility: visible;
+    z-index: 2; 
+}
+
+/* Estado Saliente: Se desvanece pero MANTIENE su escala original (100%) */
+.unav-efectoCrossFade.unav-isOutgoing {
+    opacity: 0;
+    transform: scale(1); 
+    visibility: visible; 
+    z-index: 1; 
+}
+
+/* ==========================================
+   MODIFICADOR: GRID DE EVENTOS HORIZONTAL (MÓVIL)
+   ========================================== */
+@media (max-width: 767px) {
+    /* Piel de comportamiento horizontal para el contenedor row */
+    .unav-gridScrollMobile {
+        display: flex !important;
+        flex-wrap: nowrap !important;
+        overflow-x: auto !important;
+        -webkit-overflow-scrolling: touch; /* Inercia fluida en iOS */
+        scroll-snap-type: x mandatory;     /* Físicas de frenado magnético */
+        
+        /* Ocultamos la barra de scroll para mantener la limpieza visual */
+        scrollbar-width: none; 
+        
+        /* Padding inferior para que las sombras del hover/elevación no se recorten */
+        padding-bottom: var(--unav-spacing-md) !important;
+    }
+    
+    .unav-gridScrollMobile::-webkit-scrollbar {
+        display: none; /* Oculta la barra de scroll en Chrome/Safari/Edge */
+    }
+    
+    /* Forzado geométrico de los hijos directos (columnas) */
+    .unav-gridScrollMobile> [class*="col-"] {
+        /* Ocupa el 82% del viewport, permitiendo revelar un 18% del siguiente evento */
+        flex: 0 0 82% !important;
+        width: 82% !important;
+        max-width: 82% !important;
+        
+        /* Alineación del imán de frenado al inicio de la tarjeta */
+        scroll-snap-align: start;
+    }
+}

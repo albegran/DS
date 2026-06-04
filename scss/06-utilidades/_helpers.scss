@@ -1,0 +1,143 @@
+/* ==========================================
+   HELPERS Y UTILIDADES DE LABORATORIO
+   *** Solo sirven para las páginas HTML de tu documentación y no se van a usar en la web final de la universidad
+   ========================================== */
+
+
+/* Utilidad para lectores de pantalla (Screen Readers) */
+.unav-sr-only {
+    border: 0;
+    clip: rect(0 0 0 0);
+    height: 1px;
+    margin: -1px;
+    overflow: hidden;
+    padding: 0;
+    position: absolute;
+    width: 1px;
+}
+
+
+
+
+/* ==========================================
+   LABORATORIO VISUAL (Layout de Documentación)
+   ========================================== */
+.unav-techSummary { 
+    border-left: 4px solid var(--unav-rojo-600); 
+}
+
+/* Estructura Longitudinal de la Muestra */
+.unav-sampleRow {
+    background-color: #ffffff;
+    border-bottom: 1px solid var(--unav-grey-200);
+    /* REFACTOR: Consumo de Tokens de Espaciado (48px vertical, 32px horizontal) */
+    padding: var(--unav-sampleRowPaddingY, var(--unav-spacing-2xl)) var(--unav-sampleRowPaddingX, var(--unav-spacing-xl));
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    transition: var(--unav-transitionBase);
+}
+
+.unav-sampleRow:hover {
+    background-color: var(--unav-grey-100);
+    box-shadow: inset 4px 0 0 var(--unav-teal-600); /* Usamos Teal para diferenciarlo de Cabeceras */
+}
+
+/* Contenedor Flex para Etiquetas de Metadatos */
+.unav-dataContainer {
+    /* REFACTOR: Consumo de Tokens de Espaciado (24px) */
+    margin-top: var(--unav-spacing-lg);
+    display: flex;
+    /* REFACTOR: Consumo de Tokens de Espaciado (8px) para la separación de etiquetas */
+    gap: var(--unav-spacing-sm);
+    flex-wrap: wrap;
+    align-items: center;
+}
+
+/* Separador Semántico de Etiquetas HTML */
+.unav-sectionLabel {
+    background-color: var(--unav-black-900);
+    color: #ffffff;
+    /* REFACTOR: Consumo de Tokens de Espaciado (16px vertical, 32px horizontal) */
+    padding: var(--unav-sectionLabelPaddingY, var(--unav-spacing-md)) var(--unav-sectionLabelPaddingX, var(--unav-spacing-xl));
+    font-family: var(--unav-fontFamilyPrimaryCondensed);
+    font-weight: var(--unav-fontWeightBold);
+    font-size: var(--unav-fontSize125);
+    text-transform: uppercase;
+    letter-spacing: var(--unav-trackingWide);
+    /* REFACTOR: Consumo de Tokens de Espaciado gigante (64px) */
+    margin-top: var(--unav-spacing-3xl);
+    /* REFACTOR: Consumo de Tokens de Forma (Curvo arriba, Recto abajo) */
+    border-radius: var(--unav-radius-lg) var(--unav-radius-lg) var(--unav-radius-none) var(--unav-radius-none);
+}
+
+
+/* ==========================================
+   COMPONENTE: LABORATORIO DE CABECERAS
+   ========================================== */
+
+/* Estilos de la vista de documentación */
+.unav-techSummary { 
+    border-left: 4px solid var(--unav-rojo-600); 
+}
+
+/* Estructura Longitudinal de la Muestra (OOCSS Layout) */
+.unav-sampleRow {
+    background-color: #ffffff;
+    border-bottom: 1px solid var(--unav-grey-200);
+    /* REFACTOR: Consumo de Tokens de Espaciado por defecto (16px vertical, 24px horizontal) */
+    padding: var(--unav-sampleRowPaddingY, var(--unav-spacing-md)) var(--unav-sampleRowPaddingX, var(--unav-spacing-lg));
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    transition: var(--unav-transitionBase);
+}
+
+.unav-sampleRow:hover {
+    background-color: var(--unav-grey-100);
+    box-shadow: inset 4px 0 0 var(--unav-rojo-700);
+}
+
+/* Reseteo del Elemento Cabecera para previsualización limpia */
+.unav-headerElement {
+    margin: 0;
+    padding: 0;
+    line-height: 1.15;
+    word-wrap: break-word;
+}
+
+/* Contenedor Flex para la inyección de las Etiquetas (.unav-tag) */
+.unav-dataContainer {
+    /* REFACTOR: Consumo de Tokens de Espaciado (24px) */
+    margin-top: var(--unav-spacing-lg);
+    display: flex;
+    /* REFACTOR: Consumo de Tokens de Espaciado (8px) para la separación de etiquetas */
+    gap: var(--unav-spacing-sm);
+    flex-wrap: wrap;
+    align-items: center;
+}
+
+/* Separador Semántico de Niveles HTML */
+.unav-sectionLabel {
+    background-color: var(--unav-black-900);
+    color: #ffffff;
+    /* REFACTOR: Consumo de Tokens de Espaciado (8px vertical, 16px horizontal) */
+    padding: var(--unav-sectionLabelPaddingY, var(--unav-spacing-sm)) var(--unav-sectionLabelPaddingX, var(--unav-spacing-md));
+    font-family: var(--unav-fontFamilyPrimaryCondensed);
+    font-weight: var(--unav-fontWeightBold);
+    font-size: var(--unav-fontSize125);
+    text-transform: uppercase;
+    letter-spacing: var(--unav-trackingWide);
+    /* REFACTOR: Consumo de Tokens de Espaciado gigantes (64px) */
+    margin-top: var(--unav-spacing-3xl);
+    /* REFACTOR: Consumo de Tokens de Forma (Curvo arriba, Recto abajo) */
+    border-radius: var(--unav-radius-lg) var(--unav-radius-lg) var(--unav-radius-none) var(--unav-radius-none);
+}
+
+/* Clases auxiliares para la demo de contenido */
+.unav-contentSection {
+    padding-top: var(--unav-menuAnclasTopOffset);
+    margin-top: calc(var(--unav-menuAnclasTopOffset) * -1);
+    margin-bottom: 30vh;
+}
+.unav-pageFooterBuffer { height: 20vh; }

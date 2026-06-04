@@ -1,1 +1,106 @@
+/* ==========================================
+   SISTEMA DE COLOR CORPORATIVO (.unav-bg-)
+   ========================================== */
+
+/* --- CLASES UTILITARIAS DE FONDO --- */
+
+/* Rojo Unav */
+.unav-bg-rojo-100 { background-color: var(--unav-rojo-100); } .unav-bg-rojo-200 { background-color: var(--unav-rojo-200); } .unav-bg-rojo-300 { background-color: var(--unav-rojo-300); }
+.unav-bg-rojo-400 { background-color: var(--unav-rojo-400); } .unav-bg-rojo-500 { background-color: var(--unav-rojo-500); } .unav-bg-rojo-600 { background-color: var(--unav-rojo-600); }
+.unav-bg-rojo-700 { background-color: var(--unav-rojo-700); } .unav-bg-rojo-800 { background-color: var(--unav-rojo-800); } .unav-bg-rojo-900 { background-color: var(--unav-rojo-900); }
+
+/* Black */
+.unav-bg-black-100 { background-color: var(--unav-black-100); } .unav-bg-black-200 { background-color: var(--unav-black-200); } .unav-bg-black-300 { background-color: var(--unav-black-300); }
+.unav-bg-black-400 { background-color: var(--unav-black-400); } .unav-bg-black-500 { background-color: var(--unav-black-500); } .unav-bg-black-600 { background-color: var(--unav-black-600); }
+.unav-bg-black-700 { background-color: var(--unav-black-700); } .unav-bg-black-800 { background-color: var(--unav-black-800); } .unav-bg-black-900 { background-color: var(--unav-black-900); }
+
+/* Grey */
+.unav-bg-grey-100 { background-color: var(--unav-grey-100); } .unav-bg-grey-200 { background-color: var(--unav-grey-200); } .unav-bg-grey-300 { background-color: var(--unav-grey-300); }
+.unav-bg-grey-400 { background-color: var(--unav-grey-400); } .unav-bg-grey-500 { background-color: var(--unav-grey-500); } .unav-bg-grey-600 { background-color: var(--unav-grey-600); }
+.unav-bg-grey-700 { background-color: var(--unav-grey-700); } .unav-bg-grey-800 { background-color: var(--unav-grey-800); } .unav-bg-grey-900 { background-color: var(--unav-grey-900); }
+
+/* Moss */
+.unav-bg-moss-100 { background-color: var(--unav-moss-100); } .unav-bg-moss-200 { background-color: var(--unav-moss-200); } .unav-bg-moss-300 { background-color: var(--unav-moss-300); }
+.unav-bg-moss-400 { background-color: var(--unav-moss-400); } .unav-bg-moss-500 { background-color: var(--unav-moss-500); } .unav-bg-moss-600 { background-color: var(--unav-moss-600); }
+.unav-bg-moss-700 { background-color: var(--unav-moss-700); } .unav-bg-moss-800 { background-color: var(--unav-moss-800); } .unav-bg-moss-900 { background-color: var(--unav-moss-900); }
+
+/* Green Light */
+.unav-bg-green-light-100 { background-color: var(--unav-green-l-100); } .unav-bg-green-light-200 { background-color: var(--unav-green-l-200); } .unav-bg-green-light-300 { background-color: var(--unav-green-l-300); }
+.unav-bg-green-light-400 { background-color: var(--unav-green-l-400); } .unav-bg-green-light-500 { background-color: var(--unav-green-l-500); } .unav-bg-green-light-600 { background-color: var(--unav-green-l-600); }
+.unav-bg-green-light-700 { background-color: var(--unav-green-l-700); } .unav-bg-green-light-800 { background-color: var(--unav-green-l-800); } .unav-bg-green-light-900 { background-color: var(--unav-green-l-900); }
+
+/* Green */
+.unav-bg-green-100 { background-color: var(--unav-green-100); } .unav-bg-green-200 { background-color: var(--unav-green-200); } .unav-bg-green-300 { background-color: var(--unav-green-300); }
+.unav-bg-green-400 { background-color: var(--unav-green-400); } .unav-bg-green-500 { background-color: var(--unav-green-500); } .unav-bg-green-600 { background-color: var(--unav-green-600); }
+.unav-bg-green-700 { background-color: var(--unav-green-700); } .unav-bg-green-800 { background-color: var(--unav-green-800); } .unav-bg-green-900 { background-color: var(--unav-green-900); }
+
+/* Teal */
+.unav-bg-teal-100 { background-color: var(--unav-teal-100); } .unav-bg-teal-200 { background-color: var(--unav-teal-200); } .unav-bg-teal-300 { background-color: var(--unav-teal-300); }
+.unav-bg-teal-400 { background-color: var(--unav-teal-400); } .unav-bg-teal-500 { background-color: var(--unav-teal-500); } .unav-bg-teal-600 { background-color: var(--unav-teal-600); }
+.unav-bg-teal-700 { background-color: var(--unav-teal-700); } .unav-bg-teal-800 { background-color: var(--unav-teal-800); } .unav-bg-teal-900 { background-color: var(--unav-teal-900); }
+
+/* Cyan */
+.unav-bg-cyan-100 { background-color: var(--unav-cyan-100); } .unav-bg-cyan-200 { background-color: var(--unav-cyan-200); } .unav-bg-cyan-300 { background-color: var(--unav-cyan-300); }
+.unav-bg-cyan-400 { background-color: var(--unav-cyan-400); } .unav-bg-cyan-500 { background-color: var(--unav-cyan-500); } .unav-bg-cyan-600 { background-color: var(--unav-cyan-600); }
+.unav-bg-cyan-700 { background-color: var(--unav-cyan-700); } .unav-bg-cyan-800 { background-color: var(--unav-cyan-800); } .unav-bg-cyan-900 { background-color: var(--unav-cyan-900); }
+
+/* Blue Light */
+.unav-bg-blue-light-100 { background-color: var(--unav-blue-l-100); } .unav-bg-blue-light-200 { background-color: var(--unav-blue-l-200); } .unav-bg-blue-light-300 { background-color: var(--unav-blue-l-300); }
+.unav-bg-blue-light-400 { background-color: var(--unav-blue-l-400); } .unav-bg-blue-light-500 { background-color: var(--unav-blue-l-500); } .unav-bg-blue-light-600 { background-color: var(--unav-blue-l-600); }
+.unav-bg-blue-light-700 { background-color: var(--unav-blue-l-700); } .unav-bg-blue-light-800 { background-color: var(--unav-blue-l-800); } .unav-bg-blue-light-900 { background-color: var(--unav-blue-l-900); }
+
+/* Blue */
+.unav-bg-blue-100 { background-color: var(--unav-blue-100); } .unav-bg-blue-200 { background-color: var(--unav-blue-200); } .unav-bg-blue-300 { background-color: var(--unav-blue-300); }
+.unav-bg-blue-400 { background-color: var(--unav-blue-400); } .unav-bg-blue-500 { background-color: var(--unav-blue-500); } .unav-bg-blue-600 { background-color: var(--unav-blue-600); }
+.unav-bg-blue-700 { background-color: var(--unav-blue-700); } .unav-bg-blue-800 { background-color: var(--unav-blue-800); } .unav-bg-blue-900 { background-color: var(--unav-blue-900); }
+
+/* Blue Dark */
+.unav-bg-blue-dark-100 { background-color: var(--unav-b-dark-100); } .unav-bg-blue-dark-200 { background-color: var(--unav-b-dark-200); } .unav-bg-blue-dark-300 { background-color: var(--unav-b-dark-300); }
+.unav-bg-blue-dark-400 { background-color: var(--unav-b-dark-400); } .unav-bg-blue-dark-500 { background-color: var(--unav-b-dark-500); } .unav-bg-blue-dark-600 { background-color: var(--unav-b-dark-600); }
+.unav-bg-blue-dark-700 { background-color: var(--unav-b-dark-700); } .unav-bg-blue-dark-800 { background-color: var(--unav-b-dark-800); } .unav-bg-blue-dark-900 { background-color: var(--unav-b-dark-900); }
+
+/* Indigo */
+.unav-bg-indigo-100 { background-color: var(--unav-indigo-100); } .unav-bg-indigo-200 { background-color: var(--unav-indigo-200); } .unav-bg-indigo-300 { background-color: var(--unav-indigo-300); }
+.unav-bg-indigo-400 { background-color: var(--unav-indigo-400); } .unav-bg-indigo-500 { background-color: var(--unav-indigo-500); } .unav-bg-indigo-600 { background-color: var(--unav-indigo-600); }
+.unav-bg-indigo-700 { background-color: var(--unav-indigo-700); } .unav-bg-indigo-800 { background-color: var(--unav-indigo-800); } .unav-bg-indigo-900 { background-color: var(--unav-indigo-900); }
+
+/* Violet */
+.unav-bg-violet-100 { background-color: var(--unav-violet-100); } .unav-bg-violet-200 { background-color: var(--unav-violet-200); } .unav-bg-violet-300 { background-color: var(--unav-violet-300); }
+.unav-bg-violet-400 { background-color: var(--unav-violet-400); } .unav-bg-violet-500 { background-color: var(--unav-violet-500); } .unav-bg-violet-600 { background-color: var(--unav-violet-600); }
+.unav-bg-violet-700 { background-color: var(--unav-violet-700); } .unav-bg-violet-800 { background-color: var(--unav-violet-800); } .unav-bg-violet-900 { background-color: var(--unav-violet-900); }
+
+/* Purple */
+.unav-bg-purple-100 { background-color: var(--unav-purple-100); } .unav-bg-purple-200 { background-color: var(--unav-purple-200); } .unav-bg-purple-300 { background-color: var(--unav-purple-300); }
+.unav-bg-purple-400 { background-color: var(--unav-purple-400); } .unav-bg-purple-500 { background-color: var(--unav-purple-500); } .unav-bg-purple-600 { background-color: var(--unav-purple-600); }
+.unav-bg-purple-700 { background-color: var(--unav-purple-700); } .unav-bg-purple-800 { background-color: var(--unav-purple-800); } .unav-bg-purple-900 { background-color: var(--unav-purple-900); }
+
+/* Fuchsia */
+.unav-bg-fuchsia-100 { background-color: var(--unav-fuchsia-100); } .unav-bg-fuchsia-200 { background-color: var(--unav-fuchsia-200); } .unav-bg-fuchsia-300 { background-color: var(--unav-fuchsia-300); }
+.unav-bg-fuchsia-400 { background-color: var(--unav-fuchsia-400); } .unav-bg-fuchsia-500 { background-color: var(--unav-fuchsia-500); } .unav-bg-fuchsia-600 { background-color: var(--unav-fuchsia-600); }
+.unav-bg-fuchsia-700 { background-color: var(--unav-fuchsia-700); } .unav-bg-fuchsia-800 { background-color: var(--unav-fuchsia-800); } .unav-bg-fuchsia-900 { background-color: var(--unav-fuchsia-900); }
+
+/* Pink */
+.unav-bg-pink-100 { background-color: var(--unav-pink-100); } .unav-bg-pink-200 { background-color: var(--unav-pink-200); } .unav-bg-pink-300 { background-color: var(--unav-pink-300); }
+.unav-bg-pink-400 { background-color: var(--unav-pink-400); } .unav-bg-pink-500 { background-color: var(--unav-pink-500); } .unav-bg-pink-600 { background-color: var(--unav-pink-600); }
+.unav-bg-pink-700 { background-color: var(--unav-pink-700); } .unav-bg-pink-800 { background-color: var(--unav-pink-800); } .unav-bg-pink-900 { background-color: var(--unav-pink-900); }
+
+/* Rose */
+.unav-bg-rose-100 { background-color: var(--unav-rose-100); } .unav-bg-rose-200 { background-color: var(--unav-rose-200); } .unav-bg-rose-300 { background-color: var(--unav-rose-300); }
+.unav-bg-rose-400 { background-color: var(--unav-rose-400); } .unav-bg-rose-500 { background-color: var(--unav-rose-500); } .unav-bg-rose-600 { background-color: var(--unav-rose-600); }
+.unav-bg-rose-700 { background-color: var(--unav-rose-700); } .unav-bg-rose-800 { background-color: var(--unav-rose-800); } .unav-bg-rose-900 { background-color: var(--unav-rose-900); }
+
+/* Orange Dark */
+.unav-bg-orange-dark-100 { background-color: var(--unav-o-dark-100); } .unav-bg-orange-dark-200 { background-color: var(--unav-o-dark-200); } .unav-bg-orange-dark-300 { background-color: var(--unav-o-dark-300); }
+.unav-bg-orange-dark-400 { background-color: var(--unav-o-dark-400); } .unav-bg-orange-dark-500 { background-color: var(--unav-o-dark-500); } .unav-bg-orange-dark-600 { background-color: var(--unav-o-dark-600); }
+.unav-bg-orange-dark-700 { background-color: var(--unav-o-dark-700); } .unav-bg-orange-dark-800 { background-color: var(--unav-o-dark-800); } .unav-bg-orange-dark-900 { background-color: var(--unav-o-dark-900); }
+
+/* Orange */
+.unav-bg-orange-100 { background-color: var(--unav-orange-100); } .unav-bg-orange-200 { background-color: var(--unav-orange-200); } .unav-bg-orange-300 { background-color: var(--unav-orange-300); }
+.unav-bg-orange-400 { background-color: var(--unav-orange-400); } .unav-bg-orange-500 { background-color: var(--unav-orange-500); } .unav-bg-orange-600 { background-color: var(--unav-orange-600); }
+.unav-bg-orange-700 { background-color: var(--unav-orange-700); } .unav-bg-orange-800 { background-color: var(--unav-orange-800); } .unav-bg-orange-900 { background-color: var(--unav-orange-900); }
+
+/* Yellow */
+.unav-bg-yellow-100 { background-color: var(--unav-yellow-100); } .unav-bg-yellow-200 { background-color: var(--unav-yellow-200); } .unav-bg-yellow-300 { background-color: var(--unav-yellow-300); }
+.unav-bg-yellow-400 { background-color: var(--unav-yellow-400); } .unav-bg-yellow-500 { background-color: var(--unav-yellow-500); } .unav-bg-yellow-600 { background-color: var(--unav-yellow-600); }
+.unav-bg-yellow-700 { background-color: var(--unav-yellow-700); } .unav-bg-yellow-800 { background-color: var(--unav-yellow-800); } .unav-bg-yellow-900 { background-color: var(--unav-yellow-900); }
 
