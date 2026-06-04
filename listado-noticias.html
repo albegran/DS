@@ -16,75 +16,34 @@
         /* Estilos de contexto para la documentación */
         html { scroll-behavior: smooth; }
         body { background-color: var(--unav-grey-100); }
-        
-        .unav-doc-container { padding-top: var(--unav-spacing-3xl); padding-bottom: var(--unav-spacing-3xl); }
-        h2[id], h3[id], section[id] { scroll-margin-top: 6rem; }
     </style>
 </head>
-<body class="unav-font-primary unav-weight-regular unav-text-100">
+<body class="unav-font-primary unav-weight-regular unav-text-1125">
 
     <nav style="background-color: #ffffff; border-bottom: 1px solid var(--unav-grey-200); padding: var(--unav-spacing-md) 0; position: sticky; top: 0; z-index: var(--unav-zIndex-sticky);">
         <div class="container-lg d-flex justify-content-between align-items-center position-relative">
-            
             <div>
                 <a  href="indice.html" class="unav-boton unav-botonSecundario">
                     <i class="bi bi-arrow-left unav-botonIcono" aria-hidden="true"></i>
                     <span class="d-none d-md-inline">Volver al Índice</span>
                 </a>
-            </div>
-    
+            </div>    
             <span class="unav-font-primary-condensed unav-weight-regular unav-text-150 m-0 position-absolute start-50 translate-middle-x" style="color: var(--unav-rojo-500); line-height: 1;">
                 Design System UNAV
             </span>
-    
         </div>
     </nav>
 
-    <main class="container-lg unav-doc-container">
+    <main class="container-lg">
         
-        <header style="text-align: center; margin-bottom: var(--unav-spacing-md); padding-bottom: var(--unav-spacing-md);">
-            <h1 class="unav-font-primary unav-weight-medium unav-text-200 text-dark mb-3">Listado de Noticias (8 Col)</h1>
-            <p class="unav-font-primary unav-weight-regular unav-text-100 text-muted m-0">Refinamiento del componente de lista con formato de fecha editorial y contención en grid central.</p>
+        <header style="text-align: center; margin: var(--unav-spacing-xl) var(--unav-spacing-xl);">
+            <h1 class="unav-font-primary unav-weight-medium unav-text-200" style="color: var(--unav-black-900); margin-bottom: var(--unav-spacing-sm) !important;">Listado de Noticias</h1>
         </header>
             
-        
-        <article class="unav-card unav-cardSolid" style="margin-bottom: var(--unav-spacing-3xl);">
-            <h2 class="unav-font-primary unav-weight-bold unav-text-150" style="color: var(--unav-rojo-500); border-bottom: 2px solid var(--unav-rojo-500); padding-bottom: var(--unav-spacing-sm); margin-bottom: var(--unav-spacing-lg);">Guía Técnica y Documentación Oficial</h2>
-            
-            <div class="row g-4">
-                <div class="col-md-6">
-                    <h3 class="unav-font-primary unav-weight-bold unav-text-125 mb-3" style="color: var(--unav-black-800);">1. Implementación OOCSS y Arquitectura</h3>
-                    <ul class="unav-font-primary unav-weight-regular unav-text-100" style="color: var(--unav-grey-700); padding-left: var(--unav-spacing-md);">
-                        <li style="margin-bottom: var(--unav-spacing-xs);"><strong>Estructura Global:</strong> La grilla completa debe estar contenida bajo la clase <code>.unav-newsListContainer</code>. Esta clase actúa como el marco de referencia espacial para el cálculo de las animaciones.</li>
-                        <li style="margin-bottom: var(--unav-spacing-xs);"><strong>Módulos Internos:</strong> El listado no inventa elementos nuevos, sino que reutiliza el componente Tarjeta Modular (<code>.unav-card</code>) ajustado para representar noticias, garantizando el reciclaje de código y estilos visuales.</li>
-                    </ul>
-        
-                    <h3 class="unav-font-primary unav-weight-bold unav-text-125 mb-3 mt-4" style="color: var(--unav-black-800);">2. Guía Técnica (JavaScript y Staggering)</h3>
-                    <ul class="unav-font-primary unav-weight-regular unav-text-100" style="color: var(--unav-grey-700); padding-left: var(--unav-spacing-md);">
-                        <li style="margin-bottom: var(--unav-spacing-xs);"><strong>Motor de Animación (JS):</strong> Implementa un <code>IntersectionObserver</code> avanzado. A diferencia de otros componentes, calcula el retardo usando módulo matemático <code>(index % 5) * 100</code>, lo que significa que la onda visual se reinicia cíclicamente para evitar esperas eternas en listados masivos.</li>
-                        <li style="margin-bottom: var(--unav-spacing-xs);"><strong>Gestión de Clases:</strong> Las tarjetas nacen con <code>.unav-efectoEntradaOculto</code> (traslación inferior y opacidad 0) y el observador muta su estado inyectando <code>.unav-efectoEntradaVisible</code> de forma controlada.</li>
-                    </ul>
-                </div>
-                
-                <div class="col-md-6 border-start-md ps-md-4">
-                    <h3 class="unav-font-primary unav-weight-bold unav-text-125 mb-3" style="color: var(--unav-black-800);">3. Accesibilidad (A11y)</h3>
-                    <ul class="unav-font-primary unav-weight-regular unav-text-100" style="color: var(--unav-grey-700); padding-left: var(--unav-spacing-md);">                        
-                        <li style="margin-bottom: var(--unav-spacing-xs);"><strong>Accesibilidad Semántica:</strong> Las fechas de las noticias deben usar el nodo nativo <code>&lt;time datetime="YYYY-MM-DD"&gt;</code>. Los enlaces de "Leer noticia" deben abarcar toda el área interactiva de la tarjeta para evitar redundancia focal en el lector de pantalla.</li>
-                    </ul>
-        
-                    <h3 class="unav-font-primary unav-weight-bold unav-text-125 mb-3 mt-4" style="color: var(--unav-black-800);">4. UX, Uso de Átomos y Medios</h3>
-                    <ul class="unav-font-primary unav-weight-regular unav-text-100" style="color: var(--unav-grey-700); padding-left: var(--unav-spacing-md);">
-                        <li style="margin-bottom: var(--unav-spacing-xs);"><strong>Agrupación de Átomos:</strong> Este <em>layout</em> consume los átomos de Etiquetas (<code>.unav-tag</code>) para categorizar la actualidad (ej. "Investigación", "Deportes") y bloquea la altura tipográfica para que los títulos truncados no rompan la grilla.</li>
-                        <li style="margin-bottom: var(--unav-spacing-xs);"><strong>Rendimiento de Imágenes:</strong> En un listado de noticias el peso de descarga puede ser crítico. Las miniaturas exigen formato WebP, relación de aspecto 16:9 y carga diferida (<code>loading="lazy"</code>), con resolución máxima recomendada de 600px de ancho por imagen.</li>
-                    </ul>
-                </div>
-            </div>
-        </article>
-
         <!-- Bloque de Noticias Centrado (8 Columnas) -->
         <div class="row justify-content-center">
             <div class="col-12 col-md-10 col-lg-8">
-                <section class="bg-white p-4 p-md-5 rounded shadow-sm border mb-5">
+                <section class="unav-card unav-cardSolid" style="margin-bottom: var(--unav-spacing-xl);">
                     
                     <div class="unav-newsListContainer">
                         <!-- Noticia 1 -->

@@ -16,9 +16,6 @@
         html { scroll-behavior: smooth; }
         body { background-color: var(--unav-grey-100); }
         
-        .unav-doc-container { padding-top: var(--unav-spacing-3xl); padding-bottom: var(--unav-spacing-3xl); }
-        h2[id], h3[id], section[id] { scroll-margin-top: 6rem; }
-
         /* Utilidad de caja para el laboratorio de pruebas */
         .unav-demoBox {
             height: 180px;
@@ -56,60 +53,11 @@
         </div>
     </nav>
 
-    <main class="container-lg unav-doc-container">
+    <main class="container-lg">
         
-        <header style="text-align: center; margin-bottom: var(--unav-spacing-md); padding-bottom: var(--unav-spacing-md);">
-            <h1 class="unav-font-primary unav-weight-medium unav-text-200 m-0" style="color: var(--unav-black-900); margin-bottom: var(--unav-spacing-sm) !important;">Sistema de Movimiento (Motion)</h1>
-            <p class="unav-font-primary unav-weight-regular unav-text-100 m-0" style="color: var(--unav-grey-600);">
-                Físicas, transiciones y utilidades atómicas para generar microinteracciones estructuradas en el DOM.
-            </p>
+        <header style="text-align: center; margin: var(--unav-spacing-xl) var(--unav-spacing-xl);">
+            <h1 class="unav-font-primary unav-weight-medium unav-text-200" style="color: var(--unav-black-900); margin-bottom: var(--unav-spacing-sm) !important;">Movimiento e Interacción</h1>
         </header>
-
-        <article class="unav-card unav-cardSolid" style="margin-bottom: var(--unav-spacing-3xl);">
-            <h2 class="unav-font-primary unav-weight-bold unav-text-150" style="color: var(--unav-rojo-500); border-bottom: 2px solid var(--unav-rojo-500); padding-bottom: var(--unav-spacing-sm); margin-bottom: var(--unav-spacing-lg);">Análisis y Documentación Oficial</h2>
-            
-            <div class="row g-4">
-                <div class="col-md-6">
-                    <h3 class="unav-font-primary unav-weight-bold unav-text-125" style="color: var(--unav-black-800); margin-bottom: var(--unav-spacing-xs);">1.- Guía de Implementación y Modificadores</h3>
-                    <p class="unav-font-primary unav-weight-regular unav-text-100" style="color: var(--unav-grey-700); margin-bottom: var(--unav-spacing-sm);">
-                        <strong>Uso de clases OOCSS:</strong> Las animaciones se inyectan añadiendo clases con el prefijo <code>.unav-efecto[Nombre]</code> a cualquier nodo HTML.
-                    </p>
-                    <p class="unav-font-primary unav-weight-regular unav-text-100" style="color: var(--unav-grey-700); margin: 0;">
-                        <strong>Modificadores de Estado:</strong> Efectos como el "Fade-Up" en scroll o el "CrossFade" dependen de clases de estado que inyecta JavaScript: <code>.unav-efectoEntradaVisible</code>, <code>.unav-isActive</code>, <code>.unav-isHidden</code>.
-                    </p>
-                </div>
-                
-                <div class="col-md-6">
-                    <h3 class="unav-font-primary unav-weight-bold unav-text-125" style="color: var(--unav-black-800); margin-bottom: var(--unav-spacing-xs);">2.- Guía Técnica</h3>
-                    <p class="unav-font-primary unav-weight-regular unav-text-100" style="color: var(--unav-grey-700); margin-bottom: var(--unav-spacing-sm);">
-                        <strong>Core CSS:</strong> Todo el movimiento depende de 4 tokens maestros: <code>--unav-duration-*</code> (Fast, Normal, Slow, Epic) y <code>--unav-easing-*</code> (Standard, Decel, Accel, Elastic). No uses tiempos <em>hardcodeados</em>.
-                    </p>
-                    <p class="unav-font-primary unav-weight-regular unav-text-100" style="color: var(--unav-grey-700); margin: 0;">
-                        <strong>Rendimiento (GPU):</strong> Animaciones de escala e imagen usan <code>will-change: transform</code>. Nunca animar <code>width/height</code> o <code>top/left</code>, solo <code>transform</code> y <code>opacity</code> para evitar el <em>layout thrashing</em>.
-                    </p>
-                </div>
-                
-                <div class="col-md-6">
-                    <h3 class="unav-font-primary unav-weight-bold unav-text-125" style="color: var(--unav-black-800); margin-bottom: var(--unav-spacing-xs);">3.- Accesibilidad (A11y)</h3>
-                    <p class="unav-font-primary unav-weight-regular unav-text-100" style="color: var(--unav-grey-700); margin-bottom: var(--unav-spacing-sm);">
-                        <strong>Media Queries WCAG:</strong> A nivel de sistema, es recomendable envolver estas clases en <code>@media (prefers-reduced-motion: no-preference)</code> para proteger a usuarios con trastornos vestibulares.
-                    </p>
-                    <p class="unav-font-primary unav-weight-regular unav-text-100" style="color: var(--unav-grey-700); margin: 0;">
-                        <strong>Visibilidad Real:</strong> Cuando algo se desvanece y no debe ser interactuable, la animación no solo baja `opacity` a 0, sino que transiciona `visibility: hidden` para sacarlo del árbol de clics.
-                    </p>
-                </div>
-                
-                <div class="col-md-6">
-                    <h3 class="unav-font-primary unav-weight-bold unav-text-125" style="color: var(--unav-black-800); margin-bottom: var(--unav-spacing-xs);">4.- UX, Layout y Medios</h3>
-                    <p class="unav-font-primary unav-weight-regular unav-text-100" style="color: var(--unav-grey-700); margin-bottom: var(--unav-spacing-sm);">
-                        <strong>Staggering (Cascada):</strong> Cuando entran múltiples elementos en pantalla, el JS inyecta la clase de forma escalonada (cada 150ms). Esto crea una sensación de dirección y jerarquía de lectura.
-                    </p>
-                    <p class="unav-font-primary unav-weight-regular unav-text-100" style="color: var(--unav-grey-700); margin: 0;">
-                        <strong>Parallax Seguro:</strong> El Parallax se anula automáticamente en móviles (`@media max-width: 768px -> background-attachment: scroll`) para evitar <em>jank</em> (tirones) y consumo excesivo de batería.
-                    </p>
-                </div>
-            </div>
-        </article>
 
         <section class="unav-card unav-cardSolid" style="margin-bottom: var(--unav-spacing-2xl);">
             <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: var(--unav-spacing-md);">

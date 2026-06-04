@@ -21,7 +21,7 @@
         h2[id], h3[id], section[id] { scroll-margin-top: 6rem; }
     </style>
 </head>
-<body class="unav-font-primary unav-weight-regular unav-text-100">
+<body class="unav-font-primary unav-weight-regular unav-text-1125">
 
     <nav style="background-color: #ffffff; border-bottom: 1px solid var(--unav-grey-200); padding: var(--unav-spacing-md) 0; position: sticky; top: 0; z-index: var(--unav-zIndex-sticky);">
         <div class="container-lg d-flex justify-content-between align-items-center position-relative">
@@ -40,61 +40,11 @@
         </div>
     </nav>
 
-    <main class="container-lg unav-doc-container">
+    <main class="container-lg">
         
-        <header style="text-align: center; margin-bottom: var(--unav-spacing-md); padding-bottom: var(--unav-spacing-md);">
-            <h1 class="unav-font-primary unav-weight-medium unav-text-200 m-0" style="color: var(--unav-black-900); margin-bottom: var(--unav-spacing-sm) !important;">Iconografía</h1>
-            <p class="unav-font-primary unav-weight-regular unav-text-100 m-0" style="color: var(--unav-grey-600);">
-                Librerías estándar y pautas para el uso e implementación de elementos iconográficos en el ecosistema digital.
-            </p>
+        <header style="text-align: center; margin: var(--unav-spacing-xl) var(--unav-spacing-xl);">
+            <h1 class="unav-font-primary unav-weight-medium unav-text-200" style="color: var(--unav-black-900); margin-bottom: var(--unav-spacing-sm) !important;">Iconografía</h1>
         </header>
-
-        <!-- ZONA DE ANÁLISIS OFICIAL Y DOCUMENTACIÓN EXHAUSTIVA -->
-        <article class="unav-card unav-cardSolid" style="margin-bottom: var(--unav-spacing-3xl);">
-            <h2 class="unav-font-primary unav-weight-bold unav-text-150" style="color: var(--unav-rojo-500); border-bottom: 2px solid var(--unav-rojo-500); padding-bottom: var(--unav-spacing-sm); margin-bottom: var(--unav-spacing-lg);">Análisis y Documentación Oficial</h2>
-            
-            <div class="row g-4">
-                <div class="col-md-6">
-                    <h3 class="unav-font-primary unav-weight-bold unav-text-125" style="color: var(--unav-black-800); margin-bottom: var(--unav-spacing-xs);">1.- Guía de Implementación y Modificadores</h3>
-                    <p class="unav-font-primary unav-weight-regular unav-text-100" style="color: var(--unav-grey-700); margin-bottom: var(--unav-spacing-sm);">
-                        <strong>Uso de clases escalares:</strong> El tamaño de los iconos NUNCA se establece en px estáticos. Se deben consumir las clases utilitarias transversales: <code>.unav-icono-sm</code>, <code>.unav-icono-md</code>, <code>.unav-icono-lg</code>, y <code>.unav-icono-xl</code>.
-                    </p>
-                    <p class="unav-font-primary unav-weight-regular unav-text-100" style="color: var(--unav-grey-700); margin: 0;">
-                        <strong>Modificadores de Color:</strong> La iconografía hereda nativamente el color de su contenedor padre mediante la propiedad <code>fill="currentColor"</code> (SVG) o <code>color: inherit</code> (Fuentes).
-                    </p>
-                </div>
-                
-                <div class="col-md-6">
-                    <h3 class="unav-font-primary unav-weight-bold unav-text-125" style="color: var(--unav-black-800); margin-bottom: var(--unav-spacing-xs);">2.- Guía Técnica</h3>
-                    <p class="unav-font-primary unav-weight-regular unav-text-100" style="color: var(--unav-grey-700); margin-bottom: var(--unav-spacing-sm);">
-                        <strong>Construcción SVG:</strong> Si se usan SVGs inyectados, el <code>viewBox</code> debe ser estrictamente <code>0 0 24 24</code> o la rejilla proporcional oficial. Todo trazo debe estar expandido (Outline Stroke) para prevenir deformaciones al escalar.
-                    </p>
-                    <p class="unav-font-primary unav-weight-regular unav-text-100" style="color: var(--unav-grey-700); margin: 0;">
-                        <strong>Librerías Permitidas:</strong> Bootstrap Icons (Base estructural UI), Google Material Symbols Outlined (Infografías), y SVG Propios UNAV para logotipos e isologos de facultades o centros.
-                    </p>
-                </div>
-                
-                <div class="col-md-6">
-                    <h3 class="unav-font-primary unav-weight-bold unav-text-125" style="color: var(--unav-black-800); margin-bottom: var(--unav-spacing-xs);">3.- Accesibilidad (A11y)</h3>
-                    <p class="unav-font-primary unav-weight-regular unav-text-100" style="color: var(--unav-grey-700); margin-bottom: var(--unav-spacing-sm);">
-                        <strong>Iconos Decorativos vs Semánticos:</strong> Si el icono acompaña a un texto descriptivo, DEBE llevar el atributo <code>aria-hidden="true"</code>. Si el icono es el único contenido de un botón, el botón DEBE tener un <code>aria-label</code> o un <code>.unav-sr-only</code> interno.
-                    </p>
-                    <p class="unav-font-primary unav-weight-regular unav-text-100" style="color: var(--unav-grey-700); margin: 0;">
-                        
-                    </p>
-                </div>
-                
-                <div class="col-md-6">
-                    <h3 class="unav-font-primary unav-weight-bold unav-text-125" style="color: var(--unav-black-800); margin-bottom: var(--unav-spacing-xs);">4.- UX, Layout y Medios</h3>
-                    <p class="unav-font-primary unav-weight-regular unav-text-100" style="color: var(--unav-grey-700); margin-bottom: var(--unav-spacing-sm);">
-                        <strong>Consistencia Visual (Stroke):</strong> El sistema audita un grosor visual de aproximadamente <code>1.5px</code> para estar alineado con los tokens de bordes del sistema. Evitar iconos con rellenos sólidos (Solid/Filled) a menos que representen estados activos.
-                    </p>
-                    <p class="unav-font-primary unav-weight-regular unav-text-100" style="color: var(--unav-grey-700); margin: 0;">
-                        <strong>Feature Boxes:</strong> Para crear bloques de características, utiliza el componente OOCSS <code>.unav-iconoDestacado</code> que gestiona el padding, fondo neutro y la respuesta táctil/hover.
-                    </p>
-                </div>
-            </div>
-        </article>
 
         <!-- SECCIÓN 1: BOOTSTRAP ICONS -->
         <section class="unav-card unav-cardSolid" style="margin-bottom: var(--unav-spacing-2xl);">

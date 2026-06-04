@@ -15,71 +15,29 @@
         /* Estilos de contexto para la documentación */
         html { scroll-behavior: smooth; }
         body { background-color: var(--unav-grey-100); }
-        
-        .unav-doc-container { padding-top: var(--unav-spacing-3xl); padding-bottom: var(--unav-spacing-3xl); }
-        h2[id], h3[id], section[id] { scroll-margin-top: 6rem; }
     </style>
 </head>
-<body class="unav-font-primary unav-weight-regular unav-text-100">
+<body class="unav-font-primary unav-weight-regular unav-text-1125">
 
     <nav style="background-color: #ffffff; border-bottom: 1px solid var(--unav-grey-200); padding: var(--unav-spacing-md) 0; position: sticky; top: 0; z-index: var(--unav-zIndex-sticky);">
         <div class="container-lg d-flex justify-content-between align-items-center position-relative">
-            
             <div>
                 <a  href="indice.html" class="unav-boton unav-botonSecundario">
                     <i class="bi bi-arrow-left unav-botonIcono" aria-hidden="true"></i>
                     <span class="d-none d-md-inline">Volver al Índice</span>
                 </a>
             </div>
-    
             <span class="unav-font-primary-condensed unav-weight-regular unav-text-150 m-0 position-absolute start-50 translate-middle-x" style="color: var(--unav-rojo-500); line-height: 1;">
                 Design System UNAV
             </span>
-    
         </div>
     </nav>
 
-    <main class="container-lg unav-doc-container">
+    <main class="container-lg">
         
-        <header style="text-align: center; margin-bottom: var(--unav-spacing-md); padding-bottom: var(--unav-spacing-md);">
-            <h1 class="unav-font-primary unav-weight-medium unav-text-200 m-0" style="color: var(--unav-black-900); margin-bottom: var(--unav-spacing-sm) !important;">Enlace Bloque</h1>
-            <p class="unav-font-primary unav-weight-regular unav-text-100 m-0" style="color: var(--unav-grey-600);">
-                Ítem de lista accionable con altura dinámica que abraza el texto. Conserva el color histórico mediante tokens locales e incluye microinteracción JS.
-            </p>
+        <header style="text-align: center; margin: var(--unav-spacing-xl) var(--unav-spacing-xl);">
+            <h1 class="unav-font-primary unav-weight-medium unav-text-200" style="color: var(--unav-black-900); margin-bottom: var(--unav-spacing-sm) !important;">Enlace Bloque</h1>
         </header>
-
-        <article class="unav-card unav-cardSolid" style="margin-bottom: var(--unav-spacing-3xl);">
-            <h2 class="unav-font-primary unav-weight-bold unav-text-150" style="color: var(--unav-rojo-500); border-bottom: 2px solid var(--unav-rojo-500); padding-bottom: var(--unav-spacing-sm); margin-bottom: var(--unav-spacing-lg);">Guía Técnica y Documentación Oficial</h2>
-            
-            <div class="row g-4">
-                <div class="col-md-6">
-                    <h3 class="unav-font-primary unav-weight-bold unav-text-125 mb-3" style="color: var(--unav-black-800);">1. Implementación y Modificadores</h3>
-                    <ul class="unav-font-primary unav-weight-regular unav-text-100" style="color: var(--unav-grey-700); padding-left: var(--unav-spacing-md);">
-                        <li style="margin-bottom: var(--unav-spacing-xs);"><strong>Estructura OOCSS:</strong> Para enlaces independientes se invoca <code>.unav-bloqueEnlace</code>. Cuando se necesita una agrupación se envuelven en el contenedor <code>.unav-listadoEnlaces</code> para heredar la retícula y espaciado vertical.</li>
-                        <li style="margin-bottom: var(--unav-spacing-xs);"><strong>Tokenización Histórica:</strong> El color base del bloque se gestiona como una variable local de instancia (<code>--unav-bloqueEnlaceBg</code>), respetando la identidad visual previa pero estandarizada.</li>
-                    </ul>
-
-                    <h3 class="unav-font-primary unav-weight-bold unav-text-125 mb-3 mt-4" style="color: var(--unav-black-800);">2. Guía Técnica (HTML/CSS/JS)</h3>
-                    <ul class="unav-font-primary unav-weight-regular unav-text-100" style="color: var(--unav-grey-700); padding-left: var(--unav-spacing-md);">
-                        <li style="margin-bottom: var(--unav-spacing-xs);"><strong>Renderizado DOM (JS):</strong> El core funcional reside en el uso de <code>getClientRects()</code>. El JavaScript captura los fragmentos poligonales generados por los saltos de línea del texto para detectar el ancho y posición exactos de la última palabra renderizada.</li>
-                        <li style="margin-bottom: var(--unav-spacing-xs);"><strong>CSS Dinámico:</strong> El JS inyecta variables nativas (<code>--unav-lineWidth</code>, <code>--unav-lineLeft</code>, <code>--unav-lineBottom</code>) al bloque para posicionar milimétricamente el pseudo-elemento <code>::after</code> responsable del subrayado interactivo animado.</li>
-                    </ul>
-                </div>
-                
-                <div class="col-md-6 border-start-md ps-md-4">
-                    <h3 class="unav-font-primary unav-weight-bold unav-text-125 mb-3" style="color: var(--unav-black-800);">3. Accesibilidad (A11y)</h3>
-                    <ul class="unav-font-primary unav-weight-regular unav-text-100" style="color: var(--unav-grey-700); padding-left: var(--unav-spacing-md);">
-                        <li style="margin-bottom: var(--unav-spacing-xs);"><strong>Accesibilidad:</strong> Alto ratio de contraste en hover asegurado. Todo bloque enlaza de forma descriptiva, y la animación del subrayado respeta el flujo sin causar saltos en el lector de pantalla.</li>                        
-                    </ul>
-
-                    <h3 class="unav-font-primary unav-weight-bold unav-text-125 mb-3 mt-4" style="color: var(--unav-black-800);">4. UX, Tipografía y Layouts</h3>
-                    <ul class="unav-font-primary unav-weight-regular unav-text-100" style="color: var(--unav-grey-700); padding-left: var(--unav-spacing-md);">
-                        <li style="margin-bottom: var(--unav-spacing-xs);"><strong>Integración en Grids:</strong> Diseñado expresamente para adaptarse y fragmentarse en columnas desde <code>col-3</code> hasta <code>col-6</code> en Bootstrap, asegurando el cálculo de la animación en cualquier <em>viewport</em> y adaptándose a layouts complejos.</li>
-                        <li style="margin-bottom: var(--unav-spacing-xs);"><strong>Tipografía:</strong> El componente delega el texto a <code>.unav-bloqueEnlaceText</code> mapeando al token de lectura <code>--unav-fontSize100</code> y a la familia de fuente Roboto, simulando el peso bold temporalmente en JS para pre-calcular el espacio en el efecto hover.</li>
-                    </ul>
-                </div>
-            </div>
-        </article>
 
         <section class="unav-card unav-cardSolid unav-exampleWrapper" style="margin-bottom: var(--unav-spacing-3xl);">
             

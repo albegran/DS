@@ -15,84 +15,31 @@
         /* Estilos de contexto para la documentación */
         html { scroll-behavior: smooth; }
         body { background-color: var(--unav-grey-100); }
-        
-        .unav-doc-container { padding-top: var(--unav-spacing-3xl); padding-bottom: var(--unav-spacing-3xl); }
-        h2[id], h3[id], section[id] { scroll-margin-top: 6rem; }
     </style>
 </head>
-<body class="unav-font-primary unav-weight-regular unav-text-100">
+<body class="unav-font-primary unav-weight-regular unav-text-1125">
 
     <nav style="background-color: #ffffff; border-bottom: 1px solid var(--unav-grey-200); padding: var(--unav-spacing-md) 0; position: sticky; top: 0; z-index: var(--unav-zIndex-sticky);">
         <div class="container-lg d-flex justify-content-between align-items-center position-relative">
-            
             <div>
                 <a  href="indice.html" class="unav-boton unav-botonSecundario">
                     <i class="bi bi-arrow-left unav-botonIcono" aria-hidden="true"></i>
                     <span class="d-none d-md-inline">Volver al Índice</span>
                 </a>
             </div>
-    
             <span class="unav-font-primary-condensed unav-weight-regular unav-text-150 m-0 position-absolute start-50 translate-middle-x" style="color: var(--unav-rojo-500); line-height: 1;">
                 Design System UNAV
             </span>
-    
         </div>
     </nav>
 
-    <main class="container-lg unav-doc-container">
+    <main class="container-lg">
         
-        <header style="text-align: center; margin-bottom: var(--unav-spacing-md); padding-bottom: var(--unav-spacing-md);">
-            <h1 class="unav-font-primary unav-weight-medium unav-text-200 m-0" style="color: var(--unav-black-900); margin-bottom: var(--unav-spacing-sm) !important;">Botón Secundario</h1>
-            <p class="unav-font-primary unav-weight-regular unav-text-100 m-0" style="color: var(--unav-grey-600);">
-                Componente versátil para acciones complementarias y controles de interfaz.
-            </p>
+        <header style="text-align: center; margin: var(--unav-spacing-xl) var(--unav-spacing-xl);">
+            <h1 class="unav-font-primary unav-weight-medium unav-text-200" style="color: var(--unav-black-900); margin-bottom: var(--unav-spacing-sm) !important;">Botón Secundario</h1>
         </header>
 
-        <!-- DOCUMENTACIÓN TÉCNICA Y FUNCIONAL (12 Columnas) -->
-        <article class="unav-card unav-cardSolid" style="margin-bottom: var(--unav-spacing-3xl);">
-            <h2 class="unav-font-primary unav-weight-bold unav-text-150" style="color: var(--unav-rojo-500); border-bottom: 2px solid var(--unav-rojo-500); padding-bottom: var(--unav-spacing-sm); margin-bottom: var(--unav-spacing-lg);">Guía Técnica y Documentación Oficial</h2>
-            
-            <div class="row g-4">
-                <div class="col-md-6">
-                    <h3 class="unav-font-primary unav-weight-bold unav-text-125" style="color: var(--unav-black-800); margin-bottom: var(--unav-spacing-xs);">1.- Guía de Implementación y Modificadores</h3>
-                    <p class="unav-font-primary unav-weight-regular unav-text-100" style="color: var(--unav-grey-700); margin-bottom: var(--unav-spacing-sm);">
-                        <strong>Clases OOCSS:</strong> Aplicar <code>.unav-boton</code> junto con la piel <code>.unav-botonSecundario</code> (transparente) o <code>.unav-botonSecundarioInverso</code> (fondo sólido).
-                    </p>
-                    <p class="unav-font-primary unav-weight-regular unav-text-100" style="color: var(--unav-grey-700); margin: 0;">
-                        <strong>Modificadores de Control:</strong> Usa <code>.unav-botonIconOnly</code> para forzar proporciones 1:1. Combínalo con <code>.unav-botonIconOnlySm</code> para controles de galería miniatura (32px).
-                    </p>
-                </div>
-                
-                <div class="col-md-6">
-                    <h3 class="unav-font-primary unav-weight-bold unav-text-125" style="color: var(--unav-black-800); margin-bottom: var(--unav-spacing-xs);">2.- Guía Técnica (HTML, CSS y JS)</h3>
-                    <p class="unav-font-primary unav-weight-regular unav-text-100" style="color: var(--unav-grey-700); margin-bottom: var(--unav-spacing-sm);">
-                        <strong>Colorización:</strong> Inyección dinámica a través de la variable de instancia CSS <code>--unav-botonColorSource</code>. El sistema OOCSS se encarga de calcular fondos y bordes en estado hover automáticamente.
-                    </p>
-                    <p class="unav-font-primary unav-weight-regular unav-text-100" style="color: var(--unav-grey-700); margin: 0;">
-                        <strong>Tipografía:</strong> Renderiza en <code>var(--unav-fontSize08125)</code> (13px) con la familia Condensed para optimizar espacio en barras de herramientas.
-                    </p>
-                </div>
-                
-                <div class="col-md-6">
-                    <h3 class="unav-font-primary unav-weight-bold unav-text-125" style="color: var(--unav-black-800); margin-bottom: var(--unav-spacing-xs);">3.- Accesibilidad (A11y)</h3>
-                    <p class="unav-font-primary unav-weight-regular unav-text-100" style="color: var(--unav-grey-700); margin-bottom: var(--unav-spacing-sm);">
-                        <strong>Soporte para Lectores de Pantalla:</strong> Todo botón que use la variante <code>.unav-botonIconOnly</code> carece de texto visible. Es estricto añadir <code>aria-label="Acción"</code> al botón y <code>aria-hidden="true"</code> al icono.
-                    </p>
-                    <p class="unav-font-primary unav-weight-regular unav-text-100" style="color: var(--unav-grey-700); margin: 0;">
-                        
-                    </p>
-                </div>
-                
-                <div class="col-md-6">
-                    <h3 class="unav-font-primary unav-weight-bold unav-text-125" style="color: var(--unav-black-800); margin-bottom: var(--unav-spacing-xs);">4.- UX y Uso de Átomos</h3>
-                    <p class="unav-font-primary unav-weight-regular unav-text-100" style="color: var(--unav-grey-700); margin-bottom: var(--unav-spacing-sm);">
-                        <strong>Comportamiento en Layouts:</strong> Estos botones consumen <code>width: fit-content</code> por defecto, amoldándose naturalmente a columnas de Grid o contenedores Flexbox.
-                    </p>
-                    <p class="unav-font-primary unav-weight-regular unav-text-100" style="color: var(--unav-grey-700); margin: 0;">
-                        <strong>Componentes Complejos:</strong> Actúa como el átomo de control principal en organismos como galerías de vídeo (Sm) y botoneras de compartir en redes sociales.
-                    </p>
-                </div>
-            </div>
+       gr
         </article>
 
         <!-- SECCIÓN 1 -->

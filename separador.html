@@ -15,12 +15,9 @@
         /* Estilos de contexto para la documentación */
         html { scroll-behavior: smooth; }
         body { background-color: var(--unav-grey-100); }
-        
-        .unav-doc-container { padding-top: var(--unav-spacing-3xl); padding-bottom: var(--unav-spacing-3xl); }
-        h2[id], h3[id], section[id] { scroll-margin-top: 6rem; }
     </style>
 </head>
-<body class="unav-font-primary unav-weight-regular unav-text-100">
+<body class="unav-font-primary unav-weight-regular unav-text-1125">
 
     <nav style="background-color: #ffffff; border-bottom: 1px solid var(--unav-grey-200); padding: var(--unav-spacing-md) 0; position: sticky; top: 0; z-index: var(--unav-zIndex-sticky);">
         <div class="container-lg d-flex justify-content-between align-items-center position-relative">
@@ -39,61 +36,11 @@
         </div>
     </nav>
 
-    <main class="container-lg unav-doc-container">
+    <main class="container-lg">
         
-        <header style="text-align: center; margin-bottom: var(--unav-spacing-md); padding-bottom: var(--unav-spacing-md);">
-            <h1 class="unav-font-primary unav-weight-medium unav-text-200 m-0" style="color: var(--unav-black-900); margin-bottom: var(--unav-spacing-sm) !important;">Separadores (Dividers)</h1>
-            <p class="unav-font-primary unav-weight-regular unav-text-100 m-0" style="color: var(--unav-grey-600);">
-                Abstracciones estructurales OOCSS para delimitar secciones modulares mediante líneas, textos o iconografía corporativa.
-            </p>
+        <header style="text-align: center; margin: var(--unav-spacing-xl) var(--unav-spacing-xl);">
+            <h1 class="unav-font-primary unav-weight-medium unav-text-200" style="color: var(--unav-black-900); margin-bottom: var(--unav-spacing-sm) !important;">Separador</h1>
         </header>
-
-        <article class="unav-card unav-cardSolid" style="margin-bottom: var(--unav-spacing-3xl);">
-            <h2 class="unav-font-primary unav-weight-bold unav-text-150" style="color: var(--unav-rojo-500); border-bottom: 2px solid var(--unav-rojo-500); padding-bottom: var(--unav-spacing-sm); margin-bottom: var(--unav-spacing-lg);">Análisis y Documentación Oficial</h2>
-            
-            <div class="row g-4">
-                <div class="col-md-6">
-                    <h3 class="unav-font-primary unav-weight-bold unav-text-125" style="color: var(--unav-black-800); margin-bottom: var(--unav-spacing-xs);">1.- Guía de Implementación y Modificadores</h3>
-                    <p class="unav-font-primary unav-weight-regular unav-text-100" style="color: var(--unav-grey-700); margin-bottom: var(--unav-spacing-sm);">
-                        <strong>Uso de clase OOCSS:</strong> El componente se invoca mediante el bloque base <code>.unav-separador</code>. Sus propiedades geométricas estructurales básicas son alteradas de forma controlada mediante variables de instancia CSS inyectadas en línea.
-                    </p>
-                    <p class="unav-font-primary unav-weight-regular unav-text-100" style="color: var(--unav-grey-700); margin: 0;">
-                        <strong>Modificadores de Alineación:</strong> Para controlar la disposición en el layout cuando el ancho es inferior al 100%, se añaden de forma explícita las utilidades de orientación: <code>.unav-separadorAlignLeft</code>, <code>.unav-separadorAlignCenter</code> o <code>.unav-separadorAlignRight</code>.
-                    </p>
-                </div>
-                
-                <div class="col-md-6">
-                    <h3 class="unav-font-primary unav-weight-bold unav-text-125" style="color: var(--unav-black-800); margin-bottom: var(--unav-spacing-xs);">2.- Guía Técnica</h3>
-                    <p class="unav-font-primary unav-weight-regular unav-text-100" style="color: var(--unav-grey-700); margin-bottom: var(--unav-spacing-sm);">
-                        <strong>Construcción Estructurada:</strong> Compuesto por un contenedor neutro Flexbox que encapsula sub-elementos internos clonados y simétricos: <code>.unav-separadorLine</code> (para los trazos horizontales) y un nodo central opcional <code>.unav-separadorContent</code> para textos o iconos.
-                    </p>
-                    <p class="unav-font-primary unav-weight-regular unav-text-100" style="color: var(--unav-grey-700); margin: 0;">
-                        <strong>Variables de Instancia CSS:</strong> Permite mutar la apariencia de la pieza de forma dinámica sobrescribiendo de manera local: <code>--unav-separadorWidth</code>, <code>--unav-separadorColor</code>, <code>--unav-separadorThickness</code>, <code>--unav-separadorStyle</code> y los márgenes de flujo vertical <code>--unav-separadorMarginY</code>.
-                    </p>
-                </div>
-                
-                <div class="col-md-6">
-                    <h3 class="unav-font-primary unav-weight-bold unav-text-125" style="color: var(--unav-black-800); margin-bottom: var(--unav-spacing-xs);">3.- Accesibilidad (A11y)</h3>
-                    <p class="unav-font-primary unav-weight-regular unav-text-100" style="color: var(--unav-grey-700); margin-bottom: var(--unav-spacing-sm);">
-                        <strong>Lógica Semántica WCAG:</strong> Dado que el componente cumple una función puramente visual de segmentación y no un salto de contenido semántico de lectura, se debe implementar de forma nativa el atributo de accesibilidad <code>role="separator"</code>.
-                    </p>
-                    <p class="unav-font-primary unav-weight-regular unav-text-100" style="color: var(--unav-grey-700); margin: 0;">
-                        <strong>Ocultamiento Asistivo:</strong> Si el separador incluye un icono o un glifo decorativo, dicho elemento debe ir blindado con el atributo <code>aria-hidden="true"</code> para evitar lecturas redundantes o ruidos visuales en los sintetizadores de voz.
-                    </p>
-                </div>
-                
-                <div class="col-md-6">
-                    <h3 class="unav-font-primary unav-weight-bold unav-text-125" style="color: var(--unav-black-800); margin-bottom: var(--unav-spacing-xs);">4.- UX, Layout y Medios</h3>
-                    <p class="unav-font-primary unav-weight-regular unav-text-100" style="color: var(--unav-grey-700); margin-bottom: var(--unav-spacing-sm);">
-                        <strong>Ritmo Vertical Controlado:</strong> La separación espacial por defecto hereda los tokens de la universidad (<code>--unav-spacing-xl</code>), garantizando aperturas predecibles y una consistencia perfecta en el flujo vertical de la maquetación.
-                    </p>
-                    <p class="unav-font-primary unav-weight-regular unav-text-100" style="color: var(--unav-grey-700); margin: 0;">
-                        <strong>Tipografía Incorporada:</strong> Los textos embebidos en el componente se formatean estrictamente consumiendo las clases utilitarias tipográficas oficiales (<code>.unav-font-primary-condensed.unav-weight-bold.unav-text-100</code>) y forzando la conversión a mayúsculas sostenidas.
-                    </p>
-                </div>
-            </div>
-        </article>
-
         <section class="unav-card unav-cardSolid">
             <h2 class="unav-font-primary unav-weight-bold unav-text-200" style="border-bottom: 1px solid var(--unav-grey-300); padding-bottom: var(--unav-spacing-sm); margin-bottom: var(--unav-spacing-xl); color: var(--unav-black-900);">Muestrario de Variantes</h2>
 

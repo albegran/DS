@@ -15,11 +15,9 @@
         /* Estilos de contexto para la documentación */
         html { scroll-behavior: smooth; }
         body { background-color: var(--unav-grey-100); }
-        
-        .unav-doc-container { padding-top: var(--unav-spacing-3xl); padding-bottom: var(--unav-spacing-3xl); }
     </style>
 </head>
-<body class="unav-font-primary unav-weight-regular unav-text-100">
+<body class="unav-font-primary unav-weight-regular unav-text-1125">
 
     <nav style="background-color: #ffffff; border-bottom: 1px solid var(--unav-grey-200); padding: var(--unav-spacing-md) 0; position: sticky; top: 0; z-index: var(--unav-zIndex-sticky);">
         <div class="container-lg d-flex justify-content-between align-items-center position-relative">
@@ -38,64 +36,13 @@
         </div>
     </nav>
 
-    <main class="container-lg unav-doc-container">
+    <main class="container-lg">
         
-        <header style="text-align: center; margin-bottom: var(--unav-spacing-md); padding-bottom: var(--unav-spacing-md);">
-            <h1 class="unav-font-primary unav-weight-medium unav-text-200 m-0" style="color: var(--unav-black-900); margin-bottom: var(--unav-spacing-sm) !important;">Sistema Tipográfico</h1>
-            <p class="unav-font-primary unav-weight-regular unav-text-100 m-0" style="color: var(--unav-grey-600);">
-                Consumo de clases utilitarias "Tokens" para aplicaciones web.
-            </p>
+        <header style="text-align: center; margin: var(--unav-spacing-xl) var(--unav-spacing-xl);">
+            <h1 class="unav-font-primary unav-weight-medium unav-text-200" style="color: var(--unav-black-900); margin-bottom: var(--unav-spacing-sm) !important;">Tipográfia</h1>
         </header>
 
-        <article class="unav-card unav-cardSolid" style="margin-bottom: var(--unav-spacing-3xl);">
-            <h2 class="unav-font-primary unav-weight-bold unav-text-150" style="color: var(--unav-rojo-500); border-bottom: 2px solid var(--unav-rojo-500); padding-bottom: var(--unav-spacing-sm); margin-bottom: var(--unav-spacing-lg);">Análisis y Documentación Oficial</h2>
-            
-            <div class="row g-4">
-                <div class="col-md-6">
-                    <h3 class="unav-font-primary unav-weight-bold unav-text-125" style="color: var(--unav-black-800); margin-bottom: var(--unav-spacing-xs);">1.- Guía de Implementación y Modificadores</h3>
-                    <p class="unav-font-primary unav-weight-regular unav-text-100" style="color: var(--unav-grey-700); margin-bottom: var(--unav-spacing-sm);">
-                        <strong>Uso de clases OOCSS:</strong> La tipografía en el ecosistema UNAV se gestiona mediante clases utilitarias estrictamente atómicas. Cada nodo de texto debe declarar explícitamente sus propiedades combinando las clases base: <code>.unav-font-[familia]</code>, <code>.unav-weight-[peso]</code>, y <code>.unav-text-[escala]</code>.
-                    </p>
-                    <p class="unav-font-primary unav-weight-regular unav-text-100" style="color: var(--unav-grey-700); margin: 0;">
-                        <strong>Modificadores:</strong> Para controlar el flujo vertical se utilizan los modificadores de interlineado <code>.unav-lh-[tipo]</code> (ej. <code>-tight</code>, <code>-normal</code>, <code>-relaxed</code>). Está terminantemente prohibido anidar estilos tipográficos en componentes complejos; la pureza del OOCSS exige que la presentación esté completamente separada del contenedor semántico.
-                    </p>
-                </div>
-                
-                <div class="col-md-6">
-                    <h3 class="unav-font-primary unav-weight-bold unav-text-125" style="color: var(--unav-black-800); margin-bottom: var(--unav-spacing-xs);">2.- Guía Técnica</h3>
-                    <p class="unav-font-primary unav-weight-regular unav-text-100" style="color: var(--unav-grey-700); margin-bottom: var(--unav-spacing-sm);">
-                        <strong>Construcción HTML5:</strong> Utilizar etiquetas semánticas (H1-H6 para estructura jerárquica SEO, P para párrafos extensos, SPAN para alteraciones inline). La semántica del HTML no dicta su tamaño visual; un H2 puede usar la clase <code>.unav-text-125</code> si el diseño modular lo requiere.
-                    </p>
-                    <p class="unav-font-primary unav-weight-regular unav-text-100" style="color: var(--unav-grey-700); margin: 0;">
-                        <strong>CSS y Tokens de Variables:</strong> Todo el sistema renderiza consumiendo las variables declaradas en el bloque <code>:root</code> de <code>unav-styles.css</code> (ej. <code>var(--unav-fontSize150)</code>). Los tamaños base están formulados en <code>rem</code> (escala basada en 16px). JS interviene (mediante <code>IntersectionObserver</code>) únicamente si hay animaciones de aparición o desvanecimiento vinculadas al scroll tipográfico.
-                    </p>
-                </div>
-                
-                <div class="col-md-6">
-                    <h3 class="unav-font-primary unav-weight-bold unav-text-125" style="color: var(--unav-black-800); margin-bottom: var(--unav-spacing-xs);">3.- Accesibilidad (A11y)</h3>
-                    <p class="unav-font-primary unav-weight-regular unav-text-100" style="color: var(--unav-grey-700); margin-bottom: var(--unav-spacing-sm);">
-                        <strong>Cumplimiento WCAG 2.1 Nivel AA:</strong> Todas las combinaciones de color tipográfico sobre fondos deben pasar un ratio de contraste mínimo de <strong>4.5:1</strong> para textos estándar (<code>.unav-text-100</code>) y <strong>3:1</strong> para textos grandes o en negrita. El uso de <code>rem</code> permite a los usuarios con discapacidades visuales reescalar las fuentes globalmente desde su navegador sin romper el layout.
-                    </p>
-                    <p class="unav-font-primary unav-weight-regular unav-text-100" style="color: var(--unav-grey-700); margin: 0;">
-                    
-                    </p>
-                </div>
-                
-                <div class="col-md-6">
-                    <h3 class="unav-font-primary unav-weight-bold unav-text-125" style="color: var(--unav-black-800); margin-bottom: var(--unav-spacing-xs);">4.- UX, Layout y Medios</h3>
-                    <p class="unav-font-primary unav-weight-regular unav-text-100" style="color: var(--unav-grey-700); margin-bottom: var(--unav-spacing-sm);">
-                        <strong>Ritmo de Lectura (Measure):</strong> Para garantizar la fatiga visual mínima, los bloques de texto no deben exceder los 70-80 caracteres por línea en pantallas de escritorio. Combinar el tamaño base (<code>.unav-text-100</code>) con el interlineado (<code>.unav-lh-normal</code>) garantiza la proporción áurea de la lectura corporativa.
-                    </p>
-                    <p class="unav-font-primary unav-weight-regular unav-text-100" style="color: var(--unav-grey-700); margin: 0;">
-                        <strong>Textos sobre Medios (Imágenes 16:9/Vídeos):</strong> Cuando un titular o párrafo flote sobre contenido multimedia, es imperativo garantizar la legibilidad utilizando las clases de sombra corporativa (ej. <code>text-shadow: 1px 1px 3px rgba(0,0,0,0.6)</code>) o mediante la aplicación de capas de contraste base (<code>var(--unav-heroOverlayDark)</code>).
-                    </p>
-                </div>
-            </div>
-        </article>
-
-        <div class="unav-typography-guide">
-            <meta  content="Guía de Consumo Tipográfico UNAV">
-            
+        <div class="unav-typography-guide">          
             <h2 class="unav-font-primary unav-weight-bold unav-text-200" style="border-bottom: 1px solid var(--unav-grey-300); padding-bottom: var(--unav-spacing-sm); margin-bottom: var(--unav-spacing-xl); color: var(--unav-black-900);">1. Familia Principal: Roboto</h2>
 
             <section id="roboto-thin-100" class="unav-card unav-cardSolid" style="margin-bottom: var(--unav-spacing-xl);">

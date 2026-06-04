@@ -16,12 +16,9 @@
         /* Estilos de contexto para la documentación */
         html { scroll-behavior: smooth; }
         body { background-color: var(--unav-grey-100); }
-        
-        .unav-doc-container { padding-top: var(--unav-spacing-3xl); padding-bottom: var(--unav-spacing-3xl); }
-        h2[id], h3[id], section[id] { scroll-margin-top: 6rem; }
     </style>
 </head>
-<body class="unav-font-primary unav-weight-regular unav-text-100">
+<body class="unav-font-primary unav-weight-regular unav-text-1125">
 
     <nav style="background-color: #ffffff; border-bottom: 1px solid var(--unav-grey-200); padding: var(--unav-spacing-md) 0; position: sticky; top: 0; z-index: var(--unav-zIndex-sticky);">
         <div class="container-lg d-flex justify-content-between align-items-center position-relative">
@@ -40,64 +37,13 @@
         </div>
     </nav>
 
-    <main class="container-lg unav-doc-container">
+    <main class="container-lg">
         
-        <header style="text-align: center; margin-bottom: var(--unav-spacing-md); padding-bottom: var(--unav-spacing-md);">
-            <h1 class="unav-font-primary unav-weight-medium unav-text-200 m-0" style="color: var(--unav-black-900); margin-bottom: var(--unav-spacing-sm) !important;">Textos Títulos Destacados</h1>
-            <p class="unav-font-primary unav-weight-regular unav-text-100 m-0" style="color: var(--unav-grey-600);">
-                Frases de alto impacto visual sin peso jerárquico ni indexación estructural para motores de búsqueda.
-            </p>
+        <header style="text-align: center; margin: var(--unav-spacing-xl) var(--unav-spacing-xl);">
+            <h1 class="unav-font-primary unav-weight-medium unav-text-200" style="color: var(--unav-black-900); margin-bottom: var(--unav-spacing-sm) !important;">Títulos Destacados</h1>
         </header>
 
-        <!-- ZONA DE ANÁLISIS OFICIAL Y DOCUMENTACIÓN EXHAUSTIVA -->
-        <article class="unav-card unav-cardSolid" style="margin-bottom: var(--unav-spacing-3xl);">
-            <h2 class="unav-font-primary unav-weight-bold unav-text-150" style="color: var(--unav-rojo-500); border-bottom: 2px solid var(--unav-rojo-500); padding-bottom: var(--unav-spacing-sm); margin-bottom: var(--unav-spacing-lg);">Análisis y Documentación Oficial</h2>
-            
-            <div class="row g-4">
-                <div class="col-md-6">
-                    <h3 class="unav-font-primary unav-weight-bold unav-text-125" style="color: var(--unav-black-800); margin-bottom: var(--unav-spacing-xs);">1.- Guía de Implementación y Modificadores</h3>
-                    <p class="unav-font-primary unav-weight-regular unav-text-100" style="color: var(--unav-grey-700); margin-bottom: var(--unav-spacing-sm);">
-                        <strong>Uso de clases:</strong> Todo texto destacado debe incluir la clase base <code>.unav-titulo</code> (para asegurar el reset de márgenes y comportamiento de bloque). A esto se suman las clases atómicas de formato (<code>.unav-font-*</code>, <code>.unav-weight-*</code>, <code>.unav-text-*</code>, <code>.unav-lh-*</code>).
-                    </p>
-                    <p class="unav-font-primary unav-weight-regular unav-text-100" style="color: var(--unav-grey-700); margin: 0;">
-                        <strong>Modificadores:</strong> No requiere variantes preconfiguradas, ya que su propia naturaleza es la composición visual libre mediante utilidades atómicas.
-                    </p>
-                </div>
-                
-                <div class="col-md-6">
-                    <h3 class="unav-font-primary unav-weight-bold unav-text-125" style="color: var(--unav-black-800); margin-bottom: var(--unav-spacing-xs);">2.- Guía Técnica</h3>
-                    <p class="unav-font-primary unav-weight-regular unav-text-100" style="color: var(--unav-grey-700); margin-bottom: var(--unav-spacing-sm);">
-                        <strong>Construcción:</strong> Emplear etiquetas HTML neutras como <code>&lt;p&gt;</code>, <code>&lt;div&gt;</code> o <code>&lt;span&gt;</code>. La inyección cromática se aplica directamente con variables CSS en línea (<code>color: var(--unav-...);</code>).
-                    </p>
-                    <p class="unav-font-primary unav-weight-regular unav-text-100" style="color: var(--unav-grey-700); margin: 0;">
-                        <strong>JS y Animación:</strong> Opcionalmente, se pueden integrar con el sistema de movimiento vinculando las clases <code>.unav-efectoEntradaOculto</code> que serán gestionadas por el IntersectionObserver genérico del sistema.
-                    </p>
-                </div>
-                
-                <div class="col-md-6">
-                    <h3 class="unav-font-primary unav-weight-bold unav-text-125" style="color: var(--unav-black-800); margin-bottom: var(--unav-spacing-xs);">3.- Accesibilidad (A11y)</h3>
-                    <p class="unav-font-primary unav-weight-regular unav-text-100" style="color: var(--unav-grey-700); margin-bottom: var(--unav-spacing-sm);">
-                        <strong>Impacto SEO Neutro:</strong> A diferencia de las cabeceras (H1-H6), estos elementos son leídos como "texto de contenido común" por las herramientas asistivas. Esto permite crear enormes Claims publicitarios sin secuestrar la jerarquía del documento. No utilices <code>role="heading"</code>.
-                    </p>
-                    <p class="unav-font-primary unav-weight-regular unav-text-100" style="color: var(--unav-grey-700); margin: 0;">
-                        
-                    </p>
-                </div>
-                
-                <div class="col-md-6">
-                    <h3 class="unav-font-primary unav-weight-bold unav-text-125" style="color: var(--unav-black-800); margin-bottom: var(--unav-spacing-xs);">4.- UX, Layout y Medios</h3>
-                    <p class="unav-font-primary unav-weight-regular unav-text-100" style="color: var(--unav-grey-700); margin-bottom: var(--unav-spacing-sm);">
-                        <strong>Propósito Visual:</strong> Utiliza estos elementos para citas destacadas (Blockquotes de diseño), introducciones largas (Leads) o mensajes de marketing agresivos que requieren fuentes Display o tipografías masivas como <code>.unav-text-500</code>.
-                    </p>
-                    <p class="unav-font-primary unav-weight-regular unav-text-100" style="color: var(--unav-grey-700); margin: 0;">
-                        <strong>Respiración:</strong> Al usar tamaños de texto muy altos, es imperativo usar <code>.unav-lh-tight</code> (1.1) para que los bloques mantengan cohesión en pantallas móviles (menor viewport width).
-                    </p>
-                </div>
-            </div>
-        </article>
-
-        <!-- LABORATORIO DE MUESTRAS -->
-        <section id="unav-masterContainer" style="margin-top: var(--unav-spacing-3xl);">
+        <section id="unav-masterContainer">
 
             <div class="unav-sampleRow">
                 <p class="unav-titulo unav-font-secondary-playfair unav-weight-bold unav-text-175 unav-lh-snug" style="color: var(--unav-rojo-700);">

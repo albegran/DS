@@ -15,86 +15,31 @@
         /* Estilos de contexto para la documentación */
         html { scroll-behavior: smooth; }
         body { background-color: var(--unav-grey-100); }
-        
-        .unav-doc-container { padding-top: var(--unav-spacing-3xl); padding-bottom: var(--unav-spacing-3xl); }
-        h2[id], h3[id], section[id] { scroll-margin-top: 6rem; }
     </style>
 </head>
-<body class="unav-font-primary unav-weight-regular unav-text-100">
+<body class="unav-font-primary unav-weight-regular unav-text-1125">
 
     <nav style="background-color: #ffffff; border-bottom: 1px solid var(--unav-grey-200); padding: var(--unav-spacing-md) 0; position: sticky; top: 0; z-index: var(--unav-zIndex-sticky);">
         <div class="container-lg d-flex justify-content-between align-items-center position-relative">
-            
             <div>
                 <a  href="indice.html" class="unav-boton unav-botonSecundario">
                     <i class="bi bi-arrow-left unav-botonIcono" aria-hidden="true"></i>
                     <span class="d-none d-md-inline">Volver al Índice</span>
                 </a>
-            </div>
-    
+            </div>    
             <span class="unav-font-primary-condensed unav-weight-regular unav-text-150 m-0 position-absolute start-50 translate-middle-x" style="color: var(--unav-rojo-500); line-height: 1;">
                 Design System UNAV
             </span>
-    
         </div>
     </nav>
 
-    <main class="container-lg unav-doc-container">
+    <main class="container-lg">
         
-        <header style="text-align: center; margin-bottom: var(--unav-spacing-md); padding-bottom: var(--unav-spacing-md);">
-            <h1 class="unav-font-primary unav-weight-medium unav-text-200 m-0" style="color: var(--unav-black-900); margin-bottom: var(--unav-spacing-sm) !important;">Gestión de Cabeceras</h1>
-            <p class="unav-font-primary unav-weight-regular unav-text-100 m-0" style="color: var(--unav-grey-600);">
-                Demostración estática de la independencia absoluta entre Semántica Estructural y Presentación Visual.
-            </p>
+        <header style="text-align: center; margin: var(--unav-spacing-xl) var(--unav-spacing-xl);">
+            <h1 class="unav-font-primary unav-weight-medium unav-text-200" style="color: var(--unav-black-900); margin-bottom: var(--unav-spacing-sm) !important;">Cabeceras H1..H6</h1>
         </header>
 
-        <article class="unav-card unav-cardSolid" style="margin-bottom: var(--unav-spacing-3xl);">
-            <h2 class="unav-font-primary unav-weight-bold unav-text-150" style="color: var(--unav-rojo-500); border-bottom: 2px solid var(--unav-rojo-500); padding-bottom: var(--unav-spacing-sm); margin-bottom: var(--unav-spacing-lg);">Análisis y Documentación Oficial</h2>
-            
-            <div class="row g-4">
-                <div class="col-md-6">
-                    <h3 class="unav-font-primary unav-weight-bold unav-text-125" style="color: var(--unav-black-800); margin-bottom: var(--unav-spacing-xs);">1.- Guía de Implementación y Modificadores</h3>
-                    <p class="unav-font-primary unav-weight-regular unav-text-100" style="color: var(--unav-grey-700); margin-bottom: var(--unav-spacing-sm);">
-                        <strong>Uso de clases:</strong> Los nodos semánticos <code>&lt;h1&gt;</code> a <code>&lt;h6&gt;</code> no deben tener estilos predeterminados forzados. Utiliza la clase base de reset <code>.unav-headerElement</code>.
-                    </p>
-                    <p class="unav-font-primary unav-weight-regular unav-text-100" style="color: var(--unav-grey-700); margin: 0;">
-                        <strong>Modificadores:</strong> La apariencia visual se inyecta utilizando combinaciones de utilidades tipográficas: <code>.unav-font-[familia]</code>, <code>.unav-weight-[peso]</code>, <code>.unav-text-[escala]</code> y <code>.unav-lh-[interlineado]</code>.
-                    </p>
-                </div>
-                
-                <div class="col-md-6">
-                    <h3 class="unav-font-primary unav-weight-bold unav-text-125" style="color: var(--unav-black-800); margin-bottom: var(--unav-spacing-xs);">2.- Guía Técnica</h3>
-                    <p class="unav-font-primary unav-weight-regular unav-text-100" style="color: var(--unav-grey-700); margin-bottom: var(--unav-spacing-sm);">
-                        <strong>Construcción:</strong> HTML5 semántico estricto. El árbol jerárquico lógico del documento (H1, H2, H3...) debe respetarse sin excepción, independientemente de si un diseñador requiere que un H3 se vea más grande que un H2.
-                    </p>
-                    <p class="unav-font-primary unav-weight-regular unav-text-100" style="color: var(--unav-grey-700); margin: 0;">
-                        <strong>CSS:</strong> Consumo de variables <code>var(--unav-...)</code> para inyecciones de color locales mediante <code>style="..."</code> o encapsulación en componentes si aplica. JS: IntersectionObserver para animaciones de entrada en scroll si el título es de alto impacto (Hero).
-                    </p>
-                </div>
-                
-                <div class="col-md-6">
-                    <h3 class="unav-font-primary unav-weight-bold unav-text-125" style="color: var(--unav-black-800); margin-bottom: var(--unav-spacing-xs);">3.- Accesibilidad (A11y)</h3>
-                    <p class="unav-font-primary unav-weight-regular unav-text-100" style="color: var(--unav-grey-700); margin-bottom: var(--unav-spacing-sm);">
-                        <strong>Lógica WCAG:</strong> Los lectores de pantalla analizan la etiqueta HTML y sus atributos (ej. <code>role="heading" aria-level="2"</code>), ignorando el tamaño de fuente visual.
-                    </p>
-                    <p class="unav-font-primary unav-weight-regular unav-text-100" style="color: var(--unav-grey-700); margin: 0;">
-                        
-                    </p>
-                </div>
-                
-                <div class="col-md-6">
-                    <h3 class="unav-font-primary unav-weight-bold unav-text-125" style="color: var(--unav-black-800); margin-bottom: var(--unav-spacing-xs);">4.- UX, Layout y Medios</h3>
-                    <p class="unav-font-primary unav-weight-regular unav-text-100" style="color: var(--unav-grey-700); margin-bottom: var(--unav-spacing-sm);">
-                        <strong>Interlineado Sensible:</strong> El principal error de maquetación de cabeceras es el interlineado excesivo al romper la línea en móvil. Al usar clases como <code>.unav-lh-tight</code> (1.1) o <code>.unav-lh-snug</code> (1.25), garantizamos compacidad visual en resoluciones pequeñas.
-                    </p>
-                    <p class="unav-font-primary unav-weight-regular unav-text-100" style="color: var(--unav-grey-700); margin: 0;">
-                        <strong>Tipografía:</strong> Uso de clases <code>.unav-text-100</code> hasta <code>.unav-text-500</code>. Imágenes: Proporción 16:9, formato WebP.
-                    </p>
-                </div>
-            </div>
-        </article>
-
-        <section id="unav-masterContainer" style="margin-top: var(--unav-spacing-3xl);">
+        <section id="unav-masterContainer">
 
             <div class="unav-sampleRow">
                 <h1 class="unav-headerElement unav-font-secondary-playfair unav-weight-bold unav-text-175 unav-lh-snug" style="color: var(--unav-rojo-700);">

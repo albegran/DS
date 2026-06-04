@@ -15,81 +15,29 @@
         /* Estilos de contexto para la documentación */
         html { scroll-behavior: smooth; }
         body { background-color: var(--unav-grey-100); }
-        
-        .unav-doc-container { padding-top: var(--unav-spacing-3xl); padding-bottom: var(--unav-spacing-3xl); }
-        h2[id], h3[id], section[id] { scroll-margin-top: 6rem; }
     </style>
 </head>
-<body class="unav-font-primary unav-weight-regular unav-text-100">
+<body class="unav-font-primary unav-weight-regular unav-text-1125">
 
     <nav style="background-color: #ffffff; border-bottom: 1px solid var(--unav-grey-200); padding: var(--unav-spacing-md) 0; position: sticky; top: 0; z-index: var(--unav-zIndex-sticky);">
         <div class="container-lg d-flex justify-content-between align-items-center position-relative">
-            
             <div>
                 <a  href="indice.html" class="unav-boton unav-botonSecundario">
                     <i class="bi bi-arrow-left unav-botonIcono" aria-hidden="true"></i>
                     <span class="d-none d-md-inline">Volver al Índice</span>
                 </a>
-            </div>
-    
+            </div>    
             <span class="unav-font-primary-condensed unav-weight-regular unav-text-150 m-0 position-absolute start-50 translate-middle-x" style="color: var(--unav-rojo-500); line-height: 1;">
                 Design System UNAV
             </span>
-    
         </div>
     </nav>
 
-    
-        
-        
+    <header style="text-align: center; margin: var(--unav-spacing-xl) var(--unav-spacing-xl);">
+        <h1 class="unav-font-primary unav-weight-medium unav-text-200" style="color: var(--unav-black-900); margin-bottom: var(--unav-spacing-sm) !important;">Hero Etiquetas</h1>
+    </header> 
 
-    <!-- Envoltorio general de documentación -->
     <main>
-        
-
-        <!-- Header Documentación (Encapsulado) -->
-        <div class="container-lg py-5">
-            <header style="text-align: center; margin-bottom: var(--unav-spacing-md); padding-bottom: var(--unav-spacing-md);">
-                <h1 class="unav-font-primary unav-weight-medium unav-text-200 text-dark mb-3">Hero Estándar con Etiquetas</h1>
-                <p class="unav-font-primary unav-weight-regular unav-text-100 text-muted m-0">
-                    Cabeceras fullwidth enriquecidas con entradillas, etiquetas modulares y efecto Ken Burns.
-                </p>
-            </header>
-
-            <article class="unav-card unav-cardSolid" style="margin-bottom: var(--unav-spacing-3xl);">
-                <h2 class="unav-font-primary unav-weight-bold unav-text-150" style="color: var(--unav-rojo-500); border-bottom: 2px solid var(--unav-rojo-500); padding-bottom: var(--unav-spacing-sm); margin-bottom: var(--unav-spacing-lg);">Guía Técnica y Documentación Oficial</h2>
-                
-                <div class="row g-4">
-                    <div class="col-md-6">
-                        <h3 class="unav-font-primary unav-weight-bold unav-text-125 mb-3" style="color: var(--unav-black-800);">1. Implementación OOCSS y Estructura</h3>
-                        <ul class="unav-font-primary unav-weight-regular unav-text-100" style="color: var(--unav-grey-700); padding-left: var(--unav-spacing-md);">
-                            <li style="margin-bottom: var(--unav-spacing-xs);"><strong>Estructura Base:</strong> Este Hero especializado extiende la clase <code>.unav-hero</code>, integrando una fila de etiquetas (<code>.unav-tag</code>) justo debajo del título principal.</li>
-                            <li style="margin-bottom: var(--unav-spacing-xs);"><strong>Layout:</strong> La disposición vertical se resuelve mediante flexbox, garantizando que el bloque de etiquetas actúe como un átomo de metadatos independiente pero ligado a la jerarquía del titular.</li>
-                        </ul>
-            
-                        <h3 class="unav-font-primary unav-weight-bold unav-text-125 mb-3 mt-4" style="color: var(--unav-black-800);">2. Guía Técnica (HTML/CSS)</h3>
-                        <ul class="unav-font-primary unav-weight-regular unav-text-100" style="color: var(--unav-grey-700); padding-left: var(--unav-spacing-md);">
-                            <li style="margin-bottom: var(--unav-spacing-xs);"><strong>Backgrounds Dinámicos:</strong> Al igual que el Hero estándar, utiliza inyección de imagen vía estilo en línea sobre el contenedor padre, con un <code>.unav-heroOverlay</code> obligatorio para asegurar contraste.</li>
-                            <li style="margin-bottom: var(--unav-spacing-xs);"><strong>Tipografía:</strong> Títulos en <code>var(--unav-fontSize300)</code> con <code>unav-lh-tight</code>. Las etiquetas emplean <code>var(--unav-fontSize075)</code>, creando una diferenciación clara entre el mensaje principal y la taxonomía del contenido.</li>
-                        </ul>
-                    </div>
-                    
-                    <div class="col-md-6 border-start-md ps-md-4">
-                        <h3 class="unav-font-primary unav-weight-bold unav-text-125 mb-3" style="color: var(--unav-black-800);">3. Accesibilidad (A11y)</h3>
-                        <ul class="unav-font-primary unav-weight-regular unav-text-100" style="color: var(--unav-grey-700); padding-left: var(--unav-spacing-md);">
-                            
-                            
-                        </ul>
-            
-                        <h3 class="unav-font-primary unav-weight-bold unav-text-125 mb-3 mt-4" style="color: var(--unav-black-800);">4. UX, Uso de Átomos y Medios</h3>
-                        <ul class="unav-font-primary unav-weight-regular unav-text-100" style="color: var(--unav-grey-700); padding-left: var(--unav-spacing-md);">
-                            <li style="margin-bottom: var(--unav-spacing-xs);"><strong>Integración de Átomos:</strong> Este componente combina el átomo de etiquetas (<code>.unav-tag</code>) con el átomo de botón (<code>.unav-botonPrimario</code>) en un grupo cohesionado.</li>
-                            <li style="margin-bottom: var(--unav-spacing-xs);"><strong>Medios y Formatos:</strong> Requiere imágenes WebP con relación de aspecto 16:9 o 21:9 y una anchura mínima de 1920px. Es vital que el área donde se ubica el texto esté libre de elementos visuales distractores en la imagen de fondo.</li>
-                        </ul>
-                    </div>
-                </div>
-            </article>
-        </div>
 
         <!-- ========================================================= -->
         <!-- Variante 1 -->
@@ -100,7 +48,7 @@
             </section>
         </div>
 
-        <section class="unav-hero unav-hero--darkOverlay mb-5" ">
+        <section class="unav-hero unav-hero--darkOverlay mb-5">
             <div class="unav-heroVisuals">
                 <img class="unav-heroImgMobile unav-efectoZoomInfinito" src="https://picsum.photos/800/1000?random=10" alt="Fondo Móvil">
                 <img class="unav-heroImgDesktop unav-efectoZoomInfinito" src="https://picsum.photos/1920/800?random=10" alt="Fondo Escritorio">

@@ -15,71 +15,29 @@
         /* Estilos de guía técnica */
         html { scroll-behavior: smooth; background-color: var(--unav-grey-100); }
         body { background-color: transparent; }
-
-        .unav-doc-container { padding-top: var(--unav-spacing-3xl); padding-bottom: var(--unav-spacing-3xl); }
-        h2[id], h3[id], section[id] { scroll-margin-top: 6rem; }
     </style>
 </head>
-<body class="unav-font-primary unav-weight-regular unav-text-100">
+<body class="unav-font-primary unav-weight-regular unav-text-1125">
 
     <nav style="background-color: #ffffff; border-bottom: 1px solid var(--unav-grey-200); padding: var(--unav-spacing-md) 0; position: sticky; top: 0; z-index: var(--unav-zIndex-sticky);">
         <div class="container-lg d-flex justify-content-between align-items-center position-relative">
-            
             <div>
                 <a  href="indice.html" class="unav-boton unav-botonSecundario">
                     <i class="bi bi-arrow-left unav-botonIcono" aria-hidden="true"></i>
                     <span class="d-none d-md-inline">Volver al Índice</span>
                 </a>
-            </div>
-    
+            </div>    
             <span class="unav-font-primary-condensed unav-weight-regular unav-text-150 m-0 position-absolute start-50 translate-middle-x" style="color: var(--unav-rojo-500); line-height: 1;">
                 Design System UNAV
             </span>
-    
         </div>
     </nav>
 
-    <main class="container-lg unav-doc-container">
+    <main class="container-lg">
         
-        <header style="text-align: center; margin-bottom: var(--unav-spacing-md); padding-bottom: var(--unav-spacing-md);">
-            <h1 class="unav-font-primary unav-weight-medium unav-text-200 text-dark mb-3">Acordeones y Desplegables</h1>
-            <p class="unav-font-primary unav-weight-regular unav-text-100 text-muted m-0">Componente flexible para la gestión de contenidos densos mediante visibilidad progresiva.</p>
+        <header style="text-align: center; margin: var(--unav-spacing-xl) var(--unav-spacing-xl);">
+            <h1 class="unav-font-primary unav-weight-medium unav-text-200" style="color: var(--unav-black-900); margin-bottom: var(--unav-spacing-sm) !important;">Acordeones</h1>            
         </header>
-
-        <article class="unav-card unav-cardSolid" style="margin-bottom: var(--unav-spacing-3xl);">
-            <h2 class="unav-font-primary unav-weight-bold unav-text-150" style="color: var(--unav-rojo-500); border-bottom: 2px solid var(--unav-rojo-500); padding-bottom: var(--unav-spacing-sm); margin-bottom: var(--unav-spacing-lg);">Guía Técnica y Documentación Oficial</h2>
-            
-            <div class="row g-4">
-                <div class="col-md-6">
-                    <h3 class="unav-font-primary unav-weight-bold unav-text-125 mb-3" style="color: var(--unav-black-800);">1. Implementación OOCSS y Modificadores</h3>
-                    <ul class="unav-font-primary unav-weight-regular unav-text-100" style="color: var(--unav-grey-700); padding-left: var(--unav-spacing-md);">
-                        <li style="margin-bottom: var(--unav-spacing-xs);"><strong>Estructura Base:</strong> El organismo se envuelve en <code>.unav-accordionGroup</code>. Cada ítem consta de un botón <code>.unav-accordionHeader</code> y un contenedor <code>.unav-accordionPanel</code>.</li>
-                        <li style="margin-bottom: var(--unav-spacing-xs);"><strong>Modificador de Comportamiento:</strong> Por defecto, los acordeones actúan como "mutuamente excluyentes" (cerrando el anterior). Si se añade la clase <code>.unav-allowMulti</code> al grupo contenedor, se permite la apertura simultánea de múltiples paneles.</li>
-                    </ul>
-        
-                    <h3 class="unav-font-primary unav-weight-bold unav-text-125 mb-3 mt-4" style="color: var(--unav-black-800);">2. Guía Técnica (HTML/CSS/JS)</h3>
-                    <ul class="unav-font-primary unav-weight-regular unav-text-100" style="color: var(--unav-grey-700); padding-left: var(--unav-spacing-md);">
-                        <li style="margin-bottom: var(--unav-spacing-xs);"><strong>Renderizado DOM (JS):</strong> Un script ligero y nativo interactúa con el DOM calculando dinámicamente el <code>scrollHeight</code> del panel al hacer clic, inyectándolo en la propiedad CSS <code>max-height</code> para sortear la limitación clásica de animación de <code>height: auto</code>.</li>
-                        <li style="margin-bottom: var(--unav-spacing-xs);"><strong>CSS Motion:</strong> El movimiento y la rotación del icono indicador se gestionan vía CSS delegando la velocidad a los <em>Motion Tokens</em> del sistema, como <code>var(--unav-durationNormal)</code>.</li>
-                    </ul>
-                </div>
-                
-                <div class="col-md-6 border-start-md ps-md-4">
-                    <h3 class="unav-font-primary unav-weight-bold unav-text-125 mb-3" style="color: var(--unav-black-800);">3. Accesibilidad (A11y)</h3>
-                    <ul class="unav-font-primary unav-weight-regular unav-text-100" style="color: var(--unav-grey-700); padding-left: var(--unav-spacing-md);">
-                        <li style="margin-bottom: var(--unav-spacing-xs);"><strong>A11y (Lectores de Pantalla):</strong> Es estricto el uso bidireccional de atributos. El botón requiere <code>aria-expanded="true/false"</code> y el panel oculto se gestiona visualmente a través del JS pero se oculta a la semántica si es necesario.</li>
-                        
-                    </ul>
-        
-                    <h3 class="unav-font-primary unav-weight-bold unav-text-125 mb-3 mt-4" style="color: var(--unav-black-800);">4. UX, Uso de Átomos y Layout</h3>
-                    <ul class="unav-font-primary unav-weight-regular unav-text-100" style="color: var(--unav-grey-700); padding-left: var(--unav-spacing-md);">
-                        <li style="margin-bottom: var(--unav-spacing-xs);"><strong>Integración de Átomos:</strong> El panel desplegable funciona como un lienzo libre que puede contener textos, "Botones Flecha" o listas en su interior.</li>
-                        <li style="margin-bottom: var(--unav-spacing-xs);"><strong>Grids y Layouts:</strong> Los grupos de acordeón ocupan por defecto el 100% del contenedor padre. Se adaptan perfectamente a las columnas de Bootstrap, recomendándose anchos de lectura entre <code>col-md-8</code> y <code>col-md-10</code> centrados para evitar líneas de texto excesivamente largas.</li>
-                    </ul>
-                </div>
-            </div>
-        </article>
-        
 
         <section class="bg-white p-4 p-md-5 rounded shadow-sm border mb-5">
             <h2 class="unav-font-primary unav-weight-bold unav-text-200 border-bottom pb-2 mb-4 text-dark mt-0">1. Alineación e Iconografía</h2>

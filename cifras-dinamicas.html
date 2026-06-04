@@ -15,72 +15,29 @@
         /* Estilos de contexto para la documentación */
         html { scroll-behavior: smooth; }
         body { background-color: var(--unav-grey-100); }
-        
-        .unav-doc-container { padding-top: var(--unav-spacing-3xl); padding-bottom: var(--unav-spacing-3xl); }
-        h2[id], h3[id], section[id] { scroll-margin-top: 6rem; }
     </style>
 </head>
-<body class="unav-font-primary unav-weight-regular unav-text-100">
+<body class="unav-font-primary unav-weight-regular unav-text-1125">
 
     <nav style="background-color: #ffffff; border-bottom: 1px solid var(--unav-grey-200); padding: var(--unav-spacing-md) 0; position: sticky; top: 0; z-index: var(--unav-zIndex-sticky);">
         <div class="container-lg d-flex justify-content-between align-items-center position-relative">
-            
             <div>
                 <a  href="indice.html" class="unav-boton unav-botonSecundario">
                     <i class="bi bi-arrow-left unav-botonIcono" aria-hidden="true"></i>
                     <span class="d-none d-md-inline">Volver al Índice</span>
                 </a>
-            </div>
-    
+            </div>    
             <span class="unav-font-primary-condensed unav-weight-regular unav-text-150 m-0 position-absolute start-50 translate-middle-x" style="color: var(--unav-rojo-500); line-height: 1;">
                 Design System UNAV
             </span>
-    
         </div>
     </nav>
 
-    <main class="container-lg unav-doc-container">
+    <main class="container-lg">
         
-        <header style="text-align: center; margin-bottom: var(--unav-spacing-md); padding-bottom: var(--unav-spacing-md);">
-            <h1 class="unav-font-primary unav-weight-medium unav-text-200 m-0" style="color: var(--unav-black-900); margin-bottom: var(--unav-spacing-sm) !important;">Cifras Dinámicas</h1>
-            <p class="unav-font-primary unav-weight-regular unav-text-100 m-0" style="color: var(--unav-grey-600);">
-                Visualización de datos estadísticos con contador animado y soporte para SEO avanzado.
-            </p>
+        <header style="text-align: center; margin: var(--unav-spacing-xl) var(--unav-spacing-xl);">
+            <h1 class="unav-font-primary unav-weight-medium unav-text-200" style="color: var(--unav-black-900); margin-bottom: var(--unav-spacing-sm) !important;">Cifras Dinámicas</h1>
         </header>
-
-        <!-- ANÁLISIS OFICIAL A 12 COLUMNAS -->
-        <article class="unav-card unav-cardSolid" style="margin-bottom: var(--unav-spacing-3xl);">
-            <h2 class="unav-font-primary unav-weight-bold unav-text-150" style="color: var(--unav-rojo-500); border-bottom: 2px solid var(--unav-rojo-500); padding-bottom: var(--unav-spacing-sm); margin-bottom: var(--unav-spacing-lg);">Guía Técnica y Documentación Oficial</h2>
-            
-            <div class="row g-4">
-                <div class="col-md-6">
-                    <h3 class="unav-font-primary unav-weight-bold unav-text-125 mb-3" style="color: var(--unav-black-800);">1. Implementación OOCSS y Modificadores</h3>
-                    <ul class="unav-font-primary unav-weight-regular unav-text-100" style="color: var(--unav-grey-700); padding-left: var(--unav-spacing-md);">
-                        <li style="margin-bottom: var(--unav-spacing-xs);"><strong>Estructura OOCSS:</strong> El componente maestro se inicializa con <code>.unav-countersSection</code>. Posee un modificador de compresión <code>.unav-countersSmall</code> que reduce la altura base y reajusta la escala tipográfica de las métricas.</li>
-                        <li style="margin-bottom: var(--unav-spacing-xs);"><strong>Diseño por Tokens:</strong> Las animaciones numéricas están acopladas al token temporal maestro <code>--unav-durationSlower</code>. Los fondos emplean <code>var(--unav-counterOverlayColor)</code> y se impone el uso de esquinas rectas estrictas (<code>var(--unav-radius-none)</code>).</li>
-                    </ul>
-
-                    <h3 class="unav-font-primary unav-weight-bold unav-text-125 mb-3 mt-4" style="color: var(--unav-black-800);">2. Guía Técnica (JavaScript y CSS)</h3>
-                    <ul class="unav-font-primary unav-weight-regular unav-text-100" style="color: var(--unav-grey-700); padding-left: var(--unav-spacing-md);">
-                        <li style="margin-bottom: var(--unav-spacing-xs);"><strong>Interacción JS:</strong> Un script autónomo, que utiliza la API moderna <code>IntersectionObserver</code>, orquesta un <em>staggering</em> (encadenamiento de retardo). Los ítems aparecen uno tras otro con una cadencia de 150ms.</li>
-                        <li style="margin-bottom: var(--unav-spacing-xs);"><strong>Motion CSS:</strong> Los contenedores nacen en el DOM con la utilidad <code>.unav-efectoEntradaOculto</code>. El observer inyecta dinámicamente <code>.unav-efectoEntradaVisible</code> aplicando una traslación suave consumiendo <code>--unav-translateEntranceY</code> y curvas <em>Decel</em>.</li>
-                    </ul>
-                </div>
-                
-                <div class="col-md-6 border-start-md ps-md-4">
-                    <h3 class="unav-font-primary unav-weight-bold unav-text-125 mb-3" style="color: var(--unav-black-800);">3. Accesibilidad (A11y)</h3>
-                    <ul class="unav-font-primary unav-weight-regular unav-text-100" style="color: var(--unav-grey-700); padding-left: var(--unav-spacing-md);">
-                        <li style="margin-bottom: var(--unav-spacing-xs);"><strong>Accesibilidad visual:</strong> Textos forzados en blanco total sobre una capa de contraste (overlay oscuro <code>rgba(0,0,0,0.75)</code>).</li>
-                    </ul>
-
-                    <h3 class="unav-font-primary unav-weight-bold unav-text-125 mb-3 mt-4" style="color: var(--unav-black-800);">4. Layout y Jerarquía Tipográfica</h3>
-                    <ul class="unav-font-primary unav-weight-regular unav-text-100" style="color: var(--unav-grey-700); padding-left: var(--unav-spacing-md);">
-                        <li style="margin-bottom: var(--unav-spacing-xs);"><strong>Grillas Bootstrap:</strong> Perfectamente combinables en grid: versiones extendidas a 12 columnas (Full), 6 columnas (Media) o condensadas en sidebars a 3 columnas.</li>
-                        <li style="margin-bottom: var(--unav-spacing-xs);"><strong>Tipografía:</strong> La cifra clave (<code>.unav-counterValue</code>) asume el peso bold del sistema y la escala enorme <code>--unav-fontSize300</code> (48px) para anclar la mirada. El descriptor superior lleva <em>tracking ancho</em> en mayúsculas, y el sufijo inferior mantiene el tamaño de cuerpo de texto <code>--unav-fontSize100</code>.</li>
-                    </ul>
-                </div>
-            </div>
-        </article>
 
         <!-- SECCIÓN 1: COMPONENTES MANTENIDOS -->
         <section class="unav-card unav-cardSolid" style="margin-bottom: var(--unav-spacing-xl);">

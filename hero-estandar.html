@@ -15,82 +15,31 @@
         /* Estilos de contexto para la documentación */
         html { scroll-behavior: smooth; }
         body { background-color: var(--unav-grey-100); }
-        
-        .unav-doc-container { padding-top: var(--unav-spacing-3xl); padding-bottom: var(--unav-spacing-3xl); }
-        h2[id], h3[id], section[id] { scroll-margin-top: 6rem; }
     </style>
 </head>
-<body class="unav-font-primary unav-weight-regular unav-text-100">
+<body class="unav-font-primary unav-weight-regular unav-text-1125">
 
     <nav style="background-color: #ffffff; border-bottom: 1px solid var(--unav-grey-200); padding: var(--unav-spacing-md) 0; position: sticky; top: 0; z-index: var(--unav-zIndex-sticky);">
         <div class="container-lg d-flex justify-content-between align-items-center position-relative">
-            
             <div>
                 <a  href="indice.html" class="unav-boton unav-botonSecundario">
                     <i class="bi bi-arrow-left unav-botonIcono" aria-hidden="true"></i>
                     <span class="d-none d-md-inline">Volver al Índice</span>
                 </a>
-            </div>
-    
+            </div>    
             <span class="unav-font-primary-condensed unav-weight-regular unav-text-150 m-0 position-absolute start-50 translate-middle-x" style="color: var(--unav-rojo-500); line-height: 1;">
                 Design System UNAV
             </span>
-    
         </div>
     </nav>
 
+    <header style="text-align: center; margin: var(--unav-spacing-xl) var(--unav-spacing-xl);">
+        <h1 class="unav-font-primary unav-weight-medium unav-text-200" style="color: var(--unav-black-900); margin-bottom: var(--unav-spacing-sm) !important;">Hero Estándar</h1>
+    </header>        
     
-        
-        
+      
 
-    <!-- Envoltorio general de documentación -->
     <main>
-        
-
-        <!-- Header Documentación (Encapsulado) -->
-        <div class="container-lg py-5">
-            <header style="text-align: center; margin-bottom: var(--unav-spacing-md); padding-bottom: var(--unav-spacing-md);">
-                <h1 class="unav-font-primary unav-weight-medium unav-text-200 text-dark mb-3">Hero Estándar</h1>
-                <p class="unav-font-primary unav-weight-regular unav-text-100 text-muted m-0">
-                    Cabeceras inmensas (fullwidth) animadas con distribución modular de botones por cuadrantes.
-                </p>
-            </header>        
-
-            <article class="unav-card unav-cardSolid" style="margin-bottom: var(--unav-spacing-3xl);">
-                <h2 class="unav-font-primary unav-weight-bold unav-text-150" style="color: var(--unav-rojo-500); border-bottom: 2px solid var(--unav-rojo-500); padding-bottom: var(--unav-spacing-sm); margin-bottom: var(--unav-spacing-lg);">Guía Técnica y Documentación Oficial</h2>
-                
-                <div class="row g-4">
-                    <div class="col-md-6">
-                        <h3 class="unav-font-primary unav-weight-bold unav-text-125 mb-3" style="color: var(--unav-black-800);">1. Implementación OOCSS y Estructura</h3>
-                        <ul class="unav-font-primary unav-weight-regular unav-text-100" style="color: var(--unav-grey-700); padding-left: var(--unav-spacing-md);">
-                            <li style="margin-bottom: var(--unav-spacing-xs);"><strong>Estructura Base:</strong> El Hero se construye sobre <code>.unav-hero</code>, requiriendo un contenedor interno <code>.unav-heroContent</code> para la jerarquía tipográfica y, opcionalmente, <code>.unav-heroOverlay</code> para garantizar el contraste sobre imágenes fotográficas.</li>
-                            <li style="margin-bottom: var(--unav-spacing-xs);"><strong>Modificadores de Estilo:</strong> Soporta <code>.unav-themeDark</code> (para textos claros sobre fondos oscuros) y <code>.unav-alignCenter</code> para la alineación horizontal de todo el conjunto.</li>
-                        </ul>
-            
-                        <h3 class="unav-font-primary unav-weight-bold unav-text-125 mb-3 mt-4" style="color: var(--unav-black-800);">2. Guía Técnica (HTML/CSS)</h3>
-                        <ul class="unav-font-primary unav-weight-regular unav-text-100" style="color: var(--unav-grey-700); padding-left: var(--unav-spacing-md);">
-                            <li style="margin-bottom: var(--unav-spacing-xs);"><strong>Backgrounds Dinámicos:</strong> Se inyecta la imagen de fondo directamente en el estilo en línea del contenedor principal (<code>background-image: url(...)</code>), utilizando el formato WebP optimizado para alta resolución.</li>
-                            <li style="margin-bottom: var(--unav-spacing-xs);"><strong>Tipografía:</strong> El título del Hero utiliza la escala <code>var(--unav-fontSize300)</code> con <code>unav-lh-tight</code> para un impacto visual máximo, mientras que el párrafo descriptivo usa <code>var(--unav-fontSize125)</code> y <code>unav-lh-normal</code>.</li>
-                        </ul>
-                    </div>
-                    
-                    <div class="col-md-6 border-start-md ps-md-4">
-                        <h3 class="unav-font-primary unav-weight-bold unav-text-125 mb-3" style="color: var(--unav-black-800);">3. Accesibilidad (A11y)</h3>
-                        <ul class="unav-font-primary unav-weight-regular unav-text-100" style="color: var(--unav-grey-700); padding-left: var(--unav-spacing-md);">
-                            
-                            <li style="margin-bottom: var(--unav-spacing-xs);"><strong>Contraste (WCAG):</strong> Es mandatorio el uso de una capa oscura (overlay) entre la imagen y el texto para superar los estándares de accesibilidad, especialmente sobre fotografías con zonas de brillo.</li>
-                        </ul>
-            
-                        <h3 class="unav-font-primary unav-weight-bold unav-text-125 mb-3 mt-4" style="color: var(--unav-black-800);">4. UX, Uso de Átomos y Medios</h3>
-                        <ul class="unav-font-primary unav-weight-regular unav-text-100" style="color: var(--unav-grey-700); padding-left: var(--unav-spacing-md);">
-                            <li style="margin-bottom: var(--unav-spacing-xs);"><strong>Integración de Átomos:</strong> El Hero alberga botones principales (<code>.unav-botonPrimario</code>) o secundarios con modificadores de ajuste (<code>.unav-botonFit</code>) para alineaciones específicas.</li>
-                            <li style="margin-bottom: var(--unav-spacing-xs);"><strong>Formatos de Imagen:</strong> El Hero es el elemento que requiere mayor calidad. Se recomienda formato WebP con relación de aspecto 21:9 o 16:9 y una anchura mínima de 1920px para pantallas panorámicas, asegurando que el punto de interés de la imagen (focal point) no quede tapado por el texto.</li>
-                        </ul>
-                    </div>
-                </div>
-            </article>
-        </div>
-
 
         <!-- ========================================================= -->
         <!-- EJEMPLO 1: CUADRANTE TOP-LEFT -->

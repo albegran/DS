@@ -15,81 +15,29 @@
         /* Estilos de contexto para la documentación */
         html { scroll-behavior: smooth; }
         body { background-color: var(--unav-grey-100); }
-        
-        .unav-doc-container { padding-top: var(--unav-spacing-3xl); padding-bottom: var(--unav-spacing-3xl); }
-        h2[id], h3[id], section[id] { scroll-margin-top: 6rem; }
     </style>
 </head>
-<body class="unav-font-primary unav-weight-regular unav-text-100">
+<body class="unav-font-primary unav-weight-regular unav-text-1125">
 
     <nav style="background-color: #ffffff; border-bottom: 1px solid var(--unav-grey-200); padding: var(--unav-spacing-md) 0; position: sticky; top: 0; z-index: var(--unav-zIndex-sticky);">
         <div class="container-lg d-flex justify-content-between align-items-center position-relative">
-            
             <div>
                 <a  href="indice.html" class="unav-boton unav-botonSecundario">
                     <i class="bi bi-arrow-left unav-botonIcono" aria-hidden="true"></i>
                     <span class="d-none d-md-inline">Volver al Índice</span>
                 </a>
             </div>
-    
             <span class="unav-font-primary-condensed unav-weight-regular unav-text-150 m-0 position-absolute start-50 translate-middle-x" style="color: var(--unav-rojo-500); line-height: 1;">
                 Design System UNAV
             </span>
-    
         </div>
     </nav>
 
-    <main class="container-lg unav-doc-container">
+    <main class="container-lg">
         
-        <header style="text-align: center; margin-bottom: var(--unav-spacing-md); padding-bottom: var(--unav-spacing-md);">
-            <h1 class="unav-font-primary unav-weight-medium unav-text-200 m-0" style="color: var(--unav-black-900); margin-bottom: var(--unav-spacing-sm) !important;">Botón Primario</h1>
-            <p class="unav-font-primary unav-weight-regular unav-text-100 m-0" style="color: var(--unav-grey-600);">
-                Componente base de llamada a la acción (CTA) con personalización total de colores mediante Tokens OOCSS.
-            </p>
-        </header>
-
-        <article class="unav-card unav-cardSolid" style="margin-bottom: var(--unav-spacing-3xl);">
-            <h2 class="unav-font-primary unav-weight-bold unav-text-150" style="color: var(--unav-rojo-500); border-bottom: 2px solid var(--unav-rojo-500); padding-bottom: var(--unav-spacing-sm); margin-bottom: var(--unav-spacing-lg);">Análisis Técnico y Funcional</h2>
-            
-            <div class="row g-4">
-                <div class="col-md-6">
-                    <h3 class="unav-font-primary unav-weight-bold unav-text-125" style="color: var(--unav-black-800); margin-bottom: var(--unav-spacing-xs);">1.- Guía de Implementación y Modificadores</h3>
-                    <p class="unav-font-primary unav-weight-regular unav-text-100" style="color: var(--unav-grey-700); margin-bottom: var(--unav-spacing-sm);">
-                        <strong>Clases Atómicas:</strong> Se requiere la combinación de <code>.unav-boton</code> (estructura general) y <code>.unav-botonPrimario</code> (piel). 
-                    </p>
-                    <p class="unav-font-primary unav-weight-regular unav-text-100" style="color: var(--unav-grey-700); margin: 0;">
-                        <strong>Variables Inyectables:</strong> El botón no tiene colores fijos predefinidos. Todo se inyecta en el atributo <code>style="..."</code> de la etiqueta con tokens locales: <code>--unav-botonBg</code>, <code>--unav-botonText</code>, <code>--unav-botonBorder</code>, <code>--unav-botonHoverBg</code>, etc.
-                    </p>
-                </div>
-                
-                <div class="col-md-6">
-                    <h3 class="unav-font-primary unav-weight-bold unav-text-125" style="color: var(--unav-black-800); margin-bottom: var(--unav-spacing-xs);">2.- Guía Técnica</h3>
-                    <p class="unav-font-primary unav-weight-regular unav-text-100" style="color: var(--unav-grey-700); margin-bottom: var(--unav-spacing-sm);">
-                        <strong>Modificadores de Comportamiento:</strong> Añadir <code>.unav-botonHoverInnerBorder</code> generará un marco interior blanco al hacer hover. <code>.unav-botonFit</code> permite que el botón se ajuste al contenido (ideal para alineaciones Flexbox), y <code>.unav-botonDisabled</code> anula la interacción.
-                    </p>
-                    <p class="unav-font-primary unav-weight-regular unav-text-100" style="color: var(--unav-grey-700); margin: 0;">
-                        <strong>Sincronización Borde/Texto:</strong> Para asegurar la legibilidad, el color del texto (<code>--unav-botonText</code>) y el del borde exterior (<code>--unav-botonBorder</code>) deben coincidir siempre en diseño.
-                    </p>
-                </div>
-                
-                <div class="col-md-6">
-                    <h3 class="unav-font-primary unav-weight-bold unav-text-125" style="color: var(--unav-black-800); margin-bottom: var(--unav-spacing-xs);">3.- Accesibilidad (A11y)</h3>
-                    <p class="unav-font-primary unav-weight-regular unav-text-100" style="color: var(--unav-grey-700); margin-bottom: var(--unav-spacing-sm);">
-                        <strong>Protección del Icono:</strong> La etiqueta <code>&lt;span&gt;</code> o <code>&lt;i&gt;</code> que contenga el icono interior (<code>.unav-botonIcono</code>) debe incluir siempre <code>aria-hidden="true"</code>.
-                    </p>
-                    <p class="unav-font-primary unav-weight-regular unav-text-100" style="color: var(--unav-grey-700); margin: 0;">
-                        
-                    </p>
-                </div>
-                
-                <div class="col-md-6">
-                    <h3 class="unav-font-primary unav-weight-bold unav-text-125" style="color: var(--unav-black-800); margin-bottom: var(--unav-spacing-xs);">4.- UX, Layout y Medios</h3>
-                    <p class="unav-font-primary unav-weight-regular unav-text-100" style="color: var(--unav-grey-700); margin-bottom: var(--unav-spacing-sm);">
-                        <strong>Ocupación Espacial:</strong> Por defecto, los botones primarios están diseñados para ser <em>Full Width</em> (100% del ancho del contenedor en móvil) para maximizar el área táctil (Touch Target).
-                    </p>
-                </div>
-            </div>
-        </article>
+        <header style="text-align: center; margin: var(--unav-spacing-xl) var(--unav-spacing-xl);">
+            <h1 class="unav-font-primary unav-weight-medium unav-text-200" style="color: var(--unav-black-900); margin-bottom: var(--unav-spacing-sm) !important;">Botón Primario</h1>
+        </header>       
 
         <section id="variantes-estandar" class="unav-card unav-cardSolid" style="margin-bottom: var(--unav-spacing-2xl);">
             <h2 class="unav-font-primary unav-weight-bold unav-text-200" style="color: var(--unav-black-900); border-bottom: 1px solid var(--unav-grey-300); padding-bottom: var(--unav-spacing-sm); margin-bottom: var(--unav-spacing-md);">1. Colores Flexibles (Variante Estándar)</h2>

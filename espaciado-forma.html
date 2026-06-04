@@ -16,9 +16,6 @@
         html { scroll-behavior: smooth; }
         body { background-color: var(--unav-grey-100); }
         
-        .unav-doc-container { padding-top: var(--unav-spacing-3xl); padding-bottom: var(--unav-spacing-3xl); }
-        h2[id], h3[id], section[id] { scroll-margin-top: 6rem; }
-        
         /* Visualizadores específicos para la documentación consumiendo Tokens */
         .unav-spacing-row {
             display: flex;
@@ -69,55 +66,9 @@
 
     <main class="container-lg unav-doc-container">
         
-        <header style="text-align: center; margin-bottom: var(--unav-spacing-md); padding-bottom: var(--unav-spacing-md);">
-            <h1 class="unav-font-primary unav-weight-medium unav-text-200 m-0" style="color: var(--unav-black-900); margin-bottom: var(--unav-spacing-sm) !important;">Espaciado y Forma (Spacing & Shape)</h1>
-            <p class="unav-font-primary unav-weight-regular unav-text-100 m-0" style="color: var(--unav-grey-600);">
-                Fundamentos estructurales para garantizar la consistencia en el ritmo vertical y la geometría de la interfaz.
-            </p>
+        <header style="text-align: center; margin: var(--unav-spacing-xl) var(--unav-spacing-xl);">
+            <h1 class="unav-font-primary unav-weight-medium unav-text-200" style="color: var(--unav-black-900); margin-bottom: var(--unav-spacing-sm) !important;">Espaciado y Forma</h1>
         </header>
-
-        <article class="unav-card unav-cardSolid" style="margin-bottom: var(--unav-spacing-3xl);">
-            <h2 class="unav-font-primary unav-weight-bold unav-text-150" style="color: var(--unav-rojo-500); border-bottom: 2px solid var(--unav-rojo-500); padding-bottom: var(--unav-spacing-sm); margin-bottom: var(--unav-spacing-lg);">Análisis y Documentación Oficial</h2>
-            
-            <div class="row g-4">
-                <div class="col-md-6">
-                    <h3 class="unav-font-primary unav-weight-bold unav-text-125" style="color: var(--unav-black-800); margin-bottom: var(--unav-spacing-xs);">1.- Guía de Implementación y Modificadores</h3>
-                    <p class="unav-font-primary unav-weight-regular unav-text-100" style="color: var(--unav-grey-700); margin-bottom: var(--unav-spacing-sm);">
-                        <strong>Uso de Tokens:</strong> Todo margen, padding y separación (`gap`) DEBE consumir los tokens de espaciado globales: <code>var(--unav-spacing-*)</code>.
-                    </p>
-                    <p class="unav-font-primary unav-weight-regular unav-text-100" style="color: var(--unav-grey-700); margin: 0;">
-                        <strong>Bordes:</strong> La curvatura de los elementos se controla con la escala <code>var(--unav-radius-*)</code>, evitando estipular píxeles al vuelo.
-                    </p>
-                </div>
-                
-                <div class="col-md-6">
-                    <h3 class="unav-font-primary unav-weight-bold unav-text-125" style="color: var(--unav-black-800); margin-bottom: var(--unav-spacing-xs);">2.- Guía Técnica</h3>
-                    <p class="unav-font-primary unav-weight-regular unav-text-100" style="color: var(--unav-grey-700); margin-bottom: var(--unav-spacing-sm);">
-                        <strong>Escala de ritmo:</strong> El sistema de espaciado se fundamenta en incrementos lógicos basados en múltiplos de 4 y 8 (ej. 4px, 8px, 16px, 24px, 32px), escalados internamente a <code>rem</code> para accesibilidad.
-                    </p>
-                    <p class="unav-font-primary unav-weight-regular unav-text-100" style="color: var(--unav-grey-700); margin: 0;">
-                        <strong>Prohibición "Magic Numbers":</strong> Se considera un error grave de deuda técnica usar valores estáticos como <code>margin-top: 15px</code> o <code>border-radius: 7px</code>.
-                    </p>
-                </div>
-                
-                <div class="col-md-6">
-                    <h3 class="unav-font-primary unav-weight-bold unav-text-125" style="color: var(--unav-black-800); margin-bottom: var(--unav-spacing-xs);">3.- Accesibilidad (A11y)</h3>
-                    <p class="unav-font-primary unav-weight-regular unav-text-100" style="color: var(--unav-grey-700); margin-bottom: var(--unav-spacing-sm);">
-                        <strong>Zonas Táctiles (Touch Targets):</strong> La escala de espaciado asegura que botones e items interactivos cumplan con el criterio WCAG de al menos 44x44px, usando paddings adecuados (<code>--unav-spacing-md</code> o <code>lg</code>).
-                    </p>
-                </div>
-                
-                <div class="col-md-6">
-                    <h3 class="unav-font-primary unav-weight-bold unav-text-125" style="color: var(--unav-black-800); margin-bottom: var(--unav-spacing-xs);">4.- UX, Layout y Medios</h3>
-                    <p class="unav-font-primary unav-weight-regular unav-text-100" style="color: var(--unav-grey-700); margin-bottom: var(--unav-spacing-sm);">
-                        <strong>Identidad de Esquina Viva:</strong> El estándar macro del ecosistema es <code>--unav-radius-none (0px)</code>. Su uso proyecta una identidad visual sólida y académica en contenedores, tarjetas modulares y acordeones.
-                    </p>
-                    <p class="unav-font-primary unav-weight-regular unav-text-100" style="color: var(--unav-grey-700); margin: 0;">
-                        <strong>Curvatura reservada:</strong> Solo los elementos atómicos interactivos (como CTAs, inputs, etiquetas y <em>tooltips</em> flotantes) utilizan la escala de bordes redondeados.
-                    </p>
-                </div>
-            </div>
-        </article>
 
         <div class="unav-foundations-guide">
             

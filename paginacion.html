@@ -15,12 +15,9 @@
         /* Estilos de contexto para la documentación */
         html { scroll-behavior: smooth; }
         body { background-color: var(--unav-grey-100); }
-        
-        .unav-doc-container { padding-top: var(--unav-spacing-3xl); padding-bottom: var(--unav-spacing-3xl); }
-        h2[id], h3[id], section[id] { scroll-margin-top: 6rem; }
     </style>
 </head>
-<body class="unav-font-primary unav-weight-regular unav-text-100">
+<body class="unav-font-primary unav-weight-regular unav-text-1125">
 
     <nav style="background-color: #ffffff; border-bottom: 1px solid var(--unav-grey-200); padding: var(--unav-spacing-md) 0; position: sticky; top: 0; z-index: var(--unav-zIndex-sticky);">
         <div class="container-lg d-flex justify-content-between align-items-center position-relative">
@@ -39,48 +36,12 @@
         </div>
     </nav>
 
-    <main class="container-lg unav-doc-container">
+    <main class="container-lg">
         
-        <header style="text-align: center; margin-bottom: var(--unav-spacing-md); padding-bottom: var(--unav-spacing-md);">
-            <h1 class="unav-font-primary unav-weight-medium unav-text-200 m-0" style="color: var(--unav-black-900); margin-bottom: var(--unav-spacing-sm) !important;">Paginación (Pagination)</h1>
-            <p class="unav-font-primary unav-weight-regular unav-text-100 m-0" style="color: var(--unav-grey-600);">
-                Control de navegación secuencial desacoplado basado en la arquitectura atómica de botones.
-            </p>
+        <header style="text-align: center; margin: var(--unav-spacing-xl) var(--unav-spacing-xl);">
+            <h1 class="unav-font-primary unav-weight-medium unav-text-200" style="color: var(--unav-black-900); margin-bottom: var(--unav-spacing-sm) !important;">Paginación</h1>
         </header>
-            
-        
-        <article class="unav-card unav-cardSolid" style="margin-bottom: var(--unav-spacing-3xl);">
-            <h2 class="unav-font-primary unav-weight-bold unav-text-150" style="color: var(--unav-rojo-500); border-bottom: 2px solid var(--unav-rojo-500); padding-bottom: var(--unav-spacing-sm); margin-bottom: var(--unav-spacing-lg);">Guía Técnica y Documentación Oficial</h2>
-            
-            <div class="row g-4">
-                <div class="col-md-6">
-                    <h3 class="unav-font-primary unav-weight-bold unav-text-125 mb-3" style="color: var(--unav-black-800);">1. Implementación OOCSS y Estructura</h3>
-                    <ul class="unav-font-primary unav-weight-regular unav-text-100" style="color: var(--unav-grey-700); padding-left: var(--unav-spacing-md);">
-                        <li style="margin-bottom: var(--unav-spacing-xs);"><strong>Estructura Base:</strong> El componente se enmarca en un elemento <code>&lt;nav&gt;</code> con clase <code>.unav-paginacionContainer</code>. Los ítems se organizan en una lista desordenada <code>&lt;ul&gt;</code> con elementos <code>&lt;li&gt;</code>.</li>
-                        <li style="margin-bottom: var(--unav-spacing-xs);"><strong>Modificadores:</strong> La clase <code>.unav-paginacionItem</code> estandariza el tamaño táctil. El estado activo o actual se señala mediante <code>.unav-isActive</code>, que aplica una variante de estilo específica mediante el sistema OOCSS.</li>
-                    </ul>
-        
-                    <h3 class="unav-font-primary unav-weight-bold unav-text-125 mb-3 mt-4" style="color: var(--unav-black-800);">2. Guía Técnica (HTML/CSS)</h3>
-                    <ul class="unav-font-primary unav-weight-regular unav-text-100" style="color: var(--unav-grey-700); padding-left: var(--unav-spacing-md);">
-                        <li style="margin-bottom: var(--unav-spacing-xs);"><strong>Geometría:</strong> Basado en el sistema de botones del DS, reutiliza los tokens de <code>padding</code> y <code>border-radius</code> para garantizar que cada número sea un área de clic óptima (mínimo 44px de zona táctil).</li>
-                        <li style="margin-bottom: var(--unav-spacing-xs);"><strong>Iconografía:</strong> Utiliza el átomo <code>.material-symbols-outlined</code> para los indicadores de flecha, garantizando una escala vectorial perfecta y escalable sin degradación.</li>
-                    </ul>
-                </div>
-                
-                <div class="col-md-6 border-start-md ps-md-4">
-                    <h3 class="unav-font-primary unav-weight-bold unav-text-125 mb-3" style="color: var(--unav-black-800);">3. Accesibilidad (A11y)</h3>
-                    <ul class="unav-font-primary unav-weight-regular unav-text-100" style="color: var(--unav-grey-700); padding-left: var(--unav-spacing-md);">
-                        <li style="margin-bottom: var(--unav-spacing-xs);"><strong>Accesibilidad (A11y):</strong> Obligatorio el uso de <code>aria-label</code> descriptivos en los botones de "Página siguiente/anterior" para que los lectores de pantalla expliquen la navegación correctamente. La página actual debe incluir <code>aria-current="page"</code>.</li>
-                    </ul>
-        
-                    <h3 class="unav-font-primary unav-weight-bold unav-text-125 mb-3 mt-4" style="color: var(--unav-black-800);">4. UX, Integración y Layouts</h3>
-                    <ul class="unav-font-primary unav-weight-regular unav-text-100" style="color: var(--unav-grey-700); padding-left: var(--unav-spacing-md);">
-                        <li style="margin-bottom: var(--unav-spacing-xs);"><strong>UX de Navegación:</strong> La paginación siempre debe ser predecible. Se recomienda centrar el componente mediante <code>justify-content-center</code> en el contenedor <code>&lt;ul&gt;</code> para mejorar la visibilidad dentro de la página.</li>
-                        <li style="margin-bottom: var(--unav-spacing-xs);"><strong>Layouts:</strong> Este átomo es extremadamente ligero y se inserta al pie de cualquier grid de datos (noticias, eventos, tablas). No tiene dependencias de ancho fijo, adaptándose al flujo de la columna donde se sitúe.</li>
-                    </ul>
-                </div>
-            </div>
-        </article>
+     
 
         <section class="bg-white p-4 p-md-5 rounded shadow-sm border mb-5">
             <h3 class="unav-sectionTitle unav-font-primary unav-weight-bold unav-text-150 mt-0 mb-4 border-bottom pb-2 text-dark">Ejemplo de Implementación en Producción</h3>

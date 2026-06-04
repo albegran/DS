@@ -16,9 +16,6 @@
         html { scroll-behavior: smooth; }
         body { background-color: var(--unav-grey-100); }
         
-        .unav-doc-container { padding-top: var(--unav-spacing-3xl); padding-bottom: var(--unav-spacing-3xl); }
-        h2[id], h3[id], section[id] { scroll-margin-top: 6rem; }
-
         /* ==========================================
            COMPONENTE: CINTILLO DE TITULACIONES
            ========================================== */
@@ -82,138 +79,74 @@
         }
     </style>
 </head>
-<body class="unav-font-primary unav-weight-regular unav-text-100">
+<body class="unav-font-primary unav-weight-regular unav-text-1125">
 
     <nav style="background-color: #ffffff; border-bottom: 1px solid var(--unav-grey-200); padding: var(--unav-spacing-md) 0; position: sticky; top: 0; z-index: var(--unav-zIndex-sticky);">
         <div class="container-lg d-flex justify-content-between align-items-center position-relative">
-            
             <div>
                 <a  href="indice.html" class="unav-boton unav-botonSecundario">
                     <i class="bi bi-arrow-left unav-botonIcono" aria-hidden="true"></i>
                     <span class="d-none d-md-inline">Volver al Índice</span>
                 </a>
-            </div>
-    
+            </div>    
             <span class="unav-font-primary-condensed unav-weight-regular unav-text-150 m-0 position-absolute start-50 translate-middle-x" style="color: var(--unav-rojo-500); line-height: 1;">
                 Design System UNAV
             </span>
-    
         </div>
     </nav>
 
-    <!-- Envoltorio general de documentación -->
-    <main>
-        
-
-        <!-- Header Documentación (Encapsulado) -->
-        <div class="container-lg py-5">
-
-            <header style="text-align: center; margin-bottom: var(--unav-spacing-md); padding-bottom: var(--unav-spacing-md);">
-                <h1 class="unav-font-primary unav-weight-medium unav-text-200 m-0" style="color: var(--unav-black-900); margin-bottom: var(--unav-spacing-sm) !important;">Cintillo Titulaciones</h1>
-                <p class="unav-font-primary unav-weight-regular unav-text-100 m-0" style="color: var(--unav-grey-600);">
-                    Cinta modular de metadatos rápidos para mostrar características clave de Grados, Másteres y Doctorados.
-                </p>
+    <main>        
+        <div class="container-lg">
+            <header style="text-align: center; margin: var(--unav-spacing-xl) var(--unav-spacing-xl);">
+                <h1 class="unav-font-primary unav-weight-medium unav-text-200" style="color: var(--unav-black-900); margin-bottom: var(--unav-spacing-sm) !important;">Cintillo</h1>
             </header>
-
-            <article class="unav-card unav-cardSolid" style="margin-bottom: var(--unav-spacing-3xl);">
-                <h2 class="unav-font-primary unav-weight-bold unav-text-150" style="color: var(--unav-rojo-500); border-bottom: 2px solid var(--unav-rojo-500); padding-bottom: var(--unav-spacing-sm); margin-bottom: var(--unav-spacing-lg);">Análisis y Documentación Oficial</h2>
-                
-                <div class="row g-4">
-                    <div class="col-md-6">
-                        <h3 class="unav-font-primary unav-weight-bold unav-text-125" style="color: var(--unav-black-800); margin-bottom: var(--unav-spacing-xs);">1.- Guía de Implementación y Estructura</h3>
-                        <p class="unav-font-primary unav-weight-regular unav-text-100" style="color: var(--unav-grey-700); margin-bottom: var(--unav-spacing-sm);">
-                            <strong>Componente Molecular:</strong> Basado en el contenedor <code>.unav-cintillo</code>, envuelve una lista semántica <code>.unav-cintilloList</code>. Cada bloque de información es un <code>.unav-cintilloItem</code>.
-                        </p>
-                        <p class="unav-font-primary unav-weight-regular unav-text-100" style="color: var(--unav-grey-700); margin: 0;">
-                            <strong>Composición:</strong> Los ítems están formados por el átomo icónico (<code>.unav-cintilloIcon</code>) y clases utilitarias tipográficas para el texto descriptivo, lo que permite escalabilidad sin necesidad de escribir CSS adicional.
-                        </p>
-                    </div>
-                    
-                    <div class="col-md-6">
-                        <h3 class="unav-font-primary unav-weight-bold unav-text-125" style="color: var(--unav-black-800); margin-bottom: var(--unav-spacing-xs);">2.- Guía Técnica (CSS / Flexbox)</h3>
-                        <p class="unav-font-primary unav-weight-regular unav-text-100" style="color: var(--unav-grey-700); margin-bottom: var(--unav-spacing-sm);">
-                            <strong>Físicas de Centrado:</strong> El cintillo está construido sobre un motor Flexbox estricto. La propiedad <code>justify-content: center</code> garantiza el equilibrio en pantallas panorámicas, y <code>align-items: stretch</code> obliga a todos los ítems a tener la misma altura visual.
-                        </p>
-                        <p class="unav-font-primary unav-weight-regular unav-text-100" style="color: var(--unav-grey-700); margin: 0;">
-                            <strong>Variables (Tokens):</strong> Se nutre del token <code>var(--unav-grey-100)</code> para el fondo de base y <code>var(--unav-spacing-md)</code> / <code>var(--unav-spacing-lg)</code> para las distancias internas, preservando el ritmo vertical corporativo.
-                        </p>
-                    </div>
-                    
-                    <div class="col-md-6">
-                        <h3 class="unav-font-primary unav-weight-bold unav-text-125" style="color: var(--unav-black-800); margin-bottom: var(--unav-spacing-xs);">3.- Accesibilidad (A11y) y Semántica</h3>
-                        <p class="unav-font-primary unav-weight-regular unav-text-100" style="color: var(--unav-grey-700); margin-bottom: var(--unav-spacing-sm);">
-                            <strong>Puntos de Referencia:</strong> El envoltorio global debe ser una etiqueta <code>&lt;section&gt;</code> acompañada de un atributo <code>aria-label="Características de la titulación"</code> para que los lectores de pantalla comprendan el contexto de los datos.
-                        </p>
-                        <p class="unav-font-primary unav-weight-regular unav-text-100" style="color: var(--unav-grey-700); margin: 0;">
-                            <strong>Iconos Decorativos:</strong> Los iconos de Google Fonts no son texto real. Deben llevar siempre el atributo <code>aria-hidden="true"</code> para no generar ruido (lecturas confusas) a usuarios invidentes.
-                        </p>
-                    </div>
-                    
-                    <div class="col-md-6">
-                        <h3 class="unav-font-primary unav-weight-bold unav-text-125" style="color: var(--unav-black-800); margin-bottom: var(--unav-spacing-xs);">4.- UX, Layout y Comportamiento Mobile</h3>
-                        <p class="unav-font-primary unav-weight-regular unav-text-100" style="color: var(--unav-grey-700); margin-bottom: var(--unav-spacing-sm);">
-                            <strong>Evitar Salto de Líneas (No-Wrap):</strong> A nivel de UX móvil, apilar 8 características generaría una lista inmensa que empujaría el contenido relevante hacia abajo. 
-                        </p>
-                        <p class="unav-font-primary unav-weight-regular unav-text-100" style="color: var(--unav-grey-700); margin: 0;">
-                            <strong>Scroll Inercial Inteligente:</strong> Se fuerza un carril infinito horizontal usando <code>overflow-x: auto</code>. Además, se añade una pequeña media-query para que en móviles el centrado se libere y el usuario pueda hacer scroll horizontal libremente sin que la física del centrado le oculte las opciones de la izquierda.
-                        </p>
-                    </div>
-                </div>
-            </article>
         </div>
 
+        <section class="unav-cintillo" aria-label="Características de la titulación">
+            <ul class="unav-cintilloList">
+                
+                <li class="unav-cintilloItem">
+                    <span class="material-symbols-outlined unav-cintilloIcon" aria-hidden="true">school</span>
+                    <span class="unav-font-primary unav-weight-regular unav-text-100">Título oficial</span>
+                </li>
+                
+                <li class="unav-cintilloItem">
+                    <span class="material-symbols-outlined unav-cintilloIcon" aria-hidden="true">menu_book</span>
+                    <span class="unav-font-primary unav-weight-regular unav-text-100">240 créditos</span>
+                </li>
+                
+                <li class="unav-cintilloItem">
+                    <span class="material-symbols-outlined unav-cintilloIcon" aria-hidden="true">calendar_today</span>
+                    <span class="unav-font-primary unav-weight-regular unav-text-100">4 años</span>
+                </li>
+                
+                <li class="unav-cintilloItem">
+                    <span class="material-symbols-outlined unav-cintilloIcon" aria-hidden="true">check_circle</span>
+                    <span class="unav-font-primary unav-weight-regular unav-text-100">Presencial</span>
+                </li>
 
-  
+                <li class="unav-cintilloItem">
+                    <span class="material-symbols-outlined unav-cintilloIcon" aria-hidden="true">translate</span>
+                    <span class="unav-font-primary unav-weight-regular unav-text-100">Castellano</span>
+                </li>
 
-            <section class="unav-cintillo" aria-label="Características de la titulación">
-                <div class="container-fluid p-0"> 
-                    <ul class="unav-cintilloList">
-                        
-                        <li class="unav-cintilloItem">
-                            <span class="material-symbols-outlined unav-cintilloIcon" aria-hidden="true">school</span>
-                            <span class="unav-font-primary unav-weight-regular unav-text-100">Título oficial</span>
-                        </li>
-                        
-                        <li class="unav-cintilloItem">
-                            <span class="material-symbols-outlined unav-cintilloIcon" aria-hidden="true">menu_book</span>
-                            <span class="unav-font-primary unav-weight-regular unav-text-100">240 créditos</span>
-                        </li>
-                        
-                        <li class="unav-cintilloItem">
-                            <span class="material-symbols-outlined unav-cintilloIcon" aria-hidden="true">calendar_today</span>
-                            <span class="unav-font-primary unav-weight-regular unav-text-100">4 años</span>
-                        </li>
-                        
-                        <li class="unav-cintilloItem">
-                            <span class="material-symbols-outlined unav-cintilloIcon" aria-hidden="true">check_circle</span>
-                            <span class="unav-font-primary unav-weight-regular unav-text-100">Presencial</span>
-                        </li>
+                <li class="unav-cintilloItem">
+                    <span class="material-symbols-outlined unav-cintilloIcon" aria-hidden="true">location_on</span>
+                    <span class="unav-font-primary unav-weight-regular unav-text-100">Pamplona</span>
+                </li>
 
-                        <li class="unav-cintilloItem">
-                            <span class="material-symbols-outlined unav-cintilloIcon" aria-hidden="true">translate</span>
-                            <span class="unav-font-primary unav-weight-regular unav-text-100">Castellano</span>
-                        </li>
+                <li class="unav-cintilloItem">
+                    <span class="material-symbols-outlined unav-cintilloIcon" aria-hidden="true">person</span>
+                    <span class="unav-font-primary unav-weight-regular unav-text-100">300 plazas</span>
+                </li>
 
-                        <li class="unav-cintilloItem">
-                            <span class="material-symbols-outlined unav-cintilloIcon" aria-hidden="true">location_on</span>
-                            <span class="unav-font-primary unav-weight-regular unav-text-100">Pamplona</span>
-                        </li>
-
-                        <li class="unav-cintilloItem">
-                            <span class="material-symbols-outlined unav-cintilloIcon" aria-hidden="true">person</span>
-                            <span class="unav-font-primary unav-weight-regular unav-text-100">300 plazas</span>
-                        </li>
-
-                        <li class="unav-cintilloItem">
-                            <span class="material-symbols-outlined unav-cintilloIcon" aria-hidden="true">info</span>
-                            <span class="unav-font-primary unav-weight-regular unav-text-100">Facultad de Derecho</span>
-                        </li>
-                        
-                    </ul>
-                </div>
-            </section>
-            
-        
+                <li class="unav-cintilloItem">
+                    <span class="material-symbols-outlined unav-cintilloIcon" aria-hidden="true">info</span>
+                    <span class="unav-font-primary unav-weight-regular unav-text-100">Facultad de Derecho</span>
+                </li>
+                
+            </ul>
+        </section>
     </main>
 
     <footer style="background-color: #ffffff; border-top: 1px solid var(--unav-grey-200); padding: var(--unav-spacing-lg) 0; margin-top: var(--unav-spacing-3xl);">

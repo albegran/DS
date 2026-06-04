@@ -15,72 +15,31 @@
         /* Estilos de contexto para la documentación */
         html { scroll-behavior: smooth; }
         body { background-color: var(--unav-grey-100); }
-        
-        .unav-doc-container { padding-top: var(--unav-spacing-3xl); padding-bottom: var(--unav-spacing-3xl); }
-        h2[id], h3[id], section[id] { scroll-margin-top: 6rem; }
     </style>
 </head>
-<body class="unav-font-primary unav-weight-regular unav-text-100">
+<body class="unav-font-primary unav-weight-regular unav-text-1125">
 
     <nav style="background-color: #ffffff; border-bottom: 1px solid var(--unav-grey-200); padding: var(--unav-spacing-md) 0; position: sticky; top: 0; z-index: var(--unav-zIndex-sticky);">
         <div class="container-lg d-flex justify-content-between align-items-center position-relative">
-            
             <div>
                 <a  href="indice.html" class="unav-boton unav-botonSecundario">
                     <i class="bi bi-arrow-left unav-botonIcono" aria-hidden="true"></i>
                     <span class="d-none d-md-inline">Volver al Índice</span>
                 </a>
-            </div>
-    
+            </div>    
             <span class="unav-font-primary-condensed unav-weight-regular unav-text-150 m-0 position-absolute start-50 translate-middle-x" style="color: var(--unav-rojo-500); line-height: 1;">
                 Design System UNAV
             </span>
-    
         </div>
     </nav>
 
-    <main class="container-lg unav-doc-container">
+    <main class="container-lg">
         
-        <header style="text-align: center; margin-bottom: var(--unav-spacing-md); padding-bottom: var(--unav-spacing-md);">
-            <h1 class="unav-font-primary unav-weight-medium unav-text-200 text-dark mb-3">Grid de Noticias</h1>
-            <p class="unav-font-primary unav-weight-regular unav-text-100 text-muted m-0">Tarjetas de contenido editorial responsivas con microinteracciones delegadas a los Motion Tokens y schema.org integrados.</p>
+        <header style="text-align: center; margin: var(--unav-spacing-xl) var(--unav-spacing-xl);">
+            <h1 class="unav-font-primary unav-weight-medium unav-text-200" style="color: var(--unav-black-900); margin-bottom: var(--unav-spacing-sm) !important;">Grid de Noticias</h1>
         </header>
 
-        <article class="unav-card unav-cardSolid" style="margin-bottom: var(--unav-spacing-3xl);">
-            <h2 class="unav-font-primary unav-weight-bold unav-text-150" style="color: var(--unav-rojo-500); border-bottom: 2px solid var(--unav-rojo-500); padding-bottom: var(--unav-spacing-sm); margin-bottom: var(--unav-spacing-lg);">Guía Técnica y Documentación Oficial</h2>
-            
-            <div class="row g-4">
-                <div class="col-md-6">
-                    <h3 class="unav-font-primary unav-weight-bold unav-text-125 mb-3" style="color: var(--unav-black-800);">1. Implementación OOCSS y Estructura</h3>
-                    <ul class="unav-font-primary unav-weight-regular unav-text-100" style="color: var(--unav-grey-700); padding-left: var(--unav-spacing-md);">
-                        <li style="margin-bottom: var(--unav-spacing-xs);"><strong>Retícula Base (Grid):</strong> A diferencia del listado continuo, este componente se apoya en la estructura clásica de Bootstrap (<code>.row</code> y <code>.col-*</code>). Para mantener la simetría horizontal de las cajas, es obligatorio aplicar la clase utilitaria <code>.h-100</code> a cada tarjeta.</li>
-                        <li style="margin-bottom: var(--unav-spacing-xs);"><strong>Reutilización de Componentes:</strong> La grilla no define estilos propios de tarjeta, sino que aloja el organismo estándar <code>.unav-card.unav-cardSolid</code>, asegurando una total consistencia transversal en el Design System.</li>
-                    </ul>
-
-                    <h3 class="unav-font-primary unav-weight-bold unav-text-125 mb-3 mt-4" style="color: var(--unav-black-800);">2. Guía Técnica (JavaScript y Motion CSS)</h3>
-                    <ul class="unav-font-primary unav-weight-regular unav-text-100" style="color: var(--unav-grey-700); padding-left: var(--unav-spacing-md);">
-                        <li style="margin-bottom: var(--unav-spacing-xs);"><strong>Staggering por Fila (JS):</strong> El script de <code>IntersectionObserver</code> busca el contenedor padre directo (<code>.row</code>) y calcula el orden de las tarjetas en su interior. El retardo de animación se asigna linealmente multiplicando el índice de la tarjeta por 100ms (<code>index * 100</code>).</li>
-                        <li style="margin-bottom: var(--unav-spacing-xs);"><strong>Transiciones de Estado:</strong> Se inicializa la tarjeta con <code>.unav-efectoEntradaOculto</code>, y el observador muta el estado a <code>.unav-efectoEntradaVisible</code> para disparar el efecto de desvanecimiento ascendente (fade-up).</li>
-                    </ul>
-                </div>
-                
-                <div class="col-md-6 border-start-md ps-md-4">
-                    <h3 class="unav-font-primary unav-weight-bold unav-text-125 mb-3" style="color: var(--unav-black-800);">3. Accesibilidad (A11y)</h3>
-                    <ul class="unav-font-primary unav-weight-regular unav-text-100" style="color: var(--unav-grey-700); padding-left: var(--unav-spacing-md);">
-                        
-                        <li style="margin-bottom: var(--unav-spacing-xs);"><strong>A11y y Foco:</strong> Si toda la tarjeta es "clicable", se recomienda inyectar un pseudo-elemento en el enlace principal para expandir su área táctil. De lo contrario, los enlaces de "Leer más" deben contener un <code>aria-label</code> o texto oculto especificando el titular de la noticia para no ser genéricos.</li>
-                    </ul>
-
-                    <h3 class="unav-font-primary unav-weight-bold unav-text-125 mb-3 mt-4" style="color: var(--unav-black-800);">4. UX, Integración de Átomos y Layouts</h3>
-                    <ul class="unav-font-primary unav-weight-regular unav-text-100" style="color: var(--unav-grey-700); padding-left: var(--unav-spacing-md);">
-                        <li style="margin-bottom: var(--unav-spacing-xs);"><strong>Uso de Átomos:</strong> Las tarjetas consumen átomos secundarios del sistema para mostrar su metadata: <code>.unav-tag</code> para las categorías y <code>&lt;time&gt;</code> formateado con tipografía de lectura secundaria para las fechas.</li>
-                        <li style="margin-bottom: var(--unav-spacing-xs);"><strong>Gestión de Medios:</strong> Las fotografías de cabecera en el grid están controladas por un contenedor de relación de aspecto fija (16:9). Las imágenes deben utilizar el formato WebP con un ancho de carga recomendado no superior a 800px para garantizar un rendimiento óptimo al cargar múltiples columnas simultáneamente.</li>
-                    </ul>
-                </div>
-            </div>
-        </article>
-
-        <section class="bg-white p-4 p-md-5 rounded shadow-sm border mb-5">
+        <section class="unav-card unav-cardSolid" style="margin-bottom: var(--unav-spacing-xl);">
             <h2 class="unav-font-primary unav-weight-bold unav-text-200 border-bottom pb-2 mb-4 text-dark mt-0">01. Variante A: Ancho Total (12 Col) - Asimetría</h2>
             <p class="text-muted mb-4">Observa cómo el enlace inferior se alinea perfectamente en la base de todas las tarjetas aunque los títulos tengan longitudes muy dispares.</p>
             <div class="row g-5 unav-gridScrollMobile">
@@ -132,7 +91,7 @@
             </div>
         </section>
 
-        <section class="bg-white p-4 p-md-5 rounded shadow-sm border mb-5">
+        <section class="unav-card unav-cardSolid" style="margin-bottom: var(--unav-spacing-xl);">
             <h2 class="unav-font-primary unav-weight-bold unav-text-200 border-bottom pb-2 mb-4 text-dark mt-0">02. Variante B: Medio Ancho (Offset 6) - 2 Noticias</h2>
             <div class="row">
                 <div class="col-lg-6 offset-lg-6">
@@ -172,7 +131,7 @@
             </div>
         </section>
 
-        <section class="bg-white p-4 p-md-5 rounded shadow-sm border mb-5">
+        <section class="unav-card unav-cardSolid" style="margin-bottom: var(--unav-spacing-xl);">
             <h2 class="unav-font-primary unav-weight-bold unav-text-200 border-bottom pb-2 mb-4 text-dark mt-0">03. Variante C: Ancho Total (12 Col) - 5 Noticias</h2>
             <div class="row row-cols-1 row-cols-sm-2 row-cols-md-3 row-cols-lg-5 g-4 unav-gridScrollMobile">
                 <div class="col">
@@ -218,7 +177,7 @@
             </div>
         </section>
 
-        <section class="bg-white p-4 p-md-5 rounded shadow-sm border mb-5">
+        <section class="unav-card unav-cardSolid" style="margin-bottom: var(--unav-spacing-xl);">
             <h2 class="unav-font-primary unav-weight-bold unav-text-200 border-bottom pb-2 mb-4 text-dark mt-0">04. Variante D: Ancho Total (12 Col) - Textos mixtos</h2>
             <div class="row g-4 unav-gridScrollMobile">
                 <div class="col-12 col-md-6 col-lg-3">
@@ -256,7 +215,7 @@
             </div>
         </section>
 
-        <section class="bg-white p-4 p-md-5 rounded shadow-sm border mb-5">
+        <section class="unav-card unav-cardSolid" style="margin-bottom: var(--unav-spacing-xl);">
             <h2 class="unav-font-primary unav-weight-bold unav-text-200 border-bottom pb-2 mb-4 text-dark mt-0">05. Variante E: Ancho Medio (6 Col) - 3 Noticias</h2>
             <div class="row">
                 <div class="col-lg-6">
@@ -287,7 +246,7 @@
             </div>
         </section>
 
-        <section class="bg-white p-4 p-md-5 rounded shadow-sm border mb-5">
+        <section class="unav-card unav-cardSolid" style="margin-bottom: var(--unav-spacing-xl);">
             <h2 class="unav-font-primary unav-weight-bold unav-text-200 border-bottom pb-2 mb-4 text-dark mt-0">06. Variante F: Ancho Total (12 Col) - 2 Noticias</h2>
             <div class="row g-5">
                 <div class="col-12 col-md-6">

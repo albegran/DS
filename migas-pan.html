@@ -15,12 +15,9 @@
         /* Estilos de contexto para la documentación */
         html { scroll-behavior: smooth; }
         body { background-color: var(--unav-grey-100); }
-        
-        .unav-doc-container { padding-top: var(--unav-spacing-3xl); padding-bottom: var(--unav-spacing-3xl); }
-        h2[id], h3[id], section[id] { scroll-margin-top: 6rem; }
     </style>
 </head>
-<body class="unav-font-primary unav-weight-regular unav-text-100">
+<body class="unav-font-primary unav-weight-regular unav-text-1125">
 
     <nav style="background-color: #ffffff; border-bottom: 1px solid var(--unav-grey-200); padding: var(--unav-spacing-md) 0; position: sticky; top: 0; z-index: var(--unav-zIndex-sticky);">
         <div class="container-lg d-flex justify-content-between align-items-center position-relative">
@@ -39,58 +36,11 @@
         </div>
     </nav>
 
-    <main class="container-lg unav-doc-container">
+    <main class="container-lg">
         
-        <header style="text-align: center; margin-bottom: var(--unav-spacing-md); padding-bottom: var(--unav-spacing-md);">
-            <h1 class="unav-font-primary unav-weight-medium unav-text-200 m-0" style="color: var(--unav-black-900); margin-bottom: var(--unav-spacing-sm) !important;">Migas de Pan (Breadcrumbs)</h1>
-            <p class="unav-font-primary unav-weight-regular unav-text-100 m-0" style="color: var(--unav-grey-600);">
-                Componente de navigation secundaria para ubicar jerárquicamente la página actual dentro del árbol del sitio web.
-            </p>
+        <header style="text-align: center; margin: var(--unav-spacing-xl) var(--unav-spacing-xl);">
+            <h1 class="unav-font-primary unav-weight-medium unav-text-200" style="color: var(--unav-black-900); margin-bottom: var(--unav-spacing-sm) !important;">Migas de Pan</h1>
         </header>
-
-        <article class="unav-card unav-cardSolid" style="margin-bottom: var(--unav-spacing-3xl);">
-            <h2 class="unav-font-primary unav-weight-bold unav-text-150" style="color: var(--unav-rojo-500); border-bottom: 2px solid var(--unav-rojo-500); padding-bottom: var(--unav-spacing-sm); margin-bottom: var(--unav-spacing-lg);">Análisis y Documentación Oficial</h2>
-            
-            <div class="row g-4">
-                <div class="col-md-6">
-                    <h3 class="unav-font-primary unav-weight-bold unav-text-125" style="color: var(--unav-black-800); margin-bottom: var(--unav-spacing-xs);">1.- Guía de Implementación y Modificadores</h3>
-                    <p class="unav-font-primary unav-weight-regular unav-text-100" style="color: var(--unav-grey-700); margin-bottom: var(--unav-spacing-sm);">
-                        <strong>Uso de clase OOCSS:</strong> El componente se envuelve en una etiqueta <code>&lt;nav&gt;</code> y utiliza la clase estructural <code>.unav-breadcrumbs</code> aplicada de forma directa sobre una lista ordenada <code>&lt;ol&gt;</code>.
-                    </p>
-                    <p class="unav-font-primary unav-weight-regular unav-text-100" style="color: var(--unav-grey-700); margin: 0;">
-                        <strong>Modificadores de Estado:</strong> El nivel correspondiente a la página activa debe llevar la clase de ítem activa y el texto final formateado, el cual inhabilita las acciones de clic.
-                    </p>
-                </div>
-                
-                <div class="col-md-6">
-                    <h3 class="unav-font-primary unav-weight-bold unav-text-125" style="color: var(--unav-black-800); margin-bottom: var(--unav-spacing-xs);">2.- Guía Técnica</h3>
-                    <p class="unav-font-primary unav-weight-regular unav-text-100" style="color: var(--unav-grey-700); margin-bottom: var(--unav-spacing-sm);">
-                        <strong>Geometría Responsiva Líquida:</strong> El sistema inyecta propiedades de desbordamiento horizontal (<code>overflow-x: auto</code>) combinadas con <code>flex-wrap: nowrap</code>. Esto asegura que en resoluciones móviles el componente mantenga una sola línea deslizable de forma táctil.
-                    </p>
-                    <p class="unav-font-primary unav-weight-regular unav-text-100" style="color: var(--unav-grey-700); margin: 0;">
-                        <strong>Separación por Pseudo-elementos:</strong> Los iconos de flecha chevrón se inyectan de forma limpia mediante la regla CSS <code>::before</code> y tipografía icónica, evitando la inserción de nodos redundantes en el HTML.
-                    </p>
-                </div>
-                
-                <div class="col-md-6">
-                    <h3 class="unav-font-primary unav-weight-bold unav-text-125" style="color: var(--unav-black-800); margin-bottom: var(--unav-spacing-xs);">3.- Accesibilidad (A11y)</h3>
-                    <p class="unav-font-primary unav-weight-regular unav-text-100" style="color: var(--unav-grey-700); margin-bottom: var(--unav-spacing-sm);">
-                        <strong>Atributos Semánticos WCAG:</strong> La etiqueta contenedora <code>&lt;nav&gt;</code> debe portar de forma obligatoria un atributo descriptivo <code>aria-label="Breadcrumb"</code>. Adicionalmente, el ítem activo final no debe ser cliqueable.
-                    </p>
-                </div>
-
-                <div class="col-md-6">
-                    <h3 class="unav-font-primary unav-weight-bold unav-text-125" style="color: var(--unav-black-800); margin-bottom: var(--unav-spacing-xs);">4.- UX, Layout y Medios</h3>
-                    <p class="unav-font-primary unav-weight-regular unav-text-100" style="color: var(--unav-grey-700); margin-bottom: var(--unav-spacing-sm);">
-                        <strong>Control de Textos Extensos:</strong> Para evitar roturas en los contenedores ante nombres de facultades o asignaturas masivas, el sistema integra la clase utilitaria de truncado (<code>max-width: 200px</code>, <code>text-overflow: ellipsis</code>) que aplica puntos suspensivos automáticamente.
-                    </p>
-                    <p class="unav-font-primary unav-weight-regular unav-text-100" style="color: var(--unav-grey-700); margin: 0;">
-                        <strong>Uso de Tipografía:</strong> Renderiza consumiendo el tamaño meta atómico <code>--unav-fontSize075 (12px)</code> o <code>0.875rem</code> con interlineado de bloque <code>--unav-lineHeightNone (1)</code>, eliminando márgenes parasitarios.
-                    </p>
-                </div>
-                
-            </div>
-        </article>
 
         <section class="unav-card unav-cardSolid">
             <h2 class="unav-font-primary unav-weight-bold unav-text-200" style="border-bottom: 1px solid var(--unav-grey-300); padding-bottom: var(--unav-spacing-sm); margin-bottom: var(--unav-spacing-xl); color: var(--unav-black-900);">Ejemplo del Componente</h2>

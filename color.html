@@ -16,9 +16,6 @@
         html { scroll-behavior: smooth; }
         body { background-color: var(--unav-grey-100); }
         
-        .unav-doc-container { padding-top: var(--unav-spacing-3xl); padding-bottom: var(--unav-spacing-3xl); }
-        h2[id], h3[id], section[id] { scroll-margin-top: 6rem; }
-        
         /* Estilos específicos para la visualización de colores */
         .unav-color-swatch {
             min-width: 90px;
@@ -79,64 +76,11 @@
         </div>
     </nav>
 
-    <main class="container-lg unav-doc-container">
+    <main class="container-lg">
         
-        <header style="text-align: center; margin-bottom: var(--unav-spacing-md); padding-bottom: var(--unav-spacing-md);">
-            <h1 class="unav-font-primary unav-weight-medium unav-text-200 m-0" style="color: var(--unav-black-900); margin-bottom: var(--unav-spacing-sm) !important;">Guía de Color y Accesibilidad</h1>
-            <p class="unav-font-primary unav-weight-regular unav-text-100 m-0" style="color: var(--unav-grey-600);">
-                Paleta corporativa auditada automáticamente bajo estándares WCAG 2.1.
-            </p>
+        <header style="text-align: center; margin: var(--unav-spacing-xl) var(--unav-spacing-xl);">
+            <h1 class="unav-font-primary unav-weight-medium unav-text-200" style="color: var(--unav-black-900); margin-bottom: var(--unav-spacing-sm) !important;">Paleta de Colores</h1>
         </header>
-
-        <article class="unav-card unav-cardSolid" style="margin-bottom: var(--unav-spacing-3xl);">
-            <h2 class="unav-font-primary unav-weight-bold unav-text-150" style="color: var(--unav-rojo-500); border-bottom: 2px solid var(--unav-rojo-500); padding-bottom: var(--unav-spacing-sm); margin-bottom: var(--unav-spacing-lg);">Análisis y Documentación Oficial</h2>
-            
-            <div class="row g-4">
-                <div class="col-md-6">
-                    <h3 class="unav-font-primary unav-weight-bold unav-text-125" style="color: var(--unav-black-800); margin-bottom: var(--unav-spacing-xs);">1.- Guía de Implementación y Modificadores</h3>
-                    <p class="unav-font-primary unav-weight-regular unav-text-100" style="color: var(--unav-grey-700); margin-bottom: var(--unav-spacing-sm);">
-                        <strong>Prohibición de HEX/RGB estáticos:</strong> Está estrictamente prohibido utilizar valores de color hardcodeados en el CSS de los componentes. Todo color debe inyectarse referenciando los Design Tokens del archivo maestro (ej. <code>color: var(--unav-rojo-600);</code>).
-                    </p>
-                    <p class="unav-font-primary unav-weight-regular unav-text-100" style="color: var(--unav-grey-700); margin: 0;">
-                        <strong>Uso de utilidades de fondo:</strong> Para aplicar color a contenedores estructurales en el HTML, utiliza la nomenclatura estándar del sistema: <code>.unav-bg-[familia]-[nivel]</code> (ej. <code>.unav-bg-blue-l-100</code>). El sistema se encarga de acoplar la variable correspondiente.
-                    </p>
-                </div>
-                
-                <div class="col-md-6">
-                    <h3 class="unav-font-primary unav-weight-bold unav-text-125" style="color: var(--unav-black-800); margin-bottom: var(--unav-spacing-xs);">2.- Guía Técnica</h3>
-                    <p class="unav-font-primary unav-weight-regular unav-text-100" style="color: var(--unav-grey-700); margin-bottom: var(--unav-spacing-sm);">
-                        <strong>Arquitectura OOCSS:</strong> La paleta se divide en 1 Familia Primaria (Brand) y N Familias Secundarias. La nomenclatura se compone del nombre tonal seguido de un sufijo numérico del 100 (más claro) al 900 (más oscuro). El valor "500" representa el color base puro.
-                    </p>
-                    <p class="unav-font-primary unav-weight-regular unav-text-100" style="color: var(--unav-grey-700); margin: 0;">
-                        <strong>JS Audit:</strong> En esta vista de documentación se incluye un script en Vanilla JS (alojado en el pie del documento) que calcula la "Luminancia Relativa" de cada variable en tiempo real frente al fondo blanco, inyectando un nodo DOM con la etiqueta del ratio resultante.
-                    </p>
-                </div>
-                
-                <div class="col-md-6">
-                    <h3 class="unav-font-primary unav-weight-bold unav-text-125" style="color: var(--unav-black-800); margin-bottom: var(--unav-spacing-xs);">3.- Accesibilidad (A11y)</h3>
-                    <p class="unav-font-primary unav-weight-regular unav-text-100" style="color: var(--unav-grey-700); margin-bottom: var(--unav-spacing-sm);">
-                        <strong>Evaluación WCAG 2.1 (Ratio Contraste):</strong> 
-                        El rojo corporativo histórico (#ff0000) falla las métricas AA. Para asegurar el cumplimiento, usamos <code>--unav-rojo-500 (#EB0000)</code> que alcanza un ratio de 4.63:1.
-                    </p>
-                    <ul class="unav-font-primary unav-weight-regular unav-text-085 ps-3" style="color: var(--unav-grey-700); margin: 0;">
-                        <li><strong style="color: var(--unav-green-600);">AAA (≥ 7.0:1):</strong> Nivel máximo.</li>
-                        <li><strong style="color: var(--unav-green-500);">AA (≥ 4.5:1):</strong> Apto para todo texto.</li>
-                        <li><strong style="color: var(--unav-yellow-600);">AA Large (≥ 3.0:1):</strong> Apto SOLO para fuentes ≥ 18px o bold ≥ 14px.</li>
-                        <li><strong style="color: var(--unav-rojo-600);">FAIL (&lt; 3.0:1):</strong> Prohibido para lectura.</li>
-                    </ul>
-                </div>
-                
-                <div class="col-md-6">
-                    <h3 class="unav-font-primary unav-weight-bold unav-text-125" style="color: var(--unav-black-800); margin-bottom: var(--unav-spacing-xs);">4.- UX, Layout y Medios</h3>
-                    <p class="unav-font-primary unav-weight-regular unav-text-100" style="color: var(--unav-grey-700); margin-bottom: var(--unav-spacing-sm);">
-                        <strong>Semántica Visual:</strong> La familia "Rojo Unav" está estrictamente reservada para CTAs primarios, acciones destructivas y branding institucional. La familia "Black/Grey" gestiona la jerarquía tipográfica y contenedores neutros.
-                    </p>
-                    <p class="unav-font-primary unav-weight-regular unav-text-100" style="color: var(--unav-grey-700); margin: 0;">
-                        <strong>Uso de Paletas Secundarias:</strong> Las familias cromáticas (Moss, Teal, Violet, etc.) deben utilizarse con moderación para sistemas de etiquetado (Tags), categorización de noticias, estados del sistema (alertas/éxitos) o ilustración de apoyo.
-                    </p>
-                </div>
-            </div>
-        </article>
 
         <div class="unav-color-guide">
             <meta  content="Sistema de Color UNAV">

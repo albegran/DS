@@ -15,73 +15,31 @@
         /* Estilos de contexto para la documentación */
         html { scroll-behavior: smooth; }
         body { background-color: var(--unav-grey-100); }
-        
-        .unav-doc-container { padding-top: var(--unav-spacing-3xl); padding-bottom: var(--unav-spacing-3xl); }
-        h2[id], h3[id], section[id] { scroll-margin-top: 6rem; }
     </style>
 </head>
-<body class="unav-font-primary unav-weight-regular unav-text-100">
+<body class="unav-font-primary unav-weight-regular unav-text-1125">
 
     <nav style="background-color: #ffffff; border-bottom: 1px solid var(--unav-grey-200); padding: var(--unav-spacing-md) 0; position: sticky; top: 0; z-index: var(--unav-zIndex-sticky);">
         <div class="container-lg d-flex justify-content-between align-items-center position-relative">
-            
             <div>
                 <a  href="indice.html" class="unav-boton unav-botonSecundario">
                     <i class="bi bi-arrow-left unav-botonIcono" aria-hidden="true"></i>
                     <span class="d-none d-md-inline">Volver al Índice</span>
                 </a>
-            </div>
-    
+            </div>    
             <span class="unav-font-primary-condensed unav-weight-regular unav-text-150 m-0 position-absolute start-50 translate-middle-x" style="color: var(--unav-rojo-500); line-height: 1;">
                 Design System UNAV
             </span>
-    
         </div>
     </nav>
 
-    <main class="container-lg unav-doc-container">
+    <main class="container-lg">
         
-        <header style="text-align: center; margin-bottom: var(--unav-spacing-md); padding-bottom: var(--unav-spacing-md);">
-            <h1 class="unav-font-primary unav-weight-medium unav-text-200 text-dark mb-3">Tarjetas Modulares</h1>
-            <p class="unav-font-primary unav-weight-regular unav-text-100 text-muted m-0">
-                Catálogo completo de la arquitectura unificada. Combina modificadores de layout (Flotante, Sólida, Media), alineación (Izquierda, Centro) y modos de color (Claro, Oscuro).
-            </p>
+        <header style="text-align: center; margin: var(--unav-spacing-xl) var(--unav-spacing-xl);">
+            <h1 class="unav-font-primary unav-weight-medium unav-text-200" style="color: var(--unav-black-900); margin-bottom: var(--unav-spacing-sm) !important;">Tarjetas</h1>
         </header>
 
-        <article class="unav-card unav-cardSolid" style="margin-bottom: var(--unav-spacing-3xl);">
-            <h2 class="unav-font-primary unav-weight-bold unav-text-150" style="color: var(--unav-rojo-500); border-bottom: 2px solid var(--unav-rojo-500); padding-bottom: var(--unav-spacing-sm); margin-bottom: var(--unav-spacing-lg);">Guía Técnica y Documentación Oficial</h2>
-            
-            <div class="row g-4">
-                <div class="col-md-6">
-                    <h3 class="unav-font-primary unav-weight-bold unav-text-125 mb-3" style="color: var(--unav-black-800);">1. Implementación OOCSS y Modificadores</h3>
-                    <ul class="unav-font-primary unav-weight-regular unav-text-100" style="color: var(--unav-grey-700); padding-left: var(--unav-spacing-md);">
-                        <li style="margin-bottom: var(--unav-spacing-xs);"><strong>Estructura OOCSS:</strong> El componente maestro se invoca con la base <code>.unav-card</code> y la piel <code>.unav-cardSolid</code>. Internamente se subdivide en <code>.unav-cardImageWrapper</code> (para medios) y <code>.unav-cardBody</code> (para contenido tipográfico).</li>
-                        <li style="margin-bottom: var(--unav-spacing-xs);"><strong>Altura Líquida:</strong> Es obligatorio el uso de la clase utilitaria <code>h-100</code> (height: 100%) sobre la tarjeta cuando se agrupan en el Grid de Bootstrap, forzando a que todas las tarjetas de una misma fila midan exactamente lo mismo.</li>
-                    </ul>
-        
-                    <h3 class="unav-font-primary unav-weight-bold unav-text-125 mb-3 mt-4" style="color: var(--unav-black-800);">2. Guía Técnica (JavaScript y CSS)</h3>
-                    <ul class="unav-font-primary unav-weight-regular unav-text-100" style="color: var(--unav-grey-700); padding-left: var(--unav-spacing-md);">
-                        <li style="margin-bottom: var(--unav-spacing-xs);"><strong>Interacción JS (Staggering):</strong> Un script autónomo basado en <code>IntersectionObserver</code> vigila las tarjetas con <code>.unav-efectoEntradaOculto</code>. Al entrar en el <em>viewport</em>, el JS detecta su posición dentro del contenedor padre (<code>.row</code>) y aplica la clase <code>.unav-efectoEntradaVisible</code> de forma secuencial (retraso de 100ms por índice) creando un efecto de entrada en cascada.</li>
-                        <li style="margin-bottom: var(--unav-spacing-xs);"><strong>CSS Motion:</strong> El CSS se encarga de resolver la interpolación mediante transformaciones de opacidad y traslación en el eje Y (<em>fade-up</em>), consumiendo los tokens de duración del sistema.</li>
-                    </ul>
-                </div>
-                
-                <div class="col-md-6 border-start-md ps-md-4">
-                    <h3 class="unav-font-primary unav-weight-bold unav-text-125 mb-3" style="color: var(--unav-black-800);">3. Accesibilidad (A11y)</h3>
-                    <ul class="unav-font-primary unav-weight-regular unav-text-100" style="color: var(--unav-grey-700); padding-left: var(--unav-spacing-md);">
-                        <li style="margin-bottom: var(--unav-spacing-xs);"><strong>Accesibilidad Táctil:</strong> En tarjetas enlazables enteras, se recomienda inyectar un pseudo-elemento <code>::after</code> sobre el enlace principal (CTA) que cubra toda la tarjeta, evitando duplicar enlaces semánticos y ruido en los lectores de pantalla.</li>
-                    </ul>
-        
-                    <h3 class="unav-font-primary unav-weight-bold unav-text-125 mb-3 mt-4" style="color: var(--unav-black-800);">4. UX, Integración de Átomos y Medios</h3>
-                    <ul class="unav-font-primary unav-weight-regular unav-text-100" style="color: var(--unav-grey-700); padding-left: var(--unav-spacing-md);">
-                        <li style="margin-bottom: var(--unav-spacing-xs);"><strong>Componentes Complejos:</strong> La tarjeta actúa como un "Organismo" que aloja múltiples átomos en su interior: Etiquetas (<code>.unav-tag</code>) para categorización y Botones Flecha (<code>.unav-botonFlecha</code>) como CTA secundario.</li>
-                        <li style="margin-bottom: var(--unav-spacing-xs);"><strong>Formato y Tamaño de Imágenes:</strong> El contenedor <code>.unav-cardImageWrapper</code> fuerza un <em>aspect-ratio</em> nativo de <code>16:9</code>. Las imágenes deben suministrarse siempre en formato <strong>WebP</strong>. Para tarjetas distribuidas en retículas de 3 columnas (<code>col-lg-4</code>), el ancho óptimo de exportación es de <strong>800px</strong>.</li>
-                    </ul>
-                </div>
-            </div>
-        </article>
-        
-        <section class="bg-white p-4 p-md-5 rounded shadow-sm border mb-5">
+        <section class="unav-card unav-cardSolid" style="margin-bottom: var(--unav-spacing-xl);">
             <h3 class="unav-sectionTitle unav-font-primary unav-weight-bold unav-text-150 mt-0 mb-4 border-bottom pb-2">1. Variante Flotante (Icono Superior)</h3>
             <p class="text-muted mb-4">Uso de <code>.unav-cardFloating</code>. Ideal para listados extensos de servicios o facultades.</p>
             
@@ -194,7 +152,7 @@
             </div>
         </section>
 
-        <section class="bg-white p-4 p-md-5 rounded shadow-sm border mb-5">
+        <section class="unav-card unav-cardSolid" style="margin-bottom: var(--unav-spacing-xl);">
             <h3 class="unav-sectionTitle unav-font-primary unav-weight-bold unav-text-150 mt-0 mb-4 border-bottom pb-2">2. Variante Sólida (Icono Interior)</h3>
             <p class="text-muted mb-4">Uso de <code>.unav-cardSolid</code>. Integra el icono dentro del cuerpo y permite fondos oscuros fluidos con <code>.unav-cardDark</code>.</p>
             
@@ -305,7 +263,7 @@
             </div>
         </section>
 
-        <section class="bg-white p-4 p-md-5 rounded shadow-sm border mb-5">
+        <section class="unav-card unav-cardSolid" style="margin-bottom: var(--unav-spacing-xl);">
             <h3 class="unav-sectionTitle unav-font-primary unav-weight-bold unav-text-150 mt-0 mb-4 border-bottom pb-2">3. Variante Multimedia</h3>
             <p class="text-muted mb-4">Uso de <code>.unav-cardMedia</code>. Soporta montajes tipo Overlay (texto sobre imagen) o Standard (texto bajo imagen).</p>
             

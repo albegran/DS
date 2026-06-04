@@ -15,82 +15,29 @@
         /* Estilos de contexto para la documentación */
         html { scroll-behavior: smooth; }
         body { background-color: var(--unav-grey-100); }
-        
-        .unav-doc-container { padding-top: var(--unav-spacing-3xl); padding-bottom: var(--unav-spacing-3xl); }
-        h2[id], h3[id], section[id] { scroll-margin-top: 6rem; }
     </style>
 </head>
-<body class="unav-font-primary unav-weight-regular unav-text-100">
+<body class="unav-font-primary unav-weight-regular unav-text-1125">
 
     <nav style="background-color: #ffffff; border-bottom: 1px solid var(--unav-grey-200); padding: var(--unav-spacing-md) 0; position: sticky; top: 0; z-index: var(--unav-zIndex-sticky);">
         <div class="container-lg d-flex justify-content-between align-items-center position-relative">
-            
             <div>
                 <a  href="indice.html" class="unav-boton unav-botonSecundario">
                     <i class="bi bi-arrow-left unav-botonIcono" aria-hidden="true"></i>
                     <span class="d-none d-md-inline">Volver al Índice</span>
                 </a>
-            </div>
-    
+            </div>    
             <span class="unav-font-primary-condensed unav-weight-regular unav-text-150 m-0 position-absolute start-50 translate-middle-x" style="color: var(--unav-rojo-500); line-height: 1;">
                 Design System UNAV
             </span>
-    
         </div>
     </nav>
 
-    
-        
-        
+    <header style="text-align: center; margin: var(--unav-spacing-xl) var(--unav-spacing-xl);">
+        <h1 class="unav-font-primary unav-weight-medium unav-text-200" style="color: var(--unav-black-900); margin-bottom: var(--unav-spacing-sm) !important;">Hero Vídeo</h1>
+    </header> 
 
-    <!-- Envoltorio general de documentación -->
     <main>
-        
-
-        <!-- Header Documentación (Encapsulado) -->
-        <div class="container-lg py-5">
-            <header style="text-align: center; margin-bottom: var(--unav-spacing-md); padding-bottom: var(--unav-spacing-md);">
-
-                <h1 class="unav-font-primary unav-weight-medium unav-text-200 text-dark mb-3">Hero Vídeo</h1>
-                <p class="unav-font-primary unav-weight-regular unav-text-100 text-muted m-0">
-                    Cabeceras inmensas (fullwidth) utilizando fondos dinámicos multimedia (YouTube o archivos locales).
-                </p>
-            </header>
-
-            <article class="unav-card unav-cardSolid" style="margin-bottom: var(--unav-spacing-3xl);">
-                <h2 class="unav-font-primary unav-weight-bold unav-text-150" style="color: var(--unav-rojo-500); border-bottom: 2px solid var(--unav-rojo-500); padding-bottom: var(--unav-spacing-sm); margin-bottom: var(--unav-spacing-lg);">Guía Técnica y Documentación Oficial</h2>
-                
-                <div class="row g-4">
-                    <div class="col-md-6">
-                        <h3 class="unav-font-primary unav-weight-bold unav-text-125 mb-3" style="color: var(--unav-black-800);">1. Implementación OOCSS y Estructura</h3>
-                        <ul class="unav-font-primary unav-weight-regular unav-text-100" style="color: var(--unav-grey-700); padding-left: var(--unav-spacing-md);">
-                            <li style="margin-bottom: var(--unav-spacing-xs);"><strong>Estructura Base:</strong> El componente se envuelve en <code>.unav-heroVideo</code>. Requiere el contenedor <code>.unav-videoStage</code> para el reproductor y <code>.unav-heroContent</code> para la capa tipográfica superior.</li>
-                            <li style="margin-bottom: var(--unav-spacing-xs);"><strong>Capa de Contraste:</strong> Obligatorio el uso de un <code>.unav-heroOverlay</code> con gradientes oscuros para asegurar que el contenido textual y los botones (CTAs) sean legibles sobre cualquier vídeo.</li>
-                        </ul>
-            
-                        <h3 class="unav-font-primary unav-weight-bold unav-text-125 mb-3 mt-4" style="color: var(--unav-black-800);">2. Guía Técnica (JavaScript y API)</h3>
-                        <ul class="unav-font-primary unav-weight-regular unav-text-100" style="color: var(--unav-grey-700); padding-left: var(--unav-spacing-md);">
-                            <li style="margin-bottom: var(--unav-spacing-xs);"><strong>Integración YouTube:</strong> El componente utiliza la API oficial de YouTube (<code>window.unavYtPlayers</code>) para instanciar reproductores. Esto permite controlar mediante botones del sistema (átomos) la reproducción/pausa y el muteo/activación de sonido.</li>
-                            <li style="margin-bottom: var(--unav-spacing-xs);"><strong>Eventos de Control:</strong> Los botones de control invocan funciones nativas del sistema (<code>unavToggleYoutubeSound</code>, etc.) que actualizan los iconos (BI Icons) en tiempo real según el estado del player.</li>
-                        </ul>
-                    </div>
-                    
-                    <div class="col-md-6 border-start-md ps-md-4">
-                        <h3 class="unav-font-primary unav-weight-bold unav-text-125 mb-3" style="color: var(--unav-black-800);">3. Accesibilidad (A11y) y Schemas (SEO)</h3>
-                        <ul class="unav-font-primary unav-weight-regular unav-text-100" style="color: var(--unav-grey-700); padding-left: var(--unav-spacing-md);">
-                            <li style="margin-bottom: var(--unav-spacing-xs);"><strong>A11y (Control de Audio):</strong> Es fundamental incluir botones de control con <code>aria-label</code> dinámicos (ej: "Activar sonido" / "Desactivar sonido") para informar al usuario de los cambios de estado.</li>
-                            
-                        </ul>
-            
-                        <h3 class="unav-font-primary unav-weight-bold unav-text-125 mb-3 mt-4" style="color: var(--unav-black-800);">4. UX, Uso de Átomos y Medios</h3>
-                        <ul class="unav-font-primary unav-weight-regular unav-text-100" style="color: var(--unav-grey-700); padding-left: var(--unav-spacing-md);">
-                            <li style="margin-bottom: var(--unav-spacing-xs);"><strong>Integración de Átomos:</strong> Los controles de reproducción y sonido reutilizan el átomo <code>.unav-botonSecundario .unav-botonIconOnly</code>, manteniendo el tamaño normativo de 32px para la zona de interacción táctil.</li>
-                            <li style="margin-bottom: var(--unav-spacing-xs);"><strong>Medios y Rendimiento:</strong> Aunque el vídeo se carga vía API, es vital asegurar que la red esté optimizada. El Hero Vídeo debe tener un comportamiento de carga diferida inicial hasta que el contenedor entra en el <em>viewport</em>.</li>
-                        </ul>
-                    </div>
-                </div>
-            </article>
-        </div>
 
         <div class="container-lg">
             <section class="bg-white p-4 rounded shadow-sm border mb-4">
