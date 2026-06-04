@@ -1,1 +1,10 @@
+/* ==========================================
+   00. ACCESIBILIDAD GLOBAL Y LECTORES DE PANTALLA
+   ========================================== */
+   *:focus-visible {
+    outline: 2px solid var(--unav-rojo-500) !important;
+    outline-offset: var(--unav-spacing-xs) !important;
+    border-radius: inherit; 
+}
+
 
