@@ -1,0 +1,471 @@
+@import url('https://fonts.googleapis.com/css2?family=DM+Serif+Text:ital@0;1&family=Playfair+Display:ital,wght@0,400;0,700;1,400;1,700&family=Roboto+Condensed:wght@400;700&family=Roboto+Slab:wght@400;700&family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;1,400&display=swap');
+
+:root {
+    /* ==========================================
+       SISTEMA CENTRAL DE CAPAS (z-index)
+       ========================================== */
+    --unav-zIndex-base: 1;
+    --unav-zIndex-controls: 10;
+    --unav-zIndex-dropdown: 100;
+    --unav-zIndex-sticky: 500;
+    --unav-zIndex-overlay: 1000;
+    --unav-zIndex-modal: 1050;
+
+
+    /* --- 1. PRIMARIOS --- */
+    
+    /* Rojo Unav */
+    --unav-rojo-100: #FFEbee; --unav-rojo-200: #FFCDD2; --unav-rojo-300: #EF9A9A;
+    --unav-rojo-400: #E57373; --unav-rojo-500: #eb0000; --unav-rojo-600: #D32F2F;
+    --unav-rojo-700: #C62828; --unav-rojo-800: #B71C1C; --unav-rojo-900: #7F0000;
+    
+    /* Black Primary */
+    --unav-black-100: #E6E6E6; --unav-black-200: #CCCCCC; --unav-black-300: #999999;
+    --unav-black-400: #666666; --unav-black-500: #000000; --unav-black-600: #333333;
+    --unav-black-700: #222222; --unav-black-800: #111111; --unav-black-900: #050505;
+    
+    /* Grey Primary */
+    --unav-grey-100: #F5F6F6; --unav-grey-200: #EBECEC; --unav-grey-300: #D1D3D4;
+    --unav-grey-400: #A8ABAC; --unav-grey-500: #6A6D6E; --unav-grey-600: #56595A;
+    --unav-grey-700: #424445; --unav-grey-800: #2E2F30; --unav-grey-900: #1A1B1B;
+
+    /* --- 2. SECUNDARIOS --- */
+    
+    /* Moss */
+    --unav-moss-100: #E6F4D7; --unav-moss-200: #CEEAB0; --unav-moss-300: #ACDC79;
+    --unav-moss-400: #86CB3C; --unav-moss-500: #669F2A; --unav-moss-600: #4F7A21;
+    --unav-moss-700: #3F621A; --unav-moss-800: #335015; --unav-moss-900: #2B4212;
+    
+    /* Green Light */
+    --unav-green-l-100: #E4FBCC; --unav-green-l-200: #D0F8AB; --unav-green-l-300: #A6EF67;
+    --unav-green-l-400: #85E13A; --unav-green-l-500: #66C61C; --unav-green-l-600: #4CA30D;
+    --unav-green-l-700: #3B7C0F; --unav-green-l-800: #326212; --unav-green-l-900: #2B5314;
+    
+    /* Green */
+    --unav-green-100: #D3F8DF; --unav-green-200: #AAF0C4; --unav-green-300: #73E2A3;
+    --unav-green-400: #3CCB7F; --unav-green-500: #16B364; --unav-green-600: #099250;
+    --unav-green-700: #087443; --unav-green-800: #095C37; --unav-green-900: #084C2E;
+    
+    /* Teal */
+    --unav-teal-100: #CCFBEF; --unav-teal-200: #99F6E0; --unav-teal-300: #5FE9D0;
+    --unav-teal-400: #2ED3B7; --unav-teal-500: #15B79E; --unav-teal-600: #0E9384;
+    --unav-teal-700: #107569; --unav-teal-800: #125D56; --unav-teal-900: #134E48;
+    
+    /* Cyan */
+    --unav-cyan-100: #CFF9FE; --unav-cyan-200: #A5F0FC; --unav-cyan-300: #67E3F9;
+    --unav-cyan-400: #22CCEE; --unav-cyan-500: #06AED4; --unav-cyan-600: #088AB2;
+    --unav-cyan-700: #0E7090; --unav-cyan-800: #155B75; --unav-cyan-900: #164C63;
+    
+    /* Blue Light */
+    --unav-blue-l-100: #E0F2FE; --unav-blue-l-200: #B9E6FE; --unav-blue-l-300: #7CD4FD;
+    --unav-blue-l-400: #36BFFA; --unav-blue-l-500: #0BA5EC; --unav-blue-l-600: #0086C9;
+    --unav-blue-l-700: #026AA2; --unav-blue-l-800: #065986; --unav-blue-l-900: #0B4A6F;
+    
+    /* Blue */
+    --unav-blue-100: #D1E9FF; --unav-blue-200: #B2DDFF; --unav-blue-300: #84CAFF;
+    --unav-blue-400: #53B1FD; --unav-blue-500: #2E90FA; --unav-blue-600: #1570EF;
+    --unav-blue-700: #175CD3; --unav-blue-800: #1849A9; --unav-blue-900: #194185;
+    
+    /* Blue Dark */
+    --unav-b-dark-100: #D1E0FF; --unav-b-dark-200: #B2CCFF; --unav-b-dark-300: #84ADFF;
+    --unav-b-dark-400: #528BFF; --unav-b-dark-500: #2970FF; --unav-b-dark-600: #155EEF;
+    --unav-b-dark-700: #004EEB; --unav-b-dark-800: #0040C1; --unav-b-dark-900: #00359E;
+    
+    /* Indigo */
+    --unav-indigo-100: #E0EAFF; --unav-indigo-200: #C7D7FE; --unav-indigo-300: #A4BCFD;
+    --unav-indigo-400: #8098F9; --unav-indigo-500: #6172F3; --unav-indigo-600: #444CE7;
+    --unav-indigo-700: #3538CD; --unav-indigo-800: #2D31A6; --unav-indigo-900: #2D3282;
+    
+    /* Violet */
+    --unav-violet-100: #ECE9FE; --unav-violet-200: #DDD6FE; --unav-violet-300: #C3B5FD;
+    --unav-violet-400: #A48AFB; --unav-violet-500: #875BF7; --unav-violet-600: #7839EE;
+    --unav-violet-700: #6927DA; --unav-violet-800: #5720B7; --unav-violet-900: #491C96;
+    
+    /* Purple */
+    --unav-purple-100: #EBE9FE; --unav-purple-200: #D9D6FE; --unav-purple-300: #BDB4FE;
+    --unav-purple-400: #9B8AFB; --unav-purple-500: #7A5AF8; --unav-purple-600: #6938EF;
+    --unav-purple-700: #5925DC; --unav-purple-800: #4A1FB8; --unav-purple-900: #3E1C96;
+    
+    /* Fuchsia */
+    --unav-fuchsia-100: #FBE8FF; --unav-fuchsia-200: #F6D0FE; --unav-fuchsia-300: #EEAAFD;
+    --unav-fuchsia-400: #E478FA; --unav-fuchsia-500: #D444F1; --unav-fuchsia-600: #BA24D5;
+    --unav-fuchsia-700: #9F1AB1; --unav-fuchsia-800: #821890; --unav-fuchsia-900: #6F1877;
+    
+    /* Pink */
+    --unav-pink-100: #FCE7F6; --unav-pink-200: #FCCEEE; --unav-pink-300: #FAA7E0;
+    --unav-pink-400: #F670C7; --unav-pink-500: #EE46BC; --unav-pink-600: #DD2590;
+    --unav-pink-700: #C11574; --unav-pink-800: #9E165F; --unav-pink-900: #851651;
+    
+    /* Rose */
+    --unav-rose-100: #FFE4E8; --unav-rose-200: #FECDD6; --unav-rose-300: #FEA3B4;
+    --unav-rose-400: #FD6F8E; --unav-rose-500: #F63D68; --unav-rose-600: #E31B54;
+    --unav-rose-700: #C01048; --unav-rose-800: #A11043; --unav-rose-900: #89123E;
+    
+    /* Orange Dark */
+    --unav-o-dark-100: #FFE6D5; --unav-o-dark-200: #FFD6AE; --unav-o-dark-300: #FF9C66;
+    --unav-o-dark-400: #FF692E; --unav-o-dark-500: #FF4405; --unav-o-dark-600: #E62E05;
+    --unav-o-dark-700: #BC1B06; --unav-o-dark-800: #97180C; --unav-o-dark-900: #771A0D;
+    
+    /* Orange */
+    --unav-orange-100: #FDEAD7; --unav-orange-200: #F9DBAF; --unav-orange-300: #F7B27A;
+    --unav-orange-400: #F38744; --unav-orange-500: #EF6820; --unav-orange-600: #E04F16;
+    --unav-orange-700: #B93815; --unav-orange-800: #932F19; --unav-orange-900: #772917;
+    
+    /* Yellow */
+    --unav-yellow-100: #FEF7C3; --unav-yellow-200: #FEEE95; --unav-yellow-300: #FDE272;
+    --unav-yellow-400: #FAC515; --unav-yellow-500: #EAAA08; --unav-yellow-600: #CA8504;
+    --unav-yellow-700: #A15C07; --unav-yellow-800: #854A0E; --unav-yellow-900: #713B12;
+
+
+    /* --- ESCALA DE ESPACIADO (Spacing) --- */
+    /* Basada en pasos de 4px para mantener el ritmo vertical */
+    --unav-spacing-0: 0;
+    --unav-spacing-1: 0.063rem;   /* 1px  - Separación mímina */    
+    --unav-spacing-xs: 0.25rem;  /* 4px  - Micro ajustes */
+    --unav-spacing-sm: 0.5rem;   /* 8px  - Gaps pequeños */
+    --unav-spacing-md: 1rem;     /* 16px - Padding estándar */
+    --unav-spacing-lg: 1.5rem;   /* 24px - Separación entre bloques */
+    --unav-spacing-xl: 2rem;     /* 32px - Márgenes de sección */
+    --unav-spacing-2xl: 3rem;    /* 48px */
+    --unav-spacing-3xl: 4rem;    /* 64px - Grandes aperturas */
+
+    /* --- ESCALA DE BORDES (Shape / Radii) --- */
+    /* Define la personalidad de los contenedores */
+    --unav-radius-none: 0;       /* Esquinas vivas (Estilo institucional duro) */
+    --unav-radius-sm: 2px;       /* Botones pequeños y checkboxes */
+    --unav-radius-md: 4px;       /* Tarjetas, inputs y migas */
+    --unav-radius-lg: 8px;       /* Modales y banners */
+    --unav-radius-xl: 16px;      /* Secciones envolventes */
+    --unav-radius-full: 9999px;  /* Píldoras y botones circulares */
+
+
+       /* --- FAMILIAS TIPOGRÁFICAS --- */
+       --unav-fontFamilyPrimary: 'Roboto', sans-serif;
+       --unav-fontFamilyPrimaryCondensed: 'Roboto Condensed', sans-serif;
+       --unav-fontFamilySecondaryPlayfair: 'Playfair Display', serif;
+       --unav-fontFamilySecondarySlab: 'Roboto Slab', serif;
+       --unav-fontFamilySecondaryDm: 'DM Serif Text', serif;
+   
+       /* --- PESOS (WEIGHTS) --- */
+       --unav-fontWeightThin: 100;
+       --unav-fontWeightLight: 300;
+       --unav-fontWeightRegular: 400;
+       --unav-fontWeightMedium: 500;
+       --unav-fontWeightBold: 700;
+   
+       /* --- TAMAÑOS (ESCALA MODULAR) --- */
+       /* Base: 16px (1rem) */
+       --unav-fontSize500: 5rem;      /* 80px - Hero Titles / Displays */
+       --unav-fontSize400: 4rem;      /* 64px - H1 Grandes */
+       --unav-fontSize300: 3rem;      /* 48px - H1 / H2 Destacados */
+       --unav-fontSize250: 2.5rem;    /* 40px - H2 */
+       --unav-fontSize200: 2rem;      /* 32px - H3 */
+       --unav-fontSize175: 1.75rem;   /* 28px - H4 */
+       --unav-fontSize150: 1.5rem;    /* 24px - H5 / Subtítulos grandes */
+       --unav-fontSize125: 1.25rem;   /* 20px - H6 / Destacados / Leads */
+       --unav-fontSize1125: 1.125rem; /* 18px - Body Base Texto */
+       --unav-fontSize100: 1rem;      /* 16px - Body Base */
+       --unav-fontSize085: 0.85rem;   /* 13.6px */
+       --unav-fontSize075: 0.75rem;   /* 12px - Small / Meta / Tags */
+   
+       /* --- INTERLINEADO (LINE HEIGHT) --- */
+       --unav-lineHeightNone: 1;      /* Para componentes, iconos, botones */
+       --unav-lineHeightTight: 1.1;   /* Para titulares enormes (300, 400, 500) */
+       --unav-lineHeightSnug: 1.25;   /* Para titulares medios (150, 175, 200, 250) */
+       --unav-lineHeightNormal: 1.5;  /* Base lectura (100, 1125, 125) */
+       --unav-lineHeightRelaxed: 1.75;/* Para párrafos muy largos (mejora legibilidad) */
+   
+       /* --- TRACKING (ESPACIADO DE LETRAS) --- */
+       --unav-trackingTighter: -0.04em;  /* Para titulares gigantes (400, 500) */
+       --unav-trackingTight: -0.02em;    /* Para titulares grandes (200, 250, 300) */
+       --unav-trackingNormal: 0em;       /* Body copy (100, 1125, 125) */
+       --unav-trackingWide: 0.05em;      /* Para subtítulos en mayúsculas / Tags */
+       --unav-trackingWidest: 0.1em;     /* Elementos muy pequeños que necesitan respirar */
+   
+
+
+    /* ==========================================
+       1. TOKENS TRANSVERSALES: MOTION Y FÍSICAS
+       ========================================== */
+        /* Duraciones (Timing) */
+        --unav-durationFast: 150ms;
+        --unav-durationNormal: 250ms;
+        --unav-durationSlow: 600ms;
+        --unav-durationSlower: 1200ms;
+        --unav-durationEpic: 20s; /* Para efectos Ken Burns continuos */
+    
+        /* Curvas de Aceleración (Easing) */
+        --unav-easingStandard: ease;
+        --unav-easingDecel: ease-out; /* Entradas suaves en pantalla */
+        --unav-easingAccel: ease-in; /* Salidas de pantalla */
+        --unav-easingElastic: cubic-bezier(0.165, 0.84, 0.44, 1); /* Rebote sutil */
+    
+        /* Transiciones Base Compuestas */
+        --unav-transitionBase: all var(--unav-durationNormal) var(--unav-easingStandard);
+        --unav-transitionTransform: transform var(--unav-durationSlow) var(--unav-easingElastic);
+    
+        /* Opacidades Interactivas */
+        --unav-opacityHoverSubtle: 0.85; /* Para Banners / Tarjetas */
+        --unav-opacityHoverIntense: 0.7; /* Para enlaces de texto */
+    
+        /* Transformaciones espaciales */
+        --unav-translateHoverElevation: -4px; /* Elevación en Z para hover */
+        --unav-translateEntranceY: 1.25rem; /* 20px de caída inicial para Stagger */
+    
+    /* ==========================================
+       2. TOKENS TRANSVERSALES: MICRO-TIPOGRAFÍA
+       ========================================== */
+        --unav-trackingMedium: 0.8px;
+        --unav-trackingWide: 1.2px;
+    
+    /* ==========================================
+       3. TOKENS TRANSVERSALES: ICONOGRAFÍA
+       ========================================== */
+        --unav-iconSizeSm: 1rem;       /* ~16px: Textos pequeños / Botón Secundario */
+        --unav-iconSizeMd: 1.25rem;    /* ~20px: Botón Primario / Navegación */
+        --unav-iconSizeLg: 1.5rem;     /* ~24px: UI genérica */
+        --unav-iconSizeXl: 2rem;       /* ~32px: Destacados / Feature Box */
+        --unav-iconStrokeWeight: 1.5px; /* Sincronizado con bordes de interfaz */
+    
+    /* ==========================================
+       4. TOKENS COMPONENTE: BOTONES
+       ========================================== */
+        /* Botones Primarios */
+        --unav-botonPaddingY: 0.8rem;
+        --unav-botonPaddingX: 2rem;
+        --unav-botonGap: 0.6rem;
+        --unav-botonFontSize: 0.875rem; /* ~14px */
+    
+        /* Botones Secundarios */
+        --unav-botonSecundarioPaddingY: 0.5rem;
+        --unav-botonSecundarioPaddingX: 1.2rem;
+        --unav-botonSecundarioFontSize: 0.8125rem; /* ~13px */
+        --unav-botonSecundarioRadius: 50px;
+        --unav-botonSecundarioBorderWidth: 1.5px;
+    
+    /* ==========================================
+       5. TOKENS COMPONENTE: ETIQUETAS (TAGS)
+       ========================================== */
+        --unav-tagPaddingY: 0.25rem;   /* 4px */
+        --unav-tagPaddingX: 0.625rem;  /* 10px */
+        --unav-tagBorderRadius: 0.375rem; /* 6px */
+        --unav-tagLetterSpacing: 0.3px;
+    
+    /* ==========================================
+       6. TOKENS COMPONENTE: SEPARADORES
+       ========================================== */
+       --unav-separadorMarginY: var(--unav-spacing-md);
+       --unav-separadorPaddingX: var(--unav-spacing-md);
+       --unav-separadorThicknessBase: 1px;
+       --unav-separadorColorBase: var(--unav-grey-300);
+    
+    /* ==========================================
+       7. TOKENS COMPONENTE: BLOQUE DE ENLACES
+       ========================================== */   
+        --unav-bloqueEnlacePadding: 0.9375rem; /* 15px */
+        --unav-bloqueEnlaceLineHeight: 1.35;
+        --unav-bloqueEnlaceGap: 2px;
+        --unav-bloqueEnlaceUnderlineThickness: 1px;
+        
+        /* Excepción cromática histórica */
+        --unav-bloqueEnlaceBg: #e3eaed; 
+        --unav-bloqueEnlaceText: var(--unav-black-800);
+        --unav-bloqueEnlaceHoverBg: #000000;
+        --unav-bloqueEnlaceHoverText: #ffffff;
+    
+    /* ==========================================
+       8. TOKENS COMPONENTE: LISTA DESCRIPTIVA
+       ========================================== */
+        --unav-descItemMarginBottom: 1.5rem;
+        --unav-descItemPaddingBottom: 1rem;
+        --unav-descTermGap: 0.5rem;
+        --unav-descTermMarginBottom: 0.5rem;
+        --unav-descDefinitionLineHeight: 1.5;
+        
+        /* Layout Colgante (Hanging) */
+        --unav-descHangingOffset: 2.5rem;
+        --unav-descBorderColorDefault: var(--unav-grey-200);
+    
+    /* ==========================================
+       9. TOKENS COMPONENTE: ACORDEONES
+       ========================================== */ 
+        --unav-accordionHeaderPaddingY: 1.25rem;
+        --unav-accordionHeaderPaddingX: 1.5rem;
+        --unav-accordionHeaderPaddingRight: 3.5rem;
+        --unav-accordionBorderColor: var(--unav-grey-200);
+        --unav-accordionIconSize: var(--unav-iconSizeLg);
+        --unav-accordionTitleGap: 0.75rem;
+        
+        /* Consumo de Motion Tokens */
+        --unav-accordionPanelTransition: max-height var(--unav-durationNormal) var(--unav-easingDecel);
+    
+    /* ==========================================
+       10. TOKENS COMPONENTE: TARJETAS (CARDS)
+       ========================================== */
+        --unav-cardBgBase: #ffffff;
+        --unav-cardBorderRadius: 0; /* Cambiar a 0.75rem/12px si queremos las esquinas redondeadas */
+        --unav-cardPaddingBase: 2rem;
+        --unav-cardPaddingFloating: 3.5rem 2rem 2.5rem 2rem;
+        
+        /* Elevaciones de tarjeta */
+        --unav-cardShadowBase: 0 4px 6px rgba(0, 0, 0, 0.05);
+        --unav-cardShadowHover: 0 15px 30px rgba(0, 0, 0, 0.12);
+        
+        /* Consumo de Motion Tokens */
+        --unav-cardTransitionAnim: transform var(--unav-durationNormal) var(--unav-easingStandard), 
+                                   box-shadow var(--unav-durationNormal) var(--unav-easingStandard),
+                                   opacity var(--unav-durationSlow) var(--unav-easingDecel);
+        
+        /* Dimensiones de Elementos Internos */
+        --unav-cardIconFloatingSize: 5rem; /* 80px */
+        --unav-cardIconInnerSize: 4rem; /* 64px */
+        --unav-cardImageHeight: 13.75rem; /* 220px */
+    
+    /* ==========================================
+       11. TOKENS COMPONENTE: FICHAS DE PERSONA
+       ========================================== */
+        --unav-personCardPadding: 1rem;
+        --unav-personCardGap: 1rem;
+        --unav-personCardRadius: 0; /* Cambiar a 0.5rem si queremos las esquinas redondeadas */
+        --unav-personCardShadow: var(--unav-cardShadowBase);
+        --unav-personImageRatio: 4 / 5;
+        --unav-personNameSize: var(--unav-fontSize150);
+        --unav-personRoleWeight: var(--unav-fontWeightBold);
+    
+    /* ==========================================
+       12. TOKENS COMPONENTE: EVENTOS
+       ========================================== */
+        --unav-eventCardPadding: 1.5rem;
+        --unav-eventCardRadius: 0rem; /* Cambiar a 0.25rem/4px si queremos las esquinas redondeadas */
+        --unav-eventImageHeight: 12.5rem; /* 200px */
+        --unav-eventCardBorder: var(--unav-grey-200);
+        --unav-eventDateColor: var(--unav-grey-500);
+        --unav-eventTimeColor: var(--unav-black-800);
+        --unav-eventTitleColor: var(--unav-black-800);
+        --unav-eventLocationBg: var(--unav-grey-100);
+        --unav-eventLocationText: var(--unav-grey-600);
+    
+    /* ==========================================
+       13. TOKENS COMPONENTE: NOTICIAS
+       ========================================== */   
+        --unav-newsImageRatio: 16 / 10;
+        --unav-newsDateColor: var(--unav-grey-600);
+        --unav-newsTitleColor: var(--unav-black-800);
+        --unav-newsTitleLineHeight: 1.3;
+    
+    /* ==========================================
+       14. TOKENS COMPONENTE: BANNERS
+       ========================================== */
+        --unav-bannerMinHeightFull: 25rem; /* 400px */
+        --unav-bannerMinHeightWide: 17.5rem; /* 280px */
+        --unav-bannerMinHeightMini: 17.5rem; /* 280px */
+    
+        --unav-bannerPaddingFull: 4rem 0;
+        --unav-bannerPaddingWide: 2.5rem 2rem;
+        --unav-bannerPaddingMini: 2.5rem 2rem;
+    
+        --unav-bannerOverlayGradient: linear-gradient(to right, rgba(0,0,0,0.8) 0%, rgba(0,0,0,0.2) 100%);
+        --unav-bannerOverlaySolid: rgba(0,0,0,0.5);
+    
+        --unav-bannerTitleLineHeight: 1.2;
+        --unav-bannerTextLineHeight: 1.4;
+        --unav-bannerTextMaxWidth: 90%;
+    
+    /* ==========================================
+       15. TOKENS COMPONENTE: HERO
+       ========================================== */
+        --unav-heroAspectDesktop: 21 / 9;
+        --unav-heroAspectMobile: 4 / 5;
+        --unav-heroOverlayLight: rgba(0, 0, 0, 0.4);
+        --unav-heroQuadrantPadding: 2.5rem; /* 40px */
+        --unav-heroBtnGap: 1.25rem; /* 20px */
+        --unav-heroZIndexVisuals: 1;
+        --unav-heroZIndexOverlay: 5;
+        --unav-heroZIndexControls: 10;
+    
+    /* ==========================================
+       16. TOKENS COMPONENTE: CIFRAS DINÁMICAS
+       ========================================== */
+        --unav-counterMinHeightBase: 21.875rem; /* 350px */
+        --unav-counterMinHeightSmall: 28.125rem; /* 450px */
+        --unav-counterOverlayColor: rgba(0, 0, 0, 0.75);
+        
+        /* Motion tokens asignados */
+        --unav-counterTransitionSpeed: var(--unav-durationSlower);
+        --unav-counterTranslateY: var(--unav-translateEntranceY);
+    
+    /* ==========================================
+       17. TOKENS COMPONENTE: MENÚ DE ANCLAS
+       ========================================== */
+        --unav-menuAnclasTopOffset: 7rem; /* Compensación para Navbar Sticky */
+        --unav-menuAnclasHeaderMargin: 1.5rem;
+        --unav-menuAnclasSubtitleColor: var(--unav-grey-600);
+        --unav-menuAnclasTitleColor: var(--unav-black-800);
+        --unav-menuAnclasTransition: var(--unav-transitionBase);
+    
+    /* ==========================================
+       18. TOKENS COMPONENTE: PANEL LATERAL
+       ========================================== */
+        --unav-panelWidth: 25rem; /* 400px */
+        --unav-panelZIndexOverlay: 1055;
+        --unav-panelZIndex: 1060;
+        --unav-panelOverlayBg: rgba(0, 0, 0, 0.6);
+        --unav-panelShadow: -10px 0 30px rgba(0,0,0,0.1);
+        
+        /* Botón Sticky */
+        --unav-panelStickyBtnPadding: 1.5rem 0.75rem; /* 24px 12px */
+        --unav-panelStickyBtnGap: 1rem;
+        --unav-panelStickyBtnMobileHeight: 3.75rem; /* 60px */
+    
+    /* ==========================================
+       19. TOKENS COMPONENTE: GALERÍA DE IMÁGENES
+       ========================================== */
+        --unav-gallerySidebarWidth: 18.75rem; /* 300px */
+        --unav-galleryMinHeight: 25rem; /* 400px */
+        --unav-galleryThumbGap: 0.25rem; /* 4px */
+        --unav-galleryThumbSizeMobile: 5.625rem; /* 90px */
+        
+        --unav-galleryControlSize: 2.25rem; /* 36px */
+        --unav-galleryControlIconSize: 1.25rem; /* 20px */
+        
+        --unav-galleryBg: var(--unav-black-800);
+        --unav-galleryStageBg: var(--unav-black-900);
+        --unav-gallerySidebarBg: #ffffff;
+        --unav-galleryBorderColor: var(--unav-grey-200);
+        --unav-galleryMetaBg: var(--unav-grey-100);
+        
+        --unav-galleryControlBg: rgba(255, 255, 255, 0.95);
+        --unav-galleryControlColor: var(--unav-black-800);
+        --unav-galleryControlHoverBg: var(--unav-rojo-600);
+        --unav-galleryControlHoverColor: #ffffff;
+    
+    /* ==========================================
+       20. TOKENS COMPONENTE: GALERÍA DE VÍDEOS
+       ========================================== */
+        --unav-videoSidebarWidth: 20rem; /* 320px */
+        --unav-videoThumbWidth: 6.875rem; /* 110px */
+        --unav-videoSidebarWidthTablet: 15rem; /* 240px */
+        --unav-videoThumbWidthTablet: 5rem; /* 80px */
+        --unav-videoItemWidthMobile: 10rem; /* 160px */
+        
+        --unav-videoGalleryBg: #ffffff;
+        --unav-videoGalleryStageBg: var(--unav-black-900);
+        --unav-videoGalleryBorderColor: var(--unav-grey-200);
+        --unav-videoGalleryHoverBg: var(--unav-grey-100);
+        --unav-videoGalleryActiveBg: var(--unav-rojo-100);
+        --unav-videoGalleryActiveBorder: var(--unav-rojo-600);
+    
+
+
+
+
+        
+    /* ==========================================
+       21. TOKENS ESTRUCTURALES: LAB DE MUESTRAS
+       ========================================== */
+        --unav-sampleRowPaddingY: 3rem;
+        --unav-sampleRowPaddingX: 2rem;
+        --unav-sectionLabelPaddingY: 1rem;
+        --unav-sectionLabelPaddingX: 2rem;    
+    
+}
