@@ -15,6 +15,25 @@
         /* Estilos de contexto para la documentación */
         html { scroll-behavior: smooth; }
         body { background-color: var(--unav-grey-100); }
+
+        /* ==============================================================
+           NUEVO: Transiciones dinámicas para la capa de opacidad (Overlay)
+           ============================================================== */
+        .unav-hero--darkOverlay::before,
+        .unav-hero--darkOverlay::after,
+        .unav-heroOverlay {
+            transition: opacity 1s ease, background-color 1s ease, background 1s ease !important;
+        }
+
+        .unav-hero.unav-fondoDesvanecido::before,
+        .unav-hero.unav-fondoDesvanecido::after {
+            opacity: 0 !important;
+        }
+
+        .unav-heroOverlay.unav-fondoDesvanecido {
+            background: transparent !important;
+            background-color: transparent !important;
+        }
     </style>
 </head>
 <body class="unav-font-primary unav-weight-regular unav-text-1125">
@@ -80,6 +99,7 @@
             </div>
         </section>
 
+
         <div class="container-lg">
             <section class="bg-white p-4 rounded shadow-sm border mb-4">
                 <h2 class="unav-font-primary unav-weight-bold unav-text-150 text-dark m-0">2. Vídeo YouTube (Autorreproducción), mantiene título y botones</h2>
@@ -89,7 +109,7 @@
         <section class="unav-hero unav-hero--darkOverlay mb-5">
             <div class="unav-heroVisuals">
                 <div class="unav-heroVideoYoutubeWrapper">
-                    <iframe src="https://www.youtube.com/embed/BFH1dAqjsKs?autoplay=1&mute=1&controls=1&loop=1&playlist=BFH1dAqjsKs&showinfo=0&rel=0&modestbranding=1&playsinline=1" frameborder="0" allow="autoplay; fullscreen; picture-in-picture" allowfullscreen></iframe>
+                    <iframe id="unavYtVideo2" src="https://www.youtube.com/embed/BFH1dAqjsKs?autoplay=1&mute=1&controls=0&loop=1&playlist=BFH1dAqjsKs&showinfo=0&rel=0&modestbranding=1&playsinline=1" frameborder="0" allow="autoplay; fullscreen; picture-in-picture" allowfullscreen></iframe>
                 </div>
                 
                 <div class="unav-heroOverlay">
@@ -106,8 +126,18 @@
                         </div>
                     </div>
                 </div>
+
+                <div class="unav-heroVideoControls">
+                    <button class="unav-boton unav-botonSecundario unav-botonIconOnly" style="--unav-botonColorSource: var(--unav-grey-100); --unav-botonTextHover: var(--unav-black-900);" id="unavBtnToggleYtVideo2" onclick="unavToggleYoutubePlayback('unavYtVideo2', 'unavBtnToggleYtVideo2')" aria-label="Pausar vídeo">
+                        <i class="bi bi-pause-fill unav-botonIcono"></i>
+                    </button>
+                    <button class="unav-boton unav-botonSecundario unav-botonIconOnly" style="--unav-botonColorSource: var(--unav-grey-100); --unav-botonTextHover: var(--unav-black-900);" id="unavBtnToggleYtSound2" onclick="unavToggleYoutubeSound('unavYtVideo2', 'unavBtnToggleYtSound2')" aria-label="Activar sonido">
+                        <i class="bi bi-volume-mute-fill unav-botonIcono"></i>
+                    </button>
+                </div>
             </div>
         </section>
+
 
         <div class="container-lg">
             <section class="bg-white p-4 rounded shadow-sm border mb-4">
@@ -146,6 +176,7 @@
             </div>
         </section>
 
+
         <div class="container-lg">
             <section class="bg-white p-4 rounded shadow-sm border mb-4">
                 <h2 class="unav-font-primary unav-weight-bold unav-text-150 text-dark m-0">4. Vídeo YouTube (Inicio Manual), mantiene título y botones</h2>
@@ -155,7 +186,7 @@
         <section class="unav-hero unav-hero--darkOverlay mb-5">
             <div class="unav-heroVisuals">
                 <div class="unav-heroVideoYoutubeWrapper">
-                    <iframe src="https://www.youtube.com/embed/BFH1dAqjsKs?autoplay=0&mute=1&controls=1&loop=1&playlist=BFH1dAqjsKs&showinfo=0&rel=0&modestbranding=1&playsinline=1" frameborder="0" allow="autoplay; fullscreen; picture-in-picture" allowfullscreen></iframe>
+                    <iframe id="unavYtVideo4" src="https://www.youtube.com/embed/BFH1dAqjsKs?autoplay=0&mute=1&controls=0&loop=1&playlist=BFH1dAqjsKs&showinfo=0&rel=0&modestbranding=1&playsinline=1" frameborder="0" allow="autoplay; fullscreen; picture-in-picture" allowfullscreen></iframe>
                 </div>
                 
                 <div class="unav-heroOverlay">
@@ -168,6 +199,15 @@
                             </a>
                         </div>
                     </div>
+                </div>
+
+                <div class="unav-heroVideoControls">
+                    <button class="unav-boton unav-botonSecundario unav-botonIconOnly" style="--unav-botonColorSource: var(--unav-grey-100); --unav-botonTextHover: var(--unav-black-900);" id="unavBtnToggleYtVideo4" onclick="unavToggleYoutubePlayback('unavYtVideo4', 'unavBtnToggleYtVideo4')" aria-label="Reproducir vídeo">
+                        <i class="bi bi-play-fill unav-botonIcono"></i>
+                    </button>
+                    <button class="unav-boton unav-botonSecundario unav-botonIconOnly" style="--unav-botonColorSource: var(--unav-grey-100); --unav-botonTextHover: var(--unav-black-900);" id="unavBtnToggleYtSound4" onclick="unavToggleYoutubeSound('unavYtVideo4', 'unavBtnToggleYtSound4')" aria-label="Activar sonido">
+                        <i class="bi bi-volume-mute-fill unav-botonIcono"></i>
+                    </button>
                 </div>
             </div>
         </section>
@@ -197,6 +237,7 @@
             </div>
         </section>
 
+
         <div class="container-lg">
             <section class="bg-white p-4 rounded shadow-sm border mb-4">
                 <h2 class="unav-font-primary unav-weight-bold unav-text-150 text-dark m-0">6. Sin texto, vídeo YouTube (Inicio Manual), no tiene título ni botones</h2>
@@ -206,7 +247,16 @@
         <section class="unav-hero unav-hero--darkOverlay mb-5">
             <div class="unav-heroVisuals">                
                 <div class="unav-heroVideoYoutubeWrapper">
-                    <iframe src="https://www.youtube.com/embed/BFH1dAqjsKs?autoplay=0&mute=1&controls=1&loop=1&playlist=BFH1dAqjsKs&showinfo=0&rel=0&modestbranding=1&playsinline=1" frameborder="0" allow="autoplay; fullscreen; picture-in-picture" allowfullscreen></iframe>
+                    <iframe id="unavYtVideo6" src="https://www.youtube.com/embed/BFH1dAqjsKs?autoplay=0&mute=1&controls=0&loop=1&playlist=BFH1dAqjsKs&showinfo=0&rel=0&modestbranding=1&playsinline=1" frameborder="0" allow="autoplay; fullscreen; picture-in-picture" allowfullscreen></iframe>
+                </div>
+
+                <div class="unav-heroVideoControls">
+                    <button class="unav-boton unav-botonSecundario unav-botonIconOnly" style="--unav-botonColorSource: var(--unav-grey-100); --unav-botonTextHover: var(--unav-black-900);" id="unavBtnToggleYtVideo6" onclick="unavToggleYoutubePlayback('unavYtVideo6', 'unavBtnToggleYtVideo6')" aria-label="Reproducir vídeo">
+                        <i class="bi bi-play-fill unav-botonIcono"></i>
+                    </button>
+                    <button class="unav-boton unav-botonSecundario unav-botonIconOnly" style="--unav-botonColorSource: var(--unav-grey-100); --unav-botonTextHover: var(--unav-black-900);" id="unavBtnToggleYtSound6" onclick="unavToggleYoutubeSound('unavYtVideo6', 'unavBtnToggleYtSound6')" aria-label="Activar sonido">
+                        <i class="bi bi-volume-mute-fill unav-botonIcono"></i>
+                    </button>
                 </div>
             </div>
         </section>
@@ -214,7 +264,7 @@
 
         <div class="container-lg">
             <section class="bg-white p-4 rounded shadow-sm border mb-4">
-                <h2 class="unav-font-primary unav-weight-bold unav-text-150 text-dark m-0">7. Desvanecer títulos, se mantienen solo los botones, vídeo MP4 Local (Autorreproducción)</h2>
+                <h2 class="unav-font-primary unav-weight-bold unav-text-150 text-dark m-0">7. Desvanecer títulos y overlay, se mantienen solo los botones, vídeo MP4 Local (Autorreproducción)</h2>
             </section>
         </div>
 
@@ -255,9 +305,10 @@
             </div>
         </section>
 
+
         <div class="container-lg">
             <section class="bg-white p-4 rounded shadow-sm border mb-4">
-                <h2 class="unav-font-primary unav-weight-bold unav-text-150 text-dark m-0">8. Desvanecer títulos, se mantienen solo los botones, vídeo YouTube (Autorreproducción)</h2>
+                <h2 class="unav-font-primary unav-weight-bold unav-text-150 text-dark m-0">8. Desvanecer títulos y overlay, se mantienen solo los botones, vídeo YouTube (Autorreproducción)</h2>
             </section>
         </div>
 
@@ -265,12 +316,12 @@
             <div class="unav-heroVisuals">
                 
                 <div class="unav-heroVideoYoutubeWrapper">
-                    <iframe id="unavYtVideo1" src="https://www.youtube.com/embed/BFH1dAqjsKs?autoplay=1&mute=1&controls=0&loop=1&playlist=BFH1dAqjsKs&showinfo=0&rel=0&modestbranding=1&enablejsapi=1&playsinline=1" frameborder="0" allow="autoplay; fullscreen; picture-in-picture" allowfullscreen></iframe>
+                    <iframe id="unavYtVideo8" src="https://www.youtube.com/embed/BFH1dAqjsKs?autoplay=1&mute=1&controls=0&loop=1&playlist=BFH1dAqjsKs&showinfo=0&rel=0&modestbranding=1&enablejsapi=1&playsinline=1" frameborder="0" allow="autoplay; fullscreen; picture-in-picture" allowfullscreen></iframe>
                 </div>
         
                 <div class="unav-heroOverlay">
                     <div class="unav-heroContent unav-heroContent--center">                        
-                        <div class="unav-heroHeaderTexts unav-efectoDesvanecerTextos" id="unavHeroTextsYt1">
+                        <div class="unav-heroHeaderTexts unav-efectoDesvanecerTextos" id="unavHeroTextsYt8">
                             <p class="unav-heroPretitle">Facultad de Derecho</p>
                             <h1 class="unav-heroTitle">Forjando la Justicia del Mañana</h1>
                         </div>
@@ -287,10 +338,10 @@
                 </div>
         
                 <div class="unav-heroVideoControls">
-                    <button class="unav-boton unav-botonSecundario unav-botonIconOnly" style="--unav-botonColorSource: var(--unav-grey-100); --unav-botonTextHover: var(--unav-black-900);" id="unavBtnToggleYtVideo1" onclick="unavToggleYoutubePlayback('unavYtVideo1', 'unavBtnToggleYtVideo1')" aria-label="Pausar vídeo">
+                    <button class="unav-boton unav-botonSecundario unav-botonIconOnly" style="--unav-botonColorSource: var(--unav-grey-100); --unav-botonTextHover: var(--unav-black-900);" id="unavBtnToggleYtVideo8" onclick="unavToggleYoutubePlayback('unavYtVideo8', 'unavBtnToggleYtVideo8')" aria-label="Pausar vídeo">
                         <i class="bi bi-pause-fill unav-botonIcono"></i>
                     </button>
-                    <button class="unav-boton unav-botonSecundario unav-botonIconOnly" style="--unav-botonColorSource: var(--unav-grey-100); --unav-botonTextHover: var(--unav-black-900);" id="unavBtnToggleYtSound1" onclick="unavToggleYoutubeSound('unavYtVideo1', 'unavBtnToggleYtSound1')" aria-label="Activar sonido">
+                    <button class="unav-boton unav-botonSecundario unav-botonIconOnly" style="--unav-botonColorSource: var(--unav-grey-100); --unav-botonTextHover: var(--unav-black-900);" id="unavBtnToggleYtSound8" onclick="unavToggleYoutubeSound('unavYtVideo8', 'unavBtnToggleYtSound8')" aria-label="Activar sonido">
                         <i class="bi bi-volume-mute-fill unav-botonIcono"></i>
                     </button>
                 </div>
@@ -299,11 +350,9 @@
         </section>
 
 
-
-
         <div class="container-lg">
             <section class="bg-white p-4 rounded shadow-sm border mb-4">
-                <h2 class="unav-font-primary unav-weight-bold unav-text-150 text-dark m-0">9. Desvanecer títulos, no tiene botones, vídeo MP4 Local y versión vertical para móviles (Autorreproducción)</h2>
+                <h2 class="unav-font-primary unav-weight-bold unav-text-150 text-dark m-0">9. Desvanecer títulos y overlay, no tiene botones, vídeo MP4 Local y versión vertical para móviles (Autorreproducción)</h2>
             </section>
         </div>
         
@@ -341,34 +390,41 @@
             </div>
         </section>
 
+
         <div class="container-lg">
             <section class="bg-white p-4 rounded shadow-sm border mb-4">
-                <h2 class="unav-font-primary unav-weight-bold unav-text-150 text-dark m-0">10. Desvanecer títulos, no tiene botones, vídeo de YouTube y versión vertical para móviles (Autorreproducción)</h2>
+                <h2 class="unav-font-primary unav-weight-bold unav-text-150 text-dark m-0">10. Desvanecer títulos y overlay, no tiene botones, vídeo de YouTube y versión vertical para móviles (Autorreproducción)</h2>
             </section>
         </div>
 
         <section class="unav-hero unav-hero--darkOverlay mb-5">
             <div class="unav-heroVisuals">               
-                <div class="unav-heroVideoYoutubeWrapper d-none d-md-block">
-                    <iframe src="https://www.youtube.com/embed/BFH1dAqjsKs?autoplay=1&mute=1&controls=0&loop=1&playlist=BFH1dAqjsKs&showinfo=0&rel=0&modestbranding=1&enablejsapi=1&playsinline=1" frameborder="0" allow="autoplay; fullscreen; picture-in-picture" allowfullscreen></iframe>
+                <div id="unavYtWrapper10">
+                    <div class="unav-heroVideoYoutubeWrapper d-none d-md-block">
+                        <iframe id="unavYtVideo10_desktop" src="https://www.youtube.com/embed/BFH1dAqjsKs?autoplay=1&mute=1&controls=0&loop=1&playlist=BFH1dAqjsKs&showinfo=0&rel=0&modestbranding=1&enablejsapi=1&playsinline=1" frameborder="0" allow="autoplay; fullscreen; picture-in-picture" allowfullscreen></iframe>
+                    </div>
+            
+                    <div class="unav-heroVideoYoutubeWrapper d-block d-md-none">
+                        <iframe id="unavYtVideo10_mobile" src="https://www.youtube.com/embed/8JI4knark24?autoplay=1&mute=1&controls=0&loop=1&playlist=8JI4knark24&showinfo=0&rel=0&modestbranding=1&enablejsapi=1&playsinline=1" frameborder="0" allow="autoplay; fullscreen; picture-in-picture" allowfullscreen></iframe>
+                    </div>                
                 </div>
-        
-                <div class="unav-heroVideoYoutubeWrapper d-block d-md-none">
-                    <iframe 
-                        src="https://www.youtube.com/embed/8JI4knark24?autoplay=1&mute=1&controls=0&loop=1&playlist=8JI4knark24&showinfo=0&rel=0&modestbranding=1&enablejsapi=1&playsinline=1" 
-                        frameborder="0" 
-                        allow="autoplay; fullscreen; picture-in-picture" 
-                        allowfullscreen>
-                    </iframe>
-                </div>                
-                
+
                 <div class="unav-heroOverlay">
                     <div class="unav-heroContent unav-heroContent--center">                        
-                        <div class="unav-heroHeaderTexts unav-efectoDesvanecerTextos" id="unavHeroTexts7">
+                        <div class="unav-heroHeaderTexts unav-efectoDesvanecerTextos" id="unavHeroTexts10">
                             <p class="unav-heroPretitle">Facultad de Derecho</p>
                             <h1 class="unav-heroTitle">Forjando la Justicia del Mañana</h1>
                         </div>
                     </div>
+                </div>
+
+                <div class="unav-heroVideoControls">
+                    <button class="unav-boton unav-botonSecundario unav-botonIconOnly" style="--unav-botonColorSource: var(--unav-grey-100); --unav-botonTextHover: var(--unav-black-900);" id="unavBtnToggleYtVideo10" onclick="unavToggleYoutubePlayback('unavYtWrapper10', 'unavBtnToggleYtVideo10')" aria-label="Pausar vídeo">
+                        <i class="bi bi-pause-fill unav-botonIcono"></i>
+                    </button>
+                    <button class="unav-boton unav-botonSecundario unav-botonIconOnly" style="--unav-botonColorSource: var(--unav-grey-100); --unav-botonTextHover: var(--unav-black-900);" id="unavBtnToggleYtSound10" onclick="unavToggleYoutubeSound('unavYtWrapper10', 'unavBtnToggleYtSound10')" aria-label="Activar sonido">
+                        <i class="bi bi-volume-mute-fill unav-botonIcono"></i>
+                    </button>
                 </div>
             </div>
         </section>
@@ -397,13 +453,14 @@
         // ==========================================
 
         document.addEventListener('DOMContentLoaded', () => {
-            
             // 1. SISTEMA AUTOMÁTICO PARA VÍDEOS LOCALES (MP4)
             const unavLocalVideos = document.querySelectorAll('.unav-heroVideoMp4');
             
             unavLocalVideos.forEach(video => {
+                const heroSection = video.closest('.unav-hero');
                 const heroVisuals = video.closest('.unav-heroVisuals');
                 const textsContainer = heroVisuals ? heroVisuals.querySelector('.unav-efectoDesvanecerTextos') : null;
+                const heroOverlay = heroVisuals ? heroVisuals.querySelector('.unav-heroOverlay') : null;
                 
                 if (textsContainer) {
                     let timeoutId = null;
@@ -413,6 +470,9 @@
                         timeoutId = setTimeout(() => {
                             if (!video.paused) {
                                 textsContainer.classList.add('unav-isHidden');
+                                // Activa la transparencia del overlay
+                                if (heroSection) heroSection.classList.add('unav-fondoDesvanecido');
+                                if (heroOverlay) heroOverlay.classList.add('unav-fondoDesvanecido');
                             }
                         }, 3000);
                     });
@@ -420,6 +480,9 @@
                     video.addEventListener('pause', () => {
                         if (timeoutId) clearTimeout(timeoutId);
                         textsContainer.classList.remove('unav-isHidden');
+                        // Retorna el oscurecimiento al pausar
+                        if (heroSection) heroSection.classList.remove('unav-fondoDesvanecido');
+                        if (heroOverlay) heroOverlay.classList.remove('unav-fondoDesvanecido');
                     });
                 }
             });
@@ -434,6 +497,8 @@
         const unavFirstScriptTag = document.getElementsByTagName('script')[0];
         unavFirstScriptTag.parentNode.insertBefore(unavYtScript, unavFirstScriptTag);
 
+        window.unavYtPlayers = {};
+
         window.onYouTubeIframeAPIReady = function() {
             const unavYoutubeIframes = document.querySelectorAll('.unav-heroVideoYoutubeWrapper iframe');
             
@@ -443,22 +508,30 @@
                     iframe.src += (iframe.src.includes('?') ? '&' : '?') + 'enablejsapi=1';
                 }
 
-                new YT.Player(iframe.id, {
+                window.unavYtPlayers[iframe.id] = new YT.Player(iframe.id, {
                     events: {
                         'onStateChange': function(event) {
+                            const heroSection = iframe.closest('.unav-hero');
                             const heroVisuals = iframe.closest('.unav-heroVisuals');
                             const textsContainer = heroVisuals ? heroVisuals.querySelector('.unav-efectoDesvanecerTextos') : null;
+                            const heroOverlay = heroVisuals ? heroVisuals.querySelector('.unav-heroOverlay') : null;
                             
                             if (textsContainer) {
                                 if (event.data === YT.PlayerState.PLAYING) {
                                     if (iframe.unavTimeoutId) clearTimeout(iframe.unavTimeoutId);
                                     iframe.unavTimeoutId = setTimeout(() => {
                                         textsContainer.classList.add('unav-isHidden');
+                                        // Activa la transparencia del overlay
+                                        if (heroSection) heroSection.classList.add('unav-fondoDesvanecido');
+                                        if (heroOverlay) heroOverlay.classList.add('unav-fondoDesvanecido');
                                     }, 3000);
                                 } 
                                 else if (event.data === YT.PlayerState.PAUSED || event.data === YT.PlayerState.ENDED) {
                                     if (iframe.unavTimeoutId) clearTimeout(iframe.unavTimeoutId);
                                     textsContainer.classList.remove('unav-isHidden');
+                                    // Retorna el oscurecimiento al pausar
+                                    if (heroSection) heroSection.classList.remove('unav-fondoDesvanecido');
+                                    if (heroOverlay) heroOverlay.classList.remove('unav-fondoDesvanecido');
                                 }
                             }
                         }
@@ -471,7 +544,6 @@
         // CONTROLES DE INTERACCIÓN MANUAL MP4 LOCAL
         // ==========================================
 
-        // REFACTOR: Ahora detecta si el elemento proporcionado es el propio <video> o un <div> envoltorio (para solventar el bug de iOS)
         function unavToggleVideoPlayback(elementId, buttonId) {
             let el = document.getElementById(elementId);
             const button = document.getElementById(buttonId);
@@ -495,7 +567,6 @@
             }
         }
 
-        // REFACTOR: Compatibilidad con múltiples etiquetas de vídeo para iOS
         function unavToggleVideoSound(elementId, buttonId) {
             let el = document.getElementById(elementId);
             const button = document.getElementById(buttonId);
@@ -522,50 +593,34 @@
         // ==========================================
         // CONTROLES DE INTERACCIÓN YOUTUBE
         // ==========================================
-        window.unavYtPlayers = {};
+        
+        function unavGetActiveYoutubeIframe(elementId) {
+            let el = document.getElementById(elementId);
+            if (!el) return null;
 
-        window.onYouTubeIframeAPIReady = function() {
-            const unavYoutubeIframes = document.querySelectorAll('.unav-heroVideoYoutubeWrapper iframe');
-            
-            unavYoutubeIframes.forEach((iframe, index) => {
-                if (!iframe.id) iframe.id = 'unav-yt-player-' + index;
-                if (!iframe.src.includes('enablejsapi=1')) {
-                    iframe.src += (iframe.src.includes('?') ? '&' : '?') + 'enablejsapi=1';
-                }
+            if (el.tagName.toLowerCase() === 'iframe') return el;
 
-                window.unavYtPlayers[iframe.id] = new YT.Player(iframe.id, {
-                    events: {
-                        'onStateChange': function(event) {
-                            const heroVisuals = iframe.closest('.unav-heroVisuals');
-                            const textsContainer = heroVisuals ? heroVisuals.querySelector('.unav-efectoDesvanecerTextos') : null;
-                            
-                            if (textsContainer) {
-                                if (event.data === YT.PlayerState.PLAYING) {
-                                    if (iframe.unavTimeoutId) clearTimeout(iframe.unavTimeoutId);
-                                    iframe.unavTimeoutId = setTimeout(() => {
-                                        textsContainer.classList.add('unav-isHidden');
-                                    }, 3000);
-                                } else if (event.data === YT.PlayerState.PAUSED || event.data === YT.PlayerState.ENDED) {
-                                    if (iframe.unavTimeoutId) clearTimeout(iframe.unavTimeoutId);
-                                    textsContainer.classList.remove('unav-isHidden');
-                                }
-                            }
-                        }
-                    }
-                });
-            });
-        };
+            const wrappers = el.querySelectorAll('.unav-heroVideoYoutubeWrapper');
+            if (wrappers.length > 0) {
+                 const visibleWrapper = Array.from(wrappers).find(w => getComputedStyle(w).display !== 'none') || wrappers[0];
+                 return visibleWrapper.querySelector('iframe');
+            }
+            return el.querySelector('iframe');
+        }
 
-        function unavToggleYoutubePlayback(iframeId, buttonId) {
-            const player = window.unavYtPlayers[iframeId];
+        function unavToggleYoutubePlayback(elementId, buttonId) {
+            const activeIframe = unavGetActiveYoutubeIframe(elementId);
             const button = document.getElementById(buttonId);
             
-            if (!player || !button) return;
+            if (!activeIframe || !button) return;
+
+            const player = window.unavYtPlayers[activeIframe.id];
+            if (!player) return;
 
             const state = player.getPlayerState();
             if (state === YT.PlayerState.PLAYING) {
                 player.pauseVideo();
-                button.innerHTML = '<i class="bi bi-pause-fill unav-botonIcono"></i>';
+                button.innerHTML = '<i class="bi bi-play-fill unav-botonIcono"></i>';
                 button.setAttribute('aria-label', 'Reproducir vídeo');
             } else {
                 player.playVideo();
@@ -574,11 +629,14 @@
             }
         }
 
-        function unavToggleYoutubeSound(iframeId, buttonId) {
-            const player = window.unavYtPlayers[iframeId];
+        function unavToggleYoutubeSound(elementId, buttonId) {
+            const activeIframe = unavGetActiveYoutubeIframe(elementId);
             const button = document.getElementById(buttonId);
             
-            if (!player || !button) return;
+            if (!activeIframe || !button) return;
+
+            const player = window.unavYtPlayers[activeIframe.id];
+            if (!player) return;
 
             if (player.isMuted()) {
                 player.unMute();
