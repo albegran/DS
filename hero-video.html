@@ -39,16 +39,16 @@
 <body class="unav-font-primary unav-weight-regular unav-text-1125">
 
     <nav style="background-color: #ffffff; border-bottom: 1px solid var(--unav-grey-200); padding: var(--unav-spacing-md) 0; position: sticky; top: 0; z-index: var(--unav-zIndex-sticky);">
-        <div class="container-lg d-flex justify-content-between align-items-center position-relative">
-            <div>
-                <a  href="indice.html" class="unav-boton unav-botonSecundario">
+        <div class="container-lg d-flex justify-content-between align-items-center position-relative">            
+            <div itemscope itemtype="https://schema.org/WebPageElement">
+                <a itemprop="url" href="indice.html" class="unav-boton unav-botonSecundario">
                     <i class="bi bi-arrow-left unav-botonIcono" aria-hidden="true"></i>
-                    <span class="d-none d-md-inline">Volver al Índice</span>
+                    <span class="d-none d-md-inline" itemprop="name">Volver al Índice</span>
                 </a>
             </div>    
-            <span class="unav-font-primary-condensed unav-weight-regular unav-text-150 m-0 position-absolute start-50 translate-middle-x" style="color: var(--unav-rojo-500); line-height: 1;">
+            <span class="unav-font-primary-condensed unav-weight-regular unav-text-150 m-0 position-absolute start-50 translate-middle-x text-nowrap" style="color: var(--unav-rojo-500); line-height: 1;">
                 Design System UNAV
-            </span>
+            </span>    
         </div>
     </nav>
 
@@ -365,7 +365,7 @@
                         Tu navegador no soporta la etiqueta de vídeo.
                     </video>
                     <video class="unav-heroVideoMp4 d-block d-md-none" autoplay loop muted playsinline webkit-playsinline>
-                        <source src="video-vertical-light.mp4" type="video/mp4">
+                        <source src="video-vertical-heavy.mp4" type="video/mp4">
                         Tu navegador no soporta la etiqueta de vídeo.
                     </video>
                 </div>
