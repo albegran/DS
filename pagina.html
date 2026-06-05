@@ -10,6 +10,26 @@
     <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@24,400,0,0" />
 
     <link rel="stylesheet" href="unav-styles.css">   
+
+<style type="text/css">
+    /* ==========================================================================
+   PREVENCIÓN DE DESBORDAMIENTO HORIZONTAL (MOBILE-FIRST)
+   ========================================================================== */
+html, 
+body {
+    /* Evita que cualquier elemento (filas mal cerradas o paneles laterales) 
+       genere un scroll horizontal en la ventana principal */
+    overflow-x: hidden;
+    
+    /* Asegura que el body nunca mida más del 100% de la pantalla disponible */
+    max-width: 100%;
+    
+    /* Previene comportamientos extraños del scroll elástico en navegadores móviles */
+    overscroll-behavior-x: none;
+}
+</style>
+
+
 </head>
 <body class="">
 
