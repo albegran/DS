@@ -20,19 +20,16 @@
 <body class="unav-font-primary unav-weight-regular unav-text-1125">
 
     <nav style="background-color: #ffffff; border-bottom: 1px solid var(--unav-grey-200); padding: var(--unav-spacing-md) 0; position: sticky; top: 0; z-index: var(--unav-zIndex-sticky);">
-        <div class="container-lg d-flex justify-content-between align-items-center position-relative">
-            
-            <div>
-                <a  href="indice.html" class="unav-boton unav-botonSecundario">
+        <div class="container-lg d-flex justify-content-between align-items-center position-relative">            
+            <div itemscope itemtype="https://schema.org/WebPageElement">
+                <a itemprop="url" href="indice.html" class="unav-boton unav-botonSecundario">
                     <i class="bi bi-arrow-left unav-botonIcono" aria-hidden="true"></i>
-                    <span class="d-none d-md-inline">Volver al Índice</span>
+                    <span class="d-none d-md-inline" itemprop="name">Volver al Índice</span>
                 </a>
-            </div>
-    
-            <span class="unav-font-primary-condensed unav-weight-regular unav-text-150 m-0 position-absolute start-50 translate-middle-x" style="color: var(--unav-rojo-500); line-height: 1;">
+            </div>    
+            <span class="unav-font-primary-condensed unav-weight-regular unav-text-150 m-0 position-absolute start-50 translate-middle-x text-nowrap" style="color: var(--unav-rojo-500); line-height: 1;">
                 Design System UNAV
-            </span>
-    
+            </span>    
         </div>
     </nav>
 
@@ -42,9 +39,10 @@
             <h1 class="unav-font-primary unav-weight-medium unav-text-200" style="color: var(--unav-black-900); margin-bottom: var(--unav-spacing-sm) !important;">Tipográfia</h1>
         </header>
 
-        <div class="unav-typography-guide">          
-            <h2 class="unav-font-primary unav-weight-bold unav-text-200" style="border-bottom: 1px solid var(--unav-grey-300); padding-bottom: var(--unav-spacing-sm); margin-bottom: var(--unav-spacing-xl); color: var(--unav-black-900);">1. Familia Principal: Roboto</h2>
-
+        <div class="unav-typography-guide">
+            <h2 class="unav-font-primary unav-weight-bold unav-text-150" style="padding-bottom: var(--unav-spacing-sm); margin-bottom: var(--unav-spacing-xl); color: var(--unav-black-900);">
+                1. Familia Principal: Roboto
+            </h2>
             <section id="roboto-thin-100" class="unav-card unav-cardSolid" style="margin-bottom: var(--unav-spacing-xl);">
                 <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: var(--unav-spacing-md);">
                     <h3 class="unav-font-primary unav-weight-bold unav-text-125 m-0" style="color: var(--unav-black-800);">Roboto - Thin</h3>
@@ -54,9 +52,9 @@
                     <table class="unav-table unav-tableBorders">
                         <thead><tr><th width="160">Métrica</th><th>Previsualización (Usando clases CSS)</th></tr></thead>
                         <tbody>                            
-                            <tr><td><span class="unav-font-primary unav-weight-bold unav-text-100 d-block" style="color: var(--unav-black-800);">2.5rem</span><span class="unav-text-075" style="color: var(--unav-grey-500);">40px</span></td><td><p class="unav-preview-text unav-font-primary unav-weight-thin unav-text-250">Tipografía Corporativa</p></td></tr>
-                            <tr><td><span class="unav-font-primary unav-weight-bold unav-text-100 d-block" style="color: var(--unav-black-800);">1.125rem</span><span class="unav-text-075" style="color: var(--unav-grey-500);">18px</span></td><td><p class="unav-preview-text unav-font-primary unav-weight-thin unav-text-1125">Tipografía Corporativa (Base)</p></td></tr>
-                            <tr><td><span class="unav-font-primary unav-weight-bold unav-text-100 d-block" style="color: var(--unav-black-800);">1rem</span><span class="unav-text-075" style="color: var(--unav-grey-500);">16px</span></td><td><p class="unav-preview-text unav-font-primary unav-weight-thin unav-text-100">Tipografía Corporativa</p></td></tr>                            
+                            <tr><td><span class="unav-font-primary unav-weight-bold unav-text-1125 d-block" style="color: var(--unav-black-800);">2.5rem</span><span class="unav-text-075" style="color: var(--unav-grey-500);">40px</span></td><td><p class="unav-preview-text unav-font-primary unav-weight-thin unav-text-250">Tipografía Corporativa</p></td></tr>
+                            <tr><td><span class="unav-font-primary unav-weight-bold unav-text-1125 d-block" style="color: var(--unav-black-800);">1.125rem</span><span class="unav-text-075" style="color: var(--unav-grey-500);">18px</span></td><td><p class="unav-preview-text unav-font-primary unav-weight-thin unav-text-1125">Tipografía Corporativa (Base)</p></td></tr>
+                            <tr><td><span class="unav-font-primary unav-weight-bold unav-text-1125 d-block" style="color: var(--unav-black-800);">1rem</span><span class="unav-text-075" style="color: var(--unav-grey-500);">16px</span></td><td><p class="unav-preview-text unav-font-primary unav-weight-thin unav-text-1125">Tipografía Corporativa</p></td></tr>                            
                         </tbody>
                     </table>
                 </div>
@@ -71,9 +69,9 @@
                     <table class="unav-table unav-tableBorders">
                         <thead><tr><th width="160">Métrica</th><th>Previsualización (Usando clases CSS)</th></tr></thead>
                         <tbody>
-                            <tr><td><span class="unav-font-primary unav-weight-bold unav-text-100 d-block" style="color: var(--unav-black-800);">2.5rem</span><span class="unav-text-075" style="color: var(--unav-grey-500);">40px</span></td><td><p class="unav-preview-text unav-font-primary unav-weight-light unav-text-250">Tipografía Corporativa</p></td></tr>
-                            <tr><td><span class="unav-font-primary unav-weight-bold unav-text-100 d-block" style="color: var(--unav-black-800);">1.125rem</span><span class="unav-text-075" style="color: var(--unav-grey-500);">18px</span></td><td><p class="unav-preview-text unav-font-primary unav-weight-light unav-text-1125">Tipografía Corporativa (Base)</p></td></tr>
-                            <tr><td><span class="unav-font-primary unav-weight-bold unav-text-100 d-block" style="color: var(--unav-black-800);">1rem</span><span class="unav-text-075" style="color: var(--unav-grey-500);">16px</span></td><td><p class="unav-preview-text unav-font-primary unav-weight-light unav-text-100">Tipografía Corporativa</p></td></tr>
+                            <tr><td><span class="unav-font-primary unav-weight-bold unav-text-1125 d-block" style="color: var(--unav-black-800);">2.5rem</span><span class="unav-text-075" style="color: var(--unav-grey-500);">40px</span></td><td><p class="unav-preview-text unav-font-primary unav-weight-light unav-text-250">Tipografía Corporativa</p></td></tr>
+                            <tr><td><span class="unav-font-primary unav-weight-bold unav-text-1125 d-block" style="color: var(--unav-black-800);">1.125rem</span><span class="unav-text-075" style="color: var(--unav-grey-500);">18px</span></td><td><p class="unav-preview-text unav-font-primary unav-weight-light unav-text-1125">Tipografía Corporativa (Base)</p></td></tr>
+                            <tr><td><span class="unav-font-primary unav-weight-bold unav-text-1125 d-block" style="color: var(--unav-black-800);">1rem</span><span class="unav-text-075" style="color: var(--unav-grey-500);">16px</span></td><td><p class="unav-preview-text unav-font-primary unav-weight-light unav-text-1125">Tipografía Corporativa</p></td></tr>
                         </tbody>
                     </table>
                 </div>
@@ -88,18 +86,18 @@
                     <table class="unav-table unav-tableBorders">
                         <thead><tr><th width="160">Métrica</th><th>Previsualización (Usando clases CSS)</th></tr></thead>
                         <tbody>
-                            <tr><td><span class="unav-font-primary unav-weight-bold unav-text-100 d-block" style="color: var(--unav-black-800);">5rem</span><span class="unav-text-075" style="color: var(--unav-grey-500);">80px</span></td><td><p class="unav-preview-text unav-font-primary unav-weight-regular unav-text-500">Tipografía Corporativa</p></td></tr>
-                            <tr><td><span class="unav-font-primary unav-weight-bold unav-text-100 d-block" style="color: var(--unav-black-800);">4rem</span><span class="unav-text-075" style="color: var(--unav-grey-500);">64px</span></td><td><p class="unav-preview-text unav-font-primary unav-weight-regular unav-text-400">Tipografía Corporativa</p></td></tr>
-                            <tr><td><span class="unav-font-primary unav-weight-bold unav-text-100 d-block" style="color: var(--unav-black-800);">3rem</span><span class="unav-text-075" style="color: var(--unav-grey-500);">48px</span></td><td><p class="unav-preview-text unav-font-primary unav-weight-regular unav-text-300">Tipografía Corporativa</p></td></tr>
-                            <tr><td><span class="unav-font-primary unav-weight-bold unav-text-100 d-block" style="color: var(--unav-black-800);">2.5rem</span><span class="unav-text-075" style="color: var(--unav-grey-500);">40px</span></td><td><p class="unav-preview-text unav-font-primary unav-weight-regular unav-text-250">Tipografía Corporativa</p></td></tr>                            
-                            <tr><td><span class="unav-font-primary unav-weight-bold unav-text-100 d-block" style="color: var(--unav-black-800);">2rem</span><span class="unav-text-075" style="color: var(--unav-grey-500);">32px</span></td><td><p class="unav-preview-text unav-font-primary unav-weight-regular unav-text-200">Tipografía Corporativa</p></td></tr>                            
-                            <tr><td><span class="unav-font-primary unav-weight-bold unav-text-100 d-block" style="color: var(--unav-black-800);">1.75rem</span><span class="unav-text-075" style="color: var(--unav-grey-500);">28px</span></td><td><p class="unav-preview-text unav-font-primary unav-weight-regular unav-text-175">Tipografía Corporativa</p></td></tr>
-                            <tr><td><span class="unav-font-primary unav-weight-bold unav-text-100 d-block" style="color: var(--unav-black-800);">1.5rem</span><span class="unav-text-075" style="color: var(--unav-grey-500);">24px</span></td><td><p class="unav-preview-text unav-font-primary unav-weight-regular unav-text-150">Tipografía Corporativa</p></td></tr>
-                            <tr><td><span class="unav-font-primary unav-weight-bold unav-text-100 d-block" style="color: var(--unav-black-800);">1.25rem</span><span class="unav-text-075" style="color: var(--unav-grey-500);">20px</span></td><td><p class="unav-preview-text unav-font-primary unav-weight-regular unav-text-125">Tipografía Corporativa</p></td></tr>
-                            <tr><td><span class="unav-font-primary unav-weight-bold unav-text-100 d-block" style="color: var(--unav-black-800);">1.125rem</span><span class="unav-text-075" style="color: var(--unav-grey-500);">18px</span></td><td><p class="unav-preview-text unav-font-primary unav-weight-regular unav-text-1125">Tipografía Corporativa (Base)</p></td></tr>
-                            <tr><td><span class="unav-font-primary unav-weight-bold unav-text-100 d-block" style="color: var(--unav-black-800);">1rem</span><span class="unav-text-075" style="color: var(--unav-grey-500);">16px</span></td><td><p class="unav-preview-text unav-font-primary unav-weight-regular unav-text-100">Tipografía Corporativa</p></td></tr>
-                            <tr><td><span class="unav-font-primary unav-weight-bold unav-text-100 d-block" style="color: var(--unav-black-800);">0.85rem</span><span class="unav-text-075" style="color: var(--unav-grey-500);">13.6px</span></td><td><p class="unav-preview-text unav-font-primary unav-weight-regular unav-text-085">Tipografía Corporativa</p></td></tr>
-                            <tr><td><span class="unav-font-primary unav-weight-bold unav-text-100 d-block" style="color: var(--unav-black-800);">0.75rem</span><span class="unav-text-075" style="color: var(--unav-grey-500);">12px</span></td><td><p class="unav-preview-text unav-font-primary unav-weight-regular unav-text-075">Tipografía Corporativa</p></td></tr>                            
+                            <tr><td><span class="unav-font-primary unav-weight-bold unav-text-1125 d-block" style="color: var(--unav-black-800);">5rem</span><span class="unav-text-075" style="color: var(--unav-grey-500);">80px</span></td><td><p class="unav-preview-text unav-font-primary unav-weight-regular unav-text-500">Tipografía Corporativa</p></td></tr>
+                            <tr><td><span class="unav-font-primary unav-weight-bold unav-text-1125 d-block" style="color: var(--unav-black-800);">4rem</span><span class="unav-text-075" style="color: var(--unav-grey-500);">64px</span></td><td><p class="unav-preview-text unav-font-primary unav-weight-regular unav-text-400">Tipografía Corporativa</p></td></tr>
+                            <tr><td><span class="unav-font-primary unav-weight-bold unav-text-1125 d-block" style="color: var(--unav-black-800);">3rem</span><span class="unav-text-075" style="color: var(--unav-grey-500);">48px</span></td><td><p class="unav-preview-text unav-font-primary unav-weight-regular unav-text-300">Tipografía Corporativa</p></td></tr>
+                            <tr><td><span class="unav-font-primary unav-weight-bold unav-text-1125 d-block" style="color: var(--unav-black-800);">2.5rem</span><span class="unav-text-075" style="color: var(--unav-grey-500);">40px</span></td><td><p class="unav-preview-text unav-font-primary unav-weight-regular unav-text-250">Tipografía Corporativa</p></td></tr>                            
+                            <tr><td><span class="unav-font-primary unav-weight-bold unav-text-1125 d-block" style="color: var(--unav-black-800);">2rem</span><span class="unav-text-075" style="color: var(--unav-grey-500);">32px</span></td><td><p class="unav-preview-text unav-font-primary unav-weight-regular unav-text-200">Tipografía Corporativa</p></td></tr>                            
+                            <tr><td><span class="unav-font-primary unav-weight-bold unav-text-1125 d-block" style="color: var(--unav-black-800);">1.75rem</span><span class="unav-text-075" style="color: var(--unav-grey-500);">28px</span></td><td><p class="unav-preview-text unav-font-primary unav-weight-regular unav-text-175">Tipografía Corporativa</p></td></tr>
+                            <tr><td><span class="unav-font-primary unav-weight-bold unav-text-1125 d-block" style="color: var(--unav-black-800);">1.5rem</span><span class="unav-text-075" style="color: var(--unav-grey-500);">24px</span></td><td><p class="unav-preview-text unav-font-primary unav-weight-regular unav-text-150">Tipografía Corporativa</p></td></tr>
+                            <tr><td><span class="unav-font-primary unav-weight-bold unav-text-1125 d-block" style="color: var(--unav-black-800);">1.25rem</span><span class="unav-text-075" style="color: var(--unav-grey-500);">20px</span></td><td><p class="unav-preview-text unav-font-primary unav-weight-regular unav-text-125">Tipografía Corporativa</p></td></tr>
+                            <tr><td><span class="unav-font-primary unav-weight-bold unav-text-1125 d-block" style="color: var(--unav-black-800);">1.125rem</span><span class="unav-text-075" style="color: var(--unav-grey-500);">18px</span></td><td><p class="unav-preview-text unav-font-primary unav-weight-regular unav-text-1125">Tipografía Corporativa (Base)</p></td></tr>
+                            <tr><td><span class="unav-font-primary unav-weight-bold unav-text-1125 d-block" style="color: var(--unav-black-800);">1rem</span><span class="unav-text-075" style="color: var(--unav-grey-500);">16px</span></td><td><p class="unav-preview-text unav-font-primary unav-weight-regular unav-text-1125">Tipografía Corporativa</p></td></tr>
+                            <tr><td><span class="unav-font-primary unav-weight-bold unav-text-1125 d-block" style="color: var(--unav-black-800);">0.85rem</span><span class="unav-text-075" style="color: var(--unav-grey-500);">13.6px</span></td><td><p class="unav-preview-text unav-font-primary unav-weight-regular unav-text-085">Tipografía Corporativa</p></td></tr>
+                            <tr><td><span class="unav-font-primary unav-weight-bold unav-text-1125 d-block" style="color: var(--unav-black-800);">0.75rem</span><span class="unav-text-075" style="color: var(--unav-grey-500);">12px</span></td><td><p class="unav-preview-text unav-font-primary unav-weight-regular unav-text-075">Tipografía Corporativa</p></td></tr>                            
                         </tbody>
                     </table>
                 </div>
@@ -114,9 +112,9 @@
                     <table class="unav-table unav-tableBorders">
                         <thead><tr><th width="160">Métrica</th><th>Previsualización (Usando clases CSS)</th></tr></thead>
                         <tbody>
-                            <tr><td><span class="unav-font-primary unav-weight-bold unav-text-100 d-block" style="color: var(--unav-black-800);">2.5rem</span><span class="unav-text-075" style="color: var(--unav-grey-500);">40px</span></td><td><p class="unav-preview-text unav-font-primary unav-weight-medium unav-text-250">Tipografía Corporativa</p></td></tr>
-                            <tr><td><span class="unav-font-primary unav-weight-bold unav-text-100 d-block" style="color: var(--unav-black-800);">1.125rem</span><span class="unav-text-075" style="color: var(--unav-grey-500);">18px</span></td><td><p class="unav-preview-text unav-font-primary unav-weight-medium unav-text-1125">Tipografía Corporativa (Base)</p></td></tr>
-                            <tr><td><span class="unav-font-primary unav-weight-bold unav-text-100 d-block" style="color: var(--unav-black-800);">1rem</span><span class="unav-text-075" style="color: var(--unav-grey-500);">16px</span></td><td><p class="unav-preview-text unav-font-primary unav-weight-medium unav-text-100">Tipografía Corporativa</p></td></tr>
+                            <tr><td><span class="unav-font-primary unav-weight-bold unav-text-1125 d-block" style="color: var(--unav-black-800);">2.5rem</span><span class="unav-text-075" style="color: var(--unav-grey-500);">40px</span></td><td><p class="unav-preview-text unav-font-primary unav-weight-medium unav-text-250">Tipografía Corporativa</p></td></tr>
+                            <tr><td><span class="unav-font-primary unav-weight-bold unav-text-1125 d-block" style="color: var(--unav-black-800);">1.125rem</span><span class="unav-text-075" style="color: var(--unav-grey-500);">18px</span></td><td><p class="unav-preview-text unav-font-primary unav-weight-medium unav-text-1125">Tipografía Corporativa (Base)</p></td></tr>
+                            <tr><td><span class="unav-font-primary unav-weight-bold unav-text-1125 d-block" style="color: var(--unav-black-800);">1rem</span><span class="unav-text-075" style="color: var(--unav-grey-500);">16px</span></td><td><p class="unav-preview-text unav-font-primary unav-weight-medium unav-text-1125">Tipografía Corporativa</p></td></tr>
                         </tbody>
                     </table>
                 </div>
@@ -131,9 +129,9 @@
                     <table class="unav-table unav-tableBorders">
                         <thead><tr><th width="160">Métrica</th><th>Previsualización (Usando clases CSS)</th></tr></thead>
                         <tbody>
-                            <tr><td><span class="unav-font-primary unav-weight-bold unav-text-100 d-block" style="color: var(--unav-black-800);">2.5rem</span><span class="unav-text-075" style="color: var(--unav-grey-500);">40px</span></td><td><p class="unav-preview-text unav-font-primary unav-weight-bold unav-text-250">Tipografía Corporativa</p></td></tr>
-                            <tr><td><span class="unav-font-primary unav-weight-bold unav-text-100 d-block" style="color: var(--unav-black-800);">1.125rem</span><span class="unav-text-075" style="color: var(--unav-grey-500);">18px</span></td><td><p class="unav-preview-text unav-font-primary unav-weight-bold unav-text-1125">Tipografía Corporativa (Base)</p></td></tr>
-                            <tr><td><span class="unav-font-primary unav-weight-bold unav-text-100 d-block" style="color: var(--unav-black-800);">1rem</span><span class="unav-text-075" style="color: var(--unav-grey-500);">16px</span></td><td><p class="unav-preview-text unav-font-primary unav-weight-bold unav-text-100">Tipografía Corporativa</p></td></tr>
+                            <tr><td><span class="unav-font-primary unav-weight-bold unav-text-1125 d-block" style="color: var(--unav-black-800);">2.5rem</span><span class="unav-text-075" style="color: var(--unav-grey-500);">40px</span></td><td><p class="unav-preview-text unav-font-primary unav-weight-bold unav-text-250">Tipografía Corporativa</p></td></tr>
+                            <tr><td><span class="unav-font-primary unav-weight-bold unav-text-1125 d-block" style="color: var(--unav-black-800);">1.125rem</span><span class="unav-text-075" style="color: var(--unav-grey-500);">18px</span></td><td><p class="unav-preview-text unav-font-primary unav-weight-bold unav-text-1125">Tipografía Corporativa (Base)</p></td></tr>
+                            <tr><td><span class="unav-font-primary unav-weight-bold unav-text-1125 d-block" style="color: var(--unav-black-800);">1rem</span><span class="unav-text-075" style="color: var(--unav-grey-500);">16px</span></td><td><p class="unav-preview-text unav-font-primary unav-weight-bold unav-text-1125">Tipografía Corporativa</p></td></tr>
                         </tbody>
                     </table>
                 </div>
@@ -148,15 +146,17 @@
                     <table class="unav-table unav-tableBorders">
                         <thead><tr><th width="160">Métrica</th><th>Previsualización (Usando clases CSS)</th></tr></thead>
                         <tbody>
-                            <tr><td><span class="unav-font-primary unav-weight-bold unav-text-100 d-block" style="color: var(--unav-black-800);">2.5rem</span><span class="unav-text-075" style="color: var(--unav-grey-500);">40px</span></td><td><p class="unav-preview-text unav-font-primary-condensed unav-weight-bold unav-text-250">Tipografía Corporativa</p></td></tr>
-                            <tr><td><span class="unav-font-primary unav-weight-bold unav-text-100 d-block" style="color: var(--unav-black-800);">1.125rem</span><span class="unav-text-075" style="color: var(--unav-grey-500);">18px</span></td><td><p class="unav-preview-text unav-font-primary-condensed unav-weight-bold unav-text-1125">Tipografía Corporativa (Base)</p></td></tr>
-                            <tr><td><span class="unav-font-primary unav-weight-bold unav-text-100 d-block" style="color: var(--unav-black-800);">1rem</span><span class="unav-text-075" style="color: var(--unav-grey-500);">16px</span></td><td><p class="unav-preview-text unav-font-primary-condensed unav-weight-bold unav-text-100">Tipografía Corporativa</p></td></tr>
+                            <tr><td><span class="unav-font-primary unav-weight-bold unav-text-1125 d-block" style="color: var(--unav-black-800);">2.5rem</span><span class="unav-text-075" style="color: var(--unav-grey-500);">40px</span></td><td><p class="unav-preview-text unav-font-primary-condensed unav-weight-bold unav-text-250">Tipografía Corporativa</p></td></tr>
+                            <tr><td><span class="unav-font-primary unav-weight-bold unav-text-1125 d-block" style="color: var(--unav-black-800);">1.125rem</span><span class="unav-text-075" style="color: var(--unav-grey-500);">18px</span></td><td><p class="unav-preview-text unav-font-primary-condensed unav-weight-bold unav-text-1125">Tipografía Corporativa (Base)</p></td></tr>
+                            <tr><td><span class="unav-font-primary unav-weight-bold unav-text-1125 d-block" style="color: var(--unav-black-800);">1rem</span><span class="unav-text-075" style="color: var(--unav-grey-500);">16px</span></td><td><p class="unav-preview-text unav-font-primary-condensed unav-weight-bold unav-text-1125">Tipografía Corporativa</p></td></tr>
                         </tbody>
                     </table>
                 </div>
             </section>
 
-            <h2 class="unav-font-primary unav-weight-bold unav-text-200" style="border-bottom: 1px solid var(--unav-grey-300); padding-bottom: var(--unav-spacing-sm); margin-bottom: var(--unav-spacing-xl); color: var(--unav-black-900);">2. Familias Secundarias / Editoriales</h2>
+            <h2 class="unav-font-primary unav-weight-bold unav-text-150" style="padding-bottom: var(--unav-spacing-sm); margin-bottom: var(--unav-spacing-xl); color: var(--unav-black-900);">
+                2. Familias Secundarias / Editoriales
+            </h2>
 
             <section id="playfair-regular-400" class="unav-card unav-cardSolid" style="margin-bottom: var(--unav-spacing-xl);">
                 <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: var(--unav-spacing-md);">
@@ -167,9 +167,9 @@
                     <table class="unav-table unav-tableBorders">
                         <thead><tr><th width="160">Métrica</th><th>Previsualización (Usando clases CSS)</th></tr></thead>
                         <tbody>
-                            <tr><td><span class="unav-font-primary unav-weight-bold unav-text-100 d-block" style="color: var(--unav-black-800);">2.5rem</span><span class="unav-text-075" style="color: var(--unav-grey-500);">40px</span></td><td><p class="unav-preview-text unav-font-secondary-playfair unav-weight-regular unav-text-250">Tipografía Editorial</p></td></tr>
-                            <tr><td><span class="unav-font-primary unav-weight-bold unav-text-100 d-block" style="color: var(--unav-black-800);">1.125rem</span><span class="unav-text-075" style="color: var(--unav-grey-500);">18px</span></td><td><p class="unav-preview-text unav-font-secondary-playfair unav-weight-regular unav-text-1125">Tipografía Editorial (Base)</p></td></tr>
-                            <tr><td><span class="unav-font-primary unav-weight-bold unav-text-100 d-block" style="color: var(--unav-black-800);">1rem</span><span class="unav-text-075" style="color: var(--unav-grey-500);">16px</span></td><td><p class="unav-preview-text unav-font-secondary-playfair unav-weight-regular unav-text-100">Tipografía Editorial</p></td></tr>
+                            <tr><td><span class="unav-font-primary unav-weight-bold unav-text-1125 d-block" style="color: var(--unav-black-800);">2.5rem</span><span class="unav-text-075" style="color: var(--unav-grey-500);">40px</span></td><td><p class="unav-preview-text unav-font-secondary-playfair unav-weight-regular unav-text-250">Tipografía Editorial</p></td></tr>
+                            <tr><td><span class="unav-font-primary unav-weight-bold unav-text-1125 d-block" style="color: var(--unav-black-800);">1.125rem</span><span class="unav-text-075" style="color: var(--unav-grey-500);">18px</span></td><td><p class="unav-preview-text unav-font-secondary-playfair unav-weight-regular unav-text-1125">Tipografía Editorial (Base)</p></td></tr>
+                            <tr><td><span class="unav-font-primary unav-weight-bold unav-text-1125 d-block" style="color: var(--unav-black-800);">1rem</span><span class="unav-text-075" style="color: var(--unav-grey-500);">16px</span></td><td><p class="unav-preview-text unav-font-secondary-playfair unav-weight-regular unav-text-1125">Tipografía Editorial</p></td></tr>
                         </tbody>
                     </table>
                 </div>
@@ -184,9 +184,9 @@
                     <table class="unav-table unav-tableBorders">
                         <thead><tr><th width="160">Métrica</th><th>Previsualización (Usando clases CSS)</th></tr></thead>
                         <tbody>
-                            <tr><td><span class="unav-font-primary unav-weight-bold unav-text-100 d-block" style="color: var(--unav-black-800);">2.5rem</span><span class="unav-text-075" style="color: var(--unav-grey-500);">40px</span></td><td><p class="unav-preview-text unav-font-secondary-playfair unav-weight-bold unav-text-250">Tipografía Editorial</p></td></tr>
-                            <tr><td><span class="unav-font-primary unav-weight-bold unav-text-100 d-block" style="color: var(--unav-black-800);">1.125rem</span><span class="unav-text-075" style="color: var(--unav-grey-500);">18px</span></td><td><p class="unav-preview-text unav-font-secondary-playfair unav-weight-bold unav-text-1125">Tipografía Editorial (Base)</p></td></tr>
-                            <tr><td><span class="unav-font-primary unav-weight-bold unav-text-100 d-block" style="color: var(--unav-black-800);">1rem</span><span class="unav-text-075" style="color: var(--unav-grey-500);">16px</span></td><td><p class="unav-preview-text unav-font-secondary-playfair unav-weight-bold unav-text-100">Tipografía Editorial</p></td></tr>
+                            <tr><td><span class="unav-font-primary unav-weight-bold unav-text-1125 d-block" style="color: var(--unav-black-800);">2.5rem</span><span class="unav-text-075" style="color: var(--unav-grey-500);">40px</span></td><td><p class="unav-preview-text unav-font-secondary-playfair unav-weight-bold unav-text-250">Tipografía Editorial</p></td></tr>
+                            <tr><td><span class="unav-font-primary unav-weight-bold unav-text-1125 d-block" style="color: var(--unav-black-800);">1.125rem</span><span class="unav-text-075" style="color: var(--unav-grey-500);">18px</span></td><td><p class="unav-preview-text unav-font-secondary-playfair unav-weight-bold unav-text-1125">Tipografía Editorial (Base)</p></td></tr>
+                            <tr><td><span class="unav-font-primary unav-weight-bold unav-text-1125 d-block" style="color: var(--unav-black-800);">1rem</span><span class="unav-text-075" style="color: var(--unav-grey-500);">16px</span></td><td><p class="unav-preview-text unav-font-secondary-playfair unav-weight-bold unav-text-1125">Tipografía Editorial</p></td></tr>
                         </tbody>
                     </table>
                 </div>
@@ -201,9 +201,9 @@
                     <table class="unav-table unav-tableBorders">
                         <thead><tr><th width="160">Métrica</th><th>Previsualización (Usando clases CSS)</th></tr></thead>
                         <tbody>
-                            <tr><td><span class="unav-font-primary unav-weight-bold unav-text-100 d-block" style="color: var(--unav-black-800);">2.5rem</span><span class="unav-text-075" style="color: var(--unav-grey-500);">40px</span></td><td><p class="unav-preview-text unav-font-secondary-slab unav-weight-regular unav-text-250">Tipografía Slab Serif</p></td></tr>
-                            <tr><td><span class="unav-font-primary unav-weight-bold unav-text-100 d-block" style="color: var(--unav-black-800);">1.125rem</span><span class="unav-text-075" style="color: var(--unav-grey-500);">18px</span></td><td><p class="unav-preview-text unav-font-secondary-slab unav-weight-regular unav-text-1125">Tipografía Slab Serif</p></td></tr>
-                            <tr><td><span class="unav-font-primary unav-weight-bold unav-text-100 d-block" style="color: var(--unav-black-800);">1rem</span><span class="unav-text-075" style="color: var(--unav-grey-500);">16px</span></td><td><p class="unav-preview-text unav-font-secondary-slab unav-weight-regular unav-text-100">Tipografía Slab Serif (Base)</p></td></tr>
+                            <tr><td><span class="unav-font-primary unav-weight-bold unav-text-1125 d-block" style="color: var(--unav-black-800);">2.5rem</span><span class="unav-text-075" style="color: var(--unav-grey-500);">40px</span></td><td><p class="unav-preview-text unav-font-secondary-slab unav-weight-regular unav-text-250">Tipografía Slab Serif</p></td></tr>
+                            <tr><td><span class="unav-font-primary unav-weight-bold unav-text-1125 d-block" style="color: var(--unav-black-800);">1.125rem</span><span class="unav-text-075" style="color: var(--unav-grey-500);">18px</span></td><td><p class="unav-preview-text unav-font-secondary-slab unav-weight-regular unav-text-1125">Tipografía Slab Serif</p></td></tr>
+                            <tr><td><span class="unav-font-primary unav-weight-bold unav-text-1125 d-block" style="color: var(--unav-black-800);">1rem</span><span class="unav-text-075" style="color: var(--unav-grey-500);">16px</span></td><td><p class="unav-preview-text unav-font-secondary-slab unav-weight-regular unav-text-1125">Tipografía Slab Serif (Base)</p></td></tr>
                         </tbody>
                     </table>
                 </div>
@@ -218,9 +218,9 @@
                     <table class="unav-table unav-tableBorders">
                         <thead><tr><th width="160">Métrica</th><th>Previsualización (Usando clases CSS)</th></tr></thead>
                         <tbody>
-                            <tr><td><span class="unav-font-primary unav-weight-bold unav-text-100 d-block" style="color: var(--unav-black-800);">2rem</span><span class="unav-text-075" style="color: var(--unav-grey-500);">40px</span></td><td><p class="unav-preview-text unav-font-secondary-slab unav-weight-bold unav-text-250">Tipografía Slab Serif</p></td></tr>
-                            <tr><td><span class="unav-font-primary unav-weight-bold unav-text-100 d-block" style="color: var(--unav-black-800);">1.125rem</span><span class="unav-text-075" style="color: var(--unav-grey-500);">18px</span></td><td><p class="unav-preview-text unav-font-secondary-slab unav-weight-bold unav-text-1125">Tipografía Slab Serif (Base)</p></td></tr>
-                            <tr><td><span class="unav-font-primary unav-weight-bold unav-text-100 d-block" style="color: var(--unav-black-800);">1rem</span><span class="unav-text-075" style="color: var(--unav-grey-500);">16px</span></td><td><p class="unav-preview-text unav-font-secondary-slab unav-weight-bold unav-text-100">Tipografía Slab Serif</p></td></tr>
+                            <tr><td><span class="unav-font-primary unav-weight-bold unav-text-1125 d-block" style="color: var(--unav-black-800);">2rem</span><span class="unav-text-075" style="color: var(--unav-grey-500);">40px</span></td><td><p class="unav-preview-text unav-font-secondary-slab unav-weight-bold unav-text-250">Tipografía Slab Serif</p></td></tr>
+                            <tr><td><span class="unav-font-primary unav-weight-bold unav-text-1125 d-block" style="color: var(--unav-black-800);">1.125rem</span><span class="unav-text-075" style="color: var(--unav-grey-500);">18px</span></td><td><p class="unav-preview-text unav-font-secondary-slab unav-weight-bold unav-text-1125">Tipografía Slab Serif (Base)</p></td></tr>
+                            <tr><td><span class="unav-font-primary unav-weight-bold unav-text-1125 d-block" style="color: var(--unav-black-800);">1rem</span><span class="unav-text-075" style="color: var(--unav-grey-500);">16px</span></td><td><p class="unav-preview-text unav-font-secondary-slab unav-weight-bold unav-text-1125">Tipografía Slab Serif</p></td></tr>
                         </tbody>
                     </table>
                 </div>
@@ -235,17 +235,19 @@
                     <table class="unav-table unav-tableBorders">
                         <thead><tr><th width="160">Métrica</th><th>Previsualización (Usando clases CSS)</th></tr></thead>
                         <tbody>
-                            <tr><td><span class="unav-font-primary unav-weight-bold unav-text-100 d-block" style="color: var(--unav-black-800);">2.5rem</span><span class="unav-text-075" style="color: var(--unav-grey-500);">40px</span></td><td><p class="unav-preview-text unav-font-secondary-dm unav-weight-regular unav-text-250">Tipografía DM Serif</p></td></tr>
-                            <tr><td><span class="unav-font-primary unav-weight-bold unav-text-100 d-block" style="color: var(--unav-black-800);">1.125rem</span><span class="unav-text-075" style="color: var(--unav-grey-500);">18px</span></td><td><p class="unav-preview-text unav-font-secondary-dm unav-weight-regular unav-text-1125">Tipografía DM Serif (Base)</p></td></tr>
-                            <tr><td><span class="unav-font-primary unav-weight-bold unav-text-100 d-block" style="color: var(--unav-black-800);">1rem</span><span class="unav-text-075" style="color: var(--unav-grey-500);">16px</span></td><td><p class="unav-preview-text unav-font-secondary-dm unav-weight-regular unav-text-100">Tipografía DM Serif</p></td></tr>
+                            <tr><td><span class="unav-font-primary unav-weight-bold unav-text-1125 d-block" style="color: var(--unav-black-800);">2.5rem</span><span class="unav-text-075" style="color: var(--unav-grey-500);">40px</span></td><td><p class="unav-preview-text unav-font-secondary-dm unav-weight-regular unav-text-250">Tipografía DM Serif</p></td></tr>
+                            <tr><td><span class="unav-font-primary unav-weight-bold unav-text-1125 d-block" style="color: var(--unav-black-800);">1.125rem</span><span class="unav-text-075" style="color: var(--unav-grey-500);">18px</span></td><td><p class="unav-preview-text unav-font-secondary-dm unav-weight-regular unav-text-1125">Tipografía DM Serif (Base)</p></td></tr>
+                            <tr><td><span class="unav-font-primary unav-weight-bold unav-text-1125 d-block" style="color: var(--unav-black-800);">1rem</span><span class="unav-text-075" style="color: var(--unav-grey-500);">16px</span></td><td><p class="unav-preview-text unav-font-secondary-dm unav-weight-regular unav-text-1125">Tipografía DM Serif</p></td></tr>
                         </tbody>
                     </table>
                 </div>
             </section>
 
-            <section id="line-height" style="margin-top: var(--unav-spacing-3xl); padding-top: var(--unav-spacing-2xl); border-top: 1px solid var(--unav-grey-300);">
-                <h2 class="unav-font-primary unav-weight-bold unav-text-200" style="border-bottom: 1px solid var(--unav-grey-300); padding-bottom: var(--unav-spacing-sm); margin-bottom: var(--unav-spacing-md); color: var(--unav-black-900);">3. Escala de Interlineado (Line Height)</h2>
-                <p class="unav-font-primary unav-weight-regular unav-text-100" style="color: var(--unav-grey-600); margin-bottom: var(--unav-spacing-xl);">El interlineado debe ajustarse según el tamaño del texto. Textos grandes requieren interlineados estrechos (Tight), mientras que párrafos pequeños requieren interlineados más amplios (Relaxed) para mejorar la lectura.</p>
+            <section id="line-height" style="margin-top: var(--unav-spacing-3xl); padding-top: var(--unav-spacing-2xl); border-top: 1px solid var(--unav-grey-300);">                
+                <h2 class="unav-font-primary unav-weight-bold unav-text-150" style="padding-bottom: var(--unav-spacing-sm); margin-bottom: var(--unav-spacing-xl); color: var(--unav-black-900);">
+                    3. Escala de Interlineado (Line Height)
+                </h2>
+                <p class="unav-font-primary unav-weight-regular unav-text-1125" style="color: var(--unav-grey-600); margin-bottom: var(--unav-spacing-xl);">El interlineado debe ajustarse según el tamaño del texto. Textos grandes requieren interlineados estrechos (Tight), mientras que párrafos pequeños requieren interlineados más amplios (Relaxed) para mejorar la lectura.</p>
                 
                 <div class="row g-4">
                     <div class="col-md-6">
@@ -286,9 +288,11 @@
                 </div>
             </section>
 
-            <section id="enlaces-inline" style="margin-top: var(--unav-spacing-3xl); padding-top: var(--unav-spacing-2xl); border-top: 1px solid var(--unav-grey-300);">
-                <h2 class="unav-font-primary unav-weight-bold unav-text-200" style="border-bottom: 1px solid var(--unav-grey-300); padding-bottom: var(--unav-spacing-sm); margin-bottom: var(--unav-spacing-md); color: var(--unav-black-900);">4. Enlaces Inline (Cuerpo de texto)</h2>
-                <p class="unav-font-primary unav-weight-regular unav-text-100 unav-lh-normal" style="color: var(--unav-grey-600); margin-bottom: var(--unav-spacing-xl);">
+            <section id="enlaces-inline" style="margin-top: var(--unav-spacing-3xl); padding-top: var(--unav-spacing-2xl); border-top: 1px solid var(--unav-grey-300);">                
+                <h2 class="unav-font-primary unav-weight-bold unav-text-150" style="padding-bottom: var(--unav-spacing-sm); margin-bottom: var(--unav-spacing-xl); color: var(--unav-black-900);">
+                    4. Enlaces Inline (Cuerpo de texto)
+                </h2>
+                <p class="unav-font-primary unav-weight-regular unav-text-1125 unav-lh-normal" style="color: var(--unav-grey-600); margin-bottom: var(--unav-spacing-xl);">
                     Los enlaces que conviven dentro de párrafos estándar (Roboto, Regular 400, 1.125rem) deben utilizar la clase <code>.unav-enlaceInline</code>. Esta abstracción aplica el color corporativo institucional y un subrayado desplazado (offset) que mejora significativamente la legibilidad y la accesibilidad (WCAG) sin recargar la lectura. Para fondos oscuros o corporativos, se utiliza el modificador <code>.unav-enlaceInlineBlanco</code>.
                 </p>
                 
@@ -322,7 +326,7 @@
                 <svg class="unav-customIconSvg unav-icono-xl" style="color: var(--unav-rojo-500);" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
                     <path d="M19 12A7 10 0 0 1 5 12A7 10 0 0 1 19 12Z M17 12A5 8 0 0 0 7 12A5 8 0 0 0 17 12Z" />
                 </svg>
-                <span class="unav-font-primary unav-weight-bold unav-text-100" style="color: var(--unav-black-800);">Design System UNAV</span>
+                <span class="unav-font-primary unav-weight-bold unav-text-1125" style="color: var(--unav-black-800);">Design System UNAV</span>
             </div>
             <p class="unav-font-primary unav-weight-regular unav-text-075 m-0" style="color: var(--unav-grey-500);">
                 Arquitectura OOCSS &middot; Versión 2.0 &middot; &copy; 2026

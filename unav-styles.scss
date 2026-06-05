@@ -7,6 +7,7 @@
 
 /* 2. BASE (Reseteos globales) */
 @use 'scss/02-base/reset';
+@use 'scss/02-base/global';
 
 /* 3. ATOMOS (Elementos indivisibles) */
 @use 'scss/03-atomos/botones';
