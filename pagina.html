@@ -18,23 +18,29 @@
     <!-- 1. FORMULARIO DE SI                        -->
     <!-- ========================================== -->
 
-    <div class="unav-stickyWrapper">        
-        <div class="unav-panelOverlay" id="unavOverlay"></div>
-        <aside class="unav-sidePanel" id="unavSidePanel">            
+    <div class="unav-stickyWrapper">
+        
+        <div class="unav-panelOverlay" id="unavOverlay" aria-hidden="true"></div>
+
+        <aside class="unav-sidePanel" id="unavSidePanel">
+            
             <button class="unav-stickyButton" 
                     id="unavBtnToggle"
+                    aria-expanded="false"
                     aria-label="Abrir formulario de información">
                 <span class="unav-iconArrow">
                     <svg viewBox="0 0 24 24" width="24" height="24"><path d="M15.41 16.59L10.83 12l4.58-4.59L14 6l-6 6 6 6 1.41-1.41z"/></svg>
                 </span>
                 <span class="unav-buttonText">Solicitar Información</span>
             </button>
+
             <div class="unav-panelBody">
                 <iframe src="https://cloud.marketing.unav.edu/formularioGradoTest" 
                         class="unav-iframeContainer"
                         title="Formulario de Solicitud de Información"
                        ></iframe>
-            </div>            
+            </div>
+            
         </aside>
     </div>
 
@@ -44,13 +50,43 @@
         <!-- ========================================== -->
         <!-- 2. HERO VÍDEO                              -->
         <!-- ========================================== -->
-        <section class="unav-hero unav-hero--darkOverlay unav-hero--mobile9x16"" ">
+
+
+
+        <style>
+            /* ==============================================================
+               AÑADO PROVISIONAL HASTA INTEGRAR EN SCSS
+               ============================================================== */
+            .unav-hero--darkOverlay::before,
+            .unav-hero--darkOverlay::after,
+            .unav-heroOverlay {
+                transition: opacity 1s ease, background-color 1s ease, background 1s ease !important;
+            }
+    
+            .unav-hero.unav-fondoDesvanecido::before,
+            .unav-hero.unav-fondoDesvanecido::after {
+                opacity: 0 !important;
+            }
+    
+            .unav-heroOverlay.unav-fondoDesvanecido {
+                background: transparent !important;
+                background-color: transparent !important;
+            }
+        </style>
+
+        <section class="unav-hero unav-hero--darkOverlay unav-hero--mobile9x16 mb-5">
             <div class="unav-heroVisuals">                
-                <video class="unav-heroVideoMp4" id="unavLocalVideo5" autoplay loop muted playsinline>
-                    <source src="video-vertical-light.mp4" type="video/mp4" media="(max-width: 768px)">                
-                    <source src="gradoEnDerecho.mp4" type="video/mp4">
-                    Tu navegador no soporta la etiqueta de vídeo.
-                </video>
+                
+                <div id="unavLocalVideoWrapper5">
+                    <video class="unav-heroVideoMp4 d-none d-md-block" autoplay loop muted playsinline webkit-playsinline>
+                        <source src="gradoEnDerecho.mp4" type="video/mp4">
+                        Tu navegador no soporta la etiqueta de vídeo.
+                    </video>
+                    <video class="unav-heroVideoMp4 d-block d-md-none" autoplay loop muted playsinline webkit-playsinline>
+                        <source src="video-vertical-heavy.mp4" type="video/mp4">
+                        Tu navegador no soporta la etiqueta de vídeo.
+                    </video>
+                </div>
                 
                 <div class="unav-heroOverlay">
                     <div class="unav-heroContent unav-heroContent--center">                        
@@ -62,10 +98,10 @@
                 </div>
                 
                 <div class="unav-heroVideoControls">
-                    <button class="unav-boton unav-botonSecundario unav-botonIconOnly" style="--unav-botonColorSource: #ffffff; --unav-botonTextHover: var(--unav-black-900);" id="unavBtnToggleVideo5" onclick="unavToggleVideoPlayback('unavLocalVideo5', 'unavBtnToggleVideo5')" aria-label="Pausar vídeo">
+                    <button class="unav-boton unav-botonSecundario unav-botonIconOnly" style="--unav-botonColorSource: #ffffff; --unav-botonTextHover: var(--unav-black-900);" id="unavBtnToggleVideo5" onclick="unavToggleVideoPlayback('unavLocalVideoWrapper5', 'unavBtnToggleVideo5')" aria-label="Pausar vídeo">
                         <i class="bi bi-pause-fill unav-botonIcono"></i>
                     </button>
-                    <button class="unav-boton unav-botonSecundario unav-botonIconOnly" style="--unav-botonColorSource: #ffffff; --unav-botonTextHover: var(--unav-black-900);" id="unavBtnToggleSound5" onclick="unavToggleVideoSound('unavLocalVideo5', 'unavBtnToggleSound5')" aria-label="Activar sonido">
+                    <button class="unav-boton unav-botonSecundario unav-botonIconOnly" style="--unav-botonColorSource: #ffffff; --unav-botonTextHover: var(--unav-black-900);" id="unavBtnToggleSound5" onclick="unavToggleVideoSound('unavLocalVideoWrapper5', 'unavBtnToggleSound5')" aria-label="Activar sonido">
                         <i class="bi bi-volume-mute-fill unav-botonIcono"></i>
                     </button>
                 </div>
@@ -1400,6 +1436,12 @@
         });
     </script>
 
+
+
+
+    <!-- ========================================== -->
+    <!-- 1. FORMULARIO DE SI                        -->
+    <!-- ========================================== -->
     <script>
         (function() {
             const btnToggle = document.querySelector('#unavBtnToggle');
@@ -1411,6 +1453,9 @@
                 const isOpen = panel.classList.toggle('unav-isOpen');
                 overlay.classList.toggle('unav-isActive');
                 
+                // Actualiza ARIA context
+                btnToggle.setAttribute('aria-expanded', isOpen);
+
                 // Bloqueo estricto del scroll principal
                 body.style.overflow = isOpen ? 'hidden' : '';
             }
@@ -1418,6 +1463,8 @@
             function handleClose() {
                 panel.classList.remove('unav-isOpen');
                 overlay.classList.remove('unav-isActive');
+                
+                btnToggle.setAttribute('aria-expanded', 'false');
                 body.style.overflow = '';
             }
 
@@ -1434,6 +1481,12 @@
             }
         })();
     </script>
+    <!-- ========================================== -->
+
+
+
+
+
 
    <!-- Lógica del Acordeón con Vanilla JS Modular y Nomenclatura UNAV -->
    <script>
@@ -1637,183 +1690,219 @@ document.addEventListener('keydown', (e) => {
 });
 </script>
 
-<script>
-        // ==========================================
-        // MOTOR MULTIMEDIA: HERO VÍDEO (DS UNAV 2.0)
-        // ==========================================
 
-        document.addEventListener('DOMContentLoaded', () => {
-            
-            // 1. SISTEMA AUTOMÁTICO PARA VÍDEOS LOCALES (MP4)
-            const unavLocalVideos = document.querySelectorAll('.unav-heroVideoMp4');
-            
-            unavLocalVideos.forEach(video => {
-                // Buscamos el contenedor visual padre y su respectivo grupo de textos
-                const heroVisuals = video.closest('.unav-heroVisuals');
-                const textsContainer = heroVisuals ? heroVisuals.querySelector('.unav-efectoDesvanecerTextos') : null;
+
+
+
+        <!-- ========================================== -->
+        <!-- 2. HERO VÍDEO                              -->
+        <!-- ========================================== -->
+        <script>
+            // ==========================================
+            // MOTOR MULTIMEDIA: HERO VÍDEO (DS UNAV 2.0)
+            // ==========================================
+    
+            document.addEventListener('DOMContentLoaded', () => {
+                // 1. SISTEMA AUTOMÁTICO PARA VÍDEOS LOCALES (MP4)
+                const unavLocalVideos = document.querySelectorAll('.unav-heroVideoMp4');
                 
-                if (textsContainer) {
-                    let timeoutId = null;
+                unavLocalVideos.forEach(video => {
+                    const heroSection = video.closest('.unav-hero');
+                    const heroVisuals = video.closest('.unav-heroVisuals');
+                    const textsContainer = heroVisuals ? heroVisuals.querySelector('.unav-efectoDesvanecerTextos') : null;
+                    const heroOverlay = heroVisuals ? heroVisuals.querySelector('.unav-heroOverlay') : null;
                     
-                    // Evento Universal: Cuando el vídeo está en marcha
-                    video.addEventListener('playing', () => {
-                        if (timeoutId) clearTimeout(timeoutId);
-                        timeoutId = setTimeout(() => {
-                            // Doble validación: Aseguramos que sigue reproduciéndose
-                            if (!video.paused) {
-                                textsContainer.classList.add('unav-isHidden');
+                    if (textsContainer) {
+                        let timeoutId = null;
+                        
+                        video.addEventListener('playing', () => {
+                            if (timeoutId) clearTimeout(timeoutId);
+                            timeoutId = setTimeout(() => {
+                                if (!video.paused) {
+                                    textsContainer.classList.add('unav-isHidden');
+                                    // Activa la transparencia del overlay
+                                    if (heroSection) heroSection.classList.add('unav-fondoDesvanecido');
+                                    if (heroOverlay) heroOverlay.classList.add('unav-fondoDesvanecido');
+                                }
+                            }, 3000);
+                        });
+                        
+                        video.addEventListener('pause', () => {
+                            if (timeoutId) clearTimeout(timeoutId);
+                            textsContainer.classList.remove('unav-isHidden');
+                            // Retorna el oscurecimiento al pausar
+                            if (heroSection) heroSection.classList.remove('unav-fondoDesvanecido');
+                            if (heroOverlay) heroOverlay.classList.remove('unav-fondoDesvanecido');
+                        });
+                    }
+                });
+            });
+    
+            // ========================================================
+            // 2. SISTEMA AUTOMÁTICO PARA YOUTUBE (INTEGRACIÓN OFICIAL)
+            // ========================================================
+            
+            const unavYtScript = document.createElement('script');
+            unavYtScript.src = "https://www.youtube.com/iframe_api";
+            const unavFirstScriptTag = document.getElementsByTagName('script')[0];
+            unavFirstScriptTag.parentNode.insertBefore(unavYtScript, unavFirstScriptTag);
+    
+            window.unavYtPlayers = {};
+    
+            window.onYouTubeIframeAPIReady = function() {
+                const unavYoutubeIframes = document.querySelectorAll('.unav-heroVideoYoutubeWrapper iframe');
+                
+                unavYoutubeIframes.forEach((iframe, index) => {
+                    if (!iframe.id) iframe.id = 'unav-yt-player-' + index;
+                    if (!iframe.src.includes('enablejsapi=1')) {
+                        iframe.src += (iframe.src.includes('?') ? '&' : '?') + 'enablejsapi=1';
+                    }
+    
+                    window.unavYtPlayers[iframe.id] = new YT.Player(iframe.id, {
+                        events: {
+                            'onStateChange': function(event) {
+                                const heroSection = iframe.closest('.unav-hero');
+                                const heroVisuals = iframe.closest('.unav-heroVisuals');
+                                const textsContainer = heroVisuals ? heroVisuals.querySelector('.unav-efectoDesvanecerTextos') : null;
+                                const heroOverlay = heroVisuals ? heroVisuals.querySelector('.unav-heroOverlay') : null;
+                                
+                                if (textsContainer) {
+                                    if (event.data === YT.PlayerState.PLAYING) {
+                                        if (iframe.unavTimeoutId) clearTimeout(iframe.unavTimeoutId);
+                                        iframe.unavTimeoutId = setTimeout(() => {
+                                            textsContainer.classList.add('unav-isHidden');
+                                            // Activa la transparencia del overlay
+                                            if (heroSection) heroSection.classList.add('unav-fondoDesvanecido');
+                                            if (heroOverlay) heroOverlay.classList.add('unav-fondoDesvanecido');
+                                        }, 3000);
+                                    } 
+                                    else if (event.data === YT.PlayerState.PAUSED || event.data === YT.PlayerState.ENDED) {
+                                        if (iframe.unavTimeoutId) clearTimeout(iframe.unavTimeoutId);
+                                        textsContainer.classList.remove('unav-isHidden');
+                                        // Retorna el oscurecimiento al pausar
+                                        if (heroSection) heroSection.classList.remove('unav-fondoDesvanecido');
+                                        if (heroOverlay) heroOverlay.classList.remove('unav-fondoDesvanecido');
+                                    }
+                                }
                             }
-                        }, 3000);
+                        }
                     });
-                    
-                    // Evento Universal: Cuando el usuario lo pausa
-                    video.addEventListener('pause', () => {
-                        if (timeoutId) clearTimeout(timeoutId);
-                        textsContainer.classList.remove('unav-isHidden');
-                    });
+                });
+            };
+    
+            // ==========================================
+            // CONTROLES DE INTERACCIÓN MANUAL MP4 LOCAL
+            // ==========================================
+    
+            function unavToggleVideoPlayback(elementId, buttonId) {
+                let el = document.getElementById(elementId);
+                const button = document.getElementById(buttonId);
+                
+                if (!el || !button) return;
+    
+                let video = el;
+                if (el.tagName.toLowerCase() !== 'video') {
+                    video = Array.from(el.querySelectorAll('video')).find(v => getComputedStyle(v).display !== 'none') || el.querySelector('video');
                 }
-            });
-
-            // 2. SISTEMA AUTOMÁTICO PARA YOUTUBE (Iframes)
-            const unavYoutubeIframes = document.querySelectorAll('.unav-heroVideoYoutubeWrapper iframe');
-            
-            unavYoutubeIframes.forEach(iframe => {
-                const heroVisuals = iframe.closest('.unav-heroVisuals');
-                const textsContainer = heroVisuals ? heroVisuals.querySelector('.unav-efectoDesvanecerTextos') : null;
-                
-                // Si tiene textos y está configurado como autoplay=1 en la URL
-                if (textsContainer && iframe.src.includes('autoplay=1')) {
-                    setTimeout(() => {
-                        textsContainer.classList.add('unav-isHidden');
-                    }, 3000);
+                if (!video) return;
+    
+                if (video.paused) {
+                    video.play();
+                    button.innerHTML = '<i class="bi bi-pause-fill unav-botonIcono"></i>';
+                    button.setAttribute('aria-label', 'Pausar vídeo');
+                } else {
+                    video.pause();
+                    button.innerHTML = '<i class="bi bi-play-fill unav-botonIcono"></i>';
+                    button.setAttribute('aria-label', 'Reproducir vídeo');
                 }
-            });
-        });
-
-        // ==========================================
-        // CONTROLES DE INTERACCIÓN MANUAL (Play/Mute)
-        // ==========================================
-
-        // Función universal de Reproducción
-        function unavToggleVideoPlayback(videoId, buttonId) {
-            const video = document.getElementById(videoId);
-            const button = document.getElementById(buttonId);
-            
-            if (!video || !button) return;
-
-            if (video.paused) {
-                video.play();
-                button.innerHTML = '<i class="bi bi-pause-fill unav-botonIcono"></i>';
-                button.setAttribute('aria-label', 'Pausar vídeo');
-            } else {
-                video.pause();
-                button.innerHTML = '<i class="bi bi-play-fill unav-botonIcono"></i>';
-                button.setAttribute('aria-label', 'Reproducir vídeo');
             }
-        }
-
-        // Función universal de Sonido
-        function unavToggleVideoSound(videoId, buttonId) {
-            const video = document.getElementById(videoId);
-            const button = document.getElementById(buttonId);
-            
-            if (!video || !button) return;
-
-            if (video.muted) {
-                video.muted = false;
-                button.innerHTML = '<i class="bi bi-volume-up-fill unav-botonIcono"></i>';
-                button.setAttribute('aria-label', 'Desactivar sonido');
-            } else {
-                video.muted = true;
-                button.innerHTML = '<i class="bi bi-volume-mute-fill unav-botonIcono"></i>';
-                button.setAttribute('aria-label', 'Activar sonido');
+    
+            function unavToggleVideoSound(elementId, buttonId) {
+                let el = document.getElementById(elementId);
+                const button = document.getElementById(buttonId);
+                
+                if (!el || !button) return;
+    
+                let video = el;
+                if (el.tagName.toLowerCase() !== 'video') {
+                    video = Array.from(el.querySelectorAll('video')).find(v => getComputedStyle(v).display !== 'none') || el.querySelector('video');
+                }
+                if (!video) return;
+    
+                if (video.muted) {
+                    video.muted = false;
+                    button.innerHTML = '<i class="bi bi-volume-up-fill unav-botonIcono"></i>';
+                    button.setAttribute('aria-label', 'Desactivar sonido');
+                } else {
+                    video.muted = true;
+                    button.innerHTML = '<i class="bi bi-volume-mute-fill unav-botonIcono"></i>';
+                    button.setAttribute('aria-label', 'Activar sonido');
+                }
             }
-        }
-</script>
-
-<script>
-    // Datos de inicialización
-    const unavVideos = [
-        { 
-            id: "v1", type: "youtube", code: "3fAeP3LOZiw", 
-            title: "Campus Universidad de Navarra: Un recorrido completo por nuestras instalaciones, facultades, zonas verdes y áreas de investigación destacadas para el nuevo curso académico", 
-            meta: "Institucional • 02:30", thumb: "https://img.youtube.com/vi/3fAeP3LOZiw/mqdefault.jpg" 
-        },
-        { id: "v2", type: "youtube", code: "tqmeghe4MYQ", title: "Investigación en Laboratorios", meta: "Ciencias • 04:15", thumb: "https://img.youtube.com/vi/tqmeghe4MYQ/mqdefault.jpg" },
-        { id: "v3", type: "mp4", code: "https://www.w3schools.com/html/mov_bbb.mp4", title: "Video Nativo de Prueba", meta: "Demo MP4 • 01:00", thumb: "https://picsum.photos/300/170?random=1" },
-        { id: "v4", type: "youtube", code: "3fAeP3LOZiw", title: "Vida en el Campus", meta: "Estudiantes • 03:00", thumb: "https://img.youtube.com/vi/3fAeP3LOZiw/mqdefault.jpg" },
-        { id: "v5", type: "youtube", code: "tqmeghe4MYQ", title: "Clausura Académica", meta: "Eventos • 05:00", thumb: "https://img.youtube.com/vi/tqmeghe4MYQ/mqdefault.jpg" },
-        { id: "v6", type: "youtube", code: "3fAeP3LOZiw", title: "Museo Universidad de Navarra", meta: "Cultura • 01:45", thumb: "https://img.youtube.com/vi/3fAeP3LOZiw/mqdefault.jpg" },
-        { id: "v7", type: "youtube", code: "tqmeghe4MYQ", title: "Instalaciones Deportivas", meta: "Deportes • 02:10", thumb: "https://img.youtube.com/vi/tqmeghe4MYQ/mqdefault.jpg" }
-    ];
-
-    function initVideoGalleries() {
-        const playlists = document.querySelectorAll('.unav-videoPlaylistItems');
-        
-        playlists.forEach((pl) => {
-            const stage = pl.closest('.unav-videoMediaContainer').querySelector('.unav-videoStage');
+    
+            // ==========================================
+            // CONTROLES DE INTERACCIÓN YOUTUBE
+            // ==========================================
             
-            if(stage.querySelector('.unav-activeVideoIframe') && unavVideos.length> 0) {
-                stage.querySelector('.unav-activeVideoIframe').src = `https://www.youtube.com/embed/${unavVideos[0].code}?rel=0`;
+            function unavGetActiveYoutubeIframe(elementId) {
+                let el = document.getElementById(elementId);
+                if (!el) return null;
+    
+                if (el.tagName.toLowerCase() === 'iframe') return el;
+    
+                const wrappers = el.querySelectorAll('.unav-heroVideoYoutubeWrapper');
+                if (wrappers.length > 0) {
+                     const visibleWrapper = Array.from(wrappers).find(w => getComputedStyle(w).display !== 'none') || wrappers[0];
+                     return visibleWrapper.querySelector('iframe');
+                }
+                return el.querySelector('iframe');
             }
-
-            unavVideos.forEach((vid, vIdx) => {
-                const btn = document.createElement('button');
-                btn.className = `unav-videoItem ${vIdx === 0 ? 'unav-isActive' : ''}`;
-                btn.setAttribute('role', 'tab');   
-
-                btn.innerHTML = `
-                    <div class="unav-videoThumb unav-efectoZoomImagen">
-                        <img src="${vid.thumb}" alt="Miniatura de vídeo">
-                        <i class="bi bi-play-fill unav-videoPlayIcon"></i>
-                        <span class="unav-tag unav-lh-relaxed" style="background-color: rgba(0,0,0,0.85); color: #fff; border: none; padding: 0.15rem 0.4rem; position: absolute; bottom: 4px; right: 4px;">${vid.meta.split('•')[1].trim()}</span>
-                    </div>
-                    <div class="unav-videoItemInfo">
-                        <div class="unav-videoItemTitle" title="${vid.title}">${vid.title}</div>
-                        <div class="unav-videoItemMeta unav-lh-relaxed">${vid.meta.split('•')[0].trim()}</div>
-                    </div>
-                `;
+    
+            function unavToggleYoutubePlayback(elementId, buttonId) {
+                const activeIframe = unavGetActiveYoutubeIframe(elementId);
+                const button = document.getElementById(buttonId);
                 
-                btn.onclick = () => {
-                    pl.querySelectorAll('.unav-videoItem').forEach(b => b.classList.remove('unav-isActive'));
-                    btn.classList.add('unav-isActive');
-                    loadVideoData(stage, vid, true);
-                    btn.scrollIntoView({ behavior: 'smooth', block: 'nearest', inline: 'center' });
-                };
+                if (!activeIframe || !button) return;
+    
+                const player = window.unavYtPlayers[activeIframe.id];
+                if (!player) return;
+    
+                const state = player.getPlayerState();
+                if (state === YT.PlayerState.PLAYING) {
+                    player.pauseVideo();
+                    button.innerHTML = '<i class="bi bi-play-fill unav-botonIcono"></i>';
+                    button.setAttribute('aria-label', 'Reproducir vídeo');
+                } else {
+                    player.playVideo();
+                    button.innerHTML = '<i class="bi bi-pause-fill unav-botonIcono"></i>';
+                    button.setAttribute('aria-label', 'Pausar vídeo');
+                }
+            }
+    
+            function unavToggleYoutubeSound(elementId, buttonId) {
+                const activeIframe = unavGetActiveYoutubeIframe(elementId);
+                const button = document.getElementById(buttonId);
                 
-                pl.appendChild(btn);
-                
-                if(vIdx === 0) loadVideoData(stage, vid, false);
-            });
-        });
-    }
+                if (!activeIframe || !button) return;
+    
+                const player = window.unavYtPlayers[activeIframe.id];
+                if (!player) return;
+    
+                if (player.isMuted()) {
+                    player.unMute();
+                    button.innerHTML = '<i class="bi bi-volume-up-fill unav-botonIcono"></i>';
+                    button.setAttribute('aria-label', 'Desactivar sonido');
+                } else {
+                    player.mute();
+                    button.innerHTML = '<i class="bi bi-volume-mute-fill unav-botonIcono"></i>';
+                    button.setAttribute('aria-label', 'Activar sonido');
+                }
+            }
+        </script>
+<!-- ========================================== -->
 
-    function loadVideoData(container, vid, isManualClick = false) {
-        let mediaHtml = '';
-        const playParam = isManualClick ? '1' : '0';
-        const nativoPlayParam = isManualClick ? 'autoplay' : '';
 
-        if(vid.type === 'youtube') {
-            mediaHtml = `<iframe src="https://www.youtube.com/embed/${vid.code}?rel=0&autoplay=${playParam}" class="unav-videoFluid unav-activeVideoIframe" allow="autoplay; fullscreen" allowfullscreen></iframe>`;
-        } else {
-            mediaHtml = `<video src="${vid.code}" controls ${nativoPlayParam} class="unav-videoFluid unav-activeVideoIframe"></video>`;
-        }
 
-        container.innerHTML = mediaHtml;
-    }
-
-    window.scrollPlaylistVertical = function(btn, direction) {
-        const playlist = btn.closest('.unav-videoPlaylistSidebar').querySelector('.unav-videoPlaylistItems');
-        playlist.scrollBy({ top: 120 * direction, behavior: 'smooth' });
-    }
-
-    window.scrollPlaylistHorizontal = function(btn, direction) {
-        const playlist = btn.closest('.unav-videoPlaylistSidebar').querySelector('.unav-videoPlaylistItems');
-        playlist.scrollBy({ left: 160 * direction, behavior: 'smooth' });
-    }
-
-    document.addEventListener('DOMContentLoaded', initVideoGalleries);
-</script>
 
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
 
