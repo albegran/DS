@@ -14,7 +14,8 @@
     <style>
         /* Estilos de contexto para la documentación */
         html { scroll-behavior: smooth; }
-        body { background-color: #ffffff }
+        /* CORRECCIÓN: Contexto realista sobre fondo blanco corporativo */
+        body { background-color: #ffffff; }
         .unav-doc-container { padding-top: var(--unav-spacing-3xl); padding-bottom: var(--unav-spacing-3xl); }
     </style>
 </head>
@@ -38,8 +39,32 @@
 
         <header style="text-align: center; margin-bottom: var(--unav-spacing-md); padding-bottom: var(--unav-spacing-md);">
             <h1 class="unav-font-primary unav-weight-medium unav-text-200 m-0" style="color: var(--unav-black-900); margin-bottom: var(--unav-spacing-sm) !important;">Pestañas (Tabs)</h1>
+            <p class="unav-font-primary unav-weight-regular unav-text-100 m-0 mx-auto" style="color: var(--unav-grey-600); max-width: 600px;">
+                Componente de navegación interna que permite a los usuarios alternar entre diferentes vistas o bloques de contenido dentro del mismo contexto.
+            </p>
         </header>
-        
+
+        <article class="unav-card unav-cardSolid" style="background-color: var(--unav-grey-100); margin-bottom: var(--unav-spacing-3xl); border-radius: var(--unav-radius-none);">
+            <h2 class="unav-font-primary unav-weight-bold unav-text-150" style="color: var(--unav-rojo-500); border-bottom: 2px solid var(--unav-rojo-500); padding-bottom: var(--unav-spacing-sm); margin-bottom: var(--unav-spacing-lg);">Guía Técnica y Documentación Oficial</h2>
+            
+            <div class="row g-4">
+                <div class="col-md-6">
+                    <h3 class="unav-font-primary unav-weight-bold unav-text-125 mb-3" style="color: var(--unav-black-800);">1. Variantes y OOCSS</h3>
+                    <ul class="unav-font-primary unav-weight-regular unav-text-1125" style="color: var(--unav-grey-700); padding-left: var(--unav-spacing-md);">
+                        <li style="margin-bottom: var(--unav-spacing-xs);"><strong>Variante Tarjeta (Card):</strong> Ideal para aislar herramientas. Todas las pestañas se presentan como recuadros explícitos para no perder visibilidad (affordance) contra la pista de fondo gris.</li>
+                        <li style="margin-bottom: var(--unav-spacing-xs);"><strong>Variante Subrayado (Underline):</strong> Variante limpia. Utiliza un <code>!important</code> técnico en el CSS para evitar colisiones del borde rojo corporativo en estado activo.</li>
+                    </ul>
+                </div>
+                
+                <div class="col-md-6 border-start-md ps-md-4">
+                    <h3 class="unav-font-primary unav-weight-bold unav-text-125 mb-3" style="color: var(--unav-black-800);">2. UX y Responsividad Mobile</h3>
+                    <ul class="unav-font-primary unav-weight-regular unav-text-1125" style="color: var(--unav-grey-700); padding-left: var(--unav-spacing-md);">
+                        <li style="margin-bottom: var(--unav-spacing-xs);"><strong>Falso Fondo (Fade Out):</strong> En dispositivos móviles, un degradado lateral superpuesto advierte visualmente que existen más pestañas ocultas a la derecha. Este se desvanece por JavaScript al llegar al final del carril.</li>
+                    </ul>
+                </div>
+            </div>
+        </article>
+
         <section class="mb-5">
             <h2 class="unav-font-primary unav-weight-bold unav-text-125 mb-4" style="color: var(--unav-black-900);">Variante 1: Tarjeta con Icono (.unav-tabs--card)</h2>
 
@@ -197,7 +222,7 @@
 
     </main>
 
-    <footer style="background-color: #ffffff; border-top: 1px solid var(--unav-grey-200); padding: var(--unav-spacing-lg) 0; margin-top: var(--unav-spacing-3xl);">
+    <footer style="background-color: var(--unav-grey-100); border-top: 1px solid var(--unav-grey-200); padding: var(--unav-spacing-lg) 0; margin-top: var(--unav-spacing-3xl);">
         <div class="container-lg d-flex flex-column flex-md-row justify-content-between align-items-center gap-3">
             <div style="display: flex; align-items: center; gap: var(--unav-spacing-sm);">
                 <svg class="unav-customIconSvg unav-icono-xl" style="color: var(--unav-rojo-500);" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
@@ -224,22 +249,18 @@
                 tabButtons.forEach(button => {
                     button.addEventListener('click', () => {
                         
-                        // Desactivar todos los botones
                         tabButtons.forEach(btn => {
                             btn.classList.remove('unav-isActive');
                             btn.setAttribute('aria-selected', 'false');
                         });
 
-                        // Ocultar todos los paneles
                         tabPanels.forEach(panel => {
                             panel.classList.remove('unav-isActive');
                         });
 
-                        // Activar el botón clicado
                         button.classList.add('unav-isActive');
                         button.setAttribute('aria-selected', 'true');
 
-                        // Mostrar el panel correspondiente
                         const targetPanelId = button.getAttribute('aria-controls');
                         const targetPanel = document.getElementById(targetPanelId);
                         if(targetPanel) {
@@ -256,9 +277,7 @@
                 const scrollList = wrapper.querySelector('.unav-tabsList');
                 if(!scrollList) return;
 
-                // Evaluador geométrico
                 const checkScrollLimit = () => {
-                    // Si el usuario hace scroll total o el contenido no desborda, quitamos el gradiente
                     if (scrollList.scrollLeft + scrollList.clientWidth >= scrollList.scrollWidth - 2) {
                         wrapper.classList.add('unav-isEnd');
                     } else {
@@ -266,10 +285,7 @@
                     }
                 };
 
-                // Event Listener pasivo para alto rendimiento en móviles
                 scrollList.addEventListener('scroll', checkScrollLimit, { passive: true });
-                
-                // Verificación inicial al cargar y al rotar el dispositivo
                 checkScrollLimit();
                 window.addEventListener('resize', checkScrollLimit);
             });
