@@ -523,6 +523,20 @@
   border-radius: inherit;
 }
 
+/* ==========================================================================
+   PREVENCIÓN DE DESBORDAMIENTO HORIZONTAL (MOBILE-FIRST)
+   ========================================================================== */
+html,
+body {
+  /* Evita que cualquier elemento (filas mal cerradas o paneles laterales) 
+     genere un scroll horizontal en la ventana principal */
+  overflow-x: hidden;
+  /* Asegura que el body nunca mida más del 100% de la pantalla disponible */
+  max-width: 100%;
+  /* Previene comportamientos extraños del scroll elástico en navegadores móviles */
+  overscroll-behavior-x: none;
+}
+
 /* 3. ATOMOS (Elementos indivisibles) */
 /* ==========================================
    COMPONENTE: BOTONES UNAV
@@ -1923,8 +1937,7 @@
    COMPONENTE: CINTILLO DE TITULACIONES
    ========================================== */
 .unav-cintillo {
-  background-color: var(--unav-grey-100);
-  /* Opcional: bordes sutiles superior e inferior para enmarcarlo en la página */
+  background-color: var(--unav-bloqueEnlaceBg);
   border-top: 1px solid var(--unav-grey-200);
   border-bottom: 1px solid var(--unav-grey-200);
   width: 100%;
@@ -1934,17 +1947,18 @@
 .unav-cintilloList {
   display: flex;
   flex-wrap: nowrap;
-  align-items: stretch; /* Estira los ítems para que el borde vertical ocupe todo el alto */
+  align-items: stretch;
+  justify-content: center; /* <-- AÑADIDO: Centrado absoluto de los ítems */
   margin: 0;
   padding: 0;
   list-style: none;
   overflow-x: auto;
-  -webkit-overflow-scrolling: touch; /* Scroll fluido en iOS */
-  scrollbar-width: none; /* Oculta la barra en Firefox */
+  -webkit-overflow-scrolling: touch;
+  scrollbar-width: none;
 }
 
 .unav-cintilloList::-webkit-scrollbar {
-  display: none; /* Oculta la barra en Chrome/Safari/Edge */
+  display: none;
 }
 
 /* Cada característica */
@@ -1954,12 +1968,12 @@
   gap: var(--unav-spacing-sm);
   padding: var(--unav-spacing-md) var(--unav-spacing-lg);
   border-right: 1px solid var(--unav-black-800);
-  flex-shrink: 0; /* Evita que los ítems se compriman en pantallas pequeñas */
-  color: var(--unav-black-800);
+  flex-shrink: 0;
+  color: var(--unav-bloqueEnlaceText);
 }
 
 .unav-cintilloItem:last-child {
-  border-right: none; /* Quitamos el borde al último ítem */
+  border-right: none;
 }
 
 /* Contenedor del Icono */
@@ -1969,6 +1983,167 @@
   align-items: center;
   justify-content: center;
   color: inherit;
+}
+
+/* Pequeño parche para UX móvil: 
+   Si hay muchos ítems en móvil, justify-content: center recorta la izquierda. 
+   Lo liberamos a 'flex-start' solo en pantallas móviles para que el scroll funcione perfecto. */
+@media (max-width: 991px) {
+  .unav-cintilloList {
+    justify-content: flex-start;
+  }
+}
+/* ==========================================================================
+   COMPONENTE: PESTAÑAS (TABS) OOCSS
+   ========================================================================== */
+/* 1. ESTRUCTURA BASE Y COMPORTAMIENTO MÓVIL (Scroll Horizontal) */
+.unav-tabsList {
+  display: flex;
+  flex-wrap: nowrap;
+  overflow-x: auto;
+  -webkit-overflow-scrolling: touch; /* Scroll fluido inercial en iOS */
+  scrollbar-width: none; /* Oculta la barra de scroll en Firefox */
+  margin: 0;
+  padding: 0;
+  list-style: none;
+  gap: var(--unav-spacing-sm);
+}
+.unav-tabsList::-webkit-scrollbar {
+  display: none; /* Oculta la barra de scroll en Chrome, Safari y Edge */
+}
+
+/* Botón Base de la Pestaña */
+.unav-tabBtn {
+  cursor: pointer;
+  background: none;
+  border: none;
+  font-family: var(--unav-fontFamilyPrimary);
+  transition: all var(--unav-transitionBase);
+  white-space: nowrap; /* Impide que el texto salte de línea en pantallas estrechas */
+  flex-shrink: 0; /* Evita que la pestaña se comprima al hacer scroll horizontal */
+  position: relative;
+}
+
+/* Paneles de Contenido (Mecanismo de visualización) */
+.unav-tabPanel {
+  display: none; /* Oculto por defecto */
+  animation: unavTabFadeIn var(--unav-durationFast) var(--unav-easingStandard) forwards;
+}
+.unav-tabPanel.unav-isActive {
+  display: block; /* Visible únicamente al activarse */
+}
+
+@keyframes unavTabFadeIn {
+  from {
+    opacity: 0;
+    transform: translateY(5px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+/* 2. MEJORA UX: INDICADOR DE DESBORDAMIENTO EN MÓVILES (Fade Out) */
+.unav-tabsOverflow {
+  position: relative;
+  width: 100%;
+  border-radius: var(--unav-radius-none); /* Rigidez geométrica UNAV */
+}
+
+@media (max-width: 767px) {
+  .unav-tabsOverflow::after {
+    content: "";
+    position: absolute;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    width: var(--unav-spacing-3xl, 3rem); /* Área de desvanecimiento protegida */
+    pointer-events: none; /* Permite que los clics atraviesen la capa fantasma */
+    transition: opacity var(--unav-transitionBase, 0.3s ease);
+    opacity: 1;
+    z-index: var(--unav-zIndex-base, 10);
+  }
+  .unav-tabsOverflow {
+    /* Desvanecimiento según la variante (Piel) */
+  }
+  .unav-tabs--card .unav-tabsOverflow::after {
+    background: linear-gradient(to right, transparent 0%, var(--unav-grey-100, #f8f9fa) 100%);
+  }
+  .unav-tabs--underline .unav-tabsOverflow::after {
+    background: linear-gradient(to right, rgba(255, 255, 255, 0) 0%, #ffffff 100%);
+  }
+  .unav-tabsOverflow {
+    /* Estado del modificador por JS: oculta el degradado al llegar al tope derecho */
+  }
+  .unav-tabsOverflow.unav-isEnd::after {
+    opacity: 0;
+  }
+}
+/* 3. VARIANTE 1: ENFOQUE TARJETA CON ICONO (.unav-tabs--card) */
+.unav-tabs--card {
+  background-color: #ffffff;
+  border: 1px solid var(--unav-grey-200);
+  border-radius: var(--unav-radius-none); /* Esquinas vivas sin redondear */
+  overflow: hidden;
+  box-shadow: var(--unav-shadow-sm); /* Sombra leve del DS */
+}
+.unav-tabs--card .unav-tabsList {
+  background-color: var(--unav-grey-100);
+  padding: var(--unav-spacing-sm);
+  border-bottom: 1px solid var(--unav-grey-200);
+  gap: var(--unav-spacing-xs);
+}
+.unav-tabs--card .unav-tabBtn {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  padding: var(--unav-spacing-sm) var(--unav-spacing-lg);
+  border-radius: var(--unav-radius-none); /* Esquinas vivas */
+  color: var(--unav-grey-600);
+  min-width: 120px;
+}
+.unav-tabs--card .unav-tabBtn:hover {
+  color: var(--unav-black-800);
+}
+.unav-tabs--card .unav-tabBtn {
+  /* Pestaña Activa */
+}
+.unav-tabs--card .unav-tabBtn.unav-isActive {
+  background-color: #ffffff;
+  color: var(--unav-black-900);
+  font-weight: var(--unav-fontWeightBold);
+  box-shadow: var(--unav-shadow-md); /* Sobreelevación activa del DS */
+}
+.unav-tabs--card .unav-tabsContent {
+  padding: var(--unav-spacing-xl);
+}
+
+/* 4. VARIANTE 2: ENFOQUE LÍNEA EDITORIAL (.unav-tabs--underline) */
+.unav-tabs--underline .unav-tabsList {
+  border-bottom: 2px solid var(--unav-grey-200); /* Línea base gris suave */
+  gap: var(--unav-spacing-xl);
+}
+.unav-tabs--underline .unav-tabBtn {
+  padding: var(--unav-spacing-sm) 0;
+  color: var(--unav-grey-600);
+  font-weight: var(--unav-fontWeightMedium);
+  font-size: var(--unav-fontSize1125);
+  border-bottom: 3px solid transparent;
+  margin-bottom: -2px; /* Solapamiento técnico para pisar la línea gris de fondo */
+}
+.unav-tabs--underline .unav-tabBtn:hover {
+  color: var(--unav-black-900);
+}
+.unav-tabs--underline .unav-tabBtn {
+  /* Pestaña Activa: Refuerzo absoluto de especificidad contra colisiones */
+}
+.unav-tabs--underline .unav-tabBtn.unav-isActive {
+  color: var(--unav-rojo-500) !important;
+  border-bottom: 3px solid var(--unav-rojo-500) !important; /* Línea gruesa roja oficial */
+}
+.unav-tabs--underline .unav-tabsContent {
+  padding-top: var(--unav-spacing-xl);
 }
 
 /* 5. ORGANISMOS (Secciones y Layouts complejos) */
@@ -2531,14 +2706,14 @@
 }
 
 /* Integración del Botón Terciario (Enlace Flecha) y Primarios */
-.unav-bannerMini .unav-bannerContent> .unav-enlaceFlecha,
-.unav-bannerMini .unav-bannerContent> .unav-boton {
+.unav-bannerMini .unav-bannerContent > .unav-enlaceFlecha,
+.unav-bannerMini .unav-bannerContent > .unav-boton {
   margin-top: auto;
   align-self: flex-start;
 }
 
-.unav-bannerMini.unav-alignCenter .unav-bannerContent> .unav-enlaceFlecha,
-.unav-bannerMini.unav-alignCenter .unav-bannerContent> .unav-boton {
+.unav-bannerMini.unav-alignCenter .unav-bannerContent > .unav-enlaceFlecha,
+.unav-bannerMini.unav-alignCenter .unav-bannerContent > .unav-boton {
   align-self: center;
 }
 
@@ -5246,7 +5421,7 @@
 }
 
 /* Soporte de herencia: Si el padre tiene hover, la imagen reacciona */
-*:hover> .unav-efectoZoomImagen img,
+*:hover > .unav-efectoZoomImagen img,
 .unav-efectoZoomImagen:hover img {
   transform: scale(1.05) translateZ(0); /* translateZ fuerza la aceleración GPU en Safari */
 }
@@ -5314,7 +5489,7 @@
     display: none; /* Oculta la barra de scroll en Chrome/Safari/Edge */
   }
   /* Forzado geométrico de los hijos directos (columnas) */
-  .unav-gridScrollMobile> [class*=col-] {
+  .unav-gridScrollMobile > [class*=col-] {
     /* Ocupa el 82% del viewport, permitiendo revelar un 18% del siguiente evento */
     flex: 0 0 82% !important;
     width: 82% !important;

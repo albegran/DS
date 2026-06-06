@@ -16,140 +16,21 @@
         html { scroll-behavior: smooth; }
         body { background-color: var(--unav-grey-100); }
         .unav-doc-container { padding-top: var(--unav-spacing-3xl); padding-bottom: var(--unav-spacing-3xl); }
-
-        /* ==========================================
-           COMPONENTE: PESTAÑAS (TABS) UNAV OOCSS
-           ========================================== */
-
-        /* 1. Estructura Base y Comportamiento Móvil (Scroll Horizontal) */
-        .unav-tabsList {
-            display: flex;
-            flex-wrap: nowrap;
-            overflow-x: auto;
-            -webkit-overflow-scrolling: touch; /* Scroll suave en iOS */
-            scrollbar-width: none; /* Oculta scrollbar en Firefox */
-            margin: 0;
-            padding: 0;
-            list-style: none;
-            gap: var(--unav-spacing-sm);
-        }
-        .unav-tabsList::-webkit-scrollbar { display: none; /* Oculta scrollbar en Chrome/Safari */ }
-
-        /* Botón Base de Pestaña */
-        .unav-tabBtn {
-            cursor: pointer;
-            background: none;
-            border: none;
-            font-family: var(--unav-fontFamilyPrimary);
-            transition: all var(--unav-transitionBase);
-            white-space: nowrap; /* Evita que el texto salte de línea */
-            flex-shrink: 0; /* Evita que la pestaña se comprima al hacer scroll */
-            position: relative;
-        }
-
-        /* Paneles de Contenido */
-        .unav-tabPanel {
-            display: none; /* Oculto por defecto */
-            animation: unavFadeIn var(--unav-durationFast) var(--unav-easingStandard) forwards;
-        }
-        .unav-tabPanel.unav-isActive {
-            display: block; /* Visible al activarse */
-        }
-        @keyframes unavFadeIn {
-            from { opacity: 0; transform: translateY(5px); }
-            to { opacity: 1; transform: translateY(0); }
-        }
-
-        /* ---------------------------------------------------
-           VARIANTE 1: PESTAÑAS TARJETA CON ICONO (.unav-tabs--card)
-           --------------------------------------------------- */
-        .unav-tabs--card {
-            background-color: #ffffff;
-            border: 1px solid var(--unav-grey-200);
-            /* FIX: Aplicación estricta de esquinas cuadradas */
-            border-radius: var(--unav-radius-none); 
-            overflow: hidden; 
-            /* FIX: Consumo de la sombra pequeña oficial del DS */
-            box-shadow: var(--unav-shadow-sm, 0 0.125rem 0.25rem rgba(0, 0, 0, 0.075));
-        }
-        .unav-tabs--card .unav-tabsList {
-            background-color: var(--unav-grey-100);
-            padding: var(--unav-spacing-sm);
-            border-bottom: 1px solid var(--unav-grey-200);
-            gap: var(--unav-spacing-xs);
-        }
-        .unav-tabs--card .unav-tabBtn {
-            display: flex;
-            flex-direction: column;
-            align-items: center;
-            justify-content: center;
-            padding: var(--unav-spacing-sm) var(--unav-spacing-lg);
-            /* FIX: Esquinas cuadradas también para el botón interno */
-            border-radius: var(--unav-radius-none); 
-            color: var(--unav-grey-600);
-            min-width: 120px;
-        }
-        .unav-tabs--card .unav-tabIcon {
-            font-size: var(--unav-iconSizeLg);
-            margin-bottom: 4px;
-        }
-        .unav-tabs--card .unav-tabBtn:hover {
-            color: var(--unav-black-800);
-        }
-        /* Estado Activo Variante 1 */
-        .unav-tabs--card .unav-tabBtn.unav-isActive {
-            background-color: #ffffff;
-            color: var(--unav-black-900);
-            font-weight: var(--unav-fontWeightBold);
-            /* FIX: Consumo de la sombra media oficial del DS para destacar */
-            box-shadow: var(--unav-shadow-md, 0 0.5rem 1rem rgba(0, 0, 0, 0.15));
-        }
-        .unav-tabs--card .unav-tabsContent {
-            padding: var(--unav-spacing-xl);
-        }
-
-        /* ---------------------------------------------------
-           VARIANTE 2: PESTAÑAS SUBRAYADAS (.unav-tabs--underline)
-           --------------------------------------------------- */
-        .unav-tabs--underline .unav-tabsList {
-            border-bottom: 2px solid var(--unav-grey-200); /* Borde gris suave inferior */
-            gap: var(--unav-spacing-xl);
-        }
-        .unav-tabs--underline .unav-tabBtn {
-            padding: var(--unav-spacing-sm) 0;
-            color: var(--unav-grey-600);
-            font-weight: var(--unav-fontWeightMedium);
-            font-size: var(--unav-fontSize1125);
-            /* Borde transparente por defecto, un píxel más grueso para solaparse al gris */
-            border-bottom: 3px solid transparent; 
-            margin-bottom: -2px; 
-        }
-        .unav-tabs--underline .unav-tabBtn:hover {
-            color: var(--unav-black-900);
-        }
-        /* Estado Activo Variante 2 */
-        .unav-tabs--underline .unav-tabBtn.unav-isActive {
-            color: var(--unav-rojo-500);
-            border-bottom-color: var(--unav-rojo-500); /* Borde rojo grueso */
-        }
-        .unav-tabs--underline .unav-tabsContent {
-            padding-top: var(--unav-spacing-xl);
-        }
     </style>
 </head>
 <body class="unav-font-primary unav-weight-regular unav-text-1125" itemscope itemtype="https://schema.org/WebPage">
 
     <nav style="background-color: #ffffff; border-bottom: 1px solid var(--unav-grey-200); padding: var(--unav-spacing-md) 0; position: sticky; top: 0; z-index: var(--unav-zIndex-sticky);">
-        <div class="container-lg d-flex justify-content-between align-items-center position-relative">            
-            <div>
-                <a href="indice.html" class="unav-boton unav-botonSecundario">
+        <div class="container-lg d-flex justify-content-between align-items-center position-relative">
+            <div itemscope itemtype="https://schema.org/WebPageElement">
+                <a itemprop="url" href="indice.html" class="unav-boton unav-botonSecundario">
                     <i class="bi bi-arrow-left unav-botonIcono" aria-hidden="true"></i>
-                    <span class="d-none d-md-inline">Volver al Índice</span>
+                    <span class="d-none d-md-inline" itemprop="name">Volver al Índice</span>
                 </a>
-            </div>    
-            <span class="unav-font-primary unav-weight-bold unav-text-125 m-0 position-absolute start-50 translate-middle-x text-nowrap" style="color: var(--unav-rojo-500); line-height: 1;">
+            </div>
+            <span class="unav-font-primary-condensed unav-weight-regular unav-text-150 m-0 position-absolute start-50 translate-middle-x text-nowrap" style="color: var(--unav-rojo-500); line-height: 1;">
                 Design System UNAV
-            </span>    
+            </span>
         </div>
     </nav>
 
@@ -157,39 +38,72 @@
 
         <header style="text-align: center; margin-bottom: var(--unav-spacing-md); padding-bottom: var(--unav-spacing-md);">
             <h1 class="unav-font-primary unav-weight-medium unav-text-200 m-0" style="color: var(--unav-black-900); margin-bottom: var(--unav-spacing-sm) !important;">Pestañas (Tabs)</h1>
+            <p class="unav-font-primary unav-weight-regular unav-text-100 m-0 mx-auto" style="color: var(--unav-grey-600); max-width: 600px;">
+                Componente de navegación interna que permite a los usuarios alternar entre diferentes vistas o bloques de contenido dentro del mismo contexto.
+            </p>
         </header>
+
+        <article class="unav-card unav-cardSolid" style="margin-bottom: var(--unav-spacing-3xl); border-radius: var(--unav-radius-none);">
+            <h2 class="unav-font-primary unav-weight-bold unav-text-150" style="color: var(--unav-rojo-500); border-bottom: 2px solid var(--unav-rojo-500); padding-bottom: var(--unav-spacing-sm); margin-bottom: var(--unav-spacing-lg);">Guía Técnica y Documentación Oficial</h2>
+            
+            <div class="row g-4">
+                <div class="col-md-6">
+                    <h3 class="unav-font-primary unav-weight-bold unav-text-125 mb-3" style="color: var(--unav-black-800);">1. Variantes y OOCSS</h3>
+                    <ul class="unav-font-primary unav-weight-regular unav-text-1125" style="color: var(--unav-grey-700); padding-left: var(--unav-spacing-md);">
+                        <li style="margin-bottom: var(--unav-spacing-xs);"><strong>Variante Tarjeta (Card):</strong> La clase <code>.unav-tabs--card</code> crea un bloque autocontenido. Ideal para aislar herramientas, formularios o datos muy específicos del resto de la página.</li>
+                        <li style="margin-bottom: var(--unav-spacing-xs);"><strong>Variante Subrayado (Underline):</strong> La clase <code>.unav-tabs--underline</code> es más ligera y respira mejor. Utiliza el rojo corporativo para el estado activo. Ideal para separar grandes bloques de texto corporativo.</li>
+                    </ul>
+                </div>
+                
+                <div class="col-md-6 border-start-md ps-md-4">
+                    <h3 class="unav-font-primary unav-weight-bold unav-text-125 mb-3" style="color: var(--unav-black-800);">2. UX y Responsividad Mobile</h3>
+                    <ul class="unav-font-primary unav-weight-regular unav-text-1125" style="color: var(--unav-grey-700); padding-left: var(--unav-spacing-md);">
+                        <li style="margin-bottom: var(--unav-spacing-xs);"><strong>Scroll Horizontal e Indicador (Falso Fondo):</strong> En dispositivos móviles, activa un scroll táctil lateral ocultando la barra. Se incorpora una sombra/degradado en el lado derecho que advierte al usuario que hay más pestañas por descubrir, desapareciendo al final del scroll.</li>
+                        <li style="margin-bottom: var(--unav-spacing-xs);"><strong>Accesibilidad (A11y):</strong> Las pestañas portan atributos <code>role="tab"</code>, <code>aria-selected</code> y <code>aria-controls</code> garantizando la lectura correcta en lectores de pantalla.</li>
+                    </ul>
+                </div>
+            </div>
+        </article>
 
         <section class="mb-5">
             <h2 class="unav-font-primary unav-weight-bold unav-text-125 mb-4" style="color: var(--unav-black-900);">Variante 1: Tarjeta con Icono (.unav-tabs--card)</h2>
 
             <div class="unav-tabsGroup unav-tabs--card">
                 
-                <ul class="unav-tabsList" role="tablist" aria-label="Opciones de Admisión">
-                    <li role="presentation">
-                        <button class="unav-tabBtn unav-isActive" role="tab" aria-selected="true" aria-controls="panelCard-1" id="tabCard-1">
-                            <span class="material-symbols-outlined unav-tabIcon" aria-hidden="true">school</span>
-                            <span>Requisitos</span>
-                        </button>
-                    </li>
-                    <li role="presentation">
-                        <button class="unav-tabBtn" role="tab" aria-selected="false" aria-controls="panelCard-2" id="tabCard-2">
-                            <span class="material-symbols-outlined unav-tabIcon" aria-hidden="true">calendar_month</span>
-                            <span>Fechas Clave</span>
-                        </button>
-                    </li>
-                    <li role="presentation">
-                        <button class="unav-tabBtn" role="tab" aria-selected="false" aria-controls="panelCard-3" id="tabCard-3">
-                            <span class="material-symbols-outlined unav-tabIcon" aria-hidden="true">euro</span>
-                            <span>Becas</span>
-                        </button>
-                    </li>
-                    <li role="presentation">
-                        <button class="unav-tabBtn" role="tab" aria-selected="false" aria-controls="panelCard-4" id="tabCard-4">
-                            <span class="material-symbols-outlined unav-tabIcon" aria-hidden="true">flight_takeoff</span>
-                            <span>Internacional</span>
-                        </button>
-                    </li>
-                </ul>
+                <div class="unav-tabsOverflow">
+                    <ul class="unav-tabsList" role="tablist" aria-label="Opciones de Admisión">
+                        <li role="presentation">
+                            <button class="unav-tabBtn unav-isActive" role="tab" aria-selected="true" aria-controls="panelCard-1" id="tabCard-1">
+                                <span class="material-symbols-outlined unav-tabIcon" aria-hidden="true">school</span>
+                                <span>Requisitos</span>
+                            </button>
+                        </li>
+                        <li role="presentation">
+                            <button class="unav-tabBtn" role="tab" aria-selected="false" aria-controls="panelCard-2" id="tabCard-2">
+                                <span class="material-symbols-outlined unav-tabIcon" aria-hidden="true">calendar_month</span>
+                                <span>Fechas Clave</span>
+                            </button>
+                        </li>
+                        <li role="presentation">
+                            <button class="unav-tabBtn" role="tab" aria-selected="false" aria-controls="panelCard-3" id="tabCard-3">
+                                <span class="material-symbols-outlined unav-tabIcon" aria-hidden="true">euro</span>
+                                <span>Becas</span>
+                            </button>
+                        </li>
+                        <li role="presentation">
+                            <button class="unav-tabBtn" role="tab" aria-selected="false" aria-controls="panelCard-4" id="tabCard-4">
+                                <span class="material-symbols-outlined unav-tabIcon" aria-hidden="true">flight_takeoff</span>
+                                <span>Internacional</span>
+                            </button>
+                        </li>
+                        <li role="presentation">
+                            <button class="unav-tabBtn" role="tab" aria-selected="false" aria-controls="panelCard-5" id="tabCard-5">
+                                <span class="material-symbols-outlined unav-tabIcon" aria-hidden="true">description</span>
+                                <span>Documentación</span>
+                            </button>
+                        </li>
+                    </ul>
+                </div>
 
                 <div class="unav-tabsContent">
                     
@@ -216,12 +130,17 @@
 
                     <div class="unav-tabPanel" id="panelCard-3" role="tabpanel" aria-labelledby="tabCard-3">
                         <h3 class="unav-font-primary unav-weight-bold unav-text-125 mb-3">Ayudas y Financiación</h3>
-                        <p class="unav-text-1125" style="color: var(--unav-grey-700);">La Universidad de Navarra destina anualmente más de 5 millones de euros a becas propias. Además, contamos con el programa Alumni y convenios con entidades bancarias para la financiación de los estudios.</p>
+                        <p class="unav-text-100" style="color: var(--unav-grey-700);">La Universidad de Navarra destina anualmente más de 5 millones de euros a becas propias. Además, contamos con el programa Alumni y convenios con entidades bancarias para la financiación de los estudios.</p>
                     </div>
 
                     <div class="unav-tabPanel" id="panelCard-4" role="tabpanel" aria-labelledby="tabCard-4">
                         <h3 class="unav-font-primary unav-weight-bold unav-text-125 mb-3">Estudiantes Extranjeros</h3>
-                        <p class="unav-text-1125" style="color: var(--unav-grey-700);">Si tu sistema educativo no pertenece a la Unión Europea, necesitarás gestionar la homologación de tus títulos. Nuestro departamento de Admisión Internacional te acompañará en todo el proceso de visados y alojamiento.</p>
+                        <p class="unav-text-100" style="color: var(--unav-grey-700);">Si tu sistema educativo no pertenece a la Unión Europea, necesitarás gestionar la homologación de tus títulos. Nuestro departamento de Admisión Internacional te acompañará en todo el proceso de visados y alojamiento.</p>
+                    </div>
+                    
+                    <div class="unav-tabPanel" id="panelCard-5" role="tabpanel" aria-labelledby="tabCard-5">
+                        <h3 class="unav-font-primary unav-weight-bold unav-text-125 mb-3">Documentación</h3>
+                        <p class="unav-text-100" style="color: var(--unav-grey-700);">Descarga aquí las guías en PDF y los formularios de matrícula.</p>
                     </div>
 
                 </div>
@@ -234,23 +153,30 @@
 
             <div class="unav-tabsGroup unav-tabs--underline">
                 
-                <ul class="unav-tabsList" role="tablist" aria-label="Información Académica">
-                    <li role="presentation">
-                        <button class="unav-tabBtn unav-isActive" role="tab" aria-selected="true" aria-controls="panelLine-1" id="tabLine-1">
-                            Plan de Estudios
-                        </button>
-                    </li>
-                    <li role="presentation">
-                        <button class="unav-tabBtn" role="tab" aria-selected="false" aria-controls="panelLine-2" id="tabLine-2">
-                            Metodología
-                        </button>
-                    </li>
-                    <li role="presentation">
-                        <button class="unav-tabBtn" role="tab" aria-selected="false" aria-controls="panelLine-3" id="tabLine-3">
-                            Claustro de Profesores
-                        </button>
-                    </li>
-                </ul>
+                <div class="unav-tabsOverflow">
+                    <ul class="unav-tabsList" role="tablist" aria-label="Información Académica">
+                        <li role="presentation">
+                            <button class="unav-tabBtn unav-isActive" role="tab" aria-selected="true" aria-controls="panelLine-1" id="tabLine-1">
+                                Plan de Estudios
+                            </button>
+                        </li>
+                        <li role="presentation">
+                            <button class="unav-tabBtn" role="tab" aria-selected="false" aria-controls="panelLine-2" id="tabLine-2">
+                                Metodología
+                            </button>
+                        </li>
+                        <li role="presentation">
+                            <button class="unav-tabBtn" role="tab" aria-selected="false" aria-controls="panelLine-3" id="tabLine-3">
+                                Claustro de Profesores
+                            </button>
+                        </li>
+                        <li role="presentation">
+                            <button class="unav-tabBtn" role="tab" aria-selected="false" aria-controls="panelLine-4" id="tabLine-4">
+                                Testimonios Alumni
+                            </button>
+                        </li>
+                    </ul>
+                </div>
 
                 <div class="unav-tabsContent">
                     
@@ -280,6 +206,15 @@
                             </div>
                         </div>
                     </div>
+                    
+                    <div class="unav-tabPanel" id="panelLine-4" role="tabpanel" aria-labelledby="tabLine-4">
+                        <div class="row">
+                            <div class="col-md-8">
+                                <h3 class="unav-font-primary unav-weight-bold unav-text-150 mb-3" style="color: var(--unav-black-900);">Lo que dicen de nosotros</h3>
+                                <p class="unav-text-1125" style="color: var(--unav-grey-700);">Nuestros antiguos alumnos trabajan hoy en las principales corporaciones mundiales.</p>
+                            </div>
+                        </div>
+                    </div>
 
                 </div>
             </div>
@@ -290,7 +225,9 @@
     <footer style="background-color: #ffffff; border-top: 1px solid var(--unav-grey-200); padding: var(--unav-spacing-lg) 0; margin-top: var(--unav-spacing-3xl);">
         <div class="container-lg d-flex flex-column flex-md-row justify-content-between align-items-center gap-3">
             <div style="display: flex; align-items: center; gap: var(--unav-spacing-sm);">
-                <i class="bi bi-boxes"></i>
+                <svg class="unav-customIconSvg unav-icono-xl" style="color: var(--unav-rojo-500);" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                    <path d="M19 12A7 10 0 0 1 5 12A7 10 0 0 1 19 12Z M17 12A5 8 0 0 0 7 12A5 8 0 0 0 17 12Z" />
+                </svg>
                 <span class="unav-font-primary unav-weight-bold unav-text-100" style="color: var(--unav-black-800);">Design System UNAV</span>
             </div>
             <p class="unav-font-primary unav-weight-regular unav-text-075 m-0" style="color: var(--unav-grey-500);">
@@ -302,7 +239,7 @@
     <script>
         document.addEventListener('DOMContentLoaded', () => {
             
-            // Seleccionamos todos los grupos de pestañas en la página
+            // 1. MOTOR DE CAMBIO DE PESTAÑAS (TABS)
             const tabsGroups = document.querySelectorAll('.unav-tabsGroup');
 
             tabsGroups.forEach(group => {
@@ -312,22 +249,22 @@
                 tabButtons.forEach(button => {
                     button.addEventListener('click', () => {
                         
-                        // 1. Desactivar todos los botones de este grupo
+                        // Desactivar todos los botones
                         tabButtons.forEach(btn => {
                             btn.classList.remove('unav-isActive');
                             btn.setAttribute('aria-selected', 'false');
                         });
 
-                        // 2. Ocultar todos los paneles de este grupo
+                        // Ocultar todos los paneles
                         tabPanels.forEach(panel => {
                             panel.classList.remove('unav-isActive');
                         });
 
-                        // 3. Activar el botón clicado
+                        // Activar el botón clicado
                         button.classList.add('unav-isActive');
                         button.setAttribute('aria-selected', 'true');
 
-                        // 4. Mostrar el panel correspondiente (usando aria-controls)
+                        // Mostrar el panel correspondiente
                         const targetPanelId = button.getAttribute('aria-controls');
                         const targetPanel = document.getElementById(targetPanelId);
                         if(targetPanel) {
@@ -335,6 +272,31 @@
                         }
                     });
                 });
+            });
+
+            // 2. MOTOR UX: CONTROL DE DESBORDAMIENTO HORIZONTAL (FADE OUT)
+            const overflowWrappers = document.querySelectorAll('.unav-tabsOverflow');
+
+            overflowWrappers.forEach(wrapper => {
+                const scrollList = wrapper.querySelector('.unav-tabsList');
+                if(!scrollList) return;
+
+                // Evaluador geométrico
+                const checkScrollLimit = () => {
+                    // Si el usuario hace scroll total o el contenido no desborda, quitamos el gradiente
+                    if (scrollList.scrollLeft + scrollList.clientWidth >= scrollList.scrollWidth - 2) {
+                        wrapper.classList.add('unav-isEnd');
+                    } else {
+                        wrapper.classList.remove('unav-isEnd');
+                    }
+                };
+
+                // Event Listener pasivo para alto rendimiento en móviles
+                scrollList.addEventListener('scroll', checkScrollLimit, { passive: true });
+                
+                // Verificación inicial al cargar y al rotar el dispositivo
+                checkScrollLimit();
+                window.addEventListener('resize', checkScrollLimit);
             });
 
         });
