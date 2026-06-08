@@ -14,7 +14,6 @@
     <style>
         /* Estilos de contexto para la documentación */
         html { scroll-behavior: smooth; }
-        body { background-color: var(--unav-grey-100); }
         
         /* Visualizadores específicos para la documentación consumiendo Tokens */
         .unav-spacing-row {
@@ -45,7 +44,7 @@
         }
     </style>
 </head>
-<body class="unav-font-primary unav-weight-regular unav-text-100">
+<body class="unav-font-primary unav-weight-regular unav-text-1125">
 
     <nav style="background-color: #ffffff; border-bottom: 1px solid var(--unav-grey-200); padding: var(--unav-spacing-md) 0; position: sticky; top: 0; z-index: var(--unav-zIndex-sticky);">
         <div class="container-lg d-flex justify-content-between align-items-center position-relative">            
@@ -70,8 +69,8 @@
         <div class="unav-foundations-guide">
             
             <section id="espaciado" class="unav-card unav-cardSolid" style="margin-bottom: var(--unav-spacing-3xl);">
-                <h2 class="unav-font-primary unav-weight-bold unav-text-200" style="border-bottom: 1px solid var(--unav-grey-300); padding-bottom: var(--unav-spacing-sm); margin-bottom: var(--unav-spacing-md); color: var(--unav-black-900);">1. Escala de Espaciado (Spacing)</h2>
-                <p class="unav-font-primary unav-weight-regular unav-text-100 unav-lh-normal" style="color: var(--unav-grey-600); margin-bottom: var(--unav-spacing-lg);">
+                <h2 class="unav-font-primary unav-weight-bold unav-text-150" style="padding-bottom: var(--unav-spacing-sm); margin-bottom: var(--unav-spacing-xl); color: var(--unav-black-900);">1. Escala de Espaciado (Spacing)</h2>
+                <p class="unav-font-primary unav-weight-regular unav-text-1125 unav-lh-normal" style="color: var(--unav-grey-600); margin-bottom: var(--unav-spacing-lg);">
                     Utiliza estos tokens siempre que necesites separar elementos. <strong>Nunca</strong> utilices valores estáticos en píxeles sueltos (ej. <code>margin-top: 15px</code>).
                 </p>
                 
@@ -80,6 +79,12 @@
                         <div class="unav-spacing-token">--unav-spacing-0</div>
                         <div class="unav-spacing-value">0px (0rem)</div>
                         <div class="unav-spacing-bar" style="width: 0; border: 1px solid var(--unav-grey-300); background: transparent;"></div>
+                    </div>
+                    <div class="unav-spacing-row">
+                        <div class="unav-spacing-token">--unav-spacing-1</div>
+                        <div class="unav-spacing-value">1px (0.063rem)</div>
+                        <div class="unav-spacing-bar" style="width: 0; border: 1px solid var(--unav-grey-300); background: transparent;"></div>
+                        <span style="margin-left: var(--unav-spacing-md); font-size: var(--unav-fontSize075); color: var(--unav-grey-600);">Separación mínima.</span>
                     </div>
                     <div class="unav-spacing-row">
                         <div class="unav-spacing-token">--unav-spacing-xs</div>
@@ -127,8 +132,8 @@
             </section>
 
             <section id="forma" class="unav-card unav-cardSolid">
-                <h2 class="unav-font-primary unav-weight-bold unav-text-200" style="border-bottom: 1px solid var(--unav-grey-300); padding-bottom: var(--unav-spacing-sm); margin-bottom: var(--unav-spacing-md); color: var(--unav-black-900);">2. Forma y Bordes (Shape / Radii)</h2>
-                <p class="unav-font-primary unav-weight-regular unav-text-100 unav-lh-normal" style="color: var(--unav-grey-600); margin-bottom: var(--unav-spacing-lg);">
+                <h2 class="unav-font-primary unav-weight-bold unav-text-150" style="padding-bottom: var(--unav-spacing-sm); margin-bottom: var(--unav-spacing-xl); color: var(--unav-black-900);">2. Forma y Bordes (Shape / Radii)</h2>
+                <p class="unav-font-primary unav-weight-regular unav-text-1125 unav-lh-normal" style="color: var(--unav-grey-600); margin-bottom: var(--unav-spacing-lg);">
                     La escala de radios define el nivel de curvatura de un elemento. Según el sistema, el estándar principal macro es la <strong>"Esquina Viva" (0px)</strong> para mantener una apariencia arquitectónica.
                 </p>
                 
@@ -139,7 +144,7 @@
                             <div class="unav-radius-box" style="border-radius: var(--unav-radius-none); border: 2px solid var(--unav-rojo-500);"><i class="bi bi-square"></i></div>
                             <div>
                                 <code style="display: block; margin-bottom: var(--unav-spacing-xs); font-size: var(--unav-fontSize075); color: var(--unav-rojo-600);">--unav-radius-none</code>
-                                <span class="unav-font-primary unav-weight-bold unav-text-100 d-block" style="color: var(--unav-black-900);">0px</span>
+                                <span class="unav-font-primary unav-weight-bold unav-text-1125 d-block" style="color: var(--unav-black-900);">0px</span>
                                 <span style="font-size: 0.7rem; color: var(--unav-grey-600);"><strong>Estándar macro:</strong> Tarjetas, Banners, Acordeones, Paginadores.</span>
                             </div>
                         </div>
@@ -150,7 +155,7 @@
                             <div class="unav-radius-box" style="border-radius: var(--unav-radius-sm);"><i class="bi bi-square"></i></div>
                             <div>
                                 <code style="display: block; margin-bottom: var(--unav-spacing-xs); font-size: var(--unav-fontSize075); color: var(--unav-rojo-600);">--unav-radius-sm</code>
-                                <span class="unav-font-primary unav-weight-bold unav-text-100 d-block" style="color: var(--unav-black-900);">2px</span>
+                                <span class="unav-font-primary unav-weight-bold unav-text-1125 d-block" style="color: var(--unav-black-900);">2px</span>
                                 <span style="font-size: 0.7rem; color: var(--unav-grey-600);">Checkboxes, pequeñas utilidades, foco accesibles.</span>
                             </div>
                         </div>
@@ -161,7 +166,7 @@
                             <div class="unav-radius-box" style="border-radius: var(--unav-radius-md);"><i class="bi bi-square"></i></div>
                             <div>
                                 <code style="display: block; margin-bottom: var(--unav-spacing-xs); font-size: var(--unav-fontSize075); color: var(--unav-rojo-600);">--unav-radius-md</code>
-                                <span class="unav-font-primary unav-weight-bold unav-text-100 d-block" style="color: var(--unav-black-900);">4px</span>
+                                <span class="unav-font-primary unav-weight-bold unav-text-1125 d-block" style="color: var(--unav-black-900);">4px</span>
                                 <span style="font-size: 0.7rem; color: var(--unav-grey-600);">Inputs de formularios, selectores de opciones.</span>
                             </div>
                         </div>
@@ -172,7 +177,7 @@
                             <div class="unav-radius-box" style="border-radius: var(--unav-radius-lg);"><i class="bi bi-square"></i></div>
                             <div>
                                 <code style="display: block; margin-bottom: var(--unav-spacing-xs); font-size: var(--unav-fontSize075); color: var(--unav-rojo-600);">--unav-radius-lg</code>
-                                <span class="unav-font-primary unav-weight-bold unav-text-100 d-block" style="color: var(--unav-black-900);">8px</span>
+                                <span class="unav-font-primary unav-weight-bold unav-text-1125 d-block" style="color: var(--unav-black-900);">8px</span>
                                 <span style="font-size: 0.7rem; color: var(--unav-grey-600);">Ventanas modales o elementos sobre-elevados específicos.</span>
                             </div>
                         </div>
@@ -183,7 +188,7 @@
                             <div class="unav-radius-box" style="border-radius: var(--unav-radius-xl);"><i class="bi bi-square"></i></div>
                             <div>
                                 <code style="display: block; margin-bottom: var(--unav-spacing-xs); font-size: var(--unav-fontSize075); color: var(--unav-rojo-600);">--unav-radius-xl</code>
-                                <span class="unav-font-primary unav-weight-bold unav-text-100 d-block" style="color: var(--unav-black-900);">16px</span>
+                                <span class="unav-font-primary unav-weight-bold unav-text-1125 d-block" style="color: var(--unav-black-900);">16px</span>
                                 <span style="font-size: 0.7rem; color: var(--unav-grey-600);">Secciones envolventes de fondo (Layouts macro).</span>
                             </div>
                         </div>
@@ -194,7 +199,7 @@
                             <div class="unav-radius-box" style="border-radius: var(--unav-radius-full); width: 100%;"><i class="bi bi-capsule"></i></div>
                             <div>
                                 <code style="display: block; margin-bottom: var(--unav-spacing-xs); font-size: var(--unav-fontSize075); color: var(--unav-rojo-600);">--unav-radius-full</code>
-                                <span class="unav-font-primary unav-weight-bold unav-text-100 d-block" style="color: var(--unav-black-900);">9999px</span>
+                                <span class="unav-font-primary unav-weight-bold unav-text-1125 d-block" style="color: var(--unav-black-900);">9999px</span>
                                 <span style="font-size: 0.7rem; color: var(--unav-grey-600);">Etiquetas (Tags), botones secundarios y píldoras.</span>
                             </div>
                         </div>
@@ -210,7 +215,7 @@
         <div class="container-lg d-flex flex-column flex-md-row justify-content-between align-items-center gap-3">
             <div style="display: flex; align-items: center; gap: var(--unav-spacing-sm);">
                 <i class="bi bi-boxes"></i>
-                <span class="unav-font-primary unav-weight-bold unav-text-100" style="color: var(--unav-black-800);">Design System UNAV</span>
+                <span class="unav-font-primary unav-weight-bold unav-text-1125" style="color: var(--unav-black-800);">Design System UNAV</span>
             </div>
             <p class="unav-font-primary unav-weight-regular unav-text-075 m-0" style="color: var(--unav-grey-500);">
                 Arquitectura OOCSS &middot; Versión 2.0 &middot; &copy; 2026
