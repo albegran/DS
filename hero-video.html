@@ -10,27 +10,6 @@
     <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@24,400,0,0" />
 
     <link rel="stylesheet" href="unav-styles.css">   
-
-    <style>
-        /* ==============================================================
-           NUEVO: Transiciones dinámicas para la capa de opacidad (Overlay)
-           ============================================================== */
-        .unav-hero--darkOverlay::before,
-        .unav-hero--darkOverlay::after,
-        .unav-heroOverlay {
-            transition: opacity 1s ease, background-color 1s ease, background 1s ease !important;
-        }
-
-        .unav-hero.unav-fondoDesvanecido::before,
-        .unav-hero.unav-fondoDesvanecido::after {
-            opacity: 0 !important;
-        }
-
-        .unav-heroOverlay.unav-fondoDesvanecido {
-            background: transparent !important;
-            background-color: transparent !important;
-        }
-    </style>
 </head>
 <body class="unav-font-primary unav-weight-regular unav-text-1125">
 

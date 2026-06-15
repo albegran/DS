@@ -33,7 +33,7 @@
         .unav-quickNavLink {
             font-family: var(--unav-fontFamilyPrimaryCondensed);
             font-weight: var(--unav-fontWeightBold);
-            font-size: var(--unav-fontSize100);
+            font-size: var(--unav-fontSize085);
             text-transform: uppercase;
             color: var(--unav-grey-600);
             text-decoration: none;
@@ -114,13 +114,15 @@
         }
     </style>
 </head>
-<body>
+<body class="unav-font-primary unav-weight-regular unav-text-1125">
 
-    <nav class="navbar navbar-light bg-white border-bottom py-3">
-        <div class="container-lg d-flex justify-content-center align-items-center">
-            <span class="unav-font-primary unav-weight-bold unav-text-125 m-0" style="color: var(--unav-rojo-500); line-height: 1;">
+
+
+    <nav style="background-color: #ffffff; border-bottom: 1px solid var(--unav-grey-200); padding: var(--unav-spacing-xl) 0; position: sticky; top: 0; z-index: var(--unav-zIndex-sticky);">
+        <div class="container-lg d-flex justify-content-between align-items-center position-relative">           
+            <span class="unav-font-primary unav-weight-bold unav-text-125 m-0 position-absolute start-50 translate-middle-x text-nowrap" style="color: var(--unav-rojo-500); line-height: 1;">
                 Design System UNAV
-            </span>
+            </span>    
         </div>
     </nav>
 
