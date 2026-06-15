@@ -1,10 +1,10 @@
+        
         /* ==========================================
            COMPONENTE: CINTILLO DE TITULACIONES
            ========================================== */
         
-        .unav-cintillo {
-            background-color: var(--unav-grey-100);
-            /* Opcional: bordes sutiles superior e inferior para enmarcarlo en la página */
+        .unav-cintillo {                        
+            background-color: var(--unav-bloqueEnlaceBg);
             border-top: 1px solid var(--unav-grey-200);
             border-bottom: 1px solid var(--unav-grey-200);
             width: 100%;
@@ -14,17 +14,18 @@
         .unav-cintilloList {
             display: flex;
             flex-wrap: nowrap;
-            align-items: stretch; /* Estira los ítems para que el borde vertical ocupe todo el alto */
+            align-items: stretch;
+            justify-content: center; /* <-- AÑADIDO: Centrado absoluto de los ítems */
             margin: 0;
             padding: 0;
             list-style: none;
             overflow-x: auto;
-            -webkit-overflow-scrolling: touch; /* Scroll fluido en iOS */
-            scrollbar-width: none; /* Oculta la barra en Firefox */
+            -webkit-overflow-scrolling: touch; 
+            scrollbar-width: none; 
         }
 
         .unav-cintilloList::-webkit-scrollbar {
-            display: none; /* Oculta la barra en Chrome/Safari/Edge */
+            display: none; 
         }
 
         /* Cada característica */
@@ -34,12 +35,12 @@
             gap: var(--unav-spacing-sm);
             padding: var(--unav-spacing-md) var(--unav-spacing-lg);
             border-right: 1px solid var(--unav-black-800);
-            flex-shrink: 0; /* Evita que los ítems se compriman en pantallas pequeñas */
-            color: var(--unav-black-800);
+            flex-shrink: 0; 
+            color: var(--unav-bloqueEnlaceText);
         }
 
         .unav-cintilloItem:last-child {
-            border-right: none; /* Quitamos el borde al último ítem */
+            border-right: none; 
         }
 
         /* Contenedor del Icono */
@@ -49,4 +50,13 @@
             align-items: center;
             justify-content: center;
             color: inherit;
+        }
+        
+        /* Pequeño parche para UX móvil: 
+           Si hay muchos ítems en móvil, justify-content: center recorta la izquierda. 
+           Lo liberamos a 'flex-start' solo en pantallas móviles para que el scroll funcione perfecto. */
+        @media (max-width: 991px) {
+            .unav-cintilloList {
+                justify-content: flex-start;
+            }
         }

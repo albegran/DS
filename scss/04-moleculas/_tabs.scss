@@ -1,0 +1,160 @@
+        /* ==========================================
+           COMPONENTE: PESTAÑAS (TABS) UNAV OOCSS
+           ========================================== */
+
+        /* 1. Estructura Base y Comportamiento Móvil (Scroll Horizontal) */
+        .unav-tabsList {
+            display: flex;
+            flex-wrap: nowrap;
+            overflow-x: auto;
+            -webkit-overflow-scrolling: touch; 
+            scrollbar-width: none; 
+            margin: 0;
+            padding: 0;
+            list-style: none;
+            gap: var(--unav-spacing-sm);
+        }
+        .unav-tabsList::-webkit-scrollbar { display: none; }
+
+        /* Botón Base de Pestaña */
+        .unav-tabBtn {
+            cursor: pointer;
+            background: none;
+            border: none;
+            font-family: var(--unav-fontFamilyPrimary);
+            transition: all var(--unav-transitionBase);
+            white-space: nowrap; 
+            flex-shrink: 0; 
+            position: relative;
+        }
+
+        /* Paneles de Contenido */
+        .unav-tabPanel {
+            display: none; 
+            animation: unavFadeIn var(--unav-durationFast) var(--unav-easingStandard) forwards;
+        }
+        .unav-tabPanel.unav-isActive {
+            display: block; 
+        }
+        @keyframes unavFadeIn {
+            from { opacity: 0; transform: translateY(5px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+
+        /* ==========================================
+           MEJORA UX: INDICADOR DE DESBORDAMIENTO MOBILE
+           ========================================== */
+        .unav-tabsOverflow {
+            position: relative;
+            width: 100%;
+            border-radius: var(--unav-radius-none); 
+        }
+
+        @media (max-width: 767px) {
+            .unav-tabsOverflow::after {
+                content: "";
+                position: absolute;
+                top: 0;
+                right: 0;
+                bottom: 0;
+                width: var(--unav-spacing-3xl, 3rem);
+                pointer-events: none; 
+                transition: opacity 0.3s ease; 
+                opacity: 1;
+                z-index: 10; 
+            }
+
+            /* Piel: Variante Tarjeta (El header es gris, así que fundimos a gris para dar profundidad) */
+            .unav-tabs--card .unav-tabsOverflow::after {
+                background: linear-gradient(to right, transparent 0%, var(--unav-grey-100, #f8f9fa) 100%);
+            }
+
+            /* Piel: Variante Subrayada (El header es blanco, fundimos a blanco) */
+            .unav-tabs--underline .unav-tabsOverflow::after {
+                background: linear-gradient(to right, rgba(255,255,255,0) 0%, #ffffff 100%);
+            }
+
+            .unav-tabsOverflow.unav-isEnd::after {
+                opacity: 0; 
+            }
+        }
+
+        /* ---------------------------------------------------
+           VARIANTE 1: PESTAÑAS TARJETA CON ICONO (.unav-tabs--card)
+           --------------------------------------------------- */
+        .unav-tabs--card {
+            background-color: #ffffff;
+            border: 1px solid var(--unav-grey-200);
+            border-radius: var(--unav-radius-none); 
+            overflow: hidden; 
+            box-shadow: var(--unav-shadow-sm, 0 0.125rem 0.25rem rgba(0, 0, 0, 0.075));
+        }
+        .unav-tabs--card .unav-tabsList {
+            background-color: var(--unav-grey-100); /* Pista de fondo gris */
+            padding: var(--unav-spacing-sm);
+            border-bottom: 1px solid var(--unav-grey-200);
+            gap: var(--unav-spacing-xs);
+        }
+        
+        /* CORRECCIÓN UX: Todas las pestañas son "Cajas" blancas explícitas */
+        .unav-tabs--card .unav-tabBtn {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            padding: var(--unav-spacing-sm) var(--unav-spacing-lg);
+            border-radius: var(--unav-radius-none); 
+            color: var(--unav-grey-600);
+            min-width: 120px;
+            
+            /* NUEVO: Físicas de botón inactivo */
+            background-color: #ffffff; 
+            border: 1px solid var(--unav-grey-200); 
+        }
+        .unav-tabs--card .unav-tabIcon {
+            font-size: var(--unav-iconSizeLg);
+            margin-bottom: 4px;
+        }
+        .unav-tabs--card .unav-tabBtn:hover {
+            color: var(--unav-black-800);
+            border-color: var(--unav-grey-300); /* Feedback visual al pasar el ratón */
+        }
+        
+        /* Estado Activo Variante 1 */
+        .unav-tabs--card .unav-tabBtn.unav-isActive {
+            background-color: #ffffff;
+            color: var(--unav-black-900);
+            font-weight: var(--unav-fontWeightBold);
+            border-color: transparent; /* Quitamos el borde... */
+            box-shadow: var(--unav-shadow-md, 0 0.5rem 1rem rgba(0, 0, 0, 0.15)); /* ...y aplicamos elevación */
+        }
+        .unav-tabs--card .unav-tabsContent {
+            padding: var(--unav-spacing-xl);
+        }
+
+        /* ---------------------------------------------------
+           VARIANTE 2: PESTAÑAS SUBRAYADAS (.unav-tabs--underline)
+           --------------------------------------------------- */
+        .unav-tabs--underline .unav-tabsList {
+            border-bottom: 2px solid var(--unav-grey-200); 
+            gap: var(--unav-spacing-xl);
+        }
+        .unav-tabs--underline .unav-tabBtn {
+            padding: var(--unav-spacing-sm) 0;
+            color: var(--unav-grey-600);
+            font-weight: var(--unav-fontWeightMedium);
+            font-size: var(--unav-fontSize1125);
+            border-bottom: 3px solid transparent; 
+            margin-bottom: -2px; 
+        }
+        .unav-tabs--underline .unav-tabBtn:hover {
+            color: var(--unav-black-900);
+        }
+        /* Estado Activo Variante 2 */
+        .unav-tabs--underline .unav-tabBtn.unav-isActive {
+            color: var(--unav-rojo-500) !important;
+            border-bottom: 3px solid var(--unav-rojo-500) !important; 
+        }
+        .unav-tabs--underline .unav-tabsContent {
+            padding-top: var(--unav-spacing-xl);
+        }
