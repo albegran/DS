@@ -11,7 +11,6 @@
 
     <link rel="stylesheet" href="unav-styles.css">  
 
-    <!-- HOTFIX DS UNAV 2.0: Parche temporal para solucionar el bug de especificidad !important en el CSS maestro -->
     <style>
         .unav-cardDark .unav-botonSecundario:hover {
             color: var(--unav-botonTextHover, var(--unav-black-900)) !important;
@@ -191,7 +190,6 @@
                             <h4 class="unav-cardTitle">Biomedicina</h4>
                             <p class="unav-cardText">Aplica principios de ingeniería al campo de la salud para desarrollar soluciones tecnológicas en laboratorios premium.</p>
                             <div class="unav-cardAction">
-                                <!-- Botón secundario oficial usando la variante Blanco para resetear el color source -->
                                 <a href="#" class="unav-boton unav-botonSecundario unav-botonSecundarioBlanco" style="--unav-botonTextHover: var(--unav-b-dark-800);">
                                     <span>EXPLORAR</span>
                                 </a>
@@ -405,15 +403,15 @@
             <h4 class="unav-font-primary unav-weight-bold unav-text-125 mt-4 mb-3" style="color: var(--unav-black-800); letter-spacing: var(--unav-trackingNormal);">Visualización: Grados, Másteres, Doctorados</h4>
             <div class="row g-4">
                 
-                <!-- Tarjeta 1: Grado (Ingeniería/Técnica) -->
                 <div class="col-12 col-lg-4 col-md-6">
                     <article class="unav-card unav-cardMedia unav-cardDark unav-cardAlignLeft unav-efectoElevacion unav-efectoEntradaOculto" style="background-color: var(--unav-moss-800);">
                         <div class="unav-cardImageContainer unav-efectoZoomImagen">
-                            <img src="https://images.unsplash.com/photo-1581092334651-ddf26d9a09d0?q=80&w=800&auto=format&fit=crop" class="unav-cardImg" alt="Estudiantes en Laboratorio de Ingeniería">
+                            <img src="https://images.unsplash.com/photo-1581092334651-ddf26d9a09d0?q=80&w=800&h=500&auto=format&fit=crop" class="unav-cardImg" alt="Estudiantes en Laboratorio de Ingeniería">
                         </div>
                         <div class="unav-cardBody">
                             <div class="unav-cardTags">
-                                <span class="unav-tag unav-tagMoss">Ciencias técnicas</span>                                
+                                <span class="unav-tag unav-tagMoss">Ciencias Técnicas</span>
+                                <span class="unav-tag unav-tagWhite">Campus San Sebastián</span>
                             </div>
                             <h4 class="unav-cardTitle">Grado en Ingeniería en Inteligencia Artificial</h4>
                             
@@ -442,13 +440,13 @@
                                                 <span>Presencial</span>
                                             </li>
                                             <li class="unav-listIconItem unav-text-085 unav-lh-snug align-items-center">
-                                                <i class="material-symbols-outlined unav-listIconIcon mt-0">language</i>
-                                                <span>Inglés/Castellano</span>
-                                            </li>
-                                            <li class="unav-listIconItem unav-text-085 unav-lh-snug align-items-center">
                                                 <i class="material-symbols-outlined unav-listIconIcon mt-0">location_on</i>
                                                 <span>San Sebastián</span>
-                                            </li>                                            
+                                            </li>
+                                            <li class="unav-listIconItem unav-text-085 unav-lh-snug align-items-center">
+                                                <i class="material-symbols-outlined unav-listIconIcon mt-0">work</i>
+                                                <span>Prácticas</span>
+                                            </li>
                                         </ul>
                                     </div>
                                 </div>
@@ -463,16 +461,15 @@
                     </article>
                 </div>
 
-                <!-- Tarjeta 2: Máster (Arquitectura/Diseño) -->
                 <div class="col-12 col-lg-4 col-md-6">
                     <article class="unav-card unav-cardMedia unav-cardDark unav-cardAlignLeft unav-efectoElevacion unav-efectoEntradaOculto" style="background-color: var(--unav-purple-800);">
                         <div class="unav-cardImageContainer unav-efectoZoomImagen">
-                            <img src="https://images.unsplash.com/photo-1524178232363-1fb2b075b655?q=80&w=800&auto=format&fit=crop" class="unav-cardImg" alt="Clase de Arquitectura de Máster">
+                            <img src="https://images.unsplash.com/photo-1524178232363-1fb2b075b655?q=80&w=800&h=500&auto=format&fit=crop" class="unav-cardImg" alt="Clase de Arquitectura de Máster">
                         </div>
                         <div class="unav-cardBody">
                             <div class="unav-cardTags">
-                                <span class="unav-tag unav-tagPurple">Ciencias sociales</span>                                
-                                <span class="unav-tag unav-tagGreenLight">Nuevo. Inicio curso 2026/27</span>                                
+                                <span class="unav-tag unav-tagPurple">Postgrado</span>
+                                <span class="unav-tag unav-tagWhite">Campus de Pamplona</span>
                             </div>
                             <h4 class="unav-cardTitle">Máster Universitario en Diseño Arquitectónico</h4>
                             
@@ -501,13 +498,13 @@
                                                 <span>Híbrido</span>
                                             </li>
                                             <li class="unav-listIconItem unav-text-085 unav-lh-snug align-items-center">
-                                                <i class="material-symbols-outlined unav-listIconIcon mt-0">language</i>
-                                                <span>Castellano</span>
-                                            </li>
-                                            <li class="unav-listIconItem unav-text-085 unav-lh-snug align-items-center">
                                                 <i class="material-symbols-outlined unav-listIconIcon mt-0">location_on</i>
                                                 <span>Pamplona</span>
-                                            </li>                                            
+                                            </li>
+                                            <li class="unav-listIconItem unav-text-085 unav-lh-snug align-items-center">
+                                                <i class="material-symbols-outlined unav-listIconIcon mt-0">language</i>
+                                                <span>Bilingüe</span>
+                                            </li>
                                         </ul>
                                     </div>
                                 </div>
@@ -522,16 +519,15 @@
                     </article>
                 </div>
 
-                <!-- Tarjeta 3: Doctorado (Ciencias/Medicina) -->
                 <div class="col-12 col-lg-4 col-md-6">
                     <article class="unav-card unav-cardMedia unav-cardDark unav-cardAlignLeft unav-efectoElevacion unav-efectoEntradaOculto" style="background-color: var(--unav-b-dark-800);">
                         <div class="unav-cardImageContainer unav-efectoZoomImagen">
-                            <img src="https://images.unsplash.com/photo-1532094349884-543bc11b234d?q=80&w=800&auto=format&fit=crop" class="unav-cardImg" alt="Investigador en Laboratorio de Doctorado">
+                            <img src="https://images.unsplash.com/photo-1532094349884-543bc11b234d?q=80&w=800&h=500&auto=format&fit=crop" class="unav-cardImg" alt="Investigador en Laboratorio de Doctorado">
                         </div>
                         <div class="unav-cardBody">
                             <div class="unav-cardTags">
-                                <span class="unav-tag unav-tagBlueDark">Ciencias naturales y biosanitarias</span>                                
-                                <span class="unav-tag unav-tagRojo">En extinción</span>                                
+                                <span class="unav-tag unav-tagBlueDark">Investigación</span>
+                                <span class="unav-tag unav-tagWhite">Centro CIMA</span>
                             </div>
                             <h4 class="unav-cardTitle">Doctorado en Medicina Aplicada y Biomedicina</h4>
                             
