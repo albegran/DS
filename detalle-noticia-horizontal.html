@@ -59,21 +59,20 @@
 
         /* Medias queries para la tipografía del titular */
         .unav-heroEditorial-title { font-size: var(--unav-fontSize200); margin: 0; }
-        @media (min-width: 992px) {
-            .unav-heroEditorial-title { font-size: var(--unav-fontSize300); }
-        }
-
+        
         /* Contenedor de la imagen Hero */
         .unav-heroEditorial-imageWrapper {
             width: 100%;
             border-radius: var(--unav-radius-none);
             overflow: hidden;
+            /* REFACTOR MÓVIL: Hacemos que la imagen sea más inmersiva en pantallas pequeñas */
+            margin-bottom: var(--unav-spacing-xs);
         }
         
         .unav-heroEditorial-imageWrapper img {
             width: 100%;
             height: auto;
-            max-height: 600px;
+            /* max-height eliminado por defecto para móviles */
             object-fit: cover;
             display: block;
         }
@@ -89,12 +88,83 @@
             color: var(--unav-black-800);
             font-style: italic;
         }
+
+        /* ==========================================
+           REFACTOR MÓVIL (Peticiones del Usuario)
+           ========================================== */
+        @media (max-width: 767.98px) {
+            /* MÓVIL: Pie de foto más pegado y apilado */
+            .unav-heroCaptionMobile {
+                display: flex;
+                flex-direction: column;
+                gap: 0;
+                text-align: left;
+            }
+            .unav-heroCaptionMobile-author {
+                text-align: left !important;
+                margin-top: 2px;
+            }
+            
+            /* MÓVIL: Barra de compartir fija en la parte inferior */
+            .unav-shareStickyMobile {
+                position: fixed;
+                bottom: 0;
+                left: 0;
+                width: 100%;
+                background-color: rgba(255, 255, 255, 0.95);
+                backdrop-filter: blur(10px);
+                border-top: 1px solid var(--unav-grey-200);
+                padding: var(--unav-spacing-sm);
+                z-index: var(--unav-zIndex-sticky);
+                box-shadow: 0 -4px 10px rgba(0,0,0,0.05);
+                display: flex !important;
+                justify-content: center;
+                gap: var(--unav-spacing-sm);
+                /* Quitamos márgenes residuales del sidebar */
+                margin: 0 !important; 
+            }
+            
+            /* Ocultamos elementos innecesarios en la barra móvil */
+            .unav-shareStickyMobile .unav-accordionHeader,
+            .unav-shareStickyMobile .unav-accordionPanel {
+                display: none !important;
+            }
+
+            /* Reseteamos el contenedor interno del acordeón para que fluya en flex */
+            .unav-shareStickyMobile .unav-accordionGroup,
+            .unav-shareStickyMobile .unav-accordionItem {
+                border: none;
+                width: auto;
+            }
+
+            /* Hacemos visibles directamente los iconos saltándonos la lógica del acordeón */
+            .unav-shareStickyMobile .unav-accordionInner {
+                display: flex !important;
+                flex-direction: row !important;
+                padding: 0 !important;
+            }
+            
+            /* Damos un margen base al main para que el contenido no quede oculto bajo la barra */
+            body {
+                padding-bottom: 70px;
+            }
+        }
+
+        /* Configuraciones para escritorio */
+        @media (min-width: 768px) {
+            .unav-heroEditorial-title { font-size: var(--unav-fontSize300); }
+            .unav-heroEditorial-imageWrapper img { max-height: 600px; }
+            /* En escritorio la barra vuelve a su estado normal */
+            .unav-shareStickyMobile .unav-accordionInner {
+                 display: inherit; /* Restaura el comportamiento del acordeón */
+            }
+        }
     </style>
 </head>
 
 <body>
 
-    <nav style="background-color: #ffffff; border-bottom: 1px solid var(--unav-grey-200); padding: var(--unav-spacing-md) 0; position: sticky; top: 0; z-index: var(--unav-zIndex-sticky);">
+    <nav style="background-color: var(--unav-bg-surface); border-bottom: 1px solid var(--unav-grey-200); padding: var(--unav-spacing-md) 0; position: sticky; top: 0; z-index: var(--unav-zIndex-sticky);">
         <div class="container-lg d-flex justify-content-between align-items-center position-relative">            
             <div>
                 <a href="indice.html" class="unav-boton unav-botonSecundario">
@@ -120,10 +190,10 @@
                     <!-- ETIQUETAS ALINEADAS AL CENTRO -->
                     <div class="d-flex justify-content-center flex-wrap" style="gap: var(--unav-spacing-sm); margin-bottom: var(--unav-spacing-md);">
                         <span class="unav-tag unav-tagRojo">Facultad de Derecho</span>
-                        <span class="unav-tag unav-tagBlackInverso">Sociedad y Comuniación</span>                        
+                        <span class="unav-tag unav-tagBlackInverso">Sociedad y Comunicación</span>                        
                     </div>
 
-                    <!-- TITULAR CON EFECTO REVEAL (Adaptado a 2 líneas fluidas) -->
+                    <!-- TITULAR CON EFECTO REVEAL -->
                     <h1 class="unav-heroEditorial-title unav-font-secondary-playfair mb-3">
                         <span class="unav-heroEditorial-mask">
                             <span class="unav-heroEditorial-revealText" style="animation-delay: 0.15s;">La OTAN redefine su estrategia global para garantizar el futuro de las democracias</span>
@@ -139,16 +209,17 @@
                         Ante el cambio actual de las dinámicas de política exterior, el historiador militar Michael Neiberg apuesta por un entendimiento cultural profundo.
                     </p>
 
-                    <!-- FOTOGRAFÍA -->
-                    <figure class="unav-heroEditorial-imageWrapper mb-2">
-                        <img src="https://picsum.photos/id/1015/1200/500" alt="OTAN Cumbre" class="img-fluid w-100" style="border-radius: var(--unav-radius-none);">
+                    <!-- FOTOGRAFÍA (Optimizada para Móvil) -->
+                    <figure class="unav-heroEditorial-imageWrapper">
+                        <img src="https://picsum.photos/id/1015/1200/800" alt="OTAN Cumbre" class="img-fluid w-100">
                     </figure>
 
-                    <div class="row align-items-center">
-                        <div class="col-10 text-start">
+                    <!-- LEYENDA Y AUTOR (Reordenado en Móvil) -->
+                    <div class="row align-items-start unav-heroCaptionMobile mb-4">
+                        <div class="col-12 col-md-10 text-start">
                             <p class="unav-font-primary unav-text-085 m-0" style="color: var(--unav-grey-600);">Detalle de la arquitectura durante la cumbre.</p>
                         </div>
-                        <div class="col-2 text-end">
+                        <div class="col-12 col-md-2 text-end unav-heroCaptionMobile-author">
                             <span class="unav-font-primary unav-weight-bold unav-text-085" style="color: var(--unav-black-800);">Foto: Manuel Castells</span>
                         </div>
                     </div>
@@ -157,11 +228,13 @@
 
             <!-- CUERPO DE LA NOTICIA (4 COLUMNAS ACORDEÓN / 8 COLUMNAS NOTICIA) -->
             <div class="row">
-                <!-- SIDEBAR: ACORDEÓN COMPARTIR -->
-                <aside class="col-md-4 mb-4">
+                
+                <!-- SIDEBAR / BARRA MÓVIL: ACORDEÓN COMPARTIR -->
+                <aside class="col-md-4 mb-4 unav-shareStickyMobile">
                     <div class="unav-accordionGroup">
                         <div class="unav-accordionItem">
-                            <button class="unav-accordionHeader" aria-expanded="false">
+                            <!-- En móvil, este Header y su panel quedan ocultos, mostrando los iconos directamente -->
+                            <button class="unav-accordionHeader d-none d-md-flex" aria-expanded="false">
                                 <div class="unav-accordionTitleWrapper">
                                     <span class="unav-weight-bold unav-text-085" style="letter-spacing: var(--unav-trackingWide);">
                                         <i class="bi bi-share me-2" style="color: var(--unav-rojo-500);"></i> COMPARTE
@@ -171,7 +244,8 @@
                             </button>
                             <div class="unav-accordionPanel">
                                 <div class="unav-accordionInner d-flex flex-column gap-3">
-                                    <div class="d-flex gap-2 flex-wrap align-items-center">
+                                    <!-- Los iconos se exponen permanentemente en la barra inferior móvil -->
+                                    <div class="d-flex gap-2 flex-wrap align-items-center justify-content-center">
                                         <button class="unav-boton unav-botonSecundario unav-botonIconOnly unav-botonIconOnlySm" style="--unav-botonColorSource: var(--unav-black-800);"  aria-label="Facebook"><i class="bi bi-facebook unav-botonIcono"></i></button>
                                         <button class="unav-boton unav-botonSecundario unav-botonIconOnly unav-botonIconOnlySm" style="--unav-botonColorSource: var(--unav-black-800);"  aria-label="X"><i class="bi bi-twitter-x unav-botonIcono"></i></button>
                                         <button class="unav-boton unav-botonSecundario unav-botonIconOnly unav-botonIconOnlySm" style="--unav-botonColorSource: var(--unav-black-800);"  aria-label="WhatsApp"><i class="bi bi-whatsapp unav-botonIcono"></i></button>                                
@@ -193,7 +267,7 @@
 
 
 
-                    <p class="unav-font-primary unav-weight-regular unav-text-1125 unav-lh-normal mb-4" style="color: var(--unav-black-800);">
+                    <p class="unav-font-primary unav-weight-regular unav-text-1125 unav-lh-normal mb-4 mt-4" style="color: var(--unav-black-800);">
                         En la era actual, la seguridad transatlántica no es solo una cuestión de despliegue militar, sino una arquitectura cimentada en valores compartidos. Neiberg argumenta que la percepción pública de la <a href="#" class="unav-enlaceInline">OTAN</a> ha sufrido una transformación radical durante las últimas dos décadas. Las nuevas generaciones ya no ven a la alianza únicamente como un escudo frente a amenazas territoriales directas, sino que demandan una justificación basada en la protección de los derechos fundamentales.
                     </p>
 
@@ -213,11 +287,12 @@
                         De hecho, las nuevas agencias de innovación auspiciadas por el tratado están financiando ecosistemas de startups en capitales europeas, buscando talento joven capaz de desarrollar algoritmos de inteligencia artificial, computación cuántica y biotecnología aplicada a la gestión de crisis.
                     </p>
 
+                    <!-- FOTOGRAFÍA SECUNDARIA (También optimizada con margen xs) -->
                     <figure class="mb-4 mt-5">
-                        <img src="https://picsum.photos/id/1025/800/400" class="img-fluid w-100" style="border-radius: var(--unav-radius-none);">
-                        <div class="row mt-2">
-                            <div class="col-10 unav-text-085" style="color: var(--unav-grey-600);">Sala de conferencias principal donde se debatió el nuevo marco estratégico.</div>
-                            <div class="col-2 text-end unav-text-085 unav-weight-bold" style="color: var(--unav-black-800);">Foto: AP</div>
+                        <img src="https://picsum.photos/id/1025/800/400" class="img-fluid w-100" style="border-radius: var(--unav-radius-none); margin-bottom: var(--unav-spacing-xs);">
+                        <div class="row align-items-start unav-heroCaptionMobile">
+                            <div class="col-12 col-md-10 unav-text-085" style="color: var(--unav-grey-600);">Sala de conferencias principal donde se debatió el nuevo marco estratégico.</div>
+                            <div class="col-12 col-md-2 text-end unav-text-085 unav-weight-bold unav-heroCaptionMobile-author" style="color: var(--unav-black-800);">Foto: AP</div>
                         </div>
                     </figure>
 
@@ -229,8 +304,8 @@
 
                     <div class="row mb-5 mt-4">
                         <div class="col-md-6 mb-3 mb-md-0">
-                            <img src="https://picsum.photos/id/103/400/600" class="img-fluid w-100" style="border-radius: var(--unav-radius-none);">
-                            <div class="unav-text-085 mt-2" style="color: var(--unav-grey-600);">Retrato institucional del historiador Michael Neiberg durante la entrevista.</div>
+                            <img src="https://picsum.photos/id/103/400/600" class="img-fluid w-100" style="border-radius: var(--unav-radius-none); margin-bottom: var(--unav-spacing-xs);">
+                            <div class="unav-text-085" style="color: var(--unav-grey-600);">Retrato institucional del historiador Michael Neiberg durante la entrevista.</div>
                         </div>
                         <div class="col-md-6 d-flex flex-column justify-content-center">
                             <p class="unav-font-primary unav-weight-regular unav-text-1125 unav-lh-normal mb-4" style="color: var(--unav-black-800);">
@@ -248,7 +323,7 @@
 
     </main>
 
-    <footer style="background-color: #ffffff; border-top: 1px solid var(--unav-grey-200); padding: var(--unav-spacing-lg) 0; margin-top: var(--unav-spacing-3xl);">
+    <footer style="background-color: var(--unav-bg-surface); border-top: 1px solid var(--unav-grey-200); padding: var(--unav-spacing-lg) 0; margin-top: var(--unav-spacing-3xl);">
         <div class="container-lg d-flex flex-column flex-md-row justify-content-between align-items-center gap-3">
             <div style="display: flex; align-items: center; gap: var(--unav-spacing-sm);">
                 <i class="bi bi-boxes"></i>
@@ -279,6 +354,9 @@
                 const unavIsMultiOpen = unavGroup.classList.contains('unav-allowMulti');
 
                 unavGroup.addEventListener('click', (event) => {
+                    // Evitar el acordeón en móvil ya que los controles ahora están visibles permanentemente
+                    if(window.innerWidth < 768) return;
+
                     const unavHeader = event.target.closest('.unav-accordionHeader');
                     if (!unavHeader) return;
 
