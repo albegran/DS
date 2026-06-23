@@ -10,10 +10,31 @@
     <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@24,400,0,0" />
 
     <link rel="stylesheet" href="unav-styles.css">   
+
+    <style>
+        /* 1. Mapeo de tokens para personalizar el color del botón flotante desde el HTML */
+        .unav-stickyButton {
+            background-color: var(--unav-stickyBg, var(--unav-rojo-600)) !important;
+            transition: background-color var(--unav-durationFast) ease;
+        }
+        .unav-stickyButton:hover,
+        .unav-stickyButton:focus-visible {
+            background-color: var(--unav-stickyHover, var(--unav-rojo-800)) !important;
+        }
+
+        /* 2. Modificador OOCSS para que el panel ocupe el 50% de la pantalla */
+        /* Solo se aplica en Desktop para proteger la experiencia UX en móviles */
+        @media (min-width: 992px) {
+            .unav-sidePanelHalf {
+                width: 50vw !important;
+                max-width: 50vw !important;
+            }
+        }
+    </style>
 </head>
 <body class="unav-font-primary unav-weight-regular unav-text-1125">
 
-    <nav style="background-color: #ffffff; border-bottom: 1px solid var(--unav-grey-200); padding: var(--unav-spacing-md) 0; position: sticky; top: 0; z-index: var(--unav-zIndex-sticky);">
+    <nav style="background-color: var(--unav-bg-surface); border-bottom: 1px solid var(--unav-grey-200); padding: var(--unav-spacing-md) 0; position: sticky; top: 0; z-index: var(--unav-zIndex-sticky);">
         <div class="container-lg d-flex justify-content-between align-items-center position-relative">            
             <div>
                 <a href="indice.html" class="unav-boton unav-botonSecundario">
@@ -30,28 +51,35 @@
     <main class="container-lg">
         
         <header style="text-align: center; margin: var(--unav-spacing-xl) var(--unav-spacing-xl);">
-            <h1 class="unav-font-primary unav-weight-medium unav-text-200" style="color: var(--unav-black-900); margin-bottom: var(--unav-spacing-sm) !important;">Panel de Solicitud de Información</h1>
+            <h1 class="unav-font-primary unav-weight-medium unav-text-200" style="color: var(--unav-black-900); margin-bottom: var(--unav-spacing-sm) !important; letter-spacing: var(--unav-trackingTight);">Panel de Solicitud de Información</h1>
         </header>
 
         <section class="row justify-content-center mb-5">
             <div class="col-md-8">
-                <div class="bg-white border-0 shadow-sm rounded p-5 text-center">
-                    <i class="bi bi-mouse2 display-1 text-muted mb-4 d-block"></i>
-                    <h3 class="unav-font-primary unav-weight-bold unav-text-150 text-dark">Interactúa con el componente</h3>
-                    <p class="unav-font-primary unav-text-1125 text-muted">El formulario se encuentra oculto en el margen derecho de la pantalla (o en la base inferior en móvil). Presiona el <strong>Tabulador</strong> repetidas veces hasta llegar al botón para comprobar el comportamiento del anillo de foco inteligente.</p>
+                <div class="unav-card unav-cardSolid" style="padding: var(--unav-spacing-2xl); text-align: center; display: flex; flex-direction: column; align-items: center;">
+                    <i class="bi bi-mouse2" style="font-size: var(--unav-fontSize500); color: var(--unav-grey-400); margin-bottom: var(--unav-spacing-lg);"></i>
+                    <h3 class="unav-font-primary unav-weight-bold unav-text-150" style="color: var(--unav-black-900); letter-spacing: var(--unav-trackingNormal); margin-bottom: var(--unav-spacing-sm);">Interactúa con el componente</h3>
+                    <p class="unav-font-primary unav-text-1125 unav-lh-normal" style="color: var(--unav-grey-600); letter-spacing: var(--unav-trackingNormal); max-width: 600px;">El formulario se encuentra oculto en el margen derecho de la pantalla (o en la base inferior en móvil). Puedes probar el nuevo modificador de ancho al 50% antes de abrir el panel.</p>
+                    
+                    <div style="margin-top: var(--unav-spacing-xl);">
+                        <button id="unavToggleWidthBtn" class="unav-boton unav-botonSecundario" style="--unav-botonColorSource: var(--unav-blue-700);">
+                            <i class="bi bi-arrows-expand unav-botonIcono"></i>
+                            <span>Alternar Ancho del Panel (50%)</span>
+                        </button>
+                    </div>
                 </div>
             </div>
         </section>
 
     </main>
 
-    <footer class="bg-white border-top py-4 mt-5">
+    <footer style="background-color: var(--unav-bg-surface); border-top: 1px solid var(--unav-grey-200); padding: var(--unav-spacing-lg) 0; margin-top: var(--unav-spacing-3xl);">
         <div class="container-lg d-flex flex-column flex-md-row justify-content-between align-items-center gap-3">
-            <div class="d-flex align-items-center gap-2">
+            <div style="display: flex; align-items: center; gap: var(--unav-spacing-sm);">
                 <i class="bi bi-boxes"></i>
-                <span class="unav-font-primary unav-weight-bold unav-text-1125 text-dark">Design System UNAV</span>
+                <span class="unav-font-primary unav-weight-bold unav-text-1125" style="color: var(--unav-black-800);">Design System UNAV</span>
             </div>
-            <p class="unav-font-primary unav-weight-regular unav-text-075 text-muted m-0">
+            <p class="unav-font-primary unav-weight-regular unav-text-075 m-0" style="color: var(--unav-grey-500);">
                 Arquitectura OOCSS &middot; Versión 2.0 &middot; &copy; 2026
             </p>
         </div>
@@ -66,9 +94,10 @@
             <button class="unav-stickyButton" 
                     id="unavBtnToggle"
                     aria-expanded="false"
-                    aria-label="Abrir formulario de información">
+                    aria-label="Abrir formulario de información"
+                    style="--unav-stickyBg: var(--unav-rojo-600); --unav-stickyHover: var(--unav-rojo-800);">
                 <span class="unav-iconArrow">
-                    <svg viewBox="0 0 24 24" width="24" height="24"><path d="M15.41 16.59L10.83 12l4.58-4.59L14 6l-6 6 6 6 1.41-1.41z"/></svg>
+                    <svg viewBox="0 0 24 24" width="24" height="24" fill="currentColor"><path d="M15.41 16.59L10.83 12l4.58-4.59L14 6l-6 6 6 6 1.41-1.41z"/></svg>
                 </span>
                 <span class="unav-buttonText">Solicitar Información</span>
             </button>
@@ -88,8 +117,10 @@
             const btnToggle = document.querySelector('#unavBtnToggle');
             const panel = document.querySelector('#unavSidePanel');
             const overlay = document.querySelector('#unavOverlay');
+            const btnToggleWidth = document.querySelector('#unavToggleWidthBtn');
             const body = document.body;
 
+            // Función para abrir/cerrar el panel
             function handleToggle() {
                 const isOpen = panel.classList.toggle('unav-isOpen');
                 overlay.classList.toggle('unav-isActive');
@@ -109,9 +140,27 @@
                 body.style.overflow = '';
             }
 
+            // Función para alternar el modificador del 50% de ancho
+            function handleWidthToggle() {
+                panel.classList.toggle('unav-sidePanelHalf');
+                const isHalf = panel.classList.contains('unav-sidePanelHalf');
+                
+                // Feedback visual en el botón de alternancia
+                if(isHalf) {
+                    btnToggleWidth.style.setProperty('--unav-botonColorSource', 'var(--unav-moss-700)');
+                    btnToggleWidth.querySelector('span').innerText = 'Modo 50% Activado';
+                } else {
+                    btnToggleWidth.style.setProperty('--unav-botonColorSource', 'var(--unav-blue-700)');
+                    btnToggleWidth.querySelector('span').innerText = 'Alternar Ancho del Panel (50%)';
+                }
+            }
+
             if (btnToggle && panel) {
                 btnToggle.addEventListener('click', handleToggle);
                 if (overlay) overlay.addEventListener('click', handleClose);
+                
+                // Botón extra para probar el ancho del 50%
+                if (btnToggleWidth) btnToggleWidth.addEventListener('click', handleWidthToggle);
                 
                 // Accesibilidad: Cierre con tecla Escape
                 document.addEventListener('keydown', (e) => {
