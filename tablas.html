@@ -40,30 +40,55 @@
                     <caption class="unav-tableCaption">YOUNG LEARNERS CAMBRIDGE</caption>
                     <thead>
                         <tr>
-                            <th scope="col" style="width: 15%;">Convocatoria</th>
-                            <th scope="col" style="width: 15%;">Tipo</th>
+                            <th scope="col" style="width: 10%;">Convocatoria</th>
+                            <th scope="col" style="width: 8%;">Tipo</th>
                             <th scope="col">Fecha examen</th>
-                            <th scope="col">Lugar</th>
+                            <th scope="col" style="width: 8%;">Lugar</th>
+                            <th scope="col">Ciudad</th>
+                            <th scope="col">Fin matrícula</th>
+                            <th scope="col">Tasas</th>
+                            <th scope="col">Resultados</th>
+                            <th scope="col">Matrícula</th>
                         </tr>
                     </thead>
                     <tbody>
                         <tr>
                             <td data-label="Convocatoria"><strong>STARTERS</strong></td>
                             <td data-label="Tipo">Paper Based <i class="bi bi-file-earmark-text ms-1 text-muted"></i></td>
-                            <td data-label="Fecha examen">06/06/2026</td>
+                            <td data-label="Fecha examen">6 may. 2026</td>
                             <td data-label="Lugar">Universidad de Navarra</td>
+                            <td data-label="Ciudad">Pamplona</td>
+                            <td data-label="Fin matrícula">12 may. 2026</td>
+                            <td data-label="Tasas">179 €</td>
+                            <td data-label="Resultados">17 jul. 2026</td>
+                            <td data-label="Matrícula">Cerrada matrícula</td>
                         </tr>
                         <tr>
                             <td data-label="Convocatoria"><strong>STARTERS</strong></td>
-                            <td data-label="Tipo">Paper Based <i class="bi bi-file-earmark-text ms-1 text-muted"></i></td>
-                            <td data-label="Fecha examen">06/06/2026</td>
+                            <td data-label="Tipo">Paper Based <i class="bi-pc-display-horizontal ms-1 text-muted"></i></td>
+                            <td data-label="Fecha examen">6 may. 2026</td>
                             <td data-label="Lugar">Universidad de Navarra</td>
+                            <td data-label="Ciudad">Pamplona</td>
+                            <td data-label="Fin matrícula">12 may. 2026</td>
+                            <td data-label="Tasas">179 €</td>
+                            <td data-label="Resultados">17 jul. 2026</td>
+                            <td data-label="Matrícula">
+                                <a href="#" class="unav-boton unav-botonSecundario" style="--unav-botonColorSource: var(--unav-rojo-600);">
+                                    <i class="bi bi-ui-checks unav-botonIcono" aria-hidden="true"></i>
+                                    <span>ABIERTA MATRÍCULA</span>
+                                </a>
+                            </td>
                         </tr>
                         <tr>
                             <td data-label="Convocatoria"><strong>STARTERS</strong></td>
-                            <td data-label="Tipo">Paper Based <i class="bi bi-file-earmark-text ms-1 text-muted"></i></td>
-                            <td data-label="Fecha examen">06/06/2026</td>
+                            <td data-label="Tipo">Digital Qualifications <i class="bi bi-file-earmark-text ms-1 text-muted"></i></td>
+                            <td data-label="Fecha examen">6 may. 2026</td>
                             <td data-label="Lugar">Universidad de Navarra</td>
+                            <td data-label="Ciudad">Pamplona</td>
+                            <td data-label="Fin matrícula">12 may. 2026</td>
+                            <td data-label="Tasas">179 €</td>
+                            <td data-label="Resultados">17 jul. 2026</td>
+                            <td data-label="Matrícula">Cerrada matrícula</td>
                         </tr>
                     </tbody>
                 </table>
@@ -156,11 +181,7 @@
             <p class="text-muted mb-4 unav-lh-normal">Ejemplo real basado en el <strong>Grado en Estudios de Arquitectura</strong>. Utiliza la clase <code>.unav-tableGroupHeader</code> en el <code>&lt;tr&gt;</code> para agrupar visualmente las asignaturas por semestre, reduciendo drásticamente la repetición de información. Además, los títulos consumen el componente <code>.unav-enlaceInline</code> para enlazar de forma accesible al portal virtual de guías docentes.</p>
             
             <div class="unav-tableWrapper">
-                <table class="unav-table unav-tableStriped unav-tableHover unav-tableResponsiveStack" 
-                       style="--unav-tableCaptionBorder: var(--unav-rojo-500); 
-                              --unav-tableHeaderBg: var(--unav-grey-300); 
-                              --unav-tableHeaderColor: var(--unav-black-600);
-                              --unav-tableStripeBg: var(--unav-grey-50);">
+                <table class="unav-table unav-tableStriped unav-tableHover unav-tableResponsiveStack unav-tableThemeAsignatura">
                     <caption class="unav-tableCaption">PRIMER CURSO (60 ECTS)</caption>
                     <thead>
                         <tr>
@@ -246,18 +267,17 @@
             <p class="text-muted mb-4 unav-lh-normal">Para hacer la tabla completamente responsiva como la Tabla 4 y que funcione perfectamente en dispositivos móviles (Modo Tarjetas), es necesario <strong>eliminar los atributos <code>rowspan</code></strong>, ya que estos se rompen estructuralmente al apilar celdas. En su lugar, aplicamos el patrón semántico de <strong>agrupación por filas</strong> (<code>.unav-tableGroupHeader</code>). Los colores de borde y texto se mantienen con los tokens <code>var(--unav-black-500)</code>.</p>
             
             <div class="unav-tableWrapper">
-                <table class="unav-table unav-tableHover unav-tableResponsiveStack unav-tableInnerVerticalBorders" style="--unav-tableBorderColor: var(--unav-black-500); --unav-tableCaptionBorder: var(--unav-black-500);">
+                <table class="unav-table unav-tableHover unav-tableResponsiveStack unav-tableInnerVerticalBorders unavThemeMaterias">
                     <caption class="unav-tableCaption">PLAN DE ESTUDIOS: ECTS POR MATERIA</caption>
                     <thead>
                         <tr>
                             <th scope="col" style="width: 70%;">Asignatura</th>
-                            <th scope="col" style="width: 30%; text-align: center;">ECTS Asignatura</th>
+                            <th scope="col" style="width: 30%; text-align: center;">ECTS</th>
                         </tr>
                     </thead>
-                    <tbody>
-                        
-                        <tr class="unav-tableGroupHeader" style="background-color: var(--unav-grey-100);">
-                            <th colspan="2" scope="colgroup" style="color: var(--unav-black-500); border-bottom: 2px solid var(--unav-black-500);">
+                    <tbody>                        
+                        <tr class="unav-tableGroupHeader">
+                            <th colspan="2" scope="colgroup">
                                 <div class="d-flex justify-content-between align-items-center flex-wrap gap-2">
                                     <span>Materia 1. Física y Química general</span>
                                     <span class="unav-tag unav-tagBlack">20 ECTS Total</span>
@@ -266,19 +286,19 @@
                         </tr>
                         <tr>
                             <td data-label="Asignatura">Física I</td>
-                            <td data-label="ECTS Asignatura" style="text-align: center;">8</td>
+                            <td data-label="ECTS" style="text-align: center;">8</td>
                         </tr>
                         <tr>
                             <td data-label="Asignatura">Física II</td>
-                            <td data-label="ECTS Asignatura" style="text-align: center;">6</td>
+                            <td data-label="ECTS" style="text-align: center;">6</td>
                         </tr>
                         <tr>
                             <td data-label="Asignatura">Química</td>
-                            <td data-label="ECTS Asignatura" style="text-align: center;">6</td>
+                            <td data-label="ECTS" style="text-align: center;">6</td>
                         </tr>
                         
-                        <tr class="unav-tableGroupHeader" style="background-color: var(--unav-grey-100);">
-                            <th colspan="2" scope="colgroup" style="color: var(--unav-black-500); border-bottom: 2px solid var(--unav-black-500);">
+                        <tr class="unav-tableGroupHeader">
+                            <th colspan="2" scope="colgroup">
                                 <div class="d-flex justify-content-between align-items-center flex-wrap gap-2">
                                     <span>Materia 2. Matemática básica</span>
                                     <span class="unav-tag unav-tagBlack">30 ECTS Total</span>
@@ -287,27 +307,27 @@
                         </tr>
                         <tr>
                             <td data-label="Asignatura">Cálculo I</td>
-                            <td data-label="ECTS Asignatura" style="text-align: center;">6</td>
+                            <td data-label="ECTS" style="text-align: center;">6</td>
                         </tr>
                         <tr>
                             <td data-label="Asignatura">Álgebra</td>
-                            <td data-label="ECTS Asignatura" style="text-align: center;">6</td>
+                            <td data-label="ECTS" style="text-align: center;">6</td>
                         </tr>
                         <tr>
                             <td data-label="Asignatura">Cálculo II</td>
-                            <td data-label="ECTS Asignatura" style="text-align: center;">6</td>
+                            <td data-label="ECTS" style="text-align: center;">6</td>
                         </tr>
                         <tr>
                             <td data-label="Asignatura">Estadística y probabilidad</td>
-                            <td data-label="ECTS Asignatura" style="text-align: center;">6</td>
+                            <td data-label="ECTS" style="text-align: center;">6</td>
                         </tr>
                         <tr>
                             <td data-label="Asignatura">Ecuaciones diferenciales</td>
-                            <td data-label="ECTS Asignatura" style="text-align: center;">6</td>
+                            <td data-label="ECTS" style="text-align: center;">6</td>
                         </tr>
                         
-                        <tr class="unav-tableGroupHeader" style="background-color: var(--unav-grey-100);">
-                            <th colspan="2" scope="colgroup" style="color: var(--unav-black-500); border-bottom: 2px solid var(--unav-black-500);">
+                        <tr class="unav-tableGroupHeader">
+                            <th colspan="2" scope="colgroup">
                                 <div class="d-flex justify-content-between align-items-center flex-wrap gap-2">
                                     <span>Materia 3. Ciencias de la computación</span>
                                     <span class="unav-tag unav-tagBlack">6 ECTS Total</span>
@@ -316,11 +336,11 @@
                         </tr>
                         <tr>
                             <td data-label="Asignatura">Informática</td>
-                            <td data-label="ECTS Asignatura" style="text-align: center;">6</td>
+                            <td data-label="ECTS" style="text-align: center;">6</td>
                         </tr>
                         
-                        <tr class="unav-tableGroupHeader" style="background-color: var(--unav-grey-100);">
-                            <th colspan="2" scope="colgroup" style="color: var(--unav-black-500); border-bottom: 2px solid var(--unav-black-500);">
+                        <tr class="unav-tableGroupHeader">
+                            <th colspan="2" scope="colgroup">
                                 <div class="d-flex justify-content-between align-items-center flex-wrap gap-2">
                                     <span>Materia 4. Economía</span>
                                     <span class="unav-tag unav-tagBlack">6 ECTS Total</span>
@@ -329,11 +349,11 @@
                         </tr>
                         <tr>
                             <td data-label="Asignatura">Economía y empresa</td>
-                            <td data-label="ECTS Asignatura" style="text-align: center;">6</td>
+                            <td data-label="ECTS" style="text-align: center;">6</td>
                         </tr>
                         
-                        <tr class="unav-tableGroupHeader" style="background-color: var(--unav-grey-100);">
-                            <th colspan="2" scope="colgroup" style="color: var(--unav-black-500); border-bottom: 2px solid var(--unav-black-500);">
+                        <tr class="unav-tableGroupHeader">
+                            <th colspan="2" scope="colgroup">
                                 <div class="d-flex justify-content-between align-items-center flex-wrap gap-2">
                                     <span>Materia 5. Biología fundamental</span>
                                     <span class="unav-tag unav-tagBlack">6 ECTS Total</span>
@@ -342,7 +362,7 @@
                         </tr>
                         <tr>
                             <td data-label="Asignatura">Biología Fundamental</td>
-                            <td data-label="ECTS Asignatura" style="text-align: center;">6</td>
+                            <td data-label="ECTS" style="text-align: center;">6</td>
                         </tr>
                     </tbody>
                 </table>

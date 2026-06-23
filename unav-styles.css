@@ -3,6 +3,10 @@
    DESIGN SYSTEM UNAV - ARCHIVO MAESTRO OOCSS / ITCSS
    ========================================================================== */
 /* 1. FOUNDATIONS (Tokens y Variables) */
+/* ==========================================================================
+   DESIGN SYSTEM UNAV - ARCHIVO MAESTRO OOCSS / ITCSS
+   ========================================================================== */
+/* 1. FOUNDATIONS (Tokens y Variables) */
 @import url("https://fonts.googleapis.com/css2?family=DM+Serif+Text:ital@0;1&family=Playfair+Display:ital,wght@0,400;0,700;1,400;1,700&family=Roboto+Condensed:wght@400;700&family=Roboto+Slab:wght@400;700&family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;1,400&display=swap");
 :root {
   /* ==========================================
@@ -14,6 +18,11 @@
   --unav-zIndex-sticky: 500;
   --unav-zIndex-overlay: 1000;
   --unav-zIndex-modal: 1050;
+  /* --- 0. PRIMITIVOS ABSOLUTOS --- */
+  --unav-white: #ffffff;
+  /* --- 0.1 TOKENS SEMÁNTICOS DE APLICACIÓN --- */
+  --unav-text-inverse: var(--unav-white);
+  --unav-bg-surface: var(--unav-white);
   /* --- 1. PRIMARIOS --- */
   /* Rojo Unav */
   --unav-rojo-100: #FFEbee;
@@ -266,13 +275,13 @@
   --unav-lineHeightTight: 1.1; /* Para titulares enormes (300, 400, 500) */
   --unav-lineHeightSnug: 1.25; /* Para titulares medios (150, 175, 200, 250) */
   --unav-lineHeightNormal: 1.5; /* Base lectura (100, 1125, 125) */
-  --unav-lineHeightRelaxed: 1.75; /* Para párrafos muy largos (mejora legibilidad) */
+  --unav-lineHeightRelaxed: 1.75; /* Para párrafos muy largos, mejora legibilidad (085, 075)) */
   /* --- TRACKING (ESPACIADO DE LETRAS) --- */
   --unav-trackingTighter: -0.04em; /* Para titulares gigantes (400, 500) */
   --unav-trackingTight: -0.02em; /* Para titulares grandes (200, 250, 300) */
   --unav-trackingNormal: 0em; /* Body copy (100, 1125, 125) */
-  --unav-trackingWide: 0.05em; /* Para subtítulos en mayúsculas / Tags */
-  --unav-trackingWidest: 0.1em; /* Elementos muy pequeños que necesitan respirar */
+  --unav-trackingWide: 0.05em; /* Para subtítulos en mayúsculas / Tags (085) */
+  --unav-trackingWidest: 0.1em; /* Elementos muy pequeños que necesitan respirar (075) */
   /* ==========================================
      1. TOKENS TRANSVERSALES: MOTION Y FÍSICAS
      ========================================== */
@@ -347,8 +356,8 @@
   /* Excepción cromática histórica */
   --unav-bloqueEnlaceBg: #e3eaed;
   --unav-bloqueEnlaceText: var(--unav-black-800);
-  --unav-bloqueEnlaceHoverBg: #000000;
-  --unav-bloqueEnlaceHoverText: #ffffff;
+  --unav-bloqueEnlaceHoverBg: var(--unav-black-500);
+  --unav-bloqueEnlaceHoverText: var(--unav-text-inverse);
   /* ==========================================
      8. TOKENS COMPONENTE: LISTA DESCRIPTIVA
      ========================================== */
@@ -374,7 +383,7 @@
   /* ==========================================
      10. TOKENS COMPONENTE: TARJETAS (CARDS)
      ========================================== */
-  --unav-cardBgBase: #ffffff;
+  --unav-cardBgBase: var(--unav-bg-surface);
   --unav-cardBorderRadius: 0; /* Cambiar a 0.75rem/12px si queremos las esquinas redondeadas */
   --unav-cardPaddingBase: 2rem;
   --unav-cardPaddingFloating: 3.5rem 2rem 2.5rem 2rem;
@@ -483,13 +492,13 @@
   --unav-galleryControlIconSize: 1.25rem; /* 20px */
   --unav-galleryBg: var(--unav-black-800);
   --unav-galleryStageBg: var(--unav-black-900);
-  --unav-gallerySidebarBg: #ffffff;
+  --unav-gallerySidebarBg: var(--unav-bg-surface);
   --unav-galleryBorderColor: var(--unav-grey-200);
   --unav-galleryMetaBg: var(--unav-grey-100);
   --unav-galleryControlBg: rgba(255, 255, 255, 0.95);
   --unav-galleryControlColor: var(--unav-black-800);
   --unav-galleryControlHoverBg: var(--unav-rojo-600);
-  --unav-galleryControlHoverColor: #ffffff;
+  --unav-galleryControlHoverColor: var(--unav-text-inverse);
   /* ==========================================
      20. TOKENS COMPONENTE: GALERÍA DE VÍDEOS
      ========================================== */
@@ -498,7 +507,7 @@
   --unav-videoSidebarWidthTablet: 15rem; /* 240px */
   --unav-videoThumbWidthTablet: 5rem; /* 80px */
   --unav-videoItemWidthMobile: 10rem; /* 160px */
-  --unav-videoGalleryBg: #ffffff;
+  --unav-videoGalleryBg: var(--unav-bg-surface);
   --unav-videoGalleryStageBg: var(--unav-black-900);
   --unav-videoGalleryBorderColor: var(--unav-grey-200);
   --unav-videoGalleryHoverBg: var(--unav-grey-100);
@@ -513,6 +522,7 @@
   --unav-sectionLabelPaddingX: 2rem;
 }
 
+/* 2. BASE (Reseteos globales) */
 /* 2. BASE (Reseteos globales) */
 /* ==========================================
    00. ACCESIBILIDAD GLOBAL Y LECTORES DE PANTALLA
@@ -537,6 +547,7 @@ body {
   overscroll-behavior-x: none;
 }
 
+/* 3. ATOMOS (Elementos indivisibles) */
 /* 3. ATOMOS (Elementos indivisibles) */
 /* ==========================================
    COMPONENTE: BOTONES UNAV
@@ -575,12 +586,12 @@ body {
    ========================================= */
 .unav-botonPrimario {
   width: 100%;
-  --unav-botonBg: #ffffff;
+  --unav-botonBg: var(--unav-bg-surface);
   --unav-botonText: var(--unav-black-500);
   --unav-botonBorder: var(--unav-black-500);
   --unav-botonIcon: inherit;
   --unav-botonHoverBg: var(--unav-black-500);
-  --unav-botonHoverText: #ffffff;
+  --unav-botonHoverText: var(--unav-text-inverse);
   --unav-botonHoverBorder: var(--unav-black-500);
   background-color: var(--unav-botonBg);
   color: var(--unav-botonText);
@@ -604,7 +615,7 @@ body {
   width: -moz-fit-content;
   width: fit-content;
   --unav-botonColorSource: var(--unav-black-800);
-  --unav-botonTextHover: #ffffff;
+  --unav-botonTextHover: var(--unav-text-inverse);
   background-color: transparent;
   color: var(--unav-botonColorSource);
   border: var(--unav-botonSecundarioBorderWidth) solid var(--unav-botonColorSource);
@@ -623,7 +634,7 @@ body {
 
 /* MODIFICADOR: BOTÓN SECUNDARIO BLANCO (Para fondos oscuros/banners) */
 .unav-botonSecundarioBlanco {
-  --unav-botonColorSource: #ffffff;
+  --unav-botonColorSource: var(--unav-text-inverse);
   --unav-botonTextHover: var(--unav-black-800);
 }
 
@@ -638,7 +649,7 @@ body {
   width: -moz-fit-content;
   width: fit-content;
   --unav-botonColorSource: var(--unav-black-800);
-  --unav-botonTextHover: #ffffff;
+  --unav-botonTextHover: var(--unav-text-inverse);
   background-color: var(--unav-botonColorSource);
   color: var(--unav-botonTextHover);
   border: var(--unav-botonSecundarioBorderWidth) solid var(--unav-botonColorSource);
@@ -663,7 +674,7 @@ body {
 }
 
 .unav-botonHoverInnerBorder:hover {
-  box-shadow: inset 0 0 0 1px #ffffff;
+  box-shadow: inset 0 0 0 1px var(--unav-text-inverse);
 }
 
 .unav-botonDisabled {
@@ -734,7 +745,7 @@ body {
   white-space: nowrap;
   outline: none;
   -webkit-text-decoration: underline transparent;
-          text-decoration: underline transparent;
+  text-decoration: underline transparent;
   /* Consumo de Token de Espacio para el offset del subrayado */
   text-underline-offset: var(--unav-spacing-xs);
   text-decoration-thickness: 1px;
@@ -828,17 +839,17 @@ body {
 }
 
 /* Modificador para fondos oscuros/corporativos */
-.unav-enlaceInlineBlanco {
-  color: #ffffff;
-  text-decoration-color: rgba(255, 255, 255, 0.7);
-  text-decoration-thickness: 2px; /* Más grueso para mayor visibilidad */
-  text-underline-offset: 4px; /* Separación forzada (offset) */
+.unav-enlaceInlineInverso {
+  color: var(--unav-text-inverse);
+  text-decoration-color: color-mix(in srgb, var(--unav-text-inverse) 70%, transparent);
+  text-decoration-thickness: 2px;
+  text-underline-offset: 4px;
 }
 
-.unav-enlaceInlineBlanco:hover {
-  color: #ffffff;
-  text-decoration-color: #ffffff;
-  text-decoration-thickness: 3px; /* Feedback grueso al hover */
+.unav-enlaceInlineInverso:hover {
+  color: var(--unav-text-inverse);
+  text-decoration-color: var(--unav-text-inverse);
+  text-decoration-thickness: 3px;
 }
 
 /* ==========================================
@@ -860,8 +871,8 @@ body {
   white-space: nowrap;
   letter-spacing: var(--unav-tagLetterSpacing);
   -webkit-user-select: none;
-     -moz-user-select: none;
-          user-select: none;
+  -moz-user-select: none;
+  user-select: none;
   text-decoration: none;
   transition: var(--unav-transitionBase);
 }
@@ -971,7 +982,7 @@ body {
 
 /* Variante Neutra: Fondo Blanco y Letra Negra */
 .unav-tagWhite {
-  background-color: #ffffff;
+  background-color: var(--unav-bg-surface);
   color: var(--unav-black-900);
   box-shadow: inset 0 0 0 1px var(--unav-grey-300); /* Borde sutil para que no se pierda sobre fondos blancos */
 }
@@ -979,7 +990,7 @@ body {
 /* Nueva Variante Excepcional Solicitada por el Sistema: Inversa Negra */
 .unav-tagBlackInverso {
   background-color: var(--unav-black-500) !important; /* Fondo Negro Puro */
-  color: #ffffff !important; /* Texto Blanco Absoluto */
+  color: var(--unav-text-inverse) !important; /* Texto Blanco Absoluto */
 }
 
 /* ==========================================
@@ -1020,7 +1031,7 @@ body {
 
 .unav-iconoDestacado:hover {
   background-color: var(--unav-black-500);
-  color: #ffffff;
+  color: var(--unav-text-inverse);
   border-color: var(--unav-black-500);
   transform: translateY(-5px);
   box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.1);
@@ -1028,7 +1039,7 @@ body {
 
 /* Fuerza el color en Material Symbols durante el hover */
 .unav-iconoDestacado:hover .material-symbols-outlined {
-  color: #ffffff;
+  color: var(--unav-text-inverse);
 }
 
 /* 3. ELEMENTOS INTERNOS Y DOCUMENTACIÓN */
@@ -1131,19 +1142,6 @@ body {
   color: inherit;
 }
 
-/* --- Layout de Documentación --- */
-/* (Se asume el borde en px porque forma parte de la geometría estructural de la caja) */
-.unav-techSummary {
-  border-left: 4px solid var(--unav-rojo-600);
-}
-
-.unav-sectionTitle {
-  color: var(--unav-black-800);
-  border-bottom: 2px solid var(--unav-grey-200);
-  /* REFACTOR: Consumo de Tokens de Espaciado (8px) */
-  padding-bottom: var(--unav-spacing-sm);
-}
-
 /* ==========================================
    COMPONENTE: TÍTULOS VISUALES (Desacoplados)
    ========================================== */
@@ -1159,6 +1157,7 @@ body {
 }
 
 /* 4. MOLECULAS (Agrupaciones de átomos) */
+/* 4. MOLECULAS (Agrupaciones de átomos) */
 /* ==========================================
    COMPONENTE: TARJETAS UNIFICADAS (.unav-card)
    ========================================== */
@@ -1170,7 +1169,7 @@ body {
   height: 100%;
   /* REFACTOR: Consumo de Tokens de Forma (16px por defecto) */
   border-radius: var(--unav-cardBorderRadius, var(--unav-radius-xl));
-  background-color: var(--unav-cardBgBase, #ffffff);
+  background-color: var(--unav-cardBgBase, var(--unav-bg-surface));
   border: 1px solid var(--unav-grey-200);
   box-shadow: var(--unav-cardShadowBase);
   /* Las transiciones, box-shadow en hover y opacidades 
@@ -1201,11 +1200,11 @@ body {
 /* 3. MODIFICADOR: MODO OSCURO */
 .unav-cardDark {
   border: none;
-  color: #ffffff;
+  color: var(--unav-text-inverse);
 }
 
 .unav-cardDark .unav-cardTitle {
-  color: #ffffff !important;
+  color: var(--unav-text-inverse) !important;
 }
 
 .unav-cardDark .unav-cardText {
@@ -1215,13 +1214,13 @@ body {
 .unav-cardDark .unav-link,
 .unav-cardDark .unav-botonSecundario,
 .unav-cardDark .unav-enlaceFlecha {
-  color: #ffffff !important;
-  border-color: #ffffff;
+  color: var(--unav-text-inverse) !important;
+  border-color: var(--unav-text-inverse);
 }
 
 .unav-cardDark .unav-cardIconInner {
   background-color: rgba(255, 255, 255, 0.15) !important;
-  color: #ffffff !important;
+  color: var(--unav-text-inverse) !important;
 }
 
 /* 4. ELEMENTOS INTERNOS */
@@ -1243,8 +1242,8 @@ body {
   display: flex;
   justify-content: center;
   align-items: center;
-  border: 6px solid var(--unav-cardBgBase, #ffffff);
-  color: #ffffff;
+  border: 6px solid var(--unav-cardBgBase, var(--unav-bg-surface));
+  color: var(--unav-text-inverse);
 }
 
 .unav-cardIconFloating .material-symbols-outlined {
@@ -1280,7 +1279,7 @@ body {
   width: 100%;
   height: 100%;
   -o-object-fit: cover;
-     object-fit: cover;
+  object-fit: cover;
 }
 
 .unav-cardOverlay {
@@ -1292,11 +1291,11 @@ body {
   padding: var(--unav-spacing-lg);
   z-index: 2;
   background: linear-gradient(to top, rgba(0, 0, 0, 0.95) 0%, rgba(0, 0, 0, 0) 100%);
-  color: #ffffff;
+  color: var(--unav-text-inverse);
 }
 
 .unav-cardOverlay .unav-cardTitle {
-  color: #ffffff !important;
+  color: var(--unav-text-inverse) !important;
   margin-bottom: var(--unav-spacing-0);
 }
 
@@ -1485,7 +1484,7 @@ body {
   overflow: hidden;
   /* Expansión estructural basada en Motion Tokens */
   transition: var(--unav-accordionPanelTransition, max-height 0.4s ease-out);
-  background-color: var(--unav-cardBgBase, #ffffff);
+  background-color: var(--unav-cardBgBase, var(--unav-bg-surface));
 }
 
 .unav-accordionInner {
@@ -1499,18 +1498,18 @@ body {
 
 /* --- LÓGICA DE TEMATIZACIÓN DINÁMICA --- */
 .unav-accordionItem.unav-isThemed .unav-accordionHeader {
-  color: #ffffff;
+  color: var(--unav-text-inverse);
 }
 
 .unav-accordionItem.unav-isThemed .unav-accordionHeader:hover,
 .unav-accordionItem.unav-isThemed .unav-accordionHeader[aria-expanded=true] {
   /* Filtro dinámico de opacidad */
   background-color: rgba(0, 0, 0, 0.1);
-  color: #ffffff;
+  color: var(--unav-text-inverse);
 }
 
 .unav-accordionItem.unav-isThemed .unav-accordionToggleIcon {
-  color: #ffffff;
+  color: var(--unav-text-inverse);
 }
 
 /* ==========================================
@@ -1783,7 +1782,7 @@ body {
 }
 
 .unav-listIcon--dark .unav-listIconIcon {
-  color: #ffffff; /* Opcional: Podría ser var(--unav-rojo-400) si quieres mantener el acento */
+  color: var(--unav-text-inverse); /* Opcional: Podría ser var(--unav-rojo-400) si quieres mantener el acento */
 }
 
 /* ==========================================
@@ -1895,7 +1894,7 @@ body {
 /* Modificador de Estado Activo (Página Actual) */
 .unav-paginacion li.active .unav-paginacionItem {
   background-color: var(--unav-rojo-600) !important;
-  color: #ffffff !important;
+  color: var(--unav-text-inverse) !important;
   border-color: var(--unav-rojo-600) !important;
   cursor: default;
   pointer-events: none;
@@ -2073,7 +2072,7 @@ body {
   }
   /* Piel: Variante Subrayada (El header es blanco, fundimos a blanco) */
   .unav-tabs--underline .unav-tabsOverflow::after {
-    background: linear-gradient(to right, rgba(255, 255, 255, 0) 0%, #ffffff 100%);
+    background: linear-gradient(to right, rgba(255, 255, 255, 0) 0%, var(--unav-bg-surface) 100%);
   }
   .unav-tabsOverflow.unav-isEnd::after {
     opacity: 0;
@@ -2083,7 +2082,7 @@ body {
    VARIANTE 1: PESTAÑAS TARJETA CON ICONO (.unav-tabs--card)
    --------------------------------------------------- */
 .unav-tabs--card {
-  background-color: #ffffff;
+  background-color: var(--unav-bg-surface);
   border: 1px solid var(--unav-grey-200);
   border-radius: var(--unav-radius-none);
   overflow: hidden;
@@ -2108,7 +2107,7 @@ body {
   color: var(--unav-grey-600);
   min-width: 120px;
   /* NUEVO: Físicas de botón inactivo */
-  background-color: #ffffff;
+  background-color: var(--unav-bg-surface);
   border: 1px solid var(--unav-grey-200);
 }
 
@@ -2124,7 +2123,7 @@ body {
 
 /* Estado Activo Variante 1 */
 .unav-tabs--card .unav-tabBtn.unav-isActive {
-  background-color: #ffffff;
+  background-color: var(--unav-bg-surface);
   color: var(--unav-black-900);
   font-weight: var(--unav-fontWeightBold);
   border-color: transparent; /* Quitamos el borde... */
@@ -2167,6 +2166,7 @@ body {
 }
 
 /* 5. ORGANISMOS (Secciones y Layouts complejos) */
+/* 5. ORGANISMOS (Secciones y Layouts complejos) */
 /* ==========================================
    COMPONENTE: HERO UNAV (OOCSS UNIFICADO)
    ========================================== */
@@ -2203,7 +2203,7 @@ body {
   width: 100%;
   height: 100%;
   -o-object-fit: cover;
-     object-fit: cover;
+  object-fit: cover;
   position: absolute;
   top: 0;
   left: 0;
@@ -2222,7 +2222,7 @@ body {
   width: 100%;
   height: 100%;
   -o-object-fit: cover;
-     object-fit: cover;
+  object-fit: cover;
   pointer-events: none;
   z-index: var(--unav-heroZIndexVisuals, 1);
 }
@@ -2271,7 +2271,7 @@ body {
   width: 70%;
   text-align: center;
   pointer-events: none; /* Dejamos que los clics atraviesen todo el contenedor */
-  color: #ffffff;
+  color: var(--unav-text-inverse);
 }
 
 /* Recuperamos los clics SOLO en los botones y textos para no tapar el vídeo */
@@ -2565,7 +2565,7 @@ body {
     /* REFACTOR: Consumo de Tokens de Espaciado (24px arriba/lados, 48px abajo) */
     padding: var(--unav-spacing-lg) var(--unav-spacing-lg) var(--unav-spacing-2xl) var(--unav-spacing-lg);
     text-align: center;
-    background-color: var(--unav-cardBgBase, #ffffff);
+    background-color: var(--unav-cardBgBase, var(--unav-bg-surface));
   }
   /* REFACTOR: Consumo de Tokens de Espaciado (24px) */
   .unav-heroBtnGroup {
@@ -2622,9 +2622,9 @@ body {
 
 /* Modificador: Tematización Oscura (Textos blancos) */
 .unav-banner.unav-themeDark {
-  color: #ffffff;
+  color: var(--unav-text-inverse);
   /* Propagación de Token: Cualquier enlace flecha hijo se vuelve blanco */
-  --unav-enlaceColor: #ffffff;
+  --unav-enlaceColor: var(--unav-text-inverse);
 }
 
 /* Capa de Contraste (Overlay) */
@@ -2774,7 +2774,7 @@ body {
   border-collapse: collapse;
   border-spacing: 0;
   text-align: left;
-  background-color: var(--unav-tableBg, #ffffff);
+  background-color: var(--unav-tableBg, var(--unav-bg-surface));
 }
 
 /* Título de la Tabla (Caption) */
@@ -2848,12 +2848,12 @@ body {
 
 /* Filas Alternas (Zebra Striping) - Ignora las filas de agrupación */
 .unav-tableStriped tbody tr:not(.unav-tableGroupHeader):nth-of-type(odd) {
-  background-color: var(--unav-tableStripeBg, var(--unav-grey-50));
+  background-color: var(--unav-tableStripeBg, var(--unav-grey-200));
 }
 
 /* Filas Alternas en pares */
 .unav-tableStriped--even tbody tr:not(.unav-tableGroupHeader):nth-of-type(even) {
-  background-color: var(--unav-tableStripeBg, var(--unav-grey-50));
+  background-color: var(--unav-tableStripeBg, var(--unav-grey-200));
 }
 
 /* Efecto Hover en filas (Ignora las de agrupación) */
@@ -2883,7 +2883,7 @@ body {
     border: 1px solid var(--unav-tableBorderColor, var(--unav-grey-200));
     /* REFACTOR: Consumo de Tokens de Forma (4px) */
     border-radius: var(--unav-radius-md);
-    background-color: #ffffff;
+    background-color: var(--unav-bg-surface);
     box-shadow: 0 2px 4px rgba(0, 0, 0, 0.05);
   }
   .unav-tableResponsiveStack td {
@@ -2933,6 +2933,25 @@ body {
 /* =========================================================
    TEMATIZACIÓN DE TABLAS OOCSS (.unav-tableTheme[Color])
    ========================================================= */
+/* Tema Asignaturas */
+.unav-tableThemeAsignaturas {
+  --unav-tableCaptionBorder: var(--unav-rojo-500);
+  --unav-tableHeaderBg: var(--unav-grey-300);
+  --unav-tableHeaderColor: var(--unav-black-600);
+  --unav-tableStripeBg: var(--unav-grey-200) ;
+}
+
+/* Tema Materias */
+.unav-tableThemeMaterias {
+  --unav-tableBorderColor: var(--unav-black-500);
+  --unav-tableCaptionBorder: var(--unav-black-500);
+}
+
+.unav-tableThemeMaterias th {
+  color: var(--unav-black-500);
+  border-bottom: 2px solid var(--unav-black-500);
+}
+
 /* Tema Rojo */
 .unav-tableThemeRojo {
   --unav-tableCaptionBorder: var(--unav-rojo-600);
@@ -3148,7 +3167,7 @@ body {
   max-width: 100%;
   max-height: 100%;
   -o-object-fit: contain;
-     object-fit: contain;
+  object-fit: contain;
 }
 
 /* Pie de Foto */
@@ -3160,7 +3179,7 @@ body {
   /* REFACTOR: Consumo de Tokens de Espaciado (Top: 32px, Laterales: 24px, Bottom: 16px) */
   padding: var(--unav-spacing-xl) var(--unav-spacing-lg) var(--unav-spacing-md);
   background: linear-gradient(transparent, rgba(0, 0, 0, 0.85));
-  color: #ffffff;
+  color: var(--unav-text-inverse);
   font-family: var(--unav-fontFamilyPrimary);
   font-size: var(--unav-fontSize100);
   font-weight: var(--unav-fontWeightRegular);
@@ -3171,7 +3190,7 @@ body {
    2. SIDEBAR DE MINIATURAS Y CONTROLES
    ========================================== */
 .unav-gallerySidebar {
-  background-color: var(--unav-gallerySidebarBg, var(--unav-black-900));
+  background-color: var(--unav-gallerySidebarBg, var(--unav-bg-surface));
   border-left: 1px solid var(--unav-galleryBorderColor, var(--unav-grey-800));
   display: flex;
   flex-direction: column; /* Permite empujar la barra de controles al fondo */
@@ -3223,7 +3242,7 @@ body {
   width: 100%;
   height: 100%;
   -o-object-fit: cover;
-     object-fit: cover;
+  object-fit: cover;
 }
 
 .unav-thumbItem:hover {
@@ -3301,7 +3320,7 @@ body {
   container-type: inline-size;
   container-name: unavVideoGallery;
   width: 100%;
-  background-color: var(--unav-videoGalleryBg, #ffffff);
+  background-color: var(--unav-videoGalleryBg, var(--unav-bg-surface));
   border: 1px solid var(--unav-videoGalleryBorderColor, var(--unav-grey-200));
   position: relative;
   /* REFACTOR: Consumo de Tokens de Forma (Esquinas rectas estrictas) */
@@ -3330,7 +3349,7 @@ body {
   width: 100%;
   height: 100%;
   -o-object-fit: contain;
-     object-fit: contain;
+  object-fit: contain;
   border: none;
   display: block;
 }
@@ -3342,7 +3361,7 @@ body {
   right: 0;
   bottom: 0;
   width: var(--unav-videoSidebarWidth, 320px);
-  background-color: var(--unav-videoGalleryBg, #ffffff);
+  background-color: var(--unav-videoGalleryBg, var(--unav-bg-surface));
   display: flex;
   flex-direction: column; /* Organiza: Botón Arriba -> Miniaturas -> Botón Abajo */
   border-left: 1px solid var(--unav-videoGalleryBorderColor, var(--unav-grey-200));
@@ -3426,7 +3445,7 @@ body {
   width: 100%;
   height: 100%;
   -o-object-fit: cover;
-     object-fit: cover;
+  object-fit: cover;
   opacity: 0.8;
   transition: opacity var(--unav-transitionBase);
 }
@@ -3443,7 +3462,7 @@ body {
   left: 50%;
   transform: translate(-50%, -50%);
   font-size: 2rem;
-  color: #ffffff;
+  color: var(--unav-text-inverse);
   opacity: 0.8;
   z-index: 5;
   transition: transform var(--unav-durationNormal, 250ms) var(--unav-easingStandard, ease), color var(--unav-durationNormal, 250ms) var(--unav-easingStandard, ease), opacity var(--unav-durationNormal, 250ms) var(--unav-easingStandard, ease);
@@ -3607,7 +3626,7 @@ body {
   width: 100%;
   max-width: var(--unav-panelWidth);
   height: 100vh;
-  background-color: var(--unav-cardBgBase, #ffffff);
+  background-color: var(--unav-cardBgBase, var(--unav-bg-surface));
   z-index: var(--unav-panelZIndex);
   box-shadow: var(--unav-panelShadow);
   display: flex;
@@ -3626,8 +3645,10 @@ body {
   left: 0;
   top: 50%;
   transform: translate(-100%, -50%);
-  background-color: var(--unav-rojo-600); /* Token Corporativo */
+  --unav-botonBg: var(--unav-rojo-500);
+  background-color: var(--unav-botonBg);
   color: #ffffff;
+  --unav-botonHoverBg: var(--unav-rojo-600);
   border: none;
   outline: none; /* Reseteo del outline nativo para usar uno a medida */
   /* REFACTOR: Consumo de Tokens de Forma (Esquinas rectas estrictas) */
@@ -3664,7 +3685,7 @@ body {
 }
 
 .unav-stickyButton:hover {
-  background-color: var(--unav-rojo-800);
+  background-color: var(--unav-botonHoverBg);
 }
 
 /* Elementos del Botón */
@@ -3755,7 +3776,7 @@ body {
   overflow: hidden;
   display: flex;
   align-items: center;
-  color: #ffffff; /* El color de texto siempre es blanco al ir sobre un overlay oscuro */
+  color: var(--unav-text-inverse); /* El color de texto siempre es blanco al ir sobre un overlay oscuro */
   min-height: var(--unav-counterMinHeightBase);
   width: 100%;
   /* REFACTOR: Consumo de Tokens de Forma (Esquinas vivas obligatorias) */
@@ -3775,9 +3796,9 @@ body {
   width: 100%;
   height: 100%;
   -o-object-fit: cover;
-     object-fit: cover;
+  object-fit: cover;
   -o-object-position: center;
-     object-position: center;
+  object-position: center;
   z-index: 1;
 }
 
@@ -3902,7 +3923,7 @@ body {
   display: flex;
   flex-direction: column;
   width: 100%;
-  background-color: #ffffff;
+  background-color: var(--unav-bg-surface);
   box-sizing: border-box;
   /* REFACTOR: Consumo de Tokens de Espaciado (16px default) */
   padding: var(--unav-personCardPadding, var(--unav-spacing-md));
@@ -3937,7 +3958,7 @@ body {
   width: 100%;
   aspect-ratio: 1/1; /* Cuadrado estricto (no modificar) */
   -o-object-fit: cover;
-     object-fit: cover;
+  object-fit: cover;
   border-radius: var(--unav-radius-sm, 4px);
   display: block;
 }
@@ -4179,7 +4200,7 @@ body {
 
 /* Tarjeta Estructural */
 .unav-eventCard {
-  background-color: var(--unav-cardBgBase, #ffffff);
+  background-color: var(--unav-cardBgBase, var(--unav-bg-surface));
   border: 1px solid var(--unav-eventCardBorder);
   display: flex;
   flex-direction: column;
@@ -4203,7 +4224,7 @@ body {
   width: 100%;
   height: 100%;
   -o-object-fit: cover;
-     object-fit: cover;
+  object-fit: cover;
   display: block;
 }
 
@@ -4322,7 +4343,7 @@ body {
   width: 100%;
   height: 100%;
   -o-object-fit: cover;
-     object-fit: cover;
+  object-fit: cover;
   display: block;
 }
 
@@ -4425,94 +4446,6 @@ body {
    ========================================== */
 /* Familias de Fuentes */
 .unav-font-primary {
-  font-family: var(--unav-fontFamilyPrimary) !important;
-}
-
-.unav-font-primary-condensed {
-  font-family: var(--unav-fontFamilyPrimaryCondensed) !important;
-}
-
-/* Grosores de Fuente (Weights) */
-.unav-weight-thin {
-  font-weight: var(--unav-fontWeightThin) !important;
-}
-
-.unav-weight-light {
-  font-weight: var(--unav-fontWeightLight) !important;
-}
-
-.unav-weight-regular {
-  font-weight: var(--unav-fontWeightRegular) !important;
-}
-
-.unav-weight-medium {
-  font-weight: var(--unav-fontWeightMedium) !important;
-}
-
-.unav-weight-bold {
-  font-weight: var(--unav-fontWeightBold) !important;
-}
-
-.unav-weight-black {
-  font-weight: var(--unav-fontWeightBlack) !important;
-}
-
-/* Escala de Tamaños de Fuente (Sizes) */
-.unav-text-075 {
-  font-size: var(--unav-fontSize075) !important;
-}
-
-.unav-text-085 {
-  font-size: var(--unav-fontSize085) !important;
-}
-
-.unav-text-100 {
-  font-size: var(--unav-fontSize100) !important;
-}
-
-.unav-text-1125 {
-  font-size: var(--unav-fontSize1125);
-} /* Base para UNAV, un poquito más grande que lo habitual (tomar decisión definitiva) */
-.unav-text-125 {
-  font-size: var(--unav-fontSize125) !important;
-}
-
-.unav-text-150 {
-  font-size: var(--unav-fontSize150) !important;
-}
-
-.unav-text-175 {
-  font-size: var(--unav-fontSize175) !important;
-}
-
-.unav-text-200 {
-  font-size: var(--unav-fontSize200) !important;
-}
-
-.unav-text-250 {
-  font-size: var(--unav-fontSize250) !important;
-}
-
-.unav-text-300 {
-  font-size: var(--unav-fontSize300) !important;
-}
-
-.unav-text-400 {
-  font-size: var(--unav-fontSize400) !important;
-}
-
-.unav-text-500 {
-  font-size: var(--unav-fontSize500) !important;
-}
-
-/* ==========================================
-   SISTEMA TIPOGRÁFICO CORPORATIVO UNAV
-   ========================================== */
-/* ==========================================
-   CLASES UTILITARIAS (Para usar directo en HTML)
-   ========================================== */
-/* Familias */
-.unav-font-primary {
   font-family: var(--unav-fontFamilyPrimary);
 }
 
@@ -4532,7 +4465,7 @@ body {
   font-family: var(--unav-fontFamilySecondaryDm);
 }
 
-/* Pesos */
+/* Grosores de Fuente (Weights) */
 .unav-weight-thin {
   font-weight: var(--unav-fontWeightThin);
 }
@@ -4553,49 +4486,56 @@ body {
   font-weight: var(--unav-fontWeightBold);
 }
 
-/* Tamaños */
-.unav-text-500 {
-  font-size: var(--unav-fontSize500);
+.unav-weight-black {
+  font-weight: var(--unav-fontWeightBlack);
 }
 
-.unav-text-400 {
-  font-size: var(--unav-fontSize400);
+/* Escala de Tamaños de Fuente (Sizes) */
+.unav-text-075 {
+  font-size: var(--unav-fontSize075);
 }
 
-.unav-text-300 {
-  font-size: var(--unav-fontSize300);
-}
-
-.unav-text-250 {
-  font-size: var(--unav-fontSize250);
-}
-
-.unav-text-200 {
-  font-size: var(--unav-fontSize200);
-}
-
-.unav-text-175 {
-  font-size: var(--unav-fontSize175);
-}
-
-.unav-text-150 {
-  font-size: var(--unav-fontSize150);
-}
-
-.unav-text-1125 {
-  font-size: var(--unav-fontSize1125);
-}
-
-.unav-text-125 {
-  font-size: var(--unav-fontSize125);
+.unav-text-085 {
+  font-size: var(--unav-fontSize085);
 }
 
 .unav-text-100 {
   font-size: var(--unav-fontSize100);
 }
 
-.unav-text-075 {
-  font-size: var(--unav-fontSize075);
+.unav-text-1125 {
+  font-size: var(--unav-fontSize1125);
+} /* Base para UNAV, un poquito más grande que lo habitual (tomar decisión definitiva) */
+.unav-text-125 {
+  font-size: var(--unav-fontSize125);
+}
+
+.unav-text-150 {
+  font-size: var(--unav-fontSize150);
+}
+
+.unav-text-175 {
+  font-size: var(--unav-fontSize175);
+}
+
+.unav-text-200 {
+  font-size: var(--unav-fontSize200);
+}
+
+.unav-text-250 {
+  font-size: var(--unav-fontSize250);
+}
+
+.unav-text-300 {
+  font-size: var(--unav-fontSize300);
+}
+
+.unav-text-400 {
+  font-size: var(--unav-fontSize400);
+}
+
+.unav-text-500 {
+  font-size: var(--unav-fontSize500);
 }
 
 /* Interlineado (Line Height) */
@@ -5562,7 +5502,7 @@ body {
 
 /* Estructura Longitudinal de la Muestra */
 .unav-sampleRow {
-  background-color: #ffffff;
+  background-color: var(--unav-bg-surface);
   border-bottom: 1px solid var(--unav-grey-200);
   /* REFACTOR: Consumo de Tokens de Espaciado (48px vertical, 32px horizontal) */
   padding: var(--unav-sampleRowPaddingY, var(--unav-spacing-2xl)) var(--unav-sampleRowPaddingX, var(--unav-spacing-xl));
@@ -5591,7 +5531,7 @@ body {
 /* Separador Semántico de Etiquetas HTML */
 .unav-sectionLabel {
   background-color: var(--unav-black-900);
-  color: #ffffff;
+  color: var(--unav-text-inverse);
   /* REFACTOR: Consumo de Tokens de Espaciado (16px vertical, 32px horizontal) */
   padding: var(--unav-sectionLabelPaddingY, var(--unav-spacing-md)) var(--unav-sectionLabelPaddingX, var(--unav-spacing-xl));
   font-family: var(--unav-fontFamilyPrimaryCondensed);
@@ -5615,7 +5555,7 @@ body {
 
 /* Estructura Longitudinal de la Muestra (OOCSS Layout) */
 .unav-sampleRow {
-  background-color: #ffffff;
+  background-color: var(--unav-bg-surface);
   border-bottom: 1px solid var(--unav-grey-200);
   /* REFACTOR: Consumo de Tokens de Espaciado por defecto (16px vertical, 24px horizontal) */
   padding: var(--unav-sampleRowPaddingY, var(--unav-spacing-md)) var(--unav-sampleRowPaddingX, var(--unav-spacing-lg));
@@ -5652,7 +5592,7 @@ body {
 /* Separador Semántico de Niveles HTML */
 .unav-sectionLabel {
   background-color: var(--unav-black-900);
-  color: #ffffff;
+  color: var(--unav-text-inverse);
   /* REFACTOR: Consumo de Tokens de Espaciado (8px vertical, 16px horizontal) */
   padding: var(--unav-sectionLabelPaddingY, var(--unav-spacing-sm)) var(--unav-sectionLabelPaddingX, var(--unav-spacing-md));
   font-family: var(--unav-fontFamilyPrimaryCondensed);

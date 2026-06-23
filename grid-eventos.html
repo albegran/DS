@@ -10,10 +10,39 @@
     <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@24,400,0,0" />
 
     <link rel="stylesheet" href="unav-styles.css">   
+
+    <style>
+        @media (max-width: 767.98px) {
+            .unav-gridScrollMobile {
+                display: flex !important;
+                flex-wrap: nowrap !important;
+                overflow-x: auto !important;
+                /* 1. Forzamos el imán horizontal */
+                scroll-snap-type: x mandatory !important;
+                scroll-behavior: smooth;
+                -webkit-overflow-scrolling: touch;
+                padding-bottom: var(--unav-spacing-md); /* Espacio para la sombra al hacer scroll */
+            }
+            
+            /* Ocultar barra de scroll para mayor limpieza visual */
+            .unav-gridScrollMobile::-webkit-scrollbar { display: none; }
+            .unav-gridScrollMobile { -ms-overflow-style: none; scrollbar-width: none; }
+
+            .unav-gridScrollMobile > * {
+                /* Aseguramos que la tarjeta ocupe el 85% para dejar asomar la siguiente */
+                flex: 0 0 85% !important;
+                max-width: 85% !important;
+                /* 2. Alineación precisa al inicio */
+                scroll-snap-align: start !important;
+                /* 3. LA MAGIA: Freno de inercia obligatorio en cada tarjeta */
+                scroll-snap-stop: always !important; 
+            }
+        }
+    </style>
 </head>
 <body class="unav-font-primary unav-weight-regular unav-text-1125">
 
-    <nav style="background-color: #ffffff; border-bottom: 1px solid var(--unav-grey-200); padding: var(--unav-spacing-md) 0; position: sticky; top: 0; z-index: var(--unav-zIndex-sticky);">
+    <nav style="background-color: var(--unav-bg-surface); border-bottom: 1px solid var(--unav-grey-200); padding: var(--unav-spacing-md) 0; position: sticky; top: 0; z-index: var(--unav-zIndex-sticky);">
         <div class="container-lg d-flex justify-content-between align-items-center position-relative">            
             <div>
                 <a href="indice.html" class="unav-boton unav-botonSecundario">
@@ -30,14 +59,12 @@
     <main class="container-lg">
         
         <header style="text-align: center; margin: var(--unav-spacing-xl) var(--unav-spacing-xl);">
-            <h1 class="unav-font-primary unav-weight-medium unav-text-200" style="color: var(--unav-black-900); margin-bottom: var(--unav-spacing-sm) !important;">Grid de Eventos</h1>
+            <h1 class="unav-font-primary unav-weight-medium unav-text-200" style="color: var(--unav-black-900); margin-bottom: var(--unav-spacing-sm) !important; letter-spacing: var(--unav-trackingTight);">Grid de Eventos</h1>
         </header>
 
-        <!-- 1. Cuatro Eventos (Grid 4 col) -->
         <section class="unav-card unav-cardSolid" style="margin-bottom: var(--unav-spacing-xl);">
-            <h2 class="unav-font-primary unav-weight-bold unav-text-150" style="padding-bottom: var(--unav-spacing-sm); margin-bottom: var(--unav-spacing-xl); color: var(--unav-black-900);">1. Cuatro Eventos (Grid 4 col)</h2>
+            <h2 class="unav-font-primary unav-weight-bold unav-text-150" style="padding-bottom: var(--unav-spacing-sm); margin-bottom: var(--unav-spacing-xl); color: var(--unav-black-900); letter-spacing: var(--unav-trackingNormal);">1. Cuatro Eventos (Grid 4 col)</h2>
             <div class="row g-3 unav-gridScrollMobile" id="unavGrid-4-col">
-                <!-- Evento 0 (ID: 1015) -->
                 <div class="col-12 col-md-6 col-lg-3">
                     <a href="#" class="unav-eventLink unav-efectoEntradaOculto">
                         <div class="unav-eventCard unav-efectoElevacion">
@@ -52,7 +79,7 @@
                                 <p class="unav-eventTime unav-lh-normal">10:00h.</p>
                                 <h3 class="unav-eventTitle unav-lh-snug">Jornada de Puertas Abiertas para Grados</h3>
                             </div>
-                            <div class="unav-eventLocation unav-lh-relaxed" >
+                            <div class="unav-eventLocation unav-lh-relaxed">
                                 <i class="bi bi-geo-alt-fill" aria-hidden="true"></i>
                                 <span>Aula 30 del Edificio Central</span>
                             </div>
@@ -60,7 +87,6 @@
                     </a>
                 </div>
 
-                <!-- Evento 1 (ID: 1021) -->
                 <div class="col-12 col-md-6 col-lg-3">
                     <a href="#" class="unav-eventLink unav-efectoEntradaOculto">
                         <div class="unav-eventCard unav-efectoElevacion">
@@ -75,7 +101,7 @@
                                 <p class="unav-eventTime unav-lh-normal">11:15h.</p>
                                 <h3 class="unav-eventTitle unav-lh-snug">Encuentro Alumni Internacional 2026</h3>
                             </div>
-                            <div class="unav-eventLocation unav-lh-relaxed" >
+                            <div class="unav-eventLocation unav-lh-relaxed">
                                 <i class="bi bi-geo-alt-fill" aria-hidden="true"></i>
                                 <span>Explanada Central</span>
                             </div>
@@ -83,7 +109,6 @@
                     </a>
                 </div>
 
-                <!-- Evento 2 (ID: 1022) -->
                 <div class="col-12 col-md-6 col-lg-3">
                     <a href="#" class="unav-eventLink unav-efectoEntradaOculto">
                         <div class="unav-eventCard unav-efectoElevacion">
@@ -97,7 +122,7 @@
                                 <p class="unav-eventTime unav-lh-normal">08:30h.</p>
                                 <h3 class="unav-eventTitle unav-lh-snug">Congreso de Comunicación y Empresa Digital</h3>
                             </div>
-                            <div class="unav-eventLocation unav-lh-relaxed" >
+                            <div class="unav-eventLocation unav-lh-relaxed">
                                 <i class="bi bi-geo-alt-fill" aria-hidden="true"></i>
                                 <span>Facultad de Comunicación</span>
                             </div>
@@ -105,7 +130,6 @@
                     </a>
                 </div>
 
-                <!-- Evento 3 (ID: 1016) -->
                 <div class="col-12 col-md-6 col-lg-3">
                     <a href="#" class="unav-eventLink unav-efectoEntradaOculto">
                         <div class="unav-eventCard unav-efectoElevacion">
@@ -119,7 +143,7 @@
                                 <p class="unav-eventTime unav-lh-normal">16:30h.</p>
                                 <h3 class="unav-eventTitle unav-lh-snug">Seminario Internacional de Bioética Aplicada</h3>
                             </div>
-                            <div class="unav-eventLocation unav-lh-relaxed" >
+                            <div class="unav-eventLocation unav-lh-relaxed">
                                 <i class="bi bi-geo-alt-fill" aria-hidden="true"></i>
                                 <span>Aula Magna</span>
                             </div>
@@ -129,11 +153,9 @@
             </div>
         </section>
 
-        <!-- 2. Tres Eventos (Grid 3 col) -->
         <section class="unav-card unav-cardSolid" style="margin-bottom: var(--unav-spacing-xl);">
-            <h2 class="unav-font-primary unav-weight-bold unav-text-150" style="padding-bottom: var(--unav-spacing-sm); margin-bottom: var(--unav-spacing-xl); color: var(--unav-black-900);">2. Tres Eventos (Grid 3 col)</h2>
+            <h2 class="unav-font-primary unav-weight-bold unav-text-150" style="padding-bottom: var(--unav-spacing-sm); margin-bottom: var(--unav-spacing-xl); color: var(--unav-black-900); letter-spacing: var(--unav-trackingNormal);">2. Tres Eventos (Grid 3 col)</h2>
             <div class="row g-3 unav-gridScrollMobile" id="unavGrid-3-col">
-                <!-- Evento 4 (ID: 1018) -->
                 <div class="col-12 col-md-4">
                     <a href="#" class="unav-eventLink unav-efectoEntradaOculto">
                         <div class="unav-eventCard unav-efectoElevacion">
@@ -147,7 +169,7 @@
                                 <p class="unav-eventTime unav-lh-normal">09:00h.</p>
                                 <h3 class="unav-eventTitle unav-lh-snug">Defensa de Tesis Doctoral: Avances Oncología</h3>
                             </div>
-                            <div class="unav-eventLocation unav-lh-relaxed" >
+                            <div class="unav-eventLocation unav-lh-relaxed">
                                 <i class="bi bi-geo-alt-fill" aria-hidden="true"></i>
                                 <span>Edificio CIMA</span>
                             </div>
@@ -155,7 +177,6 @@
                     </a>
                 </div>
 
-                <!-- Evento 5 (ID: 1019) -->
                 <div class="col-12 col-md-4">
                     <a href="#" class="unav-eventLink unav-efectoEntradaOculto">
                         <div class="unav-eventCard unav-efectoElevacion">
@@ -169,7 +190,7 @@
                                 <p class="unav-eventTime unav-lh-normal">12:00h.</p>
                                 <h3 class="unav-eventTitle unav-lh-snug">Mesa Redonda: Sostenibilidad en el Campus</h3>
                             </div>
-                            <div class="unav-eventLocation unav-lh-relaxed" >
+                            <div class="unav-eventLocation unav-lh-relaxed">
                                 <i class="bi bi-geo-alt-fill" aria-hidden="true"></i>
                                 <span>Biblioteca de Ciencias</span>
                             </div>
@@ -177,7 +198,6 @@
                     </a>
                 </div>
 
-                <!-- Evento 2 (ID: 1022) -->
                 <div class="col-12 col-md-4">
                     <a href="#" class="unav-eventLink unav-efectoEntradaOculto">
                         <div class="unav-eventCard unav-efectoElevacion">
@@ -191,7 +211,7 @@
                                 <p class="unav-eventTime unav-lh-normal">08:30h.</p>
                                 <h3 class="unav-eventTitle unav-lh-snug">Congreso de Comunicación y Empresa Digital</h3>
                             </div>
-                            <div class="unav-eventLocation unav-lh-relaxed" >
+                            <div class="unav-eventLocation unav-lh-relaxed">
                                 <i class="bi bi-geo-alt-fill" aria-hidden="true"></i>
                                 <span>Facultad de Comunicación</span>
                             </div>
@@ -201,11 +221,9 @@
             </div>
         </section>
 
-        <!-- 3. Dos Eventos (Grid 2 col) -->
         <section class="unav-card unav-cardSolid" style="margin-bottom: var(--unav-spacing-xl);">
-            <h2 class="unav-font-primary unav-weight-bold unav-text-150" style="padding-bottom: var(--unav-spacing-sm); margin-bottom: var(--unav-spacing-xl); color: var(--unav-black-900);">3. Dos Eventos (Grid 2 col)</h2>
-            <div class="row g-3" id="unavGrid-2-col">
-                <!-- Evento 1 (ID: 1021) -->
+            <h2 class="unav-font-primary unav-weight-bold unav-text-150" style="padding-bottom: var(--unav-spacing-sm); margin-bottom: var(--unav-spacing-xl); color: var(--unav-black-900); letter-spacing: var(--unav-trackingNormal);">3. Dos Eventos (Grid 2 col)</h2>
+            <div class="row g-3 unav-gridScrollMobile" id="unavGrid-2-col">
                 <div class="col-12 col-md-6">
                     <a href="#" class="unav-eventLink unav-efectoEntradaOculto">
                         <div class="unav-eventCard unav-efectoElevacion">
@@ -220,7 +238,7 @@
                                 <p class="unav-eventTime unav-lh-normal">11:15h.</p>
                                 <h3 class="unav-eventTitle unav-lh-snug">Encuentro Alumni Internacional 2026</h3>
                             </div>
-                            <div class="unav-eventLocation unav-lh-relaxed" >
+                            <div class="unav-eventLocation unav-lh-relaxed">
                                 <i class="bi bi-geo-alt-fill" aria-hidden="true"></i>
                                 <span>Explanada Central</span>
                             </div>
@@ -228,7 +246,6 @@
                     </a>
                 </div>
 
-                <!-- Evento 3 (ID: 1016) -->
                 <div class="col-12 col-md-6">
                     <a href="#" class="unav-eventLink unav-efectoEntradaOculto">
                         <div class="unav-eventCard unav-efectoElevacion">
@@ -242,7 +259,7 @@
                                 <p class="unav-eventTime unav-lh-normal">16:30h.</p>
                                 <h3 class="unav-eventTitle unav-lh-snug">Seminario Internacional de Bioética Aplicada</h3>
                             </div>
-                            <div class="unav-eventLocation unav-lh-relaxed" >
+                            <div class="unav-eventLocation unav-lh-relaxed">
                                 <i class="bi bi-geo-alt-fill" aria-hidden="true"></i>
                                 <span>Aula Magna</span>
                             </div>
@@ -252,13 +269,11 @@
             </div>
         </section>
 
-        <!-- 4. Dos Eventos anidados -->
         <section class="unav-card unav-cardSolid" style="margin-bottom: var(--unav-spacing-xl);">
-            <h2 class="unav-font-primary unav-weight-bold unav-text-150" style="padding-bottom: var(--unav-spacing-sm); margin-bottom: var(--unav-spacing-xl); color: var(--unav-black-900);">4. Dos Eventos anidados</h2>
+            <h2 class="unav-font-primary unav-weight-bold unav-text-150" style="padding-bottom: var(--unav-spacing-sm); margin-bottom: var(--unav-spacing-xl); color: var(--unav-black-900); letter-spacing: var(--unav-trackingNormal);">4. Dos Eventos anidados</h2>
             <div class="row g-3">
                 <div class="col-lg-6">
-                    <div class="row g-3" id="unavGrid-nested-2-col">
-                        <!-- Evento 0 (ID: 1015) -->
+                    <div class="row g-3 unav-gridScrollMobile" id="unavGrid-nested-2-col">
                         <div class="col-12 col-md-6">
                             <a href="#" class="unav-eventLink unav-efectoEntradaOculto">
                                 <div class="unav-eventCard unav-efectoElevacion">
@@ -273,7 +288,7 @@
                                         <p class="unav-eventTime unav-lh-normal">10:00h.</p>
                                         <h3 class="unav-eventTitle unav-lh-snug">Jornada de Puertas Abiertas para Grados</h3>
                                     </div>
-                                    <div class="unav-eventLocation unav-lh-relaxed" >
+                                    <div class="unav-eventLocation unav-lh-relaxed">
                                         <i class="bi bi-geo-alt-fill" aria-hidden="true"></i>
                                         <span>Aula 30 del Edificio Central</span>
                                     </div>
@@ -281,7 +296,6 @@
                             </a>
                         </div>
 
-                        <!-- Evento 5 (ID: 1019) -->
                         <div class="col-12 col-md-6">
                             <a href="#" class="unav-eventLink unav-efectoEntradaOculto">
                                 <div class="unav-eventCard unav-efectoElevacion">
@@ -295,7 +309,7 @@
                                         <p class="unav-eventTime unav-lh-normal">12:00h.</p>
                                         <h3 class="unav-eventTitle unav-lh-snug">Mesa Redonda: Sostenibilidad en el Campus</h3>
                                     </div>
-                                    <div class="unav-eventLocation unav-lh-relaxed" >
+                                    <div class="unav-eventLocation unav-lh-relaxed">
                                         <i class="bi bi-geo-alt-fill" aria-hidden="true"></i>
                                         <span>Biblioteca de Ciencias</span>
                                     </div>
@@ -305,20 +319,19 @@
                     </div>
                 </div>
                 <div class="col-lg-6">
-                    <!-- Columna vacía intencional para preservar la estructura anidada del ejemplo original -->
-                </div>
+                    </div>
             </div>
         </section>
 
     </main>
 
-    <footer class="bg-white border-top py-4 mt-5">
+    <footer style="background-color: var(--unav-bg-surface); border-top: 1px solid var(--unav-grey-200); padding: var(--unav-spacing-lg) 0; margin-top: var(--unav-spacing-3xl);">
         <div class="container-lg d-flex flex-column flex-md-row justify-content-between align-items-center gap-3">
-            <div class="d-flex align-items-center gap-2">
+            <div style="display: flex; align-items: center; gap: var(--unav-spacing-sm);">
                 <i class="bi bi-boxes"></i>
-                <span class="unav-font-primary unav-weight-bold unav-text-1125 text-dark">Design System UNAV</span>
+                <span class="unav-font-primary unav-weight-bold unav-text-1125" style="color: var(--unav-black-800);">Design System UNAV</span>
             </div>
-            <p class="unav-font-primary unav-weight-regular unav-text-075 text-muted m-0">
+            <p class="unav-font-primary unav-weight-regular unav-text-075 m-0" style="color: var(--unav-grey-500);">
                 Arquitectura OOCSS &middot; Versión 2.0 &middot; &copy; 2026
             </p>
         </div>

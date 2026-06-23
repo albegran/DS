@@ -10,10 +10,40 @@
     <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@24,400,0,0" />
 
     <link rel="stylesheet" href="unav-styles.css">   
+
+    <!-- HOTFIX DS UNAV 2.0: Físicas de Scroll Snap Avanzadas para Móvil -->
+    <style>
+        @media (max-width: 767.98px) {
+            .unav-gridScrollMobile {
+                display: flex !important;
+                flex-wrap: nowrap !important;
+                overflow-x: auto !important;
+                /* 1. Forzamos el imán horizontal */
+                scroll-snap-type: x mandatory !important;
+                scroll-behavior: smooth;
+                -webkit-overflow-scrolling: touch;
+                padding-bottom: var(--unav-spacing-md); /* Espacio para la sombra al hacer scroll */
+            }
+            
+            /* Ocultar barra de scroll para mayor limpieza visual */
+            .unav-gridScrollMobile::-webkit-scrollbar { display: none; }
+            .unav-gridScrollMobile { -ms-overflow-style: none; scrollbar-width: none; }
+
+            .unav-gridScrollMobile > * {
+                /* Aseguramos que la tarjeta ocupe el 85% para dejar asomar la siguiente */
+                flex: 0 0 85% !important;
+                max-width: 85% !important;
+                /* 2. Alineación precisa al inicio */
+                scroll-snap-align: start !important;
+                /* 3. LA MAGIA: Freno de inercia obligatorio en cada tarjeta */
+                scroll-snap-stop: always !important; 
+            }
+        }
+    </style>
 </head>
 <body class="unav-font-primary unav-weight-regular unav-text-1125">
 
-    <nav style="background-color: #ffffff; border-bottom: 1px solid var(--unav-grey-200); padding: var(--unav-spacing-md) 0; position: sticky; top: 0; z-index: var(--unav-zIndex-sticky);">
+    <nav style="background-color: var(--unav-bg-surface); border-bottom: 1px solid var(--unav-grey-200); padding: var(--unav-spacing-md) 0; position: sticky; top: 0; z-index: var(--unav-zIndex-sticky);">
         <div class="container-lg d-flex justify-content-between align-items-center position-relative">            
             <div>
                 <a href="indice.html" class="unav-boton unav-botonSecundario">
@@ -30,12 +60,12 @@
     <main class="container-lg">
         
         <header style="text-align: center; margin: var(--unav-spacing-xl) var(--unav-spacing-xl);">
-            <h1 class="unav-font-primary unav-weight-medium unav-text-200" style="color: var(--unav-black-900); margin-bottom: var(--unav-spacing-sm) !important;">Grid de Noticias</h1>
+            <h1 class="unav-font-primary unav-weight-medium unav-text-200" style="color: var(--unav-black-900); margin-bottom: var(--unav-spacing-sm) !important; letter-spacing: var(--unav-trackingTight);">Grid de Noticias</h1>
         </header>
 
         <section class="unav-card unav-cardSolid" style="margin-bottom: var(--unav-spacing-xl);">
-            <h2 class="unav-font-primary unav-weight-bold unav-text-150" style="padding-bottom: var(--unav-spacing-sm); margin-bottom: var(--unav-spacing-xl); color: var(--unav-black-900);">01. Variante A: Ancho Total (12 Col) - Asimetría</h2>
-            <p class="text-muted mb-4">Observa cómo el enlace inferior se alinea perfectamente en la base de todas las tarjetas aunque los títulos tengan longitudes muy dispares.</p>
+            <h2 class="unav-font-primary unav-weight-bold unav-text-150" style="padding-bottom: var(--unav-spacing-sm); margin-bottom: var(--unav-spacing-xl); color: var(--unav-black-900); letter-spacing: var(--unav-trackingNormal);">01. Variante A: Ancho Total (12 Col) - Asimetría</h2>
+            <p class="unav-font-primary unav-text-100" style="color: var(--unav-grey-600); margin-bottom: var(--unav-spacing-lg);">Observa cómo el enlace inferior se alinea perfectamente en la base de todas las tarjetas aunque los títulos tengan longitudes muy dispares.</p>
             <div class="row g-5 unav-gridScrollMobile">
                 <div class="col-12 col-md-4">
                     <article class="unav-newsCard unav-efectoEntradaOculto">
@@ -86,10 +116,10 @@
         </section>
 
         <section class="unav-card unav-cardSolid" style="margin-bottom: var(--unav-spacing-xl);">
-            <h2 class="unav-font-primary unav-weight-bold unav-text-150" style="padding-bottom: var(--unav-spacing-sm); margin-bottom: var(--unav-spacing-xl); color: var(--unav-black-900);">02. Variante B: Medio Ancho (Offset 6) - 2 Noticias</h2>
+            <h2 class="unav-font-primary unav-weight-bold unav-text-150" style="padding-bottom: var(--unav-spacing-sm); margin-bottom: var(--unav-spacing-xl); color: var(--unav-black-900); letter-spacing: var(--unav-trackingNormal);">02. Variante B: Medio Ancho (Offset 6) - 2 Noticias</h2>
             <div class="row">
                 <div class="col-lg-6 offset-lg-6">
-                    <div class="row g-4">
+                    <div class="row g-4 unav-gridScrollMobile">
                         <div class="col-12 col-sm-6">
                             <article class="unav-newsCard unav-efectoEntradaOculto">
                                 <div class="unav-newsImageWrapper unav-efectoZoomImagen">
@@ -126,7 +156,7 @@
         </section>
 
         <section class="unav-card unav-cardSolid" style="margin-bottom: var(--unav-spacing-xl);">
-            <h2 class="unav-font-primary unav-weight-bold unav-text-150" style="padding-bottom: var(--unav-spacing-sm); margin-bottom: var(--unav-spacing-xl); color: var(--unav-black-900);">03. Variante C: Ancho Total (12 Col) - 5 Noticias</h2>
+            <h2 class="unav-font-primary unav-weight-bold unav-text-150" style="padding-bottom: var(--unav-spacing-sm); margin-bottom: var(--unav-spacing-xl); color: var(--unav-black-900); letter-spacing: var(--unav-trackingNormal);">03. Variante C: Ancho Total (12 Col) - 5 Noticias</h2>
             <div class="row row-cols-1 row-cols-sm-2 row-cols-md-3 row-cols-lg-5 g-4 unav-gridScrollMobile">
                 <div class="col">
                     <article class="unav-newsCard unav-efectoEntradaOculto">
@@ -172,7 +202,7 @@
         </section>
 
         <section class="unav-card unav-cardSolid" style="margin-bottom: var(--unav-spacing-xl);">
-            <h2 class="unav-font-primary unav-weight-bold unav-text-150" style="padding-bottom: var(--unav-spacing-sm); margin-bottom: var(--unav-spacing-xl); color: var(--unav-black-900);">04. Variante D: Ancho Total (12 Col) - Textos mixtos</h2>
+            <h2 class="unav-font-primary unav-weight-bold unav-text-150" style="padding-bottom: var(--unav-spacing-sm); margin-bottom: var(--unav-spacing-xl); color: var(--unav-black-900); letter-spacing: var(--unav-trackingNormal);">04. Variante D: Ancho Total (12 Col) - Textos mixtos</h2>
             <div class="row g-4 unav-gridScrollMobile">
                 <div class="col-12 col-md-6 col-lg-3">
                     <article class="unav-newsCard unav-efectoEntradaOculto">
@@ -210,28 +240,28 @@
         </section>
 
         <section class="unav-card unav-cardSolid" style="margin-bottom: var(--unav-spacing-xl);">
-            <h2 class="unav-font-primary unav-weight-bold unav-text-150" style="padding-bottom: var(--unav-spacing-sm); margin-bottom: var(--unav-spacing-xl); color: var(--unav-black-900);">05. Variante E: Ancho Medio (6 Col) - 3 Noticias</h2>
+            <h2 class="unav-font-primary unav-weight-bold unav-text-150" style="padding-bottom: var(--unav-spacing-sm); margin-bottom: var(--unav-spacing-xl); color: var(--unav-black-900); letter-spacing: var(--unav-trackingNormal);">05. Variante E: Ancho Medio (6 Col) - 3 Noticias</h2>
             <div class="row">
                 <div class="col-lg-6">
                     <div class="row g-3 unav-gridScrollMobile">
                         <div class="col-12 col-sm-4">
                             <article class="unav-newsCard unav-efectoEntradaOculto">
                                 <div class="unav-newsImageWrapper unav-efectoZoomImagen"><img src="https://picsum.photos/800/500?random=15" alt="Noticia pequeña" class="unav-newsImage" loading="lazy"></div>
-                                <p class="unav-newsDate" style="font-size: var(--unav-fontSize050);">20 Mar. 2026</p>
+                                <p class="unav-newsDate" style="font-size: var(--unav-fontSize075);">20 Mar. 2026</p>
                                 <h3 class="unav-newsTitle unav-newsTitle--sm" style="font-size: var(--unav-fontSize100);"><a href="#">Actualización del plan de estudios</a></h3>
                             </article>
                         </div>
                         <div class="col-12 col-sm-4">
                             <article class="unav-newsCard unav-efectoEntradaOculto">
                                 <div class="unav-newsImageWrapper unav-efectoZoomImagen"><img src="https://picsum.photos/800/500?random=16" alt="Noticia pequeña" class="unav-newsImage" loading="lazy"></div>
-                                <p class="unav-newsDate" style="font-size: var(--unav-fontSize050);">18 Mar. 2026</p>
+                                <p class="unav-newsDate" style="font-size: var(--unav-fontSize075);">18 Mar. 2026</p>
                                 <h3 class="unav-newsTitle unav-newsTitle--sm" style="font-size: var(--unav-fontSize100);"><a href="#">Foro de emprendimiento social</a></h3>
                             </article>
                         </div>
                         <div class="col-12 col-sm-4">
                             <article class="unav-newsCard unav-efectoEntradaOculto">
                                 <div class="unav-newsImageWrapper unav-efectoZoomImagen"><img src="https://picsum.photos/800/500?random=17" alt="Noticia pequeña" class="unav-newsImage" loading="lazy"></div>
-                                <p class="unav-newsDate" style="font-size: var(--unav-fontSize050);">15 Mar. 2026</p>
+                                <p class="unav-newsDate" style="font-size: var(--unav-fontSize075);">15 Mar. 2026</p>
                                 <h3 class="unav-newsTitle unav-newsTitle--sm" style="font-size: var(--unav-fontSize100);"><a href="#">Nueva biblioteca digital abierta</a></h3>
                             </article>
                         </div>
@@ -241,8 +271,8 @@
         </section>
 
         <section class="unav-card unav-cardSolid" style="margin-bottom: var(--unav-spacing-xl);">
-            <h2 class="unav-font-primary unav-weight-bold unav-text-150" style="padding-bottom: var(--unav-spacing-sm); margin-bottom: var(--unav-spacing-xl); color: var(--unav-black-900);">06. Variante F: Ancho Total (12 Col) - 2 Noticias</h2>
-            <div class="row g-5">
+            <h2 class="unav-font-primary unav-weight-bold unav-text-150" style="padding-bottom: var(--unav-spacing-sm); margin-bottom: var(--unav-spacing-xl); color: var(--unav-black-900); letter-spacing: var(--unav-trackingNormal);">06. Variante F: Ancho Total (12 Col) - 2 Noticias</h2>
+            <div class="row g-5 unav-gridScrollMobile">
                 <div class="col-12 col-md-6">
                     <article class="unav-newsCard unav-efectoEntradaOculto">
                         <div class="unav-newsImageWrapper unav-efectoZoomImagen" style="aspect-ratio: 16 / 9;">
@@ -278,13 +308,13 @@
 
     </main>
 
-    <footer class="bg-white border-top py-4 mt-5">
+    <footer style="background-color: var(--unav-bg-surface); border-top: 1px solid var(--unav-grey-200); padding: var(--unav-spacing-lg) 0; margin-top: var(--unav-spacing-3xl);">
         <div class="container-lg d-flex flex-column flex-md-row justify-content-between align-items-center gap-3">
-            <div class="d-flex align-items-center gap-2">
+            <div style="display: flex; align-items: center; gap: var(--unav-spacing-sm);">
                 <i class="bi bi-boxes"></i>
-                <span class="unav-font-primary unav-weight-bold unav-text-1125 text-dark">Design System UNAV</span>
+                <span class="unav-font-primary unav-weight-bold unav-text-1125" style="color: var(--unav-black-800);">Design System UNAV</span>
             </div>
-            <p class="unav-font-primary unav-weight-regular unav-text-075 text-muted m-0">
+            <p class="unav-font-primary unav-weight-regular unav-text-075 m-0" style="color: var(--unav-grey-500);">
                 Arquitectura OOCSS &middot; Versión 2.0 &middot; &copy; 2026
             </p>
         </div>

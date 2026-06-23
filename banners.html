@@ -13,7 +13,7 @@
 </head>
 <body class="unav-font-primary unav-weight-regular unav-text-1125">
 
-    <nav style="background-color: #ffffff; border-bottom: 1px solid var(--unav-grey-200); padding: var(--unav-spacing-md) 0; position: sticky; top: 0; z-index: var(--unav-zIndex-sticky);">
+    <nav style="background-color: var(--unav-bg-surface); border-bottom: 1px solid var(--unav-grey-200); padding: var(--unav-spacing-md) 0; position: sticky; top: 0; z-index: var(--unav-zIndex-sticky);">
         <div class="container-lg d-flex justify-content-between align-items-center position-relative">            
             <div>
                 <a href="indice.html" class="unav-boton unav-botonSecundario">
@@ -30,12 +30,12 @@
     <main>
         
         <header style="text-align: center; margin: var(--unav-spacing-xl) var(--unav-spacing-xl);">
-            <h1 class="unav-font-primary unav-weight-medium unav-text-200" style="color: var(--unav-black-900); margin-bottom: var(--unav-spacing-sm) !important;">Banners</h1>
+            <h1 class="unav-font-primary unav-weight-medium unav-text-200" style="color: var(--unav-black-900); margin-bottom: var(--unav-spacing-sm) !important; letter-spacing: var(--unav-trackingTight);">Banners</h1>
         </header>
 
         <div class="container-lg mb-4 mt-5">
-            <h2 class="unav-font-primary unav-weight-bold unav-text-150" style="padding-bottom: var(--unav-spacing-sm); margin-bottom: var(--unav-spacing-xl); color: var(--unav-black-900);">1. Banner Fullwidth Parallax (100vw)</h2>
-            <p class="unav-font-primary unav-weight-regular unav-text-100 mb-4 unav-lh-normal" style="color: var(--unav-grey-600);">Se expanden al 100vw, rompiendo los márgenes del contenedor padre, pero mantienen su contenido interno alineado con el grid.</p>
+            <h2 class="unav-font-primary unav-weight-bold unav-text-150" style="padding-bottom: var(--unav-spacing-sm); margin-bottom: var(--unav-spacing-xl); color: var(--unav-black-900); letter-spacing: var(--unav-trackingNormal);">1. Banner Fullwidth Parallax (100vw)</h2>
+            <p class="unav-font-primary unav-weight-regular unav-text-100 mb-4 unav-lh-normal" style="color: var(--unav-grey-600); letter-spacing: var(--unav-trackingNormal);">Se expanden al 100vw, rompiendo los márgenes del contenedor padre, pero mantienen su contenido interno alineado con el grid.</p>
         </div>
 
         <section class="mb-2">
@@ -44,11 +44,11 @@
                 <div class="container-lg unav-bannerContent">
                     <div class="row align-items-center">
                         <div class="col-md-8">
-                            <h3 class="unav-bannerTitle unav-lh-snug">INVESTIGACIÓN Y DESARROLLO</h3>
-                            <p class="unav-bannerText unav-lh-normal">Descubre nuestros últimos avances científicos y súmate a los grupos de investigación de vanguardia de la universidad.</p>
+                            <h3 class="unav-bannerTitle unav-lh-snug" style="letter-spacing: var(--unav-trackingTight);">INVESTIGACIÓN Y DESARROLLO</h3>
+                            <p class="unav-bannerText unav-lh-normal" style="letter-spacing: var(--unav-trackingNormal);">Descubre nuestros últimos avances científicos y súmate a los grupos de investigación de vanguardia de la universidad.</p>
                         </div>
                         <div class="col-md-4 d-flex flex-column align-items-md-end gap-2 mt-4 mt-md-0">
-                            <a href="#" class="unav-boton unav-botonSecundario" style="--unav-botonColorSource: #ffffff; --unav-botonTextHover: var(--unav-black-800);">
+                            <a href="#" class="unav-boton unav-botonSecundario" style="--unav-botonColorSource: var(--unav-text-inverse); --unav-botonTextHover: var(--unav-black-800);">
                                 <span>VER PROYECTOS</span>
                             </a>
                             <a href="#" class="unav-boton unav-botonSecundario" style="--unav-botonColorSource: var(--unav-cyan-400); --unav-botonTextHover: var(--unav-black-900);">
@@ -64,13 +64,15 @@
             <div class="unav-banner unav-bannerFull unav-efectoParallax unav-themeDark unav-alignCenter" style="background-image: url('https://images.unsplash.com/photo-1541339907198-e08756dedf3f?auto=format&fit=crop&q=80&w=1920');">
                 <div class="unav-bannerOverlay"></div>
                 <div class="container-lg unav-bannerContent d-flex flex-column align-items-center">
-                    <h3 class="unav-bannerTitle unav-lh-snug">ADMISIÓN CURSO 2026/27</h3>
-                    <p class="unav-bannerText mx-auto unav-lh-normal" style="max-width: 800px;">El periodo de solicitud de admisión se encuentra abierto. Consulta la oferta académica y descubre por qué miles de alumnos nos eligen cada año para forjar su futuro.</p>
+                    <h3 class="unav-bannerTitle unav-lh-snug" style="letter-spacing: var(--unav-trackingTight);">ADMISIÓN CURSO 2026/27</h3>
+                    <div class="col-12 col-md-10 col-lg-8 mx-auto">
+                        <p class="unav-bannerText mx-auto unav-lh-normal" style="letter-spacing: var(--unav-trackingNormal);">El periodo de solicitud de admisión se encuentra abierto. Consulta la oferta académica y descubre por qué miles de alumnos nos eligen cada año para forjar su futuro.</p>
+                    </div>
                     <div class="d-flex flex-wrap justify-content-center gap-3 mt-4">
-                        <a href="#" class="unav-boton unav-botonSecundario" style="--unav-botonColorSource: #ffffff; --unav-botonTextHover: var(--unav-black-800);">
+                        <a href="#" class="unav-boton unav-botonSecundario" style="--unav-botonColorSource: var(--unav-text-inverse); --unav-botonTextHover: var(--unav-black-800);">
                             <span>OFERTA ACADÉMICA</span>
                         </a>
-                        <a href="#" class="unav-boton unav-botonSecundario" style="--unav-botonColorSource: #ffffff; --unav-botonTextHover: var(--unav-black-800);">
+                        <a href="#" class="unav-boton unav-botonSecundario" style="--unav-botonColorSource: var(--unav-text-inverse); --unav-botonTextHover: var(--unav-black-800);">
                             <span>INICIAR SOLICITUD</span>
                         </a>
                     </div>
@@ -79,20 +81,21 @@
         </section>
 
         <div class="container-lg">
+            
             <section class="unav-card unav-cardSolid" style="margin-bottom: var(--unav-spacing-3xl);">
-                <h2 class="unav-font-primary unav-weight-bold unav-text-150" style="padding-bottom: var(--unav-spacing-sm); margin-bottom: var(--unav-spacing-xl); color: var(--unav-black-900);">2. Banner Ancho (12 Columnas Grid)</h2>
-                <p class="unav-font-primary unav-weight-regular unav-text-100 mb-4 unav-lh-normal" style="color: var(--unav-grey-600);">Se encajan en un contenedor manteniendo el ancho de 12 columnas (100% de la caja padre).</p>
+                <h2 class="unav-font-primary unav-weight-bold unav-text-150" style="padding-bottom: var(--unav-spacing-sm); margin-bottom: var(--unav-spacing-xl); color: var(--unav-black-900); letter-spacing: var(--unav-trackingNormal);">2. Banner Ancho (12 Columnas Grid)</h2>
+                <p class="unav-font-primary unav-weight-regular unav-text-100 mb-4 unav-lh-normal" style="color: var(--unav-grey-600); letter-spacing: var(--unav-trackingNormal);">Se encajan en un contenedor manteniendo el ancho de 12 columnas (100% de la caja padre).</p>
 
                 <div class="unav-banner unav-bannerWide unav-themeDark mb-4" style="background-image: url('https://images.unsplash.com/photo-1541339907198-e08756dedf3f?auto=format&fit=crop&q=80&w=1200');">
                     <div class="unav-bannerOverlay"></div>
                     <div class="unav-bannerContent">
                         <div class="row align-items-center">
                             <div class="col-md-8">
-                                <h3 class="unav-bannerTitle unav-lh-snug">INVESTIGACIÓN Y DESARROLLO</h3>
-                                <p class="unav-bannerText unav-lh-normal">Descubre nuestros últimos avances científicos y súmate a los grupos de investigación de vanguardia.</p>
+                                <h3 class="unav-bannerTitle unav-lh-snug" style="letter-spacing: var(--unav-trackingTight);">INVESTIGACIÓN Y DESARROLLO</h3>
+                                <p class="unav-bannerText unav-lh-normal" style="letter-spacing: var(--unav-trackingNormal);">Descubre nuestros últimos avances científicos y súmate a los grupos de investigación de vanguardia.</p>
                             </div>
                             <div class="col-md-4 d-flex flex-column align-items-md-end mt-4 mt-md-0">
-                                <a href="#" class="unav-boton unav-botonSecundario" style="--unav-botonColorSource: #ffffff; --unav-botonTextHover: var(--unav-black-800);">
+                                <a href="#" class="unav-boton unav-botonSecundario" style="--unav-botonColorSource: var(--unav-text-inverse); --unav-botonTextHover: var(--unav-black-800);">
                                     <span>VER PROYECTOS</span>
                                 </a>
                             </div>
@@ -104,11 +107,11 @@
                     <div class="unav-bannerContent">
                         <div class="row align-items-center">
                             <div class="col-md-7">
-                                <h3 class="unav-bannerTitle unav-lh-snug">ALUMNI UNAV</h3>
-                                <p class="unav-bannerText mb-0 unav-lh-normal">Mantén tu vínculo con la Universidad y disfruta de formación continua exclusiva para antiguos alumnos.</p>
+                                <h3 class="unav-bannerTitle unav-lh-snug" style="letter-spacing: var(--unav-trackingTight);">ALUMNI UNAV</h3>
+                                <p class="unav-bannerText mb-0 unav-lh-normal" style="letter-spacing: var(--unav-trackingNormal);">Mantén tu vínculo con la Universidad y disfruta de formación continua exclusiva para antiguos alumnos.</p>
                             </div>
                             <div class="col-md-5 d-flex flex-column align-items-md-end mt-4 mt-md-0">
-                                <a href="#" class="unav-boton unav-botonSecundarioInverso" style="--unav-botonColorSource: #ffffff; --unav-botonTextHover: var(--unav-rojo-600);">
+                                <a href="#" class="unav-boton unav-botonSecundarioInverso" style="--unav-botonColorSource: var(--unav-text-inverse); --unav-botonTextHover: var(--unav-rojo-600);">
                                     <span>VER BENEFICIOS</span>
                                 </a>
                             </div>
@@ -119,10 +122,12 @@
                 <div class="unav-banner unav-bannerWide unav-themeDark unav-alignCenter mb-4" style="background-image: url('https://images.unsplash.com/photo-1562774053-701939374585?auto=format&fit=crop&q=80&w=1200');">
                     <div class="unav-bannerOverlay"></div>
                     <div class="unav-bannerContent d-flex flex-column align-items-center">
-                        <h3 class="unav-bannerTitle unav-lh-snug">ADMISIÓN CURSO 2026/27</h3>
-                        <p class="unav-bannerText mx-auto unav-lh-normal" style="max-width: 700px;">El periodo de solicitud de admisión se encuentra abierto. Consulta la oferta académica y los requisitos necesarios.</p>
+                        <h3 class="unav-bannerTitle unav-lh-snug" style="letter-spacing: var(--unav-trackingTight);">ADMISIÓN CURSO 2026/27</h3>
+                        <div class="col-12 col-md-10 col-lg-8 mx-auto">
+                            <p class="unav-bannerText mx-auto unav-lh-normal" style="letter-spacing: var(--unav-trackingNormal);">El periodo de solicitud de admisión se encuentra abierto. Consulta la oferta académica y los requisitos necesarios.</p>
+                        </div>
                         <div class="d-flex flex-wrap justify-content-center gap-3 mt-4">
-                            <a href="#" class="unav-boton unav-botonSecundario" style="--unav-botonColorSource: #ffffff; --unav-botonTextHover: var(--unav-black-800);">
+                            <a href="#" class="unav-boton unav-botonSecundario" style="--unav-botonColorSource: var(--unav-text-inverse); --unav-botonTextHover: var(--unav-black-800);">
                                 <span>OFERTA ACADÉMICA</span>
                             </a>
                             <a href="#" class="unav-boton unav-botonSecundarioInverso" style="--unav-botonColorSource: var(--unav-cyan-400); --unav-botonTextHover: var(--unav-black-900);">
@@ -135,10 +140,12 @@
                 <div class="unav-banner unav-bannerWide unav-themeDark unav-alignCenter" style="background-image: url('https://images.unsplash.com/photo-1524178232363-1fb2b075b655?auto=format&fit=crop&q=80&w=1200');">
                     <div class="unav-bannerOverlay"></div>
                     <div class="unav-bannerContent d-flex flex-column align-items-center">
-                        <h3 class="unav-bannerTitle unav-lh-snug">CAMPUS VIDA Y CULTURA</h3>
-                        <p class="unav-bannerText mx-auto unav-lh-normal" style="max-width: 700px;">Explora las actividades deportivas, culturales y sociales que hacen de nuestro campus un lugar único para crecer.</p>
+                        <h3 class="unav-bannerTitle unav-lh-snug" style="letter-spacing: var(--unav-trackingTight);">CAMPUS VIDA Y CULTURA</h3>
+                        <div class="col-12 col-md-10 col-lg-8 mx-auto">
+                            <p class="unav-bannerText mx-auto unav-lh-normal" style="letter-spacing: var(--unav-trackingNormal);">Explora las actividades deportivas, culturales y sociales que hacen de nuestro campus un lugar único para crecer.</p>
+                        </div>
                         <div class="d-flex flex-wrap justify-content-center gap-3 mt-4">
-                            <a href="#" class="unav-boton unav-botonSecundario" style="--unav-botonColorSource: #ffffff; --unav-botonTextHover: var(--unav-black-800);">
+                            <a href="#" class="unav-boton unav-botonSecundario" style="--unav-botonColorSource: var(--unav-text-inverse); --unav-botonTextHover: var(--unav-black-800);">
                                 <span>VER ACTIVIDADES</span>
                             </a>
                         </div>
@@ -148,18 +155,18 @@
             </section>
 
             <section class="unav-card unav-cardSolid" style="margin-bottom: var(--unav-spacing-3xl);">
-                <h2 class="unav-font-primary unav-weight-bold unav-text-150" style="padding-bottom: var(--unav-spacing-sm); margin-bottom: var(--unav-spacing-xl); color: var(--unav-black-900);">3. Banner Mini (Tarjetas)</h2>
-                <p class="unav-font-primary unav-weight-regular unav-text-100 mb-4 unav-lh-normal" style="color: var(--unav-grey-600);">Cajas promocionales con altura mínima ideal para el layout en cuadrículas.</p>
+                <h2 class="unav-font-primary unav-weight-bold unav-text-150" style="padding-bottom: var(--unav-spacing-sm); margin-bottom: var(--unav-spacing-xl); color: var(--unav-black-900); letter-spacing: var(--unav-trackingNormal);">3. Banner Mini (Tarjetas)</h2>
+                <p class="unav-font-primary unav-weight-regular unav-text-100 mb-4 unav-lh-normal" style="color: var(--unav-grey-600); letter-spacing: var(--unav-trackingNormal);">Cajas promocionales con altura mínima ideal para el layout en cuadrículas.</p>
 
-                <h3 class="unav-font-primary unav-weight-bold unav-text-125 mt-4 mb-3 unav-lh-normal" style="color: var(--unav-black-800);">Variantes con Imagen de Fondo</h3>
+                <h3 class="unav-font-primary unav-weight-bold unav-text-125 mt-4 mb-3 unav-lh-normal" style="color: var(--unav-black-800); letter-spacing: var(--unav-trackingNormal);">Variantes con Imagen de Fondo</h3>
                 <div class="row g-4 mb-5">
                     <div class="col-md-6">
                         <div class="unav-banner unav-bannerMini unav-themeDark" style="background-image: url('https://images.unsplash.com/photo-1501785888041-af3ef285b470?auto=format&fit=crop&q=80&w=800');">
                             <div class="unav-bannerOverlay"></div>
                             <div class="unav-bannerContent">
-                                <h3 class="unav-bannerTitle unav-lh-snug">ADMISIÓN 2026</h3>
-                                <p class="unav-bannerText unav-lh-normal">Inicia tu proceso de admisión hoy mismo 100% online.</p>
-                                <a  href="#" class="unav-enlaceFlecha" style="text-transform: none; --unav-enlaceColor: var(--unav-yellow-400);">
+                                <h3 class="unav-bannerTitle unav-lh-snug" style="letter-spacing: var(--unav-trackingTight);">ADMISIÓN 2026</h3>
+                                <p class="unav-bannerText unav-lh-normal" style="letter-spacing: var(--unav-trackingNormal);">Inicia tu proceso de admisión hoy mismo 100% online.</p>
+                                <a href="#" class="unav-enlaceFlecha" style="text-transform: none; --unav-enlaceColor: var(--unav-yellow-400);">
                                     <span class="unav-arrowWrapper"><span class="unav-arrow"></span><span class="unav-arrowClone"></span></span>
                                     <span>Empezar ahora</span>
                                 </a>
@@ -170,9 +177,9 @@
                         <div class="unav-banner unav-bannerMini unav-themeDark unav-alignCenter" style="background-image: url('https://images.unsplash.com/photo-1541339907198-e08756dedf3f?auto=format&fit=crop&q=80&w=800');">
                             <div class="unav-bannerOverlay"></div>
                             <div class="unav-bannerContent">
-                                <h3 class="unav-bannerTitle Movie unav-lh-snug">CAMPUS VIDA</h3>
-                                <p class="unav-bannerText unav-lh-normal">Descubre las instalaciones deportivas y la vida universitaria.</p>
-                                <a  href="#" class="unav-enlaceFlecha" style="text-transform: none; --unav-enlaceColor: #ffffff;">
+                                <h3 class="unav-bannerTitle Movie unav-lh-snug" style="letter-spacing: var(--unav-trackingTight);">CAMPUS VIDA</h3>
+                                <p class="unav-bannerText unav-lh-normal" style="letter-spacing: var(--unav-trackingNormal);">Descubre las instalaciones deportivas y la vida universitaria.</p>
+                                <a href="#" class="unav-enlaceFlecha" style="text-transform: none; --unav-enlaceColor: var(--unav-text-inverse);">
                                     <span class="unav-arrowWrapper"><span class="unav-arrow"></span><span class="unav-arrowClone"></span></span>
                                     <span>Ver campus</span>
                                 </a>
@@ -181,14 +188,14 @@
                     </div>
                 </div>
 
-                <h3 class="unav-font-primary unav-weight-bold unav-text-125 mt-0 mb-3 unav-lh-normal" style="color: var(--unav-black-800);">Variantes con Colores Sólidos</h3>
+                <h3 class="unav-font-primary unav-weight-bold unav-text-125 mt-0 mb-3 unav-lh-normal" style="color: var(--unav-black-800); letter-spacing: var(--unav-trackingNormal);">Variantes con Colores Sólidos</h3>
                 <div class="row g-4 mb-5">
                     <div class="col-md-6">
                         <div class="unav-banner unav-bannerMini unav-themeDark unav-bg-rojo-600">
                             <div class="unav-bannerContent">
-                                <h3 class="unav-bannerTitle unav-lh-snug">BECAS ALUMNI</h3>
-                                <p class="unav-bannerText unav-lh-normal">Opciones de financiación y becas disponibles para este curso.</p>
-                                <a  href="#" class="unav-enlaceFlecha" style="text-transform: none; --unav-enlaceColor: #ffffff;">
+                                <h3 class="unav-bannerTitle unav-lh-snug" style="letter-spacing: var(--unav-trackingTight);">BECAS ALUMNI</h3>
+                                <p class="unav-bannerText unav-lh-normal" style="letter-spacing: var(--unav-trackingNormal);">Opciones de financiación y becas disponibles para este curso.</p>
+                                <a href="#" class="unav-enlaceFlecha" style="text-transform: none; --unav-enlaceColor: var(--unav-text-inverse);">
                                     <span class="unav-arrowWrapper"><span class="unav-arrow"></span><span class="unav-arrowClone"></span></span>
                                     <span>Solicitar beca</span>
                                 </a>
@@ -198,9 +205,9 @@
                     <div class="col-md-6">
                         <div class="unav-banner unav-bannerMini unav-bg-grey-100" style="border: 1px solid var(--unav-grey-200);">
                             <div class="unav-bannerContent">
-                                <h3 class="unav-bannerTitle unav-lh-snug">MÁSTERES</h3>
-                                <p class="unav-bannerText unav-lh-normal">Especialízate con nuestros programas líderes en investigación.</p>
-                                <a  href="#" class="unav-enlaceFlecha" style="text-transform: none; --unav-enlaceColor: var(--unav-rojo-600);">
+                                <h3 class="unav-bannerTitle unav-lh-snug" style="letter-spacing: var(--unav-trackingTight);">MÁSTERES</h3>
+                                <p class="unav-bannerText unav-lh-normal" style="letter-spacing: var(--unav-trackingNormal);">Especialízate con nuestros programas líderes en investigación.</p>
+                                <a href="#" class="unav-enlaceFlecha" style="text-transform: none; --unav-enlaceColor: var(--unav-rojo-600);">
                                     <span class="unav-arrowWrapper"><span class="unav-arrow"></span><span class="unav-arrowClone"></span></span>
                                     <span>Ver programas</span>
                                 </a>
@@ -209,14 +216,14 @@
                     </div>
                 </div>
 
-                <h3 class="unav-font-primary unav-weight-bold unav-text-125 mt-0 mb-3 unav-lh-normal" style="color: var(--unav-black-800);">Rendimiento en Grid Pequeño (3 Columnas)</h3>
+                <h3 class="unav-font-primary unav-weight-bold unav-text-125 mt-0 mb-3 unav-lh-normal" style="color: var(--unav-black-800); letter-spacing: var(--unav-trackingNormal);">Rendimiento en Grid Pequeño (3 Columnas)</h3>
                 <div class="row g-3">
                     <div class="col-lg-4 col-md-6">
                         <div class="unav-banner unav-bannerMini unav-themeDark unav-bg-black-800">
                             <div class="unav-bannerContent">
-                                <h3 class="unav-bannerTitle unav-lh-normal" style="font-size: 20px;">INVESTIGACIÓN</h3>
-                                <p class="unav-bannerText unav-lh-normal" style="font-size: 15px;">Centros de investigación biomédica y tecnológica.</p>
-                                <a  href="#" class="unav-enlaceFlecha" style="text-transform: none; --unav-enlaceColor: #ffffff;">
+                                <h3 class="unav-bannerTitle unav-lh-snug unav-text-125" style="letter-spacing: var(--unav-trackingNormal);">INVESTIGACIÓN</h3>
+                                <p class="unav-bannerText unav-lh-normal unav-text-100" style="letter-spacing: var(--unav-trackingNormal);">Centros de investigación biomédica y tecnológica.</p>
+                                <a href="#" class="unav-enlaceFlecha" style="text-transform: none; --unav-enlaceColor: var(--unav-text-inverse);">
                                     <span class="unav-arrowWrapper"><span class="unav-arrow"></span><span class="unav-arrowClone"></span></span>
                                     <span>Leer más</span>
                                 </a>
@@ -226,9 +233,9 @@
                     <div class="col-lg-4 col-md-6">
                         <div class="unav-banner unav-bannerMini unav-themeDark unav-bg-blue-600">
                             <div class="unav-bannerContent">
-                                <h3 class="unav-bannerTitle unav-lh-normal" style="font-size: 20px;">BIBLIOTECA</h3>
-                                <p class="unav-bannerText unav-lh-normal" style="font-size: 15px;">Accede a miles de recursos digitales y revistas.</p>
-                                <a  href="#" class="unav-enlaceFlecha" style="text-transform: none; --unav-enlaceColor: #ffffff;">
+                                <h3 class="unav-bannerTitle unav-lh-snug unav-text-125" style="letter-spacing: var(--unav-trackingNormal);">BIBLIOTECA</h3>
+                                <p class="unav-bannerText unav-lh-normal unav-text-100" style="letter-spacing: var(--unav-trackingNormal);">Accede a miles de recursos digitales y revistas.</p>
+                                <a href="#" class="unav-enlaceFlecha" style="text-transform: none; --unav-enlaceColor: var(--unav-text-inverse);">
                                     <span class="unav-arrowWrapper"><span class="unav-arrow"></span><span class="unav-arrowClone"></span></span>
                                     <span>Acceder</span>
                                 </a>
@@ -238,9 +245,9 @@
                     <div class="col-lg-4 col-md-12">
                         <div class="unav-banner unav-bannerMini unav-themeDark unav-bg-moss-600">
                             <div class="unav-bannerContent">
-                                <h3 class="unav-bannerTitle unav-lh-normal" style="font-size: 20px;">SOSTENIBILIDAD</h3>
-                                <p class="unav-bannerText unav-lh-normal" style="font-size: 15px;">Conoce nuestro plan medioambiental.</p>
-                                <a  href="#" class="unav-enlaceFlecha" style="text-transform: none; --unav-enlaceColor: #ffffff;">
+                                <h3 class="unav-bannerTitle unav-lh-snug unav-text-125" style="letter-spacing: var(--unav-trackingNormal);">SOSTENIBILIDAD</h3>
+                                <p class="unav-bannerText unav-lh-normal unav-text-100" style="letter-spacing: var(--unav-trackingNormal);">Conoce nuestro plan medioambiental.</p>
+                                <a href="#" class="unav-enlaceFlecha" style="text-transform: none; --unav-enlaceColor: var(--unav-text-inverse);">
                                     <span class="unav-arrowWrapper"><span class="unav-arrow"></span><span class="unav-arrowClone"></span></span>
                                     <span>Ver plan</span>
                                 </a>
@@ -254,7 +261,7 @@
         </div> 
     </main>
     
-    <footer style="background-color: #ffffff; border-top: 1px solid var(--unav-grey-200); padding: var(--unav-spacing-lg) 0; margin-top: var(--unav-spacing-3xl);">
+    <footer style="background-color: var(--unav-bg-surface); border-top: 1px solid var(--unav-grey-200); padding: var(--unav-spacing-lg) 0; margin-top: var(--unav-spacing-3xl);">
         <div class="container-lg d-flex flex-column flex-md-row justify-content-between align-items-center gap-3">
             <div style="display: flex; align-items: center; gap: var(--unav-spacing-sm);">
                 <i class="bi bi-boxes"></i>
