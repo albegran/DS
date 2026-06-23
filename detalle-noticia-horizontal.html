@@ -13,14 +13,14 @@
 
     <style>
         /* Estilos de guía técnica */
-        html { scroll-behavior: smooth; background-color: #ffffff; }
+        html { scroll-behavior: smooth; background-color: var(--unav-bg-surface); }
         body { background-color: transparent; }
 
         /* ==========================================
            COMPONENTE ESPECÍFICO: HERO EDITORIAL
            ========================================== */
         .unav-heroEditorial {
-            background-color: #ffffff;
+            background-color: var(--unav-bg-surface);
             padding-top: var(--unav-spacing-3xl);
             padding-bottom: var(--unav-spacing-3xl);
         }
@@ -90,7 +90,7 @@
         }
 
         /* ==========================================
-           REFACTOR MÓVIL (Peticiones del Usuario)
+           REFACTOR MÓVIL (Acordeón a Sticky Bar)
            ========================================== */
         @media (max-width: 767.98px) {
             /* MÓVIL: Pie de foto más pegado y apilado */
@@ -111,42 +111,45 @@
                 bottom: 0;
                 left: 0;
                 width: 100%;
-                background-color: rgba(255, 255, 255, 0.95);
-                backdrop-filter: blur(10px);
+                background-color: var(--unav-bg-surface);
                 border-top: 1px solid var(--unav-grey-200);
-                padding: var(--unav-spacing-sm);
+                padding: var(--unav-spacing-sm) var(--unav-spacing-md);
                 z-index: var(--unav-zIndex-sticky);
                 box-shadow: 0 -4px 10px rgba(0,0,0,0.05);
-                display: flex !important;
-                justify-content: center;
-                gap: var(--unav-spacing-sm);
-                /* Quitamos márgenes residuales del sidebar */
                 margin: 0 !important; 
             }
             
-            /* Ocultamos elementos innecesarios en la barra móvil */
-            .unav-shareStickyMobile .unav-accordionHeader,
-            .unav-shareStickyMobile .unav-accordionPanel {
+            /* Ocultamos solo el botón del acordeón */
+            .unav-shareStickyMobile .unav-accordionHeader {
                 display: none !important;
             }
 
-            /* Reseteamos el contenedor interno del acordeón para que fluya en flex */
+            /* LA SOLUCIÓN: Forzamos la apertura del panel anulando el max-height 0 */
+            .unav-shareStickyMobile .unav-accordionPanel {
+                display: block !important;
+                max-height: none !important;
+                overflow: visible !important;
+                background-color: transparent !important;
+            }
+
+            /* Reseteamos el contenedor interno para limpieza visual */
             .unav-shareStickyMobile .unav-accordionGroup,
             .unav-shareStickyMobile .unav-accordionItem {
                 border: none;
-                width: auto;
+                width: 100%;
             }
 
-            /* Hacemos visibles directamente los iconos saltándonos la lógica del acordeón */
+            /* Colocamos los botones en horizontal y centrados */
             .unav-shareStickyMobile .unav-accordionInner {
                 display: flex !important;
                 flex-direction: row !important;
+                justify-content: center;
                 padding: 0 !important;
             }
             
-            /* Damos un margen base al main para que el contenido no quede oculto bajo la barra */
+            /* Damos un margen base al body para que la noticia no quede oculta bajo la barra */
             body {
-                padding-bottom: 70px;
+                padding-bottom: 80px;
             }
         }
 
@@ -154,17 +157,16 @@
         @media (min-width: 768px) {
             .unav-heroEditorial-title { font-size: var(--unav-fontSize300); }
             .unav-heroEditorial-imageWrapper img { max-height: 600px; }
-            /* En escritorio la barra vuelve a su estado normal */
+            /* En escritorio la barra vuelve a su estado normal de acordeón */
             .unav-shareStickyMobile .unav-accordionInner {
-                 display: inherit; /* Restaura el comportamiento del acordeón */
+                 display: inherit; 
             }
         }
     </style>
 </head>
+<body class="unav-font-primary unav-weight-regular unav-text-1125">
 
-<body>
-
-    <nav style="background-color: var(--unav-bg-surface); border-bottom: 1px solid var(--unav-grey-200); padding: var(--unav-spacing-md) 0; position: sticky; top: 0; z-index: var(--unav-zIndex-sticky);">
+    <nav style="background-color: #ffffff; border-bottom: 1px solid var(--unav-grey-200); padding: var(--unav-spacing-md) 0; position: sticky; top: 0; z-index: var(--unav-zIndex-sticky);">
         <div class="container-lg d-flex justify-content-between align-items-center position-relative">            
             <div>
                 <a href="indice.html" class="unav-boton unav-botonSecundario">
@@ -178,13 +180,12 @@
         </div>
     </nav>
 
-    <!-- CONTENIDO PRINCIPAL -->
-    <main class="container-lg py-5">
+    <main class="container-lg">
         
-        <article class="container unav-heroEditorial mb-5" style="border-color: var(--unav-grey-200) !important;">
+        <article class="container unav-heroEditorial mb-2" style="border-color: var(--unav-grey-200) !important;">
             
             <!-- HEADER (12 COLUMNAS CENTRADO) -->
-            <header class="row mb-5">
+            <header class="row mb-2">
                 <div class="col-12 text-center">
                     
                     <!-- ETIQUETAS ALINEADAS AL CENTRO -->
@@ -226,15 +227,15 @@
                 </div>
             </header>
 
-            <!-- CUERPO DE LA NOTICIA (4 COLUMNAS ACORDEÓN / 8 COLUMNAS NOTICIA) -->
+            <!-- CUERPO DE LA NOTICIA -->
             <div class="row">
                 
                 <!-- SIDEBAR / BARRA MÓVIL: ACORDEÓN COMPARTIR -->
-                <aside class="col-md-4 mb-4 unav-shareStickyMobile">
+                <aside class="col-md-4 mb-2 unav-shareStickyMobile">
                     <div class="unav-accordionGroup">
                         <div class="unav-accordionItem">
-                            <!-- En móvil, este Header y su panel quedan ocultos, mostrando los iconos directamente -->
-                            <button class="unav-accordionHeader d-none d-md-flex" aria-expanded="false">
+                            <!-- En móvil, este Header queda oculto -->
+                            <button class="unav-accordionHeader" aria-expanded="false">
                                 <div class="unav-accordionTitleWrapper">
                                     <span class="unav-weight-bold unav-text-085" style="letter-spacing: var(--unav-trackingWide);">
                                         <i class="bi bi-share me-2" style="color: var(--unav-rojo-500);"></i> COMPARTE
@@ -244,8 +245,7 @@
                             </button>
                             <div class="unav-accordionPanel">
                                 <div class="unav-accordionInner d-flex flex-column gap-3">
-                                    <!-- Los iconos se exponen permanentemente en la barra inferior móvil -->
-                                    <div class="d-flex gap-2 flex-wrap align-items-center justify-content-center">
+                                    <div class="d-flex gap-2 flex-wrap align-items-center">
                                         <button class="unav-boton unav-botonSecundario unav-botonIconOnly unav-botonIconOnlySm" style="--unav-botonColorSource: var(--unav-black-800);"  aria-label="Facebook"><i class="bi bi-facebook unav-botonIcono"></i></button>
                                         <button class="unav-boton unav-botonSecundario unav-botonIconOnly unav-botonIconOnlySm" style="--unav-botonColorSource: var(--unav-black-800);"  aria-label="X"><i class="bi bi-twitter-x unav-botonIcono"></i></button>
                                         <button class="unav-boton unav-botonSecundario unav-botonIconOnly unav-botonIconOnlySm" style="--unav-botonColorSource: var(--unav-black-800);"  aria-label="WhatsApp"><i class="bi bi-whatsapp unav-botonIcono"></i></button>                                
@@ -264,8 +264,6 @@
                     <p class="unav-font-primary unav-weight-regular unav-text-1125 unav-lh-normal m-0" style="color: var(--unav-black-800);">
                         En la era actual, la seguridad transatlántica no es solo una cuestión de despliegue militar, sino una arquitectura cimentada en valores compartidos...
                     </p>
-
-
 
                     <p class="unav-font-primary unav-weight-regular unav-text-1125 unav-lh-normal mb-4 mt-4" style="color: var(--unav-black-800);">
                         En la era actual, la seguridad transatlántica no es solo una cuestión de despliegue militar, sino una arquitectura cimentada en valores compartidos. Neiberg argumenta que la percepción pública de la <a href="#" class="unav-enlaceInline">OTAN</a> ha sufrido una transformación radical durante las últimas dos décadas. Las nuevas generaciones ya no ven a la alianza únicamente como un escudo frente a amenazas territoriales directas, sino que demandan una justificación basada en la protección de los derechos fundamentales.
@@ -287,7 +285,7 @@
                         De hecho, las nuevas agencias de innovación auspiciadas por el tratado están financiando ecosistemas de startups en capitales europeas, buscando talento joven capaz de desarrollar algoritmos de inteligencia artificial, computación cuántica y biotecnología aplicada a la gestión de crisis.
                     </p>
 
-                    <!-- FOTOGRAFÍA SECUNDARIA (También optimizada con margen xs) -->
+                    <!-- FOTOGRAFÍA SECUNDARIA -->
                     <figure class="mb-4 mt-5">
                         <img src="https://picsum.photos/id/1025/800/400" class="img-fluid w-100" style="border-radius: var(--unav-radius-none); margin-bottom: var(--unav-spacing-xs);">
                         <div class="row align-items-start unav-heroCaptionMobile">
@@ -305,7 +303,7 @@
                     <div class="row mb-5 mt-4">
                         <div class="col-md-6 mb-3 mb-md-0">
                             <img src="https://picsum.photos/id/103/400/600" class="img-fluid w-100" style="border-radius: var(--unav-radius-none); margin-bottom: var(--unav-spacing-xs);">
-                            <div class="unav-text-085" style="color: var(--unav-grey-600);">Retrato institucional del historiador Michael Neiberg durante la entrevista.</div>
+                            <div class="unav-text-085 mt-2" style="color: var(--unav-grey-600);">Retrato institucional del historiador Michael Neiberg durante la entrevista.</div>
                         </div>
                         <div class="col-md-6 d-flex flex-column justify-content-center">
                             <p class="unav-font-primary unav-weight-regular unav-text-1125 unav-lh-normal mb-4" style="color: var(--unav-black-800);">
@@ -323,7 +321,7 @@
 
     </main>
 
-    <footer style="background-color: var(--unav-bg-surface); border-top: 1px solid var(--unav-grey-200); padding: var(--unav-spacing-lg) 0; margin-top: var(--unav-spacing-3xl);">
+    <footer style="background-color: var(--unav-bg-surface); border-top: 1px solid var(--unav-grey-200); padding: var(--unav-spacing-lg) 0; margin-top: var(--unav-spacing-sm);">
         <div class="container-lg d-flex flex-column flex-md-row justify-content-between align-items-center gap-3">
             <div style="display: flex; align-items: center; gap: var(--unav-spacing-sm);">
                 <i class="bi bi-boxes"></i>
