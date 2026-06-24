@@ -3916,6 +3916,197 @@ body {
   opacity: 1;
 }
 
+        /* ==========================================
+           COMPONENTE ESPECÍFICO: NOTICIA EDITORIAL
+           ========================================== */
+           .unav-noticia-Editorial {
+            background-color: var(--unav-bg-surface);
+            padding-top: var(--unav-spacing-sm);
+            padding-bottom: var(--unav-spacing-sm);
+        }
+
+        /* Contenedor máscara para cada línea */
+        .unav-noticia-Editorial-mask {
+            display: block;
+            overflow: hidden; 
+            line-height: 1.15;
+            /* Consumo de token para proteger colas de letras como la 'p' o la 'q' */
+            padding-bottom: var(--unav-spacing-xs); 
+        }
+
+        /* El texto animado (Refinado para efecto editorial suave) */
+        .unav-noticia-Editorial-revealText {
+            display: inline-block;
+            color: var(--unav-black-800);
+            /* Partimos de una distancia corta y sutil usando el token de entrada del DS */
+            transform: translateY(var(--unav-translateEntranceY));
+            opacity: 0;
+            /* Usamos Decel (ease-out) para un frenado elegante al llegar a su sitio */
+            animation: unavRevealSmooth var(--unav-durationSlower) var(--unav-easingDecel) forwards;
+        }
+
+        /* Keyframes fluidos y precisos */
+        @keyframes unavRevealSmooth {
+            0% {
+                transform: translateY(var(--unav-translateEntranceY));
+                opacity: 0;
+            }
+            100% {
+                transform: translateY(0);
+                opacity: 1;
+            }
+        }
+
+        .unav-noticia-Editorial-title { font-size: var(--unav-fontSize200); margin: 0; }
+        
+        .unav-noticia-Editorial-imageWrapper {
+            width: 100%;
+            border-radius: var(--unav-radius-none);
+            overflow: hidden;
+            margin-bottom: var(--unav-spacing-xs);
+        }
+        
+        .unav-noticia-Editorial-imageWrapper img {
+            width: 100%;
+            height: auto;
+            object-fit: cover;
+            display: block;
+        }
+
+        .unav-pullquote {
+            border-left: 4px solid var(--unav-rojo-500);
+            padding-left: var(--unav-spacing-lg);
+            font-family: var(--unav-fontFamilySecondaryPlayfair);
+            font-size: var(--unav-fontSize200);
+            line-height: var(--unav-lineHeightTight);
+            margin: var(--unav-spacing-xl) 0;
+            color: var(--unav-black-800);
+            font-style: italic;
+        }
+
+
+        /* ==========================================
+           CONTENEDOR DE ICONOS DE COMPARTIR (GLOBAL)
+           ========================================== */
+           .unav-shareIconsGroup {
+            display: flex;
+            align-items: center;
+            /* Consumo del token oficial de espaciado (8px) para separar los botones */
+            gap: var(--unav-spacing-sm);
+            flex-wrap: wrap;
+        }
+
+        /* ==========================================
+           REFACTOR MÓVIL (Acordeón a Sticky Bar)
+           ========================================== */
+           @media (max-width: 767.98px) {
+            .unav-noticia-CaptionMobile {
+                display: flex;
+                flex-direction: column;
+                gap: 0;
+                text-align: left;
+            }
+            .unav-noticia-CaptionMobile-author {
+                text-align: left !important;
+                margin-top: 2px;
+            }
+            
+            /* MÓVIL: Barra de compartir fija blindada contra dispositivos físicos */
+            .unav-shareStickyMobile {
+                position: fixed;
+                bottom: 0;
+                left: 0;
+                right: 0;
+                width: 100%;
+                /* APLICAMOS EL GRIS SUAVE SOLICITADO */
+                background-color: var(--unav-grey-100) !important;
+                border-top: 1px solid var(--unav-grey-300) !important;
+                /* PROTECCIÓN FÍSICA: Respetamos la barra de navegación táctil del móvil (Notch/Gestures) */
+                padding: var(--unav-spacing-sm) var(--unav-spacing-md) calc(var(--unav-spacing-sm) + env(safe-area-inset-bottom, 0px)) !important;
+                /* ELEVACIÓN: Usamos nivel Overlay para sobreescribir cualquier stacking context de Bootstrap */
+                z-index: var(--unav-zIndex-overlay) !important;
+                box-shadow: 0 -4px 10px rgba(0,0,0,0.05);
+                margin: 0 !important; 
+                /* ACELERACIÓN HARDWARE */
+                transform: translateZ(0);
+                -webkit-transform: translateZ(0);
+            }
+            
+            .unav-shareStickyMobile .unav-accordionHeader {
+                display: none !important;
+            }
+
+            .unav-shareStickyMobile .unav-accordionPanel {
+                display: block !important;
+                max-height: none !important;
+                overflow: visible !important;
+                background-color: transparent !important;
+            }
+
+            .unav-shareStickyMobile .unav-accordionGroup,
+            .unav-shareStickyMobile .unav-accordionItem {
+                border: none;
+                width: 100%;
+            }
+
+            /* Hacemos que el interior albergue la etiqueta y los iconos a los lados */
+            .unav-shareStickyMobile .unav-accordionInner {
+                display: flex !important;
+                flex-direction: row !important;
+                justify-content: space-between !important;
+                align-items: center !important;
+                padding: 0 !important;
+            }
+
+            /* NUEVO: Etiqueta descriptiva para móvil */
+            .unav-shareMobileLabel {
+                font-family: var(--unav-fontFamilyPrimaryCondensed);
+                font-weight: var(--unav-fontWeightBold);
+                font-size: var(--unav-fontSize085);
+                color: var(--unav-black-800);
+                text-transform: uppercase;
+                letter-spacing: var(--unav-trackingWide);
+                white-space: nowrap;
+                flex-shrink: 0;
+            }
+
+            /* NUEVO: Contenedor fluido para los botones en caso de desbordamiento */
+            .unav-shareMobileIcons {
+                display: flex;
+                gap: var(--unav-spacing-sm);
+                flex-wrap: nowrap !important;
+                overflow-x: auto;
+                -webkit-overflow-scrolling: touch;
+                scrollbar-width: none;
+            }
+            .unav-shareMobileIcons::-webkit-scrollbar { display: none; }
+            
+            /* Modificador móvil: Evita el salto de línea y permite scroll horizontal */
+            .unav-shareIconsGroup {
+                flex-wrap: nowrap !important;
+                overflow-x: auto;
+                -webkit-overflow-scrolling: touch;
+                scrollbar-width: none;
+            }
+            .unav-shareIconsGroup::-webkit-scrollbar { 
+                display: none; 
+            }
+
+            /* Damos margen base para que el texto no quede sepultado por la barra flotante */
+            body {
+                padding-bottom: calc(80px + env(safe-area-inset-bottom, 0px));
+            }
+        }
+
+        /* Configuraciones para escritorio */
+        @media (min-width: 768px) {
+            .unav-noticia-Editorial-title { font-size: var(--unav-fontSize300); }
+            .unav-noticia-Editorial-imageWrapper img { max-height: 600px; }
+            .unav-shareStickyMobile .unav-accordionInner { display: inherit; }
+        }
+
+
+        
 /* ==========================================
    COMPONENTE: FICHA PERSONA UNAV (OOCSS)
    ========================================== */
@@ -5477,6 +5668,36 @@ body {
     scroll-snap-align: start;
   }
 }
+
+/* ==========================================
+   COMPONENTE: TOAST (Notificaciones de UI)
+   ========================================== */
+   .unav-toast {
+    position: fixed;
+    bottom: 2rem;
+    left: 50%;
+    transform: translateX(-50%) translateY(100px);
+    background-color: var(--unav-black-800);
+    color: var(--unav-text-inverse);
+    padding: var(--unav-spacing-md) var(--unav-spacing-lg);
+    border-radius: var(--unav-radius-md);
+    z-index: var(--unav-zIndex-modal);
+    opacity: 0;
+    transition: transform var(--unav-durationNormal) var(--unav-easingStandard), 
+                opacity var(--unav-durationNormal) var(--unav-easingStandard);
+    font-family: var(--unav-fontFamilyPrimary);
+    font-size: var(--unav-fontSize085);
+    display: flex;
+    align-items: center;
+    gap: var(--unav-spacing-sm);
+    box-shadow: var(--unav-cardShadowHover);
+}
+
+.unav-toast.unav-isActive {
+    opacity: 1;
+    transform: translateX(-50%) translateY(0);
+}
+
 /* ==========================================
    HELPERS Y UTILIDADES DE LABORATORIO
    *** Solo sirven para las páginas HTML de tu documentación y no se van a usar en la web final de la universidad
