@@ -1,38 +1,37 @@
 /* ==========================================
    COMPONENTE: MENÚ DE ANCLAS UNAV (OOCSS)
    ========================================== */
-
 /* Contenedor Sticky */
 .unav-menuAnclasWrapper {
-    top: var(--unav-menuAnclasTopOffset); 
-    z-index: 90;
+  top: var(--unav-menuAnclasTopOffset);
+  z-index: 90;
 }
 
 /* Cabecera del Menú */
 .unav-menuAnclasHeader {
-    /* REFACTOR: Consumo de Tokens de Espaciado con fallback (24px) */
-    margin-bottom: var(--unav-menuAnclasHeaderMargin, var(--unav-spacing-lg));
+  /* REFACTOR: Consumo de Tokens de Espaciado con fallback (24px) */
+  margin-bottom: var(--unav-menuAnclasHeaderMargin, var(--unav-spacing-lg));
 }
 
 .unav-menuAnclasSubtitle {
-    font-family: var(--unav-fontFamilyPrimary);
-    font-size: var(--unav-fontSize075);
-    color: var(--unav-menuAnclasSubtitleColor);
-    display: block;
-    /* REFACTOR: Consumo de Tokens de Espaciado (4px) */
-    margin-bottom: var(--unav-spacing-xs);
-    text-transform: uppercase;
-    letter-spacing: 0.5px;
-    font-weight: var(--unav-fontWeightBold);
+  font-family: var(--unav-fontFamilyPrimary);
+  font-size: var(--unav-fontSize075);
+  color: var(--unav-menuAnclasSubtitleColor);
+  display: block;
+  /* REFACTOR: Consumo de Tokens de Espaciado (4px) */
+  margin-bottom: var(--unav-spacing-xs);
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+  font-weight: var(--unav-fontWeightBold);
 }
 
 .unav-menuAnclasTitle {
-    font-family: var(--unav-fontFamilyPrimary);
-    font-size: var(--unav-fontSize125);
-    font-weight: var(--unav-fontWeightBold);
-    color: var(--unav-menuAnclasTitleColor);
-    margin: 0;
-    line-height: 1.2;
+  font-family: var(--unav-fontFamilyPrimary);
+  font-size: var(--unav-fontSize125);
+  font-weight: var(--unav-fontWeightBold);
+  color: var(--unav-menuAnclasTitleColor);
+  margin: 0;
+  line-height: 1.2;
 }
 
 /* ==========================================
@@ -42,17 +41,16 @@
    Consumimos los tokens de movimiento para que el cambio de color 
    y el subrayado sean fluidos.
 */
-
 .unav-bloqueEnlace.unav-isActive {
-    background-color: var(--unav-bloqueEnlaceHoverBg);
-    color: var(--unav-bloqueEnlaceHoverText);
-    transition: var(--unav-menuAnclasTransition);
+  background-color: var(--unav-bloqueEnlaceHoverBg);
+  color: var(--unav-bloqueEnlaceHoverText);
+  transition: var(--unav-menuAnclasTransition);
 }
 
 .unav-bloqueEnlace.unav-isActive .unav-bloqueEnlaceText {
-    font-weight: var(--unav-fontWeightBold);
+  font-weight: var(--unav-fontWeightBold);
 }
 
 .unav-bloqueEnlace.unav-isActive::after {
-    opacity: 1;
+  opacity: 1;
 }

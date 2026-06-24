@@ -1,77 +1,76 @@
 /* ==========================================
    COMPONENTE: TABLAS DE DATOS UNAV (OOCSS)
    ========================================== */
-
 /* Envoltorio para permitir scroll horizontal si no se desea apilar */
 .unav-tableWrapper {
-    width: 100%;
-    overflow-x: auto;
-    -webkit-overflow-scrolling: touch;
-    /* REFACTOR: Consumo de Tokens de Espaciado (32px) */
-    margin-bottom: var(--unav-spacing-xl);
+  width: 100%;
+  overflow-x: auto;
+  -webkit-overflow-scrolling: touch;
+  /* REFACTOR: Consumo de Tokens de Espaciado (32px) */
+  margin-bottom: var(--unav-spacing-xl);
 }
 
 /* Tabla Base */
 .unav-table {
-    width: 100%;
-    border-collapse: collapse;
-    border-spacing: 0;
-    text-align: left;
-    background-color: var(--unav-tableBg, #ffffff);
+  width: 100%;
+  border-collapse: collapse;
+  border-spacing: 0;
+  text-align: left;
+  background-color: var(--unav-tableBg, var(--unav-bg-surface));
 }
 
 /* Título de la Tabla (Caption) */
 .unav-tableCaption {
-    caption-side: top;
-    font-family: var(--unav-fontFamilyPrimaryCondensed);
-    font-size: var(--unav-fontSize150);
-    font-weight: var(--unav-fontWeightBold);
-    color: var(--unav-black-900);
-    text-align: left;
-    /* REFACTOR: Consumo de Tokens de Espaciado (16px arriba/abajo) */
-    padding: var(--unav-spacing-md) 0;
-    /* REFACTOR: Consumo de Tokens de Espaciado (8px) */
-    margin-bottom: var(--unav-spacing-sm);
-    border-bottom: 3px solid var(--unav-tableCaptionBorder, var(--unav-rojo-600));
+  caption-side: top;
+  font-family: var(--unav-fontFamilyPrimaryCondensed);
+  font-size: var(--unav-fontSize150);
+  font-weight: var(--unav-fontWeightBold);
+  color: var(--unav-black-900);
+  text-align: left;
+  /* REFACTOR: Consumo de Tokens de Espaciado (16px arriba/abajo) */
+  padding: var(--unav-spacing-md) 0;
+  /* REFACTOR: Consumo de Tokens de Espaciado (8px) */
+  margin-bottom: var(--unav-spacing-sm);
+  border-bottom: 3px solid var(--unav-tableCaptionBorder, var(--unav-rojo-600));
 }
 
 /* Celdas (Th y Td) */
 .unav-table th,
 .unav-table td {
-    /* REFACTOR: Consumo de Tokens de Espaciado (16px) */
-    padding: var(--unav-spacing-md);
-    border-bottom: 1px solid var(--unav-tableBorderColor, var(--unav-grey-200));
-    font-family: var(--unav-fontFamilyPrimary);
-    font-size: var(--unav-fontSize100);
-    line-height: var(--unav-lineHeightNormal);
-    color: var(--unav-black-800);
+  /* REFACTOR: Consumo de Tokens de Espaciado (16px) */
+  padding: var(--unav-spacing-md);
+  border-bottom: 1px solid var(--unav-tableBorderColor, var(--unav-grey-200));
+  font-family: var(--unav-fontFamilyPrimary);
+  font-size: var(--unav-fontSize100);
+  line-height: var(--unav-lineHeightNormal);
+  color: var(--unav-black-800);
 }
 
 /* Cabeceras Superiores (Th) */
 .unav-table thead th {
-    font-family: var(--unav-fontFamilyPrimaryCondensed);
-    font-weight: var(--unav-fontWeightBold);
-    font-size: var(--unav-fontSize075);
-    text-transform: uppercase;
-    letter-spacing: var(--unav-trackingWide);
-    color: var(--unav-tableHeaderColor, var(--unav-black-900));
-    background-color: var(--unav-tableHeaderBg, var(--unav-grey-100));
-    vertical-align: bottom;
+  font-family: var(--unav-fontFamilyPrimaryCondensed);
+  font-weight: var(--unav-fontWeightBold);
+  font-size: var(--unav-fontSize075);
+  text-transform: uppercase;
+  letter-spacing: var(--unav-trackingWide);
+  color: var(--unav-tableHeaderColor, var(--unav-black-900));
+  background-color: var(--unav-tableHeaderBg, var(--unav-grey-100));
+  vertical-align: bottom;
 }
 
 /* Cabeceras de Agrupación (Subtítulos en tbody) */
 .unav-tableGroupHeader th {
-    background-color: var(--unav-grey-100);
-    color: var(--unav-black-800);
-    font-family: var(--unav-fontFamilyPrimaryCondensed);
-    font-size: var(--unav-fontSize100);
-    font-weight: var(--unav-fontWeightBold);
-    text-transform: uppercase;
-    letter-spacing: var(--unav-trackingWide);
-    text-align: left;
-    /* REFACTOR: Consumo de Tokens de Espaciado (8px vertical, 16px horizontal) */
-    padding: var(--unav-spacing-sm) var(--unav-spacing-md);
-    border-bottom: 2px solid var(--unav-grey-300);
+  background-color: var(--unav-grey-100);
+  color: var(--unav-black-800);
+  font-family: var(--unav-fontFamilyPrimaryCondensed);
+  font-size: var(--unav-fontSize100);
+  font-weight: var(--unav-fontWeightBold);
+  text-transform: uppercase;
+  letter-spacing: var(--unav-trackingWide);
+  text-align: left;
+  /* REFACTOR: Consumo de Tokens de Espaciado (8px vertical, 16px horizontal) */
+  padding: var(--unav-spacing-sm) var(--unav-spacing-md);
+  border-bottom: 2px solid var(--unav-grey-300);
 }
 
 /* =========================================
@@ -80,262 +79,277 @@
 /* NUEVO MODIFICADOR OOCSS: Bordes verticales internos */
 .unav-tableInnerVerticalBorders th:not(:last-child),
 .unav-tableInnerVerticalBorders td:not(:last-child) {
-    border-right: 1px solid var(--unav-tableBorderColor, var(--unav-grey-200));
+  border-right: 1px solid var(--unav-tableBorderColor, var(--unav-grey-200));
 }
 
 /* Tabla con todos los bordes */
 .unav-tableBorders th,
 .unav-tableBorders td {
-    border: 1px solid var(--unav-tableBorderColor, var(--unav-grey-200));
+  border: 1px solid var(--unav-tableBorderColor, var(--unav-grey-200));
 }
 
 /* Filas Alternas (Zebra Striping) - Ignora las filas de agrupación */
 .unav-tableStriped tbody tr:not(.unav-tableGroupHeader):nth-of-type(odd) {
-    background-color: var(--unav-tableStripeBg, var(--unav-grey-50));
+  background-color: var(--unav-tableStripeBg, var(--unav-grey-200));
 }
 
 /* Filas Alternas en pares */
 .unav-tableStriped--even tbody tr:not(.unav-tableGroupHeader):nth-of-type(even) {
-    background-color: var(--unav-tableStripeBg, var(--unav-grey-50));
+  background-color: var(--unav-tableStripeBg, var(--unav-grey-200));
 }
 
 /* Efecto Hover en filas (Ignora las de agrupación) */
 .unav-tableHover tbody tr:not(.unav-tableGroupHeader):hover {
-    background-color: var(--unav-tableHoverBg, var(--unav-grey-100));
+  background-color: var(--unav-tableHoverBg, var(--unav-grey-100));
 }
 
 /* =======================================================
    RESPONSIVIDAD: MODO APILADO (Stack)
    ======================================================= */
 @media (max-width: 767px) {
-    .unav-tableResponsiveStack thead {
-        /* Ocultamiento accesible */
-        border: none; clip: rect(0 0 0 0); height: 1px; margin: -1px;
-        overflow: hidden; padding: 0; position: absolute; width: 1px;
-    }
-    
-    .unav-tableResponsiveStack tr:not(.unav-tableGroupHeader) {
-        display: block;
-        /* REFACTOR: Consumo de Tokens de Espaciado (24px) */
-        margin-bottom: var(--unav-spacing-lg);
-        border: 1px solid var(--unav-tableBorderColor, var(--unav-grey-200));
-        /* REFACTOR: Consumo de Tokens de Forma (4px) */
-        border-radius: var(--unav-radius-md);
-        background-color: #ffffff;
-        box-shadow: 0 2px 4px rgba(0,0,0,0.05);
-    }
-    
-    .unav-tableResponsiveStack td {
-        display: flex;
-        justify-content: space-between;
-        align-items: center; 
-        text-align: right;
-        border-bottom: 1px solid var(--unav-tableBorderColor, var(--unav-grey-100));
-        /* REFACTOR: Consumo de Tokens de Espaciado (8px vertical, 16px horizontal) */
-        padding: var(--unav-spacing-sm) var(--unav-spacing-md);
-    }
-    
-    .unav-tableResponsiveStack td:last-child {
-        border-bottom: none;
-    }
-    
-    .unav-tableResponsiveStack td::before {
-        content: attr(data-label);
-        font-family: var(--unav-fontFamilyPrimaryCondensed);
-        font-weight: var(--unav-fontWeightBold);
-        font-size: var(--unav-fontSize075);
-        text-transform: uppercase;
-        color: var(--unav-grey-600);
-        /* REFACTOR: Consumo de Tokens de Espaciado (24px) */
-        margin-right: var(--unav-spacing-lg);
-        text-align: left;
-        flex-shrink: 0;
-        letter-spacing: 0.5px;
-    }
-
-    /* Adaptación específica para cabeceras de agrupación en móvil */
-    .unav-tableResponsiveStack .unav-tableGroupHeader {
-        display: block;
-        background-color: transparent;
-        border: none;
-        /* REFACTOR: Consumo de Tokens de Espaciado (32px top, 8px bottom) */
-        margin-top: var(--unav-spacing-xl);
-        margin-bottom: var(--unav-spacing-sm);
-    }
-    
-    .unav-tableResponsiveStack .unav-tableGroupHeader th {
-        display: block;
-        text-align: center;
-        border: none;
-        border-bottom: 2px solid var(--unav-tableCaptionBorder, var(--unav-grey-300));
-        /* REFACTOR: Consumo de Tokens de Espaciado (8px top/bottom) */
-        padding: var(--unav-spacing-sm) 0;
-        background-color: transparent;
-    }
+  .unav-tableResponsiveStack thead {
+    /* Ocultamiento accesible */
+    border: none;
+    clip: rect(0 0 0 0);
+    height: 1px;
+    margin: -1px;
+    overflow: hidden;
+    padding: 0;
+    position: absolute;
+    width: 1px;
+  }
+  .unav-tableResponsiveStack tr:not(.unav-tableGroupHeader) {
+    display: block;
+    /* REFACTOR: Consumo de Tokens de Espaciado (24px) */
+    margin-bottom: var(--unav-spacing-lg);
+    border: 1px solid var(--unav-tableBorderColor, var(--unav-grey-200));
+    /* REFACTOR: Consumo de Tokens de Forma (4px) */
+    border-radius: var(--unav-radius-md);
+    background-color: var(--unav-bg-surface);
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.05);
+  }
+  .unav-tableResponsiveStack td {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    text-align: right;
+    border-bottom: 1px solid var(--unav-tableBorderColor, var(--unav-grey-100));
+    /* REFACTOR: Consumo de Tokens de Espaciado (8px vertical, 16px horizontal) */
+    padding: var(--unav-spacing-sm) var(--unav-spacing-md);
+  }
+  .unav-tableResponsiveStack td:last-child {
+    border-bottom: none;
+  }
+  .unav-tableResponsiveStack td::before {
+    content: attr(data-label);
+    font-family: var(--unav-fontFamilyPrimaryCondensed);
+    font-weight: var(--unav-fontWeightBold);
+    font-size: var(--unav-fontSize075);
+    text-transform: uppercase;
+    color: var(--unav-grey-600);
+    /* REFACTOR: Consumo de Tokens de Espaciado (24px) */
+    margin-right: var(--unav-spacing-lg);
+    text-align: left;
+    flex-shrink: 0;
+    letter-spacing: 0.5px;
+  }
+  /* Adaptación específica para cabeceras de agrupación en móvil */
+  .unav-tableResponsiveStack .unav-tableGroupHeader {
+    display: block;
+    background-color: transparent;
+    border: none;
+    /* REFACTOR: Consumo de Tokens de Espaciado (32px top, 8px bottom) */
+    margin-top: var(--unav-spacing-xl);
+    margin-bottom: var(--unav-spacing-sm);
+  }
+  .unav-tableResponsiveStack .unav-tableGroupHeader th {
+    display: block;
+    text-align: center;
+    border: none;
+    border-bottom: 2px solid var(--unav-tableCaptionBorder, var(--unav-grey-300));
+    /* REFACTOR: Consumo de Tokens de Espaciado (8px top/bottom) */
+    padding: var(--unav-spacing-sm) 0;
+    background-color: transparent;
+  }
 }
-
 /* =========================================================
    TEMATIZACIÓN DE TABLAS OOCSS (.unav-tableTheme[Color])
    ========================================================= */
+/* Tema Asignaturas */
+.unav-tableThemeAsignaturas {
+    --unav-tableCaptionBorder: var(--unav-rojo-500); 
+    --unav-tableHeaderBg: var(--unav-grey-300); 
+    --unav-tableHeaderColor: var(--unav-black-600);
+    --unav-tableStripeBg: var(--unav-grey-200)
+}
+
+/* Tema Materias */
+.unav-tableThemeMaterias {
+    --unav-tableBorderColor: var(--unav-black-500); 
+    --unav-tableCaptionBorder: var(--unav-black-500);
+}
+
+.unav-tableThemeMaterias th { 
+    color: var(--unav-black-500); 
+    border-bottom: 2px solid var(--unav-black-500);
+}
 
 /* Tema Rojo */
 .unav-tableThemeRojo {
-    --unav-tableCaptionBorder: var(--unav-rojo-600);
-    --unav-tableHeaderBg: var(--unav-rojo-100);
-    --unav-tableHeaderColor: var(--unav-rojo-900);
-    --unav-tableStripeBg: color-mix(in srgb, var(--unav-rojo-100) 30%, transparent);
+  --unav-tableCaptionBorder: var(--unav-rojo-600);
+  --unav-tableHeaderBg: var(--unav-rojo-100);
+  --unav-tableHeaderColor: var(--unav-rojo-900);
+  --unav-tableStripeBg: color-mix(in srgb, var(--unav-rojo-100) 30%, transparent);
 }
 
 /* Tema Black */
 .unav-tableThemeBlack {
-    --unav-tableCaptionBorder: var(--unav-black-600);
-    --unav-tableHeaderBg: var(--unav-black-100);
-    --unav-tableHeaderColor: var(--unav-black-900);
-    --unav-tableStripeBg: color-mix(in srgb, var(--unav-black-100) 30%, transparent);
+  --unav-tableCaptionBorder: var(--unav-black-600);
+  --unav-tableHeaderBg: var(--unav-black-100);
+  --unav-tableHeaderColor: var(--unav-black-900);
+  --unav-tableStripeBg: color-mix(in srgb, var(--unav-black-100) 30%, transparent);
 }
 
 /* Tema Grey */
 .unav-tableThemeGrey {
-    --unav-tableCaptionBorder: var(--unav-grey-600);
-    --unav-tableHeaderBg: var(--unav-grey-100);
-    --unav-tableHeaderColor: var(--unav-grey-900);
-    --unav-tableStripeBg: color-mix(in srgb, var(--unav-grey-100) 30%, transparent);
+  --unav-tableCaptionBorder: var(--unav-grey-600);
+  --unav-tableHeaderBg: var(--unav-grey-100);
+  --unav-tableHeaderColor: var(--unav-grey-900);
+  --unav-tableStripeBg: color-mix(in srgb, var(--unav-grey-100) 30%, transparent);
 }
 
 /* Tema Moss */
 .unav-tableThemeMoss {
-    --unav-tableCaptionBorder: var(--unav-moss-600);
-    --unav-tableHeaderBg: var(--unav-moss-100);
-    --unav-tableHeaderColor: var(--unav-moss-900);
-    --unav-tableStripeBg: color-mix(in srgb, var(--unav-moss-100) 30%, transparent);
+  --unav-tableCaptionBorder: var(--unav-moss-600);
+  --unav-tableHeaderBg: var(--unav-moss-100);
+  --unav-tableHeaderColor: var(--unav-moss-900);
+  --unav-tableStripeBg: color-mix(in srgb, var(--unav-moss-100) 30%, transparent);
 }
 
 /* Tema Green Light */
 .unav-tableThemeGreenLight {
-    --unav-tableCaptionBorder: var(--unav-green-l-600);
-    --unav-tableHeaderBg: var(--unav-green-l-100);
-    --unav-tableHeaderColor: var(--unav-green-l-900);
-    --unav-tableStripeBg: color-mix(in srgb, var(--unav-green-l-100) 30%, transparent);
+  --unav-tableCaptionBorder: var(--unav-green-l-600);
+  --unav-tableHeaderBg: var(--unav-green-l-100);
+  --unav-tableHeaderColor: var(--unav-green-l-900);
+  --unav-tableStripeBg: color-mix(in srgb, var(--unav-green-l-100) 30%, transparent);
 }
 
 /* Tema Green */
 .unav-tableThemeGreen {
-    --unav-tableCaptionBorder: var(--unav-green-600);
-    --unav-tableHeaderBg: var(--unav-green-100);
-    --unav-tableHeaderColor: var(--unav-green-900);
-    --unav-tableStripeBg: color-mix(in srgb, var(--unav-green-100) 30%, transparent);
+  --unav-tableCaptionBorder: var(--unav-green-600);
+  --unav-tableHeaderBg: var(--unav-green-100);
+  --unav-tableHeaderColor: var(--unav-green-900);
+  --unav-tableStripeBg: color-mix(in srgb, var(--unav-green-100) 30%, transparent);
 }
 
 /* Tema Teal */
 .unav-tableThemeTeal {
-    --unav-tableCaptionBorder: var(--unav-teal-600);
-    --unav-tableHeaderBg: var(--unav-teal-100);
-    --unav-tableHeaderColor: var(--unav-teal-900);
-    --unav-tableStripeBg: color-mix(in srgb, var(--unav-teal-100) 30%, transparent);
+  --unav-tableCaptionBorder: var(--unav-teal-600);
+  --unav-tableHeaderBg: var(--unav-teal-100);
+  --unav-tableHeaderColor: var(--unav-teal-900);
+  --unav-tableStripeBg: color-mix(in srgb, var(--unav-teal-100) 30%, transparent);
 }
 
 /* Tema Cyan */
 .unav-tableThemeCyan {
-    --unav-tableCaptionBorder: var(--unav-cyan-600);
-    --unav-tableHeaderBg: var(--unav-cyan-100);
-    --unav-tableHeaderColor: var(--unav-cyan-900);
-    --unav-tableStripeBg: color-mix(in srgb, var(--unav-cyan-100) 30%, transparent);
+  --unav-tableCaptionBorder: var(--unav-cyan-600);
+  --unav-tableHeaderBg: var(--unav-cyan-100);
+  --unav-tableHeaderColor: var(--unav-cyan-900);
+  --unav-tableStripeBg: color-mix(in srgb, var(--unav-cyan-100) 30%, transparent);
 }
 
 /* Tema Blue Light */
 .unav-tableThemeBlueLight {
-    --unav-tableCaptionBorder: var(--unav-blue-l-600);
-    --unav-tableHeaderBg: var(--unav-blue-l-100);
-    --unav-tableHeaderColor: var(--unav-blue-l-900);
-    --unav-tableStripeBg: color-mix(in srgb, var(--unav-blue-l-100) 30%, transparent);
+  --unav-tableCaptionBorder: var(--unav-blue-l-600);
+  --unav-tableHeaderBg: var(--unav-blue-l-100);
+  --unav-tableHeaderColor: var(--unav-blue-l-900);
+  --unav-tableStripeBg: color-mix(in srgb, var(--unav-blue-l-100) 30%, transparent);
 }
 
 /* Tema Blue */
 .unav-tableThemeBlue {
-    --unav-tableCaptionBorder: var(--unav-blue-600);
-    --unav-tableHeaderBg: var(--unav-blue-100);
-    --unav-tableHeaderColor: var(--unav-blue-900);
-    --unav-tableStripeBg: color-mix(in srgb, var(--unav-blue-100) 30%, transparent);
+  --unav-tableCaptionBorder: var(--unav-blue-600);
+  --unav-tableHeaderBg: var(--unav-blue-100);
+  --unav-tableHeaderColor: var(--unav-blue-900);
+  --unav-tableStripeBg: color-mix(in srgb, var(--unav-blue-100) 30%, transparent);
 }
 
 /* Tema Blue Dark */
 .unav-tableThemeBlueDark {
-    --unav-tableCaptionBorder: var(--unav-b-dark-600);
-    --unav-tableHeaderBg: var(--unav-b-dark-100);
-    --unav-tableHeaderColor: var(--unav-b-dark-900);
-    --unav-tableStripeBg: color-mix(in srgb, var(--unav-b-dark-100) 30%, transparent);
+  --unav-tableCaptionBorder: var(--unav-b-dark-600);
+  --unav-tableHeaderBg: var(--unav-b-dark-100);
+  --unav-tableHeaderColor: var(--unav-b-dark-900);
+  --unav-tableStripeBg: color-mix(in srgb, var(--unav-b-dark-100) 30%, transparent);
 }
 
 /* Tema Indigo */
 .unav-tableThemeIndigo {
-    --unav-tableCaptionBorder: var(--unav-indigo-600);
-    --unav-tableHeaderBg: var(--unav-indigo-100);
-    --unav-tableHeaderColor: var(--unav-indigo-900);
-    --unav-tableStripeBg: color-mix(in srgb, var(--unav-indigo-100) 30%, transparent);
+  --unav-tableCaptionBorder: var(--unav-indigo-600);
+  --unav-tableHeaderBg: var(--unav-indigo-100);
+  --unav-tableHeaderColor: var(--unav-indigo-900);
+  --unav-tableStripeBg: color-mix(in srgb, var(--unav-indigo-100) 30%, transparent);
 }
 
 /* Tema Violet */
 .unav-tableThemeViolet {
-    --unav-tableCaptionBorder: var(--unav-violet-600);
-    --unav-tableHeaderBg: var(--unav-violet-100);
-    --unav-tableHeaderColor: var(--unav-violet-900);
-    --unav-tableStripeBg: color-mix(in srgb, var(--unav-violet-100) 30%, transparent);
+  --unav-tableCaptionBorder: var(--unav-violet-600);
+  --unav-tableHeaderBg: var(--unav-violet-100);
+  --unav-tableHeaderColor: var(--unav-violet-900);
+  --unav-tableStripeBg: color-mix(in srgb, var(--unav-violet-100) 30%, transparent);
 }
 
 /* Tema Purple */
 .unav-tableThemePurple {
-    --unav-tableCaptionBorder: var(--unav-purple-600);
-    --unav-tableHeaderBg: var(--unav-purple-100);
-    --unav-tableHeaderColor: var(--unav-purple-900);
-    --unav-tableStripeBg: color-mix(in srgb, var(--unav-purple-100) 30%, transparent);
+  --unav-tableCaptionBorder: var(--unav-purple-600);
+  --unav-tableHeaderBg: var(--unav-purple-100);
+  --unav-tableHeaderColor: var(--unav-purple-900);
+  --unav-tableStripeBg: color-mix(in srgb, var(--unav-purple-100) 30%, transparent);
 }
 
 /* Tema Fuchsia */
 .unav-tableThemeFuchsia {
-    --unav-tableCaptionBorder: var(--unav-fuchsia-600);
-    --unav-tableHeaderBg: var(--unav-fuchsia-100);
-    --unav-tableHeaderColor: var(--unav-fuchsia-900);
-    --unav-tableStripeBg: color-mix(in srgb, var(--unav-fuchsia-100) 30%, transparent);
+  --unav-tableCaptionBorder: var(--unav-fuchsia-600);
+  --unav-tableHeaderBg: var(--unav-fuchsia-100);
+  --unav-tableHeaderColor: var(--unav-fuchsia-900);
+  --unav-tableStripeBg: color-mix(in srgb, var(--unav-fuchsia-100) 30%, transparent);
 }
 
 /* Tema Pink */
 .unav-tableThemePink {
-    --unav-tableCaptionBorder: var(--unav-pink-600);
-    --unav-tableHeaderBg: var(--unav-pink-100);
-    --unav-tableHeaderColor: var(--unav-pink-900);
-    --unav-tableStripeBg: color-mix(in srgb, var(--unav-pink-100) 30%, transparent);
+  --unav-tableCaptionBorder: var(--unav-pink-600);
+  --unav-tableHeaderBg: var(--unav-pink-100);
+  --unav-tableHeaderColor: var(--unav-pink-900);
+  --unav-tableStripeBg: color-mix(in srgb, var(--unav-pink-100) 30%, transparent);
 }
 
 /* Tema Rose */
 .unav-tableThemeRose {
-    --unav-tableCaptionBorder: var(--unav-rose-600);
-    --unav-tableHeaderBg: var(--unav-rose-100);
-    --unav-tableHeaderColor: var(--unav-rose-900);
-    --unav-tableStripeBg: color-mix(in srgb, var(--unav-rose-100) 30%, transparent);
+  --unav-tableCaptionBorder: var(--unav-rose-600);
+  --unav-tableHeaderBg: var(--unav-rose-100);
+  --unav-tableHeaderColor: var(--unav-rose-900);
+  --unav-tableStripeBg: color-mix(in srgb, var(--unav-rose-100) 30%, transparent);
 }
 
 /* Tema Orange Dark */
 .unav-tableThemeOrangeDark {
-    --unav-tableCaptionBorder: var(--unav-o-dark-600);
-    --unav-tableHeaderBg: var(--unav-o-dark-100);
-    --unav-tableHeaderColor: var(--unav-o-dark-900);
-    --unav-tableStripeBg: color-mix(in srgb, var(--unav-o-dark-100) 30%, transparent);
+  --unav-tableCaptionBorder: var(--unav-o-dark-600);
+  --unav-tableHeaderBg: var(--unav-o-dark-100);
+  --unav-tableHeaderColor: var(--unav-o-dark-900);
+  --unav-tableStripeBg: color-mix(in srgb, var(--unav-o-dark-100) 30%, transparent);
 }
 
 /* Tema Orange */
 .unav-tableThemeOrange {
-    --unav-tableCaptionBorder: var(--unav-orange-600);
-    --unav-tableHeaderBg: var(--unav-orange-100);
-    --unav-tableHeaderColor: var(--unav-orange-900);
-    --unav-tableStripeBg: color-mix(in srgb, var(--unav-orange-100) 30%, transparent);
+  --unav-tableCaptionBorder: var(--unav-orange-600);
+  --unav-tableHeaderBg: var(--unav-orange-100);
+  --unav-tableHeaderColor: var(--unav-orange-900);
+  --unav-tableStripeBg: color-mix(in srgb, var(--unav-orange-100) 30%, transparent);
 }
 
 /* Tema Yellow */
 .unav-tableThemeYellow {
-    --unav-tableCaptionBorder: var(--unav-yellow-600);
-    --unav-tableHeaderBg: var(--unav-yellow-100);
-    --unav-tableHeaderColor: var(--unav-yellow-900);
-    --unav-tableStripeBg: color-mix(in srgb, var(--unav-yellow-100) 30%, transparent);
+  --unav-tableCaptionBorder: var(--unav-yellow-600);
+  --unav-tableHeaderBg: var(--unav-yellow-100);
+  --unav-tableHeaderColor: var(--unav-yellow-900);
+  --unav-tableStripeBg: color-mix(in srgb, var(--unav-yellow-100) 30%, transparent);
 }
-
-

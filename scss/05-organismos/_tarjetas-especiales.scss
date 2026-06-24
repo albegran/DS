@@ -1,448 +1,521 @@
 /* ==========================================
    COMPONENTE: FICHA PERSONA UNAV (OOCSS)
    ========================================== */
-
-   .unav-personCard {
-    display: flex;
-    flex-direction: column;
-    width: 100%;
-    background-color: #ffffff;
-    box-sizing: border-box;
-    /* REFACTOR: Consumo de Tokens de Espaciado (16px default) */
-    padding: var(--unav-personCardPadding, var(--unav-spacing-md));
-    gap: var(--unav-personCardGap, var(--unav-spacing-md));
-    box-shadow: var(--unav-personCardShadow);
-    border: 1px solid var(--unav-grey-200); 
-    /* REFACTOR: Consumo de Tokens de Forma (16px default) */
-    border-radius: var(--unav-personCardRadius, var(--unav-radius-xl));
-    height: 100%;
-    font-family: var(--unav-fontFamilyPrimary); /* Roboto global */
+.unav-personCard {
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+  background-color: var(--unav-bg-surface);
+  box-sizing: border-box;
+  /* REFACTOR: Consumo de Tokens de Espaciado (16px default) */
+  padding: var(--unav-personCardPadding, var(--unav-spacing-md));
+  gap: var(--unav-personCardGap, var(--unav-spacing-md));
+  box-shadow: var(--unav-personCardShadow);
+  border: 1px solid var(--unav-grey-200);
+  /* REFACTOR: Consumo de Tokens de Forma (16px default) */
+  border-radius: var(--unav-personCardRadius, var(--unav-radius-xl));
+  height: 100%;
+  font-family: var(--unav-fontFamilyPrimary); /* Roboto global */
 }
 
 /* Variante: Sin marco ni sombra */
 .unav-personCard.unav-cardNoBorder {
-    border: none;
-    box-shadow: none;
-    background-color: transparent;
-    padding: var(--unav-personCardPadding, var(--unav-spacing-md)); 
+  border: none;
+  box-shadow: none;
+  background-color: transparent;
+  padding: var(--unav-personCardPadding, var(--unav-spacing-md));
 }
 
 /* =========================================
    ESTRUCTURA DE CAMPOS
    ========================================= */
-
 /* IMAGEN: Siempre Cuadrada */
 .unav-imageWrapper {
-    width: 100%;
-    display: flex;
-    justify-content: center;
+  width: 100%;
+  display: flex;
+  justify-content: center;
 }
+
 .unav-personImage {
-    width: 100%;
-    aspect-ratio: 1 / 1; /* Cuadrado estricto (no modificar) */
-    object-fit: cover;
-    border-radius: var(--unav-radius-sm, 4px);
-    display: block;
+  width: 100%;
+  aspect-ratio: 1/1; /* Cuadrado estricto (no modificar) */
+  -o-object-fit: cover;
+     object-fit: cover;
+  border-radius: var(--unav-radius-sm, 4px);
+  display: block;
 }
 
 /* TEXTOS Y TIPOGRAFÍAS */
 .unav-personName {
-    margin: 0;
-    /* Especificación: Roboto Light 22px */
-    font-weight: 300; /* Light */
-    font-size: 1.375rem; /* 22px */
-    color: var(--unav-black-900);
-    line-height: 1.2;
+  margin: 0;
+  /* Especificación: Roboto Light 22px */
+  font-weight: 300; /* Light */
+  font-size: 1.375rem; /* 22px */
+  color: var(--unav-black-900);
+  line-height: 1.2;
 }
 
 .unav-personRole {
-    margin: 0;
-    /* Especificación: Roboto Black 18px */
-    font-weight: 900; /* Black */
-    font-size: 1.125rem; /* 18px */
-    color: var(--unav-rojo-500); /* Acento corporativo */
-    line-height: 1.2;
+  margin: 0;
+  /* Especificación: Roboto Black 18px */
+  font-weight: 900; /* Black */
+  font-size: 1.125rem; /* 18px */
+  color: var(--unav-rojo-500); /* Acento corporativo */
+  line-height: 1.2;
 }
 
 .unav-personAddress,
 .unav-personPhones {
-    margin: 0;
-    /* Especificación: Roboto Regular 18px */
-    font-weight: 400; /* Regular */
-    font-size: 1.125rem; /* 18px */
-    color: var(--unav-grey-700);
-    line-height: 1.5;
+  margin: 0;
+  /* Especificación: Roboto Regular 18px */
+  font-weight: 400; /* Regular */
+  font-size: 1.125rem; /* 18px */
+  color: var(--unav-grey-700);
+  line-height: 1.5;
 }
 
 /* Detalle interno para múltiples teléfonos */
 .unav-personPhones span {
-    display: block; /* Cada teléfono en una línea si hay varios */
+  display: block; /* Cada teléfono en una línea si hay varios */
 }
 
 .unav-personEmail {
-    margin: 0;
-    /* Especificación: Roboto Black 18px */
-    font-weight: 900; /* Black */
-    font-size: 1.125rem; /* 18px */
-    line-height: 1.2;
+  margin: 0;
+  /* Especificación: Roboto Black 18px */
+  font-weight: 900; /* Black */
+  font-size: 1.125rem; /* 18px */
+  line-height: 1.2;
 }
+
 .unav-personEmail a {
-    color: var(--unav-black-800);
-    text-decoration: none;
+  color: var(--unav-black-800);
+  text-decoration: none;
 }
+
 .unav-personEmail a:hover {
-    text-decoration: underline;
-    text-underline-offset: 2px;
+  text-decoration: underline;
+  text-underline-offset: 2px;
 }
 
 /* Áreas de Acción (Botones y Enlaces) */
 .unav-actionContainer {
-    display: flex;
-    flex-wrap: wrap;
-    gap: var(--unav-spacing-sm);
-    width: 100%;
-    align-items: center;
+  display: flex;
+  flex-wrap: wrap;
+  gap: var(--unav-spacing-sm);
+  width: 100%;
+  align-items: center;
 }
 
 .unav-linkContainer {
-    /* Contenedor separado para el enlace de flecha final */
-    width: 100%;
+  /* Contenedor separado para el enlace de flecha final */
+  width: 100%;
 }
 
 /* =======================================================
    VARIANTES DE ORDENACIÓN DINÁMICA (Flexbox Order)
    ======================================================= */
-
 /* VARIANTE A: FICHA COMPLETA VERTICAL (.unav-layoutPersona)
    Orden: foto, nombre, puesto, dirección, telefono, botones secundarios, email, botón flecha enlace */
-.unav-layoutPersona .unav-imageWrapper { order: 1; margin-bottom: var(--unav-spacing-sm); }
-.unav-layoutPersona .unav-personName { order: 2; }
-.unav-layoutPersona .unav-personRole { order: 3; }
-.unav-layoutPersona .unav-personAddress { order: 4; }
-.unav-layoutPersona .unav-personPhones { order: 5; }
-.unav-layoutPersona .unav-actionContainer { order: 6; margin-top: var(--unav-spacing-sm); margin-bottom: var(--unav-spacing-xs); }
-.unav-layoutPersona .unav-personEmail { order: 7; }
-.unav-layoutPersona .unav-linkContainer { order: 8; margin-top: var(--unav-spacing-md); }
+.unav-layoutPersona .unav-imageWrapper {
+  order: 1;
+  margin-bottom: var(--unav-spacing-sm);
+}
+
+.unav-layoutPersona .unav-personName {
+  order: 2;
+}
+
+.unav-layoutPersona .unav-personRole {
+  order: 3;
+}
+
+.unav-layoutPersona .unav-personAddress {
+  order: 4;
+}
+
+.unav-layoutPersona .unav-personPhones {
+  order: 5;
+}
+
+.unav-layoutPersona .unav-actionContainer {
+  order: 6;
+  margin-top: var(--unav-spacing-sm);
+  margin-bottom: var(--unav-spacing-xs);
+}
+
+.unav-layoutPersona .unav-personEmail {
+  order: 7;
+}
+
+.unav-layoutPersona .unav-linkContainer {
+  order: 8;
+  margin-top: var(--unav-spacing-md);
+}
 
 /* Ocultar elementos no necesarios por si vienen en el HTML */
-.unav-layoutPersona .unav-personDetails { display: none; }
+.unav-layoutPersona .unav-personDetails {
+  display: none;
+}
 
 /* VARIANTE B: SOLO CONTACTO (.unav-layoutContacto)
    Orden: email, dirección, teléfonos, flecha enlace */
-.unav-layoutContacto .unav-personEmail { order: 1; }
-.unav-layoutContacto .unav-personAddress { order: 2; margin-top: var(--unav-spacing-sm); }
-.unav-layoutContacto .unav-personPhones { order: 3; }
-.unav-layoutContacto .unav-linkContainer { order: 4; margin-top: var(--unav-spacing-md); }
+.unav-layoutContacto .unav-personEmail {
+  order: 1;
+}
+
+.unav-layoutContacto .unav-personAddress {
+  order: 2;
+  margin-top: var(--unav-spacing-sm);
+}
+
+.unav-layoutContacto .unav-personPhones {
+  order: 3;
+}
+
+.unav-layoutContacto .unav-linkContainer {
+  order: 4;
+  margin-top: var(--unav-spacing-md);
+}
 
 /* Ocultar elementos específicos de persona si se usa este layout */
 .unav-layoutContacto .unav-imageWrapper,
 .unav-layoutContacto .unav-personName,
 .unav-layoutContacto .unav-personRole,
 .unav-layoutContacto .unav-actionContainer {
-    display: none !important;
+  display: none !important;
 }
 
 /* VARIANTE C: DIRECTIVO / SIN FOTO (.unav-layoutDirectivo)
    Orden: nombre, puesto, email, dirección, teléfonos, flecha enlace */
-.unav-layoutDirectivo .unav-personName { order: 1; }
-.unav-layoutDirectivo .unav-personRole { order: 2; margin-bottom: var(--unav-spacing-sm); }
-.unav-layoutDirectivo .unav-personEmail { order: 3; margin-bottom: var(--unav-spacing-sm); }
-.unav-layoutDirectivo .unav-personEmail a { text-decoration: underline; text-underline-offset: 2px; }
-.unav-layoutDirectivo .unav-personAddress { order: 4; margin-bottom: var(--unav-spacing-sm); }
-.unav-layoutDirectivo .unav-personPhones { order: 5; }
-.unav-layoutDirectivo .unav-linkContainer { order: 6; margin-top: var(--unav-spacing-md); }
+.unav-layoutDirectivo .unav-personName {
+  order: 1;
+}
+
+.unav-layoutDirectivo .unav-personRole {
+  order: 2;
+  margin-bottom: var(--unav-spacing-sm);
+}
+
+.unav-layoutDirectivo .unav-personEmail {
+  order: 3;
+  margin-bottom: var(--unav-spacing-sm);
+}
+
+.unav-layoutDirectivo .unav-personEmail a {
+  text-decoration: underline;
+  text-underline-offset: 2px;
+}
+
+.unav-layoutDirectivo .unav-personAddress {
+  order: 4;
+  margin-bottom: var(--unav-spacing-sm);
+}
+
+.unav-layoutDirectivo .unav-personPhones {
+  order: 5;
+}
+
+.unav-layoutDirectivo .unav-linkContainer {
+  order: 6;
+  margin-top: var(--unav-spacing-md);
+}
 
 /* Ocultar elementos específicos no requeridos */
 .unav-layoutDirectivo .unav-actionContainer,
 .unav-layoutDirectivo .unav-imageWrapper {
-    display: none !important;
+  display: none !important;
 }
 
 /* VARIANTE E: PERFIL CONTACTO DESTACADO (.unav-layoutPerfilContacto)
    Orden: nombre, email, foto, dirección, teléfonos, flecha enlace */
-.unav-layoutPerfilContacto .unav-personName { order: 1; margin-bottom: var(--unav-spacing-xs); }
-.unav-layoutPerfilContacto .unav-personEmail { order: 2; margin-bottom: var(--unav-spacing-sm); }
-.unav-layoutPerfilContacto .unav-personEmail a { text-decoration: underline; text-underline-offset: 2px; }
-.unav-layoutPerfilContacto .unav-imageWrapper { order: 3; margin-bottom: var(--unav-spacing-md); }
-.unav-layoutPerfilContacto .unav-personAddress { order: 4; margin-bottom: var(--unav-spacing-sm); }
-.unav-layoutPerfilContacto .unav-personPhones { order: 5; }
-.unav-layoutPerfilContacto .unav-linkContainer { order: 6; margin-top: var(--unav-spacing-md); }
+.unav-layoutPerfilContacto .unav-personName {
+  order: 1;
+  margin-bottom: var(--unav-spacing-xs);
+}
+
+.unav-layoutPerfilContacto .unav-personEmail {
+  order: 2;
+  margin-bottom: var(--unav-spacing-sm);
+}
+
+.unav-layoutPerfilContacto .unav-personEmail a {
+  text-decoration: underline;
+  text-underline-offset: 2px;
+}
+
+.unav-layoutPerfilContacto .unav-imageWrapper {
+  order: 3;
+  margin-bottom: var(--unav-spacing-md);
+}
+
+.unav-layoutPerfilContacto .unav-personAddress {
+  order: 4;
+  margin-bottom: var(--unav-spacing-sm);
+}
+
+.unav-layoutPerfilContacto .unav-personPhones {
+  order: 5;
+}
+
+.unav-layoutPerfilContacto .unav-linkContainer {
+  order: 6;
+  margin-top: var(--unav-spacing-md);
+}
 
 /* Ocultar elementos específicos no requeridos en esta variante */
 .unav-layoutPerfilContacto .unav-actionContainer,
 .unav-layoutPerfilContacto .unav-personRole {
-    display: none !important;
+  display: none !important;
 }
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 
 /* ==========================================
    COMPONENTE: TARJETA DE EVENTO UNAV (OOCSS)
    ========================================== */
-
 /* Enlace contenedor */
 .unav-eventLink {
-    text-decoration: none !important;
-    color: inherit;
-    display: block;
-    height: 100%;
-    outline: none;
+  text-decoration: none !important;
+  color: inherit;
+  display: block;
+  height: 100%;
+  outline: none;
 }
 
 /* Tarjeta Estructural */
 .unav-eventCard {
-    background-color: var(--unav-cardBgBase, #ffffff);
-    border: 1px solid var(--unav-eventCardBorder);
-    display: flex;
-    flex-direction: column;
-    height: 100%;
-    /* REFACTOR: Fallback de Token de Forma (4px) */
-    border-radius: var(--unav-eventCardRadius, var(--unav-radius-md));
-    overflow: hidden;
+  background-color: var(--unav-cardBgBase, var(--unav-bg-surface));
+  border: 1px solid var(--unav-eventCardBorder);
+  display: flex;
+  flex-direction: column;
+  height: 100%;
+  /* REFACTOR: Fallback de Token de Forma (4px) */
+  border-radius: var(--unav-eventCardRadius, var(--unav-radius-md));
+  overflow: hidden;
 }
 
 /* Bloque de Imagen */
 .unav-eventImageWrapper {
-    width: 100%;
-    height: var(--unav-eventImageHeight);
-    margin: 0;
-    overflow: hidden; 
-    background-color: var(--unav-grey-100);
-    position: relative;
+  width: 100%;
+  height: var(--unav-eventImageHeight);
+  margin: 0;
+  overflow: hidden;
+  background-color: var(--unav-grey-100);
+  position: relative;
 }
 
 .unav-eventImageWrapper img {
-    width: 100%;
-    height: 100%;
-    object-fit: cover;
-    display: block;
+  width: 100%;
+  height: 100%;
+  -o-object-fit: cover;
+     object-fit: cover;
+  display: block;
 }
 
 /* Cuerpo de la Tarjeta */
 .unav-eventBody {
-    /* REFACTOR: Consumo de Tokens de Espaciado (16px default) */
-    padding: var(--unav-eventCardPadding, var(--unav-spacing-md));
-    flex-grow: 1; 
-    text-align: center;
-    display: flex;
-    flex-direction: column;
-    align-items: center; 
+  /* REFACTOR: Consumo de Tokens de Espaciado (16px default) */
+  padding: var(--unav-eventCardPadding, var(--unav-spacing-md));
+  flex-grow: 1;
+  text-align: center;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
 }
 
 /* Grupo Fecha y Etiqueta */
 .unav-eventDateGroup {
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    /* REFACTOR: Consumo de Tokens de Espaciado (8px) */
-    gap: var(--unav-spacing-sm); 
-    /* REFACTOR: Consumo de Tokens de Espaciado (4px) */
-    margin-bottom: var(--unav-spacing-xs);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  /* REFACTOR: Consumo de Tokens de Espaciado (8px) */
+  gap: var(--unav-spacing-sm);
+  /* REFACTOR: Consumo de Tokens de Espaciado (4px) */
+  margin-bottom: var(--unav-spacing-xs);
 }
 
 /* FECHA: Bold y Condensed (1.25rem) */
 .unav-eventDate {
-    font-family: var(--unav-fontFamilyPrimaryCondensed);
-    font-weight: var(--unav-fontWeightBold); 
-    font-size: var(--unav-fontSize125); 
-    margin: 0;
-    color: var(--unav-black-800);
-    text-transform: uppercase;
+  font-family: var(--unav-fontFamilyPrimaryCondensed);
+  font-weight: var(--unav-fontWeightBold);
+  font-size: var(--unav-fontSize125);
+  margin: 0;
+  color: var(--unav-black-800);
+  text-transform: uppercase;
 }
 
 /* HORA: 1rem Regular */
 .unav-eventTime {
-    font-family: var(--unav-fontFamilyPrimary);
-    font-weight: var(--unav-fontWeightRegular);
-    font-size: var(--unav-fontSize100); 
-    margin: 0;
-    color: var(--unav-grey-700);
+  font-family: var(--unav-fontFamilyPrimary);
+  font-weight: var(--unav-fontWeightRegular);
+  font-size: var(--unav-fontSize100);
+  margin: 0;
+  color: var(--unav-grey-700);
 }
 
 /* TÍTULO: Light y Grande (1.50rem) */
 .unav-eventTitle {
-    /* Consumo de Tokens de Espaciado (24px) */
-    margin-top: var(--unav-spacing-lg);
-    font-family: var(--unav-fontFamilyPrimary);
-    font-size: var(--unav-fontSize150); 
-    font-weight: var(--unav-fontWeightRegular);
-    color: var(--unav-black-900);
-    margin-bottom: var(--unav-spacing-0);
-    
-    /* Configuración del subrayado invisible por defecto */
-    text-decoration: underline;
-    text-decoration-color: transparent;
-    text-underline-offset: var(--unav-spacing-xs); 
-    text-decoration-thickness: 1px;
-    
-    /* Transición suave para color consumiendo los Motion Tokens */
-    transition: color var(--unav-durationNormal) var(--unav-easingStandard),
-                text-decoration-color var(--unav-durationNormal) var(--unav-easingStandard);
+  /* Consumo de Tokens de Espaciado (24px) */
+  margin-top: var(--unav-spacing-lg);
+  font-family: var(--unav-fontFamilyPrimary);
+  font-size: var(--unav-fontSize150);
+  font-weight: var(--unav-fontWeightRegular);
+  color: var(--unav-black-900);
+  margin-bottom: var(--unav-spacing-0);
+  /* Configuración del subrayado invisible por defecto */
+  text-decoration: underline;
+  text-decoration-color: transparent;
+  text-underline-offset: var(--unav-spacing-xs);
+  text-decoration-thickness: 1px;
+  /* Transición suave para color consumiendo los Motion Tokens */
+  transition: color var(--unav-durationNormal) var(--unav-easingStandard), text-decoration-color var(--unav-durationNormal) var(--unav-easingStandard);
 }
 
 /* EFECTO HOY: Subrayado y color al posarse sobre la tarjeta */
 .unav-eventLink:hover .unav-eventTitle {
-    color: var(--unav-rojo-500);
-    text-decoration-color: var(--unav-rojo-500);
+  color: var(--unav-rojo-500);
+  text-decoration-color: var(--unav-rojo-500);
 }
 
 /* Localización Base */
 .unav-eventLocation {
-    /* REFACTOR: Consumo de Tokens de Espaciado (16px) */
-    padding: var(--unav-spacing-md);
-    background-color: var(--unav-grey-100);
-    border-top: 1px solid var(--unav-eventCardBorder);
-    font-family: var(--unav-fontFamilyPrimary);
-    font-size: var(--unav-fontSize075); 
-    color: var(--unav-grey-700);
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    /* REFACTOR: Consumo de Tokens de Espaciado (4px) */
-    gap: var(--unav-spacing-xs); 
+  /* REFACTOR: Consumo de Tokens de Espaciado (16px) */
+  padding: var(--unav-spacing-md);
+  background-color: var(--unav-grey-100);
+  border-top: 1px solid var(--unav-eventCardBorder);
+  font-family: var(--unav-fontFamilyPrimary);
+  font-size: var(--unav-fontSize075);
+  color: var(--unav-grey-700);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  /* REFACTOR: Consumo de Tokens de Espaciado (4px) */
+  gap: var(--unav-spacing-xs);
 }
 
-.unav-eventLocation i { 
-    font-size: var(--unav-fontSize125); 
-    color: var(--unav-grey-400); 
-    flex-shrink: 0;
+.unav-eventLocation i {
+  font-size: var(--unav-fontSize125);
+  color: var(--unav-grey-400);
+  flex-shrink: 0;
 }
-
-
-
-
 
 /* ==========================================
    COMPONENTE: TARJETA DE NOTICIA UNAV (OOCSS)
    ========================================== */
-
 .unav-newsCard {
-    border: none; 
-    background-color: transparent; 
-    height: 100%; 
-    display: flex; 
-    flex-direction: column;
-    /* La animación de entrada se delega a unav-movimiento.css (.unav-efectoEntradaOculto) */
+  border: none;
+  background-color: transparent;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  /* La animación de entrada se delega a unav-movimiento.css (.unav-efectoEntradaOculto) */
 }
 
 /* Contenedor de Imagen (16:10 forzado) */
-.unav-newsImageWrapper { 
-    position: relative; 
-    overflow: hidden; 
-    /* REFACTOR: Consumo de Tokens de Espaciado (24px) */
-    margin-bottom: var(--unav-spacing-lg); 
-    aspect-ratio: var(--unav-newsImageRatio); 
-    /* REFACTOR: Consumo de Tokens de Forma (Esquinas vivas estrictas por sistema) */
-    border-radius: var(--unav-radius-none) !important; 
-    /* La animación de zoom se delega inyectando .unav-efectoZoomImagen */
+.unav-newsImageWrapper {
+  position: relative;
+  overflow: hidden;
+  /* REFACTOR: Consumo de Tokens de Espaciado (24px) */
+  margin-bottom: var(--unav-spacing-lg);
+  aspect-ratio: var(--unav-newsImageRatio);
+  /* REFACTOR: Consumo de Tokens de Forma (Esquinas vivas estrictas por sistema) */
+  border-radius: var(--unav-radius-none) !important;
+  /* La animación de zoom se delega inyectando .unav-efectoZoomImagen */
 }
 
-.unav-newsImage { 
-    width: 100%; 
-    height: 100%; 
-    object-fit: cover; 
-    display: block;
+.unav-newsImage {
+  width: 100%;
+  height: 100%;
+  -o-object-fit: cover;
+     object-fit: cover;
+  display: block;
 }
 
 /* Metadatos (Fecha) */
-.unav-newsDate { 
-    font-family: var(--unav-fontFamilyPrimary);
-    font-weight: var(--unav-fontWeightBold); 
-    font-size: var(--unav-fontSize075); /* ~12px */
-    /* REFACTOR: Consumo de Tokens de Espaciado (8px) */
-    margin-bottom: var(--unav-spacing-sm); 
-    text-transform: uppercase; 
-    color: var(--unav-newsDateColor);
-    letter-spacing: 0.5px;
+.unav-newsDate {
+  font-family: var(--unav-fontFamilyPrimary);
+  font-weight: var(--unav-fontWeightBold);
+  font-size: var(--unav-fontSize075); /* ~12px */
+  /* REFACTOR: Consumo de Tokens de Espaciado (8px) */
+  margin-bottom: var(--unav-spacing-sm);
+  text-transform: uppercase;
+  color: var(--unav-newsDateColor);
+  letter-spacing: 0.5px;
 }
 
 /* Título de la Noticia */
-.unav-newsTitle { 
-    font-family: var(--unav-fontFamilyPrimary);
-    font-size: var(--unav-fontSize150); /* ~24px */
-    font-weight: var(--unav-fontWeightRegular); 
-    line-height: var(--unav-newsTitleLineHeight); 
-    /* REFACTOR: Consumo de Tokens de Espaciado (24px) */
-    margin-bottom: var(--unav-spacing-lg); 
-    flex-grow: 1; /* Empuja el enlace (.unav-enlaceFlecha) hacia la base de la tarjeta */
+.unav-newsTitle {
+  font-family: var(--unav-fontFamilyPrimary);
+  font-size: var(--unav-fontSize150); /* ~24px */
+  font-weight: var(--unav-fontWeightRegular);
+  line-height: var(--unav-newsTitleLineHeight);
+  /* REFACTOR: Consumo de Tokens de Espaciado (24px) */
+  margin-bottom: var(--unav-spacing-lg);
+  flex-grow: 1; /* Empuja el enlace (.unav-enlaceFlecha) hacia la base de la tarjeta */
 }
 
 .unav-newsTitle a {
-    color: var(--unav-newsTitleColor);
-    text-decoration: none;
-    transition: color var(--unav-transitionBase), text-decoration var(--unav-transitionBase);
-    outline: none; /* Reseteo del outline nativo */
+  color: var(--unav-newsTitleColor);
+  text-decoration: none;
+  transition: color var(--unav-transitionBase), -webkit-text-decoration var(--unav-transitionBase);
+  transition: color var(--unav-transitionBase), text-decoration var(--unav-transitionBase);
+  transition: color var(--unav-transitionBase), text-decoration var(--unav-transitionBase), -webkit-text-decoration var(--unav-transitionBase);
+  outline: none; /* Reseteo del outline nativo */
 }
 
 .unav-newsTitle a:hover {
-    color: var(--unav-rojo-500);
-    text-decoration: underline;
-    /* REFACTOR: Consumo de Tokens de Espaciado (4px) */
-    text-underline-offset: var(--unav-spacing-xs);
+  color: var(--unav-rojo-500);
+  text-decoration: underline;
+  /* REFACTOR: Consumo de Tokens de Espaciado (4px) */
+  text-underline-offset: var(--unav-spacing-xs);
 }
 
 /* Modificadores Tipográficos para Grids Alta y Baja Densidad */
-.unav-newsTitle--sm { 
-    font-size: var(--unav-fontSize125); /* ~20px */
-}
-.unav-newsTitle--lg { 
-    font-size: var(--unav-fontSize200); /* ~32px */
+.unav-newsTitle--sm {
+  font-size: var(--unav-fontSize125); /* ~20px */
 }
 
+.unav-newsTitle--lg {
+  font-size: var(--unav-fontSize200); /* ~32px */
+}
 
 /* ==========================================
     COMPONENTE: LISTA DE NOTICIAS (REFINADO)
     ========================================== */
-        
-    .unav-newsListItem {
-        /* Separador inferior oscuro basado en tokens UNAV */
-        border-bottom: 1px solid var(--unav-black-800);
-        /* REFACTOR: Consumo de Tokens de Espaciado (32px) */
-        padding-bottom: var(--unav-spacing-xl);
-        margin-bottom: var(--unav-spacing-xl);
-        display: flex;
-        flex-direction: column;
-    }
+.unav-newsListItem {
+  /* Separador inferior oscuro basado en tokens UNAV */
+  border-bottom: 1px solid var(--unav-black-800);
+  /* REFACTOR: Consumo de Tokens de Espaciado (32px) */
+  padding-bottom: var(--unav-spacing-xl);
+  margin-bottom: var(--unav-spacing-xl);
+  display: flex;
+  flex-direction: column;
+}
 
-    .unav-newsListItem:last-child {
-        border-bottom: none;
-        padding-bottom: 0;
-        margin-bottom: 0;
-    }
+.unav-newsListItem:last-child {
+  border-bottom: none;
+  padding-bottom: 0;
+  margin-bottom: 0;
+}
 
-    /* Ajuste de imagen para formato lista */
-    @media (min-width: 768px) {
-        .unav-newsListItem .unav-newsImageWrapper {
-            margin-bottom: 0; 
-            height: 100%;
-        }
-    }
+/* Ajuste de imagen para formato lista */
+@media (min-width: 768px) {
+  .unav-newsListItem .unav-newsImageWrapper {
+    margin-bottom: 0;
+    height: 100%;
+  }
+}
+/* Formato de fecha específico solicitado: 15 Abr. 2026 */
+.unav-newsListItem .unav-newsDate {
+  color: var(--unav-grey-600);
+  font-family: var(--unav-fontFamilyPrimary);
+  font-weight: var(--unav-fontWeightBold);
+  font-size: var(--unav-fontSize075);
+  text-transform: none; /* Se respeta el formato mixto Solicitado */
+  letter-spacing: 0.5px;
+  /* REFACTOR: Consumo de Tokens de Espaciado (8px) */
+  margin-bottom: var(--unav-spacing-sm);
+}
 
-    /* Formato de fecha específico solicitado: 15 Abr. 2026 */
-    .unav-newsListItem .unav-newsDate {
-        color: var(--unav-grey-600);
-        font-family: var(--unav-fontFamilyPrimary);
-        font-weight: var(--unav-fontWeightBold);
-        font-size: var(--unav-fontSize075);
-        text-transform: none; /* Se respeta el formato mixto Solicitado */
-        letter-spacing: 0.5px;
-        /* REFACTOR: Consumo de Tokens de Espaciado (8px) */
-        margin-bottom: var(--unav-spacing-sm);
-    }
-
-    .unav-newsListItem .unav-newsTitle {
-        margin-bottom: 0;
-        font-size: var(--unav-fontSize125); /* Tamaño optimizado para lectura en lista */
-    }
+.unav-newsListItem .unav-newsTitle {
+  margin-bottom: 0;
+  font-size: var(--unav-fontSize125); /* Tamaño optimizado para lectura en lista */
+}

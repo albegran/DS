@@ -1,48 +1,46 @@
 /* ==========================================
    COMPONENTE: PANEL SOLICITUD UNAV (OOCSS)
    ========================================== */
-
 /* Capa de Oscurecimiento (Overlay) */
 .unav-panelOverlay {
-    position: fixed;
-    top: 0;
-    left: 0;
-    width: 100vw;
-    height: 100vh;
-    background-color: var(--unav-panelOverlayBg);
-    z-index: var(--unav-panelZIndexOverlay);
-    opacity: 0;
-    visibility: hidden;
-    /* Consumo de Motion Tokens para la aparición */
-    transition: opacity var(--unav-durationNormal, 250ms) var(--unav-easingStandard, ease), 
-                visibility var(--unav-durationNormal, 250ms) var(--unav-easingStandard, ease);
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100vw;
+  height: 100vh;
+  background-color: var(--unav-panelOverlayBg);
+  z-index: var(--unav-panelZIndexOverlay);
+  opacity: 0;
+  visibility: hidden;
+  /* Consumo de Motion Tokens para la aparición */
+  transition: opacity var(--unav-durationNormal, 250ms) var(--unav-easingStandard, ease), visibility var(--unav-durationNormal, 250ms) var(--unav-easingStandard, ease);
 }
 
 .unav-panelOverlay.unav-isActive {
-    opacity: 1;
-    visibility: visible;
+  opacity: 1;
+  visibility: visible;
 }
 
 /* Contenedor del Panel Lateral */
 .unav-sidePanel {
-    position: fixed;
-    top: 0;
-    right: 0; 
-    transform: translateX(100%); 
-    width: 100%;
-    max-width: var(--unav-panelWidth); 
-    height: 100vh;
-    background-color: var(--unav-cardBgBase, #ffffff);
-    z-index: var(--unav-panelZIndex);
-    box-shadow: var(--unav-panelShadow);
-    display: flex;
-    flex-direction: column;
-    /* Consumo de Motion Tokens para el deslizamiento estructural */
-    transition: transform var(--unav-durationSlow, 600ms) var(--unav-easingDecel, ease-out);
+  position: fixed;
+  top: 0;
+  right: 0;
+  transform: translateX(100%);
+  width: 100%;
+  max-width: var(--unav-panelWidth);
+  height: 100vh;
+  background-color: var(--unav-cardBgBase, var(--unav-bg-surface));
+  z-index: var(--unav-panelZIndex);
+  box-shadow: var(--unav-panelShadow);
+  display: flex;
+  flex-direction: column;
+  /* Consumo de Motion Tokens para el deslizamiento estructural */
+  transition: transform var(--unav-durationSlow, 600ms) var(--unav-easingDecel, ease-out);
 }
 
 .unav-sidePanel.unav-isOpen {
-    transform: translateX(0); 
+  transform: translateX(0);
 }
 
 /* Botón Flotante (Sticky) */
@@ -51,8 +49,13 @@
     left: 0;
     top: 50%;
     transform: translate(-100%, -50%); 
-    background-color: var(--unav-rojo-600); /* Token Corporativo */
+    
+    --unav-botonBg: var(--unav-rojo-500);    
+    background-color: var(--unav-botonBg);
     color: #ffffff;
+
+    --unav-botonHoverBg: var(--unav-rojo-600);
+
     border: none;
     outline: none; /* Reseteo del outline nativo para usar uno a medida */
     /* REFACTOR: Consumo de Tokens de Forma (Esquinas rectas estrictas) */
@@ -76,103 +79,98 @@
    ACCESIBILIDAD: Foco asimétrico a medida
    ========================================= */
 .unav-stickyButton::before {
-    content: '';
-    position: absolute;
-    /* REFACTOR: Consumo de Tokens de Espaciado para el offset óptico del foco (4px) */
-    top: calc(var(--unav-spacing-xs) * -1);
-    bottom: calc(var(--unav-spacing-xs) * -1);
-    left: calc(var(--unav-spacing-xs) * -1);
-    right: 0; /* A ras del panel */
-    border: 2px solid transparent;
-    border-right: none; /* Omitimos la línea derecha para que no se superponga al panel */
-    pointer-events: none; /* Evita que bloquee el clic */
+  content: "";
+  position: absolute;
+  /* REFACTOR: Consumo de Tokens de Espaciado para el offset óptico del foco (4px) */
+  top: calc(var(--unav-spacing-xs) * -1);
+  bottom: calc(var(--unav-spacing-xs) * -1);
+  left: calc(var(--unav-spacing-xs) * -1);
+  right: 0; /* A ras del panel */
+  border: 2px solid transparent;
+  border-right: none; /* Omitimos la línea derecha para que no se superponga al panel */
+  pointer-events: none; /* Evita que bloquee el clic */
 }
 
 .unav-stickyButton:hover {
-    background-color: var(--unav-rojo-800);
+    background-color: var(--unav-botonHoverBg);    
 }
 
 /* Elementos del Botón */
 .unav-buttonText {
-    writing-mode: vertical-rl;
-    transform: rotate(180deg);
-    white-space: nowrap;
+  writing-mode: vertical-rl;
+  transform: rotate(180deg);
+  white-space: nowrap;
 }
 
 .unav-iconArrow {
-    display: flex;
-    align-items: center;
-    transition: transform var(--unav-durationNormal, 250ms) var(--unav-easingStandard, ease);
+  display: flex;
+  align-items: center;
+  transition: transform var(--unav-durationNormal, 250ms) var(--unav-easingStandard, ease);
 }
 
 .unav-iconArrow svg {
-    fill: currentColor;
+  fill: currentColor;
 }
 
 .unav-sidePanel.unav-isOpen .unav-iconArrow {
-    transform: rotate(180deg);
+  transform: rotate(180deg);
 }
 
 /* Cuerpo del Panel (Iframe) */
 .unav-panelBody {
-    flex-grow: 1;
-    overflow: hidden;
+  flex-grow: 1;
+  overflow: hidden;
 }
 
 .unav-iframeContainer {
-    width: 100%;
-    height: 100%;
-    border: none;
+  width: 100%;
+  height: 100%;
+  border: none;
 }
 
 /* =======================================================
    COMPORTAMIENTO RESPONSIVE (MÓVIL)
    ======================================================= */
 @media (max-width: 767px) {
-    .unav-sidePanel {
-        max-width: 100%;
-        height: 100dvh;
-        transform: translateY(calc(100% - var(--unav-panelStickyBtnMobileHeight)));
-    }
-    
-    .unav-sidePanel.unav-isOpen {
-        transform: translateY(0);
-    }
-    
-    .unav-stickyButton {
-        position: relative;
-        top: 0; left: 0;
-        transform: none;
-        width: 100%;
-        height: var(--unav-panelStickyBtnMobileHeight);
-        flex-direction: row;
-        justify-content: center;
-        padding: 0;
-    }
-    
-    /* Adaptación del foco a medida para la geometría de móvil */
-    .unav-stickyButton::before {
-        /* REFACTOR: Consumo de Tokens de Espaciado (4px) en versión móvil */
-        top: calc(var(--unav-spacing-xs) * -1);
-        left: 0;
-        right: 0;
-        bottom: 0; /* A ras del panel inferior */
-        border: 2px solid transparent;
-        border-bottom: none; /* En móvil omitimos la línea inferior */
-        border-right: 2px solid transparent; /* Restauramos el borde derecho */
-    }
-
-    .unav-buttonText {
-        writing-mode: horizontal-tb;
-        transform: none;
-        font-size: var(--unav-fontSize100);
-    }
-    
-    .unav-iconArrow {
-        transform: rotate(90deg);
-    }
-    
-    .unav-sidePanel.unav-isOpen .unav-iconArrow {
-        transform: rotate(-90deg);
-    }
+  .unav-sidePanel {
+    max-width: 100%;
+    height: 100dvh;
+    transform: translateY(calc(100% - var(--unav-panelStickyBtnMobileHeight)));
+  }
+  .unav-sidePanel.unav-isOpen {
+    transform: translateY(0);
+  }
+  .unav-stickyButton {
+    position: relative;
+    top: 0;
+    left: 0;
+    transform: none;
+    width: 100%;
+    height: var(--unav-panelStickyBtnMobileHeight);
+    flex-direction: row;
+    justify-content: center;
+    padding: 0;
+  }
+  /* Adaptación del foco a medida para la geometría de móvil */
+  .unav-stickyButton::before {
+    /* REFACTOR: Consumo de Tokens de Espaciado (4px) en versión móvil */
+    top: calc(var(--unav-spacing-xs) * -1);
+    left: 0;
+    right: 0;
+    bottom: 0; /* A ras del panel inferior */
+    border: 2px solid transparent;
+    border-bottom: none; /* En móvil omitimos la línea inferior */
+    border-right: 2px solid transparent; /* Restauramos el borde derecho */
+  }
+  .unav-buttonText {
+    writing-mode: horizontal-tb;
+    transform: none;
+    font-size: var(--unav-fontSize100);
+  }
+  .unav-iconArrow {
+    transform: rotate(90deg);
+  }
+  .unav-sidePanel.unav-isOpen .unav-iconArrow {
+    transform: rotate(-90deg);
+  }
 }
