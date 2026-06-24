@@ -178,3 +178,32 @@
         scroll-snap-align: start;
     }
 }
+
+/* ==========================================
+   COMPONENTE: TOAST (Notificaciones de UI)
+   ========================================== */
+   .unav-toast {
+    position: fixed;
+    bottom: 2rem;
+    left: 50%;
+    transform: translateX(-50%) translateY(100px);
+    background-color: var(--unav-black-800);
+    color: var(--unav-text-inverse);
+    padding: var(--unav-spacing-md) var(--unav-spacing-lg);
+    border-radius: var(--unav-radius-md);
+    z-index: var(--unav-zIndex-modal);
+    opacity: 0;
+    transition: transform var(--unav-durationNormal) var(--unav-easingStandard), 
+                opacity var(--unav-durationNormal) var(--unav-easingStandard);
+    font-family: var(--unav-fontFamilyPrimary);
+    font-size: var(--unav-fontSize085);
+    display: flex;
+    align-items: center;
+    gap: var(--unav-spacing-sm);
+    box-shadow: var(--unav-cardShadowHover);
+}
+
+.unav-toast.unav-isActive {
+    opacity: 1;
+    transform: translateX(-50%) translateY(0);
+}
