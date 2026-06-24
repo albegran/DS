@@ -75,10 +75,10 @@
             font-style: italic;
         }
 
-        /* ==========================================
+/* ==========================================
            REFACTOR MÓVIL (Acordeón a Sticky Bar)
            ========================================== */
-        @media (max-width: 767.98px) {
+           @media (max-width: 767.98px) {
             .unav-heroCaptionMobile {
                 display: flex;
                 flex-direction: column;
@@ -97,15 +97,16 @@
                 left: 0;
                 right: 0;
                 width: 100%;
-                background-color: var(--unav-bg-surface);
-                border-top: 1px solid var(--unav-grey-200);
+                /* APLICAMOS EL GRIS SUAVE SOLICITADO */
+                background-color: var(--unav-grey-100) !important;
+                border-top: 1px solid var(--unav-grey-300) !important;
                 /* PROTECCIÓN FÍSICA: Respetamos la barra de navegación táctil del móvil (Notch/Gestures) */
                 padding: var(--unav-spacing-sm) var(--unav-spacing-md) calc(var(--unav-spacing-sm) + env(safe-area-inset-bottom, 0px)) !important;
                 /* ELEVACIÓN: Usamos nivel Overlay para sobreescribir cualquier stacking context de Bootstrap */
                 z-index: var(--unav-zIndex-overlay) !important;
                 box-shadow: 0 -4px 10px rgba(0,0,0,0.05);
                 margin: 0 !important; 
-                /* ACELERACIÓN HARDWARE: Obliga a Android a dibujar esta capa de forma independiente */
+                /* ACELERACIÓN HARDWARE */
                 transform: translateZ(0);
                 -webkit-transform: translateZ(0);
             }
@@ -127,12 +128,37 @@
                 width: 100%;
             }
 
+            /* Hacemos que el interior albergue la etiqueta y los iconos a los lados */
             .unav-shareStickyMobile .unav-accordionInner {
                 display: flex !important;
                 flex-direction: row !important;
-                justify-content: center;
+                justify-content: space-between !important;
+                align-items: center !important;
                 padding: 0 !important;
             }
+
+            /* NUEVO: Etiqueta descriptiva para móvil */
+            .unav-shareMobileLabel {
+                font-family: var(--unav-fontFamilyPrimaryCondensed);
+                font-weight: var(--unav-fontWeightBold);
+                font-size: var(--unav-fontSize085);
+                color: var(--unav-black-800);
+                text-transform: uppercase;
+                letter-spacing: var(--unav-trackingWide);
+                white-space: nowrap;
+                flex-shrink: 0;
+            }
+
+            /* NUEVO: Contenedor fluido para los botones en caso de desbordamiento */
+            .unav-shareMobileIcons {
+                display: flex;
+                gap: var(--unav-spacing-sm);
+                flex-wrap: nowrap !important;
+                overflow-x: auto;
+                -webkit-overflow-scrolling: touch;
+                scrollbar-width: none;
+            }
+            .unav-shareMobileIcons::-webkit-scrollbar { display: none; }
             
             /* Damos margen base para que el texto no quede sepultado por la barra flotante */
             body {
@@ -216,11 +242,11 @@
             <div class="row">
                 
                 <!-- SIDEBAR / BARRA MÓVIL: ACORDEÓN COMPARTIR -->
-                <aside class="col-md-4 mb-2 unav-shareStickyMobile">
+                <aside class="col-md-4 mb-4 unav-shareStickyMobile">
                     <div class="unav-accordionGroup">
                         <div class="unav-accordionItem">
-                            <!-- En móvil, este Header queda oculto -->
-                            <button class="unav-accordionHeader" aria-expanded="false">
+                            <!-- En escritorio, este es el botón del acordeón (Oculto en móvil) -->
+                            <button class="unav-accordionHeader d-none d-md-flex" aria-expanded="false">
                                 <div class="unav-accordionTitleWrapper">
                                     <span class="unav-weight-bold unav-text-085" style="letter-spacing: var(--unav-trackingWide);">
                                         <i class="bi bi-share me-2" style="color: var(--unav-rojo-500);"></i> COMPARTE
@@ -228,9 +254,17 @@
                                 </div>
                                 <span class="material-symbols-outlined unav-accordionToggleIcon" aria-hidden="true">expand_more</span>
                             </button>
+                            
                             <div class="unav-accordionPanel">
                                 <div class="unav-accordionInner d-flex flex-column gap-3">
-                                    <div class="d-flex gap-2 flex-wrap align-items-center">
+                                    
+                                    <!-- NUEVA ETIQUETA UX: Visible solo en la barra sticky móvil -->
+                                    <div class="unav-shareMobileLabel d-flex d-md-none me-2">
+                                        <i class="bi bi-share me-2" style="color: var(--unav-rojo-500);"></i> Compartir
+                                    </div>
+
+                                    <!-- Contenedor scrollable de botones -->
+                                    <div class="unav-shareMobileIcons d-flex flex-wrap align-items-center">
                                         <button class="unav-boton unav-botonSecundario unav-botonIconOnly unav-botonIconOnlySm" style="--unav-botonColorSource: var(--unav-black-800);"  aria-label="Facebook"><i class="bi bi-facebook unav-botonIcono"></i></button>
                                         <button class="unav-boton unav-botonSecundario unav-botonIconOnly unav-botonIconOnlySm" style="--unav-botonColorSource: var(--unav-black-800);"  aria-label="X"><i class="bi bi-twitter-x unav-botonIcono"></i></button>
                                         <button class="unav-boton unav-botonSecundario unav-botonIconOnly unav-botonIconOnlySm" style="--unav-botonColorSource: var(--unav-black-800);"  aria-label="WhatsApp"><i class="bi bi-whatsapp unav-botonIcono"></i></button>                                
@@ -238,6 +272,7 @@
                                         <button class="unav-boton unav-botonSecundario unav-botonIconOnly unav-botonIconOnlySm" style="--unav-botonColorSource: var(--unav-black-800);"  aria-label="Copiar enlace"><i class="bi bi-link-45deg unav-botonIcono"></i></button>
                                         <button class="unav-boton unav-botonSecundario unav-botonIconOnly unav-botonIconOnlySm" style="--unav-botonColorSource: var(--unav-black-800);"  aria-label="Enviar por email"><i class="bi bi-envelope-fill unav-botonIcono"></i></button>                                    
                                     </div>
+
                                 </div>
                             </div>
                         </div>
