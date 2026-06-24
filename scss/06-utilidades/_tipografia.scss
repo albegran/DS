@@ -5,65 +5,34 @@
    ========================================== */
 
 /* Familias de Fuentes */
-.unav-font-primary { font-family: var(--unav-fontFamilyPrimary) !important; }
-.unav-font-primary-condensed { font-family: var(--unav-fontFamilyPrimaryCondensed) !important; }
-
-/* Grosores de Fuente (Weights) */
-.unav-weight-thin { font-weight: var(--unav-fontWeightThin) !important; }
-.unav-weight-light { font-weight: var(--unav-fontWeightLight) !important; }
-.unav-weight-regular { font-weight: var(--unav-fontWeightRegular) !important; }
-.unav-weight-medium { font-weight: var(--unav-fontWeightMedium) !important; }
-.unav-weight-bold { font-weight: var(--unav-fontWeightBold) !important; }
-.unav-weight-black { font-weight: var(--unav-fontWeightBlack) !important; }
-
-/* Escala de Tamaños de Fuente (Sizes) */
-.unav-text-075 { font-size: var(--unav-fontSize075) !important; }
-.unav-text-085 { font-size: var(--unav-fontSize085) !important; }
-.unav-text-100 { font-size: var(--unav-fontSize100) !important; }
-.unav-text-1125 { font-size: var(--unav-fontSize1125); } /* Base para UNAV, un poquito más grande que lo habitual (tomar decisión definitiva) */
-.unav-text-125 { font-size: var(--unav-fontSize125) !important; }
-.unav-text-150 { font-size: var(--unav-fontSize150) !important; }
-.unav-text-175 { font-size: var(--unav-fontSize175) !important; }
-.unav-text-200 { font-size: var(--unav-fontSize200) !important; }
-.unav-text-250 { font-size: var(--unav-fontSize250) !important; }
-.unav-text-300 { font-size: var(--unav-fontSize300) !important; }
-.unav-text-400 { font-size: var(--unav-fontSize400) !important; }
-.unav-text-500 { font-size: var(--unav-fontSize500) !important; }
-
-/* ==========================================
-   SISTEMA TIPOGRÁFICO CORPORATIVO UNAV
-   ========================================== */
-
-   /* ==========================================
-      CLASES UTILITARIAS (Para usar directo en HTML)
-      ========================================== */
-   
-   /* Familias */
    .unav-font-primary { font-family: var(--unav-fontFamilyPrimary); }
    .unav-font-primary-condensed { font-family: var(--unav-fontFamilyPrimaryCondensed); }
    .unav-font-secondary-playfair { font-family: var(--unav-fontFamilySecondaryPlayfair); }
    .unav-font-secondary-slab { font-family: var(--unav-fontFamilySecondarySlab); }
    .unav-font-secondary-dm { font-family: var(--unav-fontFamilySecondaryDm); }
-   
-   /* Pesos */
+
+/* Grosores de Fuente (Weights) */
    .unav-weight-thin { font-weight: var(--unav-fontWeightThin); }
    .unav-weight-light { font-weight: var(--unav-fontWeightLight); }
    .unav-weight-regular { font-weight: var(--unav-fontWeightRegular); }
    .unav-weight-medium { font-weight: var(--unav-fontWeightMedium); }
    .unav-weight-bold { font-weight: var(--unav-fontWeightBold); }
-   
-   /* Tamaños */
-   .unav-text-500 { font-size: var(--unav-fontSize500); }
-   .unav-text-400 { font-size: var(--unav-fontSize400); }
-   .unav-text-300 { font-size: var(--unav-fontSize300); }
-   .unav-text-250 { font-size: var(--unav-fontSize250); }
-   .unav-text-200 { font-size: var(--unav-fontSize200); }
-   .unav-text-175 { font-size: var(--unav-fontSize175); }
-   .unav-text-150 { font-size: var(--unav-fontSize150); }
-   .unav-text-1125 { font-size: var(--unav-fontSize1125); }
-   .unav-text-125 { font-size: var(--unav-fontSize125); }
-   .unav-text-100 { font-size: var(--unav-fontSize100); }
-   .unav-text-075 { font-size: var(--unav-fontSize075); }
+   .unav-weight-black { font-weight: var(--unav-fontWeightBlack); }
+
+/* Escala de Tamaños de Fuente (Sizes) */
+.unav-text-075 { font-size: var(--unav-fontSize075); }
+.unav-text-085 { font-size: var(--unav-fontSize085); }
+.unav-text-100 { font-size: var(--unav-fontSize100); }
+.unav-text-1125 { font-size: var(--unav-fontSize1125); } /* Base para UNAV, un poquito más grande que lo habitual (tomar decisión definitiva) */
+.unav-text-125 { font-size: var(--unav-fontSize125); }
+.unav-text-150 { font-size: var(--unav-fontSize150); }
+.unav-text-175 { font-size: var(--unav-fontSize175); }
+.unav-text-200 { font-size: var(--unav-fontSize200); }
+.unav-text-250 { font-size: var(--unav-fontSize250); }
+.unav-text-300 { font-size: var(--unav-fontSize300); }
+.unav-text-400 { font-size: var(--unav-fontSize400); }
+.unav-text-500 { font-size: var(--unav-fontSize500); }
+
    
    /* Interlineado (Line Height) */
    .unav-lh-none { line-height: var(--unav-lineHeightNone); }
