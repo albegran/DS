@@ -32,7 +32,7 @@
     <main class="container">
         
         <!-- ARTICLE LIMPIO: Sin data-attributes quemados -->
-        <article class="unav-noticia-Editorial" style="border-color: var(--unav-grey-200) !important;" id="unav-noticia-principal">
+        <article class="unav-noticiaEditorial" style="border-color: var(--unav-grey-200) !important;" id="unav-noticia-principal">
             
             <!-- HEADER (6 COLUMNAS IZQUIERDA / 6 DERECHA) -->
             <header class="row mb-4 align-items-center">
@@ -47,9 +47,9 @@
                     </div>
 
                     <!-- TITULAR CON EFECTO REVEAL (2 Líneas) -->
-                    <h1 class="unav-noticia-Editorial-title unav-font-secondary-playfair mb-4">
-                        <span class="unav-noticia-Editorial-mask">
-                            <span class="unav-noticia-Editorial-revealText" style="animation-delay: 0.15s;">La OTAN redefine su estrategia global para garantizar el futuro de las democracias</span>
+                    <h1 class="unav-noticiaEditorial-title unav-font-secondary-playfair mb-4">
+                        <span class="unav-noticiaEditorial-mask">
+                            <span class="unav-noticiaEditorial-revealText" style="animation-delay: 0.15s;">La OTAN redefine su estrategia global para garantizar el futuro de las democracias</span>
                         </span>
                     </h1>
 
@@ -67,7 +67,7 @@
 
                 <!-- COLUMNA DERECHA: IMAGEN -->
                 <div class="col-lg-6">
-                    <figure class="unav-noticia-Editorial-imageWrapper mb-2">
+                    <figure class="unav-noticiaEditorial-imageWrapper mb-2">
                         <!-- FOTOGRAFÍA (Uso de ID unav-noticia-img) -->
                         <img src="https://picsum.photos/id/1015/800/600" alt="OTAN Cumbre" class="img-fluid w-100" style="border-radius: var(--unav-radius-none);" id="unav-noticia-img">
                     </figure>
@@ -189,7 +189,7 @@
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
     <script>
         document.addEventListener('DOMContentLoaded', () => {
-            const heroImages = document.querySelectorAll('.unav-noticia-Editorial-imageWrapper img');
+            const heroImages = document.querySelectorAll('.unav-noticiaEditorial-imageWrapper img');
             
             const handleScrollParallax = () => {
                 const scrollPosition = window.scrollY;

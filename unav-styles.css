@@ -3919,14 +3919,14 @@ body {
         /* ==========================================
            COMPONENTE ESPECÍFICO: NOTICIA EDITORIAL
            ========================================== */
-           .unav-noticia-Editorial {
+           .unav-noticiaEditorial {
             background-color: var(--unav-bg-surface);
             padding-top: var(--unav-spacing-sm);
             padding-bottom: var(--unav-spacing-sm);
         }
 
         /* Contenedor máscara para cada línea */
-        .unav-noticia-Editorial-mask {
+        .unav-noticiaEditorial-mask {
             display: block;
             overflow: hidden; 
             line-height: 1.15;
@@ -3935,7 +3935,7 @@ body {
         }
 
         /* El texto animado (Refinado para efecto editorial suave) */
-        .unav-noticia-Editorial-revealText {
+        .unav-noticiaEditorial-revealText {
             display: inline-block;
             color: var(--unav-black-800);
             /* Partimos de una distancia corta y sutil usando el token de entrada del DS */
@@ -3957,16 +3957,16 @@ body {
             }
         }
 
-        .unav-noticia-Editorial-title { font-size: var(--unav-fontSize200); margin: 0; }
+        .unav-noticiaEditorial-title { font-size: var(--unav-fontSize200); margin: 0; }
         
-        .unav-noticia-Editorial-imageWrapper {
+        .unav-noticiaEditorial-imageWrapper {
             width: 100%;
             border-radius: var(--unav-radius-none);
             overflow: hidden;
             margin-bottom: var(--unav-spacing-xs);
         }
         
-        .unav-noticia-Editorial-imageWrapper img {
+        .unav-noticiaEditorial-imageWrapper img {
             width: 100%;
             height: auto;
             object-fit: cover;
@@ -4100,8 +4100,8 @@ body {
 
         /* Configuraciones para escritorio */
         @media (min-width: 768px) {
-            .unav-noticia-Editorial-title { font-size: var(--unav-fontSize300); }
-            .unav-noticia-Editorial-imageWrapper img { max-height: 600px; }
+            .unav-noticiaEditorial-title { font-size: var(--unav-fontSize300); }
+            .unav-noticiaEditorial-imageWrapper img { max-height: 600px; }
             .unav-shareStickyMobile .unav-accordionInner { display: inherit; }
         }
 
