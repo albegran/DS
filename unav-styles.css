@@ -372,9 +372,9 @@
   /* ==========================================
      9. TOKENS COMPONENTE: ACORDEONES
      ========================================== */
-  --unav-accordionHeaderPaddingY: 1.25rem;
-  --unav-accordionHeaderPaddingX: 1.5rem;
-  --unav-accordionHeaderPaddingRight: 3.5rem;
+  --unav-accordionHeaderPaddingY: 1rem;
+  --unav-accordionHeaderPaddingX: 0.5rem;
+  --unav-accordionHeaderPaddingRight: 2rem;
   --unav-accordionBorderColor: var(--unav-grey-200);
   --unav-accordionIconSize: var(--unav-iconSizeLg);
   --unav-accordionTitleGap: 0.75rem;
