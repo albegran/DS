@@ -19,10 +19,10 @@
         /* ==========================================
            COMPONENTE ESPECÍFICO: HERO EDITORIAL
            ========================================== */
-        .unav-heroEditorial {
+           .unav-heroEditorial {
             background-color: var(--unav-bg-surface);
-            padding-top: var(--unav-spacing-3xl);
-            padding-bottom: var(--unav-spacing-3xl);
+            padding-top: var(--unav-spacing-sm);
+            padding-bottom: var(--unav-spacing-sm);
         }
 
         /* Contenedor máscara para cada línea */
@@ -38,46 +38,32 @@
         .unav-heroEditorial-revealText {
             display: inline-block;
             color: var(--unav-black-800);
-            /* Inicia un poco más abajo para un recorrido más majestuoso */
             transform: translateY(120%);
             opacity: 0;
-            /* Usamos los tokens del DS para un efecto orgánico */
             animation: unavRevealSmooth var(--unav-durationSlower) var(--unav-easingElastic) forwards;
         }
 
-        /* Keyframes fluidos */
         @keyframes unavRevealSmooth {
-            0% {
-                transform: translateY(120%);
-                opacity: 0;
-            }
-            100% {
-                transform: translateY(0);
-                opacity: 1;
-            }
+            0% { transform: translateY(120%); opacity: 0; }
+            100% { transform: translateY(0); opacity: 1; }
         }
 
-        /* Medias queries para la tipografía del titular */
         .unav-heroEditorial-title { font-size: var(--unav-fontSize200); margin: 0; }
         
-        /* Contenedor de la imagen Hero */
         .unav-heroEditorial-imageWrapper {
             width: 100%;
             border-radius: var(--unav-radius-none);
             overflow: hidden;
-            /* REFACTOR MÓVIL: Hacemos que la imagen sea más inmersiva en pantallas pequeñas */
             margin-bottom: var(--unav-spacing-xs);
         }
         
         .unav-heroEditorial-imageWrapper img {
             width: 100%;
             height: auto;
-            /* max-height eliminado por defecto para móviles */
             object-fit: cover;
             display: block;
         }
 
-        /* Componente: Cita Destacada (Pull Quote) */
         .unav-pullquote {
             border-left: 4px solid var(--unav-rojo-500);
             padding-left: var(--unav-spacing-lg);
@@ -93,7 +79,6 @@
            REFACTOR MÓVIL (Acordeón a Sticky Bar)
            ========================================== */
         @media (max-width: 767.98px) {
-            /* MÓVIL: Pie de foto más pegado y apilado */
             .unav-heroCaptionMobile {
                 display: flex;
                 flex-direction: column;
@@ -105,26 +90,30 @@
                 margin-top: 2px;
             }
             
-            /* MÓVIL: Barra de compartir fija en la parte inferior */
+            /* MÓVIL: Barra de compartir fija blindada contra dispositivos físicos */
             .unav-shareStickyMobile {
                 position: fixed;
                 bottom: 0;
                 left: 0;
+                right: 0;
                 width: 100%;
                 background-color: var(--unav-bg-surface);
                 border-top: 1px solid var(--unav-grey-200);
-                padding: var(--unav-spacing-sm) var(--unav-spacing-md);
-                z-index: var(--unav-zIndex-sticky);
+                /* PROTECCIÓN FÍSICA: Respetamos la barra de navegación táctil del móvil (Notch/Gestures) */
+                padding: var(--unav-spacing-sm) var(--unav-spacing-md) calc(var(--unav-spacing-sm) + env(safe-area-inset-bottom, 0px)) !important;
+                /* ELEVACIÓN: Usamos nivel Overlay para sobreescribir cualquier stacking context de Bootstrap */
+                z-index: var(--unav-zIndex-overlay) !important;
                 box-shadow: 0 -4px 10px rgba(0,0,0,0.05);
                 margin: 0 !important; 
+                /* ACELERACIÓN HARDWARE: Obliga a Android a dibujar esta capa de forma independiente */
+                transform: translateZ(0);
+                -webkit-transform: translateZ(0);
             }
             
-            /* Ocultamos solo el botón del acordeón */
             .unav-shareStickyMobile .unav-accordionHeader {
                 display: none !important;
             }
 
-            /* LA SOLUCIÓN: Forzamos la apertura del panel anulando el max-height 0 */
             .unav-shareStickyMobile .unav-accordionPanel {
                 display: block !important;
                 max-height: none !important;
@@ -132,14 +121,12 @@
                 background-color: transparent !important;
             }
 
-            /* Reseteamos el contenedor interno para limpieza visual */
             .unav-shareStickyMobile .unav-accordionGroup,
             .unav-shareStickyMobile .unav-accordionItem {
                 border: none;
                 width: 100%;
             }
 
-            /* Colocamos los botones en horizontal y centrados */
             .unav-shareStickyMobile .unav-accordionInner {
                 display: flex !important;
                 flex-direction: row !important;
@@ -147,9 +134,9 @@
                 padding: 0 !important;
             }
             
-            /* Damos un margen base al body para que la noticia no quede oculta bajo la barra */
+            /* Damos margen base para que el texto no quede sepultado por la barra flotante */
             body {
-                padding-bottom: 80px;
+                padding-bottom: calc(80px + env(safe-area-inset-bottom, 0px));
             }
         }
 
@@ -157,12 +144,10 @@
         @media (min-width: 768px) {
             .unav-heroEditorial-title { font-size: var(--unav-fontSize300); }
             .unav-heroEditorial-imageWrapper img { max-height: 600px; }
-            /* En escritorio la barra vuelve a su estado normal de acordeón */
-            .unav-shareStickyMobile .unav-accordionInner {
-                 display: inherit; 
-            }
+            .unav-shareStickyMobile .unav-accordionInner { display: inherit; }
         }
-    </style>
+    </style>    
+    
 </head>
 <body class="unav-font-primary unav-weight-regular unav-text-1125">
 
@@ -180,16 +165,16 @@
         </div>
     </nav>
 
-    <main class="container-lg">
+    <main class="container">
         
-        <article class="container unav-heroEditorial mb-2" style="border-color: var(--unav-grey-200) !important;">
+        <article class="unav-heroEditorial" style="border-color: var(--unav-grey-200) !important;">
             
             <!-- HEADER (12 COLUMNAS CENTRADO) -->
             <header class="row mb-2">
                 <div class="col-12 text-center">
                     
                     <!-- ETIQUETAS ALINEADAS AL CENTRO -->
-                    <div class="d-flex justify-content-center flex-wrap" style="gap: var(--unav-spacing-sm); margin-bottom: var(--unav-spacing-md);">
+                    <div class="d-flex justify-content-center flex-wrap" style="gap: var(--unav-spacing-sm); margin-bottom: var(--unav-spacing-sm);">
                         <span class="unav-tag unav-tagRojo">Facultad de Derecho</span>
                         <span class="unav-tag unav-tagBlackInverso">Sociedad y Comunicación</span>                        
                     </div>
