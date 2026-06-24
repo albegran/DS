@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 <!DOCTYPE html>
 <html lang="es">
 <head>
@@ -39,7 +40,7 @@
             <h1 class="unav-font-primary unav-weight-medium unav-text-200" style="color: var(--unav-black-900); margin-bottom: var(--unav-spacing-sm) !important; letter-spacing: var(--unav-trackingTight);">Tarjetas</h1>
         </header>
 
-        <section class="unav-card unav-cardSolid" style="margin-bottom: var(--unav-spacing-xl);">
+        <section class="" style="margin-bottom: var(--unav-spacing-xl);">
             <h2 class="unav-font-primary unav-weight-bold unav-text-150" style="padding-bottom: var(--unav-spacing-sm); margin-bottom: var(--unav-spacing-xl); color: var(--unav-black-900); letter-spacing: var(--unav-trackingNormal);">1. Variante Flotante (Icono Superior)</h2>
             <p class="unav-font-primary unav-text-100 mb-4" style="color: var(--unav-grey-600); letter-spacing: var(--unav-trackingNormal);">Uso de <code>.unav-cardFloating</code>. Ideal para listados extensos de servicios o facultades.</p>
             
@@ -152,7 +153,7 @@
             </div>
         </section>
 
-        <section class="unav-card unav-cardSolid" style="margin-bottom: var(--unav-spacing-xl);">
+        <section class="" style="margin-bottom: var(--unav-spacing-xl);">
             <h2 class="unav-font-primary unav-weight-bold unav-text-150" style="padding-bottom: var(--unav-spacing-sm); margin-bottom: var(--unav-spacing-xl); color: var(--unav-black-900); letter-spacing: var(--unav-trackingNormal);">2. Variante Sólida (Icono Interior)</h2>
             <p class="unav-font-primary unav-text-100 mb-4" style="color: var(--unav-grey-600); letter-spacing: var(--unav-trackingNormal);">Uso de <code>.unav-cardSolid</code>. Integra el icono dentro del cuerpo y permite fondos oscuros fluidos con <code>.unav-cardDark</code>.</p>
             
@@ -263,7 +264,7 @@
             </div>
         </section>
 
-        <section class="unav-card unav-cardSolid" style="margin-bottom: var(--unav-spacing-xl);">
+        <section class="" style="margin-bottom: var(--unav-spacing-xl);">
             <h2 class="unav-font-primary unav-weight-bold unav-text-150" style="padding-bottom: var(--unav-spacing-sm); margin-bottom: var(--unav-spacing-xl); color: var(--unav-black-900); letter-spacing: var(--unav-trackingNormal);">3. Variante Multimedia</h2>
             <p class="unav-font-primary unav-text-100 mb-4" style="color: var(--unav-grey-600); letter-spacing: var(--unav-trackingNormal);">Uso de <code>.unav-cardMedia</code>. Soporta montajes tipo Overlay (texto sobre imagen) o Standard (texto bajo imagen).</p>
             
@@ -625,4 +626,638 @@
         });
     </script>
 </body>
+=======
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Tarjetas Modulares (Cards) | Design System UNAV</title>
+    
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.1/font/bootstrap-icons.css">    
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@24,400,0,0" />
+
+    <link rel="stylesheet" href="unav-styles.css">  
+
+    <!-- HOTFIX DS UNAV 2.0: Parche temporal para solucionar el bug de especificidad !important en el CSS maestro -->
+    <style>
+        .unav-cardDark .unav-botonSecundario:hover {
+            color: var(--unav-botonTextHover, var(--unav-black-900)) !important;
+        }
+    </style>
+</head>
+<body class="unav-font-primary unav-weight-regular unav-text-1125">
+
+    <nav style="background-color: var(--unav-bg-surface); border-bottom: 1px solid var(--unav-grey-200); padding: var(--unav-spacing-md) 0; position: sticky; top: 0; z-index: var(--unav-zIndex-sticky);">
+        <div class="container-lg d-flex justify-content-between align-items-center position-relative">            
+            <div>
+                <a href="indice.html" class="unav-boton unav-botonSecundario">
+                    <i class="bi bi-arrow-left unav-botonIcono" aria-hidden="true"></i>
+                    <span class="d-none d-md-inline">Volver al Índice</span>
+                </a>
+            </div>    
+            <span class="unav-font-primary unav-weight-bold unav-text-125 m-0 position-absolute start-50 translate-middle-x text-nowrap" style="color: var(--unav-rojo-500); line-height: 1;">
+                Design System UNAV
+            </span>    
+        </div>
+    </nav>
+
+    <main class="container-lg">
+        
+        <header style="text-align: center; margin: var(--unav-spacing-xl) var(--unav-spacing-xl);">
+            <h1 class="unav-font-primary unav-weight-medium unav-text-200" style="color: var(--unav-black-900); margin-bottom: var(--unav-spacing-sm) !important; letter-spacing: var(--unav-trackingTight);">Tarjetas</h1>
+        </header>
+
+        <section class="unav-card unav-cardSolid" style="margin-bottom: var(--unav-spacing-xl);">
+            <h2 class="unav-font-primary unav-weight-bold unav-text-150" style="padding-bottom: var(--unav-spacing-sm); margin-bottom: var(--unav-spacing-xl); color: var(--unav-black-900); letter-spacing: var(--unav-trackingNormal);">1. Variante Flotante (Icono Superior)</h2>
+            <p class="unav-font-primary unav-text-100 mb-4" style="color: var(--unav-grey-600); letter-spacing: var(--unav-trackingNormal);">Uso de <code>.unav-cardFloating</code>. Ideal para listados extensos de servicios o facultades.</p>
+            
+            <h4 class="unav-font-primary unav-weight-bold unav-text-125 mt-4 mb-3" style="color: var(--unav-black-800); letter-spacing: var(--unav-trackingNormal);">Alineación Izquierda</h4>
+            <div class="row g-4 mb-5">
+                <div class="col-12 col-md-4">
+                    <article class="unav-card unav-cardFloating unav-cardAlignLeft unav-efectoElevacion unav-efectoEntradaOculto" style="background-color: var(--unav-rojo-100);">
+                        <div class="unav-cardIconFloating" style="background-color: var(--unav-rojo-600); border-color: var(--unav-rojo-100);">
+                            <span class="material-symbols-outlined">monitor_heart</span>
+                        </div>
+                        <div class="unav-cardBody p-0">
+                            <div class="unav-cardTags">
+                                <span class="unav-tag unav-tagRojo">Salud</span>
+                                <span class="unav-tag unav-tagBlueDark">Grado</span>
+                            </div>
+                            <h4 class="unav-cardTitle">Enfermería Avanzada</h4>
+                            <p class="unav-cardText">Desarrolla habilidades clínicas de vanguardia en nuestro centro de simulación médica internacional.</p>
+                            <div class="unav-cardAction">
+                                <a href="#" class="unav-enlaceFlecha" style="--unav-enlaceColor: var(--unav-rojo-800);">
+                                    <span class="unav-arrowWrapper"><span class="unav-arrow"></span><span class="unav-arrowClone"></span></span><span>Ver Programa</span>
+                                </a>
+                            </div>
+                        </div>
+                    </article>
+                </div>
+
+                <div class="col-12 col-md-4">
+                    <article class="unav-card unav-cardFloating unav-cardAlignLeft unav-efectoElevacion unav-efectoEntradaOculto" style="background-color: var(--unav-b-dark-100);">
+                        <div class="unav-cardIconFloating" style="background-color: var(--unav-b-dark-600); border-color: var(--unav-b-dark-100);">
+                            <span class="material-symbols-outlined">language</span>
+                        </div>
+                        <div class="unav-cardBody p-0">
+                            <div class="unav-cardTags">
+                                <span class="unav-tag unav-tagBlueDark">Internacional</span>
+                            </div>
+                            <h4 class="unav-cardTitle">Relaciones Globales</h4>
+                            <p class="unav-cardText">Programas de intercambio y convenios en los 5 continentes para impulsar tu carrera sin fronteras.</p>
+                            <div class="unav-cardAction">
+                                <a href="#" class="unav-enlaceFlecha" style="--unav-enlaceColor: var(--unav-b-dark-800);">
+                                    <span class="unav-arrowWrapper"><span class="unav-arrow"></span><span class="unav-arrowClone"></span></span><span>Descubrir Destinos</span>
+                                </a>
+                            </div>
+                        </div>
+                    </article>
+                </div>
+
+                <div class="col-12 col-md-4">
+                    <article class="unav-card unav-cardFloating unav-cardAlignLeft unav-efectoElevacion unav-efectoEntradaOculto" style="background-color: var(--unav-moss-100);">
+                        <div class="unav-cardIconFloating" style="background-color: var(--unav-moss-600); border-color: var(--unav-moss-100);">
+                            <span class="material-symbols-outlined">eco</span>
+                        </div>
+                        <div class="unav-cardBody p-0">
+                            <div class="unav-cardTags">
+                                <span class="unav-tag unav-tagMoss">Sostenibilidad</span>
+                            </div>
+                            <h4 class="unav-cardTitle">Campus Verde</h4>
+                            <p class="unav-cardText">Participa en proyectos de integración ecológica e investigación medioambiental aplicada.</p>
+                            <div class="unav-cardAction">
+                                <a href="#" class="unav-enlaceFlecha" style="--unav-enlaceColor: var(--unav-moss-800);">
+                                    <span class="unav-arrowWrapper"><span class="unav-arrow"></span><span class="unav-arrowClone"></span></span><span>Iniciativas</span>
+                                </a>
+                            </div>
+                        </div>
+                    </article>
+                </div>
+            </div>
+
+            <h4 class="unav-font-primary unav-weight-bold unav-text-125 mt-4 mb-3" style="color: var(--unav-black-800); letter-spacing: var(--unav-trackingNormal);">Alineación Centrada</h4>
+            <div class="row g-4 justify-content-center">
+                <div class="col-12 col-md-6">
+                    <article class="unav-card unav-cardFloating unav-cardAlignCenter unav-efectoElevacion unav-efectoEntradaOculto" style="background-color: var(--unav-purple-100);">
+                        <div class="unav-cardIconFloating" style="background-color: var(--unav-purple-600); border-color: var(--unav-purple-100);">
+                            <span class="material-symbols-outlined">psychology</span>
+                        </div>
+                        <div class="unav-cardBody p-0">
+                            <div class="unav-cardTags">
+                                <span class="unav-tag unav-tagPurple">Máster</span>
+                                <span class="unav-tag unav-tagOrange">Online</span>
+                            </div>
+                            <h4 class="unav-cardTitle">Psicopedagogía Digital</h4>
+                            <p class="unav-cardText">Lidera el cambio educativo mediante el uso de nuevas tecnologías y el entendimiento del comportamiento del estudiante.</p>
+                            <div class="unav-cardAction">
+                                <a href="#" class="unav-enlaceFlecha" style="--unav-enlaceColor: var(--unav-purple-800);">
+                                    <span class="unav-arrowWrapper"><span class="unav-arrow"></span><span class="unav-arrowClone"></span></span><span>Solicitar Admisión</span>
+                                </a>
+                            </div>
+                        </div>
+                    </article>
+                </div>
+
+                <div class="col-12 col-md-6">
+                    <article class="unav-card unav-cardFloating unav-cardAlignCenter unav-efectoElevacion unav-efectoEntradaOculto" style="background-color: var(--unav-orange-100);">
+                        <div class="unav-cardIconFloating" style="background-color: var(--unav-orange-600); border-color: var(--unav-orange-100);">
+                            <span class="material-symbols-outlined">architecture</span>
+                        </div>
+                        <div class="unav-cardBody p-0">
+                            <div class="unav-cardTags">
+                                <span class="unav-tag unav-tagOrange">Arquitectura</span>
+                            </div>
+                            <h4 class="unav-cardTitle">Diseño de Espacios</h4>
+                            <p class="unav-cardText">Combina el diseño técnico riguroso con la visión humanista para crear espacios que mejoren la calidad de vida.</p>
+                            <div class="unav-cardAction">
+                                <a href="#" class="unav-enlaceFlecha" style="--unav-enlaceColor: var(--unav-orange-800);">
+                                    <span class="unav-arrowWrapper"><span class="unav-arrow"></span><span class="unav-arrowClone"></span></span><span>Ver Facultad</span>
+                                </a>
+                            </div>
+                        </div>
+                    </article>
+                </div>
+            </div>
+        </section>
+
+        <section class="unav-card unav-cardSolid" style="margin-bottom: var(--unav-spacing-xl);">
+            <h2 class="unav-font-primary unav-weight-bold unav-text-150" style="padding-bottom: var(--unav-spacing-sm); margin-bottom: var(--unav-spacing-xl); color: var(--unav-black-900); letter-spacing: var(--unav-trackingNormal);">2. Variante Sólida (Icono Interior)</h2>
+            <p class="unav-font-primary unav-text-100 mb-4" style="color: var(--unav-grey-600); letter-spacing: var(--unav-trackingNormal);">Uso de <code>.unav-cardSolid</code>. Integra el icono dentro del cuerpo y permite fondos oscuros fluidos con <code>.unav-cardDark</code>.</p>
+            
+            <h4 class="unav-font-primary unav-weight-bold unav-text-125 mt-4 mb-3" style="color: var(--unav-black-800); letter-spacing: var(--unav-trackingNormal);">Alineación Izquierda (Modos Claro y Oscuro)</h4>
+            <div class="row g-4 mb-5">
+                <div class="col-12 col-md-4">
+                    <article class="unav-card unav-cardSolid unav-cardAlignLeft unav-efectoElevacion unav-efectoEntradaOculto">
+                        <div class="unav-cardBody p-0">
+                            <div class="unav-cardIconInner" style="background-color: var(--unav-rojo-100); color: var(--unav-rojo-600);">
+                                <span class="material-symbols-outlined">medical_services</span>
+                            </div>
+                            <div class="unav-cardTags">
+                                <span class="unav-tag unav-tagRojo">Salud</span>
+                            </div>
+                            <h4 class="unav-cardTitle">Facultad de Medicina</h4>
+                            <p class="unav-cardText">Referente internacional en formación médica con una metodología centrada en el paciente y la investigación.</p>
+                            <div class="unav-cardAction">
+                                <a href="#" class="unav-boton unav-botonSecundario" style="--unav-botonColorSource: var(--unav-rojo-800);">
+                                    <span>VER GRADO</span>
+                                </a>
+                            </div>
+                        </div>
+                    </article>
+                </div>
+
+                <div class="col-12 col-md-4">
+                    <article class="unav-card unav-cardSolid unav-cardAlignLeft unav-cardDark unav-efectoElevacion unav-efectoEntradaOculto" style="background-color: var(--unav-b-dark-800);">
+                        <div class="unav-cardBody p-0">
+                            <div class="unav-cardIconInner">
+                                <span class="material-symbols-outlined">biotech</span>
+                            </div>
+                            <div class="unav-cardTags">
+                                <span class="unav-tag unav-tagBlueLight">Ingeniería</span>
+                            </div>
+                            <h4 class="unav-cardTitle">Biomedicina</h4>
+                            <p class="unav-cardText">Aplica principios de ingeniería al campo de la salud para desarrollar soluciones tecnológicas en laboratorios premium.</p>
+                            <div class="unav-cardAction">
+                                <!-- Botón secundario oficial usando la variante Blanco para resetear el color source -->
+                                <a href="#" class="unav-boton unav-botonSecundario unav-botonSecundarioBlanco" style="--unav-botonTextHover: var(--unav-b-dark-800);">
+                                    <span>EXPLORAR</span>
+                                </a>
+                            </div>
+                        </div>
+                    </article>
+                </div>
+
+                <div class="col-12 col-md-4">
+                    <article class="unav-card unav-cardSolid unav-cardAlignLeft unav-efectoElevacion unav-efectoEntradaOculto">
+                        <div class="unav-cardBody p-0">
+                            <div class="unav-cardIconInner" style="background-color: var(--unav-moss-100); color: var(--unav-moss-600);">
+                                <span class="material-symbols-outlined">agriculture</span>
+                            </div>
+                            <div class="unav-cardTags">
+                                <span class="unav-tag unav-tagMoss">Sostenibilidad</span>
+                            </div>
+                            <h4 class="unav-cardTitle">Gestión Ambiental</h4>
+                            <p class="unav-cardText">Lidera proyectos de impacto positivo en el entorno natural mediante la ciencia y la estrategia sostenible.</p>
+                            <div class="unav-cardAction">
+                                <a href="#" class="unav-enlaceFlecha" style="--unav-enlaceColor: var(--unav-moss-800);">
+                                    <span class="unav-arrowWrapper"><span class="unav-arrow"></span><span class="unav-arrowClone"></span></span><span>Información</span>
+                                </a>
+                            </div>
+                        </div>
+                    </article>
+                </div>
+            </div>
+
+            <h4 class="unav-font-primary unav-weight-bold unav-text-125 mt-4 mb-3" style="color: var(--unav-black-800); letter-spacing: var(--unav-trackingNormal);">Alineación Centrada (Modos Oscuro y Claro)</h4>
+            <div class="row g-4 justify-content-center">
+                <div class="col-12 col-md-6">
+                    <article class="unav-card unav-cardSolid unav-cardAlignCenter unav-cardDark unav-efectoElevacion unav-efectoEntradaOculto" style="background-color: var(--unav-purple-800);">
+                        <div class="unav-cardBody p-0">
+                            <div class="unav-cardIconInner">
+                                <span class="material-symbols-outlined">psychology</span>
+                            </div>
+                            <div class="unav-cardTags">
+                                <span class="unav-tag unav-tagPurple">Máster</span>
+                            </div>
+                            <h4 class="unav-cardTitle">Psicología Aplicada</h4>
+                            <p class="unav-cardText">Un enfoque integral para entender el comportamiento humano en entornos complejos. Desarrolla competencias en terapia.</p>
+                            <div class="unav-cardAction">
+                                <a href="#" class="unav-enlaceFlecha" style="--unav-enlaceColor: var(--unav-text-inverse);">
+                                    <span class="unav-arrowWrapper"><span class="unav-arrow"></span><span class="unav-arrowClone"></span></span><span>Ver Postgrado</span>
+                                </a>
+                            </div>
+                        </div>
+                    </article>
+                </div>
+
+                <div class="col-12 col-md-6">
+                    <article class="unav-card unav-cardSolid unav-cardAlignCenter unav-efectoElevacion unav-efectoEntradaOculto">
+                        <div class="unav-cardBody p-0">
+                            <div class="unav-cardIconInner" style="background-color: var(--unav-orange-100); color: var(--unav-orange-600);">
+                                <span class="material-symbols-outlined">palette</span>
+                            </div>
+                            <div class="unav-cardTags">
+                                <span class="unav-tag unav-tagOrange">Artes</span>
+                            </div>
+                            <h4 class="unav-cardTitle">Diseño Creativo</h4>
+                            <p class="unav-cardText">Potencia tu talento artístico con herramientas digitales avanzadas y una visión crítica del diseño contemporáneo.</p>
+                            <div class="unav-cardAction">
+                                <a  href="#" class="unav-boton unav-botonSecundario" style="--unav-botonColorSource: var(--unav-orange-800);">
+                                    <span>VER GALERÍA</span>
+                                </a>
+                            </div>
+                        </div>
+                    </article>
+                </div>
+            </div>
+        </section>
+
+        <section class="unav-card unav-cardSolid" style="margin-bottom: var(--unav-spacing-xl);">
+            <h2 class="unav-font-primary unav-weight-bold unav-text-150" style="padding-bottom: var(--unav-spacing-sm); margin-bottom: var(--unav-spacing-xl); color: var(--unav-black-900); letter-spacing: var(--unav-trackingNormal);">3. Variante Multimedia</h2>
+            <p class="unav-font-primary unav-text-100 mb-4" style="color: var(--unav-grey-600); letter-spacing: var(--unav-trackingNormal);">Uso de <code>.unav-cardMedia</code>. Soporta montajes tipo Overlay (texto sobre imagen) o Standard (texto bajo imagen).</p>
+            
+            <h4 class="unav-font-primary unav-weight-bold unav-text-125 mt-4 mb-3" style="color: var(--unav-black-800); letter-spacing: var(--unav-trackingNormal);">Visualización: Texto sobre Imagen (Overlay)</h4>
+            <div class="row g-4 mb-5">
+                <div class="col-12 col-lg-4 col-md-6">
+                    <article class="unav-card unav-cardMedia unav-cardAlignLeft unav-efectoElevacion unav-efectoEntradaOculto">
+                        <div class="unav-cardImageContainer unav-efectoZoomImagen">
+                            <img src="https://picsum.photos/id/180/800/500" class="unav-cardImg" alt="Investigación">
+                            <div class="unav-cardOverlay">
+                                <div class="unav-cardTags">
+                                    <span class="unav-tag" style="background: rgba(255,255,255,0.25); color: var(--unav-text-inverse); backdrop-filter: blur(8px);">Salud</span>
+                                </div>
+                                <h4 class="unav-cardTitle">Facultad de Medicina</h4>
+                            </div>
+                        </div>
+                        <div class="unav-cardBody">
+                            <p class="unav-cardText">Prácticas clínicas desde el primer día en un entorno de excelencia internacional y tecnología punta.</p>
+                            <div class="unav-cardAction">
+                                <a href="#" class="unav-boton unav-botonPrimario unav-botonHoverInnerBorder" style="--unav-botonBg: var(--unav-rojo-600); --unav-botonText: var(--unav-text-inverse); --unav-botonBorder: var(--unav-rojo-600); --unav-botonHoverBg: var(--unav-rojo-800);">
+                                    VER GRADO
+                                </a>
+                            </div>
+                        </div>
+                    </article>
+                </div>
+
+                <div class="col-12 col-lg-4 col-md-6">
+                    <article class="unav-card unav-cardMedia unav-cardAlignCenter unav-cardDark unav-efectoElevacion unav-efectoEntradaOculto" style="background-color: var(--unav-b-dark-800);">
+                        <div class="unav-cardImageContainer unav-efectoZoomImagen">
+                            <img src="https://picsum.photos/id/122/800/500" class="unav-cardImg" alt="Arquitectura">
+                            <div class="unav-cardOverlay">
+                                <div class="unav-cardTags">
+                                    <span class="unav-tag" style="background: rgba(255,255,255,0.25); color: var(--unav-text-inverse); backdrop-filter: blur(8px);">Diseño</span>
+                                </div>
+                                <h4 class="unav-cardTitle">Escuela de Arquitectura</h4>
+                            </div>
+                        </div>
+                        <div class="unav-cardBody">
+                            <p class="unav-cardText">Crea espacios que transforman la vida de las personas uniendo técnica, arte y visión humanista.</p>
+                            <div class="unav-cardAction">
+                                <a href="#" class="unav-boton unav-botonSecundario unav-botonSecundarioBlanco" style="--unav-botonTextHover: var(--unav-b-dark-800);">
+                                    <span>MÁS INFO</span>
+                                </a>
+                            </div>
+                        </div>
+                    </article>
+                </div>
+
+                <div class="col-12 col-lg-4 col-md-6">
+                    <article class="unav-card unav-cardMedia unav-cardAlignLeft unav-efectoElevacion unav-efectoEntradaOculto">
+                        <div class="unav-cardImageContainer unav-efectoZoomImagen">
+                            <img src="https://picsum.photos/id/119/800/500" class="unav-cardImg" alt="Empresa">
+                            <div class="unav-cardOverlay">
+                                <div class="unav-cardTags">
+                                    <span class="unav-tag" style="background: rgba(255,255,255,0.25); color: var(--unav-text-inverse); backdrop-filter: blur(8px);">Negocios</span>
+                                </div>
+                                <h4 class="unav-cardTitle">School of Economics</h4>
+                            </div>
+                        </div>
+                        <div class="unav-cardBody">
+                            <p class="unav-cardText">Lidera el cambio global con una visión ética y estratégica de la economía y la empresa.</p>
+                            <div class="unav-cardAction">
+                                <a href="#" class="unav-enlaceFlecha" style="--unav-enlaceColor: var(--unav-b-dark-800);">
+                                    <span class="unav-arrowWrapper"><span class="unav-arrow"></span><span class="unav-arrowClone"></span></span><span>Ver Facultad</span>
+                                </a>
+                            </div>
+                        </div>
+                    </article>
+                </div>
+            </div>
+
+            <h4 class="unav-font-primary unav-weight-bold unav-text-125 mt-4 mb-3" style="color: var(--unav-black-800); letter-spacing: var(--unav-trackingNormal);">Visualización: Texto debajo de Imagen (Standard)</h4>
+            <div class="row g-4 mb-5">
+                <div class="col-12 col-lg-4 col-md-6">
+                    <article class="unav-card unav-cardMedia unav-cardDark unav-cardAlignLeft unav-efectoElevacion unav-efectoEntradaOculto" style="background-color: var(--unav-moss-800);">
+                        <div class="unav-cardImageContainer unav-efectoZoomImagen">
+                            <img src="https://picsum.photos/id/200/800/500" class="unav-cardImg" alt="Campus">
+                        </div>
+                        <div class="unav-cardBody">
+                            <div class="unav-cardTags">
+                                <span class="unav-tag unav-tagMoss">Campus</span>
+                                <span class="unav-tag unav-tagWhite">Pamplona</span>
+                            </div>
+                            <h4 class="unav-cardTitle">Vida Universitaria</h4>
+                            <p class="unav-cardText">Descubre todas las actividades culturales, deportivas y sociales que ofrece nuestro campus.</p>
+                            <div class="unav-cardAction">
+                                <a href="#" class="unav-boton unav-botonPrimario unav-botonHoverInnerBorder" style="--unav-botonBg: var(--unav-text-inverse); --unav-botonText: var(--unav-moss-800); --unav-botonBorder: var(--unav-text-inverse); --unav-botonHoverBg: rgba(255,255,255,0.9); --unav-botonHoverText: var(--unav-moss-800);">
+                                    SOLICITAR INFO
+                                </a>
+                            </div>
+                        </div>
+                    </article>
+                </div>
+
+                <div class="col-12 col-lg-4 col-md-6">
+                    <article class="unav-card unav-cardMedia unav-cardAlignCenter unav-efectoElevacion unav-efectoEntradaOculto">
+                        <div class="unav-cardImageContainer unav-efectoZoomImagen">
+                            <img src="https://picsum.photos/id/149/800/500" class="unav-cardImg" alt="Graduación">
+                        </div>
+                        <div class="unav-cardBody">
+                            <div class="unav-cardTags">
+                                <span class="unav-tag unav-tagPurple">Postgrado</span>
+                            </div>
+                            <h4 class="unav-cardTitle">Másteres y Doctorados</h4>
+                            <p class="unav-cardText">Especialízate con programas de postgrado diseñados para profesionales que buscan impacto real.</p>
+                            <div class="unav-cardAction">
+                                <a  href="#" class="unav-boton unav-botonSecundario" style="--unav-botonColorSource: var(--unav-purple-800);">
+                                    <span>CATÁLOGO</span>
+                                </a>
+                            </div>
+                        </div>
+                    </article>
+                </div>
+
+                <div class="col-12 col-lg-4 col-md-6">
+                    <article class="unav-card unav-cardMedia unav-cardDark unav-cardAlignLeft unav-efectoElevacion unav-efectoEntradaOculto" style="background-color: var(--unav-orange-800);">
+                        <div class="unav-cardImageContainer unav-efectoZoomImagen">
+                            <img src="https://picsum.photos/id/48/800/500" class="unav-cardImg" alt="Equipo">
+                        </div>
+                        <div class="unav-cardBody">
+                            <div class="unav-cardTags">
+                                <span class="unav-tag unav-tagOrange">Talento</span>
+                            </div>
+                            <h4 class="unav-cardTitle">Carreras Profesionales</h4>
+                            <p class="unav-cardText">Acompañamos a nuestros alumnos en su salto al mundo laboral con convenios en las mejores empresas.</p>
+                            <div class="unav-cardAction">
+                                <a href="#" class="unav-enlaceFlecha" style="--unav-enlaceColor: var(--unav-text-inverse);">
+                                    <span class="unav-arrowWrapper"><span class="unav-arrow"></span><span class="unav-arrowClone"></span></span><span>Ver Convenios</span>
+                                </a>
+                            </div>
+                        </div>
+                    </article>
+                </div>
+            </div>
+
+            <h4 class="unav-font-primary unav-weight-bold unav-text-125 mt-4 mb-3" style="color: var(--unav-black-800); letter-spacing: var(--unav-trackingNormal);">Visualización: Grados, Másteres, Doctorados</h4>
+            <div class="row g-4">
+                
+                <!-- Tarjeta 1: Grado (Ingeniería/Técnica) -->
+                <div class="col-12 col-lg-4 col-md-6">
+                    <article class="unav-card unav-cardMedia unav-cardDark unav-cardAlignLeft unav-efectoElevacion unav-efectoEntradaOculto" style="background-color: var(--unav-moss-800);">
+                        <div class="unav-cardImageContainer unav-efectoZoomImagen">
+                            <img src="https://images.unsplash.com/photo-1581092334651-ddf26d9a09d0?q=80&w=800&auto=format&fit=crop" class="unav-cardImg" alt="Estudiantes en Laboratorio de Ingeniería">
+                        </div>
+                        <div class="unav-cardBody">
+                            <div class="unav-cardTags">
+                                <span class="unav-tag unav-tagMoss">Ciencias Técnicas</span>
+                                <span class="unav-tag unav-tagWhite">Campus San Sebastián</span>
+                            </div>
+                            <h4 class="unav-cardTitle">Grado en Ingeniería en Inteligencia Artificial</h4>
+                            
+                            <div class="unav-cardText">
+                                <div class="row g-2 mt-2">
+                                    <div class="col-6">
+                                        <ul class="unav-listIcon unav-listIcon--compact unav-listIcon--dark mb-0">
+                                            <li class="unav-listIconItem unav-text-085 unav-lh-snug align-items-center">
+                                                <i class="material-symbols-outlined unav-listIconIcon mt-0">school</i>
+                                                <span>Título oficial</span>
+                                            </li>
+                                            <li class="unav-listIconItem unav-text-085 unav-lh-snug align-items-center">
+                                                <i class="material-symbols-outlined unav-listIconIcon mt-0">menu_book</i>
+                                                <span>240 ECTS</span>
+                                            </li>
+                                            <li class="unav-listIconItem unav-text-085 unav-lh-snug align-items-center">
+                                                <i class="material-symbols-outlined unav-listIconIcon mt-0">calendar_today</i>
+                                                <span>4 años</span>
+                                            </li>
+                                        </ul>
+                                    </div>
+                                    <div class="col-6">
+                                        <ul class="unav-listIcon unav-listIcon--compact unav-listIcon--dark mb-0">
+                                            <li class="unav-listIconItem unav-text-085 unav-lh-snug align-items-center">
+                                                <i class="material-symbols-outlined unav-listIconIcon mt-0">group</i>
+                                                <span>Presencial</span>
+                                            </li>
+                                            <li class="unav-listIconItem unav-text-085 unav-lh-snug align-items-center">
+                                                <i class="material-symbols-outlined unav-listIconIcon mt-0">location_on</i>
+                                                <span>San Sebastián</span>
+                                            </li>
+                                            <li class="unav-listIconItem unav-text-085 unav-lh-snug align-items-center">
+                                                <i class="material-symbols-outlined unav-listIconIcon mt-0">work</i>
+                                                <span>Prácticas</span>
+                                            </li>
+                                        </ul>
+                                    </div>
+                                </div>
+                            </div>
+                            
+                            <div class="unav-cardAction mt-auto pt-3">
+                                <a href="#" class="unav-boton unav-botonSecundario unav-botonSecundarioBlanco" style="--unav-botonTextHover: var(--unav-moss-800);">
+                                    <span>VER GRADO</span>
+                                </a>
+                            </div>
+                        </div>
+                    </article>
+                </div>
+
+                <!-- Tarjeta 2: Máster (Arquitectura/Diseño) -->
+                <div class="col-12 col-lg-4 col-md-6">
+                    <article class="unav-card unav-cardMedia unav-cardDark unav-cardAlignLeft unav-efectoElevacion unav-efectoEntradaOculto" style="background-color: var(--unav-purple-800);">
+                        <div class="unav-cardImageContainer unav-efectoZoomImagen">
+                            <img src="https://images.unsplash.com/photo-1524178232363-1fb2b075b655?q=80&w=800&auto=format&fit=crop" class="unav-cardImg" alt="Clase de Arquitectura de Máster">
+                        </div>
+                        <div class="unav-cardBody">
+                            <div class="unav-cardTags">
+                                <span class="unav-tag unav-tagPurple">Postgrado</span>
+                                <span class="unav-tag unav-tagWhite">Campus de Pamplona</span>
+                            </div>
+                            <h4 class="unav-cardTitle">Máster Universitario en Diseño Arquitectónico</h4>
+                            
+                            <div class="unav-cardText">
+                                <div class="row g-2 mt-2">
+                                    <div class="col-6">
+                                        <ul class="unav-listIcon unav-listIcon--compact unav-listIcon--dark mb-0">
+                                            <li class="unav-listIconItem unav-text-085 unav-lh-snug align-items-center">
+                                                <i class="material-symbols-outlined unav-listIconIcon mt-0">school</i>
+                                                <span>Título oficial</span>
+                                            </li>
+                                            <li class="unav-listIconItem unav-text-085 unav-lh-snug align-items-center">
+                                                <i class="material-symbols-outlined unav-listIconIcon mt-0">menu_book</i>
+                                                <span>60 ECTS</span>
+                                            </li>
+                                            <li class="unav-listIconItem unav-text-085 unav-lh-snug align-items-center">
+                                                <i class="material-symbols-outlined unav-listIconIcon mt-0">calendar_today</i>
+                                                <span>1 año</span>
+                                            </li>
+                                        </ul>
+                                    </div>
+                                    <div class="col-6">
+                                        <ul class="unav-listIcon unav-listIcon--compact unav-listIcon--dark mb-0">
+                                            <li class="unav-listIconItem unav-text-085 unav-lh-snug align-items-center">
+                                                <i class="material-symbols-outlined unav-listIconIcon mt-0">computer</i>
+                                                <span>Híbrido</span>
+                                            </li>
+                                            <li class="unav-listIconItem unav-text-085 unav-lh-snug align-items-center">
+                                                <i class="material-symbols-outlined unav-listIconIcon mt-0">location_on</i>
+                                                <span>Pamplona</span>
+                                            </li>
+                                            <li class="unav-listIconItem unav-text-085 unav-lh-snug align-items-center">
+                                                <i class="material-symbols-outlined unav-listIconIcon mt-0">language</i>
+                                                <span>Bilingüe</span>
+                                            </li>
+                                        </ul>
+                                    </div>
+                                </div>
+                            </div>
+                            
+                            <div class="unav-cardAction mt-auto pt-3">
+                                <a href="#" class="unav-boton unav-botonSecundario unav-botonSecundarioBlanco" style="--unav-botonTextHover: var(--unav-purple-800);">
+                                    <span>VER MÁSTER</span>
+                                </a>
+                            </div>
+                        </div>
+                    </article>
+                </div>
+
+                <!-- Tarjeta 3: Doctorado (Ciencias/Medicina) -->
+                <div class="col-12 col-lg-4 col-md-6">
+                    <article class="unav-card unav-cardMedia unav-cardDark unav-cardAlignLeft unav-efectoElevacion unav-efectoEntradaOculto" style="background-color: var(--unav-b-dark-800);">
+                        <div class="unav-cardImageContainer unav-efectoZoomImagen">
+                            <img src="https://images.unsplash.com/photo-1532094349884-543bc11b234d?q=80&w=800&auto=format&fit=crop" class="unav-cardImg" alt="Investigador en Laboratorio de Doctorado">
+                        </div>
+                        <div class="unav-cardBody">
+                            <div class="unav-cardTags">
+                                <span class="unav-tag unav-tagBlueDark">Investigación</span>
+                                <span class="unav-tag unav-tagWhite">Centro CIMA</span>
+                            </div>
+                            <h4 class="unav-cardTitle">Doctorado en Medicina Aplicada y Biomedicina</h4>
+                            
+                            <div class="unav-cardText">
+                                <div class="row g-2 mt-2">
+                                    <div class="col-6">
+                                        <ul class="unav-listIcon unav-listIcon--compact unav-listIcon--dark mb-0">
+                                            <li class="unav-listIconItem unav-text-085 unav-lh-snug align-items-center">
+                                                <i class="material-symbols-outlined unav-listIconIcon mt-0">school</i>
+                                                <span>Doctorado</span>
+                                            </li>
+                                            <li class="unav-listIconItem unav-text-085 unav-lh-snug align-items-center">
+                                                <i class="material-symbols-outlined unav-listIconIcon mt-0">science</i>
+                                                <span>Tesis</span>
+                                            </li>
+                                            <li class="unav-listIconItem unav-text-085 unav-lh-snug align-items-center">
+                                                <i class="material-symbols-outlined unav-listIconIcon mt-0">calendar_today</i>
+                                                <span>3 a 5 años</span>
+                                            </li>
+                                        </ul>
+                                    </div>
+                                    <div class="col-6">
+                                        <ul class="unav-listIcon unav-listIcon--compact unav-listIcon--dark mb-0">
+                                            <li class="unav-listIconItem unav-text-085 unav-lh-snug align-items-center">
+                                                <i class="material-symbols-outlined unav-listIconIcon mt-0">group</i>
+                                                <span>Presencial</span>
+                                            </li>
+                                            <li class="unav-listIconItem unav-text-085 unav-lh-snug align-items-center">
+                                                <i class="material-symbols-outlined unav-listIconIcon mt-0">location_on</i>
+                                                <span>Pamplona</span>
+                                            </li>
+                                            <li class="unav-listIconItem unav-text-085 unav-lh-snug align-items-center">
+                                                <i class="material-symbols-outlined unav-listIconIcon mt-0">euro_symbol</i>
+                                                <span>Becas FPI</span>
+                                            </li>
+                                        </ul>
+                                    </div>
+                                </div>
+                            </div>
+                            
+                            <div class="unav-cardAction mt-auto pt-3">
+                                <a href="#" class="unav-boton unav-botonSecundario unav-botonSecundarioBlanco" style="--unav-botonTextHover: var(--unav-b-dark-800);">
+                                    <span>VER DOCTORADO</span>
+                                </a>
+                            </div>
+                        </div>
+                    </article>
+                </div>
+
+            </div>
+        </section>
+
+    </main>
+
+    <footer style="background-color: var(--unav-bg-surface); border-top: 1px solid var(--unav-grey-200); padding: var(--unav-spacing-lg) 0; margin-top: var(--unav-spacing-3xl);">
+        <div class="container-lg d-flex flex-column flex-md-row justify-content-between align-items-center gap-3">
+            <div style="display: flex; align-items: center; gap: var(--unav-spacing-sm);">
+                <i class="bi bi-boxes"></i>
+                <span class="unav-font-primary unav-weight-bold unav-text-1125" style="color: var(--unav-black-800);">Design System UNAV</span>
+            </div>
+            <p class="unav-font-primary unav-weight-regular unav-text-075 m-0" style="color: var(--unav-grey-500);">
+                Arquitectura OOCSS &middot; Versión 2.0 &middot; &copy; 2026
+            </p>
+        </div>
+    </footer>
+
+    <script>
+        document.addEventListener('DOMContentLoaded', () => {
+            const observerOptions = {
+                root: null,
+                rootMargin: '0px 0px -50px 0px',
+                threshold: 0.1
+            };
+
+            const unavObserver = new IntersectionObserver((entries) => {
+                entries.forEach((entry) => {
+                    if (entry.isIntersecting) {
+                        const gridParent = entry.target.closest('.row');
+                        if (gridParent) {
+                            const cardsInGrid = Array.from(gridParent.querySelectorAll('.unav-efectoEntradaOculto'));
+                            const index = cardsInGrid.indexOf(entry.target);
+
+                            setTimeout(() => {
+                                entry.target.classList.add('unav-efectoEntradaVisible');
+                            }, index * 100); 
+                        } else {
+                            entry.target.classList.add('unav-efectoEntradaVisible');
+                        }
+                        unavObserver.unobserve(entry.target);
+                    }
+                });
+            }, observerOptions);
+
+            document.querySelectorAll('.unav-efectoEntradaOculto').forEach(card => unavObserver.observe(card));
+        });
+    </script>
+</body>
+>>>>>>> 694f4971a32a3dfa1c881dec96318526fe0f055c
 </html>
