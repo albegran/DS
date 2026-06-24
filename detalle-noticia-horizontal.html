@@ -204,6 +204,35 @@
             .unav-heroEditorial-imageWrapper img { max-height: 600px; }
             .unav-shareStickyMobile .unav-accordionInner { display: inherit; }
         }
+
+        /* ==========================================
+           COMPONENTE: TOAST (Notificaciones de UI)
+           ========================================== */
+           .unav-toast {
+            position: fixed;
+            bottom: 2rem;
+            left: 50%;
+            transform: translateX(-50%) translateY(100px);
+            background-color: var(--unav-black-800);
+            color: var(--unav-text-inverse);
+            padding: var(--unav-spacing-md) var(--unav-spacing-lg);
+            border-radius: var(--unav-radius-md);
+            z-index: var(--unav-zIndex-modal);
+            opacity: 0;
+            transition: transform var(--unav-durationNormal) var(--unav-easingStandard), 
+                        opacity var(--unav-durationNormal) var(--unav-easingStandard);
+            font-family: var(--unav-fontFamilyPrimary);
+            font-size: var(--unav-fontSize085);
+            display: flex;
+            align-items: center;
+            gap: var(--unav-spacing-sm);
+            box-shadow: var(--unav-cardShadowHover);
+        }
+
+        .unav-toast.unav-isActive {
+            opacity: 1;
+            transform: translateX(-50%) translateY(0);
+        }
     </style>    
     
 </head>
@@ -225,7 +254,8 @@
 
     <main class="container">
         
-        <article class="unav-heroEditorial" style="border-color: var(--unav-grey-200) !important;">
+        <!-- ARTICLE LIMPIO: Sin data-attributes quemados -->
+        <article class="unav-heroEditorial" style="border-color: var(--unav-grey-200) !important;" id="unav-noticia-principal">
             
             <!-- HEADER (12 COLUMNAS CENTRADO) -->
             <header class="row mb-2">
@@ -253,9 +283,9 @@
                         Ante el cambio actual de las dinámicas de política exterior, el historiador militar Michael Neiberg apuesta por un entendimiento cultural profundo.
                     </p>
 
-                    <!-- FOTOGRAFÍA (Optimizada para Móvil) -->
+                    <!-- FOTOGRAFÍA (Uso de ID unav-noticia-img) -->
                     <figure class="unav-heroEditorial-imageWrapper">
-                        <img src="https://picsum.photos/id/1015/1200/800" alt="OTAN Cumbre" class="img-fluid w-100">
+                        <img src="https://picsum.photos/id/1015/1200/800" alt="OTAN Cumbre" class="img-fluid w-100" id="unav-noticia-img">
                     </figure>
 
                     <!-- LEYENDA Y AUTOR (Reordenado en Móvil) -->
@@ -424,6 +454,117 @@
                     unavPanel.style.maxHeight = !unavIsExpanded ? `${unavPanel.scrollHeight}px` : '0px';
                 });
             });
+        });
+    </script>
+
+    <!-- SCRIPT DE COMPARTIR AUTOMATIZADO -->
+    <script>
+        document.addEventListener('DOMContentLoaded', () => {
+            const article = document.querySelector('#unav-noticia-principal');
+            if (!article) return;
+
+            // AUTOMATIZACIÓN DE DATOS (Lee directamente del DOM)
+            // Extraemos el texto del titular (o el título de la página como plan B)
+            const rawTitle = document.querySelector('h1')?.textContent.trim() || document.title;
+            // Obtenemos la URL actual, limpiando posibles anclas (#) al final
+            const rawUrl = window.location.href.split('#')[0];
+
+            const shareData = {
+                title: rawTitle,
+                url: rawUrl
+            };
+
+            // 1. LÓGICA DE ESCRITORIO
+            const buttons = document.querySelectorAll('.unav-shareIconsGroup button');
+            
+            buttons.forEach(btn => {
+                const platform = btn.getAttribute('aria-label');
+                btn.addEventListener('click', () => {
+                    let shareUrl = '';
+                    switch(platform) {
+                        case 'Facebook':
+                            shareUrl = `https://www.facebook.com/sharer/sharer.php?u=${encodeURIComponent(shareData.url)}`;
+                            break;
+                        case 'X':
+                            shareUrl = `https://twitter.com/intent/tweet?url=${encodeURIComponent(shareData.url)}&text=${encodeURIComponent(shareData.title)}`;
+                            break;
+                        case 'WhatsApp':
+                            shareUrl = `https://wa.me/?text=${encodeURIComponent(shareData.title + ' ' + shareData.url)}`;
+                            break;
+                        case 'LinkedIn':
+                            shareUrl = `https://www.linkedin.com/sharing/share-offsite/?url=${encodeURIComponent(shareData.url)}`;
+                            break;
+                        case 'Copiar enlace':
+                            navigator.clipboard.writeText(shareData.url).then(() => {
+                                showToast('Enlace copiado al portapapeles');
+                            });
+                            return;
+                        case 'Enviar por email':
+                            shareUrl = `mailto:?subject=${encodeURIComponent(shareData.title)}&body=${encodeURIComponent(shareData.url)}`;
+                            break;
+                    }
+                    
+                    if (shareUrl) window.open(shareUrl, '_blank', 'width=600,height=400');
+                });
+            });
+
+            // FUNCIÓN TOAST (Componente UI Notificaciones)
+            function showToast(message) {
+                const toast = document.createElement('div');
+                toast.className = 'unav-toast';
+                toast.innerHTML = `<i class="bi bi-check-circle"></i> <span style="font-weight: var(--unav-fontWeightBold);">${message}</span>`;
+                document.body.appendChild(toast);
+                
+                setTimeout(() => toast.classList.add('unav-isActive'), 10);
+                
+                setTimeout(() => {
+                    toast.classList.remove('unav-isActive');
+                    setTimeout(() => toast.remove(), 300);
+                }, 3000);
+            }
+
+            // 2. LÓGICA MÓVIL (Web Share API con Inyección de Imagen)
+            if (navigator.share) {
+                const copyBtn = document.querySelector('[aria-label="Copiar enlace"]');
+                if (copyBtn) {
+                    copyBtn.setAttribute('aria-label', 'Compartir');
+                    copyBtn.innerHTML = '<i class="bi bi-share-fill unav-botonIcono"></i>';
+                    
+                    // Extraemos la imagen mediante su nuevo ID
+                    const imgElement = document.querySelector('#unav-noticia-img');
+
+                    copyBtn.addEventListener('click', async () => {
+                        try {
+                            let filesArray = [];
+                            
+                            // Si la imagen existe, la capturamos como blob para envío nativo
+                            if (imgElement) {
+                                const response = await fetch(imgElement.src);
+                                const blob = await response.blob();
+                                // Generamos un archivo con extensión válida (jpeg)
+                                filesArray = [new File([blob], 'imagen-noticia.jpg', { type: 'image/jpeg' })];
+                            }
+
+                            // Evaluamos si el navegador soporta enviar archivos además de texto
+                            if (navigator.canShare && navigator.canShare({ files: filesArray })) {
+                                await navigator.share({
+                                    title: shareData.title,
+                                    url: shareData.url,
+                                    files: filesArray
+                                });
+                            } else {
+                                // Si no soporta archivos, enviamos solo texto y URL
+                                await navigator.share({
+                                    title: shareData.title,
+                                    url: shareData.url
+                                });
+                            }
+                        } catch (err) {
+                            console.error('Error al compartir de forma nativa:', err);
+                        }
+                    });
+                }
+            }
         });
     </script>
 </body>
