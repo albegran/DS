@@ -2,7 +2,7 @@
    COMPONENTE: LISTA DESCRIPTIVA (.unav-descList)
    ========================================== */
 
-   .unav-descList {
+.unav-descList {
     margin: 0;
     padding: 0;
     display: flex;
@@ -36,7 +36,7 @@
     align-items: center;
     /* REFACTOR: Consumo de Tokens de Espaciado (8px default) */
     gap: var(--unav-descTermGap, var(--unav-spacing-sm));
-    font-size: var(--unav-fontSize125, 1.125rem); /* Uso de escala tipográfica */
+    font-size: var(--unav-fontSize100, 1rem); /* Uso de escala tipográfica */
     font-weight: var(--unav-fontWeightBold);
     /* REFACTOR: Consumo de Tokens de Espaciado (4px default) */
     margin-bottom: var(--unav-descTermMarginBottom, var(--unav-spacing-xs));
@@ -46,7 +46,7 @@
 
 /* Icono (Si existe) */
 .unav-descIcon {
-    font-size: var(--unav-iconSizeMd);
+    font-size: var(--unav-iconSizeSm);
     display: flex;
     align-items: center;
     justify-content: center;
