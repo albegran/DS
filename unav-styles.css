@@ -317,6 +317,9 @@
   --unav-iconSizeMd: 1.25rem; /* ~20px: Botón Primario / Navegación */
   --unav-iconSizeLg: 1.5rem; /* ~24px: UI genérica */
   --unav-iconSizeXl: 2rem; /* ~32px: Destacados / Feature Box */
+  --unav-iconSizeXXl: 3rem; /* 48~px: */
+  --unav-iconSizeBigger: 4rem; /* ~64px: */ 
+  --unav-iconSizeBiggest: 5rem; /* ~80px: */
   --unav-iconStrokeWeight: 1.5px; /* Sincronizado con bordes de interfaz */
   /* ==========================================
      4. TOKENS COMPONENTE: BOTONES
@@ -997,21 +1000,13 @@ body {
    COMPONENTE: ICONOGRAFÍA UNAV
    ========================================== */
 /* 1. ESCALA DE TAMAÑOS (Utilitarias) */
-.unav-icono-sm {
-  font-size: var(--unav-iconSizeSm);
-}
-
-.unav-icono-md {
-  font-size: var(--unav-iconSizeMd);
-}
-
-.unav-icono-lg {
-  font-size: var(--unav-iconSizeLg);
-}
-
-.unav-icono-xl {
-  font-size: var(--unav-iconSizeXl);
-}
+.unav-icono-sm { font-size: var(--unav-iconSizeSm); }
+.unav-icono-md { font-size: var(--unav-iconSizeMd); }
+.unav-icono-lg { font-size: var(--unav-iconSizeLg); }
+.unav-icono-xl { font-size: var(--unav-iconSizeXl); }
+.unav-icono-xxl { font-size: var(--unav-iconSizeXXl); }
+.unav-icono-bigger { font-size: var(--unav-iconSizeBigger); }
+.unav-icono-biggest { font-size: var(--unav-iconSizeBiggest); }
 
 /* 2. COMPONENTE: CAJA DE ICONO DESTACADO (Feature Box) */
 .unav-iconoDestacado {
@@ -1067,6 +1062,19 @@ body {
   width: 1em; /* Hereda el tamaño de la fuente del contenedor (.unav-icono-xl, etc.) */
   height: 1em;
   fill: currentColor;
+}
+
+/* Nuevo componente de icono personalizado (Átomo OOCSS) PARA LIBRERIA DE ICONOS UNAV */
+.unav-icon-custom {
+  display: inline-block;
+
+  width: 1em; /* Se adaptará dinámicamente al tamaño del contenedor (unav-icono-md, etc.) */
+  height: 1em;
+
+  stroke-width: 0;
+  stroke: currentColor;
+  fill: currentColor; /* Mantiene la coherencia de color corporativo sin hardcodear HEX */
+  vertical-align: middle;
 }
 
 /* ==========================================
