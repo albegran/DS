@@ -735,7 +735,7 @@ body {
   color: var(--unav-enlaceColor);
   font-family: var(--unav-fontFamilyPrimary);
   font-weight: var(--unav-fontWeightBold);
-  font-size: 1.125rem;
+  font-size: var(--unav-fontSize100);
   letter-spacing: 0.5px;
   text-transform: none !important;
   display: inline-flex;
@@ -1019,7 +1019,7 @@ body {
   flex-direction: column;
   align-items: center;
   justify-content: center;
-  padding: 1.5rem 1rem;
+  padding: 1.5rem 2rem;
   background-color: var(--unav-grey-100);
   border: 1px solid var(--unav-grey-200);
   border-radius: 0.5rem;
@@ -1322,7 +1322,7 @@ body {
 .unav-cardText {
   font-family: var(--unav-fontFamilyPrimary);
   font-weight: var(--unav-fontWeightLight);
-  font-size: var(--unav-fontSize1125);
+  font-size: var(--unav-fontSize100);
   color: var(--unav-grey-800);
   line-height: 1.6;
   /* REFACTOR: Consumo de Tokens de Espaciado */
@@ -1435,7 +1435,7 @@ body {
   transition: var(--unav-transitionBase);
   /* Tipografía vía Tokens */
   font-family: var(--unav-fontFamilyPrimary);
-  font-size: var(--unav-fontSize1125);
+  font-size: var(--unav-fontSize100);
   font-weight: var(--unav-fontWeightLight);
   color: var(--unav-black-800);
 }
@@ -1644,7 +1644,7 @@ body {
   align-items: center;
   /* REFACTOR: Consumo de Tokens de Espaciado (8px default) */
   gap: var(--unav-descTermGap, var(--unav-spacing-sm));
-  font-size: var(--unav-fontSize125, 1.125rem); /* Uso de escala tipográfica */
+  font-size: var(--unav-fontSize100, 1rem); /* Uso de escala tipográfica */
   font-weight: var(--unav-fontWeightBold);
   /* REFACTOR: Consumo de Tokens de Espaciado (4px default) */
   margin-bottom: var(--unav-descTermMarginBottom, var(--unav-spacing-xs));
@@ -1654,7 +1654,7 @@ body {
 
 /* Icono (Si existe) */
 .unav-descIcon {
-  font-size: var(--unav-iconSizeMd);
+  font-size: var(--unav-iconSizeSm);
   display: flex;
   align-items: center;
   justify-content: center;
@@ -2781,7 +2781,7 @@ body {
 .unav-tableCaption {
   caption-side: top;
   font-family: var(--unav-fontFamilyPrimaryCondensed);
-  font-size: var(--unav-fontSize150);
+  font-size: var(--unav-fontSize125);
   font-weight: var(--unav-fontWeightBold);
   color: var(--unav-black-900);
   text-align: left;

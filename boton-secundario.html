@@ -11,9 +11,9 @@
 
     <link rel="stylesheet" href="unav-styles.css">   
 </head>
-<body class="unav-font-primary unav-weight-regular unav-text-1125">
+<body class="unav-font-primary unav-weight-regular unav-text-100">
 
-    <nav style="background-color: #ffffff; border-bottom: 1px solid var(--unav-grey-200); padding: var(--unav-spacing-md) 0; position: sticky; top: 0; z-index: var(--unav-zIndex-sticky);">
+    <nav style="background-color: var(--unav-bg-surface); border-bottom: 1px solid var(--unav-grey-200); padding: var(--unav-spacing-md) 0; position: sticky; top: 0; z-index: var(--unav-zIndex-sticky);">
         <div class="container-lg d-flex justify-content-between align-items-center position-relative">            
             <div>
                 <a href="indice.html" class="unav-boton unav-botonSecundario">
@@ -21,7 +21,7 @@
                     <span class="d-none d-md-inline">Volver al Índice</span>
                 </a>
             </div>    
-            <span class="unav-font-primary unav-weight-bold unav-text-125 m-0 position-absolute start-50 translate-middle-x text-nowrap" style="color: var(--unav-rojo-500); line-height: 1;">
+            <span class="unav-font-primary unav-weight-bold unav-text-175 m-0 position-absolute start-50 translate-middle-x text-nowrap" style="color: var(--unav-rojo-500); line-height: 1;">
                 Design System UNAV
             </span>    
         </div>
@@ -30,12 +30,12 @@
     <main class="container-lg">
         
         <header style="text-align: center; margin: var(--unav-spacing-xl) var(--unav-spacing-xl);">
-            <h1 class="unav-font-primary unav-weight-medium unav-text-200" style="color: var(--unav-black-900); margin-bottom: var(--unav-spacing-sm) !important;">Botón Secundario</h1>
+            <h1 class="unav-font-primary unav-weight-medium unav-text-150" style="color: var(--unav-black-900); margin-bottom: var(--unav-spacing-sm) !important;">Botón Secundario</h1>
         </header>
 
         <!-- SECCIÓN 1 -->
-        <section class="unav-card unav-cardSolid" style="margin-bottom: var(--unav-spacing-3xl);" id="colores">
-            <h2 class="unav-font-primary unav-weight-bold unav-text-150" style="padding-bottom: var(--unav-spacing-sm); margin-bottom: var(--unav-spacing-xl); color: var(--unav-black-900);">1. Variantes Estándar (Fondo Transparente)</h2>
+        <section style="margin-bottom: var(--unav-spacing-3xl);" id="colores">
+            <h2 class="unav-font-primary unav-weight-bold unav-text-125" style="padding-bottom: var(--unav-spacing-sm); margin-bottom: var(--unav-spacing-sm); color: var(--unav-black-900);">1. Variantes Estándar (Fondo Transparente)</h2>
             <div class="d-flex flex-wrap gap-3 mb-4">
                 <div>
                     <a  href="#" class="unav-boton unav-botonSecundario" style="--unav-botonColorSource: var(--unav-rojo-600);">
@@ -63,8 +63,8 @@
         </section>
         
         <!-- SECCIÓN 2 -->
-        <section class="unav-card unav-cardSolid" style="margin-bottom: var(--unav-spacing-3xl);" id="variante-inversa">
-            <h2 class="unav-font-primary unav-weight-bold unav-text-150" style="padding-bottom: var(--unav-spacing-sm); margin-bottom: var(--unav-spacing-xl); color: var(--unav-black-900);">2. Variantes Inversas (Fondo Sólido)</h2>
+        <section style="margin-bottom: var(--unav-spacing-3xl);" id="variante-inversa">
+            <h2 class="unav-font-primary unav-weight-bold unav-text-125" style="padding-bottom: var(--unav-spacing-sm); margin-bottom: var(--unav-spacing-sm); color: var(--unav-black-900);">2. Variantes Inversas (Fondo Sólido)</h2>
             <div class="d-flex flex-wrap gap-3 mb-4">
                 <div>
                     <a  href="#" class="unav-boton unav-botonSecundarioInverso" style="--unav-botonColorSource: var(--unav-rojo-600);">
@@ -88,8 +88,8 @@
         </section>
 
         <!-- SECCIÓN 3 -->
-        <section class="unav-card unav-cardSolid" style="margin-bottom: var(--unav-spacing-3xl);" id="grid-test">
-            <h2 class="unav-font-primary unav-weight-bold unav-text-150" style="padding-bottom: var(--unav-spacing-sm); margin-bottom: var(--unav-spacing-xl); color: var(--unav-black-900);">3. Comportamiento en Grid de Bootstrap</h2>
+        <section style="margin-bottom: var(--unav-spacing-3xl);" id="grid-test">
+            <h2 class="unav-font-primary unav-weight-bold unav-text-125" style="padding-bottom: var(--unav-spacing-sm); margin-bottom: var(--unav-spacing-sm); color: var(--unav-black-900);">3. Comportamiento en Grid de Bootstrap</h2>
             <div class="row">
                 <div class="col-12 col-md-6 mb-3">
                     <div style="background-color: var(--unav-grey-100); border: 1px solid var(--unav-grey-200); border-radius: var(--unav-radius-md); padding: var(--unav-spacing-lg); text-align: center; height: 100%;">
@@ -107,13 +107,13 @@
         </section>
 
         <!-- SECCIÓN 4 -->
-        <section class="unav-card unav-cardSolid" id="variante-icono">
-            <h2 class="unav-font-primary unav-weight-bold unav-text-150" style="padding-bottom: var(--unav-spacing-sm); margin-bottom: var(--unav-spacing-xl); color: var(--unav-black-900);">4. Variantes de Control (Solo Icono)</h2>
-            <p class="unav-font-primary unav-weight-regular unav-text-1125" style="color: var(--unav-grey-600); margin-bottom: var(--unav-spacing-xl);">Utilizando el modificador <code>.unav-botonIconOnly</code>. Ideales para controles circulares de navegación.</p>
+        <section id="variante-icono">
+            <h2 class="unav-font-primary unav-weight-bold unav-text-125" style="padding-bottom: var(--unav-spacing-sm); margin-bottom: var(--unav-spacing-sm); color: var(--unav-black-900);">4. Variantes de Control (Solo Icono)</h2>
+            <p class="unav-font-primary unav-weight-regular unav-text-100" style="color: var(--unav-grey-600); margin-bottom: var(--unav-spacing-xl);">Utilizando el modificador <code>.unav-botonIconOnly</code>. Ideales para controles circulares de navegación.</p>
 
             <div class="row g-4">
                 <div class="col-md-6">
-                    <h4 class="unav-font-primary unav-weight-bold unav-text-1125 text-uppercase" style="letter-spacing: 1px; color: var(--unav-black-900); margin-bottom: var(--unav-spacing-md);">Control de Galería</h4>
+                    <h4 class="unav-font-primary unav-weight-bold unav-text-100 text-uppercase" style="letter-spacing: 1px; color: var(--unav-black-900); margin-bottom: var(--unav-spacing-md);">Control de Galería</h4>
                     <div style="background-color: var(--unav-grey-100); border-radius: var(--unav-radius-md); padding: var(--unav-spacing-lg); display: flex; justify-content: center; gap: var(--unav-spacing-md); align-items: center;">
                         <button class="unav-boton unav-botonSecundario unav-botonIconOnly" style="--unav-botonColorSource: var(--unav-black-800);" aria-label="Anterior">
                             <i class="bi bi-chevron-left unav-botonIcono"></i>
@@ -124,7 +124,7 @@
                     </div>
                 </div>
                 <div class="col-md-6">
-                    <h4 class="unav-font-primary unav-weight-bold unav-text-1125 text-uppercase" style="letter-spacing: 1px; color: var(--unav-black-900); margin-bottom: var(--unav-spacing-md);">Acciones Rápidas</h4>
+                    <h4 class="unav-font-primary unav-weight-bold unav-text-100 text-uppercase" style="letter-spacing: 1px; color: var(--unav-black-900); margin-bottom: var(--unav-spacing-md);">Acciones Rápidas</h4>
                     <div style="background-color: var(--unav-grey-100); border-radius: var(--unav-radius-md); padding: var(--unav-spacing-lg); display: flex; justify-content: center; gap: var(--unav-spacing-sm);">
                         <button class="unav-boton unav-botonSecundario unav-botonIconOnly" style="--unav-botonColorSource: var(--unav-teal-600);"><i class="bi bi-plus-lg unav-botonIcono"></i></button>
                         <button class="unav-boton unav-botonSecundario unav-botonIconOnly" style="--unav-botonColorSource: var(--unav-rojo-600);"><i class="bi bi-trash unav-botonIcono"></i></button>
@@ -136,7 +136,7 @@
             <!-- Variante Mini -->
             <div style="margin-top: var(--unav-spacing-3xl); padding-top: var(--unav-spacing-lg); border-top: 1px solid var(--unav-grey-200);">
                 <h3 class="unav-font-primary unav-weight-bold unav-text-125" style="color: var(--unav-black-900); margin-bottom: var(--unav-spacing-md);">Variante Mini (Galerías Multimedia)</h3>
-                <p class="unav-font-primary unav-weight-regular unav-text-1125" style="color: var(--unav-grey-600); margin-bottom: var(--unav-spacing-xl);">Añadiendo el modificador <code>.unav-botonIconOnlySm</code> reducimos las dimensiones a 32px (2rem). Esta es la medida oficial requerida para los controles de miniatura y utilidades en las galerías de imágenes y vídeos.</p>
+                <p class="unav-font-primary unav-weight-regular unav-text-100" style="color: var(--unav-grey-600); margin-bottom: var(--unav-spacing-xl);">Añadiendo el modificador <code>.unav-botonIconOnlySm</code> reducimos las dimensiones a 32px (2rem). Esta es la medida oficial requerida para los controles de miniatura y utilidades en las galerías de imágenes y vídeos.</p>
                 
                 <div class="row g-4">
                     <div class="col-md-6">
@@ -212,13 +212,13 @@
 
     </main>
 
-    <footer style="background-color: #ffffff; border-top: 1px solid var(--unav-grey-200); padding: var(--unav-spacing-lg) 0; margin-top: var(--unav-spacing-3xl);">
+    <footer class="bg-white border-top py-4 mt-5">
         <div class="container-lg d-flex flex-column flex-md-row justify-content-between align-items-center gap-3">
-            <div style="display: flex; align-items: center; gap: var(--unav-spacing-sm);">
+            <div class="d-flex align-items-center gap-2">
                 <i class="bi bi-boxes"></i>
-                <span class="unav-font-primary unav-weight-bold unav-text-1125" style="color: var(--unav-black-800);">Design System UNAV</span>
+                <span class="unav-font-primary unav-weight-bold unav-text-100 text-dark">Design System UNAV</span>
             </div>
-            <p class="unav-font-primary unav-weight-regular unav-text-075 m-0" style="color: var(--unav-grey-500);">
+            <p class="unav-font-primary unav-weight-regular unav-text-075 text-muted m-0">
                 Arquitectura OOCSS &middot; Versión 2.0 &middot; &copy; 2026
             </p>
         </div>

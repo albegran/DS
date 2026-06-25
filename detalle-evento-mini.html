@@ -11,9 +11,9 @@
 
     <link rel="stylesheet" href="unav-styles.css">   
 </head>
-<body class="unav-font-primary unav-weight-regular unav-text-1125">
+<body class="unav-font-primary unav-weight-regular unav-text-100">
 
-    <nav style="background-color: #ffffff; border-bottom: 1px solid var(--unav-grey-200); padding: var(--unav-spacing-md) 0; position: sticky; top: 0; z-index: var(--unav-zIndex-sticky);">
+    <nav style="background-color: var(--unav-bg-surface); border-bottom: 1px solid var(--unav-grey-200); padding: var(--unav-spacing-md) 0; position: sticky; top: 0; z-index: var(--unav-zIndex-sticky);">
         <div class="container-lg d-flex justify-content-between align-items-center position-relative">            
             <div>
                 <a href="indice.html" class="unav-boton unav-botonSecundario">
@@ -21,7 +21,7 @@
                     <span class="d-none d-md-inline">Volver al Índice</span>
                 </a>
             </div>    
-            <span class="unav-font-primary unav-weight-bold unav-text-125 m-0 position-absolute start-50 translate-middle-x text-nowrap" style="color: var(--unav-rojo-500); line-height: 1;">
+            <span class="unav-font-primary unav-weight-bold unav-text-175 m-0 position-absolute start-50 translate-middle-x text-nowrap" style="color: var(--unav-rojo-500); line-height: 1;">
                 Design System UNAV
             </span>    
         </div>
@@ -29,7 +29,7 @@
 
     <main class="container">
         
-        <article class="container mb-5" style="padding-top: var(--unav-spacing-xl);">
+        <article class="container mb-5 mt-5" style="padding-top: var(--unav-spacing-xl);">
             
             <!-- CONTENIDO DIVIDIDO EN COLUMNAS DIRECTAMENTE -->
             <div class="row align-items-start">
@@ -55,49 +55,50 @@
                     <p class="unav-font-primary unav-text-085 mb-5" style="color: var(--unav-grey-600);">Auditorio del edificio Amigos durante la pasada edición.</p>
                     
                     <h2 class="unav-font-primary unav-weight-bold unav-text-150 mb-3 mt-4" style="color: var(--unav-black-900);">Sobre el evento</h2>
-                    <p class="unav-font-primary unav-weight-regular unav-text-1125 unav-lh-normal mb-5" style="color: var(--unav-black-800);">
+                    <p class="unav-font-primary unav-weight-regular unav-text-100 unav-lh-normal mb-5" style="color: var(--unav-black-800);">
                         La Universidad de Navarra reúne a expertos académicos y líderes de la industria en una jornada intensiva dedicada a debatir los retos éticos y técnicos de las nuevas herramientas de diagnóstico. Durante el evento se presentarán casos de éxito reales y se fomentará el networking entre investigadores y empresas del sector biosanitario.
                     </p>
 
                     <div class="unav-tableWrapper">
-                        <table class="unav-table unav-tableStriped--even unav-tableHover unav-tableThemeRojo" style="min-width: 800px;">
-                            <caption class="unav-tableCaption">ORDEN DEL DÍA</caption>
+                        <table class="unav-table unav-tableHover unav-tableResponsiveStack unav-tableInnerVerticalBorders unavThemeMaterias">
+                            <caption class="unav-tableCaption">HORARIO DE SESIONES</caption>
                             <thead>
                                 <tr>
-                                    <th scope="col">Hora</th>
-                                    <th scope="col">Actividad</th>
+                                    <th scope="col" style="width: 20%;">HORA</th>
+                                    <th scope="col" style="width: 80%;">ACTIVDAD</th>
                                 </tr>
                             </thead>
-                            <tbody>
+                            <tbody>                                                       
                                 <tr>
-                                    <td>09:00 - 09:30</td>
-                                    <td>Recepción y entrega de acreditaciones</td>
+                                    <td data-label="Hora">09:00 - 09:30</td>
+                                    <td data-label="Actividad">Recepción y entrega de acreditaciones</td>
                                 </tr>
                                 <tr>
-                                    <td>09:30 - 10:45</td>
-                                    <td>Ponencia Inaugural: El futuro de los datos clínicos</td>
+                                    <td data-label="Hora">09:30 - 10:45</td>
+                                    <td data-label="Actividad">Ponencia Inaugural: El futuro de los datos clínicos</td>
                                 </tr>
                                 <tr>
-                                    <td>10:45 - 11:30</td>
-                                    <td>Pausa Café / Sesión de Networking</td>
+                                    <td data-label="Hora">10:45 - 11:30</td>
+                                    <td data-label="Actividad">Pausa Café / Sesión de Networking</td>
                                 </tr>
                                 <tr>
-                                    <td>11:30 - 13:00</td>
-                                    <td>Mesa Redonda: IA generativa en el diagnóstico temprano</td>
+                                    <td data-label="Hora">11:30 - 13:00</td>
+                                    <td data-label="Actividad">Mesa Redonda: IA generativa en el diagnóstico temprano</td>
                                 </tr>
                                 <tr>
-                                    <td>13:00 - 14:00</td>
-                                    <td>Entrega de diplomas</td>
+                                    <td data-label="Hora">13:00 - 14:00</td>
+                                    <td data-label="Actividad">Entrega de diplomas</td>
                                 </tr>
                             </tbody>
                         </table>
                     </div>
 
+
                     <!-- FORMULARIO DE INSCRIPCIÓN -->
 <!--
                     <div id="inscripcion" class="unav-card unav-cardSolid p-4" style="background-color: var(--unav-grey-100); border-top: 4px solid var(--unav-rojo-500);">
                         <h3 class="unav-font-primary unav-weight-bold unav-text-150 mb-2" style="color: var(--unav-black-900);">Formulario de Inscripción</h3>
-                        <p class="unav-font-primary unav-text-1125 mb-4" style="color: var(--unav-grey-600);">Reserva tu plaza completando los siguientes datos. Aforo limitado.</p>
+                        <p class="unav-font-primary unav-text-100 mb-4" style="color: var(--unav-grey-600);">Reserva tu plaza completando los siguientes datos. Aforo limitado.</p>
                         
                         <form class="m-0">
                             <div class="row g-3 mb-3">
@@ -237,7 +238,7 @@
         <div class="container-lg d-flex flex-column flex-md-row justify-content-between align-items-center gap-3">
             <div style="display: flex; align-items: center; gap: var(--unav-spacing-sm);">
                 <i class="bi bi-boxes"></i>
-                <span class="unav-font-primary unav-weight-bold unav-text-1125" style="color: var(--unav-black-800);">Design System UNAV</span>
+                <span class="unav-font-primary unav-weight-bold unav-text-100" style="color: var(--unav-black-800);">Design System UNAV</span>
             </div>
             <p class="unav-font-primary unav-weight-regular unav-text-075 m-0" style="color: var(--unav-grey-500);">
                 Arquitectura OOCSS &middot; Versión 2.0 &middot; &copy; 2026

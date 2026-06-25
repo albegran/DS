@@ -12,9 +12,7 @@
     <link rel="stylesheet" href="unav-styles.css">   
 
     <style>
-        /* Estilos de contexto para la documentación */
-        html { scroll-behavior: smooth; }
-        
+      
         /* Visualizadores específicos para la documentación consumiendo Tokens */
         .unav-spacing-row {
             display: flex;
@@ -44,9 +42,9 @@
         }
     </style>
 </head>
-<body class="unav-font-primary unav-weight-regular unav-text-1125">
+<body class="unav-font-primary unav-weight-regular unav-text-100">
 
-    <nav style="background-color: #ffffff; border-bottom: 1px solid var(--unav-grey-200); padding: var(--unav-spacing-md) 0; position: sticky; top: 0; z-index: var(--unav-zIndex-sticky);">
+    <nav style="background-color: var(--unav-bg-surface); border-bottom: 1px solid var(--unav-grey-200); padding: var(--unav-spacing-md) 0; position: sticky; top: 0; z-index: var(--unav-zIndex-sticky);">
         <div class="container-lg d-flex justify-content-between align-items-center position-relative">            
             <div>
                 <a href="indice.html" class="unav-boton unav-botonSecundario">
@@ -54,23 +52,23 @@
                     <span class="d-none d-md-inline">Volver al Índice</span>
                 </a>
             </div>    
-            <span class="unav-font-primary unav-weight-bold unav-text-125 m-0 position-absolute start-50 translate-middle-x text-nowrap" style="color: var(--unav-rojo-500); line-height: 1;">
+            <span class="unav-font-primary unav-weight-bold unav-text-175 m-0 position-absolute start-50 translate-middle-x text-nowrap" style="color: var(--unav-rojo-500); line-height: 1;">
                 Design System UNAV
             </span>    
         </div>
     </nav>
 
-    <main class="container-lg unav-doc-container">
+    <main class="container-lg">
         
         <header style="text-align: center; margin: var(--unav-spacing-xl) var(--unav-spacing-xl);">
-            <h1 class="unav-font-primary unav-weight-medium unav-text-200" style="color: var(--unav-black-900); margin-bottom: var(--unav-spacing-sm) !important;">Espaciado y Forma</h1>
+            <h1 class="unav-font-primary unav-weight-medium unav-text-150" style="color: var(--unav-black-900); margin-bottom: var(--unav-spacing-sm) !important;">Espaciado y Forma</h1>
         </header>
 
         <div class="unav-foundations-guide">
             
             <section class="unav-card unav-cardSolid" style="padding: var(--unav-spacing-xl); margin-bottom: var(--unav-spacing-xl);">
-                <h2 class="unav-font-primary unav-weight-bold unav-text-150" style="padding-bottom: var(--unav-spacing-sm); margin-bottom: var(--unav-spacing-xl); color: var(--unav-black-900);">1. Escala de Espaciado (Spacing)</h2>
-                <p class="unav-font-primary unav-weight-regular unav-text-1125 unav-lh-normal" style="color: var(--unav-grey-600); margin-bottom: var(--unav-spacing-lg);">
+                <h2 class="unav-font-primary unav-weight-bold unav-text-125" style="padding-bottom: var(--unav-spacing-sm); margin-bottom: var(--unav-spacing-sm); color: var(--unav-black-900);">1. Escala de Espaciado (Spacing)</h2>
+                <p class="unav-font-primary unav-weight-regular unav-text-100 unav-lh-normal" style="color: var(--unav-grey-600); margin-bottom: var(--unav-spacing-lg);">
                     Utiliza estos tokens siempre que necesites separar elementos. <strong>Nunca</strong> utilices valores estáticos en píxeles sueltos (ej. <code>margin-top: 15px</code>).
                 </p>
                 
@@ -132,8 +130,8 @@
             </section>
 
             <section class="unav-card unav-cardSolid" style="padding: var(--unav-spacing-xl); margin-bottom: var(--unav-spacing-xl);">
-                <h2 class="unav-font-primary unav-weight-bold unav-text-150" style="padding-bottom: var(--unav-spacing-sm); margin-bottom: var(--unav-spacing-xl); color: var(--unav-black-900);">2. Forma y Bordes (Shape / Radii)</h2>
-                <p class="unav-font-primary unav-weight-regular unav-text-1125 unav-lh-normal" style="color: var(--unav-grey-600); margin-bottom: var(--unav-spacing-lg);">
+                <h2 class="unav-font-primary unav-weight-bold unav-text-125" style="padding-bottom: var(--unav-spacing-sm); margin-bottom: var(--unav-spacing-sm); color: var(--unav-black-900);">2. Forma y Bordes (Shape / Radii)</h2>
+                <p class="unav-font-primary unav-weight-regular unav-text-100 unav-lh-normal" style="color: var(--unav-grey-600); margin-bottom: var(--unav-spacing-lg);">
                     La escala de radios define el nivel de curvatura de un elemento. Según el sistema, el estándar principal macro es la <strong>"Esquina Viva" (0px)</strong> para mantener una apariencia arquitectónica.
                 </p>
                 
@@ -211,13 +209,13 @@
         </div>
     </main>
 
-    <footer style="background-color: #ffffff; border-top: 1px solid var(--unav-grey-200); padding: var(--unav-spacing-lg) 0; margin-top: var(--unav-spacing-3xl);">
+    <footer class="bg-white border-top py-4 mt-5">
         <div class="container-lg d-flex flex-column flex-md-row justify-content-between align-items-center gap-3">
-            <div style="display: flex; align-items: center; gap: var(--unav-spacing-sm);">
+            <div class="d-flex align-items-center gap-2">
                 <i class="bi bi-boxes"></i>
-                <span class="unav-font-primary unav-weight-bold unav-text-1125" style="color: var(--unav-black-800);">Design System UNAV</span>
+                <span class="unav-font-primary unav-weight-bold unav-text-100 text-dark">Design System UNAV</span>
             </div>
-            <p class="unav-font-primary unav-weight-regular unav-text-075 m-0" style="color: var(--unav-grey-500);">
+            <p class="unav-font-primary unav-weight-regular unav-text-075 text-muted m-0">
                 Arquitectura OOCSS &middot; Versión 2.0 &middot; &copy; 2026
             </p>
         </div>
