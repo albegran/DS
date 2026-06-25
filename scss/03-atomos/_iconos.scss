@@ -7,6 +7,9 @@
 .unav-icono-md { font-size: var(--unav-iconSizeMd); }
 .unav-icono-lg { font-size: var(--unav-iconSizeLg); }
 .unav-icono-xl { font-size: var(--unav-iconSizeXl); }
+.unav-icono-xxl { font-size: var(--unav-iconSizeXXl); }
+.unav-icono-bigger { font-size: var(--unav-iconSizeBigger); }
+.unav-icono-biggest { font-size: var(--unav-iconSizeBiggest); }
 
 /* 2. COMPONENTE: CAJA DE ICONO DESTACADO (Feature Box) */
 .unav-iconoDestacado {
@@ -63,3 +66,14 @@
     height: 1em;
     fill: currentColor;
 }
+
+/* Nuevo componente de icono personalizado (Átomo OOCSS) PARA LIBRERIA DE ICONOS UNAV */
+.unav-icon-custom {
+    display: inline-block;
+    width: 1em; /* Se adaptará dinámicamente al tamaño del contenedor (unav-icono-md, etc.) */
+    height: 1em;
+    stroke-width: 0;
+    stroke: currentColor;
+    fill: currentColor; /* Mantiene la coherencia de color corporativo sin hardcodear HEX */
+    vertical-align: middle;
+  }
