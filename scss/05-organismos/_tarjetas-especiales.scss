@@ -444,7 +444,7 @@
 /* Título de la Noticia */
 .unav-newsTitle {
   font-family: var(--unav-fontFamilyPrimary);
-  font-size: var(--unav-fontSize150); /* ~24px */
+  font-size: var(--unav-fontSize125); /* ~20px */
   font-weight: var(--unav-fontWeightRegular);
   line-height: var(--unav-newsTitleLineHeight);
   /* REFACTOR: Consumo de Tokens de Espaciado (24px) */
@@ -466,15 +466,6 @@
   text-decoration: underline;
   /* REFACTOR: Consumo de Tokens de Espaciado (4px) */
   text-underline-offset: var(--unav-spacing-xs);
-}
-
-/* Modificadores Tipográficos para Grids Alta y Baja Densidad */
-.unav-newsTitle--sm {
-  font-size: var(--unav-fontSize125); /* ~20px */
-}
-
-.unav-newsTitle--lg {
-  font-size: var(--unav-fontSize200); /* ~32px */
 }
 
 /* ==========================================
