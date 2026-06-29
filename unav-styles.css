@@ -280,7 +280,8 @@
   --unav-trackingTighter: -0.04em; /* Para titulares gigantes (400, 500) */
   --unav-trackingTight: -0.02em; /* Para titulares grandes (200, 250, 300) */
   --unav-trackingNormal: 0em; /* Body copy (100, 1125, 125) */
-  --unav-trackingWide: 0.05em; /* Para subtítulos en mayúsculas / Tags (085) */
+  --unav-trackingMedium: 0.05em;
+  --unav-trackingWide: 0.08em; /* Para subtítulos en mayúsculas / Tags (085) */
   --unav-trackingWidest: 0.1em; /* Elementos muy pequeños que necesitan respirar (075) */
   /* ==========================================
      1. TOKENS TRANSVERSALES: MOTION Y FÍSICAS
@@ -305,11 +306,7 @@
   /* Transformaciones espaciales */
   --unav-translateHoverElevation: -4px; /* Elevación en Z para hover */
   --unav-translateEntranceY: 1.25rem; /* 20px de caída inicial para Stagger */
-  /* ==========================================
-     2. TOKENS TRANSVERSALES: MICRO-TIPOGRAFÍA
-     ========================================== */
-  --unav-trackingMedium: 0.8px;
-  --unav-trackingWide: 1.2px;
+  
   /* ==========================================
      3. TOKENS TRANSVERSALES: ICONOGRAFÍA
      ========================================== */
@@ -325,7 +322,7 @@
      4. TOKENS COMPONENTE: BOTONES
      ========================================== */
   /* Botones Primarios */
-  --unav-botonPaddingY: 0.8rem;
+  --unav-botonPaddingY: 0.8rem;  
   --unav-botonPaddingX: 2rem;
   --unav-botonGap: 0.6rem;
   --unav-botonFontSize: 0.875rem; /* ~14px */
@@ -4370,7 +4367,7 @@ body {
 /* Título de la Noticia */
 .unav-newsTitle {
   font-family: var(--unav-fontFamilyPrimary);
-  font-size: var(--unav-fontSize150); /* ~24px */
+  font-size: var(--unav-fontSize125); /* ~20px */
   font-weight: var(--unav-fontWeightRegular);
   line-height: var(--unav-newsTitleLineHeight);
   /* REFACTOR: Consumo de Tokens de Espaciado (24px) */
@@ -4392,15 +4389,6 @@ body {
   text-decoration: underline;
   /* REFACTOR: Consumo de Tokens de Espaciado (4px) */
   text-underline-offset: var(--unav-spacing-xs);
-}
-
-/* Modificadores Tipográficos para Grids Alta y Baja Densidad */
-.unav-newsTitle--sm {
-  font-size: var(--unav-fontSize125); /* ~20px */
-}
-
-.unav-newsTitle--lg {
-  font-size: var(--unav-fontSize200); /* ~32px */
 }
 
 /* ==========================================
