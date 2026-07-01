@@ -2088,16 +2088,16 @@ body {
    --------------------------------------------------- */
 .unav-tabs--card {
   background-color: var(--unav-bg-surface);
-  border: 1px solid var(--unav-grey-200);
+  border: 1px solid var(--unav-bloqueEnlaceBg);
   border-radius: var(--unav-radius-none);
   overflow: hidden;
   box-shadow: var(--unav-shadow-sm, 0 0.125rem 0.25rem rgba(0, 0, 0, 0.075));
 }
 
 .unav-tabs--card .unav-tabsList {
-  background-color: var(--unav-grey-100); /* Pista de fondo gris */
+  background-color: var(--unav-bloqueEnlaceBg); /* Pista de fondo histórico como Bloque de Enlaces */
   padding: var(--unav-spacing-sm);
-  border-bottom: 1px solid var(--unav-grey-200);
+  border-bottom: 1px solid var(--unav-bloqueEnlaceBg);
   gap: var(--unav-spacing-xs);
 }
 
@@ -2113,7 +2113,7 @@ body {
   min-width: 120px;
   /* NUEVO: Físicas de botón inactivo */
   background-color: var(--unav-bg-surface);
-  border: 1px solid var(--unav-grey-200);
+  border: 1px solid var(--unav-bloqueEnlaceBg);
 }
 
 .unav-tabs--card .unav-tabIcon {
@@ -2143,7 +2143,7 @@ body {
    VARIANTE 2: PESTAÑAS SUBRAYADAS (.unav-tabs--underline)
    --------------------------------------------------- */
 .unav-tabs--underline .unav-tabsList {
-  border-bottom: 2px solid var(--unav-grey-200);
+  border-bottom: 2px solid var(--unav-bloqueEnlaceBg);
   gap: var(--unav-spacing-xl);
 }
 
