@@ -33,9 +33,6 @@
 
     <main>
 
-        <!-- ========================================================= -->
-        <!-- EJEMPLO 1: CUADRANTE TOP-LEFT -->
-        <!-- ========================================================= -->
         <div class="container-lg">
             <h2 class="unav-font-primary unav-weight-bold unav-text-125" style="padding-bottom: var(--unav-spacing-sm); margin-bottom: var(--unav-spacing-sm); color: var(--unav-black-900);">
                 1. Variante Arriba-Izquierda (3 Botones Horizontales)
@@ -57,7 +54,6 @@
                 <div class="unav-heroControlsDesktop">
                     <div class="unav-heroQuadrant unav-heroQuadrant--topLeft">
                         <div class="unav-heroBtnGroup unav-heroBtnGroup--horizontal">
-                            <!-- Consumo de variables del DS -->
                             <a class="unav-boton unav-botonPrimario unav-botonFit" href="#" style="--unav-botonBg: var(--unav-rojo-600); --unav-botonText: #fff; --unav-botonBorder: var(--unav-rojo-600); --unav-botonHoverBg: #fff; --unav-botonHoverText: var(--unav-rojo-600); --unav-botonHoverBorder: var(--unav-rojo-600);">
                                 <span>Grados</span>
                             </a>
@@ -81,9 +77,6 @@
             </div>
         </section>
 
-        <!-- ========================================================= -->
-        <!-- EJEMPLO 2: CUADRANTE BOTTOM-RIGHT -->
-        <!-- ========================================================= -->
         <div class="container-lg">
             <h2 class="unav-font-primary unav-weight-bold unav-text-125" style="padding-bottom: var(--unav-spacing-sm); margin-bottom: var(--unav-spacing-sm); color: var(--unav-black-900);">
                 2. Variante Abajo-Derecha (2 Botones Verticales)
@@ -124,9 +117,6 @@
             </div>
         </section>
 
-        <!-- ========================================================= -->
-        <!-- EJEMPLO 3: CUADRANTE TOP-RIGHT -->
-        <!-- ========================================================= -->
         <div class="container-lg">
             <h2 class="unav-font-primary unav-weight-bold unav-text-125" style="padding-bottom: var(--unav-spacing-sm); margin-bottom: var(--unav-spacing-sm); color: var(--unav-black-900);">
                 3. Variante Arriba-Derecha (2 Botones Horizontales)
@@ -167,9 +157,6 @@
             </div>
         </section>
 
-        <!-- ========================================================= -->
-        <!-- EJEMPLO 4: CUADRANTE BOTTOM-LEFT -->
-        <!-- ========================================================= -->
         <div class="container-lg">
             <h2 class="unav-font-primary unav-weight-bold unav-text-125" style="padding-bottom: var(--unav-spacing-sm); margin-bottom: var(--unav-spacing-sm); color: var(--unav-black-900);">
                 4. Variante Abajo-Izquierda (3 Botones Verticales)
@@ -214,16 +201,13 @@
             </div>
         </section>
 
-        <!-- ========================================================= -->
-        <!-- EJEMPLO 5: CENTRADO ABSOLUTO -->
-        <!-- ========================================================= -->
         <div class="container-lg">
             <h2 class="unav-font-primary unav-weight-bold unav-text-125" style="padding-bottom: var(--unav-spacing-sm); margin-bottom: var(--unav-spacing-sm); color: var(--unav-black-900);">
-                5. Variante Centrada (Textos y Botones Centrados)
+                5. Variante Centrada (Modificador: Botones Superpuestos en Móvil)
             </h2>           
         </div>
 
-        <section class="unav-hero mb-5">
+        <section class="unav-hero mb-5 unav-heroMobile--overImage">
             <div class="unav-heroVisuals">
                 <img class="unav-heroImgMobile unav-efectoZoomInfinito" src="https://picsum.photos/800/1000?random=5" alt="Fondo Móvil Centrado">
                 <img class="unav-heroImgDesktop unav-efectoZoomInfinito" src="https://picsum.photos/1920/800?random=5" alt="Fondo Escritorio Centrado">
@@ -233,7 +217,6 @@
                         <p class="unav-heroPretitle">Universidad de Navarra</p>
                         <h1 class="unav-heroTitle">Formando profesionales con valores</h1>
                         
-                        <!-- Añadida lógica responsive para ocular en móvil y evitar solapamiento -->
                         <div class="unav-heroBtnGroup unav-heroBtnGroup--horizontal d-none d-md-flex">
                             <a class="unav-boton unav-botonPrimario unav-botonFit" href="#" style="--unav-botonBg: var(--unav-rojo-600); --unav-botonText: #fff; --unav-botonBorder: var(--unav-rojo-600); --unav-botonHoverBg: #fff; --unav-botonHoverText: var(--unav-rojo-600); --unav-botonHoverBorder: var(--unav-rojo-600);">
                                 <span>Admisión</span>
@@ -249,12 +232,11 @@
                 </div>
             </div>
 
-            <!-- CONTENEDOR MÓVIL ESTANDARIZADO BAJO LA IMAGEN -->
             <div class="unav-heroControlsMobile">
                 <div class="unav-heroControlsMobileInner">
                     <a class="unav-boton unav-botonPrimario" href="#" style="--unav-botonBg: var(--unav-rojo-600); --unav-botonText: #fff; --unav-botonBorder: var(--unav-rojo-600); --unav-botonHoverBg: var(--unav-rojo-800); --unav-botonHoverText: #fff; --unav-botonHoverBorder: var(--unav-rojo-800);"><span>Admisión</span></a>
-                    <a class="unav-boton unav-botonPrimario" href="#" style="--unav-botonBg: transparent; --unav-botonText: var(--unav-black-800); --unav-botonBorder: var(--unav-black-800); --unav-botonHoverBg: var(--unav-black-800); --unav-botonHoverText: #fff; --unav-botonHoverBorder: var(--unav-black-800);"><span>Grados</span></a>
-                    <a class="unav-boton unav-botonPrimario" href="#" style="--unav-botonBg: transparent; --unav-botonText: var(--unav-black-800); --unav-botonBorder: var(--unav-black-800); --unav-botonHoverBg: var(--unav-black-800); --unav-botonHoverText: #fff; --unav-botonHoverBorder: var(--unav-black-800);"><span>Contacto</span></a>
+                    <a class="unav-boton unav-botonPrimario" href="#" style="--unav-botonBg: transparent; --unav-botonText: #fff; --unav-botonBorder: #fff; --unav-botonHoverBg: rgba(255,255,255,0.15); --unav-botonHoverText: #fff; --unav-botonHoverBorder: #fff;"><span>Grados</span></a>
+                    <a class="unav-boton unav-botonPrimario" href="#" style="--unav-botonBg: transparent; --unav-botonText: #fff; --unav-botonBorder: #fff; --unav-botonHoverBg: rgba(255,255,255,0.15); --unav-botonHoverText: #fff; --unav-botonHoverBorder: #fff;"><span>Contacto</span></a>
                 </div>
             </div>
         </section>
@@ -273,7 +255,6 @@
         </div>
     </footer>
 
-    <!-- Bootstrap JS -->
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
 </body>
 </html>
