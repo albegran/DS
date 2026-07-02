@@ -30,8 +30,6 @@
     <header style="text-align: center; margin: var(--unav-spacing-xl) var(--unav-spacing-xl);">
         <h1 class="unav-font-primary unav-weight-medium unav-text-150" style="color: var(--unav-black-900); margin-bottom: var(--unav-spacing-sm) !important;">Hero Estándar</h1>
     </header>        
-    
-      
 
     <main>
 
@@ -44,7 +42,7 @@
             </h2>            
         </div>
         
-        <section class="unav-hero mb-5" ">
+        <section class="unav-hero mb-5">
             <div class="unav-heroVisuals">
                 <img class="unav-heroImgMobile unav-efectoZoomInfinito" src="https://picsum.photos/800/1000?random=1" alt="Fondo Móvil">
                 <img class="unav-heroImgDesktop unav-efectoZoomInfinito" src="https://picsum.photos/1920/800?random=1" alt="Fondo Escritorio">
@@ -92,7 +90,7 @@
             </h2>
         </div>
 
-        <section class="unav-hero mb-5" ">
+        <section class="unav-hero mb-5">
             <div class="unav-heroVisuals">
                 <img class="unav-heroImgMobile unav-efectoZoomInfinito" src="https://picsum.photos/800/1000?random=2" alt="Fondo Móvil">
                 <img class="unav-heroImgDesktop unav-efectoZoomInfinito" src="https://picsum.photos/1920/800?random=2" alt="Fondo Escritorio">
@@ -135,7 +133,7 @@
             </h2>
         </div>
 
-        <section class="unav-hero mb-5" ">
+        <section class="unav-hero mb-5">
             <div class="unav-heroVisuals">
                 <img class="unav-heroImgMobile unav-efectoZoomInfinito" src="https://picsum.photos/800/1000?random=3" alt="Fondo Móvil">
                 <img class="unav-heroImgDesktop unav-efectoZoomInfinito" src="https://picsum.photos/1920/800?random=3" alt="Fondo Escritorio">
@@ -178,7 +176,7 @@
             </h2>
         </div>
 
-        <section class="unav-hero mb-5" ">
+        <section class="unav-hero mb-5">
             <div class="unav-heroVisuals">
                 <img class="unav-heroImgMobile unav-efectoZoomInfinito" src="https://picsum.photos/800/1000?random=4" alt="Fondo Móvil">
                 <img class="unav-heroImgDesktop unav-efectoZoomInfinito" src="https://picsum.photos/1920/800?random=4" alt="Fondo Escritorio">
@@ -225,17 +223,18 @@
             </h2>           
         </div>
 
-        <section class="unav-hero mb-5" ">
+        <section class="unav-hero mb-5">
             <div class="unav-heroVisuals">
-                <img class="unav-heroImgMobile unav-unav-efectoZoomInfinito" src="https://picsum.photos/800/1000?random=5" alt="Fondo Móvil Centrado">
-                <img class="unav-heroImgDesktop unav-unav-efectoZoomInfinito" src="https://picsum.photos/1920/800?random=5" alt="Fondo Escritorio Centrado">
+                <img class="unav-heroImgMobile unav-efectoZoomInfinito" src="https://picsum.photos/800/1000?random=5" alt="Fondo Móvil Centrado">
+                <img class="unav-heroImgDesktop unav-efectoZoomInfinito" src="https://picsum.photos/1920/800?random=5" alt="Fondo Escritorio Centrado">
                 
                 <div class="unav-heroOverlay">
                     <div class="unav-heroContent unav-heroContent--center">
                         <p class="unav-heroPretitle">Universidad de Navarra</p>
                         <h1 class="unav-heroTitle">Formando profesionales con valores</h1>
                         
-                        <div class="unav-heroBtnGroup unav-heroBtnGroup--horizontal">
+                        <!-- Añadida lógica responsive para ocular en móvil y evitar solapamiento -->
+                        <div class="unav-heroBtnGroup unav-heroBtnGroup--horizontal d-none d-md-flex">
                             <a class="unav-boton unav-botonPrimario unav-botonFit" href="#" style="--unav-botonBg: var(--unav-rojo-600); --unav-botonText: #fff; --unav-botonBorder: var(--unav-rojo-600); --unav-botonHoverBg: #fff; --unav-botonHoverText: var(--unav-rojo-600); --unav-botonHoverBorder: var(--unav-rojo-600);">
                                 <span>Admisión</span>
                             </a>
@@ -247,6 +246,15 @@
                             </a>
                         </div>
                     </div>
+                </div>
+            </div>
+
+            <!-- CONTENEDOR MÓVIL ESTANDARIZADO BAJO LA IMAGEN -->
+            <div class="unav-heroControlsMobile">
+                <div class="unav-heroControlsMobileInner">
+                    <a class="unav-boton unav-botonPrimario" href="#" style="--unav-botonBg: var(--unav-rojo-600); --unav-botonText: #fff; --unav-botonBorder: var(--unav-rojo-600); --unav-botonHoverBg: var(--unav-rojo-800); --unav-botonHoverText: #fff; --unav-botonHoverBorder: var(--unav-rojo-800);"><span>Admisión</span></a>
+                    <a class="unav-boton unav-botonPrimario" href="#" style="--unav-botonBg: transparent; --unav-botonText: var(--unav-black-800); --unav-botonBorder: var(--unav-black-800); --unav-botonHoverBg: var(--unav-black-800); --unav-botonHoverText: #fff; --unav-botonHoverBorder: var(--unav-black-800);"><span>Grados</span></a>
+                    <a class="unav-boton unav-botonPrimario" href="#" style="--unav-botonBg: transparent; --unav-botonText: var(--unav-black-800); --unav-botonBorder: var(--unav-black-800); --unav-botonHoverBg: var(--unav-black-800); --unav-botonHoverText: #fff; --unav-botonHoverBorder: var(--unav-black-800);"><span>Contacto</span></a>
                 </div>
             </div>
         </section>
