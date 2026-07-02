@@ -319,6 +319,43 @@
   gap: var(--unav-spacing-sm);
 }
 
+/* ==========================================
+  MODIFICADOR OOCSS: Botones Móviles sobre la Imagen
+  ========================================== */
+  @media (max-width: 767.98px) {
+  .unav-heroMobile--overImage {
+      display: grid !important;
+  }
+  
+  /* Colapsamos la imagen y los controles en la misma celda del grid */
+  .unav-heroMobile--overImage > .unav-heroVisuals,
+  .unav-heroMobile--overImage > .unav-heroControlsMobile {
+      grid-area: 1 / 1;
+  }
+
+  /* NUEVO: Elevamos el centro de gravedad del texto para separarlo de los botones */
+  .unav-heroMobile--overImage .unav-heroOverlay {
+      /* 160px equivale a la altura aproximada de 3 botones + sus márgenes */
+      padding-bottom: 160px !important; 
+  }
+  
+  /* Posicionamos los controles en la base táctil segura */
+  .unav-heroMobile--overImage > .unav-heroControlsMobile {
+      align-self: end;
+      padding-bottom: var(--unav-spacing-xl);
+      background-color: transparent !important;
+      z-index: 10;
+      pointer-events: none; /* Evita que la caja invisible bloquee el scroll/clics en la foto */
+  }
+  
+  /* Reactivamos la interactividad solo en la botonera */
+  .unav-heroMobile--overImage > .unav-heroControlsMobile .unav-heroControlsMobileInner {
+      pointer-events: auto; 
+      background-color: transparent !important;
+      padding: 0 var(--unav-spacing-md);
+  }
+}
+
 /* =======================================================
    RESPONSIVIDAD: TABLET (Entre móvil y escritorio)
    ======================================================= */
